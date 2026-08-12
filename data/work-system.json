@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "snapshot_at": null,
+    "schema_version": 1,
+    "encrypted_full_data": true,
+    "source_count": 3,
+    "note_count": 0,
+    "rule_count": 0,
+    "synthesis": "pending_first_sync"
+  },
+  "sources": [
+    {"kind":"experience","label":"工作经验 / 工作体系"},
+    {"kind":"book","label":"读书笔记"},
+    {"kind":"field_manual","label":"EC / Amazon 实战手册"}
+  ],
+  "domain_counts": [],
+  "source_hashes": {}
+}
