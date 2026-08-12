@@ -55,7 +55,6 @@ def build_profile():
     work_counts=Counter(tokens(' '.join(work_chunks)))
     know_counts=Counter()
     for x in knowledge_items:know_counts.update(set(tokens(item_text(x))))
-    # Specific work-system concepts matter most; generic popularity in the archive matters less.
     weighted={}
     for term,n in work_counts.items():
         if n>=2:weighted[term]=min(3.0,0.7+n*0.16)
@@ -66,19 +65,15 @@ def build_profile():
 PROFILE=build_profile()
 
 def score_text(text:str):
-    """Return bonus, explanation, diagnostics. Positive means useful incremental fit."""
     if not PROFILE['available']:return 0.0,'',{}
     ts=set(tokens(text));weights=PROFILE['weights'];hits=sorted(((weights[t],t) for t in ts if t in weights),reverse=True)
     fit=sum(w for w,_ in hits[:8]);fit_bonus=min(1.15,fit/9.0)
     known=[PROFILE['knowledge_counts'].get(t,0) for _,t in hits[:8]]
     avg_known=sum(known)/len(known) if known else 0
     quality=bool(QUALITY_RE.search(text or ''));contradiction=bool(CONTRADICTION_RE.search(text or ''));practical=bool(PRACTICAL_RE.search(text or ''))
-    # Repetition is a negative only when the article has no evidence, method, or boundary-condition signal.
     repetition_penalty=0.0
     if avg_known>=10 and not quality and not contradiction:repetition_penalty=min(.85,.25+(avg_known-10)*.025)
-    # Sparse-but-relevant concepts are useful because they fill a hole in the personal system.
-    gap_bonus=0.0
-    if hits and avg_known<=3 and fit_bonus>=.25:gap_bonus=.35
+    gap_bonus=.35 if hits and avg_known<=3 and fit_bonus>=.25 else 0.0
     evidence_bonus=.32 if quality and fit_bonus>=.2 else 0
     boundary_bonus=.48 if contradiction and fit_bonus>=.2 else 0
     practical_bonus=.25 if practical and fit_bonus>=.25 else 0
@@ -89,7 +84,7 @@ def score_text(text:str):
     if evidence_bonus:labels.append('为已有判断增加数据/案例证据')
     if practical_bonus:labels.append('可直接用于工作场景')
     if repetition_penalty:labels.append('与既有知识重复度较高')
-    if not labels and fit_bonus:.0:labels.append('与个人工作体系相关')
+    if not labels and fit_bonus>0:labels.append('与个人工作体系相关')
     diag={'matched_terms':[t for _,t in hits[:8]],'avg_existing_mentions':round(avg_known,1),'fit_bonus':round(fit_bonus,2),'gap_bonus':gap_bonus,'evidence_bonus':evidence_bonus,'boundary_bonus':boundary_bonus,'repetition_penalty':round(repetition_penalty,2)}
     return round(bonus,2),'；'.join(labels),diag
 
