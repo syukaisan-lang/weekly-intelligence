@@ -24,11 +24,11 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Refresh encrypted Notion knowledge first
         run: python scripts/sync_notion.py
-      - name: Fetch and screen feeds
+      - name: Fetch and screen feeds against personal work system
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
-        run: python scripts/update_feeds.py
+        run: python scripts/update_feeds_personalized.py
       - name: Commit refreshed dashboard data
         run: |
           git config user.name "reading-dashboard-bot"
