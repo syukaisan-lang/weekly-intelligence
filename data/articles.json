@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "tracking_start": "2026-08-10",
+    "generated_at": null,
+    "screening_mode": "waiting_first_refresh",
+    "note": "首次部署后运行 GitHub Actions 刷新真实数据。"
+  },
+  "articles": []
+}
