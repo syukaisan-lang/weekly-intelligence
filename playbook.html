@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <title>Practical Knowledge Playbook</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="knowledge.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="playbook.css">
+</head>
+<body>
+  <main class="shell">
+    <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a href="knowledge.html">Knowledge</a><a href="insights.html">Insights</a><a class="active" href="playbook.html">Playbook</a></nav>
+    <header class="topbar"><div><div class="eyebrow">PRACTICAL KNOWLEDGE SYSTEM</div><h1>Knowledge Playbook</h1><p class="muted">把收藏文章压缩成可执行判断：什么时候用 → 核心结论 → 怎么做 → 看什么指标 → 避免什么误区。</p><div class="privacy-note">Playbook 本身只存整理后的方法论；你的 Notion 正文和 Comment 仍只在浏览器解密后用于证据匹配。</div></div><div class="right"><div id="playbookUpdated" class="muted small">读取中…</div></div></header>
+
+    <section class="card playbook-search-block">
+      <div class="playbook-search-head"><div><h2>我现在要解决什么？</h2><p class="muted small">按工作问题找知识，比按文章分类找更快。</p></div></div>
+      <div id="scenarioChips" class="scenario-chips"></div>
+      <input id="playbookSearch" class="search-input" type="search" placeholder="例如：新品、品牌想起、转化率、广告、AEO、消费者调研、KPI">
+    </section>
+
+    <section class="playbook-principle card">
+      <div class="playbook-principle-label">使用原则</div>
+      <div><b>文章不是知识单位，决策规则才是。</b><span class="muted"> 同一结论由多篇文章和你的 Comment 互相补强；新文章只有在改变、补充或反驳现有规则时，才升级 Playbook。</span></div>
+    </section>
+
+    <div id="playbookList" class="playbook-list"></div>
+  </main>
+  <script src="private-knowledge.js"></script>
+  <script src="playbook.js"></script>
+</body>
+</html>
