@@ -22,8 +22,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Build unified personal work system
-        run: python scripts/build_system_model.py
+      - name: Build improved unified personal work system
+        run: python scripts/build_system_model_v2.py
       - name: Fetch and screen feeds against personal work system
         run: python scripts/update_feeds_personalized.py
       - name: Commit refreshed dashboard data
