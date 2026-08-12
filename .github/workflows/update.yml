@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
       NOTION_DATA_SOURCE_ID: ${{ vars.NOTION_DATA_SOURCE_ID }}
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +22,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Refresh Notion knowledge first
+      - name: Refresh encrypted Notion knowledge first
         run: python scripts/sync_notion.py
       - name: Fetch and screen feeds
         env:
