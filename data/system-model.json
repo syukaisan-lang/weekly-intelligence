@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "snapshot_at": "2026-08-12T14:17:42.518367+00:00",
+    "schema_version": 1,
+    "encrypted_full_data": true,
+    "rule_count": 143,
+    "synthesis": "deterministic"
+  },
+  "counts": {
+    "types": {
+      "principle": 128,
+      "guardrail": 8,
+      "framework": 7
+    },
+    "maturity": {
+      "observed": 123,
+      "hypothesis": 20
+    }
+  },
+  "gap_count": 40
+}

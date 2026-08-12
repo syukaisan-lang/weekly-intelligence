@@ -1,6 +1,6 @@
 {
   "meta": {
-    "snapshot_at": "2026-08-12T12:10:49.496868+00:00",
+    "snapshot_at": "2026-08-12T14:17:37.772645+00:00",
     "schema_version": 1,
     "encrypted_full_data": true,
     "source_count": 3,
@@ -31,18 +31,18 @@
   "domain_counts": [
     {
       "name": "其他",
-      "count": 136
+      "count": 135
     },
     {
       "name": "EC / Amazon / 流通",
       "count": 62
     },
     {
-      "name": "消费者 / 品牌 / CEP",
-      "count": 36
+      "name": "判断与问题定义",
+      "count": 35
     },
     {
-      "name": "判断与问题定义",
+      "name": "消费者 / 品牌 / CEP",
       "count": 35
     },
     {
@@ -55,7 +55,7 @@
     },
     {
       "name": "执行 / 管理 / Stakeholder",
-      "count": 12
+      "count": 11
     },
     {
       "name": "商品 / 新品上市",
@@ -70,12 +70,16 @@
       "count": 4
     },
     {
+      "name": "职业 / 转职 / Career",
+      "count": 3
+    },
+    {
       "name": "AI / 工作效率",
       "count": 2
     }
   ],
   "source_hashes": {
-    "19gBiQuP8kjMRkzhuNRXXKKZS7Cn-yKJUZdADPOYJDos": "9b6a3850f49b901ff8146f577b03cbabe0900680536ca64746c85c5ca58159cd",
+    "19gBiQuP8kjMRkzhuNRXXKKZS7Cn-yKJUZdADPOYJDos": "1e97c137bb660b3ebddb4c7ea009e533673064c8867e498fe10341737b30d9c0",
     "13nPr94W9YHfZi_SkFk1i38WAHdO8pdEq": "6b36c8029a92bbc8c8a841a3e4e98a4313b8d6f8eb15f2ff6b73b40c79806db7",
     "1bBVlTpIodFbSLK8l2CsukALFdSq9m5hpxLHMK7liaug": "f5d6ba31a1dce80507fdae07c74e2f8b936c35228ee507b138415c688bbb6fd2"
   }
