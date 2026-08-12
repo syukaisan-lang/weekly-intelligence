@@ -26,10 +26,12 @@ jobs:
         run: python -m pip install "requests>=2.32,<3" "cryptography>=42,<47" "google-auth>=2.35,<3" "openpyxl>=3.1,<4" "openai>=1.0,<3"
       - name: Sync Google work experience and reading notes
         run: python scripts/sync_work_system.py
+      - name: Rebuild callable Work System model
+        run: python scripts/build_system_model_v2.py
       - name: Commit refreshed encrypted work system
         run: |
           git config user.name "work-system-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/work-system.json data/work-system.enc.json
-          git diff --cached --quiet || git commit -m "Sync encrypted personal work system"
+          git add data/work-system.json data/work-system.enc.json data/system-model.json data/system-model.enc.json
+          git diff --cached --quiet || git commit -m "Sync and consolidate personal work system"
           git push
