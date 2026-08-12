@@ -13,7 +13,7 @@
       <div>
         <div class="eyebrow">PERSONAL INTELLIGENCE</div>
         <h1>Weekly Reading Dashboard</h1>
-        <p class="muted">追踪起点 2026/08/10 · RSS 全量计数 → 去重 → 两阶段筛选 → 内容偏好学习</p>
+        <p class="muted">追踪起点 2026/08/10 · RSS 全量计数 → 去重 → 两阶段筛选 → 多维反馈学习</p>
       </div>
       <div class="right"><div id="lastUpdated" class="muted small">尚未首次刷新</div></div>
     </header>
@@ -35,8 +35,8 @@
       </section>
       <aside class="side">
         <section class="card">
-          <div class="section-head slim"><h2>学习到的内容偏好</h2><button id="resetLearning" class="text-btn" type="button">重置</button></div>
-          <p class="muted small">只根据你反馈过文章的标题、主题概念、摘要/正文特征学习。媒体来源不会被加减权重；媒体只用于筛选和显示。</p>
+          <div class="section-head slim"><h2>学习到的偏好</h2><button id="resetLearning" class="text-btn" type="button">重置</button></div>
+          <p class="muted small">不学习媒体。系统把“主题 / 内容形式 / 文章意图 / 质量信号”分开学习。例如你拒绝“AI线上会”，主要降低“线上会、活动告知”，不会把 AI 整体降权。</p>
           <div id="learnedPrefs" class="prefs"></div>
         </section>
         <section class="card"><div class="section-head slim"><h2>来源覆盖</h2><div id="coveragePill" class="pill">0/21</div></div><div id="sourceCoverage" class="coverage-list"></div></section>
@@ -46,7 +46,7 @@
             <li><b>全源轻抓：</b>标题 / 日期 / URL / 摘要，用于完整计数。</li>
             <li><b>先去重：</b>URL + 标题近似，减少转载噪音。</li>
             <li><b>深读候选：</b>高潜力文章才尝试读正文；受 robots / 登录限制时明确标记。</li>
-            <li><b>反馈学习：</b>“多推类似 / 少推此类”只调整文章内容概念与标题特征权重，不调整媒体权重。</li>
+            <li><b>多维学习：</b>主题（AI）与形式（线上会）、意图（报名/活动告知）分开计分，避免误伤主题。</li>
           </ol>
         </section>
       </aside>
