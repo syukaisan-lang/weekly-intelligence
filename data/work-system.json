@@ -1,18 +1,82 @@
 {
   "meta": {
-    "snapshot_at": null,
+    "snapshot_at": "2026-08-12T12:10:49.496868+00:00",
     "schema_version": 1,
     "encrypted_full_data": true,
     "source_count": 3,
-    "note_count": 0,
+    "note_count": 353,
     "rule_count": 0,
-    "synthesis": "pending_first_sync"
+    "synthesis": "deterministic_candidates"
   },
   "sources": [
-    {"kind":"experience","label":"工作经验 / 工作体系"},
-    {"kind":"book","label":"读书笔记"},
-    {"kind":"field_manual","label":"EC / Amazon 实战手册"}
+    {
+      "kind": "experience",
+      "label": "工作经验 / 工作体系",
+      "name": "仕事の体系化について",
+      "modifiedTime": "2026-08-12T11:18:19.906Z"
+    },
+    {
+      "kind": "book",
+      "label": "读书笔记",
+      "name": "読書メモ.xlsx",
+      "modifiedTime": "2026-08-12T11:19:09.675Z"
+    },
+    {
+      "kind": "field_manual",
+      "label": "EC / Amazon 实战手册",
+      "name": "Amazon",
+      "modifiedTime": "2026-08-12T11:18:36.892Z"
+    }
   ],
-  "domain_counts": [],
-  "source_hashes": {}
+  "domain_counts": [
+    {
+      "name": "其他",
+      "count": 136
+    },
+    {
+      "name": "EC / Amazon / 流通",
+      "count": 62
+    },
+    {
+      "name": "消费者 / 品牌 / CEP",
+      "count": 36
+    },
+    {
+      "name": "判断与问题定义",
+      "count": 35
+    },
+    {
+      "name": "市场 / GTM / Positioning",
+      "count": 31
+    },
+    {
+      "name": "广告 / PR / 内容",
+      "count": 21
+    },
+    {
+      "name": "执行 / 管理 / Stakeholder",
+      "count": 12
+    },
+    {
+      "name": "商品 / 新品上市",
+      "count": 7
+    },
+    {
+      "name": "数据 / KPI / 测量",
+      "count": 7
+    },
+    {
+      "name": "客户服务 / 体验",
+      "count": 4
+    },
+    {
+      "name": "AI / 工作效率",
+      "count": 2
+    }
+  ],
+  "source_hashes": {
+    "19gBiQuP8kjMRkzhuNRXXKKZS7Cn-yKJUZdADPOYJDos": "9b6a3850f49b901ff8146f577b03cbabe0900680536ca64746c85c5ca58159cd",
+    "13nPr94W9YHfZi_SkFk1i38WAHdO8pdEq": "6b36c8029a92bbc8c8a841a3e4e98a4313b8d6f8eb15f2ff6b73b40c79806db7",
+    "1bBVlTpIodFbSLK8l2CsukALFdSq9m5hpxLHMK7liaug": "f5d6ba31a1dce80507fdae07c74e2f8b936c35228ee507b138415c688bbb6fd2"
+  }
 }
