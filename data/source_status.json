@@ -1,0 +1,32 @@
+{
+  "generated_at": null,
+  "expected_sources": 21,
+  "successful_sources": 0,
+  "failed_sources": [],
+  "raw_new_count": 0,
+  "deduped_count": 0,
+  "deep_read_count": 0,
+  "sources": [
+    {"name":"ギズモード・ジャパン","status":"pending","new_count":0,"error":null},
+    {"name":"CNET Japan 最新情報　総合","status":"pending","new_count":0,"error":null},
+    {"name":"AV Watch","status":"pending","new_count":0,"error":null},
+    {"name":"PR EDGE","status":"pending","new_count":0,"error":null},
+    {"name":"ECデータラボ | 株式会社Nint (ニント)","status":"pending","new_count":0,"error":null},
+    {"name":"ECのミカタ","status":"pending","new_count":0,"error":null},
+    {"name":"ECマーケター by 株式会社いつも","status":"pending","new_count":0,"error":null},
+    {"name":"AdverTimes.（アドタイ） by 宣伝会議","status":"pending","new_count":0,"error":null},
+    {"name":"Campaign Japan 日本 - 深層","status":"pending","new_count":0,"error":null},
+    {"name":"博報堂生活総合研究所","status":"pending","new_count":0,"error":null},
+    {"name":"ECZine:新着一覧","status":"pending","new_count":0,"error":null},
+    {"name":"ウェブ電通報／ビジネスにもっとアイデアを。","status":"pending","new_count":0,"error":null},
+    {"name":"EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」","status":"pending","new_count":0,"error":null},
+    {"name":"ITmedia マーケティング 最新記事一覧","status":"pending","new_count":0,"error":null},
+    {"name":"MarkeZine:新着一覧","status":"pending","new_count":0,"error":null},
+    {"name":"Agenda note (アジェンダノート)","status":"pending","new_count":0,"error":null},
+    {"name":"wisdom-evolution.com","status":"pending","new_count":0,"error":null},
+    {"name":"ネットショップ担当者フォーラム","status":"pending","new_count":0,"error":null},
+    {"name":"MARKETIMES（マーケタイムズ）","status":"pending","new_count":0,"error":null},
+    {"name":"ITmedia ビジネスオンライン 最新記事一覧","status":"pending","new_count":0,"error":null},
+    {"name":"日経クロストレンド 新着","status":"pending","new_count":0,"error":null}
+  ]
+}
