@@ -13,89 +13,40 @@
       <div>
         <div class="eyebrow">PERSONAL INTELLIGENCE</div>
         <h1>Weekly Reading Dashboard</h1>
-        <p class="muted">追踪起点 2026/08/10 · RSS 全量计数 → 去重 → 两阶段筛选 → 个性化反馈学习</p>
+        <p class="muted">追踪起点 2026/08/10 · RSS 全量计数 → 去重 → 两阶段筛选 → 内容偏好学习</p>
       </div>
-      <div class="right">
-        <div id="lastUpdated" class="muted small">尚未首次刷新</div>
-      </div>
+      <div class="right"><div id="lastUpdated" class="muted small">尚未首次刷新</div></div>
     </header>
-
     <section class="metrics" id="metrics"></section>
-
     <section id="coverageWarning" class="callout warning hidden"></section>
-
     <section class="toolbar card">
       <div class="toolbar-group">
-        <label>等级
-          <select id="gradeFilter">
-            <option value="SA">S + A</option>
-            <option value="S">只看 S</option>
-            <option value="A">只看 A</option>
-            <option value="B">只看 B</option>
-            <option value="ALL">全部</option>
-          </select>
-        </label>
-        <label>阅读状态
-          <select id="statusFilter">
-            <option value="active">未跳过</option>
-            <option value="new">未处理</option>
-            <option value="later">稍后看</option>
-            <option value="read">已读</option>
-            <option value="save">进 Notion</option>
-            <option value="skip">已跳过</option>
-            <option value="all">全部</option>
-          </select>
-        </label>
-        <label>来源
-          <select id="sourceFilter"><option value="all">全部来源</option></select>
-        </label>
+        <label>等级<select id="gradeFilter"><option value="SA">S + A</option><option value="S">只看 S</option><option value="A">只看 A</option><option value="B">只看 B</option><option value="ALL">全部</option></select></label>
+        <label>阅读状态<select id="statusFilter"><option value="active">未跳过</option><option value="new">未处理</option><option value="later">稍后看</option><option value="read">已读</option><option value="save">进 Notion</option><option value="skip">已跳过</option><option value="all">全部</option></select></label>
+        <label>来源<select id="sourceFilter"><option value="all">全部来源</option></select></label>
       </div>
-      <div class="toolbar-group compact">
-        <label class="check"><input id="personalizedSort" type="checkbox" checked> 按学习后的个人分排序</label>
-      </div>
+      <div class="toolbar-group compact"><label class="check"><input id="personalizedSort" type="checkbox" checked> 按学习后的个人分排序</label></div>
     </section>
-
     <div class="layout">
       <section>
-        <div class="section-head">
-          <div>
-            <h2>本周候选</h2>
-            <p class="muted small">默认只显示 S / A。B 可按需展开，C 不占注意力。</p>
-          </div>
-          <div id="visibleCount" class="pill">0 篇</div>
-        </div>
+        <div class="section-head"><div><h2>本周候选</h2><p class="muted small">默认只显示 S / A。B 可按需展开，C 不占注意力。</p></div><div id="visibleCount" class="pill">0 篇</div></div>
         <div id="articleList" class="article-list"></div>
-        <div id="emptyState" class="empty hidden">
-          <h3>还没有可显示文章</h3>
-          <p>首次部署后，在 GitHub 的 Actions 页面手动运行一次 <b>Update feeds</b>，之后会每周自动更新。</p>
-        </div>
+        <div id="emptyState" class="empty hidden"><h3>还没有可显示文章</h3><p>首次部署后，在 GitHub 的 Actions 页面手动运行一次 <b>Update feeds</b>，之后会每周自动更新。</p></div>
       </section>
-
       <aside class="side">
         <section class="card">
-          <div class="section-head slim">
-            <h2>学习到的偏好</h2>
-            <button id="resetLearning" class="text-btn" type="button">重置</button>
-          </div>
-          <p class="muted small">反馈保存在当前浏览器，不写入公开仓库。以后新文章会自动按这些权重重新排序。</p>
+          <div class="section-head slim"><h2>学习到的内容偏好</h2><button id="resetLearning" class="text-btn" type="button">重置</button></div>
+          <p class="muted small">只根据你反馈过文章的标题、主题概念、摘要/正文特征学习。媒体来源不会被加减权重；媒体只用于筛选和显示。</p>
           <div id="learnedPrefs" class="prefs"></div>
         </section>
-
-        <section class="card">
-          <div class="section-head slim">
-            <h2>来源覆盖</h2>
-            <div id="coveragePill" class="pill">0/21</div>
-          </div>
-          <div id="sourceCoverage" class="coverage-list"></div>
-        </section>
-
+        <section class="card"><div class="section-head slim"><h2>来源覆盖</h2><div id="coveragePill" class="pill">0/21</div></div><div id="sourceCoverage" class="coverage-list"></div></section>
         <section class="card">
           <h2>处理逻辑</h2>
           <ol class="logic">
             <li><b>全源轻抓：</b>标题 / 日期 / URL / 摘要，用于完整计数。</li>
             <li><b>先去重：</b>URL + 标题近似，减少转载噪音。</li>
             <li><b>深读候选：</b>高潜力文章才尝试读正文；受 robots / 登录限制时明确标记。</li>
-            <li><b>反馈学习：</b>“多推类似 / 少推此类”调整来源与主题权重。</li>
+            <li><b>反馈学习：</b>“多推类似 / 少推此类”只调整文章内容概念与标题特征权重，不调整媒体权重。</li>
           </ol>
         </section>
       </aside>
