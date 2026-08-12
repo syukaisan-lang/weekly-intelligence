@@ -30,8 +30,9 @@
       <section class="card source-layer-card"><div class="section-head slim"><div><h2>知识来源层</h2><p class="muted small">经验约束现实做法；书本解释机制；实战手册提供操作细节；Notion持续验证、补充与反驳。</p></div></div><div id="workSystemSources" class="source-layer-grid"></div></section>
 
       <section class="card system-command">
-        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">默认按“实际问题”调用，而不是浏览资料。输入完整问题也可以，例如：新品知名度低、预算有限，Amazon首发怎么安排？</p></div></div>
-        <input id="playbookSearch" class="search-input system-query" type="search" placeholder="输入你的实际问题，例如：广告ROAS下滑但品牌搜索也下降，先看哪里？">
+        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统会做中日同义词扩展和意图理解，再检索“已形成规则 + 原始经验/读书 + Notion证据”。</p></div></div>
+        <input id="playbookSearch" class="search-input system-query" type="search" placeholder="例如：转职怎么判断？ / 新品知名度低预算有限怎么Launch？ / ROAS下降先看哪里？">
+        <div id="queryIntentHint" class="query-intent-hint hidden" aria-live="polite"></div>
         <div class="system-mode segmented" role="tablist">
           <button class="segment-btn active" type="button" data-system-mode="invoke">按问题调用</button>
           <button class="segment-btn" type="button" data-system-mode="map">体系地图</button>
