@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-      NOTION_DATA_SOURCE_ID: ${{ vars.NOTION_DATA_SOURCE_ID }}
+      NOTION_DATA_SOURCE_ID: ${{ vars.NOTION_DATA_SOURCE_ID || 'b2fde79c-a98e-454a-8217-612a6eaec56d' }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
