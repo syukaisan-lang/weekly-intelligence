@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "source": "Notion / 情報収集と整理 / データベース情報収集",
+    "snapshot_at": "2026-08-12T18:10:00+09:00",
+    "note": "当前为真实 Notion 数据快照。原型阶段先展示总量、分类统计和最近 Stock；自动同步 Notion 尚未启用。"
+  },
+  "metrics": {
+    "total": 654,
+    "read": 650,
+    "stock": 145,
+    "rejected": 509,
+    "undecided": 0,
+    "added_30d": 1,
+    "added_90d": 14
+  },
+  "categories": [
+    {"name":"マーケティング","total":71,"stock":36,"rejected":35},
+    {"name":"消費者","total":51,"stock":30,"rejected":21},
+    {"name":"スキル","total":50,"stock":26,"rejected":24},
+    {"name":"EC","total":31,"stock":10,"rejected":21},
+    {"name":"知識","total":14,"stock":9,"rejected":5},
+    {"name":"キャンペーン","total":10,"stock":8,"rejected":2},
+    {"name":"未分类","total":387,"stock":7,"rejected":380},
+    {"name":"AI","total":13,"stock":6,"rejected":7},
+    {"name":"家電情報","total":9,"stock":6,"rejected":3},
+    {"name":"ビジネス","total":14,"stock":5,"rejected":9},
+    {"name":"新商品開発","total":4,"stock":2,"rejected":2}
+  ],
+  "recent_stock": [
+    {"url":"https://app.notion.com/3a928fbfce64819b8b32d93c180e29ec","title":"TikTok Shop成功の4本柱：「ショート動画×ライブ配信」と「広告・クリエイター」の統合戦略 (1/4)：commercezine","category":"EC","date":"2026-07-26"},
+    {"url":"https://app.notion.com/39b28fbfce6481eb9aeec352bc617b3e","title":"「CEPsと想起の地図」大公開　「ポカリスエット」の強さをデータで解明：日経クロストレンド","category":"未分类","date":"2026-07-12"},
+    {"url":"https://app.notion.com/39b28fbfce64813193a8d81783a15d5a","title":"エビデンスベース・マーケティングの罠に陥らないように（完全解説版）――ロイヤル顧客か、ライトユーザーか、という不毛な二択を超える | Wisdom-Beta","category":"マーケティング","date":"2026-07-12"},
+    {"url":"https://app.notion.com/38c28fbfce6481c8929dfaee75dcf6cb","title":"選んだCEPでどう思い出され、選ばれやすい状態をつくるか？「Solidify（具体化）」の技術 (2/4)：MarkeZine（マーケジン）","category":"マーケティング","date":"2026-06-27"},
+    {"url":"https://app.notion.com/37f28fbfce6481fc935ff033f699dfb5","title":"競合分析を優先するな　自社の「離脱ポイント」の理解を最重要視せよ：日経クロストレンド","category":"スキル","date":"2026-06-14"},
+    {"url":"https://app.notion.com/37f28fbfce6481a390c4cc065eb9d80c","title":"新市場「エージェンティックコマース」に5つの疑問　AIが起こすEC大転換：日経クロストレンド","category":"消費者","date":"2026-06-14"},
+    {"url":"https://app.notion.com/37e28fbfce6481be9808cd00734a78f4","title":"検索は「奪い合い」から「創出」へ　CVしやすい検索行動をデザインする新手法「SCM」の実践事例を公開 (1/3)：MarkeZine（マーケジン）","category":"マーケティング","date":"2026-06-13"},
+    {"url":"https://app.notion.com/37828fbfce648179855cdabddbb61bff","title":"なぜ自社はAI経由でCVを獲得できないのか？AEO（AI検索最適化）を成功させる、最短ルートの描き方 (1/3)：MarkeZine（マーケジン）","category":"AI","date":"2026-06-07"},
+    {"url":"https://app.notion.com/37828fbfce648142b494cee1ca2ba038","title":"顧客の“AI経由の購買”をどう可視化する？「AI型購買」と「AIによる言及内容の質」の測り方 (2/3)：MarkeZine（マーケジン）","category":"AI","date":"2026-06-07"},
+    {"url":"https://app.notion.com/37128fbfce648190b4f8f9b8dfdb7fc4","title":"AIショッピングアプリ「PLUG」が300万ダウンロード突破。「楽天市場」「Amazon」「Yahoo!ショッピング」の利用状況を分析 | ネットショップ担当者フォーラム","category":"消費者","date":"2026-05-31"},
+    {"url":"https://app.notion.com/37128fbfce64813f9815f16a18ddc0a8","title":"「対抗策」を考えるほど競合の術中に…。AIで即実践できる「競合の戦略を解剖する3ステップ」 (2/3)：MarkeZine（マーケジン）","category":"AI","date":"2026-05-31"},
+    {"url":"https://app.notion.com/37128fbfce6481c8ace3eab365ea18a5","title":"そのメディア投資は正解か？調査データが示す、メディアプランニングの新常識となる4つの視点 (2/4)：MarkeZine（マーケジン）","category":"マーケティング","date":"2026-05-31"},
+    {"url":"https://app.notion.com/36328fbfce648198a467c50e6c22d3de","title":"戦略は完璧でも現場が動かない　組織の停滞を突破する「算数思考」：日経クロストレンド","category":"スキル","date":"2026-05-17"},
+    {"url":"https://app.notion.com/36328fbfce6481ed92a8c1b4852f20fe","title":"2-5-27：検索数の増減とビジネス成長の関係性 | Wisdom-Beta","category":"マーケティング","date":"2026-05-17"},
+    {"url":"https://app.notion.com/33228fbfce6481bc9a90e4b81579b0da","title":"ハマりがちな「KPIの沼」　マーケターが身につけたい「KPI設計法」：日経クロストレンド","category":"未分类","date":"2026-03-29"}
+  ],
+  "resurface": [
+    {"url":"https://app.notion.com/b66ad78b5c4e4fcb9c000624ce564349","title":"Z世代のSNS利用実態データを公開　年代別の利用者数ベスト5は？：日経クロストレンド"},
+    {"url":"https://app.notion.com/1897eea8edb74918b7702e6a7b23a12b","title":"日ハムが2つの独自ECを始めたワケ　好調支える「4つの勝ち筋」：日経クロストレンド"},
+    {"url":"https://app.notion.com/761b9caf0ef649ce8de95ca1600e916f","title":"マネジメント"}
+  ]
+}
