@@ -1,22 +1,25 @@
 (() => {
   let knowledge=null;
-  const TERM_RULES=[['Agentic Commerce',/エージェンティック|agentic/i],['AI Search / AEO',/AEO|AIO|GEO|AI検索|AI経由|AI型購買|AIショッピング/i],['生成AI',/生成AI|ChatGPT|LLM|AIエージェント/i],['CEP / 想起',/CEP|想起|第一想起/i],['KPI',/KPI|KGI|効果測定|指標/i],['検索行動',/検索行動|検索数|検索クエリ|SEO|SCM/i],['購買行動',/購買|購入|買う|ファネル|決済/i],['消費者インサイト',/消費者|生活者|インサイト|顧客理解|N.?=.?1/i],['EC',/EC|eコマース|Amazon|楽天|D2C|TikTok Shop/i],['広告効果',/広告|メディア投資|リーチ|フリークエンシー|CTR|CPA/i],['ブランド',/ブランド|認知|シェア|ロイヤル|浸透率/i],['価格',/価格|値上げ|プライシング|値付け/i],['CRM',/CRM|LTV|会員|メルマガ|メール/i],['SNS / UGC',/SNS|UGC|TikTok|Instagram|インフルエンサー|VTuber/i],['競合',/競合|差別化|ポジショニング/i],['調査',/調査|アンケート|モニター|サンプル/i],['商品開発',/商品開発|新商品|新ニーズ/i]];
-  const STOP=new Set(['について','による','ため','とは','から','まで','する','した','して','いる','ある','ない','これ','それ','マーケティング','最新','公開','解説','ポイント','方法','実践','記事','日経クロストレンド','MarkeZine']);
-  function textOfKnowledge(k){return `${k.title||''} ${k.summary||''} ${(k.comments||[]).map(c=>c.text||'').join(' ')}`;}
-  function concepts(text){return TERM_RULES.filter(([,re])=>re.test(text||'')).map(([n])=>n);}
-  function words(text){const raw=(text||'').toLowerCase().match(/[a-z0-9][a-z0-9+._-]{1,}|[一-龯ぁ-んァ-ヶー]{2,12}/g)||[];return [...new Set(raw.filter(x=>!STOP.has(x)&&x.length>1))].slice(0,80);}
-  function relationScore(article,k){const atext=`${article.title||''} ${article.summary||''} ${article.reason||''} ${(article.concepts||[]).join(' ')}`,ktext=textOfKnowledge(k);const ac=new Set(concepts(atext)),kc=new Set(concepts(ktext));let score=0;ac.forEach(x=>{if(kc.has(x))score+=2.2});const aw=new Set(words(article.title||'')),kw=new Set(words(k.title||''));aw.forEach(x=>{if(kw.has(x))score+=x.length>=5?1.25:.7});const broad=new Set(words(atext)),kbroad=new Set(words(ktext));let shared=0;broad.forEach(x=>{if(kbroad.has(x))shared++});score+=Math.min(shared,5)*.22;if(article.url&&k.url&&article.url===k.url)score=-99;return score;}
-  function related(article){const items=knowledge?.items||knowledge?.recent_stock||[];return items.map(k=>({k,score:relationScore(article,k)})).filter(x=>x.score>=1.7).sort((a,b)=>b.score-a.score).slice(0,3);}
-  function clearRelations(){document.querySelectorAll('.related-knowledge').forEach(x=>x.remove());}
-  function inject(){if(!knowledge||knowledge.locked||typeof data==='undefined'||!Array.isArray(data.articles))return;document.querySelectorAll('#articleList .article').forEach(card=>{if(card.querySelector('.related-knowledge'))return;const link=card.querySelector('.article-title');if(!link)return;const href=link.getAttribute('href'),title=link.textContent.trim(),article=(data.articles||[]).find(a=>a.url===href||a.title===title);if(!article)return;const rows=related(article);if(!rows.length)return;const box=document.createElement('div');box.className='related-knowledge';box.innerHTML=`<div class="related-head"><span>🔗 你的旧知识</span><span class="muted small">${rows.length} 条相关</span></div>${rows.map(({k})=>`<a href="${esc(k.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(k.title)}</span><small>${esc(k.category||'未分类')} · ${esc(k.date||'')}</small></a>`).join('')}`;const controls=card.querySelector('.controls');if(controls)card.insertBefore(box,controls);else card.appendChild(box);});}
-  function showUnlock(show){document.getElementById('knowledgeRelationUnlockCard')?.classList.toggle('hidden',!show);}
-  async function load(promptUser=false){
-    if(typeof loadKnowledgeData!=='function')return;
-    const k=await loadKnowledgeData({prompt:promptUser});
-    if(k.locked){knowledge=null;showUnlock(!!k.meta?.encrypted_full_data);return;}
-    knowledge=k;showUnlock(false);clearRelations();inject();
-  }
-  const oldRender=renderArticles;renderArticles=function(){oldRender();setTimeout(inject,0);};
-  document.getElementById('unlockWeeklyKnowledge')?.addEventListener('click',()=>load(true));
-  load(false);
+  const RULES={
+    goals:[['增长/市场扩大',/成長|売上|市場拡大|シェア|新規獲得|GTM|グロース/i],['转化改善',/CVR|コンバージョン|購入率|成約|離脱|カゴ落ち/i],['认知/想起',/認知|想起|第一想起|CEP|ブランド検索/i],['消费者理解',/消費者理解|顧客理解|インサイト|ニーズ|N.?=.?1|生活者/i],['价格/收益',/価格|値上げ|プライシング|利益|粗利|収益/i],['复购/LTV',/LTV|リピート|継続|ロイヤル|CRM|会員/i],['业务效率化',/効率|自動化|省力|業務改善|生産性|ワークフロー/i],['调查/验证',/調査|検証|実証|アンケート|実験|効果測定/i]],
+    journey:[['发现/搜索',/検索|SEO|AEO|AIO|GEO|発見|流入|検索行動/i],['比较/评估',/比較|検討|評価|レビュー|口コミ|選択/i],['购买/决策',/購買|購入|決定|意思決定|決済|ファネル/i],['使用/体验',/利用|使用|体験|UX|CX|オンボーディング/i],['复购/关系',/再購入|リピート|継続|CRM|LTV|ロイヤル/i]],
+    methods:[['生成AI/Agent',/生成AI|ChatGPT|LLM|AIエージェント|Agentic/i],['广告/媒体',/広告|メディア|リーチ|フリークエンシー|CPA|CTR/i],['SNS/UGC',/SNS|UGC|TikTok|Instagram|インフルエンサー/i],['EC/平台',/Amazon|楽天|EC|eコマース|D2C|モール|TikTok Shop/i],['数据/KPI',/KPI|KGI|データ|計測|分析|指標/i],['品牌战略',/ブランド|ポジショニング|差別化|CEP/i],['CRM',/CRM|LTV|会員|メール|メルマガ/i],['商品开发',/商品開発|新商品|パッケージ|ニーズ/i]],
+    evidence:[['一次数据',/独自調査|自社調査|アンケート|実証|実験|統計|一次データ/i],['案例',/事例|ケーススタディ|導入事例|成功事例/i],['方法论',/フレームワーク|手法|プロセス|方法論|モデル/i]]
+  };
+  const STOP=new Set(['について','による','ため','とは','から','まで','する','した','して','いる','ある','ない','これ','それ','最新','公開','解説','ポイント','方法','実践','記事','マーケティング','business','japan']);
+  function kText(k){return `${k.title||''} ${k.summary||''} ${k.page_body||''} ${(k.comments||[]).map(c=>c.text||'').join(' ')}`}
+  function aText(a){return `${a.title||''} ${a.summary||''} ${a.reason||''} ${a.content_excerpt||''} ${(a.concepts||[]).join(' ')}`}
+  function profile(text){const out={};for(const [dim,rules] of Object.entries(RULES))out[dim]=rules.filter(([,re])=>re.test(text||'')).map(([n])=>n);return out}
+  function words(text){const raw=(text||'').toLowerCase().match(/[a-z0-9][a-z0-9+._-]{2,}|[一-龯ぁ-んァ-ヶー]{2,10}/g)||[];return [...new Set(raw.filter(x=>!STOP.has(x)))].slice(0,120)}
+  function overlap(a,b){const bs=new Set(b);return a.filter(x=>bs.has(x))}
+  function relation(article,k){const ap=profile(aText(article)),kp=profile(kText(k));const shared={goals:overlap(ap.goals,kp.goals),journey:overlap(ap.journey,kp.journey),methods:overlap(ap.methods,kp.methods),evidence:overlap(ap.evidence,kp.evidence)};let score=shared.goals.length*3.1+shared.journey.length*2.5+shared.methods.length*1.8+shared.evidence.length*.8;
+    const at=words(`${article.title||''} ${article.summary||''} ${article.reason||''}`),kt=new Set(words(`${k.title||''} ${k.summary||''} ${k.page_body||''}`));let lexical=0;at.forEach(w=>{if(kt.has(w))lexical+=w.length>=5?.3:.16});score+=Math.min(lexical,1.6);if(article.url&&k.url&&article.url===k.url)score=-99;
+    const reasons=[];if(shared.goals.length)reasons.push(`共同意图：${shared.goals.slice(0,2).join(' / ')}`);if(shared.journey.length)reasons.push(`同一阶段：${shared.journey.slice(0,2).join(' / ')}`);if(shared.methods.length)reasons.push(`共同方法：${shared.methods.slice(0,2).join(' / ')}`);if(!reasons.length&&score>1.8)reasons.push('上下文语义接近');return {score,reasons,shared};}
+  function related(article){const list=knowledge?.items||knowledge?.recent_stock||[];return list.map(k=>({k,...relation(article,k)})).filter(x=>x.score>=3.0&&(x.shared.goals.length||x.shared.journey.length||x.shared.methods.length>=2)).sort((a,b)=>b.score-a.score).slice(0,3)}
+  function clearRelations(){document.querySelectorAll('.related-knowledge').forEach(x=>x.remove())}
+  function inject(){if(!knowledge||knowledge.locked||typeof data==='undefined'||!Array.isArray(data.articles))return;document.querySelectorAll('#articleList .article').forEach(card=>{if(card.querySelector('.related-knowledge'))return;const link=card.querySelector('.article-title');if(!link)return;const href=link.getAttribute('href'),title=link.textContent.trim(),article=(data.articles||[]).find(a=>a.url===href||a.title===title);if(!article)return;const rows=related(article);if(!rows.length)return;const box=document.createElement('div');box.className='related-knowledge';box.innerHTML=`<div class="related-head"><span>🔗 你的旧知识</span><span class="muted small">按上下文意图匹配 · ${rows.length} 条</span></div>${rows.map(({k,reasons})=>`<a href="knowledge.html#knowledgeResultsAnchor" data-related-id="${esc(k.id||'')}"><span>${esc(k.title)}</span><small>${esc(reasons[0]||'上下文相关')} · ${esc(k.category||'未分类')}</small></a>`).join('')}`;const controls=card.querySelector('.controls');if(controls)card.insertBefore(box,controls);else card.appendChild(box)});document.querySelectorAll('[data-related-id]').forEach(a=>a.addEventListener('click',()=>sessionStorage.setItem('weekly_intelligence_open_knowledge_id',a.dataset.relatedId)))}
+  function showUnlock(show){document.getElementById('knowledgeRelationUnlockCard')?.classList.toggle('hidden',!show)}
+  async function load(promptUser=false){if(typeof loadKnowledgeData!=='function')return;const k=await loadKnowledgeData({prompt:promptUser});if(k.locked){knowledge=null;showUnlock(!!k.meta?.encrypted_full_data);return}knowledge=k;showUnlock(false);clearRelations();inject()}
+  const oldRender=renderArticles;renderArticles=function(){oldRender();setTimeout(inject,0)};
+  document.getElementById('unlockWeeklyKnowledge')?.addEventListener('click',()=>load(true));load(false);
 })();
