@@ -13,26 +13,23 @@ jobs:
   update:
     runs-on: ubuntu-latest
     env:
-      NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
       DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
-      NOTION_DATA_SOURCE_ID: ${{ vars.NOTION_DATA_SOURCE_ID || 'b2fde79c-a98e-454a-8217-612a6eaec56d' }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Refresh encrypted Notion knowledge first
-        run: python scripts/sync_notion.py
+      - name: Build unified personal work system
+        run: python scripts/build_system_model.py
       - name: Fetch and screen feeds against personal work system
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
         run: python scripts/update_feeds_personalized.py
       - name: Commit refreshed dashboard data
         run: |
           git config user.name "reading-dashboard-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "Update weekly intelligence"
+          git diff --cached --quiet || git commit -m "Update weekly intelligence and system model"
           git push
