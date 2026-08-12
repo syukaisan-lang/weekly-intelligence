@@ -17,6 +17,7 @@
     <nav class="main-nav" aria-label="Dashboard navigation">
       <a class="active" href="index.html">Weekly</a>
       <a href="knowledge.html">Knowledge</a>
+      <a href="insights.html">Insights</a>
     </nav>
     <header class="topbar">
       <div>
@@ -55,7 +56,7 @@
     </section>
     <div class="layout">
       <section>
-        <div class="section-head"><div><h2>本周候选</h2><p class="muted small">默认：未读 + S/A。先处理真正值得看的文章。</p></div><div id="visibleCount" class="pill">0 篇</div></div>
+        <div class="section-head"><div><h2>本周候选</h2><p class="muted small">默认：未读 + S/A。文章下方会提示与你 Notion 旧知识的关联。</p></div><div id="visibleCount" class="pill">0 篇</div></div>
         <div id="articleList" class="article-list"></div>
         <div id="emptyState" class="empty hidden"><h3>当前筛选下没有文章</h3><p>可以切换“已读 / 全部”，或调整等级和细分状态。</p></div>
       </section>
@@ -80,5 +81,7 @@
   </main>
   <script src="app.js"></script>
   <script src="weekly-progress.js"></script>
+  <script src="notion-save.js"></script>
+  <script src="knowledge-relations.js"></script>
 </body>
 </html>
