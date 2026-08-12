@@ -3,7 +3,8 @@ name: Update feeds
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 0 * * 1"
+    # Friday 19:05 Japan time = Friday 10:05 UTC
+    - cron: "5 10 * * 5"
 
 permissions:
   contents: write
