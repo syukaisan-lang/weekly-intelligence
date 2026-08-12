@@ -14,7 +14,7 @@
 </head>
 <body>
   <main class="shell">
-    <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a class="active" href="knowledge.html">Knowledge</a><a href="insights.html">Insights</a></nav>
+    <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a class="active" href="knowledge.html">Knowledge</a><a href="insights.html">Insights</a><a href="playbook.html">Playbook</a></nav>
     <header class="topbar"><div><div class="eyebrow">NOTION KNOWLEDGE BASE</div><h1>Knowledge Dashboard</h1><p class="muted">Notion Stock 全量知识库 · title + summary + 正文 + Comment 一起参与搜索、分类和关联。</p><div class="privacy-note">搜索引擎索引已关闭；Notion 正文与 Comment 只进入加密数据，浏览器输入密码后才解密。</div></div><div class="right"><div id="knowledgeUpdated" class="muted small">读取中…</div></div></header>
 
     <section class="metrics" id="knowledgeMetrics"></section>
@@ -32,7 +32,7 @@
 
     <div class="layout knowledge-layout">
       <section><div class="section-head"><div><h2 id="knowledgeActiveCategory">全部分类</h2><p class="muted small">点击标题可在本站直接展开 Notion 内容；“打开 Notion”只作为备用。</p></div><div id="knowledgeCount" class="pill">0 篇</div></div><div id="knowledgeList" class="article-list"></div><button id="loadMoreKnowledge" class="btn load-more hidden" type="button">再显示30篇</button></section>
-      <aside class="side"><section class="card"><div class="section-head slim"><h2>旧知识复习</h2><button id="shuffleResurface" class="text-btn" type="button">换一组</button></div><p class="muted small">优先从一年以前的 Stock 中抽取。</p><div id="resurfaceList" class="resurface-list"></div></section><section class="card"><h2>当前观察</h2><div id="knowledgeInsights" class="insight-list"></div></section><section class="card"><h2>同步说明</h2><p class="muted small">每天同步全量 Stock、Notion 页面正文和可读取 Comment；敏感正文只保存加密版本。</p></section></aside>
+      <aside class="side"><section class="card"><div class="section-head slim"><h2>旧知识复习</h2><button id="shuffleResurface" class="text-btn" type="button">换一组</button></div><p class="muted small">优先从一年以前的 Stock 中抽取。</p><div id="resurfaceList" class="resurface-list"></div></section><section class="card"><h2>当前观察</h2><div id="knowledgeInsights" class="insight-list"></div></section><section class="card"><h2>同步说明</h2><p class="muted small">每周五 18:40 JST 同步全量 Stock、Notion 页面正文和可读取 Comment；19:05 再刷新 Weekly。敏感正文只保存加密版本。</p></section></aside>
     </div>
   </main>
   <script src="private-knowledge.js"></script>
