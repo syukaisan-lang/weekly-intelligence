@@ -14,49 +14,25 @@
 </head>
 <body>
   <main class="shell">
-    <nav class="main-nav" aria-label="Dashboard navigation">
-      <a href="index.html">Weekly</a>
-      <a class="active" href="knowledge.html">Knowledge</a>
-      <a href="insights.html">Insights</a>
-    </nav>
-
-    <header class="topbar">
-      <div>
-        <div class="eyebrow">NOTION KNOWLEDGE BASE</div>
-        <h1>Knowledge Dashboard</h1>
-        <p class="muted">Notion Stock 全量知识库 · title + summary + 你的 Comment 一起参与搜索、分类和关联。</p>
-        <div class="privacy-note">搜索引擎索引已关闭；Notion 全文与 Comment 会以加密文件保存，浏览器输入密码后才解密。</div>
-      </div>
-      <div class="right"><div id="knowledgeUpdated" class="muted small">读取中…</div></div>
-    </header>
+    <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a class="active" href="knowledge.html">Knowledge</a><a href="insights.html">Insights</a></nav>
+    <header class="topbar"><div><div class="eyebrow">NOTION KNOWLEDGE BASE</div><h1>Knowledge Dashboard</h1><p class="muted">Notion Stock 全量知识库 · title + summary + 正文 + Comment 一起参与搜索、分类和关联。</p><div class="privacy-note">搜索引擎索引已关闭；Notion 正文与 Comment 只进入加密数据，浏览器输入密码后才解密。</div></div><div class="right"><div id="knowledgeUpdated" class="muted small">读取中…</div></div></header>
 
     <section class="metrics" id="knowledgeMetrics"></section>
-    <section class="card category-filter-block"><div class="category-filter-title">Notion 分类 · 点击后直接筛选</div><div id="knowledgeCategoryTags" class="category-tag-list"></div></section>
+    <section class="card category-filter-block"><div class="category-filter-title">Notion 分类</div><div class="muted small">点击分类后会进入专属结果区，并显示当前位置。</div><div id="knowledgeCategoryTags" class="category-tag-list"></div></section>
 
     <div class="knowledge-grid">
-      <section class="card"><div class="section-head slim"><div><h2>知识积累结构</h2><p class="muted small">柱状条也可以直接点击进入分类。</p></div></div><div id="categoryBars" class="category-bars"></div></section>
-      <section class="card"><div class="section-head slim"><div><h2>细分知识主题</h2><p class="muted small">由标题、summary 和 Comment 共同识别，不依赖粗粒度媒体分类。</p></div></div><div id="topicCloud" class="topic-cloud"></div></section>
+      <section class="card"><div class="section-head slim"><div><h2>知识积累结构</h2><p class="muted small">柱状条也可以直接进入分类。</p></div></div><div id="categoryBars" class="category-bars"></div></section>
+      <section class="card"><div class="section-head slim"><div><h2>细分知识主题</h2><p class="muted small">由标题、summary、正文和 Comment 共同识别。</p></div></div><div id="topicCloud" class="topic-cloud"></div></section>
     </div>
 
-    <section class="card knowledge-toolbar">
-      <div class="knowledge-toolbar-row">
-        <label class="search-label">搜索知识库<input id="knowledgeSearch" class="search-input" type="search" placeholder="搜索标题、summary、Comment，例如：AEO、想起、Amazon、价格"></label>
-        <label>Comment<select id="knowledgeCommentFilter"><option value="all">全部</option><option value="with">只看有 Comment</option><option value="without">没有 Comment</option></select></label>
-        <label>排序<select id="knowledgeSort"><option value="newest">最新优先</option><option value="oldest">最旧优先</option><option value="comments">Comment最多</option></select></label>
-      </div>
-    </section>
+    <section class="card knowledge-toolbar"><div class="knowledge-toolbar-row"><label class="search-label">搜索知识库<input id="knowledgeSearch" class="search-input" type="search" placeholder="搜索标题、summary、正文、Comment，例如：AEO、想起、Amazon、价格"></label><label>Comment<select id="knowledgeCommentFilter"><option value="all">全部</option><option value="with">只看有 Comment</option><option value="without">没有 Comment</option></select></label><label>排序<select id="knowledgeSort"><option value="newest">最新优先</option><option value="oldest">最旧优先</option><option value="comments">Comment最多</option></select></label></div></section>
+
+    <div id="knowledgeResultsAnchor" class="results-anchor"></div>
+    <section id="knowledgeFilterContext" class="knowledge-filter-context"><div><span class="muted small">当前位置</span><strong id="knowledgeFilterLabel">全部分类</strong><span id="knowledgeFilterCount" class="pill">0 篇</span></div><button id="clearKnowledgeFilter" class="text-btn hidden" type="button">返回全部</button></section>
 
     <div class="layout knowledge-layout">
-      <section>
-        <div class="section-head"><div><h2 id="knowledgeActiveCategory">全部分类</h2><p class="muted small">默认每次显示30篇；搜索和筛选都针对全量 Stock。</p></div><div id="knowledgeCount" class="pill">0 篇</div></div>
-        <div id="knowledgeList" class="article-list"></div>
-        <button id="loadMoreKnowledge" class="btn load-more hidden" type="button">再显示30篇</button>
-      </section>
-      <aside class="side">
-        <section class="card"><div class="section-head slim"><h2>旧知识复习</h2><button id="shuffleResurface" class="text-btn" type="button">换一组</button></div><p class="muted small">优先从一年以前的 Stock 中抽取，减少“只收藏不复用”。</p><div id="resurfaceList" class="resurface-list"></div></section>
-        <section class="card"><h2>当前观察</h2><div id="knowledgeInsights" class="insight-list"></div></section>
-        <section class="card"><h2>同步说明</h2><p class="muted small">启用后每天同步全量 Stock 和可读取的页面 Comment；周五刷新 Weekly 前也会再同步一次。敏感正文只保存加密版本。</p></section>
-      </aside>
+      <section><div class="section-head"><div><h2 id="knowledgeActiveCategory">全部分类</h2><p class="muted small">点击标题可在本站直接展开 Notion 内容；“打开 Notion”只作为备用。</p></div><div id="knowledgeCount" class="pill">0 篇</div></div><div id="knowledgeList" class="article-list"></div><button id="loadMoreKnowledge" class="btn load-more hidden" type="button">再显示30篇</button></section>
+      <aside class="side"><section class="card"><div class="section-head slim"><h2>旧知识复习</h2><button id="shuffleResurface" class="text-btn" type="button">换一组</button></div><p class="muted small">优先从一年以前的 Stock 中抽取。</p><div id="resurfaceList" class="resurface-list"></div></section><section class="card"><h2>当前观察</h2><div id="knowledgeInsights" class="insight-list"></div></section><section class="card"><h2>同步说明</h2><p class="muted small">每天同步全量 Stock、Notion 页面正文和可读取 Comment；敏感正文只保存加密版本。</p></section></aside>
     </div>
   </main>
   <script src="private-knowledge.js"></script>
