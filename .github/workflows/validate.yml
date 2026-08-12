@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "**.js"
+      - "**.html"
       - "scripts/**.py"
       - ".github/workflows/**.yml"
 
@@ -31,3 +32,11 @@ jobs:
           done
       - name: Check Python syntax
         run: python -m py_compile scripts/*.py
+      - name: Check required dashboard files
+        run: |
+          test -f index.html
+          test -f knowledge.html
+          test -f insights.html
+          test -f private-knowledge.js
+          test -f scripts/sync_notion.py
+          test -f scripts/save_to_notion.py
