@@ -78,9 +78,11 @@
 
   async function loadKnowledgeData(options={}){return loadEncryptedData('data/knowledge.json','data/knowledge.enc.json',options);}
   async function loadWorkSystemData(options={}){return loadEncryptedData('data/work-system.json','data/work-system.enc.json',options);}
+  async function loadSystemModelData(options={}){return loadEncryptedData('data/system-model.json','data/system-model.enc.json',options);}
   window.loadEncryptedData=loadEncryptedData;
   window.loadKnowledgeData=loadKnowledgeData;
   window.loadWorkSystemData=loadWorkSystemData;
+  window.loadSystemModelData=loadSystemModelData;
   window.forgetKnowledgePassphrase=()=>lockPrivateData(false);
   window.lockPrivateData=lockPrivateData;
   window.hasKnowledgePassphrase=()=>!!passphraseMemory;
