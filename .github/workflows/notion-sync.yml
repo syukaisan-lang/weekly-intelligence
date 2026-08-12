@@ -15,7 +15,7 @@ jobs:
     env:
       NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
       DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
-      NOTION_DATA_SOURCE_ID: ${{ vars.NOTION_DATA_SOURCE_ID }}
+      NOTION_DATA_SOURCE_ID: ${{ vars.NOTION_DATA_SOURCE_ID || 'b2fde79c-a98e-454a-8217-612a6eaec56d' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
