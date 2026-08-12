@@ -15,7 +15,7 @@ TOKEN=os.getenv("NOTION_TOKEN","").strip()
 PASSPHRASE=os.getenv("DASHBOARD_PASSPHRASE","")
 PUBLIC_OUT=Path("data/knowledge.json")
 ENCRYPTED_OUT=Path("data/knowledge.enc.json")
-PBKDF2_ITERATIONS=220_000
+PBKDF2_ITERATIONS=600_000
 MAX_BODY_CHARS=24000
 
 TOPIC_RULES=[
@@ -91,8 +91,7 @@ def fetch_page_body(block_id,depth=0):
         for b in p.get("results",[]):
             line=block_line(b)
             if line: lines.append(line)
-            if b.get("has_children") and sum(len(x) for x in lines)<MAX_BODY_CHARS:
-                lines.extend(fetch_page_body(b.get("id"),depth+1))
+            if b.get("has_children") and sum(len(x) for x in lines)<MAX_BODY_CHARS: lines.extend(fetch_page_body(b.get("id"),depth+1))
             if sum(len(x) for x in lines)>=MAX_BODY_CHARS: break
         if sum(len(x) for x in lines)>=MAX_BODY_CHARS or not p.get("has_more"): break
         cursor=p.get("next_cursor")
@@ -110,11 +109,11 @@ def build_item(page):
     return {"id":page.get("id"),"url":page.get("url"),"title":title,"summary":summary,"page_body":body,"body_error":body_error,"category":category,"date":(created or "")[:10],"created_time":created,"read":is_read,"save_status":status,"comments":comments,"comment_count":len(comments),"comment_error":comment_error,"topics":extract_topics(full_text),"search_text":full_text}
 
 def encrypt_payload(payload):
-    salt,iv=secrets.token_bytes(16),secrets.token_bytes(12); kdf=PBKDF2HMAC(algorithm=hashes.SHA256(),length=32,salt=salt,iterations=PBKDF2_ITERATIONS); key=kdf.derive(PASSPHRASE.encode()); raw=json.dumps(payload,ensure_ascii=False,separators=(",",":")).encode(); ciphertext=AESGCM(key).encrypt(iv,raw,None); b64=lambda b:base64.b64encode(b).decode("ascii"); return {"version":1,"algorithm":"AES-256-GCM","kdf":"PBKDF2-SHA256","iterations":PBKDF2_ITERATIONS,"salt":b64(salt),"iv":b64(iv),"ciphertext":b64(ciphertext)}
+    salt,iv=secrets.token_bytes(16),secrets.token_bytes(12); kdf=PBKDF2HMAC(algorithm=hashes.SHA256(),length=32,salt=salt,iterations=PBKDF2_ITERATIONS); key=kdf.derive(PASSPHRASE.encode()); raw=json.dumps(payload,ensure_ascii=False,separators=(",",":")).encode(); ciphertext=AESGCM(key).encrypt(iv,raw,None); b64=lambda b:base64.b64encode(b).decode("ascii"); return {"version":2,"algorithm":"AES-256-GCM","kdf":"PBKDF2-SHA256","iterations":PBKDF2_ITERATIONS,"salt":b64(salt),"iv":b64(iv),"ciphertext":b64(ciphertext)}
 
 def main():
     if not TOKEN: print("NOTION_TOKEN is not configured; keeping existing snapshot."); return 0
-    if not PASSPHRASE or len(PASSPHRASE)<10: raise RuntimeError("DASHBOARD_PASSPHRASE must be at least 10 characters.")
+    if not PASSPHRASE or len(PASSPHRASE)<14: raise RuntimeError("DASHBOARD_PASSPHRASE must be at least 14 characters. Use a unique 18+ character passphrase for private data.")
     pages=query_all_pages(); now=datetime.now(timezone.utc); metrics={"total":len(pages),"read":0,"stock":0,"rejected":0,"undecided":0,"added_30d":0,"added_90d":0}; ca,cs,cr,stock_pages=Counter(),Counter(),Counter(),[]
     for p in pages:
         props=p.get("properties",{}); save_status=prop_select(props.get("保存")) or "未定"; cat=prop_select(props.get("種類")) or "未分类"; created=prop_created_time(props.get("Date"),p.get("created_time","")); metrics["read"]+=int(prop_checkbox(props.get("既読"))); ca[cat]+=1
@@ -131,7 +130,7 @@ def main():
         except Exception as e: print(f"WARN item {p.get('id')}: {e}",file=sys.stderr)
         time.sleep(.34)
     items.sort(key=lambda x:x.get("created_time") or "",reverse=True); categories=[{"name":name,"total":total,"stock":cs[name],"rejected":cr[name]} for name,total in ca.most_common()]; tc=Counter(); [tc.update(x.get("topics",[])) for x in items]; old=[x for x in items if x.get("date") and x["date"]<(now-timedelta(days=365)).date().isoformat()]; pool=old if len(old)>=12 else items; random.seed(now.date().isoformat()); resurface=random.sample(pool,min(6,len(pool))) if pool else []
-    full={"meta":{"source":"Notion / 情報収集と整理 / データベース情報収集","data_source_id":DATA_SOURCE_ID,"snapshot_at":now.isoformat(),"schema_version":4,"comments_included":True,"page_body_included":True,"comments_scope":"page-level open/unresolved comments via Notion Public API","notion_api_version":NOTION_VERSION,"encrypted":True},"metrics":metrics,"categories":categories,"topic_counts":[{"name":k,"count":v} for k,v in tc.most_common()],"items":items,"recent_stock":items[:20],"resurface":[{"id":x["id"],"url":x["url"],"title":x["title"],"category":x["category"],"date":x["date"]} for x in resurface]}
-    public={"meta":{"source":"Notion / 情報収集と整理","snapshot_at":now.isoformat(),"schema_version":4,"encrypted_full_data":True,"item_count":len(items),"comments_included_in_encrypted_data":True,"page_body_included_in_encrypted_data":True,"comments_scope":full["meta"]["comments_scope"]},"metrics":metrics,"categories":categories,"topic_counts":full["topic_counts"],"items":[],"recent_stock":[],"resurface":[]}
+    full={"meta":{"source":"Notion / 情報収集と整理 / データベース情報収集","data_source_id":DATA_SOURCE_ID,"snapshot_at":now.isoformat(),"schema_version":5,"comments_included":True,"page_body_included":True,"comments_scope":"page-level open/unresolved comments via Notion Public API","notion_api_version":NOTION_VERSION,"encrypted":True},"metrics":metrics,"categories":categories,"topic_counts":[{"name":k,"count":v} for k,v in tc.most_common()],"items":items,"recent_stock":items[:20],"resurface":[{"id":x["id"],"url":x["url"],"title":x["title"],"category":x["category"],"date":x["date"]} for x in resurface]}
+    public={"meta":{"source":"Notion / 情報収集と整理","snapshot_at":now.isoformat(),"schema_version":5,"encrypted_full_data":True,"item_count":len(items),"comments_included_in_encrypted_data":True,"page_body_included_in_encrypted_data":True,"comments_scope":full["meta"]["comments_scope"]},"metrics":metrics,"categories":categories,"topic_counts":full["topic_counts"],"items":[],"recent_stock":[],"resurface":[]}
     PUBLIC_OUT.parent.mkdir(parents=True,exist_ok=True); PUBLIC_OUT.write_text(json.dumps(public,ensure_ascii=False,indent=2),encoding="utf-8"); ENCRYPTED_OUT.write_text(json.dumps(encrypt_payload(full),ensure_ascii=False),encoding="utf-8"); print(f"Wrote encrypted Knowledge: {len(items)} Stock, {sum(x['comment_count'] for x in items)} comments, page bodies included"); return 0
 if __name__=="__main__": raise SystemExit(main())
