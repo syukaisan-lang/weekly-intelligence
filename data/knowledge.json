@@ -1,11 +1,12 @@
 {
   "meta": {
     "source": "Notion / 情報収集と整理",
-    "snapshot_at": "2026-08-12T10:16:28.324208+00:00",
-    "schema_version": 3,
+    "snapshot_at": "2026-08-12T11:53:54.807912+00:00",
+    "schema_version": 5,
     "encrypted_full_data": true,
     "item_count": 147,
     "comments_included_in_encrypted_data": true,
+    "page_body_included_in_encrypted_data": true,
     "comments_scope": "page-level open/unresolved comments via Notion Public API"
   },
   "metrics": {
@@ -88,75 +89,75 @@
   "topic_counts": [
     {
       "name": "購買行動",
-      "count": 30
-    },
-    {
-      "name": "市場 / 競合",
-      "count": 25
-    },
-    {
-      "name": "消費者インサイト",
-      "count": 24
-    },
-    {
-      "name": "ブランド成長",
-      "count": 24
-    },
-    {
-      "name": "調査設計",
-      "count": 20
-    },
-    {
-      "name": "広告効果",
-      "count": 18
-    },
-    {
-      "name": "EC成長",
-      "count": 18
-    },
-    {
-      "name": "CEP / 想起",
-      "count": 12
-    },
-    {
-      "name": "SNS / UGC",
-      "count": 12
-    },
-    {
-      "name": "KPI / 計測",
-      "count": 12
+      "count": 80
     },
     {
       "name": "CRM / LTV",
-      "count": 10
+      "count": 75
     },
     {
-      "name": "生成AI実務",
-      "count": 7
+      "name": "ブランド成長",
+      "count": 69
     },
     {
-      "name": "価格戦略",
-      "count": 6
+      "name": "市場 / 競合",
+      "count": 67
+    },
+    {
+      "name": "消費者インサイト",
+      "count": 63
+    },
+    {
+      "name": "広告効果",
+      "count": 54
+    },
+    {
+      "name": "調査設計",
+      "count": 54
+    },
+    {
+      "name": "EC成長",
+      "count": 49
     },
     {
       "name": "マネジメント",
-      "count": 6
+      "count": 40
     },
     {
-      "name": "AI Search / AEO",
-      "count": 5
+      "name": "SNS / UGC",
+      "count": 37
+    },
+    {
+      "name": "KPI / 計測",
+      "count": 30
+    },
+    {
+      "name": "価格戦略",
+      "count": 30
+    },
+    {
+      "name": "CEP / 想起",
+      "count": 22
     },
     {
       "name": "商品開発",
-      "count": 4
+      "count": 15
+    },
+    {
+      "name": "生成AI実務",
+      "count": 12
+    },
+    {
+      "name": "AI Search / AEO",
+      "count": 9
     },
     {
       "name": "検索行動",
-      "count": 3
+      "count": 8
     },
     {
       "name": "Agentic Commerce",
-      "count": 1
+      "count": 4
     }
   ],
   "items": [],
