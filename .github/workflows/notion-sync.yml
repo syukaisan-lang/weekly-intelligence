@@ -2,6 +2,11 @@ name: Sync Notion knowledge
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/sync_notion.py"
+      - ".github/workflows/notion-sync.yml"
   schedule:
     # Daily 18:40 Japan time = 09:40 UTC
     - cron: "40 9 * * *"
@@ -23,7 +28,7 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: python -m pip install "requests>=2.32,<3" "cryptography>=42,<47"
-      - name: Sync Notion Stock and comments
+      - name: Sync Notion Stock, page body and comments
         run: python scripts/sync_notion.py
       - name: Commit refreshed encrypted Notion data
         run: |
