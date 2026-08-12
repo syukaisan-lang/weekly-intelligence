@@ -14,57 +14,24 @@
 </head>
 <body>
   <main class="shell">
-    <nav class="main-nav" aria-label="Dashboard navigation">
-      <a href="index.html">Weekly</a>
-      <a href="knowledge.html">Knowledge</a>
-      <a class="active" href="insights.html">Insights</a>
-    </nav>
-
-    <header class="topbar">
-      <div>
-        <div class="eyebrow">KNOWLEDGE INTELLIGENCE</div>
-        <h1>Insights Dashboard</h1>
-        <p class="muted">看“你长期在积累什么、最近在转向什么、本周新文章和旧知识如何连接”。</p>
-        <div class="privacy-note">搜索引擎索引已关闭（noindex）。</div>
-      </div>
-      <div class="right"><div id="insightsUpdated" class="muted small">读取中…</div></div>
-    </header>
-
+    <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a href="knowledge.html">Knowledge</a><a class="active" href="insights.html">Insights</a></nav>
+    <header class="topbar"><div><div class="eyebrow">KNOWLEDGE INTELLIGENCE</div><h1>Insights Dashboard</h1><p class="muted">看“你长期在积累什么、最近在转向什么、本周新文章和旧知识如何连接”。</p><div class="privacy-note">搜索引擎索引已关闭；需要全文/Comment 的分析在浏览器解密后计算。</div></div><div class="right"><div id="insightsUpdated" class="muted small">读取中…</div></div></header>
     <section class="metrics" id="insightMetrics"></section>
-
     <div class="knowledge-grid">
-      <section class="card">
-        <div class="section-head slim"><div><h2>长期知识重心</h2><p class="muted small">全量 Stock 中出现最频繁的细分主题。</p></div></div>
-        <div id="longTermTopics" class="rank-list"></div>
-      </section>
-      <section class="card">
-        <div class="section-head slim"><div><h2>最近90天变化</h2><p class="muted small">最近积累相对长期平均更活跃的主题。</p></div></div>
-        <div id="recentShift" class="rank-list"></div>
-      </section>
+      <section class="card"><div class="section-head slim"><div><h2>长期知识重心</h2><p class="muted small">全量 Stock 中出现最频繁的细分主题。</p></div></div><div id="longTermTopics" class="rank-list"></div></section>
+      <section class="card"><div class="section-head slim"><div><h2>最近90天变化</h2><p class="muted small">最近积累相对长期平均更活跃的主题。</p></div></div><div id="recentShift" class="rank-list"></div></section>
     </div>
-
     <div class="knowledge-grid">
-      <section class="card">
-        <div class="section-head slim"><div><h2>本周新文章 × 旧知识</h2><p class="muted small">优先展示 S / A 候选以及与你知识库的关联。</p></div></div>
-        <div id="weeklyConnections" class="connection-list"></div>
-      </section>
-      <section class="card">
-        <div class="section-head slim"><div><h2>知识空白 / 机会</h2><p class="muted small">不是“你没存就应该存”，而是提醒长期稀疏但近期正在出现的方向。</p></div></div>
-        <div id="knowledgeGaps" class="insight-list"></div>
-      </section>
+      <section class="card"><div class="section-head slim"><div><h2>本周新文章 × 旧知识</h2><p class="muted small">优先展示 S / A 候选以及与你知识库的关联。</p></div></div><div id="weeklyConnections" class="connection-list"></div></section>
+      <section class="card"><div class="section-head slim"><div><h2>知识空白 / 机会</h2><p class="muted small">不是“你没存就应该存”，而是提醒长期稀疏但近期正在出现的方向。</p></div></div><div id="knowledgeGaps" class="insight-list"></div></section>
     </div>
-
     <div class="layout knowledge-layout">
-      <section>
-        <div class="section-head"><div><h2>值得重新看的知识</h2><p class="muted small">旧、相关度高、带 Comment 的内容优先。</p></div></div>
-        <div id="reviewCandidates" class="article-list"></div>
-      </section>
-      <aside class="side">
-        <section class="card"><h2>Comment 中的高频概念</h2><div id="commentConcepts" class="topic-cloud"></div></section>
-        <section class="card"><h2>知识库健康度</h2><div id="knowledgeHealth" class="insight-list"></div></section>
-      </aside>
+      <section><div class="section-head"><div><h2>值得重新看的知识</h2><p class="muted small">旧、相关度高、带 Comment 的内容优先。</p></div></div><div id="reviewCandidates" class="article-list"></div></section>
+      <aside class="side"><section class="card"><h2>Comment 中的高频概念</h2><div id="commentConcepts" class="topic-cloud"></div></section><section class="card"><h2>知识库健康度</h2><div id="knowledgeHealth" class="insight-list"></div></section></aside>
     </div>
   </main>
+  <script src="private-knowledge.js"></script>
   <script src="insights.js"></script>
+  <script src="insights-unlock.js"></script>
 </body>
 </html>
