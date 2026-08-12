@@ -1,0 +1,129 @@
+[
+  {
+    "name": "ギズモード・ジャパン",
+    "url": "http://www.gizmodo.jp/index.xml",
+    "category": "家電情報",
+    "priority": "low"
+  },
+  {
+    "name": "CNET Japan 最新情報　総合",
+    "url": "http://feed.japan.cnet.com/rss/index.rdf",
+    "category": "家電情報",
+    "priority": "low"
+  },
+  {
+    "name": "AV Watch",
+    "url": "http://av.watch.impress.co.jp/sublink/av.rdf",
+    "category": "家電情報",
+    "priority": "low"
+  },
+  {
+    "name": "PR EDGE",
+    "url": "http://adgang.jp/feed",
+    "category": "キャンペーン",
+    "priority": "low"
+  },
+  {
+    "name": "ECデータラボ | 株式会社Nint (ニント)",
+    "url": "http://ecdatalab.nint.jp/feed/",
+    "category": "Marketing",
+    "priority": "medium"
+  },
+  {
+    "name": "ECのミカタ",
+    "url": "https://ecnomikata.com/rss/",
+    "category": "Marketing",
+    "priority": "medium"
+  },
+  {
+    "name": "ECマーケター by 株式会社いつも",
+    "url": "https://itsumo365.co.jp/blog/feed/",
+    "category": "Marketing",
+    "priority": "medium"
+  },
+  {
+    "name": "AdverTimes.（アドタイ） by 宣伝会議",
+    "url": "http://www.advertimes.com/feed/",
+    "category": "Marketing",
+    "priority": "high"
+  },
+  {
+    "name": "Campaign Japan 日本 - 深層",
+    "url": "http://www.campaignjapan.com/RSS/rss.ashx?type=Category&ID=1019",
+    "category": "Marketing",
+    "priority": "high"
+  },
+  {
+    "name": "博報堂生活総合研究所",
+    "url": "http://seikatsusoken.jp/rss/researchnews.php",
+    "category": "Marketing",
+    "priority": "high"
+  },
+  {
+    "name": "ECZine:新着一覧",
+    "url": "http://eczine.jp/rss/new/index.xml",
+    "category": "Marketing",
+    "priority": "high"
+  },
+  {
+    "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
+    "url": "http://dentsu-ho.com/dentsu-ho.rss",
+    "category": "Marketing",
+    "priority": "high"
+  },
+  {
+    "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
+    "url": "http://ecclab.empowershop.co.jp/feed",
+    "category": "Marketing",
+    "priority": "medium"
+  },
+  {
+    "name": "ITmedia マーケティング 最新記事一覧",
+    "url": "http://rss.itmedia.co.jp/rss/2.0/marketing.xml",
+    "category": "Marketing",
+    "priority": "high"
+  },
+  {
+    "name": "MarkeZine:新着一覧",
+    "url": "http://markezine.jp/rss/new/20/index.xml",
+    "category": "Marketing",
+    "priority": "high"
+  },
+  {
+    "name": "Agenda note (アジェンダノート)",
+    "url": "https://agenda-note.com/RSS.rdf",
+    "category": "Marketing",
+    "priority": "high"
+  },
+  {
+    "name": "wisdom-evolution.com",
+    "url": "https://wisdom-evolution.com/rss20/index.rdf",
+    "category": "Marketing",
+    "priority": "medium"
+  },
+  {
+    "name": "ネットショップ担当者フォーラム",
+    "url": "https://netshop.impress.co.jp/rss.xml",
+    "category": "Marketing",
+    "priority": "high"
+  },
+  {
+    "name": "MARKETIMES（マーケタイムズ）",
+    "url": "http://marketimes.jp/feed",
+    "category": "Marketing",
+    "priority": "medium"
+  },
+  {
+    "name": "ITmedia ビジネスオンライン 最新記事一覧",
+    "url": "http://rss.itmedia.co.jp/rss/2.0/business.xml",
+    "category": "Business",
+    "priority": "low"
+  },
+  {
+    "name": "日経クロストレンド 新着",
+    "url": "https://xtrend.nikkei.com/atcl/contents/new/?i_cid=nbpnxr_top_new_Y",
+    "category": "Marketing",
+    "priority": "high",
+    "type": "html_listing"
+  }
+]
