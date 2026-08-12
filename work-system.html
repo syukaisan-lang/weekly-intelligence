@@ -18,17 +18,32 @@
 <body>
   <main class="shell">
     <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a href="knowledge.html">Knowledge</a><a href="insights.html">Insights</a><a href="playbook.html">Playbook</a><a class="active" href="work-system.html">Work System</a></nav>
-    <header class="topbar"><div><div class="eyebrow">PERSONAL WORK OPERATING SYSTEM</div><h1>My Work System</h1><p class="muted">工作经验 × 读书笔记 × EC/Amazon实战 × Notion外部知识，沉淀成可反复使用的判断规则。</p><div class="privacy-note">私人原文、Memo 和综合规则全部使用加密数据；密码不写入浏览器存储，页面闲置15分钟自动锁定。</div></div><div class="right"><div id="workSystemStatus" class="muted small">等待解锁…</div><button id="lockWorkSystem" class="text-btn hidden" type="button">立即锁定</button></div></header>
+    <header class="topbar"><div><div class="eyebrow">PERSONAL WORK OPERATING SYSTEM</div><h1>My Work System</h1><p class="muted">工作经验 × 读书笔记 × EC/Amazon实战 × Notion外部知识 → 原则、框架、Playbook、Guardrail。</p><div class="privacy-note">私人原文、Memo 和综合规则全部使用加密数据；密码只在当前页面内存存在，闲置15分钟自动锁定。</div></div><div class="right"><div id="workSystemStatus" class="muted small">等待解锁…</div><button id="lockWorkSystem" class="text-btn hidden" type="button">立即锁定</button></div></header>
 
     <section id="workSystemGate" class="card">
-      <div class="section-head slim"><div><h2>🔐 解锁你的工作体系</h2><p class="muted small">Google 工作经验、读书笔记和 Notion 内容不会明文公开。解锁后只在当前页面内存中使用。</p></div><button id="unlockWorkSystem" class="btn" type="button">解锁 Work System</button></div>
+      <div class="section-head slim"><div><h2>🔐 解锁你的工作体系</h2><p class="muted small">解锁后，在浏览器本地把经验、书本和外部知识组合成可调用的工作判断。</p></div><button id="unlockWorkSystem" class="btn" type="button">解锁 Work System</button></div>
     </section>
 
     <section id="workSystemContent" class="hidden">
       <section class="metrics" id="workSystemMetrics"></section>
-      <section class="card source-layer-card"><div class="section-head slim"><div><h2>知识来源层</h2><p class="muted small">经验负责约束现实做法，书本负责解释原因，Notion 外部知识负责持续验证和修正。</p></div></div><div id="workSystemSources" class="source-layer-grid"></div></section>
-      <section class="card playbook-search-block"><div class="playbook-search-head"><div><h2>我现在要解决什么？</h2><p class="muted small">按实际工作问题找规则，而不是按文件找笔记。</p></div></div><div id="scenarioChips" class="scenario-chips"></div><input id="playbookSearch" class="search-input" type="search" placeholder="例如：新品、Amazon、品牌想起、定位、广告、消费者、KPI、团队管理"></section>
-      <section class="playbook-principle card"><div class="playbook-principle-label">体系原则</div><div><b>经验不是结论，理论也不是结论；经得起多来源验证、能说明适用条件的规则才进入体系。</b><span class="muted"> 新笔记若只是重复，只增加证据；若补充条件，就修正规则；若相互矛盾，保留冲突和待验证项。</span></div></section>
+
+      <section class="card source-layer-card"><div class="section-head slim"><div><h2>知识来源层</h2><p class="muted small">经验约束现实做法；书本解释机制；实战手册提供操作细节；Notion持续验证、补充与反驳。</p></div></div><div id="workSystemSources" class="source-layer-grid"></div></section>
+
+      <section class="card system-command">
+        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">默认按“实际问题”调用，而不是浏览资料。输入完整问题也可以，例如：新品知名度低、预算有限，Amazon首发怎么安排？</p></div></div>
+        <input id="playbookSearch" class="search-input system-query" type="search" placeholder="输入你的实际问题，例如：广告ROAS下滑但品牌搜索也下降，先看哪里？">
+        <div class="system-mode segmented" role="tablist">
+          <button class="segment-btn active" type="button" data-system-mode="invoke">按问题调用</button>
+          <button class="segment-btn" type="button" data-system-mode="map">体系地图</button>
+          <button class="segment-btn" type="button" data-system-mode="verify">待验证</button>
+        </div>
+        <div id="scenarioChips" class="scenario-chips"></div>
+      </section>
+
+      <section id="systemHealth" class="card system-health"></section>
+      <section id="systemMap" class="card hidden"></section>
+
+      <section class="playbook-principle card"><div class="playbook-principle-label">体系原则</div><div><b>知识不是“记住过的内容”，而是有适用条件、有证据、能执行、能被后续经验修正的判断。</b><span class="muted"> 重复内容只增加证据；新边界修正规则；反例保留冲突；没有经过实践或多来源支持的内容保持为 Hypothesis。</span></div></section>
       <div id="playbookList" class="playbook-list"></div>
     </section>
   </main>
