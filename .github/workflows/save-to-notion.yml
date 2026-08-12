@@ -21,19 +21,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install requests>=2.32,<3
+      - name: Install dependencies
+        run: python -m pip install "requests>=2.32,<3"
       - name: Create Notion page
-        id: notion
         run: python scripts/save_to_notion.py
       - name: Confirm and close request
         if: success()
         run: |
-          RESULT=$(cat /tmp/notion_save_result.json)
-          URL=$(python - <<'PY'
-          import json
-          print(json.load(open('/tmp/notion_save_result.json')).get('url') or '')
-          PY
-          )
+          URL=$(python -c "import json; print(json.load(open('/tmp/notion_save_result.json')).get('url') or '')")
           gh issue comment "${{ github.event.issue.number }}" --body "✅ 已写入 Notion。${URL}"
           gh issue close "${{ github.event.issue.number }}"
       - name: Report failure
