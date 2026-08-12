@@ -1,0 +1,43 @@
+name: Save article to Notion
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  save:
+    if: github.event.issue.user.login == 'syukaisan-lang' && startsWith(github.event.issue.title, '[NOTION-SAVE]')
+    runs-on: ubuntu-latest
+    env:
+      NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      NOTION_DATA_SOURCE_ID: ${{ vars.NOTION_DATA_SOURCE_ID }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests>=2.32,<3
+      - name: Create Notion page
+        id: notion
+        run: python scripts/save_to_notion.py
+      - name: Confirm and close request
+        if: success()
+        run: |
+          RESULT=$(cat /tmp/notion_save_result.json)
+          URL=$(python - <<'PY'
+          import json
+          print(json.load(open('/tmp/notion_save_result.json')).get('url') or '')
+          PY
+          )
+          gh issue comment "${{ github.event.issue.number }}" --body "✅ 已写入 Notion。${URL}"
+          gh issue close "${{ github.event.issue.number }}"
+      - name: Report failure
+        if: failure()
+        run: |
+          ERR=$(cat /tmp/notion_save_error.txt 2>/dev/null || echo 'Unknown error')
+          gh issue comment "${{ github.event.issue.number }}" --body "❌ 写入 Notion 失败：${ERR}"
