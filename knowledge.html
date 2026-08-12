@@ -4,9 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
   <title>Knowledge Dashboard</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="knowledge.css">
+  <link rel="stylesheet" href="enhancements.css">
 </head>
 <body>
   <main class="shell">
@@ -20,6 +24,7 @@
         <div class="eyebrow">NOTION KNOWLEDGE BASE</div>
         <h1>Knowledge Dashboard</h1>
         <p class="muted">把“存过什么”变成“现在还能怎么用”。数据来自 Notion「情報収集と整理」。</p>
+        <div class="privacy-note">搜索引擎索引已关闭（noindex）。知道网址的人仍可直接访问。</div>
       </div>
       <div class="right"><div id="knowledgeUpdated" class="muted small">读取中…</div></div>
     </header>
@@ -49,8 +54,12 @@
     </div>
 
     <section class="card knowledge-toolbar">
+      <div class="category-filter-block">
+        <div class="category-filter-title">分类标签｜点击后直接筛选下面内容</div>
+        <div id="knowledgeCategoryTags" class="category-tag-list"></div>
+      </div>
       <div class="knowledge-toolbar-row">
-        <label class="search-label">搜索最近 Stock
+        <label class="search-label">搜索 Stock
           <input id="knowledgeSearch" class="search-input" type="search" placeholder="例如：AI购物、CEP、KPI、Amazon">
         </label>
         <label>分类
@@ -63,8 +72,8 @@
       <section>
         <div class="section-head">
           <div>
-            <h2>最近 Stock</h2>
-            <p class="muted small">原型先展示最近 15 篇真实 Stock；下一步可扩展为全部 145 篇并自动同步。</p>
+            <h2>Stock 浏览 · <span id="knowledgeActiveCategory">全部分类</span></h2>
+            <p class="muted small">当前原型快照先展示最近 15 篇；分类标签会直接过滤这一批真实 Stock。</p>
           </div>
           <div id="knowledgeCount" class="pill">0 篇</div>
         </div>
@@ -94,5 +103,6 @@
     </div>
   </main>
   <script src="knowledge.js"></script>
+  <script src="knowledge-category.js"></script>
 </body>
 </html>
