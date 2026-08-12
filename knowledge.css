@@ -1,0 +1,10 @@
+.main-nav{display:flex;gap:6px;margin-bottom:22px;padding:4px;width:max-content;border:1px solid var(--border);border-radius:11px;background:var(--panel)}
+.main-nav a{font-size:13px;text-decoration:none;color:var(--muted);padding:7px 12px;border-radius:8px}
+.main-nav a.active{background:var(--text);color:var(--panel)}
+.knowledge-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;margin:16px 0}
+.category-bars{display:flex;flex-direction:column;gap:12px;margin-top:14px}.category-row-head{display:flex;justify-content:space-between;gap:12px;font-size:13px}.bar-track{height:8px;background:var(--accent-soft);border-radius:999px;overflow:hidden;margin-top:6px}.bar-fill{height:100%;background:var(--accent);border-radius:999px}
+.topic-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.topic-pill{display:inline-flex;gap:6px;align-items:center;padding:7px 10px;border:1px solid var(--border);border-radius:999px;font-size:12px}.topic-pill b{color:var(--accent)}
+.knowledge-toolbar{margin:0 0 22px}.knowledge-toolbar-row{display:flex;gap:12px;align-items:end}.search-label{flex:1}.search-input{width:100%;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:9px;padding:9px 11px;font:inherit}
+.knowledge-layout{grid-template-columns:minmax(0,1fr) 320px}.knowledge-article .article-title{display:block}.resurface-list{display:flex;flex-direction:column;margin-top:12px}.resurface-item{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:10px 0;border-top:1px solid var(--border);text-decoration:none;font-size:12px;line-height:1.5}.resurface-item:hover{text-decoration:underline}.resurface-num{color:var(--muted);font-variant-numeric:tabular-nums}.insight-list{display:flex;flex-direction:column;margin-top:8px}.insight-item{font-size:12px;line-height:1.6;padding:9px 0;border-top:1px solid var(--border)}
+@media(max-width:900px){.knowledge-grid{grid-template-columns:1fr}.knowledge-layout{grid-template-columns:1fr}}
+@media(max-width:620px){.main-nav{width:100%}.main-nav a{flex:1;text-align:center}.knowledge-toolbar-row{display:block}.knowledge-toolbar-row label{margin-top:10px}}
