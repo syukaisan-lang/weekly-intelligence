@@ -2,14 +2,9 @@ name: Sync Notion knowledge
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/sync_notion.py"
-      - ".github/workflows/notion-sync.yml"
   schedule:
-    # Daily 18:40 Japan time = 09:40 UTC
-    - cron: "40 9 * * *"
+    # Friday 18:40 Japan time = 09:40 UTC
+    - cron: "40 9 * * 5"
 
 permissions:
   contents: write
