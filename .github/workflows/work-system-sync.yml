@@ -12,6 +12,9 @@ on:
       - "scripts/work_taxonomy_v4.py"
       - "scripts/reclassify_work_system.py"
       - "scripts/build_system_model_v3.py"
+      - "scripts/build_semantic_index.py"
+      - "semantic-worker-source.txt"
+      - "work-system-vector-v6-source.txt"
       - ".github/workflows/work-system-sync.yml"
 
 permissions:
@@ -25,23 +28,37 @@ jobs:
       DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+      SEMANTIC_MODEL_ID: intfloat/multilingual-e5-small
+      SEMANTIC_BROWSER_MODEL_ID: Xenova/multilingual-e5-small
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - name: Install dependencies
-        run: python -m pip install "requests>=2.32,<3" "cryptography>=42,<47" "google-auth>=2.35,<3" "openpyxl>=3.1,<4" "openai>=1.0,<3"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - name: Install Python dependencies
+        run: python -m pip install "requests>=2.32,<3" "cryptography>=42,<47" "google-auth>=2.35,<3" "openpyxl>=3.1,<4" "openai>=1.0,<3" "sentence-transformers>=5,<6"
+      - name: Build browser-local semantic runtime
+        run: |
+          npm install --no-save @huggingface/transformers@3.8.1 esbuild
+          cp semantic-worker-source.txt semantic-worker-entry.js
+          npx esbuild semantic-worker-entry.js --bundle --format=esm --platform=browser --target=es2022 --outfile=semantic-worker.bundle.js
+          cp work-system-vector-v6-source.txt work-system-vector-v6.js
+          rm semantic-worker-entry.js
       - name: Sync Google work experience and reading notes
         run: python scripts/sync_work_system.py
       - name: Reclassify notes by real work task and domain
         run: python scripts/reclassify_work_system.py
       - name: Rebuild task-aware callable Work System model
         run: python scripts/build_system_model_v3.py
+      - name: Build encrypted multilingual semantic index
+        run: python scripts/build_semantic_index.py
       - name: Commit refreshed encrypted work system
         run: |
           git config user.name "work-system-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/work-system.json data/work-system.enc.json data/system-model.json data/system-model.enc.json
-          git diff --cached --quiet || git commit -m "Sync and consolidate personal work system"
+          git add data/work-system.json data/work-system.enc.json data/system-model.json data/system-model.enc.json data/semantic-index.json data/semantic-index.enc.json semantic-worker.bundle.js work-system-vector-v6.js
+          git diff --cached --quiet || git commit -m "Sync work system and encrypted semantic index"
           git push
