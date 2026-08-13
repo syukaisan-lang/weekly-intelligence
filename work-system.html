@@ -27,7 +27,7 @@
 
     <section id="workSystemContent" class="hidden">
       <section class="card system-command">
-        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统会做中日同义词扩展和意图理解，再检索“已形成规则 + 原始经验/读书 + Knowledge证据”。</p></div></div>
+        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统先识别真实工作场景，再以你输入的原词为最高权重检索；中日同义词只做辅助，避免泛主题扩展把结果带偏。</p></div></div>
         <input id="playbookSearch" class="search-input system-query" type="search" placeholder="例如：转职怎么判断？ / 新品知名度低预算有限怎么Launch？ / ROAS下降先看哪里？">
         <div id="queryIntentHint" class="query-intent-hint hidden" aria-live="polite"></div>
         <div class="system-mode segmented" role="tablist">
@@ -41,7 +41,7 @@
       <section id="systemMap" class="card hidden"></section>
 
       <section id="systemResults" class="system-results">
-        <div id="systemResultsBar" class="system-results-bar"><div><b>可调用知识</b><span>输入具体问题后会按意图重新排序</span></div></div>
+        <div id="systemResultsBar" class="system-results-bar"><div><b>可调用知识</b><span>输入具体问题后会按场景和原词重新排序</span></div></div>
         <div id="playbookList" class="playbook-list"></div>
       </section>
 
@@ -57,5 +57,6 @@
   <script src="private-knowledge.js"></script>
   <script src="work-system.js"></script>
   <script src="work-system-enhanced.js"></script>
+  <script src="work-system-intent-v3.js"></script>
 </body>
 </html>
