@@ -1,0 +1,1 @@
+// Work System local vector retrieval source. Bundled/copied by GitHub Actions.
