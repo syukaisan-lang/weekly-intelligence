@@ -27,8 +27,8 @@
 
     <section id="workSystemContent" class="hidden">
       <section class="card system-command">
-        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统先识别真实工作场景，再以你输入的原词为最高权重检索；中日同义词只做辅助，正文里偶然出现一次相关词不会被当成场景相关。</p></div></div>
-        <input id="playbookSearch" class="search-input system-query" type="search" placeholder="例如：转职怎么判断？ / 新品知名度低预算有限怎么Launch？ / ROAS下降先看哪里？">
+        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统会区分“这篇主要讲什么”和“它是否能帮助当前问题”：优先核心场景，同时召回跨领域的支撑知识；只在正文偶然出现一个词的内容不会进入结果。</p></div></div>
+        <input id="playbookSearch" class="search-input system-query" type="search" placeholder="例如：入职新公司怎么开始？ / 新品知名度低预算有限怎么Launch？ / ROAS下降但自然销售增加怎么办？">
         <div id="queryIntentHint" class="query-intent-hint hidden" aria-live="polite"></div>
         <div class="system-mode segmented" role="tablist">
           <button class="segment-btn active" type="button" data-system-mode="invoke">按问题调用</button>
@@ -41,7 +41,7 @@
       <section id="systemMap" class="card hidden"></section>
 
       <section id="systemResults" class="system-results">
-        <div id="systemResultsBar" class="system-results-bar"><div><b>可调用知识</b><span>输入具体问题后会按场景和原词重新排序</span></div></div>
+        <div id="systemResultsBar" class="system-results-bar"><div><b>可调用知识</b><span>按问题含义、真实工作场景和内容证据排序</span></div></div>
         <div id="playbookList" class="playbook-list"></div>
       </section>
 
@@ -60,5 +60,6 @@
   <script src="work-system-intent-v3.js"></script>
   <script src="work-system-v3-context-lock.js"></script>
   <script src="work-system-precision-v4.js"></script>
+  <script src="work-system-semantic-v5.js"></script>
 </body>
 </html>
