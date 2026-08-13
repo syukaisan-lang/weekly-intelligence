@@ -40,10 +40,14 @@ jobs:
           test -f playbook.html
           test -f work-system.html
           test -f work-system.js
+          test -f work-system-intent-v3.js
           test -f private-knowledge.js
           test -f weekly-state-sync.js
           test -f scripts/sync_notion.py
           test -f scripts/sync_work_system.py
+          test -f scripts/work_taxonomy.py
+          test -f scripts/reclassify_work_system.py
+          test -f scripts/build_system_model_v3.py
           test -f scripts/save_to_notion.py
           test -f scripts/save_weekly_state.py
           test -f .github/workflows/weekly-state-sync.yml
