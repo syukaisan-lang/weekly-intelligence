@@ -26,8 +26,10 @@ jobs:
         run: python -m pip install "requests>=2.32,<3" "cryptography>=42,<47" "google-auth>=2.35,<3" "openpyxl>=3.1,<4" "openai>=1.0,<3"
       - name: Sync Google work experience and reading notes
         run: python scripts/sync_work_system.py
-      - name: Rebuild callable Work System model
-        run: python scripts/build_system_model_v2.py
+      - name: Reclassify notes by real work task and domain
+        run: python scripts/reclassify_work_system.py
+      - name: Rebuild task-aware callable Work System model
+        run: python scripts/build_system_model_v3.py
       - name: Commit refreshed encrypted work system
         run: |
           git config user.name "work-system-bot"
