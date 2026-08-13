@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "weekly-state.enc.json"
+META = ROOT / "data" / "weekly-state.json"
 MAX_ENVELOPE_BYTES = 350_000
 
 
@@ -66,6 +67,11 @@ def main() -> None:
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(env, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    META.write_text(json.dumps({"meta": {
+        "encrypted_full_data": True,
+        "snapshot_at": env.get("created_at"),
+        "note": "Weekly reading state is stored only as encrypted ciphertext."
+    }}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Saved encrypted Weekly state: {len(ciphertext)} ciphertext bytes")
 
 
