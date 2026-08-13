@@ -18,8 +18,8 @@
 </head>
 <body>
   <main class="shell">
-    <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a href="knowledge.html">Knowledge</a><a href="insights.html">Insights</a><a href="playbook.html">Playbook</a><a class="active" href="work-system.html">Work System</a></nav>
-    <header class="topbar"><div><div class="eyebrow">PERSONAL WORK OPERATING SYSTEM</div><h1>My Work System</h1><p class="muted">工作经验 × 读书笔记 × EC/Amazon实战 × Notion外部知识 → 原则、框架、Playbook、Guardrail。</p><div class="privacy-note">私人原文、Memo 和综合规则全部使用加密数据；密码只在当前页面内存存在，闲置15分钟自动锁定。</div></div><div class="right"><div id="workSystemStatus" class="muted small">等待解锁…</div><button id="lockWorkSystem" class="text-btn hidden" type="button">立即锁定</button></div></header>
+    <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a href="knowledge.html">Knowledge</a><a class="active" href="work-system.html">Work System</a></nav>
+    <header class="topbar"><div><div class="eyebrow">PERSONAL WORK OPERATING SYSTEM</div><h1>My Work System</h1><p class="muted">工作经验 × 读书笔记 × EC/Amazon实战 × Knowledge 外部证据 → 原则、框架、Playbook、Guardrail。原 Insights / Playbook 的功能统一收敛到这里。</p><div class="privacy-note">私人原文、Memo 和综合规则全部使用加密数据；密码只在当前页面内存存在，闲置15分钟自动锁定。</div></div><div class="right"><div id="workSystemStatus" class="muted small">等待解锁…</div><button id="lockWorkSystem" class="text-btn hidden" type="button">立即锁定</button></div></header>
 
     <section id="workSystemGate" class="card">
       <div class="section-head slim"><div><h2>🔐 解锁你的工作体系</h2><p class="muted small">解锁后，在浏览器本地把经验、书本和外部知识组合成可调用的工作判断。</p></div><button id="unlockWorkSystem" class="btn" type="button">解锁 Work System</button></div>
@@ -27,7 +27,7 @@
 
     <section id="workSystemContent" class="hidden">
       <section class="card system-command">
-        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统会做中日同义词扩展和意图理解，再检索“已形成规则 + 原始经验/读书 + Notion证据”。</p></div></div>
+        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统会做中日同义词扩展和意图理解，再检索“已形成规则 + 原始经验/读书 + Knowledge证据”。</p></div></div>
         <input id="playbookSearch" class="search-input system-query" type="search" placeholder="例如：转职怎么判断？ / 新品知名度低预算有限怎么Launch？ / ROAS下降先看哪里？">
         <div id="queryIntentHint" class="query-intent-hint hidden" aria-live="polite"></div>
         <div class="system-mode segmented" role="tablist">
@@ -49,7 +49,7 @@
 
       <section class="metrics" id="workSystemMetrics"></section>
 
-      <section class="card source-layer-card"><div class="section-head slim"><div><h2>知识来源层</h2><p class="muted small">经验约束现实做法；书本解释机制；实战手册提供操作细节；Notion持续验证、补充与反驳。</p></div></div><div id="workSystemSources" class="source-layer-grid"></div></section>
+      <section class="card source-layer-card"><div class="section-head slim"><div><h2>知识来源层</h2><p class="muted small">经验约束现实做法；书本解释机制；实战手册提供操作细节；Knowledge持续验证、补充与反驳。</p></div></div><div id="workSystemSources" class="source-layer-grid"></div></section>
 
       <section id="systemHealth" class="card system-health"></section>
     </section>
