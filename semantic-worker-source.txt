@@ -1,3 +1,31 @@
-// Browser-local semantic embedding worker source.
-// Bundled in GitHub Actions with the Transformers.js package.
-const semanticWorkerSourceVersion = 1;
+import { pipeline, env } from '@huggingface/transformers';
+
+const MODEL = 'Xenova/multilingual-e5-small';
+env.useBrowserCache = true;
+if (env.backends && env.backends.onnx && env.backends.onnx.wasm) env.backends.onnx.wasm.numThreads = 1;
+
+let extractorPromise;
+function extractor() {
+  if (!extractorPromise) {
+    self.postMessage({type:'status',status:'loading',model:MODEL});
+    extractorPromise = pipeline('feature-extraction', MODEL, {dtype:'q8'}).then((x) => {
+      self.postMessage({type:'status',status:'ready',model:MODEL});
+      return x;
+    });
+  }
+  return extractorPromise;
+}
+
+self.onmessage = async (event) => {
+  const m = event.data || {};
+  if (m.type !== 'embed') return;
+  try {
+    const pipe = await extractor();
+    const out = await pipe(`query: ${String(m.text || '').trim()}`, {pooling:'mean', normalize:true});
+    const vector = out.data instanceof Float32Array ? out.data : Float32Array.from(out.data || []);
+    self.postMessage({type:'embedding',id:m.id,vector}, [vector.buffer]);
+  } catch (e) {
+    extractorPromise = null;
+    self.postMessage({type:'error',id:m.id,error:String((e && e.message) || e)});
+  }
+};
