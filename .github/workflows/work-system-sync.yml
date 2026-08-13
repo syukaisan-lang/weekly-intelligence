@@ -9,6 +9,7 @@ on:
     branches: [main]
     paths:
       - "scripts/work_taxonomy.py"
+      - "scripts/work_taxonomy_v4.py"
       - "scripts/reclassify_work_system.py"
       - "scripts/build_system_model_v3.py"
       - ".github/workflows/work-system-sync.yml"
