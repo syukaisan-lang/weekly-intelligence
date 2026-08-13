@@ -1,39 +1,14 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
-  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
-  <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
-  <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; media-src 'none'">
-  <title>Insights Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="knowledge.css">
-  <link rel="stylesheet" href="enhancements.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex"><meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex"><meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; media-src 'none'">
+  <title>Insights · Legacy View</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="knowledge.css"><link rel="stylesheet" href="enhancements.css">
 </head>
-<body>
-  <main class="shell">
-    <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a href="knowledge.html">Knowledge</a><a class="active" href="insights.html">Insights</a><a href="playbook.html">Playbook</a><a href="work-system.html">Work System</a></nav>
-    <header class="topbar"><div><div class="eyebrow">KNOWLEDGE INTELLIGENCE</div><h1>Insights Dashboard</h1><p class="muted">看“你长期在积累什么、最近在转向什么、本周新文章和旧知识如何连接”。</p><div class="privacy-note">搜索引擎索引已关闭；需要全文/Comment 的分析在浏览器解密后计算。</div></div><div class="right"><div id="insightsUpdated" class="muted small">读取中…</div></div></header>
-    <section class="metrics" id="insightMetrics"></section>
-    <div class="knowledge-grid">
-      <section class="card"><div class="section-head slim"><div><h2>长期知识重心</h2><p class="muted small">全量 Stock 中出现最频繁的细分主题。</p></div></div><div id="longTermTopics" class="rank-list"></div></section>
-      <section class="card"><div class="section-head slim"><div><h2>最近90天变化</h2><p class="muted small">最近积累相对长期平均更活跃的主题。</p></div></div><div id="recentShift" class="rank-list"></div></section>
-    </div>
-    <div class="knowledge-grid">
-      <section class="card"><div class="section-head slim"><div><h2>本周新文章 × 旧知识</h2><p class="muted small">优先展示 S / A 候选以及与你知识库的关联。</p></div></div><div id="weeklyConnections" class="connection-list"></div></section>
-      <section class="card"><div class="section-head slim"><div><h2>知识空白 / 机会</h2><p class="muted small">不是“你没存就应该存”，而是提醒长期稀疏但近期正在出现的方向。</p></div></div><div id="knowledgeGaps" class="insight-list"></div></section>
-    </div>
-    <div class="layout knowledge-layout">
-      <section><div class="section-head"><div><h2>值得重新看的知识</h2><p class="muted small">旧、相关度高、带 Comment 的内容优先。</p></div></div><div id="reviewCandidates" class="article-list"></div></section>
-      <aside class="side"><section class="card"><h2>Comment 中的高频概念</h2><div id="commentConcepts" class="topic-cloud"></div></section><section class="card"><h2>知识库健康度</h2><div id="knowledgeHealth" class="insight-list"></div></section></aside>
-    </div>
-  </main>
-  <script src="private-knowledge.js"></script>
-  <script src="insights.js"></script>
-  <script src="insights-unlock.js"></script>
-</body>
-</html>
+<body><main class="shell">
+<nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a href="knowledge.html">Knowledge</a><a href="work-system.html">Work System</a></nav>
+<header class="topbar"><div><div class="eyebrow">LEGACY VIEW</div><h1>Insights</h1><p class="muted">这个独立页面已从主导航移除。长期重心、知识空白、待验证等用途今后统一由 Work System 承接。</p></div><div class="right"><a class="btn" href="work-system.html">进入 Work System</a></div></header>
+<section class="metrics" id="insightMetrics"></section>
+<div class="knowledge-grid"><section class="card"><div class="section-head slim"><div><h2>长期知识重心</h2><p class="muted small">保留旧视图供参考。</p></div></div><div id="longTermTopics" class="rank-list"></div></section><section class="card"><div class="section-head slim"><div><h2>最近90天变化</h2><p class="muted small">保留旧视图供参考。</p></div></div><div id="recentShift" class="rank-list"></div></section></div>
+<div class="knowledge-grid"><section class="card"><div class="section-head slim"><div><h2>本周新文章 × 旧知识</h2></div></div><div id="weeklyConnections" class="connection-list"></div></section><section class="card"><div class="section-head slim"><div><h2>知识空白 / 机会</h2></div></div><div id="knowledgeGaps" class="insight-list"></div></section></div>
+<div class="layout knowledge-layout"><section><div class="section-head"><div><h2>值得重新看的知识</h2></div></div><div id="reviewCandidates" class="article-list"></div></section><aside class="side"><section class="card"><h2>Comment 中的高频概念</h2><div id="commentConcepts" class="topic-cloud"></div></section><section class="card"><h2>知识库健康度</h2><div id="knowledgeHealth" class="insight-list"></div></section></aside></div>
+</main><script src="private-knowledge.js"></script><script src="insights.js"></script><script src="insights-unlock.js"></script></body></html>
