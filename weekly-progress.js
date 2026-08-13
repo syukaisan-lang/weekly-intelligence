@@ -1,4 +1,7 @@
-let readingProgress='unread';
+const WEEKLY_VIEW_KEY='weekly_intelligence_view_v2';
+let savedWeeklyView={};
+try{savedWeeklyView=JSON.parse(localStorage.getItem(WEEKLY_VIEW_KEY)||'{}')||{};}catch(_){savedWeeklyView={};}
+let readingProgress=['unread','marked','read','skip','all'].includes(savedWeeklyView.progress)?savedWeeklyView.progress:'unread';
 const _weeklyVisible=visible;
 const _weeklyRenderMetrics=renderMetrics;
 
@@ -9,9 +12,14 @@ function progressBucketFor(a){
   if(s==='skip') return 'skip';
   return 'unread';
 }
+function isMarked(a){return st(a.id).status!=='new'||!!st(a.id).feedback;}
+function saveWeeklyView(){
+  try{localStorage.setItem(WEEKLY_VIEW_KEY,JSON.stringify({progress:readingProgress}));}catch(_){}
+}
 
 visible=function(a){
   if(!_weeklyVisible(a)) return false;
+  if(readingProgress==='marked') return isMarked(a);
   return readingProgress==='all'||progressBucketFor(a)===readingProgress;
 };
 
@@ -20,12 +28,13 @@ renderMetrics=function(){
   const gs=arts.map(a=>grade(score(a)));
   const unread=arts.filter(a=>progressBucketFor(a)==='unread').length;
   const read=arts.filter(a=>progressBucketFor(a)==='read').length;
+  const marked=arts.filter(isMarked).length;
   const vals=[
     ['新增',status.raw_new_count??arts.length,'8/10 起'],
     ['去重后',status.deduped_count??arts.length,'唯一文章'],
     ['S',gs.filter(x=>x==='S').length,'必看'],
     ['A',gs.filter(x=>x==='A').length,'值得看'],
-    ['未读',unread,'未处理 + 稍后看'],
+    ['已标记',marked,'状态 / 筛选反馈'],
     ['已读',read,'已读 + 进 Notion']
   ];
   $('metrics').innerHTML=vals.map(v=>`<div class="metric"><div class="metric-label">${v[0]}</div><div class="metric-value">${v[1]}</div><div class="metric-sub">${v[2]}</div></div>`).join('');
@@ -34,8 +43,8 @@ renderMetrics=function(){
 
 function updateProgressTabs(){
   const arts=data.articles||[];
-  const counts={unread:0,read:0,skip:0,all:arts.length};
-  arts.forEach(a=>counts[progressBucketFor(a)]++);
+  const counts={unread:0,marked:0,read:0,skip:0,all:arts.length};
+  arts.forEach(a=>{counts[progressBucketFor(a)]++;if(isMarked(a))counts.marked++;});
   document.querySelectorAll('[data-progress]').forEach(btn=>{
     const key=btn.dataset.progress;
     btn.classList.toggle('active',key===readingProgress);
@@ -44,8 +53,22 @@ function updateProgressTabs(){
   });
 }
 
+function syncGradeToProgress(key){
+  const gf=$('gradeFilter');
+  if(!gf)return;
+  // Recommendation grade is useful for unread discovery. Historical/manual records must not
+  // disappear merely because Knowledge/Work System rescoring changed A -> B/C.
+  if(key==='unread'){
+    if(gf.value==='ALL')gf.value='SA';
+  }else{
+    gf.value='ALL';
+  }
+}
+
 function setProgress(key){
   readingProgress=key;
+  saveWeeklyView();
+  syncGradeToProgress(key);
   document.querySelectorAll('[data-progress]').forEach(btn=>btn.classList.toggle('active',btn.dataset.progress===key));
   renderArticles();
 }
@@ -64,4 +87,7 @@ setStatus=function(a,v){
   renderMetrics();
 };
 
+// Restore the last progress view, but never let the default S/A recommendation filter hide
+// manually marked history.
+syncGradeToProgress(readingProgress);
 updateProgressTabs();
