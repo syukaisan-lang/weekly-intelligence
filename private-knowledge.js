@@ -1,6 +1,7 @@
 (() => {
   const AUTO_LOCK_MS=15*60*1000;
   const HIDDEN_LOCK_MS=5*60*1000;
+  const PRIVATE_ITERATIONS=600000;
   let passphraseMemory='';
   let lastActivity=Date.now();
   let hiddenAt=0;
@@ -8,14 +9,27 @@
   const caches=new Map();
 
   function b64bytes(s){const bin=atob(s);const out=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)out[i]=bin.charCodeAt(i);return out;}
-  async function deriveKey(pass,salt,iterations){
+  function bytesB64(bytes){let bin='';for(let i=0;i<bytes.length;i++)bin+=String.fromCharCode(bytes[i]);return btoa(bin);}
+  async function deriveKey(pass,salt,iterations,usages){
     const material=await crypto.subtle.importKey('raw',new TextEncoder().encode(pass),'PBKDF2',false,['deriveKey']);
-    return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations,hash:'SHA-256'},material,{name:'AES-GCM',length:256},false,['decrypt']);
+    return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations,hash:'SHA-256'},material,{name:'AES-GCM',length:256},false,usages);
+  }
+  async function maybeGunzip(bytes,compression){
+    if(compression!=='gzip')return bytes;
+    if(typeof DecompressionStream==='undefined')throw new Error('This browser cannot decompress the encrypted backup.');
+    const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+  async function maybeGzip(bytes,useCompression){
+    if(!useCompression||typeof CompressionStream==='undefined')return {bytes,compression:null};
+    const stream=new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
+    return {bytes:new Uint8Array(await new Response(stream).arrayBuffer()),compression:'gzip'};
   }
   async function decryptEnvelope(env,pass){
-    const key=await deriveKey(pass,b64bytes(env.salt),Number(env.iterations||220000));
+    const key=await deriveKey(pass,b64bytes(env.salt),Number(env.iterations||220000),['decrypt']);
     const raw=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64bytes(env.iv)},key,b64bytes(env.ciphertext));
-    return JSON.parse(new TextDecoder().decode(raw));
+    const unpacked=await maybeGunzip(new Uint8Array(raw),env.compression);
+    return JSON.parse(new TextDecoder().decode(unpacked));
   }
   const wait=ms=>new Promise(r=>setTimeout(r,ms));
 
@@ -56,6 +70,39 @@
     if(reload)location.reload();
   }
 
+  async function decryptPrivateEnvelopeData(env,options={}){
+    let pass=passphraseMemory;
+    if(!pass&&options.prompt!==false)pass=await askPassphrase();
+    if(!pass)throw new Error('Unlock cancelled');
+    if(failures)await wait(Math.min(8000,500*(2**Math.min(failures,4))));
+    try{
+      const data=await decryptEnvelope(env,pass);
+      passphraseMemory=pass;lastActivity=Date.now();failures=0;return data;
+    }catch(e){
+      failures+=1;passphraseMemory='';
+      const err=document.getElementById('privateUnlockError');if(err)err.textContent='密码不正确，或加密数据无法读取。';
+      throw e;
+    }
+  }
+
+  async function encryptPrivatePayload(payload,options={}){
+    let pass=passphraseMemory;
+    if(!pass&&options.prompt!==false)pass=await askPassphrase();
+    if(!pass)throw new Error('Unlock cancelled');
+    const salt=crypto.getRandomValues(new Uint8Array(16));
+    const iv=crypto.getRandomValues(new Uint8Array(12));
+    const plain=new TextEncoder().encode(JSON.stringify(payload));
+    const packed=await maybeGzip(plain,options.compress!==false&&plain.length>900);
+    const key=await deriveKey(pass,salt,PRIVATE_ITERATIONS,['encrypt']);
+    const ciphertext=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},key,packed.bytes));
+    passphraseMemory=pass;lastActivity=Date.now();
+    const env={version:2,algorithm:'AES-256-GCM',kdf:'PBKDF2-SHA256',iterations:PRIVATE_ITERATIONS,salt:bytesB64(salt),iv:bytesB64(iv),ciphertext:bytesB64(ciphertext)};
+    if(options.kind)env.kind=String(options.kind);
+    if(options.createdAt!==false)env.created_at=new Date().toISOString();
+    if(packed.compression)env.compression=packed.compression;
+    return env;
+  }
+
   async function loadEncryptedData(metaUrl,encUrl,options={}){
     const cacheKey=encUrl;if(caches.has(cacheKey))return caches.get(cacheKey);
     const meta=await fetch(metaUrl,{cache:'no-store',credentials:'same-origin',referrerPolicy:'no-referrer'}).then(r=>{if(!r.ok)throw new Error(`metadata HTTP ${r.status}`);return r.json();});
@@ -83,6 +130,8 @@
   window.loadKnowledgeData=loadKnowledgeData;
   window.loadWorkSystemData=loadWorkSystemData;
   window.loadSystemModelData=loadSystemModelData;
+  window.encryptPrivatePayload=encryptPrivatePayload;
+  window.decryptPrivateEnvelopeData=decryptPrivateEnvelopeData;
   window.forgetKnowledgePassphrase=()=>lockPrivateData(false);
   window.lockPrivateData=lockPrivateData;
   window.hasKnowledgePassphrase=()=>!!passphraseMemory;
