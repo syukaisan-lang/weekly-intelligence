@@ -1,19 +1,19 @@
 {
   "meta": {
-    "snapshot_at": "2026-08-13T00:28:19.295566+00:00",
+    "snapshot_at": "2026-08-13T01:35:12.690111+00:00",
     "schema_version": 1,
     "encrypted_full_data": true,
-    "rule_count": 143,
+    "rule_count": 142,
     "synthesis": "deterministic"
   },
   "counts": {
     "types": {
-      "principle": 128,
-      "guardrail": 8,
-      "framework": 7
+      "principle": 120,
+      "framework": 15,
+      "guardrail": 7
     },
     "maturity": {
-      "observed": 123,
+      "observed": 122,
       "hypothesis": 20
     }
   },

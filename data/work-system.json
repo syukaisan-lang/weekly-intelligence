@@ -1,12 +1,14 @@
 {
   "meta": {
-    "snapshot_at": "2026-08-13T00:28:14.125761+00:00",
+    "snapshot_at": "2026-08-13T01:35:06.920724+00:00",
     "schema_version": 1,
     "encrypted_full_data": true,
     "source_count": 3,
     "note_count": 353,
     "rule_count": 0,
-    "synthesis": "deterministic_candidates"
+    "synthesis": "deterministic_candidates",
+    "taxonomy_version": 3,
+    "classification_updated_at": "2026-08-13T01:35:07.388512+00:00"
   },
   "sources": [
     {
@@ -30,36 +32,32 @@
   ],
   "domain_counts": [
     {
-      "name": "其他",
-      "count": 135
+      "name": "判断与问题定义",
+      "count": 100
     },
     {
       "name": "EC / Amazon / 流通",
-      "count": 62
-    },
-    {
-      "name": "判断与问题定义",
-      "count": 35
-    },
-    {
-      "name": "消费者 / 品牌 / CEP",
-      "count": 35
+      "count": 86
     },
     {
       "name": "市场 / GTM / Positioning",
-      "count": 31
-    },
-    {
-      "name": "广告 / PR / 内容",
-      "count": 21
+      "count": 38
     },
     {
       "name": "执行 / 管理 / Stakeholder",
-      "count": 11
+      "count": 37
+    },
+    {
+      "name": "广告 / PR / 内容",
+      "count": 33
+    },
+    {
+      "name": "消费者 / 品牌 / CEP",
+      "count": 30
     },
     {
       "name": "商品 / 新品上市",
-      "count": 7
+      "count": 12
     },
     {
       "name": "数据 / KPI / 测量",
@@ -67,20 +65,122 @@
     },
     {
       "name": "客户服务 / 体验",
-      "count": 4
+      "count": 6
     },
     {
       "name": "职业 / 转职 / Career",
-      "count": 3
-    },
-    {
-      "name": "AI / 工作效率",
-      "count": 2
+      "count": 4
     }
   ],
   "source_hashes": {
-    "19gBiQuP8kjMRkzhuNRXXKKZS7Cn-yKJUZdADPOYJDos": "c08847012ce2961e87081b06b0320ec8f1edb0b7e41c74f0c06f69f2b3420db1",
+    "19gBiQuP8kjMRkzhuNRXXKKZS7Cn-yKJUZdADPOYJDos": "5a0d68fb611963285ad4172f5932241b7c5ac3d59bd8c725ce5df9ea22717b14",
     "13nPr94W9YHfZi_SkFk1i38WAHdO8pdEq": "6b36c8029a92bbc8c8a841a3e4e98a4313b8d6f8eb15f2ff6b73b40c79806db7",
     "1bBVlTpIodFbSLK8l2CsukALFdSq9m5hpxLHMK7liaug": "f5d6ba31a1dce80507fdae07c74e2f8b936c35228ee507b138415c688bbb6fd2"
-  }
+  },
+  "scenario_counts": [
+    {
+      "name": "竞争分析",
+      "count": 25
+    },
+    {
+      "name": "Amazon搜索 / 流量",
+      "count": 21
+    },
+    {
+      "name": "促销 / 大促",
+      "count": 16
+    },
+    {
+      "name": "PR / 媒体露出",
+      "count": 14
+    },
+    {
+      "name": "团队管理",
+      "count": 9
+    },
+    {
+      "name": "渗透 / 拉新 / 复购",
+      "count": 9
+    },
+    {
+      "name": "评价 / Review",
+      "count": 8
+    },
+    {
+      "name": "新品 Launch",
+      "count": 7
+    },
+    {
+      "name": "Positioning / 差异化",
+      "count": 7
+    },
+    {
+      "name": "定价 / 价格弹性",
+      "count": 6
+    },
+    {
+      "name": "EC流量结构",
+      "count": 6
+    },
+    {
+      "name": "CEP / 品牌想起",
+      "count": 6
+    },
+    {
+      "name": "客户体验 / CX",
+      "count": 4
+    },
+    {
+      "name": "Stakeholder / 谈判",
+      "count": 4
+    },
+    {
+      "name": "市场进入 / GTM",
+      "count": 4
+    },
+    {
+      "name": "广告效率 / ROAS",
+      "count": 4
+    },
+    {
+      "name": "同条件比较 / 实验",
+      "count": 3
+    },
+    {
+      "name": "委派 / 交付标准",
+      "count": 3
+    },
+    {
+      "name": "AI自动化 / 提效",
+      "count": 2
+    },
+    {
+      "name": "KPI拆解 / 参数",
+      "count": 2
+    },
+    {
+      "name": "EC转化 / CVR",
+      "count": 2
+    },
+    {
+      "name": "库存 / 缺货",
+      "count": 1
+    },
+    {
+      "name": "转职 / 职业选择",
+      "count": 1
+    },
+    {
+      "name": "面试 / 职历表达",
+      "count": 1
+    },
+    {
+      "name": "入职 / Onboarding",
+      "count": 1
+    },
+    {
+      "name": "消费者研究",
+      "count": 1
+    }
+  ]
 }
