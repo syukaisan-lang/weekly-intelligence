@@ -12,7 +12,7 @@ import re
 
 import build_system_model as base
 import build_system_model_v2 as v2
-from work_taxonomy import DOMAIN_BY_ID, TAXONOMY_VERSION, best_task, classify
+from work_taxonomy_v4 import DOMAIN_BY_ID, TAXONOMY_VERSION, best_task, classify
 
 GENERIC_WHEN = {
     '遇到与该规则同类的问题时，先核对前提条件。',
