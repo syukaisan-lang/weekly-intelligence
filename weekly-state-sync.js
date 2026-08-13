@@ -2,6 +2,8 @@
   const REPO='syukaisan-lang/weekly-intelligence';
   const CLOUD_URL='data/weekly-state.enc.json';
   const BACKUP_PENDING_KEY='weekly_intelligence_backup_pending_v1';
+  const DIRTY_SINCE_KEY='weekly_intelligence_dirty_since_v1';
+  const REMIND_AFTER_MS=7*24*60*60*1000;
 
   function toast(text){
     let box=document.getElementById('weeklyStateToast');
@@ -26,12 +28,17 @@
       const touched=(v.status&&v.status!=='new')||v.feedback;
       if(touched&&!Number(v.updated_at)){v.updated_at=now;state[id]=v;changed=true;}
     }
-    if(changed)save();
+    if(changed){save();if(!localStorage.getItem(DIRTY_SINCE_KEY))localStorage.setItem(DIRTY_SINCE_KEY,String(now));}
+  }
+
+  function latestLocalUpdate(){
+    return Object.values(state||{}).reduce((m,v)=>Math.max(m,Number(v?.updated_at||0)),0);
   }
 
   function stamp(id){
     const cur=state[id]||{status:'new',feedback:null};cur.updated_at=Date.now();state[id]=cur;save();
-    setCloudStatus('本机有未备份修改');
+    if(!localStorage.getItem(DIRTY_SINCE_KEY))localStorage.setItem(DIRTY_SINCE_KEY,String(cur.updated_at));
+    setCloudStatus('本机已自动保存 · 云端待同步');
   }
 
   function setCloudStatus(text){const el=document.getElementById('weeklyCloudStatus');if(el)el.textContent=text;}
@@ -46,15 +53,22 @@
   async function refreshCloudStatus(){
     try{
       const env=await fetchCloudEnvelope();
-      if(!env){setCloudStatus('尚无云备份');return;}
       const pending=localStorage.getItem(BACKUP_PENDING_KEY);
-      const cloudTs=env.created_at?Date.parse(env.created_at):0;
+      const cloudTs=env?.created_at?Date.parse(env.created_at):0;
       const pendingTs=pending?Date.parse(pending):0;
-      if(pending&&cloudTs>=pendingTs){localStorage.removeItem(BACKUP_PENDING_KEY);}
-      const stillPending=localStorage.getItem(BACKUP_PENDING_KEY);
-      const when=env.created_at?new Date(env.created_at).toLocaleString('ja-JP'):'已有云备份';
-      setCloudStatus(stillPending?'备份请求已提交 · 等待 GitHub 写入':`云端备份 ${when}`);
-    }catch(e){setCloudStatus('云备份状态暂时无法读取');}
+      if(pending&&cloudTs>=pendingTs)localStorage.removeItem(BACKUP_PENDING_KEY);
+      if(cloudTs&&cloudTs>=latestLocalUpdate())localStorage.removeItem(DIRTY_SINCE_KEY);
+      const dirtySince=Number(localStorage.getItem(DIRTY_SINCE_KEY)||0);
+      const dirty=latestLocalUpdate()>cloudTs;
+      if(localStorage.getItem(BACKUP_PENDING_KEY)){setCloudStatus('加密备份已提交 · 等待 GitHub 写入');return;}
+      if(dirty){
+        const old=dirtySince&&Date.now()-dirtySince>=REMIND_AFTER_MS;
+        setCloudStatus(old?'本机已自动保存 · 超过 7 天未同步云端':'本机已自动保存 · 云端会在“进 Notion”时顺带同步');
+        return;
+      }
+      if(!env){setCloudStatus('本机自动保存 · 尚无云端备份');return;}
+      setCloudStatus(`已同步云端 ${new Date(env.created_at).toLocaleString('ja-JP')}`);
+    }catch(e){setCloudStatus('本机已保存 · 云备份状态暂时无法读取');}
   }
 
   async function ensureValidatedPassphrase(){
@@ -65,13 +79,20 @@
     return true;
   }
 
+  async function makeEncryptedSnapshot(options={}){
+    const prompt=options.prompt!==false;
+    if(!prompt&&typeof hasKnowledgePassphrase==='function'&&!hasKnowledgePassphrase())return null;
+    if(prompt)await ensureValidatedPassphrase();
+    const snapshot=meaningfulEntries();
+    const payload={schema:2,kind:'weekly-reading-state',created_at:new Date().toISOString(),state:snapshot};
+    const env=await encryptPrivatePayload(payload,{kind:'weekly-state',compress:true,prompt});
+    return {env,encoded:btoa(JSON.stringify(env)),count:Object.keys(snapshot).length};
+  }
+
   async function backup(){
     try{
-      await ensureValidatedPassphrase();
-      const snapshot=meaningfulEntries();
-      const payload={schema:2,kind:'weekly-reading-state',created_at:new Date().toISOString(),state:snapshot};
-      const env=await encryptPrivatePayload(payload,{kind:'weekly-state',compress:true});
-      const encoded=btoa(JSON.stringify(env));
+      const prepared=await makeEncryptedSnapshot({prompt:true});
+      const {env,encoded,count}=prepared;
       const title='[WEEKLY-STATE] '+new Date().toISOString().slice(0,19).replace('T',' ');
       const body=`STATE_ENVELOPE_B64: ${encoded}\n\nWeekly Intelligence 的人工标记加密备份。Issue 中只有 AES-GCM 密文；Action 只接受仓库所有者提交，并会在写入后自动关闭。`;
       const url=`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
@@ -79,8 +100,17 @@
       localStorage.setItem(BACKUP_PENDING_KEY,env.created_at||new Date().toISOString());
       setCloudStatus('备份请求待确认');
       const win=window.open(url,'_blank','noopener,noreferrer');if(!win)location.href=url;
-      toast(`已加密 ${Object.keys(snapshot).length} 条人工记录。请在 GitHub 页面提交一次 Issue，之后会自动保存并关闭。`);
+      toast(`已加密 ${count} 条人工记录。提交 GitHub 页面后会自动保存并关闭。`);
     }catch(e){toast('备份失败：'+e.message);}
+  }
+
+  async function preparePiggyback(){
+    try{
+      const prepared=await makeEncryptedSnapshot({prompt:false});
+      if(!prepared)return null;
+      localStorage.setItem(BACKUP_PENDING_KEY,prepared.env.created_at||new Date().toISOString());
+      return prepared.encoded;
+    }catch(e){return null;}
   }
 
   async function restore(){
@@ -93,15 +123,15 @@
       for(const [id,rv] of Object.entries(payload.state)){
         if(!rv||typeof rv!=='object')continue;
         const remoteTs=Number(rv.updated_at||0),lv=state[id],localTs=Number(lv?.updated_at||0);
-        if(!lv||remoteTs>localTs){
-          state[id]={status:rv.status||'new',feedback:rv.feedback??null,updated_at:remoteTs};applied++;
-        }else keptLocal++;
+        if(!lv||remoteTs>localTs){state[id]={status:rv.status||'new',feedback:rv.feedback??null,updated_at:remoteTs};applied++;}
+        else keptLocal++;
       }
       save();
       if(typeof rebuildPrefs==='function')rebuildPrefs();
       if(typeof render==='function')render();
       if(typeof updateProgressTabs==='function')updateProgressTabs();
       localStorage.removeItem(BACKUP_PENDING_KEY);
+      if(!latestLocalUpdate()||Date.parse(env.created_at||0)>=latestLocalUpdate())localStorage.removeItem(DIRTY_SINCE_KEY);
       await refreshCloudStatus();
       toast(`已合并云端标记：更新 ${applied} 条，本机较新的 ${keptLocal} 条保留。`);
     }catch(e){toast('恢复失败：密码不正确或备份无法读取。');}
@@ -110,9 +140,9 @@
   function mount(){
     const root=document.querySelector('.reading-progress');if(!root||document.getElementById('weeklyStateTools'))return;
     const tools=document.createElement('div');tools.id='weeklyStateTools';tools.className='controls';tools.style.marginTop='10px';
-    const backupBtn=document.createElement('button');backupBtn.className='btn';backupBtn.type='button';backupBtn.textContent='备份标记';backupBtn.onclick=backup;
+    const backupBtn=document.createElement('button');backupBtn.className='btn secondary';backupBtn.type='button';backupBtn.textContent='立即备份';backupBtn.onclick=backup;
     const restoreBtn=document.createElement('button');restoreBtn.className='btn secondary';restoreBtn.type='button';restoreBtn.textContent='恢复云端';restoreBtn.onclick=restore;
-    const status=document.createElement('span');status.id='weeklyCloudStatus';status.className='muted small';status.textContent='检查云备份…';
+    const status=document.createElement('span');status.id='weeklyCloudStatus';status.className='muted small';status.textContent='检查保存状态…';
     tools.append(backupBtn,restoreBtn,status);root.appendChild(tools);refreshCloudStatus();
   }
 
@@ -132,14 +162,15 @@
         if(!v||typeof v!=='object')continue;
         if((before[id]??null)!==(v.feedback??null)){v.updated_at=now;state[id]=v;changed=true;}
       }
-      if(changed){save();setCloudStatus('本机有未备份修改');}
+      if(changed){save();if(!localStorage.getItem(DIRTY_SINCE_KEY))localStorage.setItem(DIRTY_SINCE_KEY,String(now));setCloudStatus('本机已自动保存 · 云端待同步');}
     },0));
   }
 
   window.addEventListener('focus',refreshCloudStatus);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshCloudStatus();});
-  setInterval(()=>{if(localStorage.getItem(BACKUP_PENDING_KEY))refreshCloudStatus();},30000);
+  setInterval(refreshCloudStatus,60000);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
   window.backupWeeklyState=backup;
   window.restoreWeeklyState=restore;
+  window.prepareWeeklyStatePiggyback=preparePiggyback;
 })();
