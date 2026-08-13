@@ -5,6 +5,13 @@ on:
   schedule:
     # Friday 18:20 Japan time = 09:20 UTC
     - cron: "20 9 * * 5"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/work_taxonomy.py"
+      - "scripts/reclassify_work_system.py"
+      - "scripts/build_system_model_v3.py"
+      - ".github/workflows/work-system-sync.yml"
 
 permissions:
   contents: write
