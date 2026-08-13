@@ -1,0 +1,3 @@
+// Browser-local semantic embedding worker source.
+// Bundled in GitHub Actions with the Transformers.js package.
+const semanticWorkerSourceVersion = 1;
