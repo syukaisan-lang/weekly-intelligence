@@ -47,9 +47,13 @@
     try{
       const env=await fetchCloudEnvelope();
       if(!env){setCloudStatus('尚无云备份');return;}
-      const when=env.created_at?new Date(env.created_at).toLocaleString('ja-JP'):'已有云备份';
       const pending=localStorage.getItem(BACKUP_PENDING_KEY);
-      setCloudStatus(pending?'备份请求已提交 · 等待 GitHub 写入':`云端备份 ${when}`);
+      const cloudTs=env.created_at?Date.parse(env.created_at):0;
+      const pendingTs=pending?Date.parse(pending):0;
+      if(pending&&cloudTs>=pendingTs){localStorage.removeItem(BACKUP_PENDING_KEY);}
+      const stillPending=localStorage.getItem(BACKUP_PENDING_KEY);
+      const when=env.created_at?new Date(env.created_at).toLocaleString('ja-JP'):'已有云备份';
+      setCloudStatus(stillPending?'备份请求已提交 · 等待 GitHub 写入':`云端备份 ${when}`);
     }catch(e){setCloudStatus('云备份状态暂时无法读取');}
   }
 
@@ -72,7 +76,7 @@
       const body=`STATE_ENVELOPE_B64: ${encoded}\n\nWeekly Intelligence 的人工标记加密备份。Issue 中只有 AES-GCM 密文；Action 只接受仓库所有者提交，并会在写入后自动关闭。`;
       const url=`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
       if(url.length>60000)throw new Error('标记记录过多，GitHub 确认链接已超过安全长度');
-      localStorage.setItem(BACKUP_PENDING_KEY,new Date().toISOString());
+      localStorage.setItem(BACKUP_PENDING_KEY,env.created_at||new Date().toISOString());
       setCloudStatus('备份请求待确认');
       const win=window.open(url,'_blank','noopener,noreferrer');if(!win)location.href=url;
       toast(`已加密 ${Object.keys(snapshot).length} 条人工记录。请在 GitHub 页面提交一次 Issue，之后会自动保存并关闭。`);
@@ -117,9 +121,24 @@
   if(typeof originalFeedback==='function')window.feedback=feedback=function(a,v){originalFeedback(a,v);stamp(a.id);};
   const originalSetStatus=window.setStatus;
   if(typeof originalSetStatus==='function')window.setStatus=setStatus=function(a,v){originalSetStatus(a,v);stamp(a.id);};
-  document.getElementById('resetLearning')?.addEventListener('click',()=>setTimeout(()=>{
-    const now=Date.now();for(const [id,v] of Object.entries(state||{})){if(v&&typeof v==='object'){v.updated_at=now;state[id]=v;}}save();setCloudStatus('本机有未备份修改');
-  },0));
+
+  const reset=document.getElementById('resetLearning');
+  if(reset){
+    let before={};
+    reset.addEventListener('click',()=>{before={};for(const [id,v] of Object.entries(state||{}))before[id]=v?.feedback??null;},{capture:true});
+    reset.addEventListener('click',()=>setTimeout(()=>{
+      const now=Date.now();let changed=false;
+      for(const [id,v] of Object.entries(state||{})){
+        if(!v||typeof v!=='object')continue;
+        if((before[id]??null)!==(v.feedback??null)){v.updated_at=now;state[id]=v;changed=true;}
+      }
+      if(changed){save();setCloudStatus('本机有未备份修改');}
+    },0));
+  }
+
+  window.addEventListener('focus',refreshCloudStatus);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshCloudStatus();});
+  setInterval(()=>{if(localStorage.getItem(BACKUP_PENDING_KEY))refreshCloudStatus();},30000);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
   window.backupWeeklyState=backup;
   window.restoreWeeklyState=restore;
