@@ -1,0 +1,44 @@
+name: Sync Weekly reading state
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  sync:
+    if: github.event.issue.user.login == 'syukaisan-lang' && startsWith(github.event.issue.title, '[WEEKLY-STATE]')
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Validate encrypted state
+        run: python scripts/save_weekly_state.py
+      - name: Commit encrypted state
+        run: |
+          git config user.name "weekly-state-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/weekly-state.enc.json
+          if git diff --cached --quiet; then
+            echo "No state changes to commit"
+          else
+            git commit -m "Backup Weekly reading state"
+            git push
+          fi
+      - name: Confirm and close request
+        if: success()
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --body "✅ Weekly 标记已加密备份。仓库中只保存密文。"
+          gh issue close "${{ github.event.issue.number }}"
+      - name: Report failure
+        if: failure()
+        run: |
+          ERR=$(cat /tmp/weekly_state_error.txt 2>/dev/null || echo 'Unknown error')
+          gh issue comment "${{ github.event.issue.number }}" --body "❌ Weekly 标记备份失败：${ERR}"
