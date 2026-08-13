@@ -5,7 +5,7 @@ on:
     types: [opened]
 
 permissions:
-  contents: read
+  contents: write
   issues: write
 
 jobs:
@@ -25,14 +25,30 @@ jobs:
         run: python -m pip install "requests>=2.32,<3"
       - name: Create Notion page
         run: python scripts/save_to_notion.py
+      - name: Read optional encrypted Weekly state
+        env:
+          WEEKLY_STATE_OPTIONAL: "1"
+        run: python scripts/save_weekly_state.py
+      - name: Commit piggybacked Weekly state when present
+        run: |
+          git config user.name "weekly-state-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/weekly-state.enc.json data/weekly-state.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No Weekly state backup included"
+          else
+            git commit -m "Backup Weekly state with Notion save"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
       - name: Confirm and close request
         if: success()
         run: |
           URL=$(python -c "import json; print(json.load(open('/tmp/notion_save_result.json')).get('url') or '')")
-          gh issue comment "${{ github.event.issue.number }}" --body "✅ 已写入 Notion。${URL}"
+          gh issue comment "${{ github.event.issue.number }}" --body "✅ 已写入 Notion；如请求中包含 Weekly 加密状态，也已同步。${URL}"
           gh issue close "${{ github.event.issue.number }}"
       - name: Report failure
         if: failure()
         run: |
-          ERR=$(cat /tmp/notion_save_error.txt 2>/dev/null || echo 'Unknown error')
-          gh issue comment "${{ github.event.issue.number }}" --body "❌ 写入 Notion 失败：${ERR}"
+          ERR=$(cat /tmp/notion_save_error.txt 2>/dev/null || cat /tmp/weekly_state_error.txt 2>/dev/null || echo 'Unknown error')
+          gh issue comment "${{ github.event.issue.number }}" --body "❌ 处理失败：${ERR}"
