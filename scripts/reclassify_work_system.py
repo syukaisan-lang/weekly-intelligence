@@ -6,7 +6,7 @@ from collections import Counter
 from datetime import datetime, timezone
 
 import build_system_model as crypto
-from work_taxonomy import TAXONOMY_VERSION, classify
+from work_taxonomy_v4 import TAXONOMY_VERSION, classify
 
 
 def main() -> int:
