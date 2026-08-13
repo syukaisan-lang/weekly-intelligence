@@ -8,7 +8,7 @@
   <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
   <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; media-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co https://cdn.jsdelivr.net; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; media-src 'none'">
   <title>My Work System</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="knowledge.css">
@@ -19,7 +19,7 @@
 <body>
   <main class="shell">
     <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a href="knowledge.html">Knowledge</a><a class="active" href="work-system.html">Work System</a></nav>
-    <header class="topbar"><div><div class="eyebrow">PERSONAL WORK OPERATING SYSTEM</div><h1>My Work System</h1><p class="muted">工作经验 × 读书笔记 × EC/Amazon实战 × Knowledge 外部证据 → 原则、框架、Playbook、Guardrail。原 Insights / Playbook 的功能统一收敛到这里。</p><div class="privacy-note">私人原文、Memo 和综合规则全部使用加密数据；密码只在当前页面内存存在，闲置15分钟自动锁定。</div></div><div class="right"><div id="workSystemStatus" class="muted small">等待解锁…</div><button id="lockWorkSystem" class="text-btn hidden" type="button">立即锁定</button></div></header>
+    <header class="topbar"><div><div class="eyebrow">PERSONAL WORK OPERATING SYSTEM</div><h1>My Work System</h1><p class="muted">工作经验 × 读书笔记 × EC/Amazon实战 × Knowledge 外部证据 → 原则、框架、Playbook、Guardrail。原 Insights / Playbook 的功能统一收敛到这里。</p><div class="privacy-note">私人原文、Memo、规则和语义索引均使用加密数据；查询 Embedding 在浏览器本地计算，查询文本不发送到 AI API。</div></div><div class="right"><div id="workSystemStatus" class="muted small">等待解锁…</div><button id="lockWorkSystem" class="text-btn hidden" type="button">立即锁定</button></div></header>
 
     <section id="workSystemGate" class="card">
       <div class="section-head slim"><div><h2>🔐 解锁你的工作体系</h2><p class="muted small">解锁后，在浏览器本地把经验、书本和外部知识组合成可调用的工作判断。</p></div><button id="unlockWorkSystem" class="btn" type="button">解锁 Work System</button></div>
@@ -27,7 +27,7 @@
 
     <section id="workSystemContent" class="hidden">
       <section class="card system-command">
-        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统会区分“这篇主要讲什么”和“它是否能帮助当前问题”：优先核心场景，同时召回跨领域的支撑知识；只在正文偶然出现一个词的内容不会进入结果。</p></div></div>
+        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统综合真实工作场景、文章含义、跨领域支撑关系和本地多语言 Embedding；长文章会按段落建立向量，避免只看标题或开头。</p></div></div>
         <input id="playbookSearch" class="search-input system-query" type="search" placeholder="例如：入职新公司怎么开始？ / 新品知名度低预算有限怎么Launch？ / ROAS下降但自然销售增加怎么办？">
         <div id="queryIntentHint" class="query-intent-hint hidden" aria-live="polite"></div>
         <div class="system-mode segmented" role="tablist">
@@ -41,7 +41,7 @@
       <section id="systemMap" class="card hidden"></section>
 
       <section id="systemResults" class="system-results">
-        <div id="systemResultsBar" class="system-results-bar"><div><b>可调用知识</b><span>按问题含义、真实工作场景和内容证据排序</span></div></div>
+        <div id="systemResultsBar" class="system-results-bar"><div><b>可调用知识</b><span>按问题含义、真实工作场景、内容证据和语义向量综合排序</span></div></div>
         <div id="playbookList" class="playbook-list"></div>
       </section>
 
@@ -61,5 +61,6 @@
   <script src="work-system-v3-context-lock.js"></script>
   <script src="work-system-precision-v4.js"></script>
   <script src="work-system-semantic-v5.js"></script>
+  <script src="work-system-vector-v6.js"></script>
 </body>
 </html>
