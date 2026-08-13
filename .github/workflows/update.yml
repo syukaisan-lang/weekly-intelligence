@@ -22,14 +22,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Build improved unified personal work system
-        run: python scripts/build_system_model_v2.py
-      - name: Fetch and screen feeds against personal work system
+      - name: Fetch and screen feeds against latest Knowledge and Work System
         run: python scripts/update_feeds_personalized.py
       - name: Commit refreshed dashboard data
         run: |
           git config user.name "reading-dashboard-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "Update weekly intelligence and system model"
+          git diff --cached --quiet || git commit -m "Update weekly intelligence"
           git push
