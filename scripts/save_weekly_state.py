@@ -34,6 +34,9 @@ def main() -> None:
     body = issue.get("body") or ""
     match = re.search(r"STATE_ENVELOPE_B64:\s*([A-Za-z0-9+/=]+)", body)
     if not match:
+        if os.environ.get("WEEKLY_STATE_OPTIONAL") == "1":
+            print("No Weekly state envelope included; skipping optional backup")
+            return
         fail("Encrypted state payload was not found in the issue body")
 
     raw = valid_b64(match.group(1), "envelope")
