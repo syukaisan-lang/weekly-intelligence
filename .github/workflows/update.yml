@@ -15,6 +15,7 @@ on:
     paths:
       - "scripts/update_feeds_personalized.py"
       - "scripts/update_feeds_temporal.py"
+      - "scripts/weekly_lifecycle.py"
       - "scripts/weekly_semantic.py"
       - "scripts/weekly_semantic_runtime.py"
       - "scripts/personal_relevance.py"
@@ -62,6 +63,6 @@ jobs:
           git config user.name "reading-dashboard-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "Update weekly intelligence with semantic temporal v7"
+          git diff --cached --quiet || git commit -m "Update weekly intelligence with adaptive semantic temporal v8"
           git pull --rebase origin main
           git push
