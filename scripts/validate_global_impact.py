@@ -27,7 +27,8 @@ def main()->int:
     require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles')
     require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','decrypt_weekly_state','source_yield','source_mode','probe','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
-    require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留')
+    require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留','weekly-source-audit-v9.js')
+    require('weekly-source-audit-v9.js','sourceStats','isRecommendedUnread','B/C自动归档','不算负反馈','建议停用','复制来源统计',"if(status==='later')return true", "return ['S','A'].includes(currentGrade(a))")
     require('index.html','weekly-attention-v8.js','最近12周反馈','最近90天','最近8周')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
 
@@ -46,6 +47,12 @@ def main()->int:
         raise AssertionError('ordinary negative feedback must primarily penalize content subject')
     if 'if(s.w<0)affinity*=subjectAffinity' not in weekly:
         raise AssertionError('negative semantic transfer must be gated by subject affinity')
+
+    source_audit=read('weekly-source-audit-v9.js')
+    if "humanState(a).status==='skip'" not in source_audit:
+        raise AssertionError('source skip audit must use explicit human skip only')
+    if "(s.status||'new')==='new'&&!['S','A'].includes(currentGrade(a))" not in source_audit:
+        raise AssertionError('B/C auto archive must remain separate from explicit skip')
 
     require('weekly-state-sync.js','feedback','updated_at','恢复云端','备份本周标记')
     require('weekly-progress.js',"gf.value='ALL'",'isMarked')
@@ -72,7 +79,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: Knowledge/Work System semantic-time context -> rolling 12-week feedback -> adaptive 8-week source yield -> 90-day hot storage -> attention budget -> encrypted backup -> conflict-safe Weekly commits are aligned.')
+    print('Global impact validation passed: Knowledge/Work System semantic-time context -> rolling feedback -> adaptive source yield -> 90-day hot storage -> S/A unread queue + local source audit -> encrypted backup -> conflict-safe commits are aligned.')
     return 0
 
 
