@@ -1,22 +1,22 @@
 {
   "meta": {
     "source": "Notion / 情報収集と整理",
-    "snapshot_at": "2026-08-12T12:07:19.158021+00:00",
+    "snapshot_at": "2026-08-14T01:11:25.880329+00:00",
     "schema_version": 5,
     "encrypted_full_data": true,
-    "item_count": 147,
+    "item_count": 149,
     "comments_included_in_encrypted_data": true,
     "page_body_included_in_encrypted_data": true,
     "comments_scope": "page-level open/unresolved comments via Notion Public API"
   },
   "metrics": {
-    "total": 656,
-    "read": 650,
-    "stock": 147,
+    "total": 658,
+    "read": 652,
+    "stock": 149,
     "rejected": 509,
     "undecided": 0,
-    "added_30d": 3,
-    "added_90d": 16
+    "added_30d": 5,
+    "added_90d": 18
   },
   "categories": [
     {
@@ -32,16 +32,16 @@
       "rejected": 35
     },
     {
+      "name": "スキル",
+      "total": 51,
+      "stock": 27,
+      "rejected": 24
+    },
+    {
       "name": "消費者",
       "total": 51,
       "stock": 30,
       "rejected": 21
-    },
-    {
-      "name": "スキル",
-      "total": 50,
-      "stock": 26,
-      "rejected": 24
     },
     {
       "name": "EC",
@@ -81,8 +81,8 @@
     },
     {
       "name": "新商品開発",
-      "total": 4,
-      "stock": 2,
+      "total": 5,
+      "stock": 3,
       "rejected": 2
     }
   ],
@@ -93,23 +93,23 @@
     },
     {
       "name": "CRM / LTV",
-      "count": 75
+      "count": 76
     },
     {
       "name": "ブランド成長",
-      "count": 69
+      "count": 70
     },
     {
       "name": "市場 / 競合",
-      "count": 67
+      "count": 68
     },
     {
       "name": "消費者インサイト",
-      "count": 63
+      "count": 64
     },
     {
       "name": "広告効果",
-      "count": 54
+      "count": 55
     },
     {
       "name": "調査設計",
@@ -117,19 +117,19 @@
     },
     {
       "name": "EC成長",
-      "count": 49
+      "count": 51
     },
     {
       "name": "マネジメント",
-      "count": 40
+      "count": 41
     },
     {
       "name": "SNS / UGC",
-      "count": 37
+      "count": 38
     },
     {
       "name": "KPI / 計測",
-      "count": 30
+      "count": 31
     },
     {
       "name": "価格戦略",
@@ -157,7 +157,7 @@
     },
     {
       "name": "Agentic Commerce",
-      "count": 4
+      "count": 5
     }
   ],
   "items": [],
