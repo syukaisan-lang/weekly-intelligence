@@ -13,6 +13,7 @@ on:
   push:
     branches: [main]
     paths:
+      - "config/sources.json"
       - "scripts/update_feeds_personalized.py"
       - "scripts/update_feeds_temporal.py"
       - "scripts/weekly_lifecycle.py"
@@ -77,7 +78,7 @@ jobs:
               echo "No Weekly data changes to commit"
               exit 0
             fi
-            git commit -m "Update weekly intelligence with adaptive semantic temporal v8"
+            git commit -m "Update weekly intelligence with adaptive semantic temporal v9"
             if git push origin HEAD:main; then
               exit 0
             fi
