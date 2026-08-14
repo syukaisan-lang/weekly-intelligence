@@ -1,28 +1,201 @@
 {
   "meta": {
     "tracking_start": "2026-08-10",
-    "generated_at": "2026-08-14T02:46:26.732367+00:00",
+    "generated_at": "2026-08-14T03:04:45.276054+00:00",
     "screening_mode": "openai_api_if_configured_else_heuristic",
-    "new_this_run": 0,
-    "knowledge_context_refreshed_at": "2026-08-14T02:47:07.753538+00:00",
-    "knowledge_context_rescored_count": 225,
+    "new_this_run": 3,
+    "knowledge_context_refreshed_at": "2026-08-14T03:05:27.790955+00:00",
+    "knowledge_context_rescored_count": 228,
     "personalization_version": "semantic_v8_adaptive_temporal",
     "semantic_model_family": "multilingual-e5",
-    "semantic_rescored_count": 225,
+    "semantic_rescored_count": 228,
     "semantic_deep_read_count": 0,
     "temporal_update_enabled": true,
     "rolling_feedback_window_days": 84,
     "adaptive_attention_budget": true,
-    "lifecycle_version": "adaptive_v10",
+    "lifecycle_version": "adaptive_v11",
     "hot_retention_days": 90,
     "unlabeled_source_pass_days": 0,
     "unread_expiry_days": 7,
+    "queue_grades": [
+      "S",
+      "A",
+      "B"
+    ],
     "trusted_status_origin": "human_v10",
-    "hot_article_count": 326,
+    "hot_article_count": 329,
     "cold_article_count": 0,
     "cold_records_keep": "id/url/title/date/source/score/feedback-features for dedupe and learning memory"
   },
   "articles": [
+    {
+      "id": "07d09a51d34a9ed8ea",
+      "source": "CNET Japan 最新情報　総合",
+      "category": "家電情報",
+      "url": "https://japan.cnet.com/article/35251182",
+      "title": "MagSafe対応！ iPhoneにくっつけて持ち歩けるモバイルプリンター「petamo」",
+      "published": "2026-08-14T03:02:00+00:00",
+      "first_seen": "2026-08-14T03:04:15.263533+00:00",
+      "summary": "iPhoneにくっつけて持ち運べるモバイルプリンター「petamo」。スマホの写真をその場で印刷できるだけでなく、写真をアプリで読み取ると、紐づけた動画が自動再生されるというユニークな機能も搭載している。写真でビデオメッセージを送るのも面白そう！",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 3.75,
+      "reading_score": 4.29,
+      "notion_score": 3.28,
+      "grade": "C",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与 Work System 语义相关",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.853,
+        "rule_match_strength": 0.809,
+        "experience_similarity": 0.824,
+        "repetition_penalty": 0.5,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.477,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "GtrcvCjq/xQuGRoMPxDkFzcPxug6/dUEIiz1KRvm0eofvjEI9/tCxw8IF0YfROUbtuHjHQkU9tPLv9D3PecAG38pNSq35ski8uAQHyLiHN+14cUvzDM7yyHqIB/fxs3F4EIe3QHWBNXWPCXYANnRCTYnre4I2TbTGA7vxdniKQvmJBRJHUcoN/X8sOfxMQA7KfxGzz0rPshSGy3fBM/4UNHI4PToth1Jr83JId8D/R7yHT8GGOOb2MXI/AAd2Moj3ckB7cwLBgvSyBo5QfrMDuIxNa27RsvNHxjbKB/R8J0DYiaovyfYCdTi2OTmO0gHyuAmr0Dj+QbkNRje4doFSAkgwxEn7GkQJATT5czB/0wpyA3mCiPM1BkYMUIdB/M+/Nu6+SDiDiYMSt4o5gsoBsgW+iYiKg806d4oMQgMvvvp5P+0BDH58irpMbPkHPLHzjLs8igRtBzX0yfz0C0YtS0/7Brn+S0t+PwRLR4V/egdvfJH8OXv9tZA0scp8wpF",
+        "scale": 0.0011927659,
+        "normalized": true
+      }
+    },
+    {
+      "id": "5422e964416d3fbd7b",
+      "source": "CNET Japan 最新情報　総合",
+      "category": "家電情報",
+      "url": "https://japan.cnet.com/article/35251557",
+      "title": "Twitch、配信内容をアマゾンのAI訓練に利用--「デフォルトで有効」なので要注意",
+      "published": "2026-08-14T03:02:00+00:00",
+      "first_seen": "2026-08-14T03:04:15.264314+00:00",
+      "summary": "ライブ配信サービス「Twitch」は、コンテンツを親会社アマゾンのAIモデルの学習に利用しているとの報道を認めた。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 5.95,
+      "reading_score": 6.62,
+      "notion_score": 5.53,
+      "grade": "B",
+      "tags": [
+        "ai",
+        "marketing"
+      ],
+      "concepts": [
+        "AI",
+        "コンテンツ"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI",
+          "コンテンツ"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.883,
+        "rule_match_strength": 0.861,
+        "experience_similarity": 0.867,
+        "repetition_penalty": 0.311,
+        "gap_bonus": 0.06,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.439,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Og/MyDUEHkEyL2LqbgS0HkjHn/ArG6IpMUDwKgax08VGqUQh0tgMxN0ZKWMySvdFt+7yUORI/MPcmrIQWhoMQFtc/THEz+03281GO0fkV+GUyc9CyDImolDxUyzK28Ge6C339DfMHb7USzKIFY/cH209i7X0gUifNc3Kra7jFCYpDh5KHU9idcLpnbjBIAVRCNs+xEWyP89vM0Tp4LEeOtLUtczjrixAnwUKMs8o+latIWwV9szH5rrU/xsK4edG1aXoEt9UMi7j8Uw7NP67LqY2I8eaMqkE8ifRICTwCqzjWDav6wva/9ytwrQnLR7SwcFC4G3eySAWFxTM3czxX2Ahjicd0FcsJybHy9fTyjQj2AHT8kuut0AXI0Fh3/M/0+6k6gy+cNn8MMIh588TLY4FIg1A+kc6r8EdQQUqpMrgstjlCD7H9ywZRN/FT7T8zjjH5isxtirNvQzvy0k/lzk87leg4lNpvc8rNypX7Pc3wCBT5NP9Ad38vK1HFSJR",
+        "scale": 0.0008832803,
+        "normalized": true
+      }
+    },
+    {
+      "id": "f9db7d3826aeee6996",
+      "source": "AdverTimes.（アドタイ） by 宣伝会議",
+      "category": "Marketing",
+      "url": "https://www.advertimes.com/20260814/article553771",
+      "title": "「マーケターはグロースを目指せ」ファミマ足立氏と楽天河野氏が考える、次世代CMOの役割",
+      "published": "2026-08-14T03:00:37+00:00",
+      "first_seen": "2026-08-14T03:04:25.172916+00:00",
+      "summary": "楽天グループ最大級のビジネスイベント「Rakuten AI Optimism」が8月５日から7日まで、パシフィコ横浜（横浜市）で開催された。 The post 「マーケターはグロースを目指せ」ファミマ足立氏と楽天河野氏が考える、次世代CMOの役割 first appeared on AdverTimes.（アドタイ） by 宣伝会議 .",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 7.35,
+      "reading_score": 8.16,
+      "notion_score": 7.04,
+      "grade": "A",
+      "tags": [
+        "ai",
+        "ec"
+      ],
+      "concepts": [
+        "AI",
+        "楽天"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI",
+          "楽天"
+        ],
+        "formats": [
+          "セミナー／イベント"
+        ],
+        "intents": [
+          "参加募集／イベント告知"
+        ],
+        "signals": [
+          "イベント色が強い"
+        ]
+      },
+      "reason": "涉及AI实际影响；与EC/零售直接相关；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.891,
+        "rule_match_strength": 0.862,
+        "experience_similarity": 0.853,
+        "repetition_penalty": 0.47,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.645,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Ge3f1WeyHjEpF1sFf+bCIS640+UeHQUpNFrLD/ju1t5UxkcJx/5KwOH5NVUoWPpAqO6mFuM5E9miptIjOfIXKXwVCzyr5NZBzegiOi/BVNbL5O4TwUQ8qjDhFji62famuU767kPaEq/kPQDQPsy1Q1UssOP8rE7XUta0p7rjChwL/ilIKyA8Xs3ouuXcKeE7JSlmvE/ZXJ5FOkrCx9cvN8zru9nN1UFTuvbcR4oqzgrWF19CwNGOy5nX3ewuriAXptLlEegeKR3knxkrJ+DGUfopIca3Zt3W/THWDh7RJcELSSz110Xq3MbK68EDLDC/5Nke4Ev56O3kHxDI2cLkNCU2uDcU624RKDe3xcHYwigPwe/R/Gmm4UcMG0NXANxT6NHg8EDNLQP3Ob0p5vsdDqILKlgiHVM+wO42PRQLz/y5vAW3GUnm6zbqJryzOLC83Ebiyzov4Sn0xyDXzT4osTYf2iCt6kY6wwweKTgt4QRAxw9RsQPs3eQOxsUkAywz",
+        "scale": 0.0009558705,
+        "normalized": true
+      }
+    },
     {
       "id": "b107a6636e2cdd115f",
       "source": "ウェブ電通報／ビジネスにもっとアイデアを。",
@@ -215,11 +388,11 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 14.672,
+        "knowledge_match_strength": 14.67,
         "rule_match_strength": 1.18,
         "experience_similarity": 0.874,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.789,
@@ -294,7 +467,7 @@
         "rule_match_strength": 1.172,
         "experience_similarity": 0.889,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -366,7 +539,7 @@
         "rule_match_strength": 1.39,
         "experience_similarity": 0.87,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -438,7 +611,7 @@
         "rule_match_strength": 2.348,
         "experience_similarity": 0.866,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -818,8 +991,8 @@
       "content_checked": true,
       "content_excerpt": "博報堂の生活者発想技術研究所は7月22日、「生活者から応援されるブランドと社会的価値に関する意識調査」の結果を発表した。2026年1月22日から24日にかけて15～74歳の男女5000人を対象に調査したもので、東京都立大学 経済経営学部の水越康介教授との共同研究のもとで実施した。 身の回りの商品・サービス・店舗・企業のブランドについて「好きなブランド」もしくは「応援したいブランド」があるかどうかを尋ねたところ、全体の46.3%が「いずれかはある」と回答。そのうち、両方が重なっている人の割合は全体で27.5%。年代が若くなるほど「好きかつ応援したいブランド」がある割合は高くなり、10代では41.0％と全体より10ポイント以上高い結果となった。 また、各ブランドについて「友人や同僚などに勧める可能性はどれくらいあるか」を10段階で評価を尋ねた。「最も応援したい」ブランドがある人の、そのブランドに対するNPS（ブランドの推奨意向スコア）が3.8であるのに対し、最も「好きかつ応援したい」ブランドのNPS は20.6と、5倍以上に跳ね上がることがわかった。 「好き」かつ「応援したい」ブランドに共通する4つの要素 生活者発想技術研究所では、「よいブランド」の具体像の検討を目的として、学際的な研究者や有識者7人に対してインタビューを行い、ブランドを評価するための33個の尺度項目を整理した。「最も好きかつ応援したいブランド」があると回答した15～74歳の男女1374人を対象に、それぞれの項目にそのブランドがどの程度当てはまるかを聴取。「最も好きかつ応援したいブランド」に共通する要素を抽出する分析を行った。 調査の結果、最も好きかつ応援したいブランドは「真（他者の意見や客観性によらず、「私が信じる」と感じられるものがある）」「善（社会課題に対して行動し、“私のため”と“社会のため”を両立している）」「美（感性に響いて個性を引き出し、私の世界をつくりあげている実感を与えてくれる）」「場（立場にとらわれない好きな自分に還り、生きている喜びを感じられる居場所である）」の4つの共通因子を持つことが明らかになった。 4つの要素のうち、「場」「真」「善」はそれぞれ、独立してブランドの推奨意向を高める影響力を持つのに対し、「美」の因子は「自分だけの世界として大切にしたい（秘密にしたい）」というファン特有の心理を反映する傾向にある。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 0 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい また、各ブランドについて「友人や同僚などに勧める可能性はどれくらいあるか」を10段階で評価を尋ねた。「最も応援したい」ブランドがある人の、そのブランドに対するNPS（ブランドの推奨意向スコア）が3.8であるのに対し、最も「好きかつ応援したい」ブランドのNPS は20.6と、5倍以上に跳ね上がることがわかった。 「好き」かつ「応援したい」ブランドに共通する4つの要素 生活者発想技術研究所では、「よいブランド」の具体像の検討を目的として、学際的な研究者や有識者7人に対してインタビューを行い、ブランドを評価するための33個の尺度項目を整理した。「最も好きかつ応援したいブランド」があると回答した15～74歳の男女1374人を対象に、それぞれの項目にそのブランドがどの程度当てはまるかを聴取。「最も好きかつ応援したいブランド」に共通する要素を抽出する分析を行った。 調査の結果、最も好きかつ応援したいブランドは「真（他者の意見や客観性によらず、「私が信じる」と感じられるものがある）」「善（社会課題に対して行動し、“私のため”と“社会のため”を両立している）」「美（感性に響いて個性を引き出し、私の世界をつくりあげている実感を与えてくれる）」「場（立場にとらわれない好きな自分に還り、生きている喜びを感じられる居場所である）」の4つの共通因子を持つことが明らかになった。 4つの要素のうち、「場」「真」「善」はそれぞれ、独立してブランドの推奨意向を高める影響力を持つのに対し、「美」の因子は「自分だけの世界として大切にしたい（秘密にしたい）」というファン特有の心理を反映する傾向にある。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 0 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい 生活者発想技術研究所では、「よいブランド」の具体像の検討を目的として、学際的な研究者や有識者7人に対してインタビューを行い、ブランドを評価するための33個の尺度項目を整理した。「最も好きかつ応援したいブランド」があると回答した15～74歳の男女1374人を対象に、それぞれの項目にそのブランドがどの程度当てはまるかを聴取。「最も好きかつ応援したいブランド」に共通する要素を抽出する分析を行った。 調査の結果、最も好きかつ応援したいブランドは「真（他者の意見や客観性によらず、「私が信じる」と感じられるものがある）」「善（社会課題に対して行動し、“私のため”と“社会のため”を両立している）」「美（感性に響いて個性を引き出し、私の世界をつくりあげている実感を与えてくれる）」「場（立場にとらわれない好きな自分に還り、生きている喜びを感じられる居場所である）」の4つの共通因子を持つことが明らかになった。 4つの要素のうち、「場」「真」「善」はそれぞれ、独立してブランドの推奨意向を高める影響力を持つのに対し、「美」の因子は「自分だけの世界として大切にしたい（秘密にしたい）」というファン特有の心理を反映する傾向にある。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 0 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい 4つの要素のうち、「場」「真」「善」はそれぞれ、独立してブランドの推奨意向を高める影響力を持つのに対し、「美」の因子は「自分だけの世界として大切にしたい（秘密にしたい）」というファン特有の心理を反映する傾向にある。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 0 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい",
       "base_score": 8.4,
-      "reading_score": 8.95,
-      "notion_score": 8.67,
+      "reading_score": 8.98,
+      "notion_score": 8.69,
       "grade": "S",
       "tags": [
         "consumer",
@@ -863,7 +1036,7 @@
         "rule_match_strength": 0.872,
         "experience_similarity": 0.865,
         "repetition_penalty": 0.95,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
         "semantic_bonus": 0.328,
@@ -2304,7 +2477,7 @@
         "rule_match_strength": 1.02,
         "experience_similarity": 0.879,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.23,
@@ -2366,7 +2539,7 @@
         "rule_match_strength": 0.865,
         "experience_similarity": 0.863,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -6234,7 +6407,7 @@
         "rule_match_strength": 1.057,
         "experience_similarity": 0.89,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.55,
@@ -8430,7 +8603,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Mf/e1FnCHTRDEUnfafi9ID7fwcsDHLtRQVDJFxrU47wsqj8itu0c2vgBMEYnX+VEqfH9Mgsx5Mv0kdAQSAsFSn8YHi6JytVEwcIbHS3AFN3Mys4PuCA/vEX+V1262evKuDoi/CTYPqPnNxqlQMDGRj0Tprb9nCjVOd/cj7vDSFgH6hdiEzUtR+XCy+v/P74lEShM0DnvU8lYW1a93+MYQsfUveDVvhYyttazN9QY7yfQJWAtxNijvbTS0AUI1wQepbgMK/Y9KUjk8CcqN/W2EdgiLdPOOqzk/hiyFzDvHrjxPC65iw70DfC55LwlPET29tQ77E/QzeT0DCbox7v4Ly8juRYkCG0fCQ3M5MHhySxAyvq6ClSsw0gpISNN5wdL7MXR8zy7K/j5ULsr1PQON6kGKyU06VQtvMkWNtw4yem03gXbPVXkBxgUKbSwJtbwEDboxA1Lyhno1Rbn2Ej1oBj6+Dyn+Ekz2fkfMjhhARVBuT1e3urk0NcRxq0xIihF",
-        "scale": 0.0009603504,
+        "scale": 0.0009603503,
         "normalized": true
       }
     },
@@ -11988,7 +12161,7 @@
         "rule_match_strength": 0.877,
         "experience_similarity": 0.882,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -12754,7 +12927,7 @@
         "rule_match_strength": 1.058,
         "experience_similarity": 0.871,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.85,
@@ -13210,7 +13383,7 @@
         "rule_match_strength": 1.048,
         "experience_similarity": 0.891,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -15941,7 +16114,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "K8bXsVTZJSdZEEM5VQ2zOSmyqKsXGNAQZkrZVgvVuuRSwC4m5xUn37T+A1wyf/w6z/vaXuxKFd+3lb0JVfsfO3AeISa78OEX2eIxSSvFUPWb0uYc5TA6pDgFIyfS8t+nszAP70S1J5zUMzLIWrLuN1sbvMfullryUPTtofDqFjfvywM7QzZPVPv4yeW/Lu8tMjc1uym/OMtUMjyV8u0yfJPPuuDIrTJQs+HjLL0X3k7FCVUXtO2yqMHbufUS9hDrtcD3Db4jHQgTuDgsJCamQ8gyC9XQJMfw///mKR/EFK4KPibH1hvu5ND14NALITDRtbASwUnh6QzUEyrkjq0FIjMlxBwf4VQ1ExjM7+0S5REw0MIJ8XOoqkX7RTx4DgJd8Pez1SvOCA7UVdkowwYPDZL9GUgyASsXw9MdO0o21OzL3fXqMlbVFTMdDqi4WtbF5ES/tT01DynJtBsS0XIQmAAQAhjH5xkjteIyDkJR0P0wkSJPxxHv9e8rxaAe9Pg/",
-        "scale": 0.0009375724,
+        "scale": 0.0009375723,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:12:27.090660+00:00"
@@ -17680,7 +17853,7 @@
         "rule_match_strength": 0.867,
         "experience_similarity": 0.884,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -18217,7 +18390,7 @@
         "rule_match_strength": 1.047,
         "experience_similarity": 0.878,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
