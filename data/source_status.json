@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T01:17:21.134963+00:00",
+  "generated_at": "2026-08-14T01:27:59.064738+00:00",
   "expected_sources": 21,
   "successful_sources": 19,
   "failed_sources": [
@@ -14,7 +14,7 @@
   ],
   "raw_new_count": 0,
   "deduped_count": 0,
-  "deep_read_count": 8,
+  "deep_read_count": 7,
   "sources": [
     {
       "name": "ギズモード・ジャパン",
@@ -145,5 +145,5 @@
   ],
   "semantic_model_family": "multilingual-e5",
   "semantic_rescored_count": 312,
-  "semantic_deep_read_count": 8
+  "semantic_deep_read_count": 7
 }
