@@ -25,11 +25,11 @@ def main()->int:
     require('scripts/weekly_embed_node.mjs','semantic-worker.bundle.js','rule_similarity','knowledge_similarity','experience_similarity')
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
     require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles')
-    require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','decrypt_weekly_state','source_yield','source_mode','probe','storage_tier','cold','_adaptive_skip')
+    require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','decrypt_weekly_state','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
-    require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留','weekly-source-audit-v9.js')
-    require('weekly-source-audit-v9.js','sourceStats','isRecommendedUnread','B/C自动归档','不算负反馈','建议停用','复制来源统计',"if(status==='later')return true", "return ['S','A'].includes(currentGrade(a))")
-    require('index.html','weekly-attention-v8.js','最近12周反馈','最近90天','最近8周')
+    require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留')
+    require('weekly-source-audit-v9.js','sourceStats','isRecommendedUnread','isExpiredUnlabeled','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','建议停用','复制来源统计',"if(status==='later')return true")
+    require('index.html','weekly-attention-v8.js','weekly-source-audit-v9.js','最近12周反馈','最近90天','最近8周','超过 7 天','0/18','隐性跳过')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
 
     require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback','ISO_DATE','evidence\\s*period')
@@ -50,9 +50,19 @@ def main()->int:
 
     source_audit=read('weekly-source-audit-v9.js')
     if "humanState(a).status==='skip'" not in source_audit:
-        raise AssertionError('source skip audit must use explicit human skip only')
-    if "(s.status||'new')==='new'&&!['S','A'].includes(currentGrade(a))" not in source_audit:
-        raise AssertionError('B/C auto archive must remain separate from explicit skip')
+        raise AssertionError('explicit source skip must still come from human status')
+    if "status==='new'&&!s.feedback" not in source_audit:
+        raise AssertionError('unlabeled source pass must require no human status and no feedback')
+    if 'applyFeedback(' in source_audit:
+        raise AssertionError('implicit source passes must never directly train content preference')
+
+    sources=json.loads(read('config/sources.json'))
+    names={str(x.get('name') or '') for x in sources}
+    stopped={'AV Watch','ギズモード・ジャパン','PR EDGE'}
+    if names & stopped:
+        raise AssertionError(f'stopped sources returned to active config: {sorted(names & stopped)}')
+    if len(sources)!=18:
+        raise AssertionError(f'active source count must be 18 after manual pruning, got {len(sources)}')
 
     require('weekly-state-sync.js','feedback','updated_at','恢复云端','备份本周标记')
     require('weekly-progress.js',"gf.value='ALL'",'isMarked')
@@ -61,7 +71,7 @@ def main()->int:
     require('.github/workflows/work-system-sync.yml','build_semantic_index.py','build_system_model_precision.py',model_lock,'git reset --hard origin/main','/tmp/work-system-model-output')
     require('.github/workflows/notion-sync.yml','sync_notion_temporal.py','build_semantic_index.py','temporal evidence',model_lock,'git reset --hard origin/main','/tmp/notion-model-output')
     update=read('.github/workflows/update.yml')
-    for trigger in ('scripts/weekly_lifecycle.py','data/knowledge.enc.json','data/system-model.enc.json','data/semantic-index.enc.json'):
+    for trigger in ('config/sources.json','scripts/weekly_lifecycle.py','data/knowledge.enc.json','data/system-model.enc.json','data/semantic-index.enc.json'):
         if trigger not in update:raise AssertionError(f'Weekly must rescore after {trigger} changes')
     for upstream in ('workflow_run:','Sync Notion knowledge','Sync personal work system','github.event.workflow_run.conclusion'):
         if upstream not in update:raise AssertionError(f'Weekly must listen to successful upstream workflow completion: {upstream}')
@@ -79,7 +89,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: Knowledge/Work System semantic-time context -> rolling feedback -> adaptive source yield -> 90-day hot storage -> S/A unread queue + local source audit -> encrypted backup -> conflict-safe commits are aligned.')
+    print('Global impact validation passed: 18 active sources -> explicit + implicit source passes -> 7-day S/A unread expiry -> rolling content feedback remains separate -> semantic/temporal Weekly -> encrypted backup -> conflict-safe commits are aligned.')
     return 0
 
 
