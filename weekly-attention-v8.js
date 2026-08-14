@@ -90,3 +90,9 @@
   rebuildPrefs();
   if(typeof render==='function')render();else renderArticles();
 })();
+
+// v9 is intentionally browser-only: exact per-source skip counts come from local encrypted/private state.
+window.addEventListener('load',()=>{
+  if(document.querySelector('script[data-weekly-source-audit-v9]'))return;
+  const s=document.createElement('script');s.src='weekly-source-audit-v9.js';s.dataset.weeklySourceAuditV9='1';document.body.appendChild(s);
+});
