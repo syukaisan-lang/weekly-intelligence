@@ -42,16 +42,11 @@
     "priority": "high"
   },
   {
-    "name": "ECZine:新着一覧",
-    "url": "http://eczine.jp/rss/new/index.xml",
-    "category": "Marketing",
-    "priority": "high"
-  },
-  {
     "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
-    "url": "http://dentsu-ho.com/dentsu-ho.rss",
+    "url": "https://dentsu-ho.com/?cid=GDN_DSK",
     "category": "Marketing",
-    "priority": "high"
+    "priority": "high",
+    "type": "html_feed_fallback"
   },
   {
     "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
