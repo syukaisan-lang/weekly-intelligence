@@ -25,11 +25,11 @@ def main()->int:
     require('scripts/weekly_embed_node.mjs','semantic-worker.bundle.js','rule_similarity','knowledge_similarity','experience_similarity')
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
     require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles','DENTSU_SOURCE','html_feed_fallback','/articles/')
-    require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','TRUSTED_STATUS_ORIGIN','human_v10','_normalized_status','decrypt_weekly_state','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
+    require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_STATUS','_normalized_status','_is_positive_adoption','status_action','queue_grades','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
-    require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留')
-    require('weekly-source-audit-v9.js','TRUSTED_STATUS_ORIGIN','human_v10','sourceStats','isRecommendedUnread','isExpiredUnlabeled','isAutoArchived','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','未处理归档','建议停用','复制来源统计')
-    require('index.html','weekly-attention-v8.js','weekly-source-audit-v9.js','最近12周反馈','最近90天','最近8周','未处理归档','超过 7 天','0/17','隐性跳过','旧版无法确认来源')
+    require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留','status_action','S/A/B')
+    require('weekly-source-audit-v9.js','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_FEEDBACK','QUEUE_GRADES','S\',\'A\',\'B','baseFeedback=feedback','raw.status=\'read\'','status_action=STATUS_ACTION_FEEDBACK','sourceStats','isRecommendedUnread','isAutoArchived','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','未处理归档','C 不进入处理队列','建议停用','复制来源统计')
+    require('index.html','weekly-attention-v8.js','weekly-source-audit-v9.js','weekly-state-sync.js','最近12周反馈','最近90天','最近8周','未处理归档','S + A + B','C 不进入处理队列','一次点击','0/17','隐性跳过')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
 
     require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback','ISO_DATE','evidence\\s*period')
@@ -51,18 +51,32 @@ def main()->int:
     source_audit=read('weekly-source-audit-v9.js')
     if "status_origin!==TRUSTED_STATUS_ORIGIN" not in source_audit:
         raise AssertionError('legacy read/save state must not count as trusted human reading')
-    if "humanState(a).status==='skip'" not in source_audit:
-        raise AssertionError('explicit source skip must still come from human status')
-    if "status==='new'&&!s.feedback" not in source_audit:
-        raise AssertionError('unlabeled source pass must require no human status and no feedback')
+    if "effective.status==='new'||effective.status==='later'" not in source_audit:
+        raise AssertionError('feedback must auto-process new/later articles in one click')
+    if "raw.status_action=STATUS_ACTION_FEEDBACK" not in source_audit:
+        raise AssertionError('auto-read caused by feedback must remain distinguishable from explicit read')
+    if "return isUnlabeled(a)&&isQueueGrade(a)&&isExpiredUnlabeled(a)" not in source_audit:
+        raise AssertionError('archive must contain only expired S/A/B, never C')
+    if "if(!isQueueGrade(a))return false" not in source_audit:
+        raise AssertionError('C must not enter the processing queue')
+    if "s.status==='read'&&s.status_action===STATUS_ACTION_STATUS" not in source_audit:
+        raise AssertionError('source adoption must distinguish explicit read from feedback auto-read')
     if "readingProgress==='archive'" not in source_audit:
-        raise AssertionError('expired/unlabeled recommendations must remain reviewable in archive view')
+        raise AssertionError('expired S/A/B must remain reviewable in archive view')
     if 'applyFeedback(' in source_audit:
         raise AssertionError('implicit source passes must never directly train content preference')
 
     lifecycle=read('scripts/weekly_lifecycle.py')
     if "status in ('read', 'save') and st.get('status_origin') != TRUSTED_STATUS_ORIGIN" not in lifecycle:
         raise AssertionError('backend source yield must ignore legacy untrusted read/save state')
+    if "feedback in ('accurate', 'more')" not in lifecycle or "feedback not in ('bad', 'less')" not in lifecycle:
+        raise AssertionError('backend adoption must not treat negative-feedback auto-read as positive')
+
+    state_sync=read('weekly-state-sync.js')
+    for needle in ('schema:3','status_origin','status_action','BACKUP_WINDOW_NAME','backupInFlight','openExactlyOneBackupPage','backupWeeklyStateBtn'):
+        if needle not in state_sync:raise AssertionError(f'Weekly backup must preserve one-click state and single-window behavior: {needle}')
+    if "window.open(url,'_blank','noopener,noreferrer')" in state_sync:
+        raise AssertionError('backup must not reintroduce noopener null-return double-navigation bug')
 
     sources=json.loads(read('config/sources.json'))
     names={str(x.get('name') or '') for x in sources}
@@ -100,7 +114,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 17 active sources + resilient Dentsu listing -> trusted human read state in UI and backend -> unread + unprocessed archive queues -> explicit/implicit source yield -> semantic/temporal Weekly -> encrypted backup are aligned.')
+    print('Global impact validation passed: 17 sources -> S/A/B one-click processing queue (C excluded) -> explicit vs feedback auto-read separated -> source yield remains clean -> single-window encrypted backup -> semantic/temporal Weekly are aligned.')
     return 0
 
 
