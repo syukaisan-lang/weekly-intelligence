@@ -43,6 +43,9 @@ jobs:
       SEMANTIC_MODEL_ID: intfloat/multilingual-e5-small
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
@@ -58,11 +61,28 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Fetch and screen feeds against latest Knowledge and Work System
         run: python scripts/update_feeds_temporal.py
-      - name: Commit refreshed dashboard data
+      - name: Commit refreshed dashboard data safely
         run: |
           git config user.name "reading-dashboard-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/
-          git diff --cached --quiet || git commit -m "Update weekly intelligence with adaptive semantic temporal v8"
-          git pull --rebase origin main
-          git push
+          cp data/articles.json /tmp/weekly-articles.json
+          cp data/source_status.json /tmp/weekly-source-status.json
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/weekly-articles.json data/articles.json
+            cp /tmp/weekly-source-status.json data/source_status.json
+            git add data/articles.json data/source_status.json
+            if git diff --cached --quiet; then
+              echo "No Weekly data changes to commit"
+              exit 0
+            fi
+            git commit -m "Update weekly intelligence with adaptive semantic temporal v8"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Weekly push raced with another commit; retrying from latest main ($attempt/3)"
+            sleep 2
+          done
+          echo "Weekly data push failed after retries" >&2
+          exit 1
