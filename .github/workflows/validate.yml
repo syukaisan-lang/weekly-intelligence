@@ -58,6 +58,7 @@ jobs:
           test -f private-knowledge.js
           test -f weekly-progress.js
           test -f weekly-attention-v8.js
+          test -f weekly-source-audit-v9.js
           test -f weekly-state-sync.js
           test -f scripts/sync_notion.py
           test -f scripts/sync_notion_temporal.py
