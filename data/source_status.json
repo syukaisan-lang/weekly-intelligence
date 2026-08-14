@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-14T11:57:25.057996+00:00",
+  "generated_at": "2026-08-14T12:00:01.467600+00:00",
   "expected_sources": 17,
   "successful_sources": 17,
   "failed_sources": [],
-  "raw_new_count": 12,
-  "deduped_count": 12,
+  "raw_new_count": 0,
+  "deduped_count": 0,
   "deep_read_count": 0,
   "sources": [
     {
@@ -106,7 +106,7 @@
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 12,
+      "new_count": 0,
       "error": null
     }
   ],
