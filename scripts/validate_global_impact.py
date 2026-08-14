@@ -24,12 +24,12 @@ def main()->int:
     require('scripts/weekly_semantic.py','semantic-index.enc.json','weekly_embed_node.mjs','multilingual-e5')
     require('scripts/weekly_embed_node.mjs','semantic-worker.bundle.js','rule_similarity','knowledge_similarity','experience_similarity')
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
-    require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles')
+    require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles','DENTSU_SOURCE','html_feed_fallback','/articles/')
     require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','decrypt_weekly_state','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
     require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留')
-    require('weekly-source-audit-v9.js','sourceStats','isRecommendedUnread','isExpiredUnlabeled','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','建议停用','复制来源统计',"if(status==='later')return true")
-    require('index.html','weekly-attention-v8.js','weekly-source-audit-v9.js','最近12周反馈','最近90天','最近8周','超过 7 天','0/18','隐性跳过')
+    require('weekly-source-audit-v9.js','TRUSTED_STATUS_ORIGIN','human_v10','sourceStats','isRecommendedUnread','isExpiredUnlabeled','isAutoArchived','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','未处理归档','建议停用','复制来源统计')
+    require('index.html','weekly-attention-v8.js','weekly-source-audit-v9.js','最近12周反馈','最近90天','最近8周','未处理归档','超过 7 天','0/17','隐性跳过','旧版无法确认来源')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
 
     require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback','ISO_DATE','evidence\\s*period')
@@ -49,20 +49,27 @@ def main()->int:
         raise AssertionError('negative semantic transfer must be gated by subject affinity')
 
     source_audit=read('weekly-source-audit-v9.js')
+    if "status_origin!==TRUSTED_STATUS_ORIGIN" not in source_audit:
+        raise AssertionError('legacy read/save state must not count as trusted human reading')
     if "humanState(a).status==='skip'" not in source_audit:
         raise AssertionError('explicit source skip must still come from human status')
     if "status==='new'&&!s.feedback" not in source_audit:
         raise AssertionError('unlabeled source pass must require no human status and no feedback')
+    if "readingProgress==='archive'" not in source_audit:
+        raise AssertionError('expired/unlabeled recommendations must remain reviewable in archive view')
     if 'applyFeedback(' in source_audit:
         raise AssertionError('implicit source passes must never directly train content preference')
 
     sources=json.loads(read('config/sources.json'))
     names={str(x.get('name') or '') for x in sources}
-    stopped={'AV Watch','ギズモード・ジャパン','PR EDGE'}
+    stopped={'AV Watch','ギズモード・ジャパン','PR EDGE','ECZine:新着一覧'}
     if names & stopped:
-        raise AssertionError(f'stopped sources returned to active config: {sorted(names & stopped)}')
-    if len(sources)!=18:
-        raise AssertionError(f'active source count must be 18 after manual pruning, got {len(sources)}')
+        raise AssertionError(f'stopped/merged sources returned to active config: {sorted(names & stopped)}')
+    if len(sources)!=17:
+        raise AssertionError(f'active source count must be 17 after pruning and ECZine merge, got {len(sources)}')
+    dentsu=next((x for x in sources if str(x.get('name') or '').startswith('ウェブ電通報')),None)
+    if not dentsu or dentsu.get('type')!='html_feed_fallback' or 'dentsu-ho.com' not in str(dentsu.get('url') or ''):
+        raise AssertionError('Dentsu must use official HTML listing fallback rather than retired RSS')
 
     require('weekly-state-sync.js','feedback','updated_at','恢复云端','备份本周标记')
     require('weekly-progress.js',"gf.value='ALL'",'isMarked')
@@ -89,7 +96,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 18 active sources -> explicit + implicit source passes -> 7-day S/A unread expiry -> rolling content feedback remains separate -> semantic/temporal Weekly -> encrypted backup -> conflict-safe commits are aligned.')
+    print('Global impact validation passed: 17 active sources + resilient Dentsu listing -> trusted human read state -> unread + unprocessed archive queues -> explicit/implicit source yield -> semantic/temporal Weekly -> encrypted backup are aligned.')
     return 0
 
 
