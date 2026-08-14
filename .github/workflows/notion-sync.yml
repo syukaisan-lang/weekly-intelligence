@@ -10,6 +10,7 @@ on:
     paths:
       - "scripts/temporal_knowledge.py"
       - "scripts/sync_notion_temporal.py"
+      - "scripts/build_semantic_index.py"
       - ".github/workflows/notion-sync.yml"
 
 permissions:
