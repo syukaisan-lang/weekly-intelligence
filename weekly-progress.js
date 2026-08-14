@@ -85,7 +85,8 @@ setStatus=function(a,v){
 };
 
 // Semantic feedback learning uses article vectors from the same multilingual-e5 family as Work System.
-// Structure learning remains separate so dislike of an event format does not become dislike of its topic.
+// Negative semantic transfer is gated by content subject, so a rejected tourism survey does not
+// become a rejection of surveys about electronics, consumers, AI, or other unrelated subjects.
 (() => {
   const baseScore=score;
   const baseRebuildPrefs=rebuildPrefs;
@@ -113,6 +114,15 @@ setStatus=function(a,v){
     }catch(_){vectorCache.set(id,null);return null;}
   }
   function dot(a,b){let s=0;for(let i=0;i<Math.min(a.length,b.length);i++)s+=a[i]*b[i];return s;}
+  function semanticSubjects(a){
+    const f=typedFeatures(a),xs=f.subjects||f.topics||[];
+    return new Set(xs.map(x=>String(x||'').trim()).filter(Boolean));
+  }
+  function subjectAffinity(a,b){
+    if(!a.size||!b.size)return .35;
+    for(const x of a)if(b.has(x))return 1;
+    return .08;
+  }
   function semanticWeight(a,fb){
     const contextHeavy=isContextDominant(typedFeatures(a));
     if(fb==='more')return .62;
@@ -125,16 +135,17 @@ setStatus=function(a,v){
     samples=[];
     for(const a of data.articles||[]){
       const fb=st(a.id).feedback,v=fb?vectorOf(a):null,w=fb?semanticWeight(a,fb):0;
-      if(v&&w)samples.push({id:String(a.id),v,w});
+      if(v&&w)samples.push({id:String(a.id),v,w,subjects:semanticSubjects(a)});
     }
   }
   function semanticPreferenceDelta(a){
     const v=vectorOf(a);if(!v||!samples.length)return 0;
-    const pos=[],neg=[];
+    const targetSubjects=semanticSubjects(a),pos=[],neg=[];
     for(const s of samples){
       if(s.id===String(a.id))continue;
       const sim=dot(v,s.v);if(sim<.80)continue;
-      const affinity=Math.min(1,Math.max(0,(sim-.80)/.17));
+      let affinity=Math.min(1,Math.max(0,(sim-.80)/.17));
+      if(s.w<0)affinity*=subjectAffinity(targetSubjects,s.subjects);
       const contribution=s.w*affinity;
       (contribution>=0?pos:neg).push(contribution);
     }
@@ -154,12 +165,12 @@ setStatus=function(a,v){
     row.innerHTML=`<span>语义学习：内容含义</span><span class="weight">+${positive} / -${negative}</span>`;
     root.prepend(row);
     const note=document.createElement('div');note.className='muted small semantic-pref-note';
-    note.textContent='向量只影响真正语义接近的文章；活动告知、PR等负反馈仍主要由形式和意图承担。';
+    note.textContent='负反馈先按内容主题归因；研究方法/调查形式不会因单篇无关主题被误伤。活动告知、PR等仍主要由形式和意图承担。';
     root.appendChild(note);
   };
   renderArticles=function(){
     baseRenderArticles();
-    document.querySelectorAll('.feedback-label').forEach(x=>x.textContent='筛选反馈（学习内容含义 + 主题 / 形式 / 意图）');
+    document.querySelectorAll('.feedback-label').forEach(x=>x.textContent='筛选反馈（内容主题 + 研究/呈现方式 + 意图）');
   };
 })();
 
