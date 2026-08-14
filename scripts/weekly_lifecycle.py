@@ -22,6 +22,7 @@ STATUS_PATH = ROOT / 'data' / 'source_status.json'
 PASS = os.getenv('DASHBOARD_PASSPHRASE', '')
 HOT_DAYS = 90
 SOURCE_WINDOW_DAYS = 56
+UNLABELED_EXPIRE_DAYS = 7
 
 
 def _dt(value):
@@ -38,6 +39,11 @@ def _dt(value):
 
 def article_time(a: dict):
     return _dt(a.get('published') or a.get('first_seen'))
+
+
+def queue_time(a: dict):
+    # first_seen represents how long this item has occupied the user's Weekly queue.
+    return _dt(a.get('first_seen') or a.get('published'))
 
 
 def decrypt_weekly_state() -> dict:
@@ -63,7 +69,25 @@ def decrypt_weekly_state() -> dict:
         return {}
 
 
+def _is_unlabeled(st: dict) -> bool:
+    status = st.get('status') or 'new'
+    return status == 'new' and not st.get('feedback')
+
+
+def _is_expired_unlabeled(a: dict, st: dict, now: datetime) -> bool:
+    if not _is_unlabeled(st):
+        return False
+    qt = queue_time(a)
+    return bool(qt and now - qt >= timedelta(days=UNLABELED_EXPIRE_DAYS))
+
+
 def source_yield(articles: list[dict], state: dict, now=None) -> dict[str, dict]:
+    """Evaluate source usefulness separately from content-preference learning.
+
+    A completely unlabeled article is an *implicit pass* for source-quality purposes because
+    the user does not want untouched material to accumulate. It is NOT written back as a
+    human skip and therefore never becomes a strong negative content-training sample.
+    """
     now = now or datetime.now(timezone.utc)
     cutoff = now - timedelta(days=SOURCE_WINDOW_DAYS)
     rows: dict[str, dict] = {}
@@ -77,16 +101,18 @@ def source_yield(articles: list[dict], state: dict, now=None) -> dict[str, dict]
         r = rows.setdefault(name, {
             'total': 0, 'sa': 0, 's': 0, 'saved': 0, 'read': 0,
             'positive': 0, 'strong_positive': 0, 'negative': 0,
-            'skipped': 0, 'duplicates': 0,
+            'skipped': 0, 'implicit_skipped': 0, 'expired_unlabeled': 0,
+            'sa_adopted': 0, 'duplicates': 0,
         })
         r['total'] += 1
         grade = str(a.get('grade') or '')
-        if grade in ('S', 'A'):
+        is_sa = grade in ('S', 'A')
+        if is_sa:
             r['sa'] += 1
         if grade == 'S':
             r['s'] += 1
         st = state.get(str(a.get('id') or '')) or {}
-        status = st.get('status')
+        status = st.get('status') or 'new'
         fb = st.get('feedback')
         if status == 'save':
             r['saved'] += 1
@@ -94,18 +120,29 @@ def source_yield(articles: list[dict], state: dict, now=None) -> dict[str, dict]
             r['read'] += 1
         elif status == 'skip':
             r['skipped'] += 1
+        if _is_unlabeled(st):
+            r['implicit_skipped'] += 1
+            if _is_expired_unlabeled(a, st, now):
+                r['expired_unlabeled'] += 1
         if fb in ('accurate', 'more'):
             r['positive'] += 1
         if fb == 'more':
             r['strong_positive'] += 1
         if fb in ('bad', 'less'):
             r['negative'] += 1
+        if is_sa and (status in ('read', 'save') or fb in ('accurate', 'more')):
+            r['sa_adopted'] += 1
         if (a.get('knowledge_context') or {}).get('increment_type') == 'mostly_duplicate':
             r['duplicates'] += 1
     for r in rows.values():
         t = max(1, r['total'])
         r['sa_rate'] = r['sa'] / t
         r['duplicate_rate'] = r['duplicates'] / t
+        r['pass_count'] = r['skipped'] + r['implicit_skipped']
+        r['pass_rate'] = r['pass_count'] / t
+        r['explicit_skip_rate'] = r['skipped'] / t
+        r['implicit_skip_rate'] = r['implicit_skipped'] / t
+        r['sa_adoption_rate'] = r['sa_adopted'] / max(1, r['sa'])
     return rows
 
 
@@ -114,10 +151,20 @@ def source_mode(metrics: dict | None) -> str:
         return 'active'
     total = metrics['total']
     sa_rate = metrics.get('sa_rate', 0)
-    # Explicit strong value always protects a source from aggressive throttling.
-    if metrics.get('saved', 0) >= 1 or metrics.get('strong_positive', 0) >= 1 or metrics.get('s', 0) >= 1:
-        return 'active'
-    # Probe is intentionally conservative: large sample + almost no high-grade yield.
+    pass_rate = metrics.get('pass_rate', 0)
+    sa_adopted = metrics.get('sa_adopted', 0)
+    sa_adoption_rate = metrics.get('sa_adoption_rate', 0)
+
+    # Very large, repeatedly ignored sources can be reduced even if the model occasionally
+    # assigns an A. Human adoption is the stronger signal than model grade for source control.
+    if total >= 50 and pass_rate >= .90 and sa_adopted == 0:
+        return 'probe'
+    if total >= 30 and pass_rate >= .80 and sa_adopted <= 1:
+        return 'cold'
+    if total >= 24 and pass_rate >= .70 and sa_adoption_rate < .15 and metrics.get('positive', 0) == 0:
+        return 'cold'
+
+    # Existing semantic-yield guardrails remain as a secondary signal.
     if total >= 50 and sa_rate < .025 and metrics.get('positive', 0) == 0:
         return 'probe'
     if total >= 30 and sa_rate < .08 and metrics.get('positive', 0) == 0:
@@ -211,8 +258,10 @@ def compact_articles(now=None) -> dict:
         ):
             a.pop(key, None)
     meta = payload.setdefault('meta', {})
-    meta['lifecycle_version'] = 'adaptive_v8'
+    meta['lifecycle_version'] = 'adaptive_v9'
     meta['hot_retention_days'] = HOT_DAYS
+    meta['unlabeled_source_pass_days'] = 0
+    meta['unread_expiry_days'] = UNLABELED_EXPIRE_DAYS
     meta['hot_article_count'] = hot
     meta['cold_article_count'] = cold
     meta['cold_records_keep'] = 'id/url/title/date/source/score/feedback-features for dedupe and learning memory'
@@ -227,6 +276,8 @@ def annotate_status(source_counts: dict, storage_counts: dict) -> None:
     st['adaptive_source_control'] = {
         'enabled': True,
         'window_days': SOURCE_WINDOW_DAYS,
+        'unlabeled_counts_as_implicit_pass': True,
+        'unread_expiry_days': UNLABELED_EXPIRE_DAYS,
         # Deliberately expose only aggregate counts; per-source feedback-derived modes stay private.
         'active_count': source_counts.get('active', 0),
         'cold_count': source_counts.get('cold', 0),
