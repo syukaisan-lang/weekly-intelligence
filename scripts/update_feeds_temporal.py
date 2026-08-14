@@ -2,10 +2,11 @@
 """Weekly v8: semantic temporal screening + rolling feedback/source/storage lifecycle."""
 from __future__ import annotations
 
+import html
 import json
 import re
 from types import SimpleNamespace
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -24,6 +25,7 @@ DENTSU_SOURCE='ウェブ電通報／ビジネスにもっとアイデアを。'
 XTREND_SOURCE='日経クロストレンド 新着'
 XTREND_FEEDER_URL='https://feeder.co/discover/26f6276420/xtrend-nikkei-com'
 BROWSER_UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+XTREND_DISCOVERY_META={}
 
 
 def temporal_increment_type(lex_diag:dict,sem_diag:dict,practical:bool)->str:
@@ -102,12 +104,44 @@ def _is_xtrend_article(url:str)->bool:
     return host=='xtrend.nikkei.com' and '/atcl/' in path and '/contents/new' not in path
 
 
-def fetch_xtrend_via_feeder(src):
-    """Discover XTrend article URLs from Feeder's public XTrend discovery page.
+def _decode_xtrend_candidates(href:str,base_url:str)->list[str]:
+    """Mirror the isolated test that successfully discovered XTrend URLs on GitHub Actions."""
+    out=[]
+    raw=html.unescape(href or '')
+    out.append(urljoin(base_url,raw))
+    try:
+        query=parse_qs(urlsplit(raw).query)
+        for key in ('url','u','target','redirect','redirect_url','dest','destination'):
+            for value in query.get(key,[]):
+                out.append(unquote(value))
+    except Exception:
+        pass
+    out.extend(re.findall(r'https?://xtrend\.nikkei\.com/atcl/[^\s"\'<>]+',raw,re.I))
+    return out
 
-    Feeder is used only as a discovery index. Article URLs remain the original xtrend.nikkei.com URLs.
-    If Feeder is unavailable, fall back to the previous direct XTrend listing fetcher.
-    """
+
+def _feeder_context(a)->str:
+    """Extract the public text around a Feeder article link as a screening snippet."""
+    title=p.base.clean(a.get_text(' ',strip=True))
+    best=''
+    node=a
+    for _ in range(5):
+        node=getattr(node,'parent',None)
+        if node is None:
+            break
+        text=p.base.clean(node.get_text(' ',strip=True))
+        if len(text)>len(best) and len(text)<=1800:
+            best=text
+        if len(text)>=80:
+            break
+    if title and best.startswith(title):
+        best=best[len(title):].strip(' -–—|｜:：')
+    best=re.sub(r'\b(Read full|Read more|Open)\b',' ',best,flags=re.I)
+    return p.base.clean(best)[:1200]
+
+
+def fetch_xtrend_via_feeder(src):
+    """Discover XTrend via Feeder using the parser proven by the isolated GitHub Actions test."""
     if src.get('name')!=XTREND_SOURCE:
         return _original_fetch_xtrend(src)
     errors=[]
@@ -115,23 +149,34 @@ def fetch_xtrend_via_feeder(src):
         r=requests.get(
             XTREND_FEEDER_URL,
             headers={'User-Agent':BROWSER_UA,'Accept-Language':'ja,en;q=0.7'},
-            timeout=20,
+            timeout=30,
             allow_redirects=True,
         )
         r.raise_for_status()
         soup=BeautifulSoup(r.text,'html.parser')
         rows=[];seen=set()
         for a in soup.find_all('a',href=True):
-            url=p.base.norm_url(urljoin(r.url,str(a.get('href') or '')))
-            if not _is_xtrend_article(url) or url in seen:
-                continue
             title=p.base.clean(a.get_text(' ',strip=True))
             if len(title)<8:
                 continue
-            seen.add(url);rows.append((title,url))
+            found_url=''
+            for candidate in _decode_xtrend_candidates(str(a.get('href') or ''),r.url):
+                candidate=html.unescape(candidate)
+                if _is_xtrend_article(candidate):
+                    found_url=p.base.norm_url(candidate)
+                    break
+            if not found_url or found_url in seen:
+                continue
+            seen.add(found_url)
+            summary=_feeder_context(a)
+            XTREND_DISCOVERY_META[found_url]={'title':title,'summary':summary,'discovery':'feeder'}
+            rows.append((title,found_url))
             if len(rows)>=80:
                 break
         if rows:
+            print(f'XTrend Feeder discovery: {len(rows)} articles')
+            for title,url in rows[:5]:
+                print(f'  XTREND {title[:100]} | {url}')
             return rows
         errors.append('Feeder page loaded but no XTrend article links were found')
     except Exception as e:
@@ -147,6 +192,30 @@ def fetch_xtrend_via_feeder(src):
 
 
 p.base.fetch_xtrend=fetch_xtrend_via_feeder
+
+
+def enrich_xtrend_from_feeder_cache()->int:
+    """Attach Feeder public snippets before semantic refresh so XTrend can be screened beyond title-only."""
+    if not XTREND_DISCOVERY_META or not p.base.ART_PATH.exists():
+        return 0
+    payload=json.loads(p.base.ART_PATH.read_text(encoding='utf-8'))
+    changed=0
+    for article in payload.get('articles') or []:
+        if article.get('source')!=XTREND_SOURCE:
+            continue
+        url=p.base.norm_url(article.get('url',''))
+        meta=XTREND_DISCOVERY_META.get(url)
+        if not meta:
+            continue
+        summary=meta.get('summary','')
+        if summary and summary!=article.get('summary',''):
+            article['summary']=summary
+            article['screening_note']='XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。'
+            changed+=1
+    if changed:
+        p.base.ART_PATH.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
+    print(f'XTrend Feeder summaries enriched: {changed}')
+    return changed
 
 
 def adaptive_pre_read_heuristic(src,title,summary,content=''):
@@ -176,7 +245,7 @@ def mark_version()->None:
     meta['temporal_update_enabled']=True
     meta['rolling_feedback_window_days']=84
     meta['adaptive_attention_budget']=True
-    meta['xtrend_discovery']='feeder_with_direct_fallback'
+    meta['xtrend_discovery']='feeder_verified_parser_with_summary'
     for a in payload.get('articles') or []:
         kc=a.get('knowledge_context') or {}
         if kc.get('increment_type')=='temporal_update':
@@ -191,6 +260,7 @@ if __name__=='__main__':
     p.base.heuristic=adaptive_pre_read_heuristic
     p.deep_read_semantic_candidates=adaptive_semantic_deep_read
     p.base.main()
+    enrich_xtrend_from_feeder_cache()
     lifecycle.refresh_hot_only(p.refresh_existing_scores)
     mark_version()
     storage_counts=lifecycle.compact_articles()
