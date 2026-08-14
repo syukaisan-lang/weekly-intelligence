@@ -47956,7 +47956,7 @@ var __webpack_exports__zeros_like = __webpack_exports__.zeros_like;
 
 // semantic-worker-entry.js
 var MODEL = "Xenova/multilingual-e5-small";
-__webpack_exports__env.useBrowserCache = true;
+__webpack_exports__env.useBrowserCache = typeof caches !== "undefined";
 if (__webpack_exports__env.backends && __webpack_exports__env.backends.onnx && __webpack_exports__env.backends.onnx.wasm) __webpack_exports__env.backends.onnx.wasm.numThreads = 1;
 var extractorPromise;
 function extractor() {

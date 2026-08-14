@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": 1,
-    "built_at": "2026-08-13T23:50:11.729427+00:00",
+    "built_at": "2026-08-14T00:20:17.307508+00:00",
     "encrypted_full_data": true,
     "model": "Xenova/multilingual-e5-small",
     "embedding_family": "multilingual-e5",
@@ -9,8 +9,8 @@
     "vector_count": 1097,
     "item_count": 642,
     "item_counts": {
-      "private": 353,
       "notion": 147,
+      "private": 353,
       "rule": 142
     },
     "query_runs_locally": true,
