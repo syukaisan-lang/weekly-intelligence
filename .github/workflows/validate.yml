@@ -8,7 +8,9 @@ on:
       - "**.js"
       - "**.html"
       - "scripts/**.py"
+      - "scripts/**.mjs"
       - ".github/workflows/**.yml"
+      - "semantic-worker-source.txt"
 
 permissions:
   contents: read
@@ -30,27 +32,39 @@ jobs:
             echo "Checking $f"
             node --check "$f"
           done
+          for f in scripts/*.mjs; do
+            test -e "$f" || continue
+            echo "Checking $f"
+            node --check "$f"
+          done
       - name: Check Python syntax
         run: python -m py_compile scripts/*.py
+      - name: Check cross-system impact
+        run: python scripts/validate_global_impact.py
       - name: Check required dashboard files
         run: |
           test -f index.html
           test -f knowledge.html
-          test -f insights.html
-          test -f playbook.html
           test -f work-system.html
           test -f work-system.js
           test -f work-system-intent-v3.js
           test -f work-system-precision-v4.js
           test -f work-system-semantic-v5.js
+          test -f work-system-vector-v6.js
+          test -f semantic-worker.bundle.js
           test -f private-knowledge.js
+          test -f weekly-progress.js
           test -f weekly-state-sync.js
           test -f scripts/sync_notion.py
           test -f scripts/sync_work_system.py
           test -f scripts/work_taxonomy.py
           test -f scripts/work_taxonomy_v4.py
           test -f scripts/reclassify_work_system.py
-          test -f scripts/build_system_model_v3.py
+          test -f scripts/build_system_model_precision.py
+          test -f scripts/build_semantic_index.py
+          test -f scripts/weekly_semantic.py
+          test -f scripts/weekly_embed_node.mjs
+          test -f scripts/update_feeds_personalized.py
           test -f scripts/save_to_notion.py
           test -f scripts/save_weekly_state.py
           test -f .github/workflows/weekly-state-sync.yml
