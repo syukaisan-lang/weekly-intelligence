@@ -25,8 +25,15 @@ def main()->int:
     require('scripts/weekly_semantic.py','semantic-index.enc.json','weekly_embed_node.mjs','multilingual-e5')
     require('scripts/weekly_embed_node.mjs','semantic-worker.bundle.js','rule_similarity','knowledge_similarity','experience_similarity')
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
-    require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','内容含义 + 主题 / 形式 / 意图')
+    require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
     require('work-system.html','work-system-vector-v6.js')
+
+    # Feedback attribution must distinguish subject from method/format.
+    weekly=read('weekly-progress.js')
+    if 'f.topics.forEach(x=>add(prefs.topics,x,strong?-.14:-.06))' not in weekly:
+        raise AssertionError('ordinary negative feedback must primarily penalize content subject')
+    if 'if(s.w<0)affinity*=subjectAffinity' not in weekly:
+        raise AssertionError('negative semantic transfer must be gated by subject affinity')
 
     # State/history must stay independent from recommendation rescoring and remain recoverable.
     require('weekly-state-sync.js','feedback','updated_at','恢复云端','备份本周标记')
@@ -48,7 +55,7 @@ def main()->int:
         if not meta.get('encrypted_full_data'):raise AssertionError('full semantic index must remain encrypted')
         if 'vectors_b64' in json.loads(meta_path.read_text(encoding='utf-8')):raise AssertionError('public semantic metadata must not contain vectors')
 
-    print('Global impact validation passed: Work System -> Knowledge -> Weekly -> feedback -> backup are aligned.')
+    print('Global impact validation passed: Work System -> Knowledge -> Weekly -> subject-aware feedback -> backup are aligned.')
     return 0
 
 
