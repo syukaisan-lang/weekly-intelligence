@@ -9,6 +9,7 @@ on:
     branches: [main]
     paths:
       - "scripts/update_feeds_personalized.py"
+      - "scripts/update_feeds_temporal.py"
       - "scripts/weekly_semantic.py"
       - "scripts/weekly_semantic_runtime.py"
       - "scripts/personal_relevance.py"
@@ -49,12 +50,12 @@ jobs:
           python -m pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.4,<3"
           python -m pip install -r requirements.txt
       - name: Fetch and screen feeds against latest Knowledge and Work System
-        run: python scripts/update_feeds_personalized.py
+        run: python scripts/update_feeds_temporal.py
       - name: Commit refreshed dashboard data
         run: |
           git config user.name "reading-dashboard-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "Update weekly intelligence with semantic temporal scoring"
+          git diff --cached --quiet || git commit -m "Update weekly intelligence with semantic temporal v7"
           git pull --rebase origin main
           git push
