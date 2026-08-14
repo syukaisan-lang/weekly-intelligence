@@ -11,7 +11,7 @@
   function toast(text){
     let box=document.getElementById('weeklyStateToast');
     if(!box){box=document.createElement('div');box.id='weeklyStateToast';box.className='save-toast';document.body.appendChild(box);}
-    box.textContent=text;box.classList.add('show');clearTimeout(box._timer);box._timer=setTimeout(()=>box.classList.remove('show'),5500);
+    box.textContent=text;box.classList.add('show');clearTimeout(box._timer);box._timer=setTimeout(()=>box.classList.remove('show'),7000);
   }
 
   function normalizedBackupStatus(v){
@@ -72,7 +72,7 @@
       if(cloudTs&&cloudTs>=latestLocalUpdate())localStorage.removeItem(DIRTY_SINCE_KEY);
       const dirtySince=Number(localStorage.getItem(DIRTY_SINCE_KEY)||0);
       const dirty=latestLocalUpdate()>cloudTs;
-      if(localStorage.getItem(BACKUP_PENDING_KEY)){setCloudStatus('加密备份已提交 · 等待 GitHub 写入');return;}
+      if(localStorage.getItem(BACKUP_PENDING_KEY)){setCloudStatus('备份待确认 · 若 GitHub 页面尚未提交，请粘贴密文后提交');return;}
       if(dirty){
         const old=dirtySince&&Date.now()-dirtySince>=REMIND_AFTER_MS;
         setCloudStatus(old?'本机已自动保存 · 已超过 7 天未备份':'本机已自动保存 · 建议每周备份一次');
@@ -91,38 +91,71 @@
     return true;
   }
 
-  function openExactlyOneBackupPage(url){
-    // Do not use window.open(...,'noopener') + "if (!win) location.href" here: some browsers
-    // intentionally return null for noopener even when they already opened the tab, which caused two pages.
-    const win=window.open(url,BACKUP_WINDOW_NAME);
+  function reserveBackupWindow(){
+    const win=window.open('about:blank',BACKUP_WINDOW_NAME);
     if(win){
-      try{win.opener=null;}catch(_){}
-      return;
+      try{
+        win.document.title='准备 Weekly 备份…';
+        win.document.body.innerHTML='<p style="font-family:sans-serif;padding:24px">正在本地加密并复制备份数据…</p>';
+      }catch(_){}
     }
-    // Popup was genuinely blocked: reuse the current tab, still exactly one GitHub page.
+    return win;
+  }
+
+  function closeReservedWindow(win){
+    if(!win||win.closed)return;
+    try{win.close();}catch(_){}
+  }
+
+  function navigateBackupWindow(win,url){
+    if(win&&!win.closed){
+      try{win.location.replace(url);win.opener=null;return;}catch(_){}
+    }
     location.href=url;
+  }
+
+  async function copyBackupLine(text){
+    if(navigator.clipboard?.writeText){
+      try{await navigator.clipboard.writeText(text);return true;}catch(_){}
+    }
+    const ta=document.createElement('textarea');
+    ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';ta.style.pointerEvents='none';
+    document.body.appendChild(ta);ta.focus();ta.select();
+    let ok=false;try{ok=document.execCommand('copy');}catch(_){}
+    ta.remove();
+    if(!ok)throw new Error('浏览器没有允许自动复制密文，请允许剪贴板权限后重试');
+    return true;
   }
 
   async function backup(){
     if(backupInFlight){toast('备份正在准备中，请不要重复点击。');return;}
     backupInFlight=true;
     const button=document.getElementById('backupWeeklyStateBtn');if(button)button.disabled=true;
+    const reserved=reserveBackupWindow();
     try{
       await ensureValidatedPassphrase();
       const snapshot=meaningfulEntries();
       const payload={schema:3,kind:'weekly-reading-state',created_at:new Date().toISOString(),state:snapshot};
       const env=await encryptPrivatePayload(payload,{kind:'weekly-state',compress:true});
       const encoded=btoa(JSON.stringify(env));
+      const clipboardLine=`STATE_ENVELOPE_B64: ${encoded}`;
+      await copyBackupLine(clipboardLine);
+
       const title='[WEEKLY-STATE] '+new Date().toISOString().slice(0,19).replace('T',' ');
-      const body=`STATE_ENVELOPE_B64: ${encoded}\n\nWeekly Intelligence 的人工标记加密备份。Issue 中只有 AES-GCM 密文；Action 只接受仓库所有者提交，并会在写入后自动关闭。`;
-      const url=`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-      if(url.length>60000)throw new Error('标记记录过多，GitHub 确认链接已超过安全长度');
+      const shortBody='Weekly Intelligence 加密备份。\n\n请在下面空白处直接粘贴（Ctrl+V / ⌘V）刚才自动复制的整行密文，然后点击 Submit new issue。\n\n';
+      const url=`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(shortBody)}`;
+      if(url.length>2000)throw new Error('GitHub 确认链接异常过长');
+
       localStorage.setItem(BACKUP_PENDING_KEY,env.created_at||new Date().toISOString());
-      setCloudStatus('备份请求待确认');
-      openExactlyOneBackupPage(url);
-      toast(`已加密 ${Object.keys(snapshot).length} 条人工记录。只会打开 1 个 GitHub 确认页。`);
-    }catch(e){toast('备份失败：'+e.message);}
-    finally{backupInFlight=false;if(button)button.disabled=false;}
+      setCloudStatus('密文已复制 · 请在 GitHub 页面粘贴后提交');
+      navigateBackupWindow(reserved,url);
+      toast(`已加密并复制 ${Object.keys(snapshot).length} 条人工记录。GitHub 页面只需粘贴一次并提交。`);
+    }catch(e){
+      closeReservedWindow(reserved);
+      toast('备份失败：'+e.message);
+    }finally{
+      backupInFlight=false;if(button)button.disabled=false;
+    }
   }
 
   async function restore(){
@@ -160,7 +193,8 @@
     const backupBtn=document.createElement('button');backupBtn.id='backupWeeklyStateBtn';backupBtn.className='btn';backupBtn.type='button';backupBtn.textContent='备份本周标记';backupBtn.onclick=backup;
     const restoreBtn=document.createElement('button');restoreBtn.className='btn secondary';restoreBtn.type='button';restoreBtn.textContent='恢复云端';restoreBtn.onclick=restore;
     const status=document.createElement('span');status.id='weeklyCloudStatus';status.className='muted small';status.textContent='检查保存状态…';
-    tools.append(backupBtn,restoreBtn,status);root.appendChild(tools);refreshCloudStatus();
+    const help=document.createElement('span');help.className='muted small';help.textContent='备份时密文只复制到剪贴板，GitHub 页面粘贴后提交；不会再把密文放进 URL。';
+    tools.append(backupBtn,restoreBtn,status,help);root.appendChild(tools);refreshCloudStatus();
   }
 
   migrateTimestamps();
