@@ -33,9 +33,9 @@ def main()->int:
     # Temporal evidence: occurrence time > publication time > collection time.
     require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback')
     require('scripts/sync_notion_temporal.py','enrich_item_temporal','base.build_item')
-    require('.github/workflows/notion-sync.yml','sync_notion_temporal.py','temporal evidence')
-    require('knowledge.html','knowledge-temporal-v7.js','调查期','Notion 收录日')
+    require('knowledge.html','knowledge-temporal-v7.js','knowledge-temporal-list-v7.js','调查期','Notion 收录日','最新证据优先')
     require('knowledge-temporal-v7.js','TEMPORAL_RE','semantic-index.enc.json','evidence_period','temporal_confidence','变化信号')
+    require('knowledge-temporal-list-v7.js','有效证据时间','证据 ','发布 ','收录 ','effective_date')
     require('work-system-temporal-v7.js','freshness','CHANGE_RE','CURRENT_RE','time_sensitive')
     require('scripts/weekly_semantic_runtime.py','temporal_update_bonus','knowledge_effective_date','knowledge_temporal_confidence','knowledge_time_sensitive','repetition_penalty')
     require('weekly-relations-v6.js','时间更新','temporal_update_bonus','证据时间')
@@ -51,8 +51,11 @@ def main()->int:
     require('weekly-state-sync.js','feedback','updated_at','恢复云端','备份本周标记')
     require('weekly-progress.js',"gf.value='ALL'",'isMarked')
 
-    # Synchronization ownership: Google/Notion rebuild system+index; Weekly consumes latest state.
-    require('.github/workflows/work-system-sync.yml','build_semantic_index.py','build_system_model_precision.py')
+    # Synchronization ownership: Google/Notion rebuild system+index; they share one writer lock
+    # and restore generated outputs on top of latest main before committing.
+    model_lock='personal-intelligence-model-write'
+    require('.github/workflows/work-system-sync.yml','build_semantic_index.py','build_system_model_precision.py',model_lock,'git reset --hard origin/main','/tmp/work-system-model-output')
+    require('.github/workflows/notion-sync.yml','sync_notion_temporal.py','build_semantic_index.py','temporal evidence',model_lock,'git reset --hard origin/main','/tmp/notion-model-output')
     update=read('.github/workflows/update.yml')
     for trigger in ('data/knowledge.enc.json','data/system-model.enc.json','data/semantic-index.enc.json'):
         if trigger not in update:raise AssertionError(f'Weekly must rescore after {trigger} changes')
@@ -70,7 +73,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: time-aware Knowledge -> Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned.')
+    print('Global impact validation passed: time-aware Knowledge -> Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned; model writers are serialized.')
     return 0
 
 
