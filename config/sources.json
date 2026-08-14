@@ -1,26 +1,8 @@
 [
   {
-    "name": "ギズモード・ジャパン",
-    "url": "http://www.gizmodo.jp/index.xml",
-    "category": "家電情報",
-    "priority": "low"
-  },
-  {
     "name": "CNET Japan 最新情報　総合",
     "url": "http://feed.japan.cnet.com/rss/index.rdf",
     "category": "家電情報",
-    "priority": "low"
-  },
-  {
-    "name": "AV Watch",
-    "url": "http://av.watch.impress.co.jp/sublink/av.rdf",
-    "category": "家電情報",
-    "priority": "low"
-  },
-  {
-    "name": "PR EDGE",
-    "url": "http://adgang.jp/feed",
-    "category": "キャンペーン",
     "priority": "low"
   },
   {
