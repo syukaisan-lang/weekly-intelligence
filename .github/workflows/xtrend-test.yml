@@ -1,0 +1,19 @@
+name: XTrend isolated test
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/test_xtrend_discovery.py"
+      - ".github/workflows/xtrend-test.yml"
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python -m pip install requests beautifulsoup4
+      - name: Test XTrend discovery only
+        run: python scripts/test_xtrend_discovery.py
