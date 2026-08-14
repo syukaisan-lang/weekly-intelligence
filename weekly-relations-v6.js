@@ -31,8 +31,9 @@
     return ['体系相关','related','与现有 Knowledge / Work System 有语义关联。'];
   }
   function render(){
-    if(!know||!system||!index||!Array.isArray(window.data?.articles||data?.articles))return;
-    const articles=window.data?.articles||data.articles,kmap=new Map((know.items||know.recent_stock||[]).map(x=>[String(x.id||''),x])),rmap=new Map((system.rules||[]).map(x=>[String(x.id||''),x]));
+    const articles=typeof data!=='undefined'?(data.articles||[]):[];
+    if(!know||!system||!index||!articles.length)return;
+    const kmap=new Map((know.items||know.recent_stock||[]).map(x=>[String(x.id||''),x])),rmap=new Map((system.rules||[]).map(x=>[String(x.id||''),x]));
     document.querySelectorAll('#articleList .article').forEach(card=>{
       const link=card.querySelector('.article-title');if(!link)return;
       const a=articles.find(x=>x.url===link.getAttribute('href')||x.title===link.textContent.trim());if(!a?.semantic_vector)return;
@@ -55,7 +56,8 @@
       if(k?.locked||s?.locked||i?.locked)return false;know=k;system=s;index=i;packed=null;render();return true;
     }catch(_){return false;}
   }
+  function retryLoad(){[350,900,1800,3500].forEach(ms=>setTimeout(()=>{if(!index)load();},ms));}
   const base=renderArticles;renderArticles=function(){base();setTimeout(()=>{index?render():load();},30);};
-  document.getElementById('unlockWeeklyKnowledge')?.addEventListener('click',()=>setTimeout(load,500));
+  document.getElementById('unlockWeeklyKnowledge')?.addEventListener('click',retryLoad);
   load();
 })();
