@@ -26,6 +26,9 @@ jobs:
           git config user.name "weekly-state-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/weekly-state.enc.json data/weekly-state.json
+          if [ -d data/weekly-state-deltas ]; then
+            git add data/weekly-state-deltas
+          fi
           if git diff --cached --quiet; then
             echo "No state changes to commit"
           else
@@ -35,7 +38,7 @@ jobs:
       - name: Confirm and close request
         if: success()
         run: |
-          gh issue comment "${{ github.event.issue.number }}" --body "✅ Weekly 标记已加密备份。仓库中只保存密文。"
+          gh issue comment "${{ github.event.issue.number }}" --body "✅ Weekly 标记已加密备份。仓库中只保存密文；增量会自动与历史基线合并恢复。"
           gh issue close "${{ github.event.issue.number }}"
       - name: Report failure
         if: failure()
