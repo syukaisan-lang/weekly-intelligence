@@ -27,7 +27,7 @@
       <section class="card"><div class="section-head slim"><div><h2>细分知识主题</h2><p class="muted small">由标题、summary、正文和 Comment 共同识别。</p></div></div><div id="topicCloud" class="topic-cloud"></div></section>
     </div>
 
-    <section class="card knowledge-toolbar"><div class="knowledge-toolbar-row"><label class="search-label">搜索知识库<input id="knowledgeSearch" class="search-input" type="search" placeholder="搜索知识；时间问题例：消费者消费观这几年怎么变了？"></label><label>Comment<select id="knowledgeCommentFilter"><option value="all">全部</option><option value="with">只看有 Comment</option><option value="without">没有 Comment</option></select></label><label>排序<select id="knowledgeSort"><option value="newest">最新优先</option><option value="oldest">最旧优先</option><option value="comments">Comment最多</option></select></label></div><p class="muted small">包含“变化 / 趋势 / 过去几年 / 推移 / 最新”等时间意图时，会自动启用本地 Semantic Temporal View：优先调查期，其次发布日期，最后才使用 Notion 收录日。</p></section>
+    <section class="card knowledge-toolbar"><div class="knowledge-toolbar-row"><label class="search-label">搜索知识库<input id="knowledgeSearch" class="search-input" type="search" placeholder="搜索知识；时间问题例：消费者消费观这几年怎么变了？"></label><label>Comment<select id="knowledgeCommentFilter"><option value="all">全部</option><option value="with">只看有 Comment</option><option value="without">没有 Comment</option></select></label><label>排序<select id="knowledgeSort"><option value="newest">最新证据优先</option><option value="oldest">最早证据优先</option><option value="comments">Comment最多</option></select></label></div><p class="muted small">普通列表也按有效证据时间排序并标明“证据 / 发布 / 收录”。包含“变化 / 趋势 / 过去几年 / 推移 / 最新”等时间意图时，会自动启用本地 Semantic Temporal View。</p></section>
 
     <div id="knowledgeResultsAnchor" class="results-anchor"></div>
     <section id="knowledgeFilterContext" class="knowledge-filter-context"><div><span class="muted small">当前位置</span><strong id="knowledgeFilterLabel">全部分类</strong><span id="knowledgeFilterCount" class="pill">0 篇</span></div><button id="clearKnowledgeFilter" class="text-btn hidden" type="button">返回全部</button></section>
@@ -42,5 +42,6 @@
   <script src="knowledge-unlock.js"></script>
   <script src="knowledge-deeplink.js"></script>
   <script src="knowledge-temporal-v7.js?v=7"></script>
+  <script src="knowledge-temporal-list-v7.js?v=7"></script>
 </body>
 </html>
