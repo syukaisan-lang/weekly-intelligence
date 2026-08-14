@@ -5,6 +5,12 @@ on:
   schedule:
     # Friday 18:40 Japan time = 09:40 UTC
     - cron: "40 9 * * 5"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/temporal_knowledge.py"
+      - "scripts/sync_notion_temporal.py"
+      - ".github/workflows/notion-sync.yml"
 
 permissions:
   contents: write
