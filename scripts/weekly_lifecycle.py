@@ -24,6 +24,7 @@ HOT_DAYS = 90
 SOURCE_WINDOW_DAYS = 56
 UNLABELED_EXPIRE_DAYS = 7
 TRUSTED_STATUS_ORIGIN = 'human_v10'
+STATUS_ACTION_STATUS = 'status'
 
 
 def _dt(value):
@@ -43,7 +44,6 @@ def article_time(a: dict):
 
 
 def queue_time(a: dict):
-    # first_seen represents how long this item has occupied the user's Weekly queue.
     return _dt(a.get('first_seen') or a.get('published'))
 
 
@@ -72,9 +72,6 @@ def decrypt_weekly_state() -> dict:
 
 def _normalized_status(st: dict) -> str:
     status = st.get('status') or 'new'
-    # Historical read/save records did not record whether the user explicitly chose them.
-    # The user confirmed the true historical read/save count is zero, so only v10+ human actions
-    # can count as reading/adoption. Old records are treated as unlabeled for source-yield purposes.
     if status in ('read', 'save') and st.get('status_origin') != TRUSTED_STATUS_ORIGIN:
         return 'new'
     return status
@@ -91,13 +88,28 @@ def _is_expired_unlabeled(a: dict, st: dict, now: datetime) -> bool:
     return bool(qt and now - qt >= timedelta(days=UNLABELED_EXPIRE_DAYS))
 
 
+def _is_positive_adoption(status: str, st: dict, feedback: str | None) -> bool:
+    """Separate 'processed/read' from positive source adoption.
+
+    v11 auto-marks an article read when any feedback button is clicked. A negative feedback click
+    therefore means processed, not adopted. Positive source value is save, positive feedback, or
+    an explicit read-status action without a negative feedback. status_action=None is kept as a
+    compatibility path for the short v10 window before this field existed.
+    """
+    if status == 'save':
+        return True
+    if feedback in ('accurate', 'more'):
+        return True
+    explicit_read = status == 'read' and st.get('status_action') in (None, STATUS_ACTION_STATUS)
+    return bool(explicit_read and feedback not in ('bad', 'less'))
+
+
 def source_yield(articles: list[dict], state: dict, now=None) -> dict[str, dict]:
     """Evaluate source usefulness separately from content-preference learning.
 
-    A completely unlabeled article is an *implicit pass* for source-quality purposes because
-    the user does not want untouched material to accumulate. It is NOT written back as a
-    human skip and therefore never becomes a strong negative content-training sample.
-    Legacy read/save records without a trusted human-origin marker are also treated as unlabeled.
+    A completely unlabeled article is an implicit pass for source-quality purposes. It is not
+    written back as a human skip and therefore never becomes a strong negative content sample.
+    Legacy read/save records without a trusted human-origin marker are treated as unlabeled.
     """
     now = now or datetime.now(timezone.utc)
     cutoff = now - timedelta(days=SOURCE_WINDOW_DAYS)
@@ -141,7 +153,7 @@ def source_yield(articles: list[dict], state: dict, now=None) -> dict[str, dict]
             r['strong_positive'] += 1
         if fb in ('bad', 'less'):
             r['negative'] += 1
-        if is_sa and (status in ('read', 'save') or fb in ('accurate', 'more')):
+        if is_sa and _is_positive_adoption(status, st, fb):
             r['sa_adopted'] += 1
         if (a.get('knowledge_context') or {}).get('increment_type') == 'mostly_duplicate':
             r['duplicates'] += 1
@@ -166,8 +178,6 @@ def source_mode(metrics: dict | None) -> str:
     sa_adopted = metrics.get('sa_adopted', 0)
     sa_adoption_rate = metrics.get('sa_adoption_rate', 0)
 
-    # Very large, repeatedly ignored sources can be reduced even if the model occasionally
-    # assigns an A. Human adoption is the stronger signal than model grade for source control.
     if total >= 50 and pass_rate >= .90 and sa_adopted == 0:
         return 'probe'
     if total >= 30 and pass_rate >= .80 and sa_adopted <= 1:
@@ -175,7 +185,6 @@ def source_mode(metrics: dict | None) -> str:
     if total >= 24 and pass_rate >= .70 and sa_adoption_rate < .15 and metrics.get('positive', 0) == 0:
         return 'cold'
 
-    # Existing semantic-yield guardrails remain as a secondary signal.
     if total >= 50 and sa_rate < .025 and metrics.get('positive', 0) == 0:
         return 'probe'
     if total >= 30 and sa_rate < .08 and metrics.get('positive', 0) == 0:
@@ -269,10 +278,11 @@ def compact_articles(now=None) -> dict:
         ):
             a.pop(key, None)
     meta = payload.setdefault('meta', {})
-    meta['lifecycle_version'] = 'adaptive_v10'
+    meta['lifecycle_version'] = 'adaptive_v11'
     meta['hot_retention_days'] = HOT_DAYS
     meta['unlabeled_source_pass_days'] = 0
     meta['unread_expiry_days'] = UNLABELED_EXPIRE_DAYS
+    meta['queue_grades'] = ['S', 'A', 'B']
     meta['trusted_status_origin'] = TRUSTED_STATUS_ORIGIN
     meta['hot_article_count'] = hot
     meta['cold_article_count'] = cold
@@ -290,8 +300,8 @@ def annotate_status(source_counts: dict, storage_counts: dict) -> None:
         'window_days': SOURCE_WINDOW_DAYS,
         'unlabeled_counts_as_implicit_pass': True,
         'unread_expiry_days': UNLABELED_EXPIRE_DAYS,
+        'queue_grades': ['S', 'A', 'B'],
         'trusted_status_origin': TRUSTED_STATUS_ORIGIN,
-        # Deliberately expose only aggregate counts; per-source feedback-derived modes stay private.
         'active_count': source_counts.get('active', 0),
         'cold_count': source_counts.get('cold', 0),
         'probe_count': source_counts.get('probe', 0),
