@@ -22,7 +22,7 @@ For any material change to taxonomy, scoring, embeddings, data schema, UI retrie
 2. **Knowledge model** — do Work System categories, rules, evidence links, maturity or gaps need rebuilding?
 3. **Semantic index** — must existing Knowledge / rules / notes or old Weekly articles be re-embedded?
 4. **Weekly selection** — does article ranking, duplicate penalty, knowledge-gap detection, evidence/boundary detection still use the latest model?
-5. **Feedback learning** — do 👍 / ⭐ / 👎 / 🚫 still learn content meaning separately from format / intent / topic?
+5. **Feedback learning** — do 👍 / ⭐ / 👎 / 🚫 still distinguish content subject from research method, format, intent and quality signals?
 6. **UI explanation** — do displayed related Knowledge / Work System items explain the same logic that produced the score?
 7. **Persistence** — do read/later/save/skip/feedback states survive rescoring, restore and device changes?
 8. **Privacy** — does public GitHub Pages expose only non-sensitive metadata while private originals, rules and semantic index remain encrypted?
@@ -33,7 +33,9 @@ For any material change to taxonomy, scoring, embeddings, data schema, UI retrie
 
 - Classification answers **what the content is mainly about**; retrieval answers **whether it helps the current problem**. Do not conflate them.
 - Semantic similarity alone is not recommendation value. Weekly must distinguish **new evidence, knowledge gaps, boundaries/counterexamples, direct work use, and duplication**.
-- User feedback is multi-layered: semantic meaning + topic + content format + author intent + quality/use signals. Negative feedback on a webinar must not automatically become negative feedback on AI.
+- User feedback is multi-layered: **content subject + semantic meaning + research method + content format + author intent + quality/use signals**.
+- Negative feedback must be attributed to the most plausible layer. A rejected tourism survey should primarily teach **tourism ↓**, not **survey/research ↓**. A rejected AI webinar should primarily teach **webinar/event-promotion ↓**, not **AI ↓**.
+- Negative semantic transfer across articles must be gated by subject affinity so methodologically similar but topically unrelated articles do not contaminate one another.
 - Manual reading state is independent from recommendation score. A grade change must never hide or delete user history.
 - Weekly consumes the current Knowledge / Work System model; it must not rebuild an older competing model.
 - Concrete private Knowledge / Rule titles are decrypted only after dashboard unlock. Public Weekly data may contain scores and non-sensitive diagnostics, not private source text.
