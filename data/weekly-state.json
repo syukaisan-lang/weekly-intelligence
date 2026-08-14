@@ -2,6 +2,19 @@
   "meta": {
     "encrypted_full_data": true,
     "snapshot_at": "2026-08-14T02:51:33.228Z",
-    "note": "Weekly reading state is stored only as encrypted ciphertext."
+    "note": "Weekly reading state is stored as an encrypted base snapshot plus encrypted incremental deltas; no plaintext reading state is stored.",
+    "latest_at": "2026-08-14T03:35:07.779Z",
+    "cursor_updated_at": 1786677459152,
+    "cursor_id": "15c6e652d586d9473b",
+    "delta_count": 1,
+    "deltas": [
+      {
+        "path": "data/weekly-state-deltas/20260814033507779-4.enc.json",
+        "created_at": "2026-08-14T03:35:07.779Z",
+        "cursor_updated_at": 1786677459152,
+        "cursor_id": "15c6e652d586d9473b",
+        "entry_count": 22
+      }
+    ]
   }
 }
