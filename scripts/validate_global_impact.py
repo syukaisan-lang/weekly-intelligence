@@ -73,14 +73,19 @@ def main()->int:
         raise AssertionError('backend adoption must not treat negative-feedback auto-read as positive')
 
     state_sync=read('weekly-state-sync.js')
-    for needle in ('schema:3','status_origin','status_action','BACKUP_WINDOW_NAME','backupInFlight','reserveBackupWindow','copyBackupLine','clipboardLine','navigateBackupWindow','backupWeeklyStateBtn'):
-        if needle not in state_sync:raise AssertionError(f'Weekly backup must preserve one-click state and clipboard handoff: {needle}')
-    if "body=`STATE_ENVELOPE_B64: ${encoded}" in state_sync or "body=${encodeURIComponent(body)}" in state_sync:
-        raise AssertionError('encrypted Weekly payload must never be embedded in the GitHub URL')
-    if 'if(url.length>2000)' not in state_sync:
-        raise AssertionError('Weekly backup confirmation URL must stay short')
+    for needle in ('schema:4','weekly-reading-delta','weekly-state-delta','deltaCandidates','compactRows','decodeRows','MAX_DELTA_ENTRIES=50','MAX_ISSUE_URL_LENGTH=7500','body=`STATE_ENVELOPE_B64: ${encoded}','fetchDeltaEnvelopes','backupWeeklyStateBtn'):
+        if needle not in state_sync:raise AssertionError(f'Weekly backup must preserve one-click encrypted delta behavior: {needle}')
+    if 'copyBackupLine' in state_sync or 'clipboardLine' in state_sync:
+        raise AssertionError('Weekly backup must not require clipboard copy/paste')
+    if 'meaningfulEntries();\n      const payload={schema:3' in state_sync:
+        raise AssertionError('Weekly backup must not place the full state snapshot into the issue URL')
+    if 'MAX_ISSUE_URL_LENGTH' not in state_sync:
+        raise AssertionError('Weekly incremental backup must guard GitHub URL length')
     if "window.open(url,'_blank','noopener,noreferrer')" in state_sync:
         raise AssertionError('backup must not reintroduce noopener null-return double-navigation bug')
+
+    require('scripts/save_weekly_state.py','weekly-state-delta','weekly-state-deltas','cursor_updated_at','cursor_id','entry_count','save_delta','Base Weekly state backup is missing')
+    require('.github/workflows/weekly-state-sync.yml','data/weekly-state-deltas','增量会自动与历史基线合并恢复')
 
     sources=json.loads(read('config/sources.json'))
     names={str(x.get('name') or '') for x in sources}
@@ -118,7 +123,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 17 sources -> S/A/B one-click processing queue (C excluded) -> source yield remains clean -> short-URL clipboard encrypted backup -> semantic/temporal Weekly are aligned.')
+    print('Global impact validation passed: 17 sources -> S/A/B one-click processing -> source yield clean -> one-click encrypted delta backup without clipboard -> semantic/temporal Weekly aligned.')
     return 0
 
 
