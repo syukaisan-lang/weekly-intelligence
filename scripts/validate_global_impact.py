@@ -52,6 +52,8 @@ def main()->int:
     update=read('.github/workflows/update.yml')
     for trigger in ('data/knowledge.enc.json','data/system-model.enc.json','data/semantic-index.enc.json'):
         if trigger not in update:raise AssertionError(f'Weekly must rescore after {trigger} changes')
+    for upstream in ('workflow_run:','Sync Notion knowledge','Sync personal work system','github.event.workflow_run.conclusion'):
+        if upstream not in update:raise AssertionError(f'Weekly must listen to successful upstream workflow completion: {upstream}')
     if 'run: python scripts/update_feeds_temporal.py' not in update:raise AssertionError('Weekly workflow must run temporal v7 updater')
     if 'build_system_model_v2.py' in update or 'build_system_model_v3.py' in update:
         raise AssertionError('Weekly workflow must not overwrite the unified Work System model')
@@ -64,7 +66,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: evidence-time Knowledge -> time-aware Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned; model writers are serialized.')
+    print('Global impact validation passed: evidence-time Knowledge -> time-aware Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned; upstream workflow completion triggers Weekly rescore.')
     return 0
 
 
