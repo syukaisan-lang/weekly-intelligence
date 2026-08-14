@@ -23,6 +23,7 @@ PASS = os.getenv('DASHBOARD_PASSPHRASE', '')
 HOT_DAYS = 90
 SOURCE_WINDOW_DAYS = 56
 UNLABELED_EXPIRE_DAYS = 7
+TRUSTED_STATUS_ORIGIN = 'human_v10'
 
 
 def _dt(value):
@@ -69,9 +70,18 @@ def decrypt_weekly_state() -> dict:
         return {}
 
 
-def _is_unlabeled(st: dict) -> bool:
+def _normalized_status(st: dict) -> str:
     status = st.get('status') or 'new'
-    return status == 'new' and not st.get('feedback')
+    # Historical read/save records did not record whether the user explicitly chose them.
+    # The user confirmed the true historical read/save count is zero, so only v10+ human actions
+    # can count as reading/adoption. Old records are treated as unlabeled for source-yield purposes.
+    if status in ('read', 'save') and st.get('status_origin') != TRUSTED_STATUS_ORIGIN:
+        return 'new'
+    return status
+
+
+def _is_unlabeled(st: dict) -> bool:
+    return _normalized_status(st) == 'new' and not st.get('feedback')
 
 
 def _is_expired_unlabeled(a: dict, st: dict, now: datetime) -> bool:
@@ -87,6 +97,7 @@ def source_yield(articles: list[dict], state: dict, now=None) -> dict[str, dict]
     A completely unlabeled article is an *implicit pass* for source-quality purposes because
     the user does not want untouched material to accumulate. It is NOT written back as a
     human skip and therefore never becomes a strong negative content-training sample.
+    Legacy read/save records without a trusted human-origin marker are also treated as unlabeled.
     """
     now = now or datetime.now(timezone.utc)
     cutoff = now - timedelta(days=SOURCE_WINDOW_DAYS)
@@ -112,7 +123,7 @@ def source_yield(articles: list[dict], state: dict, now=None) -> dict[str, dict]
         if grade == 'S':
             r['s'] += 1
         st = state.get(str(a.get('id') or '')) or {}
-        status = st.get('status') or 'new'
+        status = _normalized_status(st)
         fb = st.get('feedback')
         if status == 'save':
             r['saved'] += 1
@@ -258,10 +269,11 @@ def compact_articles(now=None) -> dict:
         ):
             a.pop(key, None)
     meta = payload.setdefault('meta', {})
-    meta['lifecycle_version'] = 'adaptive_v9'
+    meta['lifecycle_version'] = 'adaptive_v10'
     meta['hot_retention_days'] = HOT_DAYS
     meta['unlabeled_source_pass_days'] = 0
     meta['unread_expiry_days'] = UNLABELED_EXPIRE_DAYS
+    meta['trusted_status_origin'] = TRUSTED_STATUS_ORIGIN
     meta['hot_article_count'] = hot
     meta['cold_article_count'] = cold
     meta['cold_records_keep'] = 'id/url/title/date/source/score/feedback-features for dedupe and learning memory'
@@ -278,6 +290,7 @@ def annotate_status(source_counts: dict, storage_counts: dict) -> None:
         'window_days': SOURCE_WINDOW_DAYS,
         'unlabeled_counts_as_implicit_pass': True,
         'unread_expiry_days': UNLABELED_EXPIRE_DAYS,
+        'trusted_status_origin': TRUSTED_STATUS_ORIGIN,
         # Deliberately expose only aggregate counts; per-source feedback-derived modes stay private.
         'active_count': source_counts.get('active', 0),
         'cold_count': source_counts.get('cold', 0),
