@@ -22,6 +22,7 @@ BROWSER_MODEL_ID = os.getenv('SEMANTIC_BROWSER_MODEL_ID', 'Xenova/multilingual-e
 MAX_CHARS = int(os.getenv('SEMANTIC_CHUNK_CHARS', '720'))
 OVERLAP = int(os.getenv('SEMANTIC_CHUNK_OVERLAP', '100'))
 MAX_CHUNKS_PER_ITEM = int(os.getenv('SEMANTIC_MAX_CHUNKS', '10'))
+TEMPORAL_FIELDS = ('effective_date','evidence_period','published_at','collected_at','temporal_confidence','temporal_basis','time_sensitive','time_domain')
 
 WS_RE = re.compile(r'\s+')
 
@@ -42,7 +43,6 @@ def split_chunks(text: str, max_chars: int = MAX_CHARS, overlap: int = OVERLAP) 
     while start < n:
         end = min(n, start + max_chars)
         if end < n:
-            # Prefer a natural boundary near the end of the window.
             window = text[start:end]
             cut = max(window.rfind('。'), window.rfind('！'), window.rfind('？'), window.rfind('. '), window.rfind(' '))
             if cut >= int(max_chars * 0.58):
@@ -55,7 +55,6 @@ def split_chunks(text: str, max_chars: int = MAX_CHARS, overlap: int = OVERLAP) 
         start = max(start + 1, end - overlap)
     if len(chunks) <= MAX_CHUNKS_PER_ITEM:
         return chunks
-    # Evenly sample long documents so later sections are not systematically lost.
     idx = np.linspace(0, len(chunks) - 1, MAX_CHUNKS_PER_ITEM).round().astype(int)
     return [chunks[i] for i in sorted(set(idx.tolist()))]
 
@@ -97,20 +96,27 @@ def rule_body(r: dict) -> str:
     ]))
 
 
-def add_item(rows: list[dict], texts: list[str], *, kind: str, item_id: str, title: str, body: str) -> None:
+def temporal_meta(a: dict) -> dict:
+    return {k:a.get(k) for k in TEMPORAL_FIELDS if a.get(k) not in (None,'',[],{})}
+
+
+def add_item(rows: list[dict], texts: list[str], *, kind: str, item_id: str, title: str, body: str, metadata: dict | None = None) -> None:
     if not item_id or not body:
         return
     chunks = split_chunks(body)
     for chunk_idx, (start, chunk) in enumerate(chunks):
         passage = f'passage: {title}\n{chunk}' if title else f'passage: {chunk}'
         texts.append(passage)
-        rows.append({
+        row={
             'kind': kind,
             'id': str(item_id),
             'chunk': chunk_idx,
             'start': start,
             'snippet': chunk[:360],
-        })
+        }
+        if metadata:
+            row['temporal']=metadata
+        rows.append(row)
 
 
 def quantize(vectors: np.ndarray) -> tuple[str, list[float]]:
@@ -139,7 +145,7 @@ def main() -> int:
         add_item(rows, texts, kind='private', item_id=str(n.get('id') or ''), title=str(n.get('title') or n.get('section') or ''), body=note_body(n))
 
     for a in know.get('items') or []:
-        add_item(rows, texts, kind='notion', item_id=str(a.get('id') or ''), title=str(a.get('title') or ''), body=knowledge_body(a))
+        add_item(rows, texts, kind='notion', item_id=str(a.get('id') or ''), title=str(a.get('title') or ''), body=knowledge_body(a), metadata=temporal_meta(a))
 
     for r in (system or {}).get('rules') or []:
         add_item(rows, texts, kind='rule', item_id=str(r.get('id') or ''), title=str(r.get('title') or ''), body=rule_body(r))
@@ -165,10 +171,11 @@ def main() -> int:
     counts: dict[str, int] = {}
     for kind, _ in item_keys:
         counts[kind] = counts.get(kind, 0) + 1
+    temporal_chunks=sum(1 for r in rows if r.get('kind')=='notion' and r.get('temporal'))
 
     payload = {
         'meta': {
-            'schema_version': 1,
+            'schema_version': 2,
             'built_at': now,
             'model': MODEL_ID,
             'browser_model': BROWSER_MODEL_ID,
@@ -182,6 +189,8 @@ def main() -> int:
             'chunk_chars': MAX_CHARS,
             'chunk_overlap': OVERLAP,
             'max_chunks_per_item': MAX_CHUNKS_PER_ITEM,
+            'temporal_index_version': 1,
+            'notion_temporal_chunk_count': temporal_chunks,
         },
         'entries': rows,
         'scales': scales,
@@ -190,7 +199,7 @@ def main() -> int:
     OUT_ENC.write_text(json.dumps(crypto.encrypt(payload), ensure_ascii=False), encoding='utf-8')
     public = {
         'meta': {
-            'schema_version': 1,
+            'schema_version': 2,
             'built_at': now,
             'encrypted_full_data': True,
             'model': BROWSER_MODEL_ID,
@@ -201,10 +210,12 @@ def main() -> int:
             'item_counts': counts,
             'query_runs_locally': True,
             'private_text_sent_to_external_api': False,
+            'temporal_index_version': 1,
+            'temporal_metadata_encrypted': True,
         }
     }
     OUT_META.write_text(json.dumps(public, ensure_ascii=False, indent=2), encoding='utf-8')
-    print(f"Semantic index built: {len(item_keys)} items / {len(rows)} chunks / dim={vectors.shape[1]}")
+    print(f"Semantic index built: {len(item_keys)} items / {len(rows)} chunks / dim={vectors.shape[1]} / temporal_chunks={temporal_chunks}")
     return 0
 
 
