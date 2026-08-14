@@ -1,18 +1,19 @@
 {
   "meta": {
     "tracking_start": "2026-08-10",
-    "generated_at": "2026-08-14T03:04:45.276054+00:00",
+    "generated_at": "2026-08-14T11:37:07.948179+00:00",
     "screening_mode": "openai_api_if_configured_else_heuristic",
-    "new_this_run": 3,
-    "knowledge_context_refreshed_at": "2026-08-14T03:05:27.790955+00:00",
-    "knowledge_context_rescored_count": 228,
+    "new_this_run": 5,
+    "knowledge_context_refreshed_at": "2026-08-14T11:37:46.330913+00:00",
+    "knowledge_context_rescored_count": 233,
     "personalization_version": "semantic_v8_adaptive_temporal",
     "semantic_model_family": "multilingual-e5",
-    "semantic_rescored_count": 228,
+    "semantic_rescored_count": 233,
     "semantic_deep_read_count": 0,
     "temporal_update_enabled": true,
     "rolling_feedback_window_days": 84,
     "adaptive_attention_budget": true,
+    "xtrend_discovery": "search_rss_with_official_fallback",
     "lifecycle_version": "adaptive_v11",
     "hot_retention_days": 90,
     "unlabeled_source_pass_days": 0,
@@ -23,11 +24,249 @@
       "B"
     ],
     "trusted_status_origin": "human_v10",
-    "hot_article_count": 329,
+    "hot_article_count": 334,
     "cold_article_count": 0,
     "cold_records_keep": "id/url/title/date/source/score/feedback-features for dedupe and learning memory"
   },
   "articles": [
+    {
+      "id": "952422df528fe27069",
+      "source": "ITmedia ビジネスオンライン 最新記事一覧",
+      "category": "Business",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/14/news077.html",
+      "title": "「エアコン2027年問題」で価格差拡大？ 中国勢が8万円以下で攻勢",
+      "published": "2026-08-14T08:16:00+00:00",
+      "first_seen": "2026-08-14T11:37:05.760420+00:00",
+      "summary": "来年4月から家庭用エアコンの省エネ基準が厳しくなり、価格アップなどが予想される「エアコン2027年問題」をにらみ、中国メーカーが日本市場に安価な製品で攻勢を強めている。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 5.6,
+      "reading_score": 6.38,
+      "notion_score": 6.06,
+      "grade": "B",
+      "tags": [
+        "strategy"
+      ],
+      "concepts": [
+        "価格",
+        "市場"
+      ],
+      "learning_features": {
+        "topics": [
+          "価格",
+          "市場"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.897,
+        "rule_match_strength": 0.882,
+        "experience_similarity": 0.866,
+        "repetition_penalty": 0.368,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.622,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Dg3hw0bx+SZIF0/zTfu/NDKyvNI0/MMsTQzmFBXn4LRW5jgW7N0Ez9X4CWc8ZuIsvPzyQAQf+OvJyY8VaCQiNH8lDBrA5eow++MzHzXMLc2/7AYIni83ljgLJ33Y4Oup4yos+zvWF6HpITy2LMfRHzYoy8gkvEbHNeDVw8jkNj8EBzZCMz8zN9n+vtHQQt5PJytmwTfVYcFfGh7MyMofJrPGktj5sipQqgXKNsgL8z/YHVAj2uiBsdvRvQcv9/0ajLXtCsouHDYa3DQuLPTXK7QsDrqyO9UL8jXH5B/zKYwFUCGpySrdB+Sx8Lr3JRTe39JKvTnE9QH8JTDNzrzmN0ooxSkt8G8rQSfoxrTks2NE2eTQ6EzWyzgpUyRY0wEy49Kr5DbGMCH8VKYT3voRBLxGIxkLLDVKpOcUSvpMrdLKwcmpNWHu5Cv5GZCZQNrdzzeQwhw74yAF2P7t7jYGtC4q6SC53EVDvv0QP0BZAf1DtEg+vRfoyskB55rqIxNJ",
+        "scale": 0.0009514461,
+        "normalized": true
+      }
+    },
+    {
+      "id": "cb5557a16917e8d172",
+      "source": "CNET Japan 最新情報　総合",
+      "category": "家電情報",
+      "url": "https://japan.cnet.com/article/35251560",
+      "title": "AIチャットボット「ChatTJB」の正体は1人の男性、質問殺到で限界に--目的は？",
+      "published": "2026-08-14T06:30:00+00:00",
+      "first_seen": "2026-08-14T11:36:39.007473+00:00",
+      "summary": "一風変わったチャットボットサービス「ChatTJB」が注目を集めている。制作者であるアーティストの男性が、寄せられた質問のすべてに自ら答えていたのだ。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 5.45,
+      "reading_score": 7.4,
+      "notion_score": 6.39,
+      "grade": "A",
+      "tags": [
+        "ai"
+      ],
+      "concepts": [
+        "AI"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "涉及AI实际影响；语义增量：可能更新2022年前后的既有时间证据；可能补充反例/边界",
+      "screening_note": "",
+      "screening": "semantic_v8_adaptive_temporal",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.878,
+        "rule_match_strength": 0.841,
+        "experience_similarity": 0.843,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.48,
+        "semantic_bonus": 1.627,
+        "increment_type": "temporal_update",
+        "temporal_update": true
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "KPnT2SvkHRs7+0/0fwD0OkzWz+IXIsYZPku1PznE1+A2yzIAq98ErfgGH1QsbhU21wjdLeYMGN3rvaMbRPb+HlYOIT6p5uA73N0pRzPdI/XswwIimAdDv1D9XzzC+67h2Tsf4VfJRcfrDxesAendOl4cxdj7ujbARAWY37nJCi0VJDI0I0dVeucG0dHcM+M6MiY3tiLgQc9QYgvX37cZSeaxocfsxRRDxdzOOb0g+BLGFEY47eKdxefYuw0bCAshzasMC9IYKTbe2jEcEfveGaEvPdHYM7bpEjjlIzP6BND8KyjN5hDQ/uvax5f4RyfbuOAhxlHh+e/xRS+d5OrPOxcnoAwp0GMCQQ7M+tr69B1ByPOzBTHiy0YQBh8X5flD9eDPvRn2FuL4O9JCFQsVBLgW/gwd+SZBvthGMNMJtLu6uPfEAkHM6EUNAtq1Ta7g5ju/uh8uqyLDpDjk1y4vwicR1yve3kM17/4HJjpUBvUxnBRsxObt+eQk4rk8BCkh",
+        "scale": 0.0010198723,
+        "normalized": true
+      }
+    },
+    {
+      "id": "7667fe7dd51cef8efa",
+      "source": "AdverTimes.（アドタイ） by 宣伝会議",
+      "category": "Marketing",
+      "url": "https://www.advertimes.com/20260814/article552838",
+      "title": "Vol.1 広告代理店とコンサル、いつから競合になったのか 最初に狙われた「効果検証」",
+      "published": "2026-08-14T06:00:41+00:00",
+      "first_seen": "2026-08-14T11:36:48.799685+00:00",
+      "summary": "広告代理店とコンサル。2つの業種が比較されるようになったのは、いつからだろうか。そして2社の関係は「競合」なのだろうか。それとも「融合」なのだろうか。「似て非なるもの」なのだろうか。それとも「似たもの同士」なのだろうか。 The post Vol.1 広告代理店とコンサル、いつから競合になったのか 最初に狙われた「効果検証」 first appeared on AdverTimes.（アドタイ） by 宣伝会議 .",
+      "content_checked": true,
+      "content_excerpt": "広告代理店とコンサル。2つの業種が比較されるようになったのは、いつからだろうか。そして2社の関係は「競合」なのだろうか。それとも「融合」なのだろうか。「似て非なるもの」なのだろうか。それとも「似たもの同士」なのだろうか。 このコラムでは、電通が広告代理店からコンサルに変わっていく過程を中から見て感じていたこと。3年前に電通を飛び出して、代理店ともコンサルとも付き合う経営者になってから感じたこと。それらをこの20年間の日本企業における諸問題と絡めて書いていこうと思う。 広告代理店とコンサル。この話をはじめる前に、この20年における変化の大前提を確認しておきたい。具体的にはこの20年で増えたもの、減ったものを確認しておく。増えたものはデジタルテクノロジー。これまで見えなかったもの、計れなかったもの、それがデジタルの力によって可視化された。数値化された。視聴者の声、消費者の声はSNSで見える化したし、仰々しい調査なんて不要になった。視聴率や売上といった「大きな数字」しか解らなかった時代から、それに至るまでの過程も全てログとデータで検証できるようになった。 逆に減ったのは「マスメディアの影響力」だ。これは減ったと言うより「分散した」と言う表現の方が正しいかもしれない。 1つのメディアが大きな力を独占していた時代が終わり、その影響力が分散しはじめた。夜はリビングに家族が集まり、1つのテレビで流れる地上波番組を「チャンネル権」と呼び奪い合っていた時代は確かにあった。それが今や、各々の部屋で各々のスマートフォンを眺めている。スマートフォンで見るのはYouTubeやNetflix、SNSやAIとの会話。地上波で流れるコンテンツ、テレビCMは「選択可能な何千万という情報コンテンツの1つ」に成り下がった。 この前提の中で、広告代理店とコンサルの物語は進んでいく。お互いの領域侵犯とも言える２者の構造だが、先に仕掛けたのはコンサル側だった。私は当時、広告代理店にいたので「攻め込まれた」という印象を抱いたことを覚えている。では、どの領域が狙われたのか。それは「広告効果の検証」だ。 まず、当時の広告代理店が付き合っていたのは企業の宣伝部だ。対してコンサルが付き合っていたのはより経営に近い領域。経営企画部をはじめとする主に上層部だった。経営企画部は各部署の予算を管理していることが多い。つまり広告代理店が宣伝部からもらっていた「予算」を管理するのは経営企画部だ。莫大な広告費を使ってTVCMの広告枠を購入し、有名なクリエイターやタレントを使ってCMを制作する。経営企画部はその割り振りや検証を担う立場だったが、宣伝部からは「話題になりました」とか「営業支援になりました」とか、曖昧な返答しか返ってこない。 「そういうものですから」と宣伝部から言われていた経営企画部だが、そのパートナーであったコンサルから指摘が入る。「これだけ莫大な費用をかけているのだから、ちゃんと効果検証させるべきじゃないですか？」とか、「テレビCMの効果って落ちているのではないですか？」と言われる。2010年前後には、こんなやりとりが多くの大企業で起こっていたはずだ。 次のページ 1 2 広告とコンサルの境界線 その「あいだ」で起きていること 小島 雄一郎 立教大学法学部を卒業し、2007年に電通入社。3年間の営業経験を経て、第1回販促会議賞（現：販促コンペ）の受賞をきっかけにプランナーに転向。 その後、同賞で5大会連続入賞。電通では社内ベンチャーとして新規事業を立ち上げ、2014年のグッドデザイン賞ビジネスモデル部門を受賞。その後は若者研究を専門としながら、子ども向けゲーム開発などで、世界3大デザイン賞であるRed dotデザイン賞（ドイツ）や、D&AD（イギリス）、キッズデザイン賞（日本）などを受賞。また「アヤナミブルー」という新しい色の概念を開発。2023年に立ち上げた事業を売却し、電通を退社。株式会社kojimakeを設立。2024年より、自ら企画書を送って自宅に誘致したお酒のセレクトショップ\"IMADEYA\"の社外取締役に就任。著書に『「選べない」はなぜ起こる？（サンマーク出版）』、「広告のやりかたで就活をやってみた（宣伝会議）」。日経新聞とnoteである「日経COMEMO」で新時代のキーオピニオンリーダーとしても連載中。 小島 雄一郎 立教大学法学部を卒業し、2007年に電通入社。3年間の営業経験を経て、第1回販促会議賞（現：販促コンペ）の受賞をきっかけにプランナーに転向。 その後、同賞で5大会連続入賞。電通では社内ベンチャーとして新規事業を立ち上げ、2014年のグッドデザイン賞ビジネスモデル部門を受賞。その後は若者研究を専門としながら、子ども向けゲーム開発などで、世界3大デザイン賞であるRed dotデザイン賞（ドイツ）や、D&AD（イギリス）、キッズデザイン賞（日本）などを受賞。また「アヤナミブルー」という新しい色の概念を開発。2023年に立ち上げた事業を売却し、電通を退社。株式会社kojimakeを設立。2024年より、自ら企画書を送って自宅に誘致したお酒のセレクトショップ\"IMADEYA\"の社外取締役に就任。著書に『「選べない」はなぜ起こる？（サンマーク出版）』、「広告のやりかたで就活をやってみた（宣伝会議）」。日経新聞とnoteである「日経COMEMO」で新時代のキーオピニオンリーダーとしても連載中。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 3 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい 1つのメディアが大きな力を独占していた時代が終わり、その影響力が分散しはじめた。夜はリビングに家族が集まり、1つのテレビで流れる地上波番組を「チャンネル権」と呼び奪い合っていた時代は確かにあった。それが今や、各々の部屋で各々のスマートフォンを眺めている。スマートフォンで見るのはYouTubeやNetflix、SNSやAIとの会話。地上波で流れるコンテンツ、テレビCMは「選択可能な何千万という情報コンテンツの1つ」に成り下がった。 この前提の中で、広告代理店とコンサルの物語は進んでいく。お互いの領域侵犯とも言える２者の構造だが、先に仕掛けたのはコンサル側だった。私は当時、広告代理店にいたので「攻め込まれた」という印象を抱いたことを覚えている。では、どの領域が狙われたのか。それは「広告効果の検証」だ。 まず、当時の広告代理店が付き合っていたのは企業の宣伝部だ。対してコンサルが付き合っていたのはより経営に近い領域。経営企画部をはじめとする主に上層部だった。経営企画部は各部署の予算を管理していることが多い。つまり広告代理店が宣伝部からもらっていた「予算」を管理するのは経営企画部だ。莫大な広告費を使ってTVCMの広告枠を購入し、有名なクリエイターやタレントを使ってCMを制作する。経営企画部はその割り振りや検証を担う立場だったが、宣伝部からは「話題になりました」とか「営業支援になりました」とか、曖昧な返答しか返ってこない。 「そういうものですから」と宣伝部から言われていた経営企画部だが、そのパートナーであったコンサルから指摘が入る。「これだけ莫大な費用をかけているのだから、ちゃんと効果検証させるべきじゃないですか？」とか、「テレビCMの効果って落ちているのではないですか？」と言われる。2010年前後には、こんなやりとりが多くの大企業で起こっていたはずだ。 次のページ 1 2 広告とコンサルの境界線 その「あいだ」で起きていること 小島 雄一郎 立教大学法学部を卒業し、2007年に電通入社。3年間の営業経験を経て、第1回販促会議賞（現：販促コンペ）の受賞をきっかけにプランナーに転向。 その後、同賞で5大会連続入賞。電通では社内ベンチャーとして新規事業を立ち上げ、2014年のグッドデザイン賞ビジネスモデル部門を受賞。その後は若者研究を専門としながら、子ども向けゲーム開発などで、世界3大デザイン賞であるRed dotデザイン賞（ドイツ）や、D&AD（イギリス）、キッズデザイン賞（日本）などを受賞。また「アヤナミブルー」という新しい色の概念を開発。2023年に立ち上げた事業を売却し、電通を退社。株式会社kojimakeを設立。2024年より、自ら企画書を送って自宅に誘致したお酒のセレクトショップ\"IMADEYA\"の社外取締役に就任。著書に『「選べない」はなぜ起こる？（サンマーク出版）』、「広告のやりかたで就活をやってみた（宣伝会議）」。日経新聞とnoteである「日経COMEMO」で新時代のキーオピニオンリーダーとしても連載中。 小島 雄一郎 立教大学法学部を卒業し、2007年に電通入社。3年間の営業経験を経て、第1回販促会議賞（現：販促コンペ）の受賞をきっかけにプランナーに転向。 その後、同賞で5大会連続入賞。電通では社内ベンチャーとして新規事業を立ち上げ、2014年のグッドデザイン賞ビジネスモデル部門を受賞。その後は若者研究を専門としながら、子ども向けゲーム開発などで、世界3大デザイン賞であるRed dotデザイン賞（ドイツ）や、D&AD（イギリス）、キッズデザイン賞（日本）などを受賞。また「アヤナミブルー」という新しい色の概念を開発。2023年に立ち上げた事業を売却し、電通を退社。株式会社kojimakeを設立。2024年より、自ら企画書を送って自宅に誘致したお酒のセレクトショップ\"IMADEYA\"の社外取締役に就任。著書に『「選べない」はなぜ起こる？（サンマーク出版）』、「広告のやりかたで就活をやってみた（宣伝会議）」。日経新聞とnoteである「日経COMEMO」で新時代のキーオピニオンリーダーとしても連載中。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 3 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい 「そういうものですから」と宣伝部から言われていた経営企画部だが、そのパートナーであったコンサルから指摘が入る。「これだけ莫大な費用をかけているのだから、ちゃんと効果検証させるべきじゃないですか？」とか、「テレビCMの効果って落ちているのではないですか？」と言われる。2010年前後には、こんなやりとりが多くの大企業で起こっていたはずだ。 立教大学法学部を卒業し、2007年に電通入社。3年間の営業経験を経て、第1回販促会議賞（現：販促コンペ）の受賞をきっかけにプランナーに転向。 その後、同賞で5大会連続入賞。電通では社内ベンチャーとして新規事業を立ち上げ、2014年のグッドデザイン賞ビジネスモデル部門を受賞。その後は若者研究を専門としながら、子ども向けゲーム開発などで、世界3大デザイン賞であるRed dotデザイン賞（ドイツ）や、D&AD（イギリス）、キッズデザイン賞（日本）などを受賞。また「アヤナミブルー」という新しい色の概念を開発。2023年に立ち上げた事業を売却し、電通を退社。株式会社kojimakeを設立。2024年より、自ら企画書を送って自宅に誘致したお酒のセレクトショップ\"IMADEYA\"の社外取締役に就任。著書に『「選べない」はなぜ起こる？（サンマーク出版）』、「広告のやりかたで就活をやってみた（宣伝会議）」。日経新聞とnoteである「日経COMEMO」で新時代のキーオピニオンリーダーとしても連載中。 立教大学法学部を卒業し、2007年に電通入社。3年間の営業経験を経て、第1回販促会議賞（現：販促コンペ）の受賞をきっかけにプランナーに転向。 その後、同賞で5大会連続入賞。電通では社内ベンチャーとして新規事業を立ち上げ、2014年のグッドデザイン賞ビジネスモデル部門を受賞。その後は若者研究を専門としながら、子ども向けゲーム開発などで、世界3大デザイン賞であるRed dotデザイン賞（ドイツ）や、D&AD（イギリス）、キッズデザイン賞（日本）などを受賞。また「アヤナミブルー」という新しい",
+      "base_score": 10,
+      "reading_score": 10.0,
+      "notion_score": 10.0,
+      "grade": "S",
+      "tags": [
+        "consumer",
+        "research",
+        "ai",
+        "marketing",
+        "strategy",
+        "method"
+      ],
+      "concepts": [
+        "AI",
+        "SNS",
+        "消費者",
+        "購入",
+        "広告",
+        "コンテンツ",
+        "調査",
+        "研究",
+        "データ"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI",
+          "SNS",
+          "消費者",
+          "購入",
+          "広告",
+          "コンテンツ",
+          "調査",
+          "研究",
+          "データ"
+        ],
+        "formats": [
+          "調査レポート"
+        ],
+        "intents": [],
+        "signals": [
+          "再利用できる方法論"
+        ]
+      },
+      "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；可能形成可复用方法；语义增量：可能补充反例/边界；可能补充证据/案例；与实际工作场景语义接近",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 6.18,
+        "rule_match_strength": 0.868,
+        "experience_similarity": 0.874,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.49,
+        "evidence_bonus": 0.4,
+        "boundary_bonus": 0.58,
+        "semantic_bonus": 1.79,
+        "increment_type": "boundary_or_counterexample"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Rfqz00u/MD1LG0XvXy3THkvKsKcqFuQ+SEbtNgmzvdJFmjcVy8Yz39v0KWIwcPZGsAr+P/4988/WsZchV/0sR3INIFGd5t4z2uQnNRDBOdi4seEtwy8skz71Ln/Ps8SdyFEc/kHYF7X9PyLlKKLLLFQgpskGjFryTdG7vtLlOkwVECJOBzYqXdbpxuLUG+pZ9hUwxF3QXLpJVT3JyPkmNtDAp+Pki1VFkdi9Orgu9jXBJlIXxdmWzrbM0hMd3gUpmsf5CMFfKFzgxSRGU+m4NudAKtnJWdnt4STXEzjYAaj+IDbUox7b4eTU0LTrQijf8tUxsVzP0iAALCrAu8i+OkgcnScN/3EfMzS+x8Xi3zJHzfLfGHaxxE8iA0086AhG4dO07De0Nv7uX88mse/9I4oMGSMKGCoPs/ZVOPwfquTI2Oy9C07K8gP3Kbq1QaDo8T+3xCdE3gzg1EXuwT43nvoZyUqqCjlQ1NUkN1tT7PcqmTNh3Qvf59so14xTDTAo",
+        "scale": 0.0008908208,
+        "normalized": true
+      }
+    },
+    {
+      "id": "ca91b2bcfa929233e8",
+      "source": "AdverTimes.（アドタイ） by 宣伝会議",
+      "category": "Marketing",
+      "url": "https://www.advertimes.com/20260814/article553858",
+      "title": "まさに「欧米かっ！」 日本企業の社名から漢字が消えていく ランドクロス、ニデック、カナデビア、artience…老舗企業はなぜ“横文字化”するのか",
+      "published": "2026-08-14T05:00:15+00:00",
+      "first_seen": "2026-08-14T11:36:48.800952+00:00",
+      "summary": "「欧米か！」――。思わず、そんな懐かしいツッコミを入れたくなるほど、日本企業の社名から漢字が消えつつある。近年、長年親しまれてきた社名を大胆に変更する企業が相次いでいる。 The post まさに「欧米かっ！」 日本企業の社名から漢字が消えていく ランドクロス、ニデック、カナデビア、artience…老舗企業はなぜ“横文字化”するのか first appeared on AdverTimes.（アドタイ） by 宣伝会議 .",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.5,
+      "notion_score": 5.44,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.884,
+        "rule_match_strength": 0.843,
+        "experience_similarity": 0.845,
+        "repetition_penalty": 0.317,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.34,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "RQPY4kruGxRAClAEWQzYVzTqzt8bK9AhNAfjTRWx6e8xyA/2wdUiwL8jKFIPUN06rPjmUM0VHrjXxeI6Tv8mOn8ELETC6uM3EOUHTSjJFOWm4NAUtRUXoTn8G0Dgvteb3SU+4izZL7f5HhPcJdu+IUIdp8QAnivUcNb4uLbRFRAE8SEyIlArT73ZzeLZFctIEB4/z1HoPNdnKzbR9gMDPNLWre/XuSc1zM3aN7Q/3zrfEUch1dmj7bngtwxa6hQys7v2+QI2/jbq5DYuR9m2MOcsGNa5JbTMCR/iMlTpLqnfIj3Iwhz2BdrC4Z/XRjPW6s86uTva0jTqJj38xNneMkVDxBc9DE4hWirau9HcwzcIwOnK8GnWuQMYICos5gET89S75B3jPyABXr0e9+IcA9YVHzsx/yAgw/AiLfJBycrj1wC4CTT11SHoDMDHMrzL3zHGzRwYzxH54DcDr2kimwM5/Eis8EUr5bURVyk/DiAYySdE2xD568Q8tqZEDCAQ",
+        "scale": 0.0010166425,
+        "normalized": true
+      }
+    },
     {
       "id": "07d09a51d34a9ed8ea",
       "source": "CNET Japan 最新情報　総合",
@@ -308,7 +547,7 @@
         "rule_match_strength": 1.485,
         "experience_similarity": 0.867,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -467,7 +706,7 @@
         "rule_match_strength": 1.172,
         "experience_similarity": 0.889,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -539,7 +778,7 @@
         "rule_match_strength": 1.39,
         "experience_similarity": 0.87,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -611,7 +850,7 @@
         "rule_match_strength": 2.348,
         "experience_similarity": 0.866,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -622,7 +861,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "POPT0UPJIzVLJUTfYgCtOVXQzMcuEtgxQELQPCvK5s89vCImqcMQxPEJMFz3cOcpxv3mPAwZA73Rx8UsTQAzQn/3NznRytI6yvMIJArPSvuTydczwSgtvh72UlXY4NDF4ToW3zf1NbndLyPQR6rLPCUmoLkAplzaK+raw8DiBCP/ARgyLiY0TNbPvfjlQtRDBjMk7DL9NtQ9SiXOv9pMO7XtwczXolRFnsXKHL9E7CzWCyMU/tK02sLt9TYJ4gVNmcny/NYyITbkuSwyNszLS9E0HJv6H9Du3CbWCyTuGJ78NzTatSrq/9vU36oRFkvZ4tY8q0aw4hjvFijXv8fzHjgSpRw/4WMODhW2x8S3ziMnuw/zDEm/0DErGVAz7vhA9tW+7BvAI/rfW+s/6+cZKboSGDEyOzk4ytwYOgEAxN/l0QbfS0jW/AoCK5qvQbvZ30vQuiAoyBvh1w7czCkcnBsEDR6s+EQv7AIYNjla7AIW5ipsyu7k2+g/v7xOGScn",
-        "scale": 0.0009959863,
+        "scale": 0.0009959865,
         "normalized": true
       }
     },
@@ -1325,7 +1564,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "UgfoxVXQJR8+BzEnerXMLzbKuNY3HM09N1XHMyuxz8dE0iccqu8rlfQGUEkeftg4pfjKRN47EbD6mqoMURIAJXQwTTK7zsY8/bz3QzrWIeuQs95BsyVRxnnJdlTS3+i/uGQP7CvQS6baHx2XEKW9TXsgpNADnx3Hdd/FgrLXKEDp4iRgAk5mb+/T6NvQIAxcIUdgtToOT8t/PzfPztU5U+qwmrbSjARbouzZD7ks5yLMNEgizLOEyebiyy408/MVnrXj7dFMJzsGziVLa/HHLq5BNLviL9Db5SLKBD76BY8hLCKRjSX+6eybzZgBWjysqbsvxFfV9vn3JTWwyuXpVi1Bwxki8VkLPSHQ7rzA2Egfx9yT+jrEuR0oM1Uz69Zi4LGwtB4CVh71WNY09uUlFb1E9xwaAy4k8sUGRPsGztrjrf2yFW+yHiIXLcXFPrvF2k/QrS811SL0wjLg3xcziB0t5DmREGpb271AEUc/BNsd0S1c0vjb3dUM14dTLTRW",
-        "scale": 0.0008493716,
+        "scale": 0.0008493715,
         "normalized": true
       }
     },
@@ -2409,7 +2648,7 @@
         "rule_match_strength": 0.878,
         "experience_similarity": 0.87,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -2477,7 +2716,7 @@
         "rule_match_strength": 1.02,
         "experience_similarity": 0.879,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.23,
@@ -2488,7 +2727,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JOna8STlGjEpIScQKg/PETfRvM4YHeM7KS3iUTrcu9Y7zxcF9cQvxOIOGX8dOgIwtvwCVQsu88vovaJCNdwKNk0xFhbV3eUs/+kiMi/hAdHH6+0O1RUn2TP+PVHk0OPA5R0U2BnYK48GHhLKQZalQFE7wrXvsi3zOeXV0cDPIB0F/Bg0AyouU9nxxOHDJgIcGhNF+CLaJ9NoRk3H5+UcSLvGuOLhsjMtwff9NNMj/RbCIyw639+uuNLssgkl2xcdt8QIA9g/IxoG2jghSubOHNAWBcjaNNUXCinxKTj5Ga79Iyzlw0XC6MLP2b37NCbMy9gqwUT59yAEASXpwePPPxwXwxUd0nMKFRLe2uziwTEf6/ro7FC4si/0FERK7uk56fbgwyLiIOrFXfEu8PIYLLsP/T8jQBwu4OErR/ZD0PPKzwesPyuz/jHpH7DdJL7p5ES3uiAvyxrx3T/auS8lzwAQ0i7G5y89zcoyMDY13gMf0itJ8ue+6NQO4bkwHyZF",
-        "scale": 0.0010922135,
+        "scale": 0.0010922136,
         "normalized": true
       }
     },
@@ -2539,7 +2778,7 @@
         "rule_match_strength": 0.865,
         "experience_similarity": 0.863,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -2993,7 +3232,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "DgbVAx/LCyg8NTTuVvvQPi/Jz70VD60vMCMBNAb849sj0jgOtvoJteAPFCgMUAcn19vpRwc6/OTtwssYWvUAIUknLSjV2d8b7+kpKTTwAwC12OMT6RIYrRzmV1XwvN2kBjz/9TK/SMzWLSrOL8K9PUMZ180PykL1PPrRudn5KRfkBCVFKBYoPu381s7OFs4yHgtR4Be+R9EtFhe55ez9LsOym//WoidHsO/XK6AW5D3hCzgp3de409zjv/ge+PEwucbjGd8QGxz59zoxFvXZN98wKcjKCO4b7yDY+Czc9bk1KiDM3ybv8dvd1qr8E1LryLkpz0O5+gjnNBvH08AFJyw50xEl/EMjEAfa4tIBwRAq8eHa5n/YyB4EGgxI8gJF6dXBEDjyOhkMSsEJ3fjmKs4eFxQxJzUMzd0PLx1V5dvDve/fLlf57QYbK6HJJrbT4CTX6i1F4Cnry0ro1TQCvDAr9xfBFz4S8NkBKEhRC+sXxCY84vb26Lwmyrgz9B4t",
-        "scale": 0.0011343596,
+        "scale": 0.0011343595,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:12:27.090660+00:00"
@@ -3161,7 +3400,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "HPzf4mfoKFJnHjsRYerjGkbFwtX6Fb9sGhKwCCq8xMFEuTQc7bv68+kTU3YrTSIomO6uPhUYA6XutLZBf/T9KEcdGESy5N9B0t3qFD3DLruq878AzEJOt2DoNUDFyr2P0Vs/7yLPQaXV/xLYV6vKZBcvqsPCg0e7Sta74anOGBkACR4vHwxXZZr84uroMcMtSxRh9E3VQNglC0mz0+81Np/px8TAtSoesNLXP6o5xh3nHFJM4hSm36/lwQEf1vBBs7cRLO1fQyPJr0I+O9ywLuQ5Na/OJf/z7C/IJCnzTavTVT2z1jf18dbO68/gG0XZusYmtV7U2VfjJj/Nxq/INTtNxSIv6nc/Qz/quOHCtT3t1wK3x3Gh0hAPK1dM/hhb99an5T7vSjcAQMo0z/MaW6ANGzMZ+zYkrepLUu0cxc3B2eW/Bhre1gYTQqqoQsWwA1vv4xMPzy7Wwhjb3TEohCgF3B+Dw2cXyQwpGkxQ/+U12zFJxP/3zNE/yKIuIz9d",
-        "scale": 0.000891622,
+        "scale": 0.0008916223,
         "normalized": true
       }
     },
@@ -3395,7 +3634,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "T/vc2C/kOAtQKxf4RwncNzPNytERL537NT7tKDTJ09o+mxcP2NszyukqH00bddozku78WwI44ryzxY8vdhb+JmImU1bI5OAxwfIgLDLCNcyVyLotwDE+qUITJELe4LDO9EJC4DeoTKrQXBHFWL+6TGcltq8kuk3LW+Hnqb/TShvz50YzKCJwP976vu/kT/YeLEM6vTzGRtRiLzmz8O0nZI+zr+Psol5vnNvEQ7sL6Dz2O1M16LqOv6/uogoA8PcxvL3PKL4oQQ7yvxk2IPK1NuYpIMfRK+T34AzKFzHZ8cAYPSimnBLtBrfVv6wTFDP51ts22lDL+xPKM/rGqdfqLSkvtkUPDF8uOArU48za1Tss473c7migw0MfMC5a6PxexMmd9B/LLh78ca8a3BgbHrET9jsgDT9B2/ELRytGzeDPzueqVV/eGR/yFIHVQuix1Bm4oBtW6A65wN7p40MTpQ3iAV6y6jcj+eoeJ1JZ7A0ntClBxOrdv+A3x6I5/xFf",
-        "scale": 0.0009024082,
+        "scale": 0.0009024083,
         "normalized": true
       }
     },
@@ -3602,6 +3841,80 @@
         "dim": 384,
         "q": "Hwfgy0/MHCBwDTYGVPTEQUui1boN+8JRODTcRznUsdlHji0ZstolrO8TGlkad+MawAcCVPo2B8oazIEjQfoiOm0ySimr8bVUA9sVUPwIKurD3sINykEusUcTOXPe18KM10Yn3U7hUaPwIBzULJK5SU4nt9YYl1rmRQzToO30EzUK8ygaNy8XRNTx6uyyMRBSJRBS1SrSQrVLJTna6uUuNcLdr9Tpqhw+nNvjK8oV5lLMFzsh3a/LwsTVqPlCwxAYotEEGvM3HBYf9jwvKgK7NcwnHYizJrrSCSK65inzIZ4OXwjbukLmCNO2zI8cK0HmvrdYszHCBRH0QUjAy87rR0YY0xszAFUYVRb69NUAr0MhzvPz5lWftUIyRDs6+Os25tS77k2xI+3jOssS0QMLML4PAD8gFEQuwq0WKBct297Bw/zDOzDF9BQFNpq0Ra7e+kTAt0BYuhXm0BzxyU/8nSEH/hPjxgonl98ePDly+bsQuggw6uv2+84o1qwqDQtS",
         "scale": 0.0009354121,
+        "normalized": true
+      }
+    },
+    {
+      "id": "52664ca3324d8be5ed",
+      "source": "Agenda note (アジェンダノート)",
+      "category": "Marketing",
+      "url": "https://agenda-note.com/customer/detail/id=8828",
+      "title": "FIFAワールドカップ2026 日本代表選の生活者行動は4タイプに分類 ー 電通調査",
+      "published": "2026-08-13T15:00:00+00:00",
+      "first_seen": "2026-08-14T11:36:59.259767+00:00",
+      "summary": "テレビ、スマホ、飲食店……観戦場所・スタイルの多様化 米国・カナダ・メキシコの3ヵ国共催、48チーム参加で、史上最大規模の大会となった「FIFAワールドカップ2026」。 電通は8月13日、その日本代表戦 4試合の生活者行動を分析した結果を発表した。全国の男女15～69歳の9692人を対象に、4試合の視聴実態、スマホの利用、購買に関するデータを統合的に調査・分析したもの。 深夜・早朝から休日の昼間、通勤時間帯までキックオフ時間はバラバラだったが、生活者はテレビとスマホを使い分けたり、食や移動を工夫しながら、観戦と日常生活を両立していたことがわかった。 観戦場所・観戦スタイルは多様化が進んでいる。リアルタイムのテレビ視聴者は4試合で6849.3万人（ビデオリサーチ社推計）、DAZNの視聴者は約1,100万人（DAZN社発表）にのぼった。他にも飲食店やパブリックビューイング、友人宅など自宅外で試合を視聴していた約370.9万人（電通の独自調査）が存在すると推計される。 キックオフの時間帯ごとに、観戦スタイルを4つに分類 こうした観戦手段だけでなく、生活者は感染に伴う食や移動、働き方まで自らデザインしていることがわかった。電通は、キックオフの時間帯ごとに、以下の4つの観戦スタイルを定義した。 出典：電通ニュースリリース「電通、FIFAワールドカップ2026 日本代表戦の生活者行動を統合分析」 たとえば、月曜の早朝5時にキックオフした対オランダ戦の観戦スタイルは「生活始動型」と名付けた。 出社・登校前の限られた時間での観戦になるため、スマホでの手軽な視聴が急増した。docomo data squareのデータによると、当日のDAZN起動UU数（分析プラットフォーム「docomo data square」のデータ）は、前週比の約38.7倍に上った。購買面では、目覚ましがわりや短時間での気分転換を目的に、みぞれアイス（127.5％）や気分転換のコーンチップスナック（119.0％）など、軽食が伸びる結果となった。 また、日曜の昼13時というゴールデンタイムに行われた対チュニジア戦の観戦スタイルは「劇場型」と名付けた。 家族や友人と自宅に集まり、賑やかに観戦する「共視聴」のスタイルが定着。テーマパークや商業施設の人流が前週比で約14％減少した一方、自宅での消費が大きく伸長した。発泡酒（132.1％）やポップコーン（146.0％）などが多く購買され、デリバリーアプリの利用が増えた（前週比最大1.4倍）。自宅をパブリックビューイング会場のように仕立てて楽しむ様子がうかがえた。 電通は「今後も放映権・スポンサーシップ・コンテンツマーケティングの各領域を支援し、スポーツコンテンツの価値最大化と、生活者起点のスポーツマーケティングの高度化に貢献していく」としている。",
+      "content_checked": true,
+      "content_excerpt": "2026/08/14",
+      "base_score": 8.4,
+      "reading_score": 10.0,
+      "notion_score": 10.0,
+      "grade": "S",
+      "tags": [
+        "consumer",
+        "research",
+        "marketing"
+      ],
+      "concepts": [
+        "生活者",
+        "購買",
+        "コンテンツ",
+        "調査",
+        "データ",
+        "分析"
+      ],
+      "learning_features": {
+        "topics": [
+          "生活者",
+          "購買",
+          "コンテンツ",
+          "調査",
+          "データ",
+          "分析"
+        ],
+        "formats": [
+          "調査レポート",
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": [
+          "一次データ"
+        ]
+      },
+      "reason": "包含调查/数据；涉及消费者/用户行为；语义增量：可能更新2024年前后的既有时间证据；可能补充证据/案例；与实际工作场景语义接近",
+      "screening_note": "",
+      "screening": "semantic_v8_adaptive_temporal",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 3.458,
+        "rule_match_strength": 0.86,
+        "experience_similarity": 0.848,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.39,
+        "evidence_bonus": 0.4,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 1.767,
+        "increment_type": "temporal_update",
+        "temporal_update": true
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Rwjl3GTQITU0KCf2Vw3JIynEw7wEH+EiLz3THfrIxMQ2pVodydY0tNEVJVYrf+I3yPIKOhY3HMPwu50zYez9KGcmDCy/5dk60ukJMDTaEwPPvcMr3itXuEocTzvCzbG/6FUr6B67HqHuL1TTVrfANj0IsMwAiU3oNvbKuL3RHUkR+TVQQSNLMfzmttXRW+ZaFhwr3T3wNrhiO0fq3OIuJr7B0uToiTxcuPTVQMIm/TXRL2z/zei3t8Xxtf0q4/wko8AlHc01+krP2i00GgC1Gr80KbOwI+wF/B7TFCX0FJgGUA7hzC3pCtXXv8oPQhzZzuVQvWG15Rz2EhT2t7HoGS0jxwsY7HIrKxHXq8biyFUnxtuv+i+wtBLtGTVazvtN3QHA8jXKISLvTeP41wAQIawtHxYjBhUssuZFRAUPwAGn6cDeLkrp6CYRRK+5QubSzzCQvhcvtjjfyDrlxS4GuSoVBxmy828TuvQON0pD+eshwTJL2g7z5Og72JIbCSI2",
+        "scale": 0.0009637704,
         "normalized": true
       }
     },
@@ -4998,7 +5311,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "J+C231C8PElGKUkPcvGxQzPcx5IZEfshNUjWVAS6vbdOwkwSuNwR/d0UJHs0Y+k1tQ/pWfI/9brFt7AXYBsETHEMHEfC488s1cQnVxAHL7jO0N5CvC4ptlLwbEjlxMbX4kop6kPkQqP4LSPNN8PLPT4t2LMQkUiyWePosKnICDQf+BZFODYCW/zB9fvX+spEFTw3zUKySc5TSi7OzN40JLPAgbviojFgtO/DPJsnBzm9ImMi/9Ki3+HezgJG9O0qxMvtGdYrHiDq7UIsQvK/P+InMcelK63m+TPU7Ej7CMzoRRrqvSTF/8rLyqT4TEut2LQ1zWTE7yMDKyHEydupORQVlxgj/2D+KUiy6cTpzistviTQAGah0jJGBUM41xVSyduT7izaK/YQWtVe5xUOE7D+8DobMBMpvc8q/gUzqdLN3N/WHlPy4EscM8bFVsqx7GTNvBs+x/zQxRPzySoZp/sV3y2h40Ax3M7mKSRC4vILuDRj3vnBAeQ5upI9B0M6",
-        "scale": 0.0009162618,
+        "scale": 0.0009162619,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:28:38.661291+00:00"
@@ -5906,7 +6219,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "TOLK1WS/DRA3L0ECdA7fLFuxsLsTG+MhSzvZPwvRsq1h1FciyNwm3uYKOHFFau5qrfTtNP08+MnYz6UpUOgbUG4QPkyl1sMj5fkvUC7CMs2qutdOtkgwuy4gMUrW58LR6CsxqT3FCpvYPze6Ybq1MlI7t94TqTTNP++yr6exHCsOLhFkP0o+YuLIv8C8OOxkG0QxxVrNUd9UIg++2vQvM6rDnATtvTRRv97YSbwr8j7mIWAbD8SqydDYt9xa6QMMuMTqF9ozIEPjshZJW6qaGdlVJK6uO7n39h/OCmrYCq3qNEfSyCDV87S85bn9GE//2rIyrFDK/AjlJxnLvsvnKwQSigkg+H8bMRmk9eu/2UA9yOrO9Fiym0EoCDpR4+hv5uOkzzHWOv4UTLs22PgJLa/7HVH9I/xTr9hZTt0/usPJv/CgHTrM5Sn9PJ+6Qbm1wGfJwBNG1TXE40XvwUgllSwo71DA9GMW9PnyWEBC7+oAmCVU1fnz3LY4v8wZNh4t",
-        "scale": 0.0008747927,
+        "scale": 0.0008747928,
         "normalized": true
       }
     },
@@ -6138,7 +6451,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "NgHl2kb8QEI6FEIKPw6/Lz/Nt74cCOUtOCbrUAal3MM8vjsM6tgju+IdPWEjfw0sqfTeOAstHuXbt5EIT90fL1wmKFHQ5+s55O0bNzzWI8eY1N4QwGNXuEL+N0vm1d604WA03y/POKnrHkjLSNKpSzcepNQYkEvNTeLOwtm9ETDi7k8pHjlGK/Ljvs/fIehGMiJIx1DmR+YqNjTV7OopRdS9zszmrjojr+XlLMwv3ynTDzEY5NC9yMjtuSEP2wQNg6r+BtNTFzsYykdAMuO1JtIjXsOqUuwF6DnAGCv2CqnzPB3YxiLi3ePKvrMmOSbOv9JO1iXrEAvoFiPew8LAJT42uA4o4X0pLP3LpbrjzC8VxPDR8UrIwi8PClJF3xM3yA235BrMExbuPMclxgABB54VKP4LGy8wsuFbPOgAtN/Gu+DGOUXp7RzpLbiqM73dxEmqvyAp0y/Ayir12iQIvwsj3hvV91IxzNgiTVtNEdAxtk03virm1dshv50NBzlM",
-        "scale": 0.0009678647,
+        "scale": 0.0009678648,
         "normalized": true
       }
     },
@@ -6188,7 +6501,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MdrY1mbtPx5BSln7UinfLU+3lNoXGe39OUXGWw+xydFQwUQi3PQ3rMQDFmUtaeZFu+/bPfZVEbPunrBUWOntU1UpFkXG9Mo0yvH8NTLJGtrRy8k7pVBNmmL/WHivwaHC7Egu5DfML8PjJjrGQ8TIHkkqsMjtm0rGT+TSx8DSIzsQ/jIx/EJJUf/65tS6GvhnGiYj3SbXMshFKyTXy9AuOqzLvNrRgUFRpvzGBKgl/i7qLD4K4em067rjwgZR1flEtdH7FOcoFyfPqio5Rc3NHb9IN5iMW67z9CbZLEEBGsPfURj/wzve2tLFxJoZQSTN9asvwzrM8DMNNvzQs6fVSwr7phEiCnomJzfA1dXP4EEhkhbA/1a/il0uDEZG5s5Nxdm37DW6JwoITtcmsOgfHpsTJjYwTigPy+5FP/4Pu8W01O7ZIVTr1Tf7Lc23U7/LwWixvCw1yijS3jfivT03oysN5xmR7GI+0vgYOR9DAtAFwR1a1g/nvd0zzZo1CjFI",
-        "scale": 0.0008956246,
+        "scale": 0.0008956245,
         "normalized": true
       }
     },
@@ -6407,7 +6720,7 @@
         "rule_match_strength": 1.057,
         "experience_similarity": 0.89,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.55,
@@ -6520,7 +6833,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "EfLbskPWHxgwKhIJahTiQxyv5N4mINooLx3ZQSPZ0dwdziAHxvQu5eEFFW0SYc8d2ejvYv0CAubly58IV+X6Gn84HjnPzdsZ5OsLISTrQ+Od7dY11hIpnjntMErf6fi37C0k5SPTDcPcRSHaIsbKIEIa08sjwSUOOunqytwI/jENBxE7Hy44TvYB0v/HF+dFDiRE3jnNQOQzLwG15+AEHdq3qeT9wjVBw/nrN80x5UDZ/DcP3syqwZvty/0b7w8uy8Ld9b8e+z/g0yZDLQK4KOEOMOjLQ8ABAC/A+T75EqzkLz2/4ijw0tGs15reJDHJyMxBxhvo5wXhGUPSru3cNBoPtw0l7lPgQRbK4N7j8CotquDPAHvR0ig1QFMpzxA/GvS+6ja3KAfpaN4S8/Pk+rQg7zYlPzk8xtszIxo06tq72eu/LTf5/CMsLLrKScn500O06yEdvh4A3BP071xGkSQ43RbZ4Tws+uEQPTU/+NkQwjZNx+/s7roK4rEgBw1O",
-        "scale": 0.0010745024,
+        "scale": 0.0010745023,
         "normalized": true
       }
     },
@@ -6630,7 +6943,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "SAnkzknHAR5PPzjjdxCWKjGms7MjNcEmLCoJQjHLzNc6vCwM4QFPuaf3HFMLcc5HodIKPNYy993fxYsJXu5BS3k9OynW+PBO8/ASRQr4EseM9t42mFcRpEjpT2bVzryrxiBF/kOrVcbGEymsZJXIIjUx07MpgVnARA3DjcD5MTPsAx87FUNDa+gGuwvANto9NzNI5Xm+QI5WQSyh3rE0UJzEicDhsjw5mb/MEMI09zzd8FpG1fifwczYyCY15Qcelb4Q6QksJEf/zzo0MuTjS98sK9jETvvn3R3cBxcI/4nzPB3S1/gGEPbKzs/kTljPydI6s16y5/TTMlHNqdn9JyhguBQq7GwXFBrZ17nXuSBN/QDLwFybtz4/UD9X0/ZPFMSp4WPNMBbVbsQ16tb5TJQrHCMzDzVEtq0uLx06w73B09/gUEjN+ywJPIW3KJbT5y6Zxg9EyQzyywL+t2HnlDcl5i2+4zlI78stQkth9s33mCxNyw3fy8YksdRa9how",
-        "scale": 0.0008596207,
+        "scale": 0.0008596206,
         "normalized": true
       }
     },
@@ -6689,7 +7002,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MPnNtiDwKUcrIh0EcfLQRySx2eMkAdMuNzLwETjb2uo6rzH/2+AZ6N4RNkcjcQMZygPmVf886eLWva/9et7vMn8EESSqBukw3AIMNxvZCsmiwckW/issxDPsLV7XreGs7zkX/ivUQcXzPyO2ObnMPFIe4erzrTr1QNDgt8fzHkfZ5hkoBjxHU+4H5uLiMAhNKBZQ0TbhT9NdKySx7egWNsjIqfHRtyctoNjWKuMk/zHVJVkrtfeS07XlyCYUzu4kpOflFuA1KiUFxywhRfj0Br8oCr3IHOQB+fTV8kL0/6AlHizYyCP81wTIzMPqL0kHqc1FwjPcCCX1RB3Mu9gDQjI/xxMj520HEQrW1q7t3C8+1ua83FaewkcYJy8m4gM+576/7i3GEBLxW88d8Oj8RL8iEAcKMzop3tIlFucxx9G15+fATUvSBxAAUprPELrK6izG3R1TvR/Wvx/JwVATsi0b5hrK/1k4zvolIyQ95u8lpiQ/5v79zdsDxMNHACNk",
-        "scale": 0.0010250342,
+        "scale": 0.0010250343,
         "normalized": true
       }
     },
@@ -7451,7 +7764,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "OgXf4UbdJz8kIDkmP/P8LUCn08UHHvIkZCoQGETRxJFErCgZxr0A2fcnL1FUX/U6uuzGD+QUMdLwt7QEf+X/O10XL0W/AfAeDf0XLSm2Oe6k9NEG9hZntDcDVzPdqNKxwjQd2ge6IIj5IzKrQpzHFUc+rN79rGexPt7XrcHbMAzwCSQrIjM4KODF18jXFBhgICRJz00ILdE0LC/V6+8jTsiuruX0y08ymdrMVZFH3T++SkQ95+GY2aq3rDYe2wE6t8ctFNssMjv1pUEcOt/BNr0lGNDPQacJBB/NSSz0DZkLSTK02jAC69O13qQGEFTp6LlbpD3e+vbXMAbSu8XLLEI0vBM76F8vNxPO2eLi9T0b29vT5kS/qRsqOFg23eRf+eGzBiDlISH+MbpD0PwXCr/94xgME0Ecv9ZLLwAV3eTYvxOkP0zN8hXjOLXTIMG8A0O5rxo76hzK+DDxADjxnCQ8+A3StU8Pwt4mHEJD3vEsyBI80BHz6OgmvbEpIA9G",
-        "scale": 0.000960519,
+        "scale": 0.0009605189,
         "normalized": true
       }
     },
@@ -8603,7 +8916,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Mf/e1FnCHTRDEUnfafi9ID7fwcsDHLtRQVDJFxrU47wsqj8itu0c2vgBMEYnX+VEqfH9Mgsx5Mv0kdAQSAsFSn8YHi6JytVEwcIbHS3AFN3Mys4PuCA/vEX+V1262evKuDoi/CTYPqPnNxqlQMDGRj0Tprb9nCjVOd/cj7vDSFgH6hdiEzUtR+XCy+v/P74lEShM0DnvU8lYW1a93+MYQsfUveDVvhYyttazN9QY7yfQJWAtxNijvbTS0AUI1wQepbgMK/Y9KUjk8CcqN/W2EdgiLdPOOqzk/hiyFzDvHrjxPC65iw70DfC55LwlPET29tQ77E/QzeT0DCbox7v4Ly8juRYkCG0fCQ3M5MHhySxAyvq6ClSsw0gpISNN5wdL7MXR8zy7K/j5ULsr1PQON6kGKyU06VQtvMkWNtw4yem03gXbPVXkBxgUKbSwJtbwEDboxA1Lyhno1Rbn2Ej1oBj6+Dyn+Ekz2fkfMjhhARVBuT1e3urk0NcRxq0xIihF",
-        "scale": 0.0009603503,
+        "scale": 0.0009603504,
         "normalized": true
       }
     },
@@ -9139,7 +9452,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "OhbN3zSqFi8eHjn/XhrlIjTou8YkD+0mMUnbQzLRstco2UQs8+QP7OwVMFoHcvAarer9NAFUD7vW58P1fwQFImsBSjwB8Mgs8dwEL0bdFr7f3Mg/siU+qkrlMDnDw8KyvyEs7jy/NcfbJzi+L9bbORIJ4djyySzJUfi2sr/IFRTvHDUpFiAnLtXr6OQECfsjNihCzSoDTuc8URmuE+wwKsiz08H0pSInx9DqGbkn9hW9HloN/vqnuan2wgQy5PwLx+ApA+1FHB7m5iUpPdqxKsgnG7C1Wqjl/RHXQ0cWIKgdODi+xP8F78/Hw9DpOTPpw/M11zfixgr0Fg/bq8voLS8y3Bsx6WZHJRPBy9LQ2T0XzPrDH0zfxvciKBNK+Awe9Ovd3xjzKQT4Su5i2AUcGcYg9Scu+Cwmq9wnDRIRstrWwt2yJ0LxzRTxLKjfTr7UAlfL3Csz3jjUyCbb0hvajQ8U9jPj+y4rxvAmGhkByfwWsT5bz+Xz4L84sK8u/TUz",
-        "scale": 0.0010485797,
+        "scale": 0.0010485798,
         "normalized": true
       }
     },
@@ -10850,7 +11163,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KCD6zz7JFhU4NywIRALsEjq148QMBuMbNjXrCynVyd9EvysE1OIw7uUJElEjYQ8YutfrOgUz+NLsrrX9Zu8SO38cEDPE7t4qz+EVJDPNHdmgvtMR6xs21CkbLVbQy9qu5TAs4yrlJL34HRrQN8m4PSMLts4Hoy7aMtvAuNPqGiQC7h01MCo5N9rt3ODYQtw7KQ43zDcMSPE6OEXH6L8qObjSxdj1syIouPbAQtxA5S3lGkIQ6Oaw2rjhyA8w5v0QrrX8BNQ1KC799zokIOjXLNoZKcrJIuXo/g7EMDACJawYShS82Bnn29Xz2scFKTP44tNA1kbT4/PgFBzyvsTiFAspwwkNA3AVChX409nY2UQb1tTb/UDVxyD0JDY/9ABB6drR+iPKKAfuR90D1f4gGboJEhgeFiAdnds3Nfcp1Pbmy+DSSFfs6i/6M6PILd/i+jPRvgwr2jHs6j3i4yrtwB4VBx3Z5koo3wMMLlgv79sjwDc+3RbQ39AQzsckIis4",
-        "scale": 0.0011296305,
+        "scale": 0.0011296303,
         "normalized": true
       }
     },
@@ -11983,7 +12296,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ixfa0EDaFi8yGx8KQPvINiLYzMwTB/sSNzTGFBrg4dwZx0MDv94J3PIHHzsnQ/A80P/dMfYZENvt07EkWAEQMX8nLDLYAO4gAtEYGy/HOde85u4U5hMvp03aK0Pa0NfN80EY7zDYHaX3Jw/rMLO2QDYbydQCshvfNePYuM3mKQL8/P00HzMlMOjb6ObKFeszGBJOzUvyO+FAFEDW4e/7KdHWzOjMtiYvvujPO9E52FTaEkgQ+9iqt93izgY15BEdztTTDfMiJSn+5icmM/i4JugbC93OK8rs7irjFjUDFKgDNA7E2kT/CsrL0dYNElDT8OA/0CzN5iD/Oizy2eThLS0WxAQ5+2wiOQvV2PcFwjb4sOrf3kfb1ycuHCYtzv0/6M7G2RzjQPHhOc0s3vIeCrL2CTYYGhIm3fgrEd0v09724efoGi/f6f0NCbbAPN7oDjHSxA4Y3//j1yX25UMPvBki+B648R8s5OkJJjAh8Ak51Rss1gAW9sIUydghAxon",
-        "scale": 0.0012041279,
+        "scale": 0.001204128,
         "normalized": true
       }
     },
@@ -12395,7 +12708,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ph7m3WHeKhVIGCbmVgDlPFOaxssF+rBUPy70NynMz81OwUgV0PxD1+YMKWUcWuAS0Ov0RPwq/sPly6ZJV/QlR1ssNj3Uzeojx90CLSfmO8264asnwB8cnEXwI0PQxOOs3j0j80rVMaHjJC+4W8rVPDknuOINyhnHMs/0qsLLKSr/BUVSEBkuQuT22dfaKM1IOBMm3mv4PttMER2uy5BBMqOxkLwDgTBGtOrxKs0T9zEHLlYIx92fvcjexCBlyhE1nsMZ7r5GED8GyiMyNvXTEtgrN6WqO8Hz6hypDSHuGbkWLR7Hyw0BC9Duyq/6NR7X9K0+4EPa7w3uBTTqutPdHy1TtAQpDH02RRDnydnt3Ucesu3d9mnQvyohKyc49+Q+q9XaDCW4NxzaV+IB2+8iHKoaFygiHzM/pOczQvs31MbP1+enLjjR3iUXRrmzOLfv1SnExCIUzx/Rvy3UwTrvmhAT4CDH8ToqyO8gRFdf4/gcvi1MzRr1+tkwupJDEUBc",
-        "scale": 0.0009609135,
+        "scale": 0.0009609136,
         "normalized": true
       }
     },
@@ -12851,7 +13164,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "LwrZz1LtEytlED73PQLHO0qiwtgg7r4/TS3gSxqzyMRQuTII7eItzuAbH20bct4dzNTuVv5IDMP0v5ZGcdYPNm88FTvQztw299UJIUznLe695aY570E+qjXpMlTR39+30DlDzT/eOpDBG1G8Pd2rLBcTlNcRnyi/S+7EtMPuLikHGThWGSxKYOnlzNXDO95YLR08v0vrM849Kx251cZJQqy5ztztgSpEpsrqM9A25y3vIl8Yy6yr18La7P4y4PIfwLUV8cgzCEIh00csONTQDtQhSKSiMPwO2VPcEBbyELTzPwG9sBfc4NPPxsEfJDPPx9NE2mDJDffcCBMBtLnPIjwzsf0E/X9bMyvRtsrj0TomnMPOEGLOtyHzF0Iv9AVT2+3B/CmvMPvZQs/y2soJD6AqLjUfPC8po9xBTuoux8Pbz86mNUXJ7TkGTsTMTr621Di7vRQA2TTs1SMFzj0H0DIv6iXZ7UIt0BMdMkJaBvkewE08xirn0sUmx4o9FxlC",
-        "scale": 0.0009336117,
+        "scale": 0.0009336116,
         "normalized": true
       }
     },
@@ -12927,7 +13240,7 @@
         "rule_match_strength": 1.058,
         "experience_similarity": 0.871,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.85,
@@ -13394,7 +13707,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "M/XN3DjHMjE1GC8GVhPdLy/Dt8oLIMglM0DuOTvkvuI4qjoI28krzPTzDVgxWfInwPvfXxIrA9zWu6geTdgGOGYnBRG8zcoR9+0eM0TNGb2q5P0i3hMywTIFSk7LzuKp5S8U8SzPHon/Fyq3WZmiQFc+xLD7rjfkR/fJtbvmCRcHCyJLFUE4Xt7yyMHGLfgwHCVG2zHgTspRSUzE1dUhUZ/OqdfeoEE2qenTPswc6Ce5FTkLwc6oxt3nswUV4BwlrsQO+90qHyIL3TMmUODDIOEgD9PgO+z0+UHTE0btN7sDOxzTzivU57fG1cHlLDbozNcjzU/s/A36Jxrqx9HXMD8AvRcO3n8cFxvl4NjR0jgk1NrmGFuvoB/cDUNL6OdH9eDgzC7xOvzKVe4m9AcZPLIW+TUjRyVDy+EaT/Qu0+quwfy4RC7I31buEKzCLsvP5kG6zy8f1jL48TnjxTg7tQstxlW+6z026s4rODdF5vAMxkt1zg3d1dUcy7cxCzo1",
-        "scale": 0.0009972015,
+        "scale": 0.0009972014,
         "normalized": true
       }
     },
@@ -13893,7 +14206,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ouzg2GDmEx4oMyjxaw3RITij6NYW/dpBMB3rKDPbzu4y1RgDvOQzudExOD/9accj4fj6PQoh7Nfkr5U7SP0QJ2s3PyvF+PM18NMVPyTyOuyw3sQZ5jslsh32VDnf0tPI+ScY4TvxL7n9HxDGKcjEKEol4Ob7zkXPN9nYs8YOGC/s/BBDIR0ZZ/QI9wDSG9dFIB5B5hrfN9owEh690L4wEayurNf1qggyueHjI9U28jbeGj8V/s+tzcn/2RE8xwsiyr/x/sgZEikb2z4dRvvsFr4gMMSyINTmBCji/zAA+q34QOjPxxjhAuPYz673GSD18LYAsjXK7e8E/yfU5+DVQyEa0AMVA38hHwjQ9fbt1SsrwvPf+0zotAMiHUBO1hI/+enG7S3hYfHwTOby8PP/Drs5/C0KPjcQzs0cIQct2t7HuvjFFyf78B0QELjAVcXr3kfOxiYX0hbzxSP59kUWtywW9xjM8S9A5/AHIVFNABUS5SBI0Q/e6bYQ1pYhGwIg",
-        "scale": 0.0011189379,
+        "scale": 0.001118938,
         "normalized": true
       }
     },
@@ -14247,7 +14560,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "FvvB9WX1ER8tJT/vSyffJEevpM/mFcY4OT3zSw7issgwzDsYzNALrcAYIHv6dQcm0u/LOBck8NzRtrU5OO0JPWoRESHL5+I6xucRHin8Pe691NIv0zUpuTAQLhzW1rrGAyzx5yzEYdXoRRflJ73JRC8zyrsauz7gPd75z8TsMSwHHxdEMStLW8n80Oa2BOUvCSxA1CnzJOE5NQTb4+I8VsXXu+LiwDtfy+azG9w//SHN/ztE6eWk7tHcxisK2RoywcYfEOEb/y/mziVSQPfxM7AaNdflM9MY5jznLS71/ND4JSbt0/3W/uP6q5r0GDnZ1ulBwyCp4iz3MA/wsbTUG0gHugso8S4OEhTG3tfs5jAZw9DV33/I2yEjA04mzPciBvO59j/aJN/8Y9424goIB6cg/DQo/B4mvaQjPR0PyOvD9+7YBxbv0y4rFbfJOsvU12XStTBMxigE1hTs4ko8kwoz5y254zT+7sQSEzc64d8yphJG6PjS5/MouKkwEA09",
-        "scale": 0.0010559282,
+        "scale": 0.001055928,
         "normalized": true
       }
     },
@@ -14295,7 +14608,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "C/jc00bEABk+CUsKQPHhM0bDxNsy88cNXzHZPS3Xz9kztDQQycsAtwgGHmkHTOojugDxYQU0E77hs6oRPvj0A39MKGG19uQ70tUQX0DbMtyw5eILtTwjulECQDDwvwCN7j4e7TreIcD2Rxe6GMa3G08ltc0y0j/gQO7dvdrQIhjh+g4YLUkzStAUurngKftRIT1zvl3iXKREORXSvbsZJ8S7nPLGlB5LpePkJ9Aj6yPk6kQdyvymvtjY0BxW7Okw2NXr8MY5CgwE3g9GPwLSRs0uRbK2T/LrGhzuDB/y4sXvNweZwQXMBNTb7pf6REQAxtMQokTh3PHlKDnh1rnwSEcnpyot7m4tHlWn4bX94BcYvPjZ91/B6zMLOENIxw5n5eWi+yitACH8WAESzecc/rECGRgcPSU+0t4aGAg4lPy7uc+xOTPp/jzyNbioJsXf2lOmuipQmlLa4/voxEkVrDESxByvyjNEvwQVGE9b+v8SyQxFzikBDNgN1LJLARJP",
-        "scale": 0.0009638483,
+        "scale": 0.0009638485,
         "normalized": true
       }
     },
@@ -14478,7 +14791,7 @@
         "rule_match_strength": 0.861,
         "experience_similarity": 0.868,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.77,
@@ -15330,7 +15643,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "OBfe10vgKCpn+kL2auKyMm7nxcxR7rMfcFEBOPbltaVRuVcVvuMty/QiRHszX8tQmd/pUPJaAcDespkNehQwMGhFFD2z7gI5zsEmMUTwINirxdEn3k9KmmL0MyKn0tHh9Wg94zS5OKPpNgLfR6WQMVQSp74XjhjWWt+trrTTJhISDAdPOj9rSKDkpbLZL+5TDxom4GPlWKFXN0q8y9dQUK3no8vfoRxOxOjCPcJV72DnH1k158yRtui1sB08v+kStab5A+U4JTcP9klFJbO8OK84NNWtWcS/AxarE0fpKqEIUziv1yAAB9Xu7qYGSyXQvMEsulXFHQrUHBenxsHXOl0ihzkTDX8oUASy2d7e1z8zxvbT7ky5yhciAyQ32OFC0NG4ASqpDjTiTakO9eEZO8EgJSsoJkEltfEbMgQ0ieSCwL7BJkbL/y0FTrXNX8nhvT2wrwtTpiPo3iHayjojoEHuxk+jLHE/nNgMSUBj2c1AtUZcyw731aYIuJdKGCYv",
-        "scale": 0.0008393272,
+        "scale": 0.0008393273,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:12:27.090660+00:00"
@@ -15401,7 +15714,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KAbh0GzcEjRYVED6N+jKI1OWyrQoBucvS0D4RibmwMw/zU0E5uwTxtj/M1sxXu1Ft97dUdpKK9bjtJsCXf31IngdMija5PtBBNktMkLfI+2z0csQ0RVJp0T0RGPIr/Wt70UG4EDMG7//JCe4aJeyOEQSs+X1nEnkWPW9sqf4/UbHA0wzJy07VO3q387RLfxFICxN7k/hQLdeSyO20t1CQsbQid71oBlBtf7CO7cj1UDjM2QVv7+B2tTQpxQZ1/0erL7i+exMKzHsyEINM+S9WO05QKHILtcH/ivIIinsGpYKUwrLyTzM37fPz7cARCPx6ctfuDC4/vfvQQrTyc3gG0EDwA0w+Xk3M0vcyNfUvVsew+TC/Wujqxf7HD461uRm4s209TnKKPDTTbkmxPQSFKsHFDQKESk6r+IzJRoxzOq119i/Nju0AzcJPaPMSbPA8Tq6pSRR60fs0zjnzjDprzoP9yXDvE4vveYbJVA57PoTviRP4Af61NEWopY9HyVM",
-        "scale": 0.0009183655,
+        "scale": 0.0009183654,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:43:18.085899+00:00"
@@ -16545,7 +16858,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MP3y1UzuNiUtKiUCVvbnJDTbwMYXJfgTRybOM/u/2988pRcH4vEw4MscOXkXVBkUydfDOtspAcTnvq1ISwMJPW0jTD/S6+E56uYXLkTKLv3Lutwrtg8jq0X2SEbW1snSvjEZ6EHjL7/qDTLGSbS4KjQylOj8syDmQuKoutDRBS8A9SwwHh0kYNTf9+ToGuRFKCpO3zsKRNAmMSS34tQvPdThsenYvUJBw/fhI6JM3THTI0wn7s69zt/z2RxC0QYsr77sCskuNx0VxhlGCeG5Ld4QNM2qFOn88xzIFxYLHr7tRyfT0xXx3dvZxM8PGDXQ+M4ns0jSEQvrEPzTxtHhPR4ywAwhAXhALyLT3czIvlAGz/XDAH/hxSQWF0Qw2v491Oq76je9LAjnV9M2xtQW/cX7GR8DHywz3/4dPdr9y+P7ufzVGiHu+h3WP76xRbu78ljMrzoYzxQY1hXC6UcYqBwd4xbQ4VYu2gAZMB5AAuof1hUnqP3zwc8ttcA/CSQ2",
-        "scale": 0.0010499471,
+        "scale": 0.0010499472,
         "normalized": true
       }
     },
@@ -16804,7 +17117,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "QezV2Trv/zRMKkwMbuDgNT7JvccVD+I4PCfeTTaqsdk8qB0S8/cl+pwXBX9GX+oj0f3qPPRl883gmqoSXwomSmosGjPG+dsk0gonQT7lD8S+0Msz1DgkwQjyOmDpx8Ww/R4K72XCOMD2KSu8OsDLHE8ruckapVTJFuKxvcb2QTIB6DgwEFs/R+jxwtvjKdQeDzQ01D3MOrVLUhKl9so6Y5XIic7Ts1A9svO+KdAxDlLlGlITA+apwL/XtQIk3OsSu8TzB/syES7+oDQ2Jvi3QtUcFs7FJ6Lr7yLpMkb9HdIQRxrovzLe5ujT1Mj5PUrjsOpAzVPG2hXlHBbL1dXaQBcyuBkWAnY0SCjCzd2nxzhft/fP9V+xp0IqFihd9wU8zfSb0AfaE//dbsgq2PAUEZICCTcYEiMwwMgzGu1NydvB3erCQSXV0i4CFLG/NLrQ6CKqqis0vw323TvpsEQBohsi4zfF4Ukb5uYYRFBX2wkikEYz5Q7jFMFDq79YHAJE",
-        "scale": 0.0009440126,
+        "scale": 0.0009440124,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:06:09.623710+00:00"
@@ -17128,7 +17441,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MhvewyyvWBpRIiodbefiO0/bi+w03KcDUzLhETXanNoylkIosdwPruAbFWwqTutPz9zqNgs08tboub1CKAMZPlNCGC248fkfA9pMMlHhGdCg4uwE2DQKuDDSMkS/+8mGySIZ81jZY6PwLfO7DYG2VkwgncL2lC+TZOvCqsnkIRoaHzgzKURHcMn8usPAMc5C5Qgnr3bjT7JlPiC+0b5RWqvZnNLZ2h1QltjTJ5klAEvM3V8/suCmz9rYtfofzwxBy7Df5QE0IyUa6Vc+Hs63E6pBPMaXQaQGCyncHFDOBqL8WQmoqyj4B7u+18PzUzvmvc4Q01X5+RHRJh+2zcT6NSlQqyod5l4rNPnTwOHuuWQqxCHSCW+yyzY1LR058Nlc8+e1Bhe1IwHeVss13N8SO5EYIig4Tywrn+MWIQU2n+XEvtrdKjvdFDoaJ+zUOqzXBzu8vEEkt0/d0kPhyi7/xTkRwVa1729Z5+wwQylB7+ck2SlYyQQG9cMXrq8kDixB",
-        "scale": 0.0008922088,
+        "scale": 0.0008922087,
         "normalized": true
       }
     },
@@ -17248,7 +17561,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JPPe90/aHShBJCv3KPPEHSbDvbL9BLkxO0q7LTjm0cUxsDMHyeoxxPscFlcSX/4i4uTlUPwmDbrtsbQJVgQLNXIgCz/G1N811+cDTELlXc6209QUy1IY0EHvQTG7y966708O7SjANrPgPBe6NLvdJkszsrn4uUXjP9/jt8ThGh0Z/CFAPz4xVK/o3d68D/Y8FUND0z/zQvM4HVHE6NUtb7bZxdL3uy5BoPbuR6ojBk/1G0wt7dKi3b7xzhIm0h8AvdvhFt9PLCj9yipAOPTfNc8vO73QR8kB7x3ZKFHoDpUHIi6+phbo/ty/4s/0AS3Wteo/5jnY8BL2GzTqlsHrJBNDpSEX4zYZJBvPx9HwvFAZxtjd8n+2yBX5GUw8+PU10bioAAvONxzmSLkSt+kY9a4eFB0iGhpSyK5IPxoOz/Hx0+66VjDe/xsMK6+8M7zE9C/IvTI/7gT87SLw7yQQuSob8yfB+i8Y1AYbDUFGDOcU0Stduvnu6cgitMUbFBcp",
-        "scale": 0.0010206648,
+        "scale": 0.0010206649,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:06:09.623710+00:00"
@@ -17371,7 +17684,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KtTdzEnq+T9P5CYkVPjDFWDhmb0MD9YQahULHAfYruA3uUYgz+kV1fYQKHwFT+o+y/3aOgQ0BcnVzcLoW9McLX8lGSzR1+IS8+UiNUveVeu96Rg7+yVEzCcALj2yv7LP11MLzQC1IYvhKiXDI8jLVWwYlNsNuSXSOwnesNK/LDQM/DVcNkNCawv8zMn+Nf06SPNnt0z+OKVEFFCsx+wON7HOysvRqxpVo+DPS9U31zXAB072ut62rrzC0uIivAc/x5bo/9IUIRz4whQ4PNyzEs8mWK7ITLfo4CLOJSIi+6L4d0q05BwZ47aoyszwFE3u59w0vzrt+eriGCHg4NDnBPUCw/YQ630lPhmX09fT2kY6yMvMOmfJ4CgPThY16+JL8PHj6zzZHxgCZfQX4QMSDrkiDSkbLDo8y+klRTAcvQOt3NDSF274+i7rMKG9Q/vF0Ry81PYj5Cnj+Djh6x0Ooi0q1Sep80Em5uoMKz5H+/8lnQ80x/j668Y31rQw9wZV",
-        "scale": 0.0009717106,
+        "scale": 0.0009717109,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T02:29:20.459918+00:00"
@@ -17853,7 +18166,7 @@
         "rule_match_strength": 0.867,
         "experience_similarity": 0.884,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -17970,7 +18283,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ng3fsnXxFx1FJmwwHgPlITW3x9klG8g1NkbgQwjtwdI8oDcA2tdOseUbKnw0Xtokpc8DLPcoLb3EmZ4rUhHvQW1VGknQ3s1b8OoYGELsOszP+uUH3EJVsELUUFrF0vWc6B9ExVLXSKD4NSnWPMyyO000jLsFpELE98iwl8HnHwoX7CcyGzk/XuzIwdPAMRIPOEl1wT7CVbY6KS20670qTNbXwwXOnzc7seECM8Uv1SjYIlkcvd+tt6fQzONd6e0SxufUC9IXJCoczU9QVty2GsARQq2ucL766jDOHCDS/5jHNRPZ4iTf4sfIy67yPEzux7At0j3byyXdWyb6lamiOiNOkw0hKnhRKRPSu8vnvEYUlAjg8WPP5ztFKzc53/I20MayFlHKNBgDUbMT2u8yG5IfAi8dNzJD1+ZVX+Aflcvou/SeI1H/6hn5PMG3O8bZ1CrVuAE1pS3MySgSyWoCgRoe0Sup809Osf74QCNC7w4kujdG79MF6tAd3Jw2MudO",
-        "scale": 0.0008885672,
+        "scale": 0.000888567,
         "normalized": true
       }
     },
@@ -18314,7 +18627,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MgrkzTbOEBVODEsRfwrRLizEsdUGE9sOVlLUEw3QzuBWqjQUw98m4d79Mls3TRNBnvHpYQlKE9fyk6P7We4LNHclCz+u49A44NskTz3MNOSr2+8j5C85tUEJRWTH5Oun0WAd7hrOAsDZNBinMa6bTF4esuEKhTbTYea1tpncGzcDGUxZHjNIT9n5vs7OP/ExMRlGwFXiWMhBO0G72NsbRMPGsOzjqSVMvfTLPsUd6kHDClMf4seLyqe8txT93CjslJfi88o9IkkI6zxMH9nJQ90aFdnMUuoM9izAETPo778PXA6ouyLC7MfGx7oKTh/J0NlG8kIC3uz0EyDOx8/lLDZYpBkl8nkIKx/LrtDWvycv4r7S/FOx0D/qEFA53A1O6tLG2SPRHffmVLwwz+gZHJoNHy4sETFJjuE3RPsWyue7xvm5O0vU10L1R6aiPcvV8TXBzB8f3yDV6zHm7zv+qBkr60ix+lEz2dwlPkNM3Ooqx05fyO/q5twLyLg8DEFD",
-        "scale": 0.0009257967,
+        "scale": 0.0009257966,
         "normalized": true
       }
     },
@@ -18563,7 +18876,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Dfbm4mzXISpJOWDWXwEHGVnApOkZ/PEZMCbQNAnkqeZiwW73zOkhqOoTHmgzZe4xsQULPNIwCaXWyKM1S+AhCGEaHim06uE0A+IhKzPrPPPB08UpqEUlg2T3RVPJ4cjdAyz/z0PePKH0MAymTsXEO0gj0cnwmBzZcgGqvqzgCQ8dCC43J0QzVM/2uPLcHw4qTx9p0EjWRNs6SUi86f4ye8fRxMa7sTFixufMJdkazje9H0QtydyBvq/p4jFBzv8bq9cCBudCHArd1xojEd6zK9UTQ9S9QbrQECLkGyP5EM71EDTNAgXfEc7E467hJzHTqb4b3lju0BzxOyLPxfzFRSgUmjgI4Uo+MhO3v+gH0h0uzwbSGF7LslMKCy0j3t47+8XF5xnHMR8QQbo69NQeBLIHBk42KB0Xrd8cPQkKndPSuvrKAxO460EDQLC5Xpe18VzavhIDsQXryS7Y0TAlligyzjbH+mdO2vkSGjM44/ww4DYoxfAA8+Me28IuCDQt",
-        "scale": 0.0009615477,
+        "scale": 0.0009615478,
         "normalized": true
       }
     },
@@ -18883,7 +19196,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Kf6wzkPdFTs6JDr9STTzICLLwcweE+ISQzTxPxvhxdE4pR0P0eEu5+sPIWsZN+xS1uEISQkYEPXtz58LTe8vOn8eKSnEzuZH2tomJUjbKPig9cUvyyg+p0f2KmbQrtLM1SkH3SbkOrbkHz67RLLQN0A9q88QyFTvPr/OzL4BAELoBiY0JRUgL87wu8bgJ880PE9B2E7tOeM2QDXB3ccwPrnwnrzgiDRT1vO0L7cS0VbEIEkT2MeGxs35rRkRwQAtqtzn9+RAEQ/0swxCJu2uO8o5HrjGOcfw4AXPDTAKFsfwQwzWyS/ECLAGxKYHPkHg2Ng90yva7S7hFB3L4uXfLkARrRot+mpNHEDon+nk2y0m4vroAzvM0zYGEDIOwPkz58Gv8BXgHyoKS94P2RYkIZf36Db/ITgit+QvQiIuw+jUx9nFQkbR9hUKHcrUPKrx8zK6sjcl1yje3Qvg3kj1pwcs/jXvA08Y0uwNNy058+YtsQRB4QP94Pkw26AxHiBB",
-        "scale": 0.0010206704,
+        "scale": 0.0010206703,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:43:18.085899+00:00"
@@ -19356,7 +19669,7 @@
         "rule_match_strength": 0.863,
         "experience_similarity": 0.873,
         "repetition_penalty": 0.95,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
         "semantic_bonus": 0.608,
