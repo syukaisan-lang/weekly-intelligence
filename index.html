@@ -24,17 +24,18 @@
     <div class="layout">
       <section>
         <section id="knowledgeRelationUnlockCard" class="card weekly-knowledge-context hidden"><div class="weekly-context-copy"><div class="eyebrow">PERSONAL KNOWLEDGE CONTEXT</div><h2>查看这篇对你已有知识的增量</h2><p class="muted small">Weekly 的后台筛选已经使用 Knowledge + Work System。解锁后，每篇文章会进一步显示具体命中的旧 Knowledge、Work System 规则，以及它更像“补证据 / 补空白 / 补边界 / 重复”。</p></div><button id="unlockWeeklyKnowledge" class="btn" type="button">解锁知识关联</button></section>
-        <div class="section-head"><div><h2>本周候选</h2><p class="muted small">默认：未读 + S/A。推荐目标不是“主题相似”，而是对你现有工作体系有增量。</p></div><div id="visibleCount" class="pill">0 篇</div></div><div id="articleList" class="article-list"></div><div id="emptyState" class="empty hidden"><h3>当前筛选下没有文章</h3><p>可以切换“已标记 / 已读 / 全部”，或调整等级和细分状态。</p></div>
+        <div class="section-head"><div><h2>本周候选</h2><p class="muted small">默认：未读 + S/A。推荐目标不是“主题相似”，而是对你现有工作体系有增量；最近12周反馈会滚动调整推荐内容和数量。</p></div><div id="visibleCount" class="pill">0 篇</div></div><div id="articleList" class="article-list"></div><div id="emptyState" class="empty hidden"><h3>当前筛选下没有文章</h3><p>可以切换“已标记 / 已读 / 全部”，或调整等级和细分状态。</p></div>
       </section>
       <aside class="side">
-        <section class="card"><div class="section-head slim"><h2>学习到的偏好</h2><button id="resetLearning" class="text-btn" type="button">重置</button></div><p class="muted small">不学习媒体。系统把“主题 / 内容形式 / 文章意图 / 质量信号”分开学习。例如你拒绝“AI线上会”，主要降低“线上会、活动告知”，不会把 AI 整体降权。</p><div id="learnedPrefs" class="prefs"></div></section>
+        <section class="card"><div class="section-head slim"><h2>学习到的偏好</h2><button id="resetLearning" class="text-btn" type="button">重置</button></div><p class="muted small">内容偏好不直接学习媒体名，而是把“主题 / 内容形式 / 文章意图 / 质量信号”分开学习。媒体本身另用最近8周的产出效率决定抓取频率，不把媒体名混进主题偏好。</p><div id="learnedPrefs" class="prefs"></div></section>
         <section class="card"><div class="section-head slim"><h2>来源覆盖</h2><div id="coveragePill" class="pill">0/21</div></div><div id="sourceCoverage" class="coverage-list"></div></section>
-        <section class="card"><h2>处理逻辑</h2><ol class="logic"><li><b>全源轻抓：</b>标题 / 日期 / URL / 摘要，用于完整计数。</li><li><b>先去重：</b>URL + 标题近似，减少转载噪音。</li><li><b>已有知识比较：</b>Knowledge + Work System 用来判断重复、知识空白、边界和证据增量。</li><li><b>深读候选：</b>高潜力文章才尝试读正文；受 robots / 登录限制时明确标记。</li><li><b>反馈学习：</b>主题与文章形式、意图分开计分，避免误伤主题。</li></ol></section>
+        <section class="card"><h2>处理逻辑</h2><ol class="logic"><li><b>自适应轻抓：</b>新来源/有效来源每周扫；长期低产出来源先降为低成本观察，极低产出且样本充分时降为月度探测。</li><li><b>先去重：</b>URL + 标题近似，减少转载噪音。</li><li><b>已有知识比较：</b>Knowledge + Work System 用来判断重复、知识空白、边界和证据增量。</li><li><b>深读候选：</b>高潜力文章才尝试读正文；受 robots / 登录限制时明确标记。</li><li><b>滚动反馈：</b>最近12周反馈影响当前排序和注意力预算；旧偏好不会永久锁死推荐。</li><li><b>冷热分层：</b>最近90天保留完整 Weekly 数据，更旧文章转成轻量历史记录继续用于去重和学习记忆。</li></ol></section>
       </aside>
     </div>
   </main>
   <script src="app.js"></script>
   <script src="weekly-progress.js"></script>
+  <script src="weekly-attention-v8.js"></script>
   <script src="private-knowledge.js"></script>
   <script src="notion-save.js"></script>
   <script src="weekly-state-sync.js"></script>
