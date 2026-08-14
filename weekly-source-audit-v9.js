@@ -47,9 +47,33 @@
   }
 
   function fmtPct(x){return `${Math.round((x||0)*100)}%`;}
-  function escV9(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+  function escV9(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#039;'}[m]));}
+
+  function ensureUi(){
+    let note=document.getElementById('autoArchiveNote');
+    if(!note){
+      const progress=document.querySelector('.reading-progress .reading-progress-head>div');
+      if(progress){note=document.createElement('div');note.id='autoArchiveNote';note.className='muted small';note.style.marginTop='4px';progress.appendChild(note);}
+    }
+    if(document.getElementById('sourceAuditCard'))return;
+    const coverage=document.getElementById('sourceCoverage')?.closest('.card');
+    if(!coverage)return;
+    const card=document.createElement('section');card.className='card';card.id='sourceAuditCard';
+    card.innerHTML=`<div class="section-head slim"><div><h2>来源质量</h2><div id="sourceAuditSummary" class="muted small">读取本机标记…</div></div><div id="sourceAuditPill" class="pill">0 停用候选</div></div>
+      <p class="muted small">这里的“跳过”只统计你亲手标记的跳过；B/C只是自动归档，不会被当作负反馈。统计只在本机计算，不上传明文。</p>
+      <div id="sourceAuditTable" class="source-audit-table"></div>
+      <div class="controls" style="margin-top:10px"><button id="copySourceAudit" class="btn secondary" type="button">复制来源统计</button></div>`;
+    coverage.insertAdjacentElement('afterend',card);
+    const style=document.createElement('style');style.textContent=`
+      .source-audit-table{display:grid;gap:8px}.source-audit-row{padding:9px 0;border-top:1px solid var(--line,#ddd)}
+      .source-audit-row:first-child{border-top:0}.source-audit-main{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+      .source-audit-main b{font-size:13px}.source-audit-action{font-size:11px;white-space:nowrap;padding:2px 6px;border-radius:999px;background:rgba(127,127,127,.12)}
+      .source-audit-action.danger{font-weight:700}.source-audit-action.warn{font-weight:600}.source-audit-numbers{display:flex;flex-wrap:wrap;gap:5px 10px;margin-top:5px;font-size:11px;opacity:.8}`;
+    document.head.appendChild(style);
+  }
 
   function renderSourceAudit(){
+    ensureUi();
     const root=document.getElementById('sourceAuditTable');if(!root)return;
     const rows=sourceStats();
     const totals=rows.reduce((o,r)=>{o.total+=r.total;o.skip+=r.skip;o.bc+=r.bc;o.sa+=r.sa;o.save+=r.save;o.unread+=r.unread;return o;},{total:0,skip:0,bc:0,sa:0,save:0,unread:0});
@@ -93,16 +117,15 @@
   };
 
   const baseRenderArticles=typeof renderArticles==='function'?renderArticles:null;
-  if(baseRenderArticles){
-    renderArticles=function(){baseRenderArticles();updateProgressTabs();renderSourceAudit();};
-  }
+  if(baseRenderArticles){renderArticles=function(){baseRenderArticles();updateProgressTabs();renderSourceAudit();};}
   const baseRenderMetrics=typeof renderMetrics==='function'?renderMetrics:null;
-  if(baseRenderMetrics){
-    renderMetrics=function(){baseRenderMetrics();updateProgressTabs();};
-  }
+  if(baseRenderMetrics){renderMetrics=function(){baseRenderMetrics();updateProgressTabs();};}
 
   function mount(){
+    ensureUi();
     document.getElementById('copySourceAudit')?.addEventListener('click',copyStats);
+    const unreadBtn=document.querySelector('[data-progress="unread"]');
+    if(unreadBtn&&unreadBtn.firstChild?.nodeType===Node.TEXT_NODE)unreadBtn.firstChild.textContent='未读推荐 ';
     renderSourceAudit();updateProgressTabs();
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
