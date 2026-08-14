@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-14T02:43:55.602968+00:00",
+  "generated_at": "2026-08-14T02:46:26.732367+00:00",
   "expected_sources": 17,
   "successful_sources": 17,
   "failed_sources": [],
-  "raw_new_count": 8,
-  "deduped_count": 8,
-  "deep_read_count": 8,
+  "raw_new_count": 0,
+  "deduped_count": 0,
+  "deep_read_count": 0,
   "sources": [
     {
       "name": "CNET Japan 最新情報　総合",
@@ -52,7 +52,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 8,
+      "new_count": 0,
       "error": null
     },
     {
@@ -112,12 +112,13 @@
   ],
   "semantic_model_family": "multilingual-e5",
   "semantic_rescored_count": 225,
-  "semantic_deep_read_count": 2,
+  "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
     "unlabeled_counts_as_implicit_pass": true,
     "unread_expiry_days": 7,
+    "trusted_status_origin": "human_v10",
     "active_count": 14,
     "cold_count": 3,
     "probe_count": 0,
