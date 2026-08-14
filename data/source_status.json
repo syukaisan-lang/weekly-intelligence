@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T01:42:37.024755+00:00",
+  "generated_at": "2026-08-14T01:59:53.875557+00:00",
   "expected_sources": 21,
   "successful_sources": 19,
   "failed_sources": [
@@ -12,8 +12,8 @@
       "error": "403 Client Error: Forbidden for url: http://dentsu-ho.com/dentsu-ho.rss"
     }
   ],
-  "raw_new_count": 1,
-  "deduped_count": 1,
+  "raw_new_count": 0,
+  "deduped_count": 0,
   "deep_read_count": 8,
   "sources": [
     {
@@ -25,7 +25,7 @@
     {
       "name": "CNET Japan 最新情報　総合",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null
     },
     {
@@ -145,5 +145,18 @@
   ],
   "semantic_model_family": "multilingual-e5",
   "semantic_rescored_count": 313,
-  "semantic_deep_read_count": 8
+  "semantic_deep_read_count": 8,
+  "adaptive_source_control": {
+    "enabled": true,
+    "window_days": 56,
+    "active_count": 21,
+    "cold_count": 0,
+    "probe_count": 0,
+    "probe_skipped_count": 0
+  },
+  "storage_lifecycle": {
+    "hot_retention_days": 90,
+    "hot_count": 313,
+    "cold_count": 0
+  }
 }

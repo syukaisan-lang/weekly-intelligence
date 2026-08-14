@@ -1,16 +1,23 @@
 {
   "meta": {
     "tracking_start": "2026-08-10",
-    "generated_at": "2026-08-14T01:42:37.024755+00:00",
+    "generated_at": "2026-08-14T01:59:53.875557+00:00",
     "screening_mode": "openai_api_if_configured_else_heuristic",
-    "new_this_run": 1,
-    "knowledge_context_refreshed_at": "2026-08-14T01:44:08.838207+00:00",
+    "new_this_run": 0,
+    "knowledge_context_refreshed_at": "2026-08-14T02:01:28.389146+00:00",
     "knowledge_context_rescored_count": 313,
-    "personalization_version": "semantic_v7_temporal",
+    "personalization_version": "semantic_v8_adaptive_temporal",
     "semantic_model_family": "multilingual-e5",
     "semantic_rescored_count": 313,
     "semantic_deep_read_count": 8,
-    "temporal_update_enabled": true
+    "temporal_update_enabled": true,
+    "rolling_feedback_window_days": 84,
+    "adaptive_attention_budget": true,
+    "lifecycle_version": "adaptive_v8",
+    "hot_retention_days": 90,
+    "hot_article_count": 313,
+    "cold_article_count": 0,
+    "cold_records_keep": "id/url/title/date/source/score/feedback-features for dedupe and learning memory"
   },
   "articles": [
     {
@@ -195,7 +202,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KQTuyFrcSDpRKWwFbCT9Cj3Uo7L0CtX8Q1DOOz26vNBDvGMbsvhA4+8mG2s1a/NlterkUP1M6MHMrKU7dQoGPmUlByvK6c8nw845LDrPUvqo3r4tt/4qsFQSXEO2r6bP7T8w9T3pQKHYEySvHr3hSUsYr7P7oWbLbN7CgbupFWIbKBgmPidJTtzM59bnEd9SDiovxyXZT8oaUjvPxtw9RbXdw86wjXVxxsS7PKIG/S7WOWkv/+qj4JXny/wU1gYvlMz+C9MuGkPIsyE6OeSfOcwpMJuZXbvn9inPDDjhFJ0dQBfmvlvy+bncuakWPzH5ArgcoUre4CvuTg/brazKNS4MrAcrCmsVLzew3dHo4UMzof/L0VbCuisa+z4k+/FnuuCl+xzQIgkON988wxwPL7cSGj35OCwJteZML982rdK3z8PqN0Lf8jEEKZ+iMsvBxky8jjlnwCb24THT3jgOnB4m1CuhD0sjtQ7oIiVQ++44wRpT+Oro591Gza8sEjdF",
-        "scale": 0.0008775367,
+        "scale": 0.0008775365,
         "normalized": true
       }
     },
@@ -414,7 +421,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "UgfoxVXQJR8+BzEnerXMLzbKuNY3HM09N1XHMyuxz8dE0iccqu8rlfQGUEkeftg4pfjKRN47EbD6mqoMURIAJXQwTTK7zsY8/bz3QzrWIeuQs95BsyVRxnnJdlTS3+i/uGQP7CvQS6baHx2XEKW9TXsgpNADnx3Hdd/FgrLXKEDp4iRgAk5mb+/T6NvQIAxcIUdgtToOT8t/PzfPztU5U+qwmrbSjARbouzZD7ks5yLMNEgizLOEyebiyy408/MVnrXj7dFMJzsGziVLa/HHLq5BNLviL9Db5SLKBD76BY8hLCKRjSX+6eybzZgBWjysqbsvxFfV9vn3JTWwyuXpVi1Bwxki8VkLPSHQ7rzA2Egfx9yT+jrEuR0oM1Uz69Zi4LGwtB4CVh71WNY09uUlFb1E9xwaAy4k8sUGRPsGztrjrf2yFW+yHiIXLcXFPrvF2k/QrS811SL0wjLg3xcziB0t5DmREGpb271AEUc/BNsd0S1c0vjb3dUM14dTLTRW",
-        "scale": 0.0008493715,
+        "scale": 0.0008493716,
         "normalized": true
       }
     },
@@ -1287,7 +1294,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ge3CxF3zCPo6Jzwxf+vuICPQwpggLcA3QkHnLh+3n7pYqTkPz+UCquExMWtMd9wrpZ3mHDI/7K/R47sXa/pFTnwwFC3E08Ms3PkTGDLNM9nB3M0szytKpTgNVGLTztK8yFEt8VXSMo7fXjbBJqzBSGwuossHoUTqPuqkvsDcETDw4ho4JiM0YNjXqtXqILZbJQtM4GPyS7ggKDvA9Og6ZrWzuLTRlxxJh9jYPKkj6De1KVEm29mhwLkJuBcm6AIXtMwIIAhbKETX40MmV+u4S9RZJazUVqYCCCjcIR7hKL4WTBy8tVIK0L3Kr+XvO1PLsdg800LS6g/vBzXf16rj5TAQtS8W3287ShTDw83rvTAatOfuBVuz3SwR4Co74RE81uSk2DreQAjlY95H/OxH9IQy+CU4Bz4ytfI/Uv9Sq/Wv0PqnOyrICxoSNZenJ67R5T6gszNDokLLvDfiyG8Ohxsl3xn16jZs2QD9NEZK5tclvRRHuwXHw9dMv6BHL10v",
-        "scale": 0.0008710679,
+        "scale": 0.0008710677,
         "normalized": true
       }
     },
@@ -1376,7 +1383,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "QvnY2lTRECw7MFMCVhbcLDGqsMErDMlIO0ToTxnO0LdOmD8E6uo1s/MGHHkxa+4huePZTQwdIba+tqIjXeodOl4YMEGn294xzOMWQy7FIMiZu9MQyjAxnR/xWmLb1eGs3Ccc6UXFKY/oGDrGQrK4N1gQ0L0arUnNTL+qsb3oISPnDChGGj1IUO7FtufoLfFRGDNMxkj0XstLLjq03ekmTLiysufqk1RqjsnnScMs/TXKHW8rycSkxq6/qQ5D3fgvvMED/O9IJEzlv0ItT97UStRTNLG3OKv3ADvESR37JqMCRye5zibb9drEx6TxKEbo4rwwxjW/8hEAQDrRuNLDNykXuQBR8n8jPRTSuN7ByVoNwdnS41u3lTc9MlBA1gJM0NirATDBNQT0cdQ73OsbH6koDCsyJiYfzdUzSfUuptnmzOSzP0/H2y0dGJ6xXcy+9E6sriRA3RzbzEj0xUUCmSs50UTGzUQq3+wjPkw/5O8SqitotgPvwsgquZI+B04y",
-        "scale": 0.0008789444,
+        "scale": 0.0008789445,
         "normalized": true
       }
     },
@@ -1492,7 +1499,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JOna8STlGjEpIScQKg/PETfRvM4YHeM7KS3iUTrcu9Y7zxcF9cQvxOIOGX8dOgIwtvwCVQsu88vovaJCNdwKNk0xFhbV3eUs/+kiMi/hAdHH6+0O1RUn2TP+PVHk0OPA5R0U2BnYK48GHhLKQZalQFE7wrXvsi3zOeXV0cDPIB0F/Bg0AyouU9nxxOHDJgIcGhNF+CLaJ9NoRk3H5+UcSLvGuOLhsjMtwff9NNMj/RbCIyw639+uuNLssgkl2xcdt8QIA9g/IxoG2jghSubOHNAWBcjaNNUXCinxKTj5Ga79Iyzlw0XC6MLP2b37NCbMy9gqwUT59yAEASXpwePPPxwXwxUd0nMKFRLe2uziwTEf6/ro7FC4si/0FERK7uk56fbgwyLiIOrFXfEu8PIYLLsP/T8jQBwu4OErR/ZD0PPKzwesPyuz/jHpH7DdJL7p5ES3uiAvyxrx3T/auS8lzwAQ0i7G5y89zcoyMDY13gMf0itJ8ue+6NQO4bkwHyZF",
-        "scale": 0.0010922135,
+        "scale": 0.0010922136,
         "normalized": true
       }
     },
@@ -1735,7 +1742,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "LPfjsC71IxA/FBkcOwXsGTvlnuAL3tMYTgUJGPTDtNk4vy0I498+zgcg/VseV9kZ0BHWJAMg/t3Ss+gZUfv+J3E9BTi64/YY3vMfMSTwOeDZ9scz0Tg8nhLiV1vgz6/X8EXuCSrJSr7kNyn0FubFPmEY39gTujavSBbI0rjyDQH7NCcWBjQrO/HcxtP2RwdQIDBHl0sIPt09Ihj16e4hKtrBsfT3qjNIp/DxS9cJBheoEyAy/Pqk5Lju3AYcwOMMwtXiCfQsFg/e2SIiStiBLOUcBqm1G6IEAifHDiPh9cIodDXIxhDC/9vU3sPXD0Do7cw6wFbn7g3nMC7Tz+bqFioR7BMq2VoMSyC42unV8EYi2fHzBljS0CUDGycww+lNE/O/6S3OIQT4WvBC6A4iJZYJ40lFFg4f3u8aL/IsuO7Nwti+QDjvBzD2/KDCTtvy10DKkCEb2wbc2BPSzlgDv0Q56Ubl1igVycIBOS8j3AjywSQ13w7a1+88tLUjAiU4",
-        "scale": 0.0010712378,
+        "scale": 0.0010712377,
         "normalized": true
       }
     },
@@ -1814,7 +1821,7 @@
       },
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：可能更新2024年前后的既有时间证据",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -1977,7 +1984,7 @@
       },
       "reason": "包含调查/数据；语义增量：可能更新2024年前后的既有时间证据；可能补充证据/案例",
       "screening_note": "正文未自动读取：未抽取到正文",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -2165,7 +2172,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "HPzf4mfoKFJnHjsRYerjGkbFwtX6Fb9sGhKwCCq8xMFEuTQc7bv68+kTU3YrTSIomO6uPhUYA6XutLZBf/T9KEcdGESy5N9B0t3qFD3DLruq878AzEJOt2DoNUDFyr2P0Vs/7yLPQaXV/xLYV6vKZBcvqsPCg0e7Sta74anOGBkACR4vHwxXZZr84uroMcMtSxRh9E3VQNglC0mz0+81Np/px8TAtSoesNLXP6o5xh3nHFJM4hSm36/lwQEf1vBBs7cRLO1fQyPJr0I+O9ywLuQ5Na/OJf/z7C/IJCnzTavTVT2z1jf18dbO68/gG0XZusYmtV7U2VfjJj/Nxq/INTtNxSIv6nc/Qz/quOHCtT3t1wK3x3Gh0hAPK1dM/hhb99an5T7vSjcAQMo0z/MaW6ANGzMZ+zYkrepLUu0cxc3B2eW/Bhre1gYTQqqoQsWwA1vv4xMPzy7Wwhjb3TEohCgF3B+Dw2cXyQwpGkxQ/+U12zFJxP/3zNE/yKIuIz9d",
-        "scale": 0.0008916223,
+        "scale": 0.0008916221,
         "normalized": true
       }
     },
@@ -2274,7 +2281,7 @@
       },
       "reason": "涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2023年前后的既有时间证据；可能补充反例/边界；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -2428,7 +2435,7 @@
       },
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：可能更新2024年前后的既有时间证据",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -2585,7 +2592,7 @@
       },
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：可能更新2024年前后的既有时间证据",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -2605,7 +2612,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Hwfgy0/MHCBwDTYGVPTEQUui1boN+8JRODTcRznUsdlHji0ZstolrO8TGlkad+MawAcCVPo2B8oazIEjQfoiOm0ySimr8bVUA9sVUPwIKurD3sINykEusUcTOXPe18KM10Yn3U7hUaPwIBzULJK5SU4nt9YYl1rmRQzToO30EzUK8ygaNy8XRNTx6uyyMRBSJRBS1SrSQrVLJTna6uUuNcLdr9Tpqhw+nNvjK8oV5lLMFzsh3a/LwsTVqPlCwxAYotEEGvM3HBYf9jwvKgK7NcwnHYizJrrSCSK65inzIZ4OXwjbukLmCNO2zI8cK0HmvrdYszHCBRH0QUjAy87rR0YY0xszAFUYVRb69NUAr0MhzvPz5lWftUIyRDs6+Os25tS77k2xI+3jOssS0QMLML4PAD8gFEQuwq0WKBct297Bw/zDOzDF9BQFNpq0Ra7e+kTAt0BYuhXm0BzxyU/8nSEH/hPjxgonl98ePDly+bsQuggw6uv2+84o1qwqDQtS",
-        "scale": 0.000935412,
+        "scale": 0.0009354121,
         "normalized": true
       }
     },
@@ -3140,7 +3147,7 @@
       },
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：可能更新2023年前后的既有时间证据",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -3381,7 +3388,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Re3J4GWrGy5ACSEhXOTYRC/HsscRHP1JOi3kKRXKrsg6ojId2N8U0uoQJHU8cAoftO3FJAU0Nr/Xo8X7e+orPmQjITu81KoL6fkRLiLCLr+J29Uszx4rh0DbUzHFt8+Hz2cn5WjdJNjhDi20d6GNYTI2nZsXg2S2Ub2Dr8r8Akv93icsOTdDSbvf2fHIRfo9T1Jf2moiUtgxMjrC2f8RNangsuqsiBpQqNygNMFF8WDrGGUA29e35L/NuDIK0gQVlrAAF980Fjbfv1wua/u/QbNPIpu4KJ3w/STYMTj0E7EGN/u35BYJ1r3Bp58AE1zly8tCy1DD9yHsORjTvLDaQysRtzoct10XKg3f2+fc01oJwfrGCV7HshUrF08e9wRoxN2m80HHRPf/VLoc4tY0Do0lG0z/Rig6zf0wM/dRv87C3ebAMGHd20j7RIGrOMXO3EHPrjkPyFPp+EHh5k0ajSAm8TmtCmQU1Ak5O19J2Ogivhtd1Rbi8vgupJg0KU0+",
-        "scale": 0.0008604035,
+        "scale": 0.0008604038,
         "normalized": true
       }
     },
@@ -3788,21 +3795,27 @@
       "published": "2026-08-13T05:13:41+00:00",
       "first_seen": "2026-08-14T00:30:58.026339+00:00",
       "summary": "サンワサプライは、ノイズキャンセリング機能と外音取り込み機能に対応した完全ワイヤレスイヤフォンの「400-BTTWS8」を8月12日に発売した。カラーはブラックのみで、直販サイト「サンワダイレクト」での販売価格は3980円。",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 5.6,
-      "reading_score": 6.39,
-      "notion_score": 6.09,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "ニュース 今宮冬羽 2026年8月13日 14:13 サンワサプライは、ノイズキャンセリング機能と外音取り込み機能に対応した完全ワイヤレスイヤフォンの「400-BTTWS8」を8月12日に発売した。カラーはブラックのみで、直販サイト「サンワダイレクト」での販売価格は3980円。 10mmのドライバーを搭載し、Bluetooth5.4による安定感のある接続が可能で、対応コーデックはSBCのみとなっている。 周囲の環境音やノイズを低減するANC機能は、ノイキャン特有の耳への圧迫感を抑えながら、電車や飲食店などの騒がしい場所でも音楽や動画コンテンツを楽しむことができ、集中したい時や移動時でも快適なリスニング環境を提供するという。 外音取り込み機能はイヤフォンを装着したままでも会話を聞くことができ、会計時やアナウンスを聞きたい場面でも、煩わしいイヤフォンの取り外しの手間が低減される。また、これらの機能はイヤフォン単体でシーンによって簡単に切り替えることができる。 イヤフォン本体に搭載されたタッチセンサーでは、ANC/外音取り込み機能の切り替えや、再生/一時停止などができる。 本体にマイクも搭載し、通話時の使用にも対応する。ケース込みでの連続使用時間は最大24時間で、屋外での使用時や雨天にも安心なIPX4の防滴機能にも対応する。付属のケースには充電ケースと各イヤホンの充電残量が表示され、突然の充電切れなどを起こさないための工夫が施されている。専用アプリ、「HAVIT LIFE」によるイコライザー機能や、タッチ操作のカスタマイズも可能。 付属品は充電用USBケーブル（USB A to C）、イヤーピース（XS/S/M/L、各1組）、説明書。",
+      "base_score": 7.0,
+      "reading_score": 8.95,
+      "notion_score": 8.5,
+      "grade": "S",
       "tags": [
-        "strategy"
+        "marketing",
+        "strategy",
+        "method"
       ],
       "concepts": [
-        "価格"
+        "コンテンツ",
+        "価格",
+        "ケース"
       ],
       "learning_features": {
         "topics": [
-          "価格"
+          "コンテンツ",
+          "価格",
+          "ケース"
         ],
         "formats": [
           "新商品／新サービス発表"
@@ -3814,30 +3827,31 @@
           "PR／告知色が強い"
         ]
       },
-      "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "reason": "有市场或战略判断价值；可能形成可复用方法；语义增量：可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.867,
-        "rule_match_strength": 0.847,
-        "experience_similarity": 0.843,
-        "repetition_penalty": 0.26,
-        "gap_bonus": 0.0,
-        "evidence_bonus": 0.0,
+        "knowledge_match_strength": 3.595,
+        "rule_match_strength": 0.865,
+        "experience_similarity": 0.859,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.17,
+        "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.671,
-        "increment_type": "direct_work_use"
+        "semantic_bonus": 1.31,
+        "increment_type": "rule_evidence"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "E+v3tBz9Ai9GDxMFPP7QEEXTt8UlDLYZUjnwLhLFv9Rfthkv1+Qj0O4TDF4fYOYo5w7eMhcj+LvJwqYKbPwBIH8lG1C+2fcT+CAbN17eUum15NAvxiMavysPJEzQq87X/kL/BUK4F+PMKVrCKbrQDDA1vt0Jz0LXMv7MwPC8SS3yGRgi+mk3KuYIndEKPQ1RGBVYpU4WXcVKKg7Bv+QlG8LAztnXuy5pld7LR9IiISPL/Cjj0PqZspq3vBY48M0HxcIU7tMjMhrW8TIZIvDGNeMSDMfBOb4IEOvxNiPpCrT4WR+tyTgJHcn2stkUJSbJ6PoasSnR6fXhLwXT6uICKAsnxhIu20ooNxrK0uvU20s56fb7HFW51BUrM/khtfoO+AC58D3aH/cUSd8j7xIUL6II9k8z9xsQ7OwwPgsqydzE7dnDL1PjA0D3I6+mRPHT2B/G0PgC8SHhvCvcwjkhjzFHvCG68TY4wM8uQ2856wQTnT8/4R7S2PshtLcJJvof",
-        "scale": 0.0010287146,
+        "q": "Hu7+xCztAS1CHwkWKwLYIkbYusIpBLkSTTvgMxXPusBHrCQj1uYjxfESCl8zYuAu3PrWVRoe9bvUv63/f/sVFHcwLzLY2eYV6fINOlLoT9yozMZA1SYbtzoHLVDFqL64F0YQ+SPEGsnRKVPOL6THJUYssM4MrznYKPLLwtTBPhvgJSUtH09DTvvpl839TP9MJSNNnGj0WMxWNiC6ueIkNLmvzNHzpTRkiunNVtU4GBnNBjsE3gCow7q6tQU83toavMEB8s89OS3X4CMqK/LHKM8wE8fEOMsGCBvIJyLoB7D/VyavwB8AGsHpvtcGIUHJ3O49qTLZ+wDfIffW9sr/IAQ0xQ410mUsQSbB1d3b6mY3z+P3ImC13CErLQMtwPUd8+i37yjYFgH/R9cf2SgaQKMT+EobDAgy0tYuPRQly/W03dLIMk7uAUrzMaamOPXg2jO6u/kW3SLmyCPYv08TnzkzwRmp4kY50uImPlQ1+foTqkVK2ArY0vgRs70PIRE5",
+        "scale": 0.0009862477,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "8adf5b75b8a5f15d93",
@@ -4067,8 +4081,8 @@
       "content_checked": true,
       "content_excerpt": "ニュース 酒井隆文 2026年8月13日 12:42 ボーズは、モダンなデザインに刷新し、ノイズキャンセリング性能やイマーシブリスニング機能も強化したワイヤレスヘッドフォン「QuietComfort Headphones 第2世代」を、8月20日に発売する。価格は46,200円で、13日より先行予約を受け付けている。カラーはブラック、ホワイトスモークに、期間限定のユーカリグリーン、デュードロップミント、ローズウッドモーブを加えた全5色。 イマーシブリスニングでは、新たにBose TrueSpatialテクノロジーを搭載し、これまでQuietComfort Ultraシリーズ限定で利用できた3つのBoseイマーシブオーディオリスニングモード(静止、移動、シネマ)が利用可能となった。 Boseイマーシブオーディオは「あらゆるオーディオソースから仮想化されたステレオサウンドのリスニング体験を提供し、リスナーをまるで左右2本のスピーカで構成されたステレオシステムで聴いているかのように、『sweet spot』にダイレクトに配置する」というもの。 静止モードでは、リスナーの頭が左右に動いても、音声を部屋の一定位置に保つ。移動モードでは、リスナーの頭の動きに合わせて音声が追従し、移動中でも高い没入感を維持できる。 シネマモードは、背景音やその他の音響効果を空間に広げてバランス調整することで、ビデオコンテンツやポッドキャストの視聴時に劇場のような体験を提供するというもの。 また第2世代では、有線USB-C接続時に、最大48kHz/24bitのロスレス再生も実現した。 アクティブノイズキャンセリング(ANC)は第1世代から性能がさらに向上。眼鏡をかけている人や、髪型や帽子の着用などでイヤーカップがしっかり密着しにくかった人も、新たに搭載された適応型フィードフォワード制御により、ノイズキャンセリング性能の明確な向上を実感できるという。 ヘッドフォンに搭載された6基のマイクシステムがイヤーカップの隙間を的確に補正し、装着状態が万全でなくても効果的なノイズキャンセリングを維持する。 またアウェアモード(外音取り込みモード)時にActiveSenseが搭載されたため、通過する電車など突発的な騒音の急増時にも、より滑らかで自然な音で適切なノイズキャンセレーションが自動的に作動する。よりクラシックなリスニング体験を望む場合は、ノイズキャンセリングを手動で調整するか、ボーズアプリで完全にOFFにできる。 カスタムモードも作成でき、ノイズキャンセリングと音響透過性の最適なバランスを追求可能。モードは、左イヤーカップのアクションボタンから切り替えられる。 デザイン面では、滑らかで調整可能なスライダーを採用したヘッドバンドに刷新されたほか、より柔らかく高級感のある合成皮革クッションにより、頭にやさしくフィット。自然な輪郭を生み出すという。 頭を挟み込むクランプ力も最適化され、安定した装着感と軽やかな着け心地を両立。新しい楕円形イヤーカップにより、「より滑らかなプロファイルと現代的なルックが際立つ」とのこと。イヤーカップ内部にもカラーアクセントを施したツートンデザインとなっている。 期間限定で3色のカラーバリエーションも用意した。Eucalyptus Greenは、落ち着いた自然なトーンに内側の明るいイエローを合わせており、男女を問わず現代のカラートレンドに調和。Dewdrop Mintは、90年代を思わせるプールサイドのミントアイスクリームをイメージしつつ、ティールのイヤーカップが爽快かつエネルギッシュなアクセントになっている。Rosewood Mauveは、「Munstead Wood」イングリッシュローズを思わせる深いモーヴと、鮮やかなフクシアピンクを組み合わせた豊かで印象的な美しさを演出するという。 本体には物理ボタンを装備。右イヤーカップのボタンは、再生・一時停止・音量調整・通話の応答／終了などの主要操作を担当し、左イヤーカップには、リスニングモードの切り替えやソースデバイスの音声アシスタント、Spotify Tapへのショートカット機能を起動する専用ボタンを備える。 Bluetooth 5.4準拠で、マルチポイント接続に対応。AndroidではGoogle Fast Pairで、より簡単にセットアップできる。 USB-C機能が拡張されており、双方向のUSB-Cオーディオにより、ZoomやMicrosoft Teamsなど通話・ビデオ会議アプリでクリアな音声入力が可能。アナログソース、特に機内エンターテインメントシステムとの互換性を確保するために、USB-C to 3.5mmケーブルも同梱される。 バッテリー駆動時間は最大24時間(イマーシブオーディオ使用時は18時間)。ヘッドフォンを装着したまま充電できるほか、15分の充電で最大2.5時間使えるクイック充電が利用できる。 ボーズアプリとも連携し、調整可能な3バンドEQやカスタムリスニングモード、ショートカット機能の設定に加え、Bluetoothデバイスの管理、ファームウェアアップデートなどにアクセスできる。",
       "base_score": 7.15,
-      "reading_score": 8.08,
-      "notion_score": 7.73,
+      "reading_score": 8.06,
+      "notion_score": 7.72,
       "grade": "A",
       "tags": [
         "ai",
@@ -4107,7 +4121,7 @@
         "rule_match_strength": 1.048,
         "experience_similarity": 0.858,
         "repetition_penalty": 0.95,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
         "semantic_bonus": 0.628,
@@ -4367,7 +4381,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "SQK8zUDeESRFD0cJYvzQMzWoocYZ/M5uSUTmUCS+3tovolsbxAU65+VAAmoxc+RFugTyWiYdE7Pxr5c9U+r6T10XHFHY0M8f1fAkNyXWIvOe6M4jyjpFqznYSk3o27+pxjAiCEPSKLn1IibtJrnYNFcuvrj+r1rRXfy+x8TkIBsW6CEjDShGUOfg2c3QJRdX+iwq4kDKXsx/ITW9zL8tPrTgs+bQolBPtOvTNbYg7iTrLFAt7dzZyMDPuAVZ3PA2ycXq6bYMJxPwzUo5QPPWALc3PK3ASqL18yC/EDrgF4gqRj7bsBr/5MjJqq8QGw3X5qA+uzXU+zH4UxPL0NrVNgcho+ox5nYsTi2z6LPcxFkSq9zr8GetsCYY60dUzuxD7t3ZDzK5GvnUU9Em2wsUIbMLHSMVODk/ttA0I/YjutjSz+nOJ1bw0h4WMZ66LMTb2UmcyD1N3jDd3xjmzj4tnTMQ5haj9Eo9te4ONzg6vAcRshNV4Pjp+skuwapADxRB",
-        "scale": 0.0009284561,
+        "scale": 0.000928456,
         "normalized": true
       }
     },
@@ -4421,7 +4435,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "SP7H3DPLIyZKI2wcbe3uMzyvsaQvDrhRPjPOS/6/x8Mxtj0l5tYM5PMnI0MpfBQhtL7iZAE6A+HrybodUQ0JFG0eSC+p2r0j+gJIMivSMu3D7tJA0D9LtTbsQEmm2bOs1gIH+B/JHL/GPQ+9J53TTU03ogT0iEm1WPHLpKfh/0HdAwo2OAZpWN7suPncLvpV/hRDyDb7SsIpOwTX0JNBPMS91uYLoSotvfvTBLHl4DW3Rl043Q2+o57n9yBB3d8q4PYW/twZNULI7RgmTemuR9NEQaaQb4H2//CuLR7QLarwWE/Q0PQS8t/B2eAaEUDW0dFX20zi+A/WNw7cm5/aJkAovw8T1GEvXjzG+M719UQNrALbMnjrviEMDzA4+Od/v8/G4wjJH/nnQftS1fgOLYgFODcfCzVaouEcEvQdvtK2xviuOjbh5ysALsG0PqLMv02+tEVOnE3r2AbYpjEYkzIi7jng2DIp1QVAKD4V8dADzv5YqvTUz+Qns7lPJQFh",
-        "scale": 0.0009089651,
+        "scale": 0.0009089653,
         "normalized": true
       }
     },
@@ -4477,7 +4491,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "IuX2yCzvCyVCKiYFYOfwGFOktsIoFKo+MEzFMxK7y85g2Tkq3Ks0D8478H8STvEm4c35TBos5939wbkhXPcGKmURGEfa++oP4tv3MSfRLCDhutgk2jNJy0H+Kxq8sMq68RIi+DTEMcHkMUPGJrrdJzgBi8Qdqxi9GfDyrNPjFj7r/hszGUs6Q+kAu+jTL/xOHv0zqDnKI9Q8USfh0MwUNaDQmPv7q0Q4tOrWJ6sM6SnW8E4I7enFzden4Q0Q59YYwcX/GdI5Jz8D7jpNSQ/MDbYrQtfKR83+2CDfUC3fBcL+VhzFyAcK0uTXsMkvQDTGu+Qzpjq34DP2KCXs0dARUjQUsxIf5V0gJRLC0eD62k8ixeq8+mvGw1LoCSpM+uY95gHN+zC+IeMBQtIB7PEFDLz/HxY1IBcoscMhVfw+ye3W4+LhOEPg0SAjEsPINunO6jXC4h0rzTXl1DQI9zjcqAsm+h2yyFM2w/0RSDZO/gojxxY30w7E/88K0KIZ9hE9",
-        "scale": 0.001029876,
+        "scale": 0.0010298762,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
@@ -4597,7 +4611,7 @@
         "rule_match_strength": 0.888,
         "experience_similarity": 0.862,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.226,
@@ -4792,7 +4806,7 @@
         "signals": []
       },
       "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
-      "screening_note": "",
+      "screening_note": "正文未自动读取：HTTP 404",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
@@ -4814,7 +4828,8 @@
         "q": "FNn110DH/ipfDETyXgTdRUjP6tIyAb8bNj0H+gjSzcM8zD4A+doI3dgTJXL3Re4wsfb2QtsTA8rbn8MCOAQrQHQ85hq35+kJAPEyRiToHO+53Ok8uCcqvRfxHmrdteet6ETt5jjgMKnpKRq/LrzOIywTz9MWvii6PRDgrODlJi8EAEYtLDFCTdMGrrTfK/8yIylSx0fHSMJdMBbi5OgwGNy5qOPOxRReqfX9UtAH+Eu5HkIb5Nma27vO3wEw5OM5s7bk+tZBKjUr7CoAM+jFQtoXGMnXD8sW9ArHCx4YFb3yPia70jDnA9uxvq8PAT/25s5G007X6Oz1Ezr31dMBIxUazyovBE1BSBPIxs/VtDcqwtvR/1zPxSkMNx1x8QRN7NDY6BvNLBoASbgD1fYXH+QGFhspFi4FucMFORFJt86xy+TNR0bOxiIGF4HJNdTe61zZ6kMf6wHjzQnq6EcSvRMa5ymz8DQm2eAzZ0o49wQTySAzzxHp38ciy6AWBAtP",
         "scale": 0.0010409638,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "5799d217dd78c17e23",
@@ -4880,7 +4895,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "TOLK1WS/DRA3L0ECdA7fLFuxsLsTG+MhSzvZPwvRsq1h1FciyNwm3uYKOHFFau5qrfTtNP08+MnYz6UpUOgbUG4QPkyl1sMj5fkvUC7CMs2qutdOtkgwuy4gMUrW58LR6CsxqT3FCpvYPze6Ybq1MlI7t94TqTTNP++yr6exHCsOLhFkP0o+YuLIv8C8OOxkG0QxxVrNUd9UIg++2vQvM6rDnATtvTRRv97YSbwr8j7mIWAbD8SqydDYt9xa6QMMuMTqF9ozIEPjshZJW6qaGdlVJK6uO7n39h/OCmrYCq3qNEfSyCDV87S85bn9GE//2rIyrFDK/AjlJxnLvsvnKwQSigkg+H8bMRmk9eu/2UA9yOrO9Fiym0EoCDpR4+hv5uOkzzHWOv4UTLs22PgJLa/7HVH9I/xTr9hZTt0/usPJv/CgHTrM5Sn9PJ+6Qbm1wGfJwBNG1TXE40XvwUgllSwo71DA9GMW9PnyWEBC7+oAmCVU1fnz3LY4v8wZNh4t",
-        "scale": 0.0008747928,
+        "scale": 0.0008747927,
         "normalized": true
       }
     },
@@ -4915,7 +4930,7 @@
       },
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：可能更新2024年前后的既有时间证据；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -5162,7 +5177,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MdrY1mbtPx5BSln7UinfLU+3lNoXGe39OUXGWw+xydFQwUQi3PQ3rMQDFmUtaeZFu+/bPfZVEbPunrBUWOntU1UpFkXG9Mo0yvH8NTLJGtrRy8k7pVBNmmL/WHivwaHC7Egu5DfML8PjJjrGQ8TIHkkqsMjtm0rGT+TSx8DSIzsQ/jIx/EJJUf/65tS6GvhnGiYj3SbXMshFKyTXy9AuOqzLvNrRgUFRpvzGBKgl/i7qLD4K4em067rjwgZR1flEtdH7FOcoFyfPqio5Rc3NHb9IN5iMW67z9CbZLEEBGsPfURj/wzve2tLFxJoZQSTN9asvwzrM8DMNNvzQs6fVSwr7phEiCnomJzfA1dXP4EEhkhbA/1a/il0uDEZG5s5Nxdm37DW6JwoITtcmsOgfHpsTJjYwTigPy+5FP/4Pu8W01O7ZIVTr1Tf7Lc23U7/LwWixvCw1yijS3jfivT03oysN5xmR7GI+0vgYOR9DAtAFwR1a1g/nvd0zzZo1CjFI",
-        "scale": 0.0008956245,
+        "scale": 0.0008956246,
         "normalized": true
       }
     },
@@ -5213,7 +5228,7 @@
       },
       "reason": "涉及消费者/用户行为；有市场或战略判断价值；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2024年前后的既有时间证据；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -5423,7 +5438,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "T8rJtG7THyc8Gj36LhP9I0ASx9YZ7RnwPizDSvTc7cs7rjwY8edFyeAMN2EqSBQ9w/PcKAsxFNberschTtrsQ38SG0W/18Uj4MorFyX8Sdm6y9w+xC40uyzQHlik1cDJzD4auBqsNcbePC3oC6vMOU8rtMMDyDLKUAfTz7bhLTgj+CFhMW88Rb7cqtzhQ+8hIQI/vT7vNaphOCTiudUbaMXQ28LgnldMn/fnN84a6k/ABTgpAAirr6/OrSsTubo9vp8AA9wrBie8wzQdWwPnT7w4TsqsNpwPACDJICfV7qAgXCTU5gP8/Mna2aP9Gy751dU5tSXjwxztLwXj1OPuSSnwyGYm+0UWHkC31Nz32jsN7enVUk29t0MbJDEQE+9k7cqWABzaESMKYfoXxvo0DaQX8zsVHjc1qOApRywWxguazAXKFEnLIBsyCJrPOP7EuSK+xeYhwinhwEoFxTUzlFEWpiS5zzUO4eQqTSVnAM7ut/RT1g/a2vkd1pclCSlH",
-        "scale": 0.000953376,
+        "scale": 0.0009533759,
         "normalized": true
       }
     },
@@ -5587,7 +5602,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "SAnkzknHAR5PPzjjdxCWKjGms7MjNcEmLCoJQjHLzNc6vCwM4QFPuaf3HFMLcc5HodIKPNYy993fxYsJXu5BS3k9OynW+PBO8/ASRQr4EseM9t42mFcRpEjpT2bVzryrxiBF/kOrVcbGEymsZJXIIjUx07MpgVnARA3DjcD5MTPsAx87FUNDa+gGuwvANto9NzNI5Xm+QI5WQSyh3rE0UJzEicDhsjw5mb/MEMI09zzd8FpG1fifwczYyCY15Qcelb4Q6QksJEf/zzo0MuTjS98sK9jETvvn3R3cBxcI/4nzPB3S1/gGEPbKzs/kTljPydI6s16y5/TTMlHNqdn9JyhguBQq7GwXFBrZ17nXuSBN/QDLwFybtz4/UD9X0/ZPFMSp4WPNMBbVbsQ16tb5TJQrHCMzDzVEtq0uLx06w73B09/gUEjN+ywJPIW3KJbT5y6Zxg9EyQzyywL+t2HnlDcl5i2+4zlI78stQkth9s33mCxNyw3fy8YksdRa9how",
-        "scale": 0.0008596205,
+        "scale": 0.0008596207,
         "normalized": true
       }
     },
@@ -5806,7 +5821,7 @@
         "rule_match_strength": 1.022,
         "experience_similarity": 0.87,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -6059,7 +6074,7 @@
         "rule_match_strength": 1.29,
         "experience_similarity": 0.873,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -7206,7 +7221,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Mgrv2zLoFi83Fh4YUPnvQC7SwNkUEfAtSUH/EB3L3909vwcE0/EAxNv/QkkeSwYcx+X8RRVDAsDTt7UTWfIQG386MDXVwPcy8+EZMSrdF8/N8s4q5SMnxU71USrBxsjg1jgB3hPzSLDtFxXhNqKpFjkR4ef3txzRXNO/xdPFMSYKBR5FHSswUOnp7+HfFO1DBS8w0Rf5Rcg2TRrJ6uUqPc7S0brTtS4/vdvfFPPr7xLKNlED1eCnz8bqyhgL0gkwytX5BOAbGyjuzjE7TOTOJ+M/O9LHKMfa6/6/HTcDG7AnFiLfzQjj19qx49X+NTXq5dpH10Ty8ycECu/P0MLe+iIRuC8z1loSDh7F18n14Cwr1enL/kvWuRkJFy4Z8vlB+fTF8x3XJfL2N+408wERE70YBgkNFy8h5eAVSQw1ufGsvfKwGjjVIBcEN8XFKLzl4DvAwTZTuSL12iPI5h4dyBAl3Bi8BDE34egXPiJBDPgE3jFJ1QXm1fBD0Lc4JRsj",
-        "scale": 0.0011329129,
+        "scale": 0.001132913,
         "normalized": true
       }
     },
@@ -7302,7 +7317,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Gv/XyVTM3ydUDS8dTsHgHEOstMEJE+tBVz//Ej/X49covEUO2swuz+cJNUYlO+kh5eLeKhBbL9TQvsQFT/0SI0I7PCXo38wt5fEdOy++9/Kg6NopwVU4xEDkTyrC3ODJ0UMM5zbZOYm+NBbQR8/cJDcU2OH+vEHXf/nLpdPYMBn7CSUrCBk5cs319dLiPvxHOk1O9VvNKPUxBDzU7uMwOsvIperPwSlBqeneIekZ3y29UUMu2LvQ9MrysCv35+4XobfCIcVALTcl2UAlHAq+NuIfPbHJGtrP/BzrE0XXGrrnKjPLrzHg6L62ptoQHyje1eQxyCPx4OQOIx7Vw9D28D4jwhI72TUaKBjD58vRyg8bwsnqCES63h0eDDBA4QUtzcXHnxLhWxncStcn//IUJ7ss8CwsDi8MqtMgXBsz0Mu47+7GJV3a4TXwLqi5JssD+kDD0CQv4T73vBjNxwhKhRoc2BDF2zI4y+I8Ry1n5iodyi474grexL0sw6c8ThdG",
-        "scale": 0.0010141223,
+        "scale": 0.0010141225,
         "normalized": true
       }
     },
@@ -8197,7 +8212,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Wx/R43nmFBtfMk41VQwDHjy/m9P799wwXiLwVSXBorZRsy0Sr/IquvgBJ3Qaf/U3nOz1UzpnDufEqaNYTOAFNl85IUbqz9Ua3swNTTEJJMfD4dEozTRRy1m7E0Dl4tSwBCw45E/DSsPrMhXGWqrWOUg2p70lqzKzQvOmharVITsG8BYpJRUjKsTawMfXJdtu/hBM7GbyKuQmPSLd2O0VPMi1sKbwriV7qMjBRcoe70zOKmIM7+eUtdjZ0Q0Y1vUesLgNEtYx6jX/3i9qReLDNd80E6fGQJkBBh/FJWHqJ6QPOi/oszH8x7jK1Z768yT6wdpRxB3p9ke1GTDErtnMQFoMnTE73WIOOQ3T09XW3H48sBbzAmbStSoIBS9f1+ZQz/Wh5CW2NAfVP9JS0fwAHK0h6gcrDxssnegSXOEcls/Vtv/GSyjczS0jHcGoXbvj51ewmyxE11LVygnNuWU8mAQe2wHD9EUSw/YmTUI/5949vw8///UE6OEbmpMvKQ5T",
-        "scale": 0.0008903878,
+        "scale": 0.0008903877,
         "normalized": true
       }
     },
@@ -9299,7 +9314,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "LAy+xyTLLGFs9TgWWQHFNf/7wLwaC9FdVji5Jiy29Jc6sFoyy/ExA8MhOG4BY9JAucLeWhI3IdYDl6wJVvRISGQ4Lia10LFJ7+spHSu7FruozrMqvEJIxi/jQTi33fHArzJJ4zLPKKXcUB6SL6vHJUMxs8rqgWzbPu8Ila3KDhYgACVVJicjaOnyqQn9Q8BYHRR86UXsTPVDSEPB1uQ/OdG/qtbiwShEi7quNKEm3DPkP2Eb0+64u67c1BL9/gcQnrUEROhlISu99EElYvelHupDNKXSQ5/UFwe4SUrkKbnMP0yoqRf0xNK5rrXvKiL57Pdkw0Lsze/iFQTBut3DK08kuzpu0FYcCyiwzKLBzykmt9y7JnjgvCQeAC1Tt/8lxuC2uRzpMvr9F8Y3uv/xKJ4XDREN7VVHq8xZTQYi1uO/4xnGOTzb9h4QEZnOLsjoAU2lui3+zCP96SPMyUjwnSce5xjA5U8zv9UvIx5BzRhCziZ0+wH7xrMu1bhPF0ZZ",
-        "scale": 0.0008819252,
+        "scale": 0.0008819251,
         "normalized": true
       }
     },
@@ -9805,7 +9820,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KCD6zz7JFhU4NywIRALsEjq148QMBuMbNjXrCynVyd9EvysE1OIw7uUJElEjYQ8YutfrOgUz+NLsrrX9Zu8SO38cEDPE7t4qz+EVJDPNHdmgvtMR6xs21CkbLVbQy9qu5TAs4yrlJL34HRrQN8m4PSMLts4Hoy7aMtvAuNPqGiQC7h01MCo5N9rt3ODYQtw7KQ43zDcMSPE6OEXH6L8qObjSxdj1syIouPbAQtxA5S3lGkIQ6Oaw2rjhyA8w5v0QrrX8BNQ1KC799zokIOjXLNoZKcrJIuXo/g7EMDACJawYShS82Bnn29Xz2scFKTP44tNA1kbT4/PgFBzyvsTiFAspwwkNA3AVChX409nY2UQb1tTb/UDVxyD0JDY/9ABB6drR+iPKKAfuR90D1f4gGboJEhgeFiAdnds3Nfcp1Pbmy+DSSFfs6i/6M6PILd/i+jPRvgwr2jHs6j3i4yrtwB4VBx3Z5koo3wMMLlgv79sjwDc+3RbQ39AQzsckIis4",
-        "scale": 0.0011296305,
+        "scale": 0.0011296303,
         "normalized": true
       }
     },
@@ -9829,7 +9844,7 @@
       ],
       "reason": "涉及消费者/用户行为；语义增量：可能更新2024年前后的既有时间证据",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "顧客",
@@ -9994,7 +10009,7 @@
       ],
       "reason": "包含调查/数据；有市场或战略判断价值；与EC/零售直接相关；语义增量：可能更新2025年前后的既有时间证据；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "EC",
@@ -10112,7 +10127,7 @@
       ],
       "reason": "包含调查/数据；语义增量：可能更新2024年前后的既有时间证据",
       "screening_note": "正文未自动读取：HTTP 404",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "研究"
@@ -10159,11 +10174,11 @@
       "published": "2026-08-12T05:00:42+00:00",
       "first_seen": "2026-08-12T08:07:02.537613+00:00",
       "summary": "横浜の観光名所として知られる「横浜赤レンガ倉庫」で8月8日から、初のディスコイベント「Disco Brick YOKOHAMA」が開かれている。8月23日までの16日間、17時から22時まで開催する。 The post 真夏の夜、赤レンガに蘇る“アンダーグラウンド・ディスコ” バブル前夜の熱気で若者×ミドル世代を狙い撃つ first appeared on AdverTimes.（アドタイ） by 宣伝会議 .",
-      "content_checked": false,
-      "content_excerpt": "",
+      "content_checked": true,
+      "content_excerpt": "横浜の観光名所として知られる「横浜赤レンガ倉庫」で8月8日から、初のディスコイベント「Disco Brick YOKOHAMA」が開かれている。8月23日までの16日間、17時から22時まで開催する。1970年代後半から1980年代初頭のディスコをテーマに、石野卓球ら国内外で活動するDJが出演する。 企画の背景にあるのが、近年の記録的な猛暑だ。横浜赤レンガは、暑さが和らぐ夕方から夜に夏の横浜を楽しめる屋外イベントとして企画。その題材として、横浜と歴史的なつながりを持つ「ディスコ」に着目した。 今回再現したのは、1970年代後半から1980年代初頭のアンダーグラウンドなディスコの世界観だ。 横浜赤レンガ倉庫の重厚な雰囲気の中に、ミラーボールやレーザーを配置し、クラシックなディスコミュージックから現代のダンスミュージックまでを流す。 横浜はかつて最新の洋楽がいち早く流れ込み、ディスコカルチャーの原点となるような店も数多く誕生した。横浜独自のディスコステップも生まれるなど、独自のナイトカルチャーが形成されてきたという。今回、ディスコをテーマに選んだ背景には、こうした土地とのつながりもある。 当時のディスコを知らない若い世代も狙う。同社は、Z世代を中心に昭和レトロや1980年代のシティポップなど、自分たちが直接体験していないカルチャーのリバイバルが定着しているとみる。メインターゲットには「当時のディスコを知る世代」と「レトロカルチャーに関心を持つ若い世代」を据え、30～50代の「大人の遊び方を知っている世代」にも来場を期待する。 昨夏のイベント「Red Brick Breeze 2025」でもDJパフォーマンスを実施した。DJを目当てに訪れる人のほか、音楽に合わせて踊る人、食事をしながら聞く人、音に引かれて立ち寄る人など、楽しみ方は分かれていたという。 無料日で間口、有料日で本格体験 集客の間口を広げるため、料金は無料日と有料日に分けた。平日は8月14日を除いて無料とし、ディスコにハードルを感じる人でも立ち寄りやすくする。有料日にはトップDJを招き、音楽への関心が高い層に本格的な体験を提供する。 次のページ 1 2 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 2 発見があった 0 特に見るべき ものがなかった 1 もっと知りたい 企画の背景にあるのが、近年の記録的な猛暑だ。横浜赤レンガは、暑さが和らぐ夕方から夜に夏の横浜を楽しめる屋外イベントとして企画。その題材として、横浜と歴史的なつながりを持つ「ディスコ」に着目した。 今回再現したのは、1970年代後半から1980年代初頭のアンダーグラウンドなディスコの世界観だ。 横浜赤レンガ倉庫の重厚な雰囲気の中に、ミラーボールやレーザーを配置し、クラシックなディスコミュージックから現代のダンスミュージックまでを流す。 横浜はかつて最新の洋楽がいち早く流れ込み、ディスコカルチャーの原点となるような店も数多く誕生した。横浜独自のディスコステップも生まれるなど、独自のナイトカルチャーが形成されてきたという。今回、ディスコをテーマに選んだ背景には、こうした土地とのつながりもある。 当時のディスコを知らない若い世代も狙う。同社は、Z世代を中心に昭和レトロや1980年代のシティポップなど、自分たちが直接体験していないカルチャーのリバイバルが定着しているとみる。メインターゲットには「当時のディスコを知る世代」と「レトロカルチャーに関心を持つ若い世代」を据え、30～50代の「大人の遊び方を知っている世代」にも来場を期待する。 昨夏のイベント「Red Brick Breeze 2025」でもDJパフォーマンスを実施した。DJを目当てに訪れる人のほか、音楽に合わせて踊る人、食事をしながら聞く人、音に引かれて立ち寄る人など、楽しみ方は分かれていたという。 無料日で間口、有料日で本格体験 集客の間口を広げるため、料金は無料日と有料日に分けた。平日は8月14日を除いて無料とし、ディスコにハードルを感じる人でも立ち寄りやすくする。有料日にはトップDJを招き、音楽への関心が高い層に本格的な体験を提供する。 次のページ 1 2 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 2 発見があった 0 特に見るべき ものがなかった 1 もっと知りたい 今回再現したのは、1970年代後半から1980年代初頭のアンダーグラウンドなディスコの世界観だ。 横浜赤レンガ倉庫の重厚な雰囲気の中に、ミラーボールやレーザーを配置し、クラシックなディスコミュージックから現代のダンスミュージックまでを流す。 横浜はかつて最新の洋楽がいち早く流れ込み、ディスコカルチャーの原点となるような店も数多く誕生した。横浜独自のディスコステップも生まれるなど、独自のナイトカルチャーが形成されてきたという。今回、ディスコをテーマに選んだ背景には、こうした土地とのつながりもある。 当時のディスコを知らない若い世代も狙う。同社は、Z世代を中心に昭和レトロや1980年代のシティポップなど、自分たちが直接体験していないカルチャーのリバイバルが定着しているとみる。メインターゲットには「当時のディスコを知る世代」と「レトロカルチャーに関心を持つ若い世代」を据え、30～50代の「大人の遊び方を知っている世代」にも来場を期待する。 昨夏のイベント「Red Brick Breeze 2025」でもDJパフォーマンスを実施した。DJを目当てに訪れる人のほか、音楽に合わせて踊る人、食事をしながら聞く人、音に引かれて立ち寄る人など、楽しみ方は分かれていたという。 集客の間口を広げるため、料金は無料日と有料日に分けた。平日は8月14日を除いて無料とし、ディスコにハードルを感じる人でも立ち寄りやすくする。有料日にはトップDJを招き、音楽への関心が高い層に本格的な体験を提供する。",
       "base_score": 6.0,
-      "reading_score": 6.42,
-      "notion_score": 5.38,
+      "reading_score": 6.38,
+      "notion_score": 5.35,
       "grade": "B",
       "tags": [],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
@@ -10185,24 +10200,25 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.883,
-        "rule_match_strength": 0.828,
-        "experience_similarity": 0.846,
-        "repetition_penalty": 0.314,
-        "gap_bonus": 0.0,
+        "knowledge_match_strength": 2.148,
+        "rule_match_strength": 0.836,
+        "experience_similarity": 0.852,
+        "repetition_penalty": 0.95,
+        "gap_bonus": 0.11,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.269,
-        "increment_type": "general_relevance"
+        "semantic_bonus": 0.322,
+        "increment_type": "mostly_duplicate"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "NgTp82zQFxFX+08WX/76PUa/vMofMO40RyjyPTez0tE3rk4Qy/MWxfEYIVcSXNQ90/TwNexM/LTCoalMYfbtF2VSJi2y38Yc2/oJP0XXQPLD38ML0U9Bv0LsTkPwyOak3jUcq2fBJ6rNODTOS7mkJSA/rrsEry7KJOevpbfcHi4M8hg8NBtJW8jrv7v1Ruk0LyRZwkrqR6YuRhrP2sQXKbDIxtm3yVU5w87XNdJi5izdN1U16PDKx87nvhhN2/wMusj+FwcjCyHcriExM9m1OuQdIamyUMUDBg/wLiv0KLMOPRLBukMD27C38PIAIB3mtscH1Vvk1ALhOP7/u67dIUUprhEx6mcPIQbG5OLZyiAqsfPhCH/Y5yoSCSFE4PAwt92n9CfVJTHwX7VF2u0ZF6EC+zwCEDgw1vMtKfsAyezPxe3WHhT54SIALc7BKbTR8UnOzB4N8xfW4R3p10cDjiQp/P+64lg7xRcMGyhj79gyuCpW1vcDw/QV4rxBFyQk",
-        "scale": 0.0009796589,
+        "q": "OQ/s5W2rDf5kGT0TTgvzQF66oKUZG91OTi/7ZkSou6tclEsZo/IdteQgNGcha+U6utP0Lu1vA6iznKJObwwKLGpPIyin1LIK3/YMUE7TOwC53cElzUZavEEAbEvw0rur8z4usW+7JrvUK0/BQr+VOyg2p5kFjU3OGPmqmKrKHjwQ+CddNxM0b9bovcniMcw5Hi5Q0UTnRcZVXSbP38c6NKnRuNnOtXRGq8DCNtheBSTWTFI41u7CtMnerRpE2xcRmLAhEf4e/yXIsCQvO+yvTsorKZu+SLP0AwTtPCf2Pb/8OBS6tTv17KzL2eD/JxzbxtEW01nE1g/iOA/tqbntLVQash0912wpIQ67vdrTwRoyvvnaHH/IwSkcBTU/2/xCtuWx6DTSLibgZ5szyvEEBKMDAUj0JS06tf1KJ+wYq+i/wu3WMhza6i3vJr2lMqfe3FTCzTEj7Afj7Cr0uUX8jjI9+gbN4k9D1gMIL0F76MwlpyV32AQG1fIQzZxAHDEl",
+        "scale": 0.0008679674,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "20fe5413dbc06b3a63",
@@ -10261,22 +10277,24 @@
       "published": "2026-08-12T05:00:00+00:00",
       "first_seen": "2026-08-12T08:06:30.168116+00:00",
       "summary": "Hi-Unitは、ピエール中野氏が音質監修を手がける「有線ピヤホン」と、サンリオの「リトルツインスターズ」がコラボレーションした新製品を、8月14日に発売する。価格はオープンで市場想定価格は2,970円。",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 5.6,
-      "reading_score": 6.32,
-      "notion_score": 6.03,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "ニュース 大須賀光輝 2026年8月12日 14:00 Hi-Unitは、ピエール中野氏が音質監修を手がける「有線ピヤホン」と、サンリオの「リトルツインスターズ」がコラボレーションした新製品を、8月14日に発売する。価格はオープンで市場想定価格は2,970円。 Hi-Unitの定番モデルとして長く親しまれた「HSE-A1000R」をベースに、ピエール中野氏が新たにチューニングを監修。「有線ピヤホン×リトルツインスターズ」のコラボモデル第2弾で、初代のリトルツインスターズデザインモデルよりも求めやすい価格に設定した。 3.5mmステレオミニプラグを備え、Type-C to 3.5mm変換アダプタを付属。3.5mmイヤフォンジャックとUSB Type-Cの両方で使用でき、スマートフォンやタブレット、パソコンなど幅広い機器に対応する。ケーブルには1ボタンリモコンマイクを備え、通話や音楽再生の操作も行なえる。 イヤフォン本体から付属品まで、リトルツインスターズ仕様を採用。左右のハウジングには、キキとララをイメージしたブルーグリーンとピンクの異なるカラーリングを施し、それぞれのキャラクターデザインを刻印している。 Type-C to 3.5mm変換アダプタ、ケーブルクリップ、専用キャリングケースにも「Kiki & Lala」のロゴやリトルツインスターズのアートを配置し、細部まで統一感のあるデザインに仕上げた。 ドライバーはφ10mm高磁力マグネットダイナミック型。再生周波数帯域は20Hz～20kHz、インピーダンスは16Ω、出力音圧レベルは96dB、最大入力は5mW。ケーブル長は120cmで、重量は約11g。 付属品は、約10cmのType-C to 3.5mm変換アダプタ、キャリングケース、ケーブルクリップ、イヤーピース4サイズ(SS/S、M、L)。Mサイズは本体に装着済み。",
+      "base_score": 6.15,
+      "reading_score": 7.94,
+      "notion_score": 7.52,
+      "grade": "A",
       "tags": [
-        "strategy"
+        "strategy",
+        "method"
       ],
-      "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "reason": "有市场或战略判断价值；可能形成可复用方法；语义增量：可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
           "価格",
-          "市場"
+          "市場",
+          "ケース"
         ],
         "formats": [
           "新商品／新サービス発表"
@@ -10290,29 +10308,31 @@
       },
       "concepts": [
         "価格",
-        "市場"
+        "市場",
+        "ケース"
       ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.861,
-        "rule_match_strength": 0.831,
-        "experience_similarity": 0.836,
-        "repetition_penalty": 0.27,
-        "gap_bonus": 0.0,
-        "evidence_bonus": 0.0,
+        "knowledge_match_strength": 1.707,
+        "rule_match_strength": 0.844,
+        "experience_similarity": 0.846,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.11,
+        "evidence_bonus": 0.32,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.61,
-        "increment_type": "direct_work_use"
+        "semantic_bonus": 1.226,
+        "increment_type": "rule_evidence"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "K97wBi3fRRtOJRAeMQHqLDbnpLZB270NShruJSHawsU3ny4g1t0j3s0gBmsIVN0rygveSggu99HR1Mf0bfcNKHIKLCzB8tok+v5M+0G+LNm15MU1wz8EoB4GP1TSwqzB5zky9VC2IqrrJBPpJLPIGEwmwLsh1ST3HvDQwcvqHiH0FTc3EGIlVvHpkMQJMQEwGUd00SzwV/E2I0m58L42OMPgxN3rwzV/udWyRc0O1ie9AEMT1AyX4M+vwxIE2d0jr8br7M81DknEvjwzVPy3IcMXGuW5NbwZ+jDgHiz1F7n7TziUzBD4GdjD4t7+IhHi6uQkokz99gXcHwauCrn0DxgivSIty2AsVDqw2+TBw09Sy+fdAGHo0zsfJhk/CO889dK98RTOHfLtW9wIwQcjHpARGVouDggipMcMQglK3wS0w9ywIyn4BE/6+Z2XNPnh4zDdvRgT0Rvu/FT24jIDlxFD3APN2UoR2vcSKW1E9uwgryMtwg7q5fkf5agmHBw2",
-        "scale": 0.0010023051,
+        "q": "Jejz+ie7NzBOIgUQKPjyKzfzqsY83sMkRhbrTg6/vbY3px4LxtYs0dIkD3EfSOItzv/VQwsn88LgvKkFfvkQKnITNC+84NEl5uw5E0nMPuGu0Lc/wiwdtT/gOmTHrZ7A7EAu60C0N6jQMjLjQKuvDUI2r8MSxy7TK/fFyNboLC73JyxMKmwuXvTIlckFLvJFDTVo0Tz3WeNGTkO748RCUMrNsrL5rUB/yuetRcoJ7RG2B04S1AiOz8+wz/wSydAqtbru7+A8JTfUtkAzQwCwMbktIdSzMpkg/C7ONTbZD7H3WyO7x//zCLLF3NbyJTPe18oht1fi+Rr5Mf+qGrjcBDYxvyMd3GItXE6sudu8zmJGwPDXDHvbwjQXHiVXDvxKAc2n8AzMIPn5Z9oIsxEmHZcbBlARFQ0TqNs6Mx9Qsv64r9ioSjLYCFIKFaWtUvTp8j/TpyE7xw/j81f+yjj/oyM+xxXYvjom4eEhPWBIAfIjrT5QzvTRyvQrxqQu/ipK",
+        "scale": 0.0009200447,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "9d3c2bf74955b22b8f",
@@ -10338,7 +10358,7 @@
       ],
       "reason": "包含调查/数据；有市场或战略判断价值；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2025年前后的既有时间证据；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "EC",
@@ -10442,7 +10462,7 @@
         "rule_match_strength": 0.861,
         "experience_similarity": 0.865,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -10466,50 +10486,61 @@
       "published": "2026-08-12T04:00:00+00:00",
       "first_seen": "2026-08-12T08:06:26.781089+00:00",
       "summary": "「マウスのバッテリー切れたし、きょうは寝るか。」ゲーマーがゲームを中断する動機、第4位くらいにはランクインするんじゃないでしょうか。それくらい、ゲーミングマウスのバッテリー切れというのは、ゲーマーのモチベーションを急降下させる永遠の課題だっ…",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 5.6,
-      "reading_score": 6.31,
-      "notion_score": 6.01,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "「マウスのバッテリー切れたし、きょうは寝るか。」 ゲーマーがゲームを中断する動機、第4位くらいにはランクインするんじゃないでしょうか。それくらい、ゲーミングマウスのバッテリー切れというのは、 ゲーマーのモチベーションを急降下させる永遠の課題だったわけです。 しかし最近のゲーミングマウスでは「 バッテリー着脱式 」という神機構がトレンドになりつつあります。裏面のバッテリーパックを取り外し、充電済みのバッテリーパックを取り付けることで満充電に生き返るのです。しかもこの操作はごく一瞬。ちょっとハイドしている間に交換完了、仲間への「ちょっと待って！」の報告すらいらないレベル。 「 Keychron G6 HE UltraLight 」もこのトレンドに漏れず、バッテリー交換式を実現。マグネット付きのバッテリーで複雑な操作をせずに ワンタッチで着脱 できます。しかしそれだけじゃないんです。 SPYRA FOUR 電動ウォーターガン 保冷剤 ステンレス 冷えゾウくん リュック型保冷剤 「 Turbo-Link 8Kレシーバー 」。名前の通り、マウスを無線で使うためのレシーバーなのですが、これが バッテリーパックの充電ドック も兼ねているんです。 デスクのマウスの近くに置いておけますし、片手でもバッテリーを取り出せる使用感。しかも 4つのプログラム可能なキー まで用意されていて、設定の変更やショートカットにうってつけ。そして信じられないのが、これが 追加課金なしで標準で付属してくる ことなんです。 Keychron G6 HE UltraLightはマウス本体に加えて、バッテリーパック2個、Turbo-Link 8Kレシーバー、その他ケーブル類が付属して 14,344円 。 ※バッテリー交換式モデル 磁気スイッチ搭載のラピトリ仕様、46gの超軽量、ということを加味すると 価格がバグっている としか思えません。でもこれは GIZMART限定の超早割で購入した場合のハナシ 。 この超早割というのが厄介で、 あと2日 で終わっちゃうんですよ。8月14日の12時を過ぎると割引率が変わり、ちょこっと高くなっちゃいます。マウスのバッテリー切れに悩まされてきた猛者のみなさん、今ですよ。 Daily Weekly Monthly Daily Weekly Monthly",
+      "base_score": 7.45,
+      "reading_score": 8.24,
+      "notion_score": 7.93,
+      "grade": "A",
       "tags": [
+        "consumer",
+        "ai",
         "strategy"
       ],
-      "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "reason": "涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
+          "AI",
+          "購入",
           "価格"
         ],
-        "formats": [],
-        "intents": [],
+        "formats": [
+          "キャンペーン／販促"
+        ],
+        "intents": [
+          "販促告知"
+        ],
         "signals": []
       },
       "concepts": [
+        "AI",
+        "購入",
         "価格"
       ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.884,
-        "rule_match_strength": 0.858,
-        "experience_similarity": 0.861,
-        "repetition_penalty": 0.315,
-        "gap_bonus": 0.0,
+        "knowledge_match_strength": 2.1,
+        "rule_match_strength": 0.851,
+        "experience_similarity": 0.856,
+        "repetition_penalty": 0.95,
+        "gap_bonus": 0.06,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
         "semantic_bonus": 0.663,
-        "increment_type": "direct_work_use"
+        "increment_type": "mostly_duplicate"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "CgHzxyjS/AFVECsUVOsGFEDQweAPH74dTh/pNBWut9k6uy0Bxfco3ufrDXMcS69AqPzfQusu/r3nuY0TVw0BJH9SFjTWEeAvDtIjPyHoOuzBC90tvkg3qgvfY1PaytOR3kQg/i3LEr7NSA6+GczEIlsoy7wdrjKwPQnQur/eECb8CS8zHBUxYt/6xevNL/1LPBVVxELdJqNeDArA3PExDMPKluXeovxFjALuP8Yl2SzECFEN8eae2dLX0g8l2foWxsPjDPAzLCAV8Co0NQi9SsEpPbm4Q7wKAC3kLSfuNpsKTw3DxQbmDum43NIRKCPn3NctykLYAgq3DiPYz8XuSy4evwhDAGsyKgzO19H2xDUy3eOxJlC7zTcAKj1s+PNMDNep0DXKaSLeTbYW4d3+BaUcGDohLycmtLIZPPM51tnEutesOk3f5yAJOLzPLcD6AELUtBsdvzHSzCsP0mQ4vTQh9Syq41IevPD4VUUi+usYrTZM6hfwxuf9ubk670sy",
-        "scale": 0.0009848866,
+        "q": "HwbB3DLQB/k9HycVMO77ID/IuMMs/7EcRCHtOTOlsqc3qBYSu+9CzPoNFWoDRcZFrwDmNf8TCbHXs5kdWAMOJ39HHEXc8tE0/7MdPT/xK/iz69IjtVpb0SvPS1Tmu9eX73kf+CvdFKLgQxvAH9S2LTYsw6Yd1lDOU+u/xLHSLiLsFiowGi9CY+LfrtnVRNdEIS5Rtk3nS8BZGwmw0utQFrrVl9rGxRlHvAjgTcIi5SC6Nz/+/++v0NfswCYp3+0h1c78B9U4GDMQ3CcrQQKiM7YsNay7M70FBR7/USIFKKQpYxrSqAjMEc7E4cQCMjfo3N881VbV5fLCERzN2cXnTD4csfU38HFUNSnHzejQvCkpzMrKH1zOvDQVMz93/vhS99+lygPJOw3pULkd5dYYFJn/CFkTRgoqt8YbTwlN0MbAvNqlN1DU+Dv5J9rdNuLV/UHSnwwCuyfQz00SxFYckzwm1S26yj4fwPT2PkxD/vsYrCE95Cjb4/MFqa1JGyRD",
+        "scale": 0.000942637,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "bfbe67376572fe8d74",
@@ -10535,7 +10566,7 @@
       ],
       "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；与EC/零售直接相关；语义增量：可能更新2024年前后的既有时间证据；可能补充反例/边界；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "SNS",
@@ -10651,50 +10682,59 @@
       "published": "2026-08-12T03:30:00+00:00",
       "first_seen": "2026-08-12T08:06:26.780437+00:00",
       "summary": "3万7200円の価格が納得できるほど、この機能はズルい。ワイヤレスゲーミングヘッドセットはケーブルのことを気にせず没頭できるけど、バッテリーが切れちゃうとチーム戦に参加できなくなっちゃうのが辛いよね。バッテリー交換式もあるけど、交換している…",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 5.6,
-      "reading_score": 6.43,
-      "notion_score": 6.12,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "3万7200円の価格が納得できるほど、 この機能はズルい 。 ワイヤレスゲーミングヘッドセット はケーブルのことを気にせず没頭できるけど、 バッテリー が切れちゃうとチーム戦に参加できなくなっちゃうのが辛いよね。 バッテリー交換式もあるけど、交換している間はやっぱりゲームができない。と思ったら、あるんですか？ ホットスワップ対応のモデル が？ それがこちらの「 GHS Wireless InfinitePlay 」。85時間も持つ バッテリーが2個ついている し、本体内のバッテリーだけでも3時間持ちこたえてくれる。だから ゲームの途中でもバッテリー交換オーケー 。まさに ゼロ・ダウンタイム です。 足跡や銃撃戦の音をできるだけ正確に捉えられるように、 ドライバーユニットを斜め目に配置 しているのもわかってるポイント。 マイク側にはノイキャンを装備 して、クリアな声でチームメンバーと相談しながら戦えます。 ブームマイクは取り外し可能。Bluetoothだけではなく2.4GHz独自通信システムも採用。ゲームでよしDiscordでよし移動中のリスニングにもよし。万能じゃない？ 電池が切れる恐怖がなくなると、集中力を維持してゲームが上手くなるのが早くなるかも。 Source: Glorious Daily Weekly Monthly Amazon Daily Weekly Monthly Amazon",
+      "base_score": 7.3,
+      "reading_score": 8.35,
+      "notion_score": 7.99,
+      "grade": "A",
       "tags": [
+        "ai",
+        "ec",
         "strategy"
       ],
-      "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "reason": "有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
+          "AI",
+          "Amazon",
           "価格"
         ],
         "formats": [],
-        "intents": [],
+        "intents": [
+          "知識解説"
+        ],
         "signals": []
       },
       "concepts": [
+        "AI",
+        "Amazon",
         "価格"
       ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.864,
-        "rule_match_strength": 0.849,
-        "experience_similarity": 0.845,
-        "repetition_penalty": 0.48,
-        "gap_bonus": 0.0,
+        "knowledge_match_strength": 2.537,
+        "rule_match_strength": 0.855,
+        "experience_similarity": 0.858,
+        "repetition_penalty": 0.95,
+        "gap_bonus": 0.56,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.696,
-        "increment_type": "mostly_duplicate"
+        "semantic_bonus": 0.697,
+        "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "AQHfxSjaIfZIL/7rNSbLQTnjxOki+9chXzL+O/OZ2fkntygMz+8lwNYP438iUNIsygzxVOY4/MfgsagSUgcJMkpHET3C8NBH9NtDRivmXgXPx84wvUE2vyLzS2DOucmIAC8Q+E6/G7nTQhzp+8jNHkwnqcINvynhOOLlvrDpKD3qNTg0CTs+Ze4EuNj2UuZlNyZRuTzVQpNcKCHmye4vLdvUsMTfpBhksfHJKd4YGA7FG0T08gKZws7ZrRcw49wmsrQQ1+xNH+kM1hoXOAzeN8ARD7W2M7QFBzMHFgvZGrMQYSTRxBfV/NqzvrjcUELmyL4/qS/k4QzMGyi14L/uMz4hwQk+/HApRxDLxcEC8DFGxfjN/lnI3EkeRRRu2/VIA92j0yatTPbfadQT3fAVGL8qDTIYHRgttcIBQRJG6Nqjsei+PzDXB0XpFq7CV8zn2FGwpBQZtjLmuj7vv1Aurz830ySWxyYB5ukUSE5QJOYFvCAq0w/h++ESx91C/EIj",
-        "scale": 0.0009648403,
+        "q": "B/3f1kexQPc2JSDoQRLAJDLTyNEcDMwWY0X8QQ2T0fI9p0IYx+QxzewR/X8aUMo0zwX6R9o5+LfctaASVv0JGWZgBjXK7sZH4cgwXzH1TvTUv78tpkI/uS7WQk/Duq+C6DgM9FPYLazaSivVHMDGKEojvbP/wSTVP+3kva3KIT4EPTk3CkJHcuj3uc7bVetkKh9Jpk/XTpVpQinixthBKdXJpcbdoiR1oejMNuEfBhbDMj/77/Kr1dTmxB1G0+knnbH76+88Of705xciOvfPONgkG5WtIMQNFjEAIyzlGqsCbiXWvhjhC+Wxz8vbRk7cvMM8vlPU2PPPKRy708DuOkQlrhU543ovNSGxw8L25TdCounQDVq00UMYMiVZ3NNZ8s2j0xiuPQLtYtEf2ekaJ7keFEgJMCkswssSWAg03tiastutNjq7/FMEM7/GRtTv3kq7nBYfrCPpmknlvE86nkcl5DKa1Doh1t4PWUlUBPUVxiQx1hHp4u0Fwdw/Hzgv",
+        "scale": 0.0009104942,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "aa5cbc2667dd00ab35",
@@ -10913,7 +10953,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ixfa0EDaFi8yGx8KQPvINiLYzMwTB/sSNzTGFBrg4dwZx0MDv94J3PIHHzsnQ/A80P/dMfYZENvt07EkWAEQMX8nLDLYAO4gAtEYGy/HOde85u4U5hMvp03aK0Pa0NfN80EY7zDYHaX3Jw/rMLO2QDYbydQCshvfNePYuM3mKQL8/P00HzMlMOjb6ObKFeszGBJOzUvyO+FAFEDW4e/7KdHWzOjMtiYvvujPO9E52FTaEkgQ+9iqt93izgY15BEdztTTDfMiJSn+5icmM/i4JugbC93OK8rs7irjFjUDFKgDNA7E2kT/CsrL0dYNElDT8OA/0CzN5iD/Oizy2eThLS0WxAQ5+2wiOQvV2PcFwjb4sOrf3kfb1ycuHCYtzv0/6M7G2RzjQPHhOc0s3vIeCrL2CTYYGhIm3fgrEd0v09724efoGi/f6f0NCbbAPN7oDjHSxA4Y3//j1yX25UMPvBki+B648R8s5OkJJjAh8Ak51Rss1gAW9sIUydghAxon",
-        "scale": 0.001204128,
+        "scale": 0.0012041279,
         "normalized": true
       }
     },
@@ -11159,7 +11199,7 @@
         "rule_match_strength": 1.218,
         "experience_similarity": 0.865,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.28,
@@ -11170,7 +11210,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "F+3iz0TLOjle+1cBcd/GHE3Rt8IiCrUXPB7XLySov6leyEod0PpM8fL+IkMlUgMevOT3HfBEHLK+m6YPf+UjMnQiDAav1eMZ0+1NSzrHH+WbvN8l8iE1vVXvQHa71bXbFCcf8h6uNZz1MBm+X7qrLVZAwOAIuGTDPN3lov/wUBzTAwJIQVlESMHfudr7EfJHHw0wxzbZZMJcRkjP5+QvQbbmpeDspyI4s+fDMNk4/0rGGEE18pO/xcPb0CAZ5xsusdH2BeQlEzgA4kA1J+i7QMchKdaxNt4X7TbQJDv0CKPeVSeashzb2Nrd5a8TRjPZ+dw00GrEA+sLIPnmtcPQOgEEsPk6114RHgu9vtnh3kNT5urU/2C6nC4MOCZL2/o3uNbe8TTMOQIHTMQX2SMdHcYo+zA0LEAG088wU+ZAo9bNut/KHkrL+F76QMSnarXj2DvDyxMRzCTd3gD9xRAXpiH4zSSp3j0ev/8SS11R5t0msA1b7+vJ684ssrVPGiJK",
-        "scale": 0.0009356308,
+        "scale": 0.0009356309,
         "normalized": true
       }
     },
@@ -11409,7 +11449,7 @@
       ],
       "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；语义增量：可能更新2022年前后的既有时间证据；可能补充反例/边界；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AI",
@@ -11449,7 +11489,7 @@
         "rule_match_strength": 0.859,
         "experience_similarity": 0.862,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.61,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.85,
@@ -11491,7 +11531,7 @@
       ],
       "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2024年前后的既有时间证据；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AI",
@@ -11550,18 +11590,22 @@
       "published": "2026-08-12T01:30:06+00:00",
       "first_seen": "2026-08-12T08:07:05.172107+00:00",
       "summary": "東京ガスのキャラクター「パッチョ」の誕生20周年を記念し、8月18日から東京・豊洲にあるがすてなーに ガスの科学館にて、「パッチョ原画展2026 ～この世界にやってきて20年！パッチョが歩んできた軌跡～」が開催される。 The post 20年間の“手描きの軌跡”を公開、東京ガス「パッチョ原画展」を開催 first appeared on AdverTimes.（アドタイ） by 宣伝会議 .",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 6.0,
-      "reading_score": 6.44,
-      "notion_score": 5.41,
-      "grade": "B",
-      "tags": [],
-      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "content_checked": true,
+      "content_excerpt": "東京ガスのキャラクター「パッチョ」の誕生20周年を記念し、8月18日から東京・豊洲にあるがすてなーに ガスの科学館にて、「パッチョ原画展2026 ～この世界にやってきて20年！パッチョが歩んできた軌跡～」が開催される。 2006年1月に、東京ガスのCM「ガス・パッ・チョ！」シリーズがスタート。その年の６月にサブキャラクターとして登場したのが、火ぐまの「パッチョ」だ。「テレビCMのタレント以外にも、さまざまな場面で活躍してくれるキャラクターが必要なのではないか」と、アートディレクター 田中元氏が打ち合わせの場で描いて、自主プレゼンしたのが誕生のきっかけだ。 パッチョは、火の国で、ガスのチカラを使ってパッと明るく、チョっとゆたかな未来の暮らしを送っていた王子様。ある日、王様に「クールになった人間たちの心に火を灯してきなさい」と言われ、人間界にやってきたのだ。よく見ると、その顔は漢字の火で、体はガスの色をしている。 以降、テレビＣＭ、Webサイト、SNSなど、東京ガスのさまざまなコミュニケーションに登場。その後、「電気の国」からやってきた電パッチョ、「水の国」からやってきた水パッチョが仲間に加わった。そして誕生から現在に至る20年もの間、田中氏が自らの手で描き続けている。 「20年前、今ほど企業キャラクターは多くはなかったが、それでもどのキャラクターもデジタルツールで描き起こされて利便性が重視されていました。この先、全てデジタルで便利なタッチのものばかりになると思い、あえて手描きで温かみのある線で表現するのが企業の姿勢にもマッチすると思い、このような表現になりました」と、田中氏は制作当初を振り返る。 本展では、初期制作物のみならず、手描きのパッチョ日記など、20年間の絵の違いをコラージュ的に展示。さらに密度あるパッチョカレンダーの原画を年代別に見ることができる。 「20年間全ての原画がストックされていて、年代順に並べることで表現の変化が見て取れます。パッチョも段々と身長が伸びてきています！（ドラえもんみたいに…）また、作者によるコメントや、ボツネタなども直に観ることが出来る生々しさも魅力の展示です」と、田中氏。 展示は、8月30日まで。 パッチョ原画展2026 ～この世界にやってきて20年！パッチョが歩んできた軌跡～ 期間 8月18日（火）～30日（日） 場所 がすてなーに ガスの科学館 1階「気球ひろば」 時間 9：30～17：00 月曜休館、入場無料 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 2 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい 2006年1月に、東京ガスのCM「ガス・パッ・チョ！」シリーズがスタート。その年の６月にサブキャラクターとして登場したのが、火ぐまの「パッチョ」だ。「テレビCMのタレント以外にも、さまざまな場面で活躍してくれるキャラクターが必要なのではないか」と、アートディレクター 田中元氏が打ち合わせの場で描いて、自主プレゼンしたのが誕生のきっかけだ。 パッチョは、火の国で、ガスのチカラを使ってパッと明るく、チョっとゆたかな未来の暮らしを送っていた王子様。ある日、王様に「クールになった人間たちの心に火を灯してきなさい」と言われ、人間界にやってきたのだ。よく見ると、その顔は漢字の火で、体はガスの色をしている。 以降、テレビＣＭ、Webサイト、SNSなど、東京ガスのさまざまなコミュニケーションに登場。その後、「電気の国」からやってきた電パッチョ、「水の国」からやってきた水パッチョが仲間に加わった。そして誕生から現在に至る20年もの間、田中氏が自らの手で描き続けている。 「20年前、今ほど企業キャラクターは多くはなかったが、それでもどのキャラクターもデジタルツールで描き起こされて利便性が重視されていました。この先、全てデジタルで便利なタッチのものばかりになると思い、あえて手描きで温かみのある線で表現するのが企業の姿勢にもマッチすると思い、このような表現になりました」と、田中氏は制作当初を振り返る。 本展では、初期制作物のみならず、手描きのパッチョ日記など、20年間の絵の違いをコラージュ的に展示。さらに密度あるパッチョカレンダーの原画を年代別に見ることができる。 「20年間全ての原画がストックされていて、年代順に並べることで表現の変化が見て取れます。パッチョも段々と身長が伸びてきています！（ドラえもんみたいに…）また、作者によるコメントや、ボツネタなども直に観ることが出来る生々しさも魅力の展示です」と、田中氏。 展示は、8月30日まで。 パッチョ原画展2026 ～この世界にやってきて20年！パッチョが歩んできた軌跡～ 期間 8月18日（火）～30日（日） 場所 がすてなーに ガスの科学館 1階「気球ひろば」 時間 9：30～17：00 月曜休館、入場無料 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 2 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい 「20年前、今ほど企業キャラクターは多くはなかったが、それでもどのキャラクターもデジタルツールで描き起こされて利便性が重視されていました。この先、全てデジタルで便利なタッチのものばかりになると思い、あえて手描きで温かみのある線で表現するのが企業の姿勢にもマッチすると思い、このような表現になりました」と、田中氏は制作当初を振り返る。 本展では、初期制作物のみならず、手描きのパッチョ日記など、20年間の絵の違いをコラージュ的に展示。さらに密度あるパッチョカレンダーの原画を年代別に見ることができる。 「20年間全ての原画がストックされていて、年代順に並べることで表現の変化が見て取れます。パッチョも段々と身長が伸びてきています！（ドラえもんみたいに…）また、作者によるコメントや、ボツネタなども直に観ることが出来る生々しさも魅力の展示です」と、田中氏。 展示は、8月30日まで。 パッチョ原画展2026 ～この世界にやってきて20年！パッチョが歩んできた軌跡～ 期間 8月18日（火）～30日（日） 場所 がすてなーに ガスの科学館 1階「気球ひろば」 時間 9：30～17：00 月曜休館、入場無料 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 2 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい",
+      "base_score": 6.5,
+      "reading_score": 8.26,
+      "notion_score": 7.07,
+      "grade": "A",
+      "tags": [
+        "marketing"
+      ],
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：可能补充反例/边界",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
-        "topics": [],
+        "topics": [
+          "SNS"
+        ],
         "formats": [],
         "intents": [
           "参加募集／イベント告知"
@@ -11570,28 +11614,31 @@
           "イベント色が強い"
         ]
       },
-      "concepts": [],
+      "concepts": [
+        "SNS"
+      ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.863,
-        "rule_match_strength": 0.829,
-        "experience_similarity": 0.83,
-        "repetition_penalty": 0.39,
-        "gap_bonus": 0.0,
+        "knowledge_match_strength": 2.815,
+        "rule_match_strength": 0.843,
+        "experience_similarity": 0.848,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.06,
         "evidence_bonus": 0.0,
-        "boundary_bonus": 0.0,
-        "semantic_bonus": 0.352,
-        "increment_type": "mostly_duplicate"
+        "boundary_bonus": 0.58,
+        "semantic_bonus": 1.14,
+        "increment_type": "boundary_or_counterexample"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "KPMK71q1BjNO/0f+WuW5PTbkpMESJvosPFitOCvMwrpJtkQT3tELv/gUIFcRRt4hte3hTek2L6fZuadBX/IEG1wfNjSt6/091csFP0f6L7fP2vEc2Uosy1nkO0DWp9Wz0DQY6DzlIYH0Jya8S+PaOR5FvN8ElhfEUdnEy83IGjYeCiQzNiodRsnp/+T2TcM/Ih5s4xrlS9s3+C+858UMYIbb0cvZqy4xve/GR78ptjDgOGYh9uS1urTMryQxxuIcw7z+LuM7Nizk1R89SOS+PeEMScOoN+DB+TPlOFAJGq3oVhPnzyD67+PL5NH3JEjMxuosrkfb3UXxEwrTx6LJQhk2sCwx+1xHOR7R6tbYrzX6vgHNAWS/2S8nHTQd5elWv8HP6gXZQhEEVL0YswcZQLwXEFAVOE4tywdBBuYUv9/i4+Os/iTn3uXuH6vgUc3ABlDivT4rvjDyykPQ4iUJjhAn3C6t9V4U0A/6EBpC8tNdzQpJ2NoMu8so0LYlEywt",
-        "scale": 0.0009669045,
+        "q": "KRbe7mCgBCU+DFLsau22T0TjlLETHe0kQWjCYjTD0btXqUsXucsiqvsJKnUFYdYlxfTzQBAsHr7ro6YyPvwiHV8LRUas4+w1zrcMQ0/iLdK/zvkw+CwyrlX5Z1XMzdaeyisu+jzdEIgGLC67T8jQQyMuqbcRkDS/Ve7M08XGIDwBGjE8PBcPUu/d2+bYVLZNFgpY0SLYUOZSHS+51sY2bYzXr8v0nzlGoPbXRsAa0jffF3AY+Omht6PNoCg65/wxw57/I8s/Nyi+3EQ/TvCyJfEaSbqxQbfY+SfVSGH8K7D/UCXUzBrmBtXVy8bwGirZ09tFrDbI6CcKIRu1vdLJQiQZvTgnCGpBNyO43ubKwUQNxuC/CGKprystE0Qn2/hf2d+r/wzaM/j5YtEtpwQML6MfETkMSko1p/05B+8iw9bK1NOOCTHX4vn0GMnRYM/G7WPLt0VKyxvlykPSxi3mnRQiwB6h6FQp0BH2SixW9MdQvQlZztX+uME024EzA09E",
+        "scale": 0.0008888899,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "6911090a7f4864317a",
@@ -11773,7 +11820,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "LwrZz1LtEytlED73PQLHO0qiwtgg7r4/TS3gSxqzyMRQuTII7eItzuAbH20bct4dzNTuVv5IDMP0v5ZGcdYPNm88FTvQztw299UJIUznLe695aY570E+qjXpMlTR39+30DlDzT/eOpDBG1G8Pd2rLBcTlNcRnyi/S+7EtMPuLikHGThWGSxKYOnlzNXDO95YLR08v0vrM849Kx251cZJQqy5ztztgSpEpsrqM9A25y3vIl8Yy6yr18La7P4y4PIfwLUV8cgzCEIh00csONTQDtQhSKSiMPwO2VPcEBbyELTzPwG9sBfc4NPPxsEfJDPPx9NE2mDJDffcCBMBtLnPIjwzsf0E/X9bMyvRtsrj0TomnMPOEGLOtyHzF0Iv9AVT2+3B/CmvMPvZQs/y2soJD6AqLjUfPC8po9xBTuoux8Pbz86mNUXJ7TkGTsTMTr621Di7vRQA2TTs1SMFzj0H0DIv6iXZ7UIt0BMdMkJaBvkewE08xirn0sUmx4o9FxlC",
-        "scale": 0.0009336116,
+        "scale": 0.0009336117,
         "normalized": true
       }
     },
@@ -11801,7 +11848,7 @@
       ],
       "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；语义增量：可能更新2025年前后的既有时间证据；可能补充反例/边界；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AIエージェント",
@@ -12109,7 +12156,7 @@
       ],
       "reason": "涉及AI实际影响；语义增量：可能更新2022年前后的既有时间证据",
       "screening_note": "正文未自动读取：HTTP 404",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AI"
@@ -12228,7 +12275,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "M/XN3DjHMjE1GC8GVhPdLy/Dt8oLIMglM0DuOTvkvuI4qjoI28krzPTzDVgxWfInwPvfXxIrA9zWu6geTdgGOGYnBRG8zcoR9+0eM0TNGb2q5P0i3hMywTIFSk7LzuKp5S8U8SzPHon/Fyq3WZmiQFc+xLD7rjfkR/fJtbvmCRcHCyJLFUE4Xt7yyMHGLfgwHCVG2zHgTspRSUzE1dUhUZ/OqdfeoEE2qenTPswc6Ce5FTkLwc6oxt3nswUV4BwlrsQO+90qHyIL3TMmUODDIOEgD9PgO+z0+UHTE0btN7sDOxzTzivU57fG1cHlLDbozNcjzU/s/A36Jxrqx9HXMD8AvRcO3n8cFxvl4NjR0jgk1NrmGFuvoB/cDUNL6OdH9eDgzC7xOvzKVe4m9AcZPLIW+TUjRyVDy+EaT/Qu0+quwfy4RC7I31buEKzCLsvP5kG6zy8f1jL48TnjxTg7tQstxlW+6z026s4rODdF5vAMxkt1zg3d1dUcy7cxCzo1",
-        "scale": 0.0009972014,
+        "scale": 0.0009972015,
         "normalized": true
       }
     },
@@ -12358,7 +12405,7 @@
       ],
       "reason": "与EC/零售直接相关；语义增量：可能更新2023年前后的既有时间证据；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "EC"
@@ -12644,7 +12691,7 @@
       ],
       "reason": "包含调查/数据；语义增量：可能更新2024年前后的既有时间证据",
       "screening_note": "正文未自动读取：未抽取到正文",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "調査"
@@ -13079,7 +13126,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "FvvB9WX1ER8tJT/vSyffJEevpM/mFcY4OT3zSw7issgwzDsYzNALrcAYIHv6dQcm0u/LOBck8NzRtrU5OO0JPWoRESHL5+I6xucRHin8Pe691NIv0zUpuTAQLhzW1rrGAyzx5yzEYdXoRRflJ73JRC8zyrsauz7gPd75z8TsMSwHHxdEMStLW8n80Oa2BOUvCSxA1CnzJOE5NQTb4+I8VsXXu+LiwDtfy+azG9w//SHN/ztE6eWk7tHcxisK2RoywcYfEOEb/y/mziVSQPfxM7AaNdflM9MY5jznLS71/ND4JSbt0/3W/uP6q5r0GDnZ1ulBwyCp4iz3MA/wsbTUG0gHugso8S4OEhTG3tfs5jAZw9DV33/I2yEjA04mzPciBvO59j/aJN/8Y9424goIB6cg/DQo/B4mvaQjPR0PyOvD9+7YBxbv0y4rFbfJOsvU12XStTBMxigE1hTs4ko8kwoz5y254zT+7sQSEzc64d8yphJG6PjS5/MouKkwEA09",
-        "scale": 0.001055928,
+        "scale": 0.0010559283,
         "normalized": true
       }
     },
@@ -13205,7 +13252,7 @@
       ],
       "reason": "包含调查/数据；语义增量：可能更新2024年前后的既有时间证据；可能补充证据/案例",
       "screening_note": "正文未自动读取：未抽取到正文",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "調査",
@@ -13270,7 +13317,7 @@
       ],
       "reason": "涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2024年前后的既有时间证据；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AI",
@@ -13536,7 +13583,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KADW8TKjIQku+C0LUQXISSvZt8QoGs4mW0UEEhK3y847mDYE0Msm5un/AH8sPOhGqfPvN+gNAsXZypEUZeICQHg3Jy/V1sce6c8XVjHoMvSyuNFX4Ewspzb1ODPZueTO100V7TjiGqzaMEXEHsyoPEU2yNYIr07AdPHUuLvkKkL+GjQ5GD5CZ+rjwcHdO+k9FSlG01n7Zs9OUT2z28sYHcjjrMvstS9Ps7mxTLsy7iTERVoE8OSE7LH7ugAl2fYjrLLl/d5HASHo2xsrKueaU740Is+2OY/oFBfhRFXZMLAJWzfgsyjb5LrO2dnbQ0Tr3N8TqiLcygPeNjKjytjrMiYwvTtH92ovMh/Hx+3YzUsbsuDEKlq91T0oNiEy4f5G2si56xK5KOrmNt804u8DH8IXBSc1JydZxvMuUwo9u+7Kst6sHzPa80EHH728NOzL5DvRrvoTvi3gtkzFxjZNmBI5xyrQ/0IT9dcpS1db5fIixT444iT0zcsupaM+HxtH",
-        "scale": 0.0009367049,
+        "scale": 0.000936705,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
@@ -13600,7 +13647,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MNDOy1LEFvwxGCP3SBflJTrLztAJEOobKzXnKh3XyclVyEoXt9YPyvQDEksKVu4gvQDnOPonC9Pm37c+PQ78LFwzKTba1csq4OMYKBDSNurH2MUu3j40uUDRNTCtzdqv6UYU7TnUIL3lP0bEO7vHQj0V387vxj3NZe/awKbUFh4MLR5BDSw8ReL64NjXGeBGDw8w307nRdxEJjC0zuA6ZsTdteDpgTFWu/XnPMsaAg/UG14N+MSU27nK5CUwzAYns87nDeIyHR/c2gg+NuC/IP1FItnLTsfc6BynICXRIsUQRB/IyQrrAdPl2LvtGkrXDMA12C7x4RHtJCbo0cv0IRMvuRkp6m4TLjKw3cn/2DcVu//iD2bAnzkkKyc19e4/+t+jBCi4KRLmSrsS3vEIILQCCiQ+IyQzwMoXMgb5zdPbzvq9IyHg7Tr0FuzPPNz02ja/0hhC2iPfvzzPxCYNoQsi1jLV6iAs2eonMEU9Bgoj6xId4xD24uI9rKkhG089",
-        "scale": 0.0010640343,
+        "scale": 0.0010640342,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:12:27.090660+00:00"
@@ -13696,8 +13743,8 @@
         "ec"
       ],
       "reason": "与EC/零售直接相关；语义增量：可能更新2024年前后的既有时间证据",
-      "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening_note": "正文未自动读取：未抽取到正文",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [],
         "formats": [],
@@ -13726,7 +13773,8 @@
         "q": "PgPhok8W8D1JKDwYTgHUEVK0z+4P9Ow3VWAJfzP0sdk71j8lw9AOyMENGHAaQuFD1OHXV/MxC+zM0JQHOhsXFW41MFLm3MAc4Nn0TxrsJs6539kV6Dcnmk//UEz7xdqm1wUZxUqYM8TtPhnTJpHTQS85rsYfoTGiI+HCzcPvHiEg+A1FCkwnXtLsvuqwMgotDCtJwEDTYrFAJQzv7bQTMMrkt/TbsyVQmxbvMNgU20/J+00UzcrAxbvf7QoW8P4bveTpELghDkMQwCQtKvGpB7FYKL+1Qcsg9hK2KgzmDtvtNSvT0w/+9ubSw6cNKkG9tMdKy0TS1ygAMRf4zMvHNU9QuiE5CFpHThq42sH2tjgI1wXxAUzP3ikJIS1g79RKAfS6GTnHETT3X9EUx9guC4gFFC4UJhcj4+EcSAEQxMC1vuXBKTvpsxwCIaSwNprN1kjevkhFxCPy2RIBuEkKmioXyhek61kytPIbNFQ7AOgVxBM73OHz6NASzp1IIRs4",
         "scale": 0.000965318,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "0f4084ecde76836c08",
@@ -14081,7 +14129,7 @@
         "rule_match_strength": 1.077,
         "experience_similarity": 0.851,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -14092,7 +14140,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "SdnNzHjSIx47UEbsZPDZFmrYyacYEM0xZU/OOAm5sNJIuDMe4/AZ5d4FNnczThdEruv1RxtACMXcrLkZZvL4O20UFleg59cw0csRUDfZQMvT38wr9DQrizH+Lnbims204Twp7kbuJajqMivVM4nFQmEqp7v9g0jFWOu2lMXhKTrT6y9dKEJPS8zcq93OGAhNRR8l0zfjO8FIRku2ye8KXKa8r7fek048gufVOacVBEbEDVQv6Ouj1afWwxILywYjwdAsGe9kKC7rt0JFBuWVSMczL86xRaTj9SvbGFHmBpcZLCnCuSjfws/g06IJNx3lrAQYwGHS7h4mIxun08fjHzwysBsc53NFIUC60fOw0T5OxuXGBlfOgRYd+FJO6wZI19CH+SzIHOPrUPAqyAg6IpktICQPMEgplOVUQgkks9e5x83BKTDI5T0MMLS1W5/s6DjCriMxvx/90Tb6z2LylCEs1kGu6lg50vMmW1hRqvcNlAJ1xwvR/fQuq5xV9FBa",
-        "scale": 0.000858056,
+        "scale": 0.0008580561,
         "normalized": true
       }
     },
@@ -14118,7 +14166,7 @@
       ],
       "reason": "涉及AI实际影响；可能形成可复用方法；语义增量：可能更新2025年前后的既有时间证据；可能补充证据/案例",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AI",
@@ -14402,7 +14450,7 @@
       ],
       "reason": "包含调查/数据；可能形成可复用方法；语义增量：可能更新2024年前后的既有时间证据；与实际工作场景语义接近",
       "screening_note": "正文未自动读取：未抽取到正文",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "調査"
@@ -14464,7 +14512,7 @@
       ],
       "reason": "有市场或战略判断价值；可能形成可复用方法；语义增量：可能更新2022年前后的既有时间证据；可能补充证据/案例",
       "screening_note": "正文未自动读取：未抽取到正文",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "ケース"
@@ -14694,7 +14742,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "ROTt5yT6Hh5SJxvqF+DaHWrRtK0564T6ZTH+CxrNr8VXsTUQ3vxEwRURDWlHYfItrSzLRQoVAb3MwbYhfe/hPXIpMEaj+ssV1uYeDEK9M/qS9tgizR4+mj7PPVPPsLGf7kEC2jC7KZbhFDvqO7qdRlQmnLMbvii7XQ2/v978KigSHyQhG01qUcXjrLcVPwJAJjdVq20NS706KQrO2PsXZa2zs8fr20FViNXYSMk5BCOcID9D0w275bLPxyQa2N9Wt8gACtQrOCaxtjdEJNOQRb8h8rSKRJkoMTXIRRnX9KklaSGqwyL5Arq8wd7uJCT49NBJvm3uBAnnLQ3Zw76+BC83uRQrz1ILSi6rzPbIu19Cv/TGGXu1qzwBOx5B0eRJ/O+p4ibRFxgLINI/yAgQDaMLCDYrIDsrsQAfRhsvr+bCtdLmVirO8UTsF5m3V+TO0DLMyTEN8gzk8Dv4zngSoDI/1DTV4zwP5QE8MEI76wEUvRtd0xvWxdonk4FSAx1E",
-        "scale": 0.0008905433,
+        "scale": 0.0008905436,
         "normalized": true
       }
     },
@@ -14707,20 +14755,24 @@
       "published": "2026-08-10T11:00:00+00:00",
       "first_seen": "2026-08-12T08:06:30.169291+00:00",
       "summary": "今週は、東映映画の歴代オープニング映像をモチーフにしたカプセルトイ「東映ヒストリカル グッズコレクション」のニュースが1位を獲得した。今回のカプセルトイは、創立75周年となる東映の歴代オープニング映像を、グッズコレクション化したもの。全5種で、8月下旬より発売。価格はカプセルトイ版が1個400円、ボックス版が1個440円。",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 5.6,
-      "reading_score": 6.38,
-      "notion_score": 6.07,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "AV Watchアクセスランキング AV Watch編集部 2026年8月10日 20:00 今週は、東映映画の歴代オープニング映像をモチーフにしたカプセルトイ「東映ヒストリカル グッズコレクション」のニュースが1位を獲得した。今回のカプセルトイは、創立75周年となる東映の歴代オープニング映像を、グッズコレクション化したもの。全5種で、8月下旬より発売。価格はカプセルトイ版が1個400円、ボックス版が1個440円。 2位は、映画『バック・トゥ・ザ・フューチャー』シリーズとコラボレーションした「時計台モチーフ腕時計」のニュース。タイムスリップの鍵となる“ヒルバレーの時計台”を文字盤に落とし込んだ商品。価格は29,700円で、限定1985本。 3位は、レビュー記事「DIATONEの遺伝子継承、最新なのに懐かしい“惚れる音”Tecnologia e Cuore『DS-TC52B』を聴く」。元・三菱電機のエンジニアで、DIATONE 70周年記念モデル「DS-4NB70」を企画した創業者が設立した新ブランド“テクノロジア・イ・クオーレ(Tecnologia e Cuore)”の第1弾商品をレビュー。読者から多くの注目を集めた。 4位は、夏の特番・配信情報まとめ。そして5位にはニュース記事「“飯テロ画像”がヒント、謎の新作アニメ8月4日21時発表。TOHO animation」がランクインした。 このほかには、アクティブノイズキャンセリング搭載HDMIケーブル、有線CarPlay/Android Autoをワイヤレス化するアダプタ、カセットテープなどをデジタル化する「思い出アーカイブ推進活動」、世界初インクジェット印刷有機ELの27型4Kモニター、LGディスプレイ“RGBタンデム”などの記事が読まれた。 東映の歴代オープニング映像がカプセルトイに。全5種で8月下旬発売 2026年8月7日 15:18 「バック・トゥ・ザ・フューチャー」の時計台をモチーフにした腕時計。1985本限定 2026年8月4日 12:40 レビュー DIATONEの遺伝子継承、最新なのに懐かしい“惚れる音”Tecnologia e Cuore「DS-TC52B」を聴く 2026年8月3日 09:17 トピック 金ロー「ナウシカ」、「真夏の怪奇ファイル」、ABEMAで「葬送のフリーレン」無料配信など。夏の特番・配信情報 2026年8月7日 17:00 「飯テロ画像」がヒント、謎の新作アニメ8月4日21時発表。TOHO animation 2026年8月4日 10:36 世界初アクティブノイズキャンセリングII搭載HDMIケーブル「Pulsar HDMI」。SilentPowerから 2026年8月7日 10:00 純正の有線CarPlay/Android Autoをワイヤレス化するアダプタ 2026年8月6日 11:52 ティアック、カセットテープなどをデジタル化する「思い出アーカイブ推進活動」 2026年8月5日 11:46 MSI、世界初インクジェット印刷有機ELの27型4Kモニター 2026年8月5日 12:45 「画質でテレビ選ぶならOLED」、LGディスプレイが“RGBタンデム”の魅力訴求。液晶とのガチ比較も 2026年8月4日 11:44 小寺信良の週刊 Electric Zooma! 望遠ブーム来てる!? 9年ぶりに大復活した、ソニー「RX10 V」 2026年8月5日 08:00 西田宗千佳のRandomTracking 縦横比はどれがいい？ エンタメ目線で考える、サムスン新「Galaxy Z Fold」 2026年8月6日 08:00 「ガンダム 閃光のハサウェイ キルケーの魔女」8月31日Prime Videoで見放題配信。レンタル/ESTは17日から 2026年8月4日 12:34 カリスマオーディオ評論家の軌跡「長岡鉄男の仕事」5日発売 2026年8月5日 08:00 「かつてのMP3プレーヤーを思わせる」スティック型DAP、FIIO「Snowsky ECHO NANO」。約1.3万円、6色展開 2026年7月31日 10:00",
+      "base_score": 7.1,
+      "reading_score": 9.05,
+      "notion_score": 8.66,
+      "grade": "S",
       "tags": [
+        "ec",
+        "marketing",
         "strategy"
       ],
-      "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "reason": "有市场或战略判断价值；与EC/零售直接相关；语义增量：可能补充反例/边界；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
+          "ブランド",
+          "EC",
           "価格"
         ],
         "formats": [
@@ -14735,29 +14787,32 @@
         ]
       },
       "concepts": [
+        "ブランド",
+        "EC",
         "価格"
       ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.878,
-        "rule_match_strength": 0.833,
-        "experience_similarity": 0.848,
-        "repetition_penalty": 0.35,
-        "gap_bonus": 0.06,
-        "evidence_bonus": 0.0,
-        "boundary_bonus": 0.0,
-        "semantic_bonus": 0.554,
-        "increment_type": "mostly_duplicate"
+        "knowledge_match_strength": 1.488,
+        "rule_match_strength": 0.85,
+        "experience_similarity": 0.863,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.45,
+        "evidence_bonus": 0.32,
+        "boundary_bonus": 0.48,
+        "semantic_bonus": 1.735,
+        "increment_type": "boundary_or_counterexample"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "LPz81j3zGSM1Cyn3NQ3SJVfcodH0/tIhUyHAOzjG0dtdl2Ac66cX5+IZ9kxGWu4rtu3HMxdDDLrQ3cP8Y/kKUH/yGFzLANMY0swiNk7FHeCzzsYv2jE3sEkNQ2Pbu8+T8UUTGTanC7vHKGrgbr7CMWAu3tYLzjzMMwbHvcfhKSgLEiNHBks4Nt3rssjoTg5BCBJQmizwQsA/STXT5NwOJKPDo9wClSVimuDuOrwr5EPBNkg4COWqs5/KyjQO6u1B188O8fgx4zfYxzIQKPqsT9cUDMOUOIT4/g7TOj7aD6ECfAm6zCr87OW1sN0YHUbO28c+1VXN3gX+JCfk26jPFDcYpBk+xnItNm3Cwcvpvzzus/C1AXC2zRg5Oi9d4vM76sm73ya7PN8AWMgi1wUdJ6n78UQjLCI/wuc1MvRQ093b2hHSPzzWIDbjF67GWwDN8DfNxhAosinVzTfTzUUFkCM92wzVvD8W1ttHMTJ0/tQayiFJyvbey+UfsK5K+/VY",
-        "scale": 0.0009268834,
+        "q": "KQzyATfZGDQyCir0QxDLHlnWrsz/DdEjWCfNLTbO1cNDnEoQ5tAg9uYU/1kxTegZyu/XKAg5CsjKzs3+ZPYfRn8HHUvB9eYd78wOMEbMMeCbwt8d6Cw3szYIO1jCwNKm+EUMEDC7DbXSMlLhTr3INFEXyscHtznLI/3Br87OJigABhI8EjpLNeHmutLZROcvGh1BtC73R8FeNCrJ4+UMOarCn+X4nSQ/p+bgTL8h+DW/IVsv8uSkybnFxSYN5/krvsYNEOcn9zvV2DsjLf/KNOMgELmoJ5v+9hHpPSrhHaUAcwq5uycI+eu9uOcDJjHOyuAw5VO+5BDkGTbf163bJzIawCc823AzJEO0wN3awTgIs9vGCmrD2hgsMjJd/fY08NK55Cu4PQEGSr0i3QQiHLAIBi0jJAgowOY6Q/4/vPDh3PjUM0PQETH2IqPHSu/Z9zrKvx0ruh7Y1C3n0jX+oBxA8RHJ3T4m0vM1MjtOB+0mqC4+2vjXxuwiuKZDBBpR",
+        "scale": 0.0009981849,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "e71c0a32d2e5241089",
@@ -14839,7 +14894,7 @@
       ],
       "reason": "涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；语义增量：可能更新2025年前后的既有时间证据；与实际工作场景语义接近",
       "screening_note": "正文未自动读取：HTTP 404",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AI",
@@ -14906,7 +14961,7 @@
       ],
       "reason": "有市场或战略判断价值；与EC/零售直接相关；语义增量：可能更新2025年前后的既有时间证据；与实际工作场景语义接近",
       "screening_note": "正文未自动读取：HTTP 404",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "楽天"
@@ -15158,7 +15213,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "FOPJ1kgALj9GCiniVuruDUANwLktK9MPQRfZUULcycw0yhUCBOw16Or6OVY5Z+gsz/GwOhIlCM66u8IMehMGCnYtGEXX2csx4/r4Mi7bBt28vO0O0DIXwU74S0LZptK66x8Q9TyqNoG6OCbdWJ3uIC0hzNr6mSWdNNvTpNMcTSIbHjkdDk40Kvjiz97PJRZdEBlcylLnP6xJTiG+1+UmKd6W1tXcoCUhusi9NKwm9w/lJ3Eb8/LSy7nE4C0pveoQs+UKN/osOCnaxEQzMuepML4jFaaMTL4g8iDnNCYFEKgIdDjs1wrf1/651br0/j7R5N0MxDf74hP8G/jisMLCQiAuwAQjAlc3QEa70tLy7AAg1+wBH1i4zyw2FCRIBPZO1czJ9jTgKg77OtU60QUgD5kvByEOJTL0vt5ELhYfvfTL5r7MW1DMwAEcCK68X8246ifUnyg6zivZxBzYyEnrkjot7Ci/x0w53xkoNSYi7g8gsRJczP/38us5r6k6+xNE",
-        "scale": 0.0009822802,
+        "scale": 0.0009822801,
         "normalized": true
       }
     },
@@ -15368,7 +15423,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MP3y1UzuNiUtKiUCVvbnJDTbwMYXJfgTRybOM/u/2988pRcH4vEw4MscOXkXVBkUydfDOtspAcTnvq1ISwMJPW0jTD/S6+E56uYXLkTKLv3Lutwrtg8jq0X2SEbW1snSvjEZ6EHjL7/qDTLGSbS4KjQylOj8syDmQuKoutDRBS8A9SwwHh0kYNTf9+ToGuRFKCpO3zsKRNAmMSS34tQvPdThsenYvUJBw/fhI6JM3THTI0wn7s69zt/z2RxC0QYsr77sCskuNx0VxhlGCeG5Ld4QNM2qFOn88xzIFxYLHr7tRyfT0xXx3dvZxM8PGDXQ+M4ns0jSEQvrEPzTxtHhPR4ywAwhAXhALyLT3czIvlAGz/XDAH/hxSQWF0Qw2v491Oq76je9LAjnV9M2xtQW/cX7GR8DHywz3/4dPdr9y+P7ufzVGiHu+h3WP76xRbu78ljMrzoYzxQY1hXC6UcYqBwd4xbQ4VYu2gAZMB5AAuof1hUnqP3zwc8ttcA/CSQ2",
-        "scale": 0.001049947,
+        "scale": 0.0010499471,
         "normalized": true
       }
     },
@@ -15832,7 +15887,7 @@
       ],
       "reason": "包含调查/数据；涉及消费者/用户行为；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2024年前后的既有时间证据；可能补充反例/边界；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "生活者",
@@ -16068,7 +16123,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JPPe90/aHShBJCv3KPPEHSbDvbL9BLkxO0q7LTjm0cUxsDMHyeoxxPscFlcSX/4i4uTlUPwmDbrtsbQJVgQLNXIgCz/G1N811+cDTELlXc6209QUy1IY0EHvQTG7y966708O7SjANrPgPBe6NLvdJkszsrn4uUXjP9/jt8ThGh0Z/CFAPz4xVK/o3d68D/Y8FUND0z/zQvM4HVHE6NUtb7bZxdL3uy5BoPbuR6ojBk/1G0wt7dKi3b7xzhIm0h8AvdvhFt9PLCj9yipAOPTfNc8vO73QR8kB7x3ZKFHoDpUHIi6+phbo/ty/4s/0AS3Wteo/5jnY8BL2GzTqlsHrJBNDpSEX4zYZJBvPx9HwvFAZxtjd8n+2yBX5GUw8+PU10bioAAvONxzmSLkSt+kY9a4eFB0iGhpSyK5IPxoOz/Hx0+66VjDe/xsMK6+8M7zE9C/IvTI/7gT87SLw7yQQuSob8yfB+i8Y1AYbDUFGDOcU0Stduvnu6cgitMUbFBcp",
-        "scale": 0.0010206649,
+        "scale": 0.0010206647,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:06:09.623710+00:00"
@@ -16373,7 +16428,7 @@
       ],
       "reason": "涉及消费者/用户行为；有市场或战略判断价值；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2025年前后的既有时间证据；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "購入",
@@ -16420,7 +16475,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "NQL77xGyIzlaFSP8XRr4OFzeurUp9K4IRRHlFwWor65Aqj4ix+w+7/gTLnE4P+wp3PrnXPI9DbTXyab9afAGQmZCMz7T6OkQ580mKzHhP/CS4OhD0A8x0Bn0Hlu+trHB+0Ed8y28ItToKlXMCqTHGSUquN37w0TcHPXNyre8IRoBEhcsJE9OVwD4ns7gUtoyIiMjlFD7StZsKlGxxs85U9a+sN/ks0RGlufSScUQDhS+GnoR5OyZycPFvQgQ7M8yu7Pd9dtOGjLFyiM4Pu7COdQoAuekNZcZJgnQRDwGG7IJZyatwQj1EsvJutbnNEfN1/dMvivUzCrSJS/cz7vcJAox3ic83W4fPSKrtvnC8l8iwMbgGn/b2D0GLERX1Pcc8duw+DfjPggBVdkG1/csErQACVALIBMqwOYlNhZEs/rBpNPsOjnL+Ub2Gp7EM/X47T22yEYjxSX+6S4IvT/9hCE1xy3P3zNAz+gl+zFJ7ucookcnwf7guPkZupA7BQct",
-        "scale": 0.0009501529,
+        "scale": 0.0009501528,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:06:09.623710+00:00"
@@ -16493,7 +16548,7 @@
       ],
       "reason": "包含调查/数据；语义增量：可能更新2024年前后的既有时间证据；可能补充证据/案例",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "データ",
@@ -16611,7 +16666,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "O9vG0FjcNiNCIk76aQ3UPlbOn78NFMAzN1HqMfzXyeFBokgj1usz2d/zJWMnXug4ye8EPwYl9sO+wLUiW/Y8aX8wEjKp4eIfvesfP0jJIc2k3PA4zzcwuAz6PT3DxLK8zz8U/jXTHsDmLRqzNqXbL2ExsbXxlFTVNvPGscHVKzQUBhlPMjYrW7jT2NTNQ9w2NREixTfTSc9MQVO+1uE4LLvb0enVgVFerua1QLRIzyDO/1krwNCvw8rWw/0gAAkitcnwFM85LjbSuDkxQPDOO+leMbTbRLDf5g3QIFDkHLr7Mi7Nwyry9r+0074SUyTw7OUtvFLa5yYHQBDPrKi/Di0CiRwg9ndCJhOsuurYvzA6xe3t7Ga+1Rf2ACE4BgpXAfTP9CXTKvrZR+066vYVH6gNBDECV08ps9A9QhYTx+S10vTDGk3D9jvwFpO3KL/Q6xnGuCMh4yvk9SjH4DYjkTc23SCK7E5o1t4LXyhR8AkkvSJy0vIN0tY+u5c5HRQs",
-        "scale": 0.0009266269,
+        "scale": 0.0009266268,
         "normalized": true
       }
     },
@@ -16672,7 +16727,7 @@
         "rule_match_strength": 0.867,
         "experience_similarity": 0.884,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -16788,7 +16843,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ng3fsnXxFx1FJmwwHgPlITW3x9klG8g1NkbgQwjtwdI8oDcA2tdOseUbKnw0Xtokpc8DLPcoLb3EmZ4rUhHvQW1VGknQ3s1b8OoYGELsOszP+uUH3EJVsELUUFrF0vWc6B9ExVLXSKD4NSnWPMyyO000jLsFpELE98iwl8HnHwoX7CcyGzk/XuzIwdPAMRIPOEl1wT7CVbY6KS20670qTNbXwwXOnzc7seECM8Uv1SjYIlkcvd+tt6fQzONd6e0SxufUC9IXJCoczU9QVty2GsARQq2ucL766jDOHCDS/5jHNRPZ4iTf4sfIy67yPEzux7At0j3byyXdWyb6lamiOiNOkw0hKnhRKRPSu8vnvEYUlAjg8WPP5ztFKzc53/I20MayFlHKNBgDUbMT2u8yG5IfAi8dNzJD1+ZVX+Aflcvou/SeI1H/6hn5PMG3O8bZ1CrVuAE1pS3MySgSyWoCgRoe0Sup809Osf74QCNC7w4kujdG79MF6tAd3Jw2MudO",
-        "scale": 0.000888567,
+        "scale": 0.0008885673,
         "normalized": true
       }
     },
@@ -16914,7 +16969,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JujJ3SHJGzZSEDzvSNzjNVX/x6wXGdwsPTffNDTTw9FEyTYh5tIC9AUGOlYpT9Qpz9TFRQIt/cDXocwiNeUHN3gbIkDN09IzwgjZICDyG8Ws3e9M1jNs0EfSL066z+zA2h4c8ki5OK/fICvDUJ3JVyUbxMbwgT6+QtvX0bjPH0spDDNINz9EY8nowcroL+02EUQ200UgL8M1HkfQ6MJAP528xcnuvU4poM+wQqEh/SbgHkYo/uaM6r/Wox8F3PwttuEVHuIaJiXTxDlHJPDEQuY9L6rHQ8X6DwqlZEHeJbf4TiXarAQC+Lbd7638TWML6tMioDXJBCPpHzfDvKDSDDI0tR0qGGcuNiih5MnA21EHy/O6GWrM0CE0U0FE3hs81NG97FnFGxrSON1O2fctIZUZByYZHjUMzPJIBgr1wOfAzuSpNUPq7RQHI46qVNLY1C3QxBEi2Bvv3Cvu1Tw3q08X4AXbxSgczQAWGylQ9fI1uApOvQX6wdAurYRPEiok",
-        "scale": 0.000950956,
+        "scale": 0.0009509562,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
@@ -17045,7 +17100,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "UyzY0h7BBylJLEL+fwT1Ki/WtscaFc8YcVftMDPA2NdEnkES0cUn478HJmlMXQFDqr8NQ/tVHLvVrJ4mbAARX2Q5GUTYx/oa2eFMRDDQKNSQrMQi5ihLpznvUlva0sC++zQ721vENK3YOSyXPMKqI2wpwN4IqUG4Nt+votHTPTT14zA1DCxLQ9r3wcLKGfVAMSJQqEXXVpVxK1K+1slPUrnJm9kChltYn+/KT6c830PBJU9JvL6Cv73oohso3voGssP8+ddHGBgM0iM5OezJR9AbD8WvMKzs5BjRByTbILcaY0PJzhvJxbmyycv+T1rbrssuzmfO0fT1KxTjreP1HzsXqQQn9GIISz+vzdDet1hB1N3QEluPvUcRKzNa2gZg48Sh3BLBFgnKcsMr0vYcHqEXHSQQGDg7rbsaOh4TyPDJvfalSlHh6DEJSL7FP7He5Tmbuxsz1hzW8CLtskIUujgi2lWu4FBUxvAVU0xF9+FQozNfzOIC5rsIrKFYEx88",
-        "scale": 0.0008608113,
+        "scale": 0.0008608114,
         "normalized": true
       }
     },
@@ -17073,7 +17128,7 @@
       ],
       "reason": "包含调查/数据；涉及消费者/用户行为；涉及AI实际影响；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2025年前后的既有时间证据；可能补充反例/边界；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AIエージェント",
@@ -17208,7 +17263,7 @@
         "rule_match_strength": 1.047,
         "experience_similarity": 0.878,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -17219,7 +17274,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "FQPj5T/eBjBqGSzoQAfgI0DZzcgjJNMmSDXUOTLhttUQpC4FxuEqx/QVNmwLWvwg6Nb1SvwTCcjgwrIfV+ICQn85+xbOwf443+IWNELvIsGw3+EYzjg2szbvMmDa09Sr6SEf1D/cKqvkOCnNM7vRQzIgs7cdsjnzP9rUrLnrAAwM9i89I0I8S8jjy9q3IdMvMS9Pzkb2Q+JEK0K41eENQ7/Kr9vk1UJMuffPMb059kDS/UIe386L1bfVywYW5PgEsMIDFtk7JyXixytHOf/YOfsXKsffNs8IzUfBKlP3O6cVSx25tCDO6djjybj2NDzYvOM+6CfT3fboMx3ar83xODU5tRQiAGYWMgTeqNjm3j4fub/h9HG2zRcCNkZQ2hYs/M+14TLDGPnsXM800t0ZHbQnLBczFzAgt90hPgYz0drC2+jBIz3o7w0QEajNON3J8jCvzSZa4Qvs4Ankx0QAsyAuACu/0DUkze8sNUZF+O8zxyxf2+8Fw90Tx6NEFwYx",
-        "scale": 0.0010132995,
+        "scale": 0.0010132996,
         "normalized": true
       }
     },
@@ -17232,11 +17287,11 @@
       "published": "2026-08-10T01:38:55+00:00",
       "first_seen": "2026-08-12T08:07:10.910382+00:00",
       "summary": "アシックスは8月8日、9月～10月に開かれる愛知・名古屋アジア大会とアジアパラ大会で日本代表選手団「TEAM JAPAN」が着用するオフィシャルスポーツウェアを発表した。選手が表彰式や選手村などで着用するオーセンティックモデル11品番は8月14日から一般販売。レプリカ応援Tシャツと応援マフラータオルも8月19日から販売する。 The post レプリカTシャツは街着も意識 Shigekixが「太めデニム＋キャップ」提案 アジア大会の日本代表ウェア発表 first appeared on AdverTimes.（アドタイ） by 宣伝会議 .",
-      "content_checked": false,
-      "content_excerpt": "",
+      "content_checked": true,
+      "content_excerpt": "アシックスは8月8日、9月～10月に開かれる愛知・名古屋アジア大会とアジアパラ大会で日本代表選手団「TEAM JAPAN」が着用するオフィシャルスポーツウェアを発表した。選手が表彰式や選手村などで着用するオーセンティックモデル11品番は8月14日から一般販売。レプリカ応援Tシャツと応援マフラータオルも8月19日から販売する。 (左がオーセンティックモデル、右がレプリカとなる応援Tシャツ) レプリカTシャツでは、競技会場での応援に加え、街着として着てもらうことも意識した。選手用ウェアにはパラアスリートが使いやすい工夫や、国内開催の暑さを想定した機能を盛り込んでいる。 スポーツウェアをデニムなどの普段着と組み合わせる「スポーツミックス」は、ヒップホップやストリートカルチャーでも広く取り入れられている。 今回のレプリカ応援Tシャツも、こうした街着としての着用を意識した。アシックスのアパレル統括部 マネージャーの大堀亮氏によると、選手用ウェアよりゆとりを持たせたシルエットを採用。手持ちの服と組み合わせたり、気軽に着たりできるデザインとした。 発表会に登壇したブレイキン男子日本代表の半井重幸選手(Shigekix)は、「僕だったら結構太めのデニムとかに、こういうスポーティーなものを上に合わせたり、キャップをあえてかぶったりする」と、着用時の着こなしを提案した。 また、ファンが同じデザインを身につけることで、選手を身近に感じながら応援してもらえればうれしいとも話した。 Shigekixこと半井重幸選手(左)は、ウェアを「太めのデニム」「キャップ」と合わせる着こなし アジア大会とアジアパラ大会では、基本的に共通のTEAM JAPANウェアを着用する。車いすバスケットボール男子日本代表の鳥海連志選手は、両手の指が少ない自身でもファスナーの引き手をつかみやすく、「開け閉めがスムーズにできる」と好意的にとらえた。 アシックスはファスナーの引き手やフィット感を工夫し、身体の状態に応じて袖などを国内工場で個別調整する。日本パラリンピック委員会（JPC）やパラアスリートとの長年の取り組みで蓄積してきた知見を活用しており、必要に応じて選手の声も反映する。発表会当日にも実際の使い方から新たな気づきが得られたという。",
       "base_score": 6.0,
-      "reading_score": 6.45,
-      "notion_score": 5.41,
+      "reading_score": 6.4,
+      "notion_score": 5.37,
       "grade": "B",
       "tags": [],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
@@ -17244,32 +17299,39 @@
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
-        "formats": [],
-        "intents": [],
-        "signals": []
+        "formats": [
+          "セミナー／イベント"
+        ],
+        "intents": [
+          "参加募集／イベント告知"
+        ],
+        "signals": [
+          "イベント色が強い"
+        ]
       },
       "concepts": [],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.876,
-        "rule_match_strength": 0.836,
-        "experience_similarity": 0.844,
-        "repetition_penalty": 0.42,
-        "gap_bonus": 0.06,
+        "knowledge_match_strength": 4.0,
+        "rule_match_strength": 0.843,
+        "experience_similarity": 0.849,
+        "repetition_penalty": 0.95,
+        "gap_bonus": 0.11,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.336,
+        "semantic_bonus": 0.351,
         "increment_type": "mostly_duplicate"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "G+zL4ED0GygfFEklNffhQkettsQI3M01ORrjIQ6r0Oguv1QF0tZC7uEm+Ec+OwoZ2+zMQ+kKFejdxKMlZQL4K3/wMjbA2dcw3eQRMB7rRvSw1ccX0R0ytlvgKzjNzbfN2DT82zfXN7PcIjPBN7bULEU0rtb8ujrNWP7N0bDJDSgN/0FRJldNTdTd2uP0QOhiMAJHzjwHLNBCFgPDz8tMScL049/lsyJG3v7PJ6sR4Um3Hiwa5Pix3b4Jtgk+7PUcv9f86Oo6LBH4y0g1L8eaNOA6Fai5Tbv3DwrLHgz9/8v3Wgrfwy4MB7O37LInETTU2spAyj/Y7SDgLBfxqc75FxYSyggXDWUUPf3T1MvY00gCxf7t6mLZxDsLHj1P4/NL7OrhAw63MPUBNeX45vIiD6gIGDb0IRMesutFLhJByOPc5PW/RhPp7BPnH6bcK+bS3WHdsSYZ1jzj2zXswEcorCQc6R3BvlgV5esnLkIrDvJJzjQw0wnj1sAmsbgmKCgj",
-        "scale": 0.001042971,
+        "q": "Le/E2EDiEx0jNE4kPPrVREqpo6wM48Q0SSjiLha40dM1xVsWtNI/5+gs/kxDUfws0fPYVQIcE93cuqIzYP4JM3/0OUXD08km2dsJQCDrUAad3MEcyyI/rFTnQybGyarC2jgC3DnPNbbeIzvCOLzILEUym9L9u1HQVfXczqe6BTQSB0NbOkxVU9nk2uDpM+NcKgA7viz2Mt1OHBy+1cBcUbHn1tnqpzdP3f/MJq4T6Uy/MDAW/POz4MUCsgw53e0xwcf289s1IxHiyFYyN86fL9RFI5i4Vrb7BgK5Hx/pC8QBWRDsxCUNAKK537AkFi3T8MFLw0rR+BveJw/xm8/vFB8GyAQRB24UPwjK1tXO1k0RyfXe9lnGqjAIFkVN8QBV6e/RBRC1M/bpPtcB3fMoF6EGIDb9Og4uteBUJxI9xOzU6PW5NSDg7BzzJJ7IIdTUz1rHnR8wxzjk4z3pwkYiqicY9ROwxVYI5PAUKkgrBe831zFM0g3e3MMxt7QqFzor",
+        "scale": 0.0009726569,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T02:00:37.007461+00:00"
     },
     {
       "id": "93288721d104666592",
@@ -17471,7 +17533,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JwvQ8xjkCDA/CkQaUtvmKCXHusYMD9swRUTWHxDSyMg0nioK09wezuD7MGIaWwA2v+/sPf8oAdnjqMIaTvcQK382Bji05tMX7NMUNTbILc2p3vQGyCQ+tUXrUDTU1uKi7VYf1xzUIJfQFA+7CsSuPlMWo84LoTHZQNbYwdTRDirpBTU7Ei1MXc0N2uLeJ+o5KQpP2T4OTdddQhPk398VSM/ZzAPawRctsdbKONIVCCzJGlIi4cum37LG1QQn3gsAtMLp+eInLCLY1zNMOPDcGc4YEs/PNNLqBS/AMj7uI7b7Ny3KxBfe9uDLxMAVOyra4NUs10ny8+/wHCzSxNr7Xgk3vRYR/mMbLRTM5M/Xzy0r6uTG8krNzSQeJWRE6/RN8dPAyxXuOPQEQrdF6+sWHLYbCyIfDCEs0uE2LAkgyuHK0AiiK1LE5h3uJLe0KuDS+UHJ2icf0xXpyy8B0CwYvionAECj7lY4DwI2GUM19Ncc1hxrvvvX2dMNwak8ISE9",
-        "scale": 0.0010498664,
+        "scale": 0.0010498662,
         "normalized": true
       }
     },
@@ -17582,7 +17644,7 @@
       ],
       "reason": "有市场或战略判断价值；语义增量：可能更新2024年前后的既有时间证据；可能补充反例/边界；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "ブランド",
@@ -17694,7 +17756,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Kf6wzkPdFTs6JDr9STTzICLLwcweE+ISQzTxPxvhxdE4pR0P0eEu5+sPIWsZN+xS1uEISQkYEPXtz58LTe8vOn8eKSnEzuZH2tomJUjbKPig9cUvyyg+p0f2KmbQrtLM1SkH3SbkOrbkHz67RLLQN0A9q88QyFTvPr/OzL4BAELoBiY0JRUgL87wu8bgJ880PE9B2E7tOeM2QDXB3ccwPrnwnrzgiDRT1vO0L7cS0VbEIEkT2MeGxs35rRkRwQAtqtzn9+RAEQ/0swxCJu2uO8o5HrjGOcfw4AXPDTAKFsfwQwzWyS/ECLAGxKYHPkHg2Ng90yva7S7hFB3L4uXfLkARrRot+mpNHEDon+nk2y0m4vroAzvM0zYGEDIOwPkz58Gv8BXgHyoKS94P2RYkIZf36Db/ITgit+QvQiIuw+jUx9nFQkbR9hUKHcrUPKrx8zK6sjcl1yje3Qvg3kj1pwcs/jXvA08Y0uwNNy058+YtsQRB4QP94Pkw26AxHiBB",
-        "scale": 0.0010206703,
+        "scale": 0.0010206704,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:43:18.085899+00:00"
@@ -17725,7 +17787,7 @@
       ],
       "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2025年前后的既有时间证据；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AIエージェント",
@@ -17823,7 +17885,7 @@
       ],
       "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；可能形成可复用方法；语义增量：可能更新2025年前后的既有时间证据；可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
-      "screening": "semantic_v7_temporal",
+      "screening": "semantic_v8_adaptive_temporal",
       "learning_features": {
         "topics": [
           "AI",
@@ -18166,7 +18228,7 @@
         "rule_match_strength": 0.863,
         "experience_similarity": 0.873,
         "repetition_penalty": 0.95,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
         "semantic_bonus": 0.608,
