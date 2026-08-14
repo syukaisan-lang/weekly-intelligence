@@ -28,10 +28,11 @@ def main()->int:
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
 
-    require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback')
+    require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback','ISO_DATE','Evidence period'.lower().replace(' ','\\s*') if False else 'evidence\\s*period')
     require('scripts/sync_notion_temporal.py','enrich_item_temporal','base.build_item','confidence_counts')
+    require('scripts/save_to_notion.py','import temporal_knowledge as temporal','Published at:','Evidence period:','temporal.evidence_period')
     require('knowledge.html','knowledge-temporal-v7.js','knowledge-temporal-list-v7.js','调查/数据时间','最新证据优先','证据 / 发布 / 收录')
-    require('knowledge-temporal-v7.js','TEMPORAL_RE','semantic-index.enc.json','evidence_period','temporal_confidence','变化信号')
+    require('knowledge-temporal-v7.js','TEMPORAL_RE','semantic-index.enc.json','evidence_period','temporal_confidence','变化信号',"x.tm.confidence!=='low'",'证据不足')
     require('knowledge-temporal-list-v7.js','有效证据时间','证据 ','发布 ','收录 ','effective_date')
     require('work-system-temporal-v7.js','freshness','CHANGE_RE','CURRENT_RE','time_sensitive')
     require('scripts/weekly_semantic_runtime.py','article_temporal_meta','article_temporal_confidence','evidence_period','first_seen_fallback','temporal_update_bonus','knowledge_effective_date','knowledge_temporal_confidence','knowledge_time_sensitive','repetition_penalty')
@@ -66,7 +67,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: evidence-time Knowledge -> time-aware Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned; upstream workflow completion triggers Weekly rescore.')
+    print('Global impact validation passed: evidence-time Knowledge -> time-aware Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned; future Notion saves preserve time metadata.')
     return 0
 
 
