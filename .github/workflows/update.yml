@@ -5,6 +5,11 @@ on:
   schedule:
     # Friday 19:05 Japan time = Friday 10:05 UTC
     - cron: "5 10 * * 5"
+  workflow_run:
+    workflows:
+      - "Sync Notion knowledge"
+      - "Sync personal work system"
+    types: [completed]
   push:
     branches: [main]
     paths:
@@ -28,6 +33,7 @@ concurrency:
 
 jobs:
   update:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     env:
       DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
