@@ -9,8 +9,10 @@ YEAR=re.compile(r'(?<!\d)(20\d{2})(?:\s*年|年度|[./-])?')
 RANGE=re.compile(r'(?P<y1>20\d{2})\s*年?\s*(?P<m1>1[0-2]|0?[1-9])?\s*月?\s*(?:[〜～~\-–—至到]+)\s*(?:(?P<y2>20\d{2})\s*年?\s*)?(?P<m2>1[0-2]|0?[1-9])?\s*月?')
 POINT=re.compile(r'(?P<y>20\d{2})\s*年\s*(?P<m>1[0-2]|0?[1-9])?\s*月?')
 FY=re.compile(r'(?P<y>20\d{2})\s*年度')
-EVIDENCE_CTX=re.compile(r'調査期間|調査時期|調査実施|実施期間|実施時期|アンケート.*実施|survey.*(?:period|conducted)|対象期間|集計期間|観測期間|データ期間|调查期间|调查时期|实施时间|调查时间|问卷.*实施',re.I)
-PUBLISH_CTX=re.compile(r'公開日|掲載日|投稿日|発表日|更新日|published|publication|公開|发布|发表',re.I)
+ISO_DATE=re.compile(r'(?<!\d)(?P<y>20\d{2})-(?P<m>0[1-9]|1[0-2])-(?P<d>0[1-9]|[12]\d|3[01])(?!\d)')
+ISO_RANGE=re.compile(r'(?P<start>20\d{2}-\d{2}-\d{2})\s*(?:to|through|〜|～|~|–|—|至|到)\s*(?P<end>20\d{2}-\d{2}-\d{2})',re.I)
+EVIDENCE_CTX=re.compile(r'調査期間|調査時期|調査実施|実施期間|実施時期|アンケート.*実施|survey.*(?:period|conducted)|evidence\s*period|対象期間|集計期間|観測期間|データ期間|调查期间|调查时期|实施时间|调查时间|问卷.*实施',re.I)
+PUBLISH_CTX=re.compile(r'公開日|掲載日|投稿日|発表日|更新日|published(?:\s*at)?|publication|公開|发布|发表',re.I)
 
 HIGH=re.compile(r'生成AI|ChatGPT|LLM|AIエージェント|AEO|AIO|GEO|検索アルゴリズム|アルゴリズム|プラットフォーム|TikTok|Amazon|楽天|EC|広告配信|Cookie|SNS',re.I)
 MEDIUM=re.compile(r'消費者|生活者|購買|購入|価格|値上げ|市場|シェア|ブランド|意識|価値観|態度|インサイト|景況|節約|支出|消费|购买|消费者',re.I)
@@ -43,6 +45,9 @@ def nearby(text:str,start:int,end:int,radius:int=90)->str:
 
 def evidence_period(text:str)->dict|None:
     candidates=[]
+    for m in ISO_RANGE.finditer(text):
+        ctx=nearby(text,m.start(),m.end())
+        if EVIDENCE_CTX.search(ctx):candidates.append((4,m.start(),{'start':m.group('start'),'end':m.group('end'),'label':clean(m.group(0)),'basis':'explicit_evidence_period'}))
     for m in RANGE.finditer(text):
         ctx=nearby(text,m.start(),m.end())
         if not EVIDENCE_CTX.search(ctx):continue
@@ -54,6 +59,10 @@ def evidence_period(text:str)->dict|None:
         if not EVIDENCE_CTX.search(ctx):continue
         y=int(m.group('y'));mo=int(m.group('m')) if m.group('m') else None
         candidates.append((2,m.start(),{'start':iso(y,mo),'end':month_end(y,mo),'label':clean(m.group(0)),'basis':'explicit_evidence_point'}))
+    for m in ISO_DATE.finditer(text):
+        ctx=nearby(text,m.start(),m.end())
+        if EVIDENCE_CTX.search(ctx):
+            d=m.group(0);candidates.append((2,m.start(),{'start':d,'end':d,'label':d,'basis':'explicit_evidence_point'}))
     for m in FY.finditer(text):
         ctx=nearby(text,m.start(),m.end())
         if not (EVIDENCE_CTX.search(ctx) or re.search(r'データ|統計|調査|survey|research',ctx,re.I)):continue
@@ -62,8 +71,10 @@ def evidence_period(text:str)->dict|None:
     candidates.sort(key=lambda x:(-x[0],x[1]));return candidates[0][2]
 
 def published_at(text:str)->str|None:
-    for m in POINT.finditer(text):
-        if PUBLISH_CTX.search(nearby(text,m.start(),m.end(),70)):
+    for rex in (ISO_DATE,POINT):
+        for m in rex.finditer(text):
+            if not PUBLISH_CTX.search(nearby(text,m.start(),m.end(),70)):continue
+            if rex is ISO_DATE:return m.group(0)
             return iso(int(m.group('y')),int(m.group('m')) if m.group('m') else None)
     return None
 
