@@ -28,10 +28,9 @@ def main()->int:
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
 
-    # Temporal evidence: occurrence time > publication time > collection time.
     require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback')
     require('scripts/sync_notion_temporal.py','enrich_item_temporal','base.build_item','confidence_counts')
-    require('knowledge.html','knowledge-temporal-v7.js','knowledge-temporal-list-v7.js','调查/数据时间','Notion 收录日','最新证据优先')
+    require('knowledge.html','knowledge-temporal-v7.js','knowledge-temporal-list-v7.js','调查/数据时间','最新证据优先','证据 / 发布 / 收录')
     require('knowledge-temporal-v7.js','TEMPORAL_RE','semantic-index.enc.json','evidence_period','temporal_confidence','变化信号')
     require('knowledge-temporal-list-v7.js','有效证据时间','证据 ','发布 ','收录 ','effective_date')
     require('work-system-temporal-v7.js','freshness','CHANGE_RE','CURRENT_RE','time_sensitive')
