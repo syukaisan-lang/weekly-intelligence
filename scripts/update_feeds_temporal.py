@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import re
 from types import SimpleNamespace
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -18,8 +18,11 @@ _original_score_one=p.score_one
 _original_base_heuristic=p.base.heuristic
 _original_deep_read=p.deep_read_semantic_candidates
 _original_fetch_feed=p.base.fetch_feed
+_original_fetch_xtrend=p.base.fetch_xtrend
 TEMPORAL_REASON_RE=re.compile(r'更新20\d{2}|时间证据|時間証拠|temporal',re.I)
 DENTSU_SOURCE='ウェブ電通報／ビジネスにもっとアイデアを。'
+XTREND_SOURCE='日経クロストレンド 新着'
+XTREND_FEEDER_URL='https://feeder.co/discover/26f6276420/xtrend-nikkei-com'
 BROWSER_UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
 
 
@@ -34,7 +37,6 @@ def score_one_temporal(a,src,sem):
     if kc.get('increment_type')=='temporal_update' or TEMPORAL_REASON_RE.search(reason or ''):
         kc['increment_type']='temporal_update'
         kc['temporal_update']=True
-        # A fresh comparable signal should not be pushed down by legacy lexical duplicate penalties.
         notion=p.clamp(notion+.22)
     return reading,notion,kc,vector,reason,tags,features
 
@@ -90,6 +92,63 @@ def html_feed_fallback(src):
 p.base.fetch_feed=html_feed_fallback
 
 
+def _is_xtrend_article(url:str)->bool:
+    try:
+        parsed=urlsplit(url)
+    except Exception:
+        return False
+    host=parsed.netloc.lower().split(':',1)[0]
+    path=parsed.path or ''
+    return host=='xtrend.nikkei.com' and '/atcl/' in path and '/contents/new' not in path
+
+
+def fetch_xtrend_via_feeder(src):
+    """Discover XTrend article URLs from Feeder's public XTrend discovery page.
+
+    Feeder is used only as a discovery index. Article URLs remain the original xtrend.nikkei.com URLs.
+    If Feeder is unavailable, fall back to the previous direct XTrend listing fetcher.
+    """
+    if src.get('name')!=XTREND_SOURCE:
+        return _original_fetch_xtrend(src)
+    errors=[]
+    try:
+        r=requests.get(
+            XTREND_FEEDER_URL,
+            headers={'User-Agent':BROWSER_UA,'Accept-Language':'ja,en;q=0.7'},
+            timeout=20,
+            allow_redirects=True,
+        )
+        r.raise_for_status()
+        soup=BeautifulSoup(r.text,'html.parser')
+        rows=[];seen=set()
+        for a in soup.find_all('a',href=True):
+            url=p.base.norm_url(urljoin(r.url,str(a.get('href') or '')))
+            if not _is_xtrend_article(url) or url in seen:
+                continue
+            title=p.base.clean(a.get_text(' ',strip=True))
+            if len(title)<8:
+                continue
+            seen.add(url);rows.append((title,url))
+            if len(rows)>=80:
+                break
+        if rows:
+            return rows
+        errors.append('Feeder page loaded but no XTrend article links were found')
+    except Exception as e:
+        errors.append(f'Feeder: {str(e)[:120]}')
+    try:
+        rows=_original_fetch_xtrend(src)
+        if rows:
+            return rows
+        errors.append('direct XTrend listing returned zero articles')
+    except Exception as e:
+        errors.append(f'direct XTrend: {str(e)[:120]}')
+    raise RuntimeError('XTrend discovery failed: '+'; '.join(errors))
+
+
+p.base.fetch_xtrend=fetch_xtrend_via_feeder
+
+
 def adaptive_pre_read_heuristic(src,title,summary,content=''):
     """Throttle expensive body reads for low-yield sources without lowering final semantic scores."""
     reading,notion,tags,features,reason=_original_base_heuristic(src,title,summary,content)
@@ -117,6 +176,7 @@ def mark_version()->None:
     meta['temporal_update_enabled']=True
     meta['rolling_feedback_window_days']=84
     meta['adaptive_attention_budget']=True
+    meta['xtrend_discovery']='feeder_with_direct_fallback'
     for a in payload.get('articles') or []:
         kc=a.get('knowledge_context') or {}
         if kc.get('increment_type')=='temporal_update':
@@ -127,7 +187,6 @@ def mark_version()->None:
 if __name__=='__main__':
     original_sources=list(p.base.SOURCES)
     prepared,source_counts=lifecycle.prepare_sources(original_sources)
-    # Probe sources are intentionally checked only one week in four after a large, persistently low-yield sample.
     p.base.SOURCES=[s for s in prepared if not s.get('_adaptive_skip')]
     p.base.heuristic=adaptive_pre_read_heuristic
     p.deep_read_semantic_candidates=adaptive_semantic_deep_read
