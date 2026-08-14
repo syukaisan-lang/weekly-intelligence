@@ -27,8 +27,8 @@
 
     <section id="workSystemContent" class="hidden">
       <section class="card system-command">
-        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统综合真实工作场景、文章含义、跨领域支撑关系和本地多语言 Embedding；长文章会按段落建立向量，避免只看标题或开头。</p></div></div>
-        <input id="playbookSearch" class="search-input system-query" type="search" placeholder="例如：入职新公司怎么开始？ / 新品知名度低预算有限怎么Launch？ / ROAS下降但自然销售增加怎么办？">
+        <div class="section-head slim"><div><h2>我现在需要解决什么？</h2><p class="muted small">直接输入完整问题。系统综合真实工作场景、文章含义、跨领域支撑关系、本地多语言 Embedding 和时间有效性；问“最新”会偏重当前证据，问“变化”会保留跨年份证据。</p></div></div>
+        <input id="playbookSearch" class="search-input system-query" type="search" placeholder="例如：消费者消费观这几年怎么变了？ / 新品知名度低预算有限怎么Launch？ / ROAS下降但自然销售增加怎么办？">
         <div id="queryIntentHint" class="query-intent-hint hidden" aria-live="polite"></div>
         <div class="system-mode segmented" role="tablist">
           <button class="segment-btn active" type="button" data-system-mode="invoke">按问题调用</button>
@@ -41,7 +41,7 @@
       <section id="systemMap" class="card hidden"></section>
 
       <section id="systemResults" class="system-results">
-        <div id="systemResultsBar" class="system-results-bar"><div><b>可调用知识</b><span>按问题含义、真实工作场景、内容证据和语义向量综合排序</span></div></div>
+        <div id="systemResultsBar" class="system-results-bar"><div><b>可调用知识</b><span>按问题含义、真实工作场景、内容证据、时间有效性和语义向量综合排序</span></div></div>
         <div id="playbookList" class="playbook-list"></div>
       </section>
 
@@ -62,5 +62,6 @@
   <script src="work-system-precision-v4.js"></script>
   <script src="work-system-semantic-v5.js"></script>
   <script src="work-system-vector-v6.js?v=6"></script>
+  <script src="work-system-temporal-v7.js?v=7"></script>
 </body>
 </html>
