@@ -32,12 +32,12 @@ def main()->int:
 
     # Temporal evidence: occurrence time > publication time > collection time.
     require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback')
-    require('scripts/sync_notion_temporal.py','enrich_item_temporal','base.build_item')
+    require('scripts/sync_notion_temporal.py','enrich_item_temporal','base.build_item','confidence_counts')
     require('knowledge.html','knowledge-temporal-v7.js','knowledge-temporal-list-v7.js','调查期','Notion 收录日','最新证据优先')
     require('knowledge-temporal-v7.js','TEMPORAL_RE','semantic-index.enc.json','evidence_period','temporal_confidence','变化信号')
     require('knowledge-temporal-list-v7.js','有效证据时间','证据 ','发布 ','收录 ','effective_date')
     require('work-system-temporal-v7.js','freshness','CHANGE_RE','CURRENT_RE','time_sensitive')
-    require('scripts/weekly_semantic_runtime.py','temporal_update_bonus','knowledge_effective_date','knowledge_temporal_confidence','knowledge_time_sensitive','repetition_penalty')
+    require('scripts/weekly_semantic_runtime.py','article_temporal_meta','article_temporal_confidence','evidence_period','first_seen_fallback','temporal_update_bonus','knowledge_effective_date','knowledge_temporal_confidence','knowledge_time_sensitive','repetition_penalty')
     require('weekly-relations-v6.js','时间更新','temporal_update_bonus','证据时间')
 
     # Feedback attribution must distinguish subject from method/format.
@@ -73,7 +73,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: time-aware Knowledge -> Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned; model writers are serialized.')
+    print('Global impact validation passed: evidence-time Knowledge -> time-aware Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned; model writers are serialized.')
     return 0
 
 
