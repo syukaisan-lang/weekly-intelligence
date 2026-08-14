@@ -1,12 +1,12 @@
 from __future__ import annotations
 import base64,os,re
 from dataclasses import dataclass
-from datetime import datetime,timezone
 from typing import Iterable
 import numpy as np
 from sentence_transformers import SentenceTransformer
 import build_system_model as crypto
 import build_semantic_index as idx
+import temporal_knowledge as temporal
 
 INDEX_ENC=idx.ROOT/'data'/'semantic-index.enc.json'
 MAX_ARTICLE_CHUNKS=3
@@ -33,13 +33,30 @@ def year_of(value,default=None):
     m=YEAR_RE.search(str(value or ''))
     return int(m.group(1)) if m else default
 
+def article_temporal_meta(a):
+    # Same hierarchy as Knowledge: evidence occurrence > publication > collection/first-seen.
+    ev=temporal.evidence_period(article_text(a))
+    if ev:
+        return ev.get('end'),year_of(ev.get('end')),'high','evidence_period'
+    pub=str(a.get('published') or '').strip()
+    if pub and year_of(pub):
+        return pub[:10],year_of(pub),'medium','published_at'
+    first=str(a.get('first_seen') or '').strip()
+    if first and year_of(first):
+        return first[:10],year_of(first),'low','first_seen_fallback'
+    return None,None,'low','unknown'
+
 @dataclass
 class SemanticResult:
     vector:dict;rule_similarity:float;knowledge_similarity:float;experience_similarity:float;rule_top3_mean:float;knowledge_top3_mean:float;experience_top3_mean:float
-    article_year:int|None=None;knowledge_effective_date:str|None=None;knowledge_temporal_confidence:str|None=None;knowledge_time_sensitive:str|None=None;knowledge_time_domain:str|None=None
+    article_year:int|None=None;article_effective_date:str|None=None;article_temporal_confidence:str|None=None;article_temporal_basis:str|None=None
+    knowledge_effective_date:str|None=None;knowledge_temporal_confidence:str|None=None;knowledge_time_sensitive:str|None=None;knowledge_time_domain:str|None=None
     def public_dict(self):
-        d={'version':2,'model_family':'multilingual-e5','rule_similarity':round(self.rule_similarity,4),'knowledge_similarity':round(self.knowledge_similarity,4),'experience_similarity':round(self.experience_similarity,4),'rule_top3_mean':round(self.rule_top3_mean,4),'knowledge_top3_mean':round(self.knowledge_top3_mean,4),'experience_top3_mean':round(self.experience_top3_mean,4)}
+        d={'version':3,'model_family':'multilingual-e5','rule_similarity':round(self.rule_similarity,4),'knowledge_similarity':round(self.knowledge_similarity,4),'experience_similarity':round(self.experience_similarity,4),'rule_top3_mean':round(self.rule_top3_mean,4),'knowledge_top3_mean':round(self.knowledge_top3_mean,4),'experience_top3_mean':round(self.experience_top3_mean,4)}
         if self.article_year:d['article_year']=self.article_year
+        if self.article_effective_date:d['article_effective_date']=self.article_effective_date
+        if self.article_temporal_confidence:d['article_temporal_confidence']=self.article_temporal_confidence
+        if self.article_temporal_basis:d['article_temporal_basis']=self.article_temporal_basis
         if self.knowledge_effective_date:d['matched_knowledge_effective_date']=self.knowledge_effective_date
         if self.knowledge_temporal_confidence:d['matched_knowledge_temporal_confidence']=self.knowledge_temporal_confidence
         if self.knowledge_time_sensitive:d['matched_knowledge_time_sensitive']=self.knowledge_time_sensitive
@@ -72,27 +89,28 @@ class SemanticMatcher:
             c=article_chunks(a);start=len(texts);texts.extend(c);spans.append((start,len(texts)))
         if not texts:return {}
         vectors=self.model.encode(texts,batch_size=32,show_progress_bar=True,normalize_embeddings=True,convert_to_numpy=True).astype(np.float32);out={}
-        now_year=datetime.now(timezone.utc).year
         for a,(start,end) in zip(articles,spans):
             av=vectors[start:end]
             if not av.size:continue
             doc=av.mean(axis=0);n=float(np.linalg.norm(doc));doc=doc/n if n else doc;sims=np.max(av@self.matrix.T,axis=0);rm,rmean=self._agg(sims,'rule');km,kmean=self._agg(sims,'notion');em,emean=self._agg(sims,'private');tm=self._top_temporal(sims)
-            ay=year_of(a.get('published'),year_of(a.get('first_seen'),now_year))
-            out[str(a.get('id') or '')]=SemanticResult(quantize(doc.astype(np.float32)),rm,km,em,rmean,kmean,emean,ay,tm.get('effective_date'),tm.get('temporal_confidence'),tm.get('time_sensitive'),tm.get('time_domain'))
+            ad,ay,aconf,abasis=article_temporal_meta(a)
+            out[str(a.get('id') or '')]=SemanticResult(quantize(doc.astype(np.float32)),rm,km,em,rmean,kmean,emean,ay,ad,aconf,abasis,tm.get('effective_date'),tm.get('temporal_confidence'),tm.get('time_sensitive'),tm.get('time_domain'))
         return out
 
 def temporal_update_bonus(result,quality):
     old_year=year_of(result.knowledge_effective_date);new_year=result.article_year
     if not old_year or not new_year or new_year<=old_year:return 0.,0
+    if result.article_temporal_confidence=='low':return 0.,0
     if result.knowledge_similarity<.78:return 0.,0
     if result.knowledge_temporal_confidence=='low':return 0.,0
     sensitivity=result.knowledge_time_sensitive or 'low'
     if sensitivity=='low':return 0.,0
     gap=min(5,new_year-old_year)
     base=.14+.07*gap
+    if result.article_temporal_confidence=='high':base+=.08
     if quality:base+=.10
     if sensitivity=='high':base+=.08
-    return min(.58,base),old_year
+    return min(.62,base),old_year
 
 def semantic_adjustment(text,result,*,quality,contradiction,practical):
     rule,know,exp=result.rule_similarity,result.knowledge_similarity,result.experience_similarity;fit=max(rule,exp*.98);fb=max(0,min(.75,(fit-.72)/.14*.75));gb=0
