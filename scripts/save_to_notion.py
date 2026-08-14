@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 import requests
+import temporal_knowledge as temporal
 
 API_BASE="https://api.notion.com/v1"
 NOTION_VERSION="2026-03-11"
@@ -58,10 +59,17 @@ def create_page(a):
     children=[]
     for label,value in [("Original URL",a.get("url") or ""),("Source",a.get("source") or ""),("Why saved",a.get("reason") or "")]:
         if value:children.append({"object":"block","type":"paragraph","paragraph":{"rich_text":rich_text(f"{label}: {value}")}})
+    published=str(a.get("published") or "").strip()
+    if published:
+        children.append({"object":"block","type":"paragraph","paragraph":{"rich_text":rich_text(f"Published at: {published[:10]}")}})
+    evidence_text=" ".join([title,summary,a.get("content_excerpt") or ""])
+    ev=temporal.evidence_period(evidence_text)
+    if ev:
+        children.append({"object":"block","type":"paragraph","paragraph":{"rich_text":rich_text(f"Evidence period: {ev['start']} to {ev['end']}")}})
     body={"parent":{"type":"data_source_id","data_source_id":DATA_SOURCE_ID},"properties":properties}
     if children:body["children"]=children
     page=notion("POST","/pages",json=body)
-    return {"duplicate":False,"url":page.get("url"),"id":page.get("id"),"category":category}
+    return {"duplicate":False,"url":page.get("url"),"id":page.get("id"),"category":category,"published_at":published[:10] if published else None,"evidence_period":ev}
 
 def main():
     if not TOKEN:raise RuntimeError("NOTION_TOKEN is not configured in GitHub Secrets")
