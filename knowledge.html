@@ -8,7 +8,7 @@
   <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
   <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; media-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co https://cdn.jsdelivr.net; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; media-src 'none'">
   <title>Knowledge Dashboard</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="knowledge.css">
@@ -17,7 +17,7 @@
 <body>
   <main class="shell">
     <nav class="main-nav" aria-label="Dashboard navigation"><a href="index.html">Weekly</a><a class="active" href="knowledge.html">Knowledge</a><a href="work-system.html">Work System</a></nav>
-    <header class="topbar"><div><div class="eyebrow">EVIDENCE LIBRARY</div><h1>Knowledge</h1><p class="muted">原始证据库：Notion Stock 的 title + summary + 正文 + Comment。这里负责“查依据”，不再承担方法论总结。</p><div class="privacy-note">搜索引擎索引已关闭；Notion 正文与 Comment 只进入加密数据，浏览器输入密码后才解密。</div></div><div class="right"><div id="knowledgeUpdated" class="muted small">读取中…</div></div></header>
+    <header class="topbar"><div><div class="eyebrow">EVIDENCE LIBRARY</div><h1>Knowledge</h1><p class="muted">原始证据库：Notion Stock 的 title + summary + 正文 + Comment。这里负责“查依据”，并支持按证据发生时间观察知识变化。</p><div class="privacy-note">搜索引擎索引已关闭；Notion 正文、Comment、时间证据和语义索引只在输入密码后于浏览器本地解密。</div></div><div class="right"><div id="knowledgeUpdated" class="muted small">读取中…</div></div></header>
 
     <section class="metrics" id="knowledgeMetrics"></section>
     <section class="card category-filter-block"><div class="category-filter-title">Notion 分类</div><div class="muted small">点击分类后会进入专属结果区，并显示当前位置。</div><div id="knowledgeCategoryTags" class="category-tag-list"></div></section>
@@ -27,19 +27,20 @@
       <section class="card"><div class="section-head slim"><div><h2>细分知识主题</h2><p class="muted small">由标题、summary、正文和 Comment 共同识别。</p></div></div><div id="topicCloud" class="topic-cloud"></div></section>
     </div>
 
-    <section class="card knowledge-toolbar"><div class="knowledge-toolbar-row"><label class="search-label">搜索知识库<input id="knowledgeSearch" class="search-input" type="search" placeholder="搜索标题、summary、正文、Comment，例如：AEO、想起、Amazon、价格"></label><label>Comment<select id="knowledgeCommentFilter"><option value="all">全部</option><option value="with">只看有 Comment</option><option value="without">没有 Comment</option></select></label><label>排序<select id="knowledgeSort"><option value="newest">最新优先</option><option value="oldest">最旧优先</option><option value="comments">Comment最多</option></select></label></div></section>
+    <section class="card knowledge-toolbar"><div class="knowledge-toolbar-row"><label class="search-label">搜索知识库<input id="knowledgeSearch" class="search-input" type="search" placeholder="搜索知识；时间问题例：消费者消费观这几年怎么变了？"></label><label>Comment<select id="knowledgeCommentFilter"><option value="all">全部</option><option value="with">只看有 Comment</option><option value="without">没有 Comment</option></select></label><label>排序<select id="knowledgeSort"><option value="newest">最新优先</option><option value="oldest">最旧优先</option><option value="comments">Comment最多</option></select></label></div><p class="muted small">包含“变化 / 趋势 / 过去几年 / 推移 / 最新”等时间意图时，会自动启用本地 Semantic Temporal View：优先调查期，其次发布日期，最后才使用 Notion 收录日。</p></section>
 
     <div id="knowledgeResultsAnchor" class="results-anchor"></div>
     <section id="knowledgeFilterContext" class="knowledge-filter-context"><div><span class="muted small">当前位置</span><strong id="knowledgeFilterLabel">全部分类</strong><span id="knowledgeFilterCount" class="pill">0 篇</span></div><button id="clearKnowledgeFilter" class="text-btn hidden" type="button">返回全部</button></section>
 
     <div class="layout knowledge-layout">
       <section><div class="section-head"><div><h2 id="knowledgeActiveCategory">全部分类</h2><p class="muted small">点击标题可在本站直接展开 Notion 内容；“打开 Notion”只作为备用。</p></div><div id="knowledgeCount" class="pill">0 篇</div></div><div id="knowledgeList" class="article-list"></div><button id="loadMoreKnowledge" class="btn load-more hidden" type="button">再显示30篇</button></section>
-      <aside class="side"><section class="card"><div class="section-head slim"><h2>旧知识复习</h2><button id="shuffleResurface" class="text-btn" type="button">换一组</button></div><p class="muted small">优先从一年以前的 Stock 中抽取。</p><div id="resurfaceList" class="resurface-list"></div></section><section class="card"><h2>当前观察</h2><div id="knowledgeInsights" class="insight-list"></div></section><section class="card"><h2>同步说明</h2><p class="muted small">每周五同步全量 Stock、Notion 页面正文和可读取 Comment；随后 Work System 与 Weekly 使用最新 Knowledge 重新计算。敏感正文只保存加密版本。</p></section></aside>
+      <aside class="side"><section class="card"><div class="section-head slim"><h2>旧知识复习</h2><button id="shuffleResurface" class="text-btn" type="button">换一组</button></div><p class="muted small">优先从一年以前的 Stock 中抽取。</p><div id="resurfaceList" class="resurface-list"></div></section><section class="card"><h2>当前观察</h2><div id="knowledgeInsights" class="insight-list"></div></section><section class="card"><h2>同步说明</h2><p class="muted small">每周五同步全量 Stock、Notion 页面正文、Comment 和可识别的调查/数据时间；随后重建 Work System 与语义索引。敏感内容只保存加密版本。</p></section></aside>
     </div>
   </main>
   <script src="private-knowledge.js"></script>
   <script src="knowledge.js"></script>
   <script src="knowledge-unlock.js"></script>
   <script src="knowledge-deeplink.js"></script>
+  <script src="knowledge-temporal-v7.js?v=7"></script>
 </body>
 </html>
