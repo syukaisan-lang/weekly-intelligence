@@ -24,11 +24,14 @@ def main()->int:
     require('scripts/weekly_semantic.py','semantic-index.enc.json','weekly_embed_node.mjs','multilingual-e5')
     require('scripts/weekly_embed_node.mjs','semantic-worker.bundle.js','rule_similarity','knowledge_similarity','experience_similarity')
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
-    require('scripts/update_feeds_temporal.py','temporal_update','semantic_v7_temporal','p.refresh_existing_scores')
+    require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles')
+    require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','decrypt_weekly_state','source_yield','source_mode','probe','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
+    require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留')
+    require('index.html','weekly-attention-v8.js','最近12周反馈','最近90天','最近8周')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
 
-    require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback','ISO_DATE','Evidence period'.lower().replace(' ','\\s*') if False else 'evidence\\s*period')
+    require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback','ISO_DATE','evidence\\s*period')
     require('scripts/sync_notion_temporal.py','enrich_item_temporal','base.build_item','confidence_counts')
     require('scripts/save_to_notion.py','import temporal_knowledge as temporal','Published at:','Evidence period:','temporal.evidence_period')
     require('knowledge.html','knowledge-temporal-v7.js','knowledge-temporal-list-v7.js','调查/数据时间','最新证据优先','证据 / 发布 / 收录')
@@ -51,11 +54,11 @@ def main()->int:
     require('.github/workflows/work-system-sync.yml','build_semantic_index.py','build_system_model_precision.py',model_lock,'git reset --hard origin/main','/tmp/work-system-model-output')
     require('.github/workflows/notion-sync.yml','sync_notion_temporal.py','build_semantic_index.py','temporal evidence',model_lock,'git reset --hard origin/main','/tmp/notion-model-output')
     update=read('.github/workflows/update.yml')
-    for trigger in ('data/knowledge.enc.json','data/system-model.enc.json','data/semantic-index.enc.json'):
+    for trigger in ('scripts/weekly_lifecycle.py','data/knowledge.enc.json','data/system-model.enc.json','data/semantic-index.enc.json'):
         if trigger not in update:raise AssertionError(f'Weekly must rescore after {trigger} changes')
     for upstream in ('workflow_run:','Sync Notion knowledge','Sync personal work system','github.event.workflow_run.conclusion'):
         if upstream not in update:raise AssertionError(f'Weekly must listen to successful upstream workflow completion: {upstream}')
-    if 'run: python scripts/update_feeds_temporal.py' not in update:raise AssertionError('Weekly workflow must run temporal v7 updater')
+    if 'run: python scripts/update_feeds_temporal.py' not in update:raise AssertionError('Weekly workflow must run adaptive temporal updater')
     if 'build_system_model_v2.py' in update or 'build_system_model_v3.py' in update:
         raise AssertionError('Weekly workflow must not overwrite the unified Work System model')
 
@@ -67,7 +70,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: evidence-time Knowledge -> time-aware Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned; future Notion saves preserve time metadata.')
+    print('Global impact validation passed: Knowledge/Work System semantic-time context -> rolling 12-week feedback -> adaptive 8-week source yield -> 90-day hot storage -> attention budget -> encrypted backup are aligned.')
     return 0
 
 
