@@ -1,15 +1,15 @@
 {
   "meta": {
     "tracking_start": "2026-08-10",
-    "generated_at": "2026-08-14T01:11:51.406396+00:00",
+    "generated_at": "2026-08-14T01:17:21.134963+00:00",
     "screening_mode": "openai_api_if_configured_else_heuristic",
     "new_this_run": 0,
-    "knowledge_context_refreshed_at": "2026-08-14T01:13:11.839513+00:00",
+    "knowledge_context_refreshed_at": "2026-08-14T01:18:54.920858+00:00",
     "knowledge_context_rescored_count": 312,
     "personalization_version": "semantic_v7_temporal",
     "semantic_model_family": "multilingual-e5",
     "semantic_rescored_count": 312,
-    "semantic_deep_read_count": 5,
+    "semantic_deep_read_count": 8,
     "temporal_update_enabled": true
   },
   "articles": [
@@ -25,8 +25,8 @@
       "content_checked": true,
       "content_excerpt": "博報堂の生活者発想技術研究所は7月22日、「生活者から応援されるブランドと社会的価値に関する意識調査」の結果を発表した。2026年1月22日から24日にかけて15～74歳の男女5000人を対象に調査したもので、東京都立大学 経済経営学部の水越康介教授との共同研究のもとで実施した。 身の回りの商品・サービス・店舗・企業のブランドについて「好きなブランド」もしくは「応援したいブランド」があるかどうかを尋ねたところ、全体の46.3%が「いずれかはある」と回答。そのうち、両方が重なっている人の割合は全体で27.5%。年代が若くなるほど「好きかつ応援したいブランド」がある割合は高くなり、10代では41.0％と全体より10ポイント以上高い結果となった。 また、各ブランドについて「友人や同僚などに勧める可能性はどれくらいあるか」を10段階で評価を尋ねた。「最も応援したい」ブランドがある人の、そのブランドに対するNPS（ブランドの推奨意向スコア）が3.8であるのに対し、最も「好きかつ応援したい」ブランドのNPS は20.6と、5倍以上に跳ね上がることがわかった。 「好き」かつ「応援したい」ブランドに共通する4つの要素 生活者発想技術研究所では、「よいブランド」の具体像の検討を目的として、学際的な研究者や有識者7人に対してインタビューを行い、ブランドを評価するための33個の尺度項目を整理した。「最も好きかつ応援したいブランド」があると回答した15～74歳の男女1374人を対象に、それぞれの項目にそのブランドがどの程度当てはまるかを聴取。「最も好きかつ応援したいブランド」に共通する要素を抽出する分析を行った。 調査の結果、最も好きかつ応援したいブランドは「真（他者の意見や客観性によらず、「私が信じる」と感じられるものがある）」「善（社会課題に対して行動し、“私のため”と“社会のため”を両立している）」「美（感性に響いて個性を引き出し、私の世界をつくりあげている実感を与えてくれる）」「場（立場にとらわれない好きな自分に還り、生きている喜びを感じられる居場所である）」の4つの共通因子を持つことが明らかになった。 4つの要素のうち、「場」「真」「善」はそれぞれ、独立してブランドの推奨意向を高める影響力を持つのに対し、「美」の因子は「自分だけの世界として大切にしたい（秘密にしたい）」というファン特有の心理を反映する傾向にある。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 0 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい また、各ブランドについて「友人や同僚などに勧める可能性はどれくらいあるか」を10段階で評価を尋ねた。「最も応援したい」ブランドがある人の、そのブランドに対するNPS（ブランドの推奨意向スコア）が3.8であるのに対し、最も「好きかつ応援したい」ブランドのNPS は20.6と、5倍以上に跳ね上がることがわかった。 「好き」かつ「応援したい」ブランドに共通する4つの要素 生活者発想技術研究所では、「よいブランド」の具体像の検討を目的として、学際的な研究者や有識者7人に対してインタビューを行い、ブランドを評価するための33個の尺度項目を整理した。「最も好きかつ応援したいブランド」があると回答した15～74歳の男女1374人を対象に、それぞれの項目にそのブランドがどの程度当てはまるかを聴取。「最も好きかつ応援したいブランド」に共通する要素を抽出する分析を行った。 調査の結果、最も好きかつ応援したいブランドは「真（他者の意見や客観性によらず、「私が信じる」と感じられるものがある）」「善（社会課題に対して行動し、“私のため”と“社会のため”を両立している）」「美（感性に響いて個性を引き出し、私の世界をつくりあげている実感を与えてくれる）」「場（立場にとらわれない好きな自分に還り、生きている喜びを感じられる居場所である）」の4つの共通因子を持つことが明らかになった。 4つの要素のうち、「場」「真」「善」はそれぞれ、独立してブランドの推奨意向を高める影響力を持つのに対し、「美」の因子は「自分だけの世界として大切にしたい（秘密にしたい）」というファン特有の心理を反映する傾向にある。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 0 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい 生活者発想技術研究所では、「よいブランド」の具体像の検討を目的として、学際的な研究者や有識者7人に対してインタビューを行い、ブランドを評価するための33個の尺度項目を整理した。「最も好きかつ応援したいブランド」があると回答した15～74歳の男女1374人を対象に、それぞれの項目にそのブランドがどの程度当てはまるかを聴取。「最も好きかつ応援したいブランド」に共通する要素を抽出する分析を行った。 調査の結果、最も好きかつ応援したいブランドは「真（他者の意見や客観性によらず、「私が信じる」と感じられるものがある）」「善（社会課題に対して行動し、“私のため”と“社会のため”を両立している）」「美（感性に響いて個性を引き出し、私の世界をつくりあげている実感を与えてくれる）」「場（立場にとらわれない好きな自分に還り、生きている喜びを感じられる居場所である）」の4つの共通因子を持つことが明らかになった。 4つの要素のうち、「場」「真」「善」はそれぞれ、独立してブランドの推奨意向を高める影響力を持つのに対し、「美」の因子は「自分だけの世界として大切にしたい（秘密にしたい）」というファン特有の心理を反映する傾向にある。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 0 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい 4つの要素のうち、「場」「真」「善」はそれぞれ、独立してブランドの推奨意向を高める影響力を持つのに対し、「美」の因子は「自分だけの世界として大切にしたい（秘密にしたい）」というファン特有の心理を反映する傾向にある。 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 0 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい",
       "base_score": 8.4,
-      "reading_score": 8.98,
-      "notion_score": 8.69,
+      "reading_score": 8.95,
+      "notion_score": 8.67,
       "grade": "S",
       "tags": [
         "consumer",
@@ -70,7 +70,7 @@
         "rule_match_strength": 0.872,
         "experience_similarity": 0.865,
         "repetition_penalty": 0.95,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
         "semantic_bonus": 0.328,
@@ -345,7 +345,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "UgfoxVXQJR8+BzEnerXMLzbKuNY3HM09N1XHMyuxz8dE0iccqu8rlfQGUEkeftg4pfjKRN47EbD6mqoMURIAJXQwTTK7zsY8/bz3QzrWIeuQs95BsyVRxnnJdlTS3+i/uGQP7CvQS6baHx2XEKW9TXsgpNADnx3Hdd/FgrLXKEDp4iRgAk5mb+/T6NvQIAxcIUdgtToOT8t/PzfPztU5U+qwmrbSjARbouzZD7ks5yLMNEgizLOEyebiyy408/MVnrXj7dFMJzsGziVLa/HHLq5BNLviL9Db5SLKBD76BY8hLCKRjSX+6eybzZgBWjysqbsvxFfV9vn3JTWwyuXpVi1Bwxki8VkLPSHQ7rzA2Egfx9yT+jrEuR0oM1Uz69Zi4LGwtB4CVh71WNY09uUlFb1E9xwaAy4k8sUGRPsGztrjrf2yFW+yHiIXLcXFPrvF2k/QrS811SL0wjLg3xcziB0t5DmREGpb271AEUc/BNsd0S1c0vjb3dUM14dTLTRW",
-        "scale": 0.0008493715,
+        "scale": 0.0008493716,
         "normalized": true
       }
     },
@@ -1296,7 +1296,7 @@
         "rule_match_strength": 0.882,
         "experience_similarity": 0.88,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -1372,7 +1372,7 @@
       "content_excerpt": "世の中のほとんどのビジネスやプロダクトは、マーケットの全顧客をもれなく成長ルートに導くことはできません。カスタマーダイナミクス内での課題を明確にするために、失敗ルート（Failure route）として把握します（図4-12）。 失敗ルートの理由としては、プロダクトの独自性と便益の提案内容が、①提供すべき顧客層に届いていない（認知されていない）、②顧客層に届いているが理解されていない、③顧客ニーズに合っていない／もしくは合わなくなった、という3つがあります。その場合、「顧客心理」が変化しないので購入意向も形成されず、購入行動に移りません。 また、一時は購入していたが、競合や代替品の存在で顧客ニーズが満たせなくなってしまった、もしくは顧客を取り巻く環境変化で顧客ニーズ自体が変化した場合、顧客は離反します。 具体的には、次の5つの失敗ルートがあります。 F1 ：「セグ9 未認知顧客」の認知は獲得したが、そもそも顧客に便益と独自性が理解されなかった、またはニーズやインサイトに合わず購入意向のない「セグ8 消極 認知未購入顧客」になるルート F2 ：購入意向があったものの、様々な情報に触れたり体験したりする中で消失してしまった「セグ7 積極 認知未購入顧客」から購入意向を喪失して「セグ8 消極 認知未購入顧客」になるルート F3 ：同様に、「セグ5 積極 離反顧客」から購入意向を喪失して「セグ6 消極 離反顧客」になるルート F4 ：一般顧客からの離反で、一度は顧客化したが競合や代替品に移った、顧客側の都合でニーズ自体が消失したといった理由により「セグ3 積極 一般顧客」から購入意向を喪失した「セグ4 消極 一般顧客」経由で「セグ6 消極 離反顧客」に移行するルート F5 ：F2と同様に購入意向を喪失する動態で、「セグ1 積極 ロイヤル顧客」から「セグ2 消極 ロイヤル顧客」を経由し、セグ4の低頻度に移行する、またはセグ6へと離反するルート。長期的に売上や高い利益を支える積極ロイヤル層の離反は、ビジネスのインパクトが短期的にも長期のLTVにも最も大きい 購入意向を保ったまま頻度が減る、セグ1からセグ3への移行、そのまま離反するセグ3からセグ5への移行という動態もありますが、ここではFルートと捉えていません。 また、セグ9と、主に失敗ルートで着地するセグ8、セグ6には「（競合）（カテゴリー外）」と記しました。これらのセグメントの顧客は、自社プロダクトの対象顧客でありながら、競合商品やカテゴリー外の代替品を使っている状態です。 次項では、復帰ルートを解説します。 会員になると、既読やブックマーク（また読みたい記事）の管理ができます。今後、会員限定記事も予定しています。登録は無料です",
       "base_score": 8.15,
       "reading_score": 10.0,
-      "notion_score": 9.67,
+      "notion_score": 9.66,
       "grade": "S",
       "tags": [
         "consumer",
@@ -1412,7 +1412,7 @@
         "rule_match_strength": 1.02,
         "experience_similarity": 0.879,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.23,
@@ -1423,7 +1423,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JOna8STlGjEpIScQKg/PETfRvM4YHeM7KS3iUTrcu9Y7zxcF9cQvxOIOGX8dOgIwtvwCVQsu88vovaJCNdwKNk0xFhbV3eUs/+kiMi/hAdHH6+0O1RUn2TP+PVHk0OPA5R0U2BnYK48GHhLKQZalQFE7wrXvsi3zOeXV0cDPIB0F/Bg0AyouU9nxxOHDJgIcGhNF+CLaJ9NoRk3H5+UcSLvGuOLhsjMtwff9NNMj/RbCIyw639+uuNLssgkl2xcdt8QIA9g/IxoG2jghSubOHNAWBcjaNNUXCinxKTj5Ga79Iyzlw0XC6MLP2b37NCbMy9gqwUT59yAEASXpwePPPxwXwxUd0nMKFRLe2uziwTEf6/ro7FC4si/0FERK7uk56fbgwyLiIOrFXfEu8PIYLLsP/T8jQBwu4OErR/ZD0PPKzwesPyuz/jHpH7DdJL7p5ES3uiAvyxrx3T/auS8lzwAQ0i7G5y89zcoyMDY13gMf0itJ8ue+6NQO4bkwHyZF",
-        "scale": 0.0010922135,
+        "scale": 0.0010922136,
         "normalized": true
       }
     },
@@ -1474,7 +1474,7 @@
         "rule_match_strength": 0.865,
         "experience_similarity": 0.863,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -1498,51 +1498,75 @@
       "published": "2026-08-13T23:00:39+00:00",
       "first_seen": "2026-08-14T00:31:03.075697+00:00",
       "summary": "ピクルスネイルやダウンジャケットなど、食材をブランドのカルチャーとして育て続けるKFC France。期間限定ネイルバーの展開から、商品販売にとどまらないコミュニティ型マーケティングの設計を読み解きます。",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 6.1,
-      "reading_score": 6.78,
-      "notion_score": 6.47,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "0 0 欧米を中心に、いまピクルスがSNSで存在感を増しています。レシピ動画やユニークなアレンジメニューだけでなく、ファッションや美容にまで広がるなど、食べるものを超えたカルチャーとして注目されるようになっています。 その流れに乗る形で、KFC Franceが「Pickle Club」キャンペーンを実施しました。ピクルスを主役にした期間限定メニューの発売に合わせ、フランス・マルセイユで期間限定のネイルバー「Pickle Nails Club」をオープン。 Marketing Mind(@marketingmind.in)がシェアした投稿 フランス人ネイルアーティストがデザインした3種類のピクルスネイルを体験できるほか、ピクルスを使ったモクテルや新商品の試食も楽しめる完全予約制のポップアップです。 KFC Franceは「ピクルスは賛否が分かれる食材だからこそ会話が生まれる」と考え、その話題を“身につけて楽しむ体験”へ広げました。ブランド担当者も「商品を食べるだけではなく、レストランや街、SNSまで含めて楽しめる体験にしたかった」とコメントしています。 THE/STUDIO | Custom Manufacturing(@thestudio.official)がシェアした投稿 以前にもKFCはピクルスを詰めたダウンジャケット「Pickle Puffer」を発表 して話題を集めました。今回もネイルという新たな切り口を採用しており、ピクルスを食べ物ではなく、ブランドを象徴するカルチャーとして育てようとしていることがうかがえます。 単に新商品を売るのではなく、「ピクルス好き」というコミュニティを形にし続けることが、この施策の核心といえそうです。 その他のマーケティング事例についてはこちら https://predge.jp/search/post?genre=26 会員登録、メルマガの受信設定はこちら https://predge.jp/ 0 1 米KFC、チキンの作り方をVRゲームで学ぶトレーニングプログラムを導入 0 みんなで集まって盛り上がれ！英KFCがゲームイベントをFBで生配信 4 蔵前でいいちこ巡り クリエイティブな街と老舗ブランドが交差する回遊イベント 週 月 0 Suicaのペンギンで夏の来店動機を創出 ベックスコーヒーの販促キャンペーン 1 毎年待ち遠しい「鳩の日」へ 豊島屋に学ぶ記念日マーケティング 1 CMだけに終わらせない 田中樹起用・SABONのアンバサダー戦略 0 ゲームの新エリアが横浜に出現！『ぽこ あ ポケモン』みなとみらいジャック 2 日本上陸30周年を地域の未来へ スターバックスが3県から始める地元共創PR 0 選択肢を増やさず迷いを減らす pdc「毛穴フォーカス」さっぱりしっとり2択の洗顔 2 おかっぱからロン毛へ22年ぶりの大刷新 THE ALFEE×NEWクレラップ新CM 0 開業25周年×ホラー15周年！ 複数の節目を秋の熱狂へ変えるUSJのPR設計 1 町のシンボルカラーを全身で体験 北竜町「ひまわりイエローラン」の地域ブランディング 1 創業130年記念のオリジナルデザイン、鳩サブレー1枚専用缶は内側まで楽しい 2 日本上陸30周年を地域の未来へ スターバックスが3県から始める地元共創PR 1 2日間で1トン超完売の実績を次へ 角上魚類“活魚車”直売会の集客術 2 好き嫌いが話題を生む チョコミントのPR・マーケティング事例10選 0 AIモデルが「海物語」TVCMに登場 伝統IPと最新技術を掛け合わせた広告事例 2 おかっぱからロン毛へ22年ぶりの大刷新 THE ALFEE×NEWクレラップ新CM 0 ドムドム×銚子電鉄 異業種コラボでファンを越境させる仕掛け 1 えんきん×『薬屋のひとりごと』がコラボ 目を酷使する制作スタッフを支える応援企画 3 捨てられる雪が真夏の宝物に 280kmの距離から海老名に届く「雪でアソビナ」 4 40周年の辛ラーメンが「夏×辛さ」で攻める 海の家に真っ赤なポップアップ登場 2 反響を元に規模を拡大！ 八景島シーパラのマツケン夏企画がパワーアップ 0 眠っていた織機から年商35億円へ ヒオリエ「ホテルスタイルタオル」の逆転劇 0 ピクルスを“食べ物”から“カルチャー”へ KFC Franceのマーケティング戦略 0 地域の魅力を30秒で発信 縦型動画で若者の関係人口を育てるカヤック「オモシローカル」 0 視聴者を出演者へ Netflixが仕掛けた最高のファンサービス 0 ＼ Pick of the week ／先週の話題事例ピックアップ＜8/3-8/9＞ 1 8月13日は国際左利きの日 ぺんてるが「左きき専用広告」で仕掛ける共感マーケティング 0 「恋愛レボリューション21」を資格CMに AFP取得後の人生を4役で描く日本FP協会 0 男性が3日間ビルボードの中で生活？ 映画設定を現実化したNetflixの話題化施策 0 冷却シートを社会課題の解決策へ ビオレが高校野球を支えるブランド施策 0 ミキティがワイプで忙しい朝を実況！ サボリーノ新商品WebCM",
+      "base_score": 7.7,
+      "reading_score": 9.65,
+      "notion_score": 9.2,
+      "grade": "S",
       "tags": [
+        "ai",
         "marketing",
-        "strategy"
+        "strategy",
+        "method"
       ],
       "concepts": [
-        "ブランド"
+        "AI",
+        "SNS",
+        "ブランド",
+        "広告",
+        "シェア",
+        "事例"
       ],
       "learning_features": {
         "topics": [
-          "ブランド"
+          "AI",
+          "SNS",
+          "ブランド",
+          "広告",
+          "シェア",
+          "事例"
         ],
-        "formats": [],
-        "intents": [],
-        "signals": []
+        "formats": [
+          "セミナー／イベント",
+          "事例／ケース",
+          "新商品／新サービス発表",
+          "キャンペーン／販促"
+        ],
+        "intents": [
+          "商品・サービス告知",
+          "販促告知",
+          "事例共有"
+        ],
+        "signals": [
+          "PR／告知色が強い"
+        ]
       },
-      "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "reason": "有市场或战略判断价值；涉及AI实际影响；可能形成可复用方法；语义增量：可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.896,
-        "rule_match_strength": 0.864,
-        "experience_similarity": 0.855,
-        "repetition_penalty": 0.43,
-        "gap_bonus": 0.0,
-        "evidence_bonus": 0.0,
+        "knowledge_match_strength": 3.797,
+        "rule_match_strength": 0.879,
+        "experience_similarity": 0.872,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.28,
+        "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.624,
-        "increment_type": "mostly_duplicate"
+        "semantic_bonus": 1.31,
+        "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "MgHDxUvEMDY/PSYTZO7LJDXVw8QgCQY7OC7uIwfHwNYpqS4XxcsLlgYWRlM3YxgtsP7lRNg4J83l4L4ZWRQUOX8eLza9zbgYBA4gIBq/Su6e390kyBkZpCD8Y2TgxNDGvTse+kzbBazlHRvZQqmtXz42os4KyE3UVua/vM3IIGbr4ypWKy0XTNXc6dHYIAorLhxc/D8jUsNVWEru1dY/Osfpjb7ztUJLrvuqPsIu/T/xCWoE49Siwpnc2g0XwRwnlagSOu8eCRbwtjAdMtTJWblFJ9XWKrbt8AqxHUbeOJYNISfQ3Ui2+LvZrL7uPj/L4NAvySTR+he+EjLl1cWnQyz7rPIWy3wqQy7Audu73jYW6BDG/F+9rCQYIldH/Ok/7tLKtjDhKdvOTPk59NcZYaMF9TseBxc4xuUmChMOtgDIt+vQR0zB6B0SMdzHPqjd4DW5pTcZwxzh0Ej9xC0oniIR2DzD/E4vAdsbOT1I8r4fvCguqQ0Cyu4aratMKDk8",
-        "scale": 0.0009363376,
+        "q": "PfPM7WLVG0tPI04VWPfYNkuyvbgwDvIwT0DpSSjCyrxKtDwOzs8moPYiPGo5dBIlrvDLRvdAHLLEuKYWYfEhMn8oOEKsz7o13fEFKCO9ON6Yy9kT1yMunjoEUWHOud+y1EUk3EzTJ53qGy7CSqWWV0IlrdAIuFXBWs6uwsHHI0De+i9ZOEU1S9XQ2svYLQtXNT9Q3CwLZb1FLk7Ww/MoU8XHqMjbpFJQjsjBRqQ0BE7eHHEV3ceLzZ25txMvvw4um6UeEfI4EzrorEYaPdXRZMBRLr+wP6cECxvASz7oJZcLRy7DsD6498rQrLMENlXk4tVQuj7E8xnlFyrWxMqnRkgKof480X44LR7L1OW0v1EQxeXE+Vu0liw3J1lF+/BAt+iv5y/GPurpY99K19soNKEK/SogFS8dv+VAQ/cghd/N0vqpTGjC3SUYH6OvYanG20avpSMjxyfXv0b6wi4PoSQx4TC/02Y64eceOlFG5OAqsSZevg7qvMoepYxhGEhJ",
+        "scale": 0.0008393064,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "94e4ab7b1b9593e80f",
@@ -1642,7 +1666,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "LPfjsC71IxA/FBkcOwXsGTvlnuAL3tMYTgUJGPTDtNk4vy0I498+zgcg/VseV9kZ0BHWJAMg/t3Ss+gZUfv+J3E9BTi64/YY3vMfMSTwOeDZ9scz0Tg8nhLiV1vgz6/X8EXuCSrJSr7kNyn0FubFPmEY39gTujavSBbI0rjyDQH7NCcWBjQrO/HcxtP2RwdQIDBHl0sIPt09Ihj16e4hKtrBsfT3qjNIp/DxS9cJBheoEyAy/Pqk5Lju3AYcwOMMwtXiCfQsFg/e2SIiStiBLOUcBqm1G6IEAifHDiPh9cIodDXIxhDC/9vU3sPXD0Do7cw6wFbn7g3nMC7Tz+bqFioR7BMq2VoMSyC42unV8EYi2fHzBljS0CUDGycww+lNE/O/6S3OIQT4WvBC6A4iJZYJ40lFFg4f3u8aL/IsuO7Nwti+QDjvBzD2/KDCTtvy10DKkCEb2wbc2BPSzlgDv0Q56Ubl1igVycIBOS8j3AjywSQ13w7a1+88tLUjAiU4",
-        "scale": 0.0010712377,
+        "scale": 0.0010712378,
         "normalized": true
       }
     },
@@ -2070,7 +2094,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "HPzf4mfoKFJnHjsRYerjGkbFwtX6Fb9sGhKwCCq8xMFEuTQc7bv68+kTU3YrTSIomO6uPhUYA6XutLZBf/T9KEcdGESy5N9B0t3qFD3DLruq878AzEJOt2DoNUDFyr2P0Vs/7yLPQaXV/xLYV6vKZBcvqsPCg0e7Sta74anOGBkACR4vHwxXZZr84uroMcMtSxRh9E3VQNglC0mz0+81Np/px8TAtSoesNLXP6o5xh3nHFJM4hSm36/lwQEf1vBBs7cRLO1fQyPJr0I+O9ywLuQ5Na/OJf/z7C/IJCnzTavTVT2z1jf18dbO68/gG0XZusYmtV7U2VfjJj/Nxq/INTtNxSIv6nc/Qz/quOHCtT3t1wK3x3Gh0hAPK1dM/hhb99an5T7vSjcAQMo0z/MaW6ANGzMZ+zYkrepLUu0cxc3B2eW/Bhre1gYTQqqoQsWwA1vv4xMPzy7Wwhjb3TEohCgF3B+Dw2cXyQwpGkxQ/+U12zFJxP/3zNE/yKIuIz9d",
-        "scale": 0.000891622,
+        "scale": 0.0008916223,
         "normalized": true
       }
     },
@@ -2187,7 +2211,7 @@
         "rule_match_strength": 0.853,
         "experience_similarity": 0.867,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.752,
@@ -2507,7 +2531,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Hwfgy0/MHCBwDTYGVPTEQUui1boN+8JRODTcRznUsdlHji0ZstolrO8TGlkad+MawAcCVPo2B8oazIEjQfoiOm0ySimr8bVUA9sVUPwIKurD3sINykEusUcTOXPe18KM10Yn3U7hUaPwIBzULJK5SU4nt9YYl1rmRQzToO30EzUK8ygaNy8XRNTx6uyyMRBSJRBS1SrSQrVLJTna6uUuNcLdr9Tpqhw+nNvjK8oV5lLMFzsh3a/LwsTVqPlCwxAYotEEGvM3HBYf9jwvKgK7NcwnHYizJrrSCSK65inzIZ4OXwjbukLmCNO2zI8cK0HmvrdYszHCBRH0QUjAy87rR0YY0xszAFUYVRb69NUAr0MhzvPz5lWftUIyRDs6+Os25tS77k2xI+3jOssS0QMLML4PAD8gFEQuwq0WKBct297Bw/zDOzDF9BQFNpq0Ra7e+kTAt0BYuhXm0BzxyU/8nSEH/hPjxgonl98ePDly+bsQuggw6uv2+84o1qwqDQtS",
-        "scale": 0.000935412,
+        "scale": 0.0009354121,
         "normalized": true
       }
     },
@@ -2520,50 +2544,66 @@
       "published": "2026-08-13T14:00:00+00:00",
       "first_seen": "2026-08-14T00:30:53.512416+00:00",
       "summary": "2025年7月22日の記事を編集して再掲載しています。脳は記憶を保存する箱。まさにパソコンでいうところのハードディスクである。…だとすれば、そこに保存されたデータ（記憶）を、また別のドライブ（脳）に移動できるような気がします。非常にSFチッ…",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 5.5,
-      "reading_score": 6.9,
-      "notion_score": 6.56,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "2025年7月22日の記事 を編集して再掲載しています。 脳は記憶を保存する箱。まさにパソコンでいうところのハードディスクである。 …だとすれば、そこに保存されたデータ（記憶）を、また別のドライブ（脳）に移動できるような気がします。非常にSFチックな考え方ですが、私たちフツーの人ではなく、脳の働きに詳しい専門家、神経科学者たちはどう考えているのでしょう。 脳から記憶を抜き出すにはどうすればいいか…ではなく、そもそもそんなことできると思う？というのは、ちょっとユニークな調査です。 調査を行なったのは、オーストラリアのモナシュ大学の神経科学者 Ariel Zeleznikow-Johnston氏率いる研究チーム。312人の神経科学者を対象に、死後保存されたヒトの脳から記憶を抜き出すことができるかをヒアリングしました。その結果、神経科学者の多くが「 可能である 」と考えていることがわかりました。 可能だと考える理由は、脳神経科学者の多くが、記憶とは動力学過程ではなく、 物理的な基質 だと考えているから。 調査では、7割の科学者が記憶の物理的分子が存在すると回答。神経結合の安定的変化と、タンパク質と、その他の細胞構成要素の間の相互作用にそれらは保存されており、つまり理論的には、その物理的分子を取り出すことができるというわけ。 んじゃ、やってみる？となると話は別。 なぜならZeleznikow-Johnston氏いわく、どの神経生理学的機能にどれほどの割合で記憶が保存されているかが、明確にわかっていないからです。調査に回答した科学者たちも、整体分子や細胞化構造など、原子から分子からナノスケールまで、何をどれだけ取り出すかについては意見が大きく別れたといいます。 取り出せるモノはあるんだろうけど、それがどこのどれでどれくらい必要なのかはわからないわけです。 現実には不可能でも理論的には取り出せるとして、どうやる？という質問も調査には盛り込まれました。 その手段として挙がったのが、 アルデヒド固定凍結 。物質を急速冷凍することで、ガラスのような固体に変えてしまう手法です。凍結された脳から記憶を取り出せるかという質問には、さまざまな予想が出たものの、できる！という答えの中央値は40％ほど。また、脳に保存されたデータをまるまる移行できるかという質問の答えも、中央値は40％ほど。 今回の調査を経て、Zeleznikow-Johnston氏は学術業界から100％という答えはないにしろ、0.1％でもないとし、専門家の多くができると思っていることがわかったといいます。また、今後脳へのインプラントやエミュレーションなどの研究が進めば、できると考える科学者はより一層増えるだろうと 語って います。 研究論文は PLOS One にて公開されています。 Daily Weekly Monthly Amazon Daily Weekly Monthly Amazon",
+      "base_score": 7.75,
+      "reading_score": 9.7,
+      "notion_score": 9.25,
+      "grade": "S",
       "tags": [
-        "research"
+        "research",
+        "ai",
+        "ec",
+        "method"
       ],
       "concepts": [
+        "AI",
+        "Amazon",
+        "調査",
+        "研究",
         "データ"
       ],
       "learning_features": {
         "topics": [
+          "AI",
+          "Amazon",
+          "調査",
+          "研究",
           "データ"
         ],
-        "formats": [],
+        "formats": [
+          "調査レポート"
+        ],
         "intents": [],
-        "signals": []
+        "signals": [
+          "再利用できる方法論"
+        ]
       },
-      "reason": "包含调查/数据；语义增量：可能补充证据/案例",
+      "reason": "包含调查/数据；涉及AI实际影响；与EC/零售直接相关；可能形成可复用方法；语义增量：可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 1.1,
+        "knowledge_match_strength": 5.168,
         "rule_match_strength": 0.847,
-        "experience_similarity": 0.842,
+        "experience_similarity": 0.843,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.0,
-        "evidence_bonus": 0.32,
+        "gap_bonus": 0.28,
+        "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 1.003,
-        "increment_type": "rule_evidence"
+        "semantic_bonus": 1.241,
+        "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "K+3SvEvvIjtI7f4FWOzYKD3Rw+IgNsc+PTPeG0TQtuA6wyLvrNQV4tHoLEkFN94018v4TOo8Asi0x6UmKOLtKVQ58x/LvAEfCdxATUL0LeGt1ddCyTssuSPiWErSzNWq0yUt9Dm8M6+/Gyi5KbK9OTtCt8P5lf21OxztwbjdFE0qEygfDCs5a9kZzOLBKP0jM/c0wle/UsU8Ih7R26QrNMjYqPn9gRtUuNncKvYz4inPK2Mp7vCxytf34whG1hgvv6jiBvZBKyv93Q0qHgbc/uIVMrTFMszV9EbPKxnY8Ln2WRu4x/MBA/DK3cf6RDO+xdNG4CLX3hPXE0Hrrt3uWiwzugQr8XlASx2jyPPi/R8Vu+PGAWfhryBHLSRaA+QcCMfi6zDKLQToTOIU0fAYJakTADklHTotvOU+QQ49vt+8xvDNQDnPBCwaLNLQRMf24jCrvCAdzjvNx0QS0Dn2sCcZ5hDSIzUe2fEhQ0dDAgv950MszxkC99QNwbFB8CE4",
-        "scale": 0.0010116775,
+        "q": "T93exFLYKkJS8xwUWffPJTzIxM0UF9g4Sj/hJzXawNJMyC/6sc0Y6ujrHUYdOfY18NHvQgBEB7+zu6MXJOYALVo1/hTU2ugn4d49Sjr7JvCyys40zTY7wTPZSTnH18Of0SkS8im5QLDOLB3MLazMRUIz0tf9nRjHUhbcxq/bBzc4CDIqBRksad4B09K7HPgjNCki10TVStc6EhHb7qwpQNrRmu/1mBdVpe3VNN8W7zbLImsW/d60ztPz1wQ/zSAlx6rlDuZDIy/2zBY0FfbcB+YVOLmwOObiDy7QGyXmAcf/STO5xP7xF87O5MLcNj+61M1C2zbM5BLZI0HcxNLnUj0wsQwt3X8/OxufyO3l3yMd0N/M/1/bqSQtIiM49ewcA9Lh5yLQQvbvRdoW3/UYJ6kH+jUsJSw8s9YuOQdAtOK8xOLMPDHMByolMt/SPNby20WpvD0f4DTXv1DvyjL8rhoU7SDbBisp0N0ZMDVJ8/AU2kIs4Br/8OckusE5AjIr",
+        "scale": 0.0010318811,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "d9d07ede8dd103f868",
@@ -2876,7 +2916,7 @@
         "rule_match_strength": 0.843,
         "experience_similarity": 0.862,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.61,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.387,
@@ -3265,7 +3305,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Re3J4GWrGy5ACSEhXOTYRC/HsscRHP1JOi3kKRXKrsg6ojId2N8U0uoQJHU8cAoftO3FJAU0Nr/Xo8X7e+orPmQjITu81KoL6fkRLiLCLr+J29Uszx4rh0DbUzHFt8+Hz2cn5WjdJNjhDi20d6GNYTI2nZsXg2S2Ub2Dr8r8Akv93icsOTdDSbvf2fHIRfo9T1Jf2moiUtgxMjrC2f8RNangsuqsiBpQqNygNMFF8WDrGGUA29e35L/NuDIK0gQVlrAAF980Fjbfv1wua/u/QbNPIpu4KJ3w/STYMTj0E7EGN/u35BYJ1r3Bp58AE1zly8tCy1DD9yHsORjTvLDaQysRtzoct10XKg3f2+fc01oJwfrGCV7HshUrF08e9wRoxN2m80HHRPf/VLoc4tY0Do0lG0z/Rig6zf0wM/dRv87C3ebAMGHd20j7RIGrOMXO3EHPrjkPyFPp+EHh5k0ajSAm8TmtCmQU1Ak5O19J2Ogivhtd1Rbi8vgupJg0KU0+",
-        "scale": 0.0008604035,
+        "scale": 0.0008604038,
         "normalized": true
       }
     },
@@ -4235,7 +4275,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "SQK8zUDeESRFD0cJYvzQMzWoocYZ/M5uSUTmUCS+3tovolsbxAU65+VAAmoxc+RFugTyWiYdE7Pxr5c9U+r6T10XHFHY0M8f1fAkNyXWIvOe6M4jyjpFqznYSk3o27+pxjAiCEPSKLn1IibtJrnYNFcuvrj+r1rRXfy+x8TkIBsW6CEjDShGUOfg2c3QJRdX+iwq4kDKXsx/ITW9zL8tPrTgs+bQolBPtOvTNbYg7iTrLFAt7dzZyMDPuAVZ3PA2ycXq6bYMJxPwzUo5QPPWALc3PK3ASqL18yC/EDrgF4gqRj7bsBr/5MjJqq8QGw3X5qA+uzXU+zH4UxPL0NrVNgcho+ox5nYsTi2z6LPcxFkSq9zr8GetsCYY60dUzuxD7t3ZDzK5GvnUU9Em2wsUIbMLHSMVODk/ttA0I/YjutjSz+nOJ1bw0h4WMZ66LMTb2UmcyD1N3jDd3xjmzj4tnTMQ5haj9Eo9te4ONzg6vAcRshNV4Pjp+skuwapADxRB",
-        "scale": 0.0009284561,
+        "scale": 0.000928456,
         "normalized": true
       }
     },
@@ -4302,11 +4342,11 @@
       "published": "2026-08-13T02:53:19+00:00",
       "first_seen": "2026-08-14T00:30:58.027474+00:00",
       "summary": "BSテレビ東京は、8月10日から、「主にシャープ製テレビの一部機種で、BSテレビ東京の番組が映らないなどの不具合が確認されている」と発表した。",
-      "content_checked": false,
-      "content_excerpt": "",
+      "content_checked": true,
+      "content_excerpt": "ニュース 野澤佳悟 2026年8月13日 11:53 BSテレビ東京は、8月10日から、「主にシャープ製テレビの一部機種で、BSテレビ東京の番組が映らないなどの不具合が確認されている」と発表した。 BS視聴に関連するデータを送出している会社の信号データ不備が原因とみられるとし、「該当するテレビ機種をお持ちの視聴者の皆様にはご迷惑をおかけしています」としている。 すでに当該社は正しいデータの送出を開始しており、「データ更新をお待ちください」とのこと。しばらく待っても正常に作動しない場合は、当該機種のテレビメーカーに問い合わせるようアナウンスしている。",
       "base_score": 5.5,
-      "reading_score": 6.62,
-      "notion_score": 6.33,
+      "reading_score": 7.03,
+      "notion_score": 6.66,
       "grade": "B",
       "tags": [
         "research"
@@ -4319,7 +4359,9 @@
           "データ"
         ],
         "formats": [],
-        "intents": [],
+        "intents": [
+          "リード獲得"
+        ],
         "signals": []
       },
       "reason": "包含调查/数据；语义增量：可能补充证据/案例",
@@ -4328,24 +4370,25 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.855,
-        "rule_match_strength": 0.829,
-        "experience_similarity": 0.825,
+        "knowledge_match_strength": 1.117,
+        "rule_match_strength": 0.836,
+        "experience_similarity": 0.835,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.0,
-        "evidence_bonus": 0.32,
+        "gap_bonus": 0.11,
+        "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.904,
+        "semantic_bonus": 0.942,
         "increment_type": "rule_evidence"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "I9z/yjrsFiU8Hz4BRgTkI0yvwMEj/78wOkPYIgfBzttK4D0o9LwiA9co938LRQAY6NnqSxYw9d373MIbSfgUJVMPFUbV8u4Y7OP1NRrdIxbmwOYl4DFCxzPiGRnEtsC87hIi9DPUIsviHEvLHMDrFjMDmsMlvhfAGO/tyd/lHzL1ABUsDDgsReEBvu/aLvY8JAdFuS/HGdY3RRblzNUiKbLbqAHurzU0w+rlE7wI3iLb5EIB8vTJyNqv6QYC5t0QybkLH9ksIDcC7DM6QgfVDrEzQ+baNsL+5RX3OCHsDcT6RxjL1xIF0+rWyssiLh7n0+wjpS/G7yTjJyD318YDQS4TwBol11UdHBTO0er13UsZzPjBD2rWtUD8HjZT9ONEBwHS8TjHG/IAP+j4+OcG/8r+HhQsCxckzdMTTgkx2PHi4fbmKCj01g0NJtfYJ/TT5SvR2CUgyjrtySEL9DniqAIY7hCwvjQ+vPgNSChHAAEW2Rgv3grO/dQCy6IH9BA6",
-        "scale": 0.0011652946,
+        "q": "IuX2yCzvCyVCKiYFYOfwGFOktsIoFKo+MEzFMxK7y85g2Tkq3Ks0D8478H8STvEm4c35TBos5939wbkhXPcGKmURGEfa++oP4tv3MSfRLCDhutgk2jNJy0H+Kxq8sMq68RIi+DTEMcHkMUPGJrrdJzgBi8Qdqxi9GfDyrNPjFj7r/hszGUs6Q+kAu+jTL/xOHv0zqDnKI9Q8USfh0MwUNaDQmPv7q0Q4tOrWJ6sM6SnW8E4I7enFzden4Q0Q59YYwcX/GdI5Jz8D7jpNSQ/MDbYrQtfKR83+2CDfUC3fBcL+VhzFyAcK0uTXsMkvQDTGu+Qzpjq34DP2KCXs0dARUjQUsxIf5V0gJRLC0eD62k8ixeq8+mvGw1LoCSpM+uY95gHN+zC+IeMBQtIB7PEFDLz/HxY1IBcoscMhVfw+ye3W4+LhOEPg0SAjEsPINunO6jXC4h0rzTXl1DQI9zjcqAsm+h2yyFM2w/0RSDZO/gojxxY30w7E/88K0KIZ9hE9",
+        "scale": 0.0010298763,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "fbcf555299845304a9",
@@ -4461,7 +4504,7 @@
         "rule_match_strength": 0.887,
         "experience_similarity": 0.862,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.226,
@@ -4744,7 +4787,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "TOLK1WS/DRA3L0ECdA7fLFuxsLsTG+MhSzvZPwvRsq1h1FciyNwm3uYKOHFFau5qrfTtNP08+MnYz6UpUOgbUG4QPkyl1sMj5fkvUC7CMs2qutdOtkgwuy4gMUrW58LR6CsxqT3FCpvYPze6Ybq1MlI7t94TqTTNP++yr6exHCsOLhFkP0o+YuLIv8C8OOxkG0QxxVrNUd9UIg++2vQvM6rDnATtvTRRv97YSbwr8j7mIWAbD8SqydDYt9xa6QMMuMTqF9ozIEPjshZJW6qaGdlVJK6uO7n39h/OCmrYCq3qNEfSyCDV87S85bn9GE//2rIyrFDK/AjlJxnLvsvnKwQSigkg+H8bMRmk9eu/2UA9yOrO9Fiym0EoCDpR4+hv5uOkzzHWOv4UTLs22PgJLa/7HVH9I/xTr9hZTt0/usPJv/CgHTrM5Sn9PJ+6Qbm1wGfJwBNG1TXE40XvwUgllSwo71DA9GMW9PnyWEBC7+oAmCVU1fnz3LY4v8wZNh4t",
-        "scale": 0.0008747928,
+        "scale": 0.0008747927,
         "normalized": true
       }
     },
@@ -4975,7 +5018,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "NgHl2kb8QEI6FEIKPw6/Lz/Nt74cCOUtOCbrUAal3MM8vjsM6tgju+IdPWEjfw0sqfTeOAstHuXbt5EIT90fL1wmKFHQ5+s55O0bNzzWI8eY1N4QwGNXuEL+N0vm1d604WA03y/POKnrHkjLSNKpSzcepNQYkEvNTeLOwtm9ETDi7k8pHjlGK/Ljvs/fIehGMiJIx1DmR+YqNjTV7OopRdS9zszmrjojr+XlLMwv3ynTDzEY5NC9yMjtuSEP2wQNg6r+BtNTFzsYykdAMuO1JtIjXsOqUuwF6DnAGCv2CqnzPB3YxiLi3ePKvrMmOSbOv9JO1iXrEAvoFiPew8LAJT42uA4o4X0pLP3LpbrjzC8VxPDR8UrIwi8PClJF3xM3yA235BrMExbuPMclxgABB54VKP4LGy8wsuFbPOgAtN/Gu+DGOUXp7RzpLbiqM73dxEmqvyAp0y/Ayir12iQIvwsj3hvV91IxzNgiTVtNEdAxtk03virm1dshv50NBzlM",
-        "scale": 0.0009678648,
+        "scale": 0.0009678646,
         "normalized": true
       }
     },
@@ -5025,7 +5068,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MdrY1mbtPx5BSln7UinfLU+3lNoXGe39OUXGWw+xydFQwUQi3PQ3rMQDFmUtaeZFu+/bPfZVEbPunrBUWOntU1UpFkXG9Mo0yvH8NTLJGtrRy8k7pVBNmmL/WHivwaHC7Egu5DfML8PjJjrGQ8TIHkkqsMjtm0rGT+TSx8DSIzsQ/jIx/EJJUf/65tS6GvhnGiYj3SbXMshFKyTXy9AuOqzLvNrRgUFRpvzGBKgl/i7qLD4K4em067rjwgZR1flEtdH7FOcoFyfPqio5Rc3NHb9IN5iMW67z9CbZLEEBGsPfURj/wzve2tLFxJoZQSTN9asvwzrM8DMNNvzQs6fVSwr7phEiCnomJzfA1dXP4EEhkhbA/1a/il0uDEZG5s5Nxdm37DW6JwoITtcmsOgfHpsTJjYwTigPy+5FP/4Pu8W01O7ZIVTr1Tf7Lc23U7/LwWixvCw1yijS3jfivT03oysN5xmR7GI+0vgYOR9DAtAFwR1a1g/nvd0zzZo1CjFI",
-        "scale": 0.0008956244,
+        "scale": 0.0008956246,
         "normalized": true
       }
     },
@@ -5082,7 +5125,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "URndyWbWPDE+EjYZSRPpKDTjwMEbJOUiP0boMR+i1sUjrT8tvSEY7gkBLV03U+wtnfbnadAv/sj7uZsjZtQbMmImJTPY1eUJ9+gDQEq4Stmo2M4/xBUqriL/d0Dqu8yh23Ik+y/j5OHvK1m9Ld6rKTsVn7YZskTLRw/guLXIDTjyGylCMkEtKxLkmdECSuJbJRRCtxwIZcs0LTnM/99OBrzaxtTVlE07zdO2Ls889inKOEcW3QCQ1Ln3xyky9c0uw5z059M/NTyoxhQlU+KBRdEtNce3PrLK9CHeHBoGC7n7ZiWtvBrV+bmztsXOLTnq29tCqEr62xbcEifOyLzhRxUQ0i4u2GoiGxqy0s+f7j4R1/25EyfSyQwYJEU71f40++K03BTaE+7vSeg14A0K2bgr/BsDJhRCrOU3MAUXq+u/4vPBCSXeDTfrO72qM+bq7z7UnB8tvBa30jjz0079ly8p4RvKyyou8/UnPSk9C908tRJz+Qzb2BL78sQ7/hFK",
-        "scale": 0.0009621546,
+        "scale": 0.0009621545,
         "normalized": true
       }
     },
@@ -5212,7 +5255,7 @@
         "rule_match_strength": 1.057,
         "experience_similarity": 0.89,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.55,
@@ -5271,7 +5314,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "T8rJtG7THyc8Gj36LhP9I0ASx9YZ7RnwPizDSvTc7cs7rjwY8edFyeAMN2EqSBQ9w/PcKAsxFNberschTtrsQ38SG0W/18Uj4MorFyX8Sdm6y9w+xC40uyzQHlik1cDJzD4auBqsNcbePC3oC6vMOU8rtMMDyDLKUAfTz7bhLTgj+CFhMW88Rb7cqtzhQ+8hIQI/vT7vNaphOCTiudUbaMXQ28LgnldMn/fnN84a6k/ABTgpAAirr6/OrSsTubo9vp8AA9wrBie8wzQdWwPnT7w4TsqsNpwPACDJICfV7qAgXCTU5gP8/Mna2aP9Gy751dU5tSXjwxztLwXj1OPuSSnwyGYm+0UWHkC31Nz32jsN7enVUk29t0MbJDEQE+9k7cqWABzaESMKYfoXxvo0DaQX8zsVHjc1qOApRywWxguazAXKFEnLIBsyCJrPOP7EuSK+xeYhwinhwEoFxTUzlFEWpiS5zzUO4eQqTSVnAM7ut/RT1g/a2vkd1pclCSlH",
-        "scale": 0.0009533759,
+        "scale": 0.000953376,
         "normalized": true
       }
     },
@@ -5435,7 +5478,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "SAnkzknHAR5PPzjjdxCWKjGms7MjNcEmLCoJQjHLzNc6vCwM4QFPuaf3HFMLcc5HodIKPNYy993fxYsJXu5BS3k9OynW+PBO8/ASRQr4EseM9t42mFcRpEjpT2bVzryrxiBF/kOrVcbGEymsZJXIIjUx07MpgVnARA3DjcD5MTPsAx87FUNDa+gGuwvANto9NzNI5Xm+QI5WQSyh3rE0UJzEicDhsjw5mb/MEMI09zzd8FpG1fifwczYyCY15Qcelb4Q6QksJEf/zzo0MuTjS98sK9jETvvn3R3cBxcI/4nzPB3S1/gGEPbKzs/kTljPydI6s16y5/TTMlHNqdn9JyhguBQq7GwXFBrZ17nXuSBN/QDLwFybtz4/UD9X0/ZPFMSp4WPNMBbVbsQ16tb5TJQrHCMzDzVEtq0uLx06w73B09/gUEjN+ywJPIW3KJbT5y6Zxg9EyQzyywL+t2HnlDcl5i2+4zlI78stQkth9s33mCxNyw3fy8YksdRa9how",
-        "scale": 0.0008596205,
+        "scale": 0.0008596207,
         "normalized": true
       }
     },
@@ -5494,7 +5537,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MPnNtiDwKUcrIh0EcfLQRySx2eMkAdMuNzLwETjb2uo6rzH/2+AZ6N4RNkcjcQMZygPmVf886eLWva/9et7vMn8EESSqBukw3AIMNxvZCsmiwckW/issxDPsLV7XreGs7zkX/ivUQcXzPyO2ObnMPFIe4erzrTr1QNDgt8fzHkfZ5hkoBjxHU+4H5uLiMAhNKBZQ0TbhT9NdKySx7egWNsjIqfHRtyctoNjWKuMk/zHVJVkrtfeS07XlyCYUzu4kpOflFuA1KiUFxywhRfj0Br8oCr3IHOQB+fTV8kL0/6AlHizYyCP81wTIzMPqL0kHqc1FwjPcCCX1RB3Mu9gDQjI/xxMj520HEQrW1q7t3C8+1ua83FaewkcYJy8m4gM+576/7i3GEBLxW88d8Oj8RL8iEAcKMzop3tIlFucxx9G15+fATUvSBxAAUprPELrK6izG3R1TvR/Wvx/JwVATsi0b5hrK/1k4zvolIyQ95u8lpiQ/5v79zdsDxMNHACNk",
-        "scale": 0.0010250345,
+        "scale": 0.0010250343,
         "normalized": true
       }
     },
@@ -5719,7 +5762,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ce3t3znPCRgvEDcYPPbRIjzss9gq9colaz3wHxrcx9AytSAdBPYn7vMK+FoPMfRC0ff7IPsv9/Dt06weXt4SDFEQECu53tMaD+goNhe4Ju7Iydsn2SBOrRXnNFrXybC51FQEyiPTI48HBSnZMNW3MEBIvf76yzvYRAj2zczrKxH6Kxw2KitKNeTYstn3WQ0oDhkyv2r9YtIzLzHd6/YGOrDNwOPguho6twK6UcAH9jTy4C382/C83cvuu+z/yso0s8X6Fts1Fjvw1iQhL/OjD8glI+a4IawE/g/hMkD6FNQATwG38yINEtfX0eAHJkr53uIsz0Pk/hndBgjdvcXlGfIyxRApy39HMAfNAtfF8FMex+HGFmLM7iwYMxs87u4/6/e73iLCCOkMI8ge1xMGEsv8Hy0uLRYg1OgKOwQUwO/XwePeLSvXATjoGL3nN+vA8EbczA8o0DrZ2QMCzjQFoSEM5E2372Ii5esnKDg48usbtAcC4AH56Okbu6IM+x9Q",
-        "scale": 0.0011128686,
+        "scale": 0.0011128687,
         "normalized": true
       }
     },
@@ -5839,7 +5882,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Kf3Z9T/tFRUSAiQrMvfEJ0XjxMYB+bI2Vy/kJA7mv7o0uy4W5+Y46O8OHVguQ/Q91fzyH/U2+c/eyrwKWNAHI38mDiTN79UeE90tMiu8MO6xyeQ54jhEoRwBMkW73Luo1Ewc3i3VJJThIEDKKMW/H18cuOcN5iTiNfbDtdH6Iw//NSRPFllCNefhoNoXaewOLAkqwH32as49ORrL2NMSTq3ayMnftRlMmPjDUcgW/iT4+zkOyN21wczZtPEDygMpnMz0DMYxCjD15TZGOuClD805CdauLcvj+hjdL0T4GsMfcR254hIEA77avcEWNSn74NcTuiHr3wrOARjcusbpGA0dvx9AyHkxOgTW9PPO+VAUs/XSKWfL7E0cUQJCCsNQ9eez4CfFHvz5KrwZwRUiHbocKzkUGCdA4dgXNxkeyffJy/DQPEbIAljdFMvZXeje+SfJwvs62iS/3xkLwSIStxEW30u80Gcb1+gfIj02+uUksAcg8eX83ecutZwH8R1W",
-        "scale": 0.0010306869,
+        "scale": 0.0010306867,
         "normalized": true
       }
     },
@@ -5900,7 +5943,7 @@
         "rule_match_strength": 1.29,
         "experience_similarity": 0.873,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -8038,7 +8081,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Wx/R43nmFBtfMk41VQwDHjy/m9P799wwXiLwVSXBorZRsy0Sr/IquvgBJ3Qaf/U3nOz1UzpnDufEqaNYTOAFNl85IUbqz9Ua3swNTTEJJMfD4dEozTRRy1m7E0Dl4tSwBCw45E/DSsPrMhXGWqrWOUg2p70lqzKzQvOmharVITsG8BYpJRUjKsTawMfXJdtu/hBM7GbyKuQmPSLd2O0VPMi1sKbwriV7qMjBRcoe70zOKmIM7+eUtdjZ0Q0Y1vUesLgNEtYx6jX/3i9qReLDNd80E6fGQJkBBh/FJWHqJ6QPOi/oszH8x7jK1Z768yT6wdpRxB3p9ke1GTDErtnMQFoMnTE73WIOOQ3T09XW3H48sBbzAmbStSoIBS9f1+ZQz/Wh5CW2NAfVP9JS0fwAHK0h6gcrDxssnegSXOEcls/Vtv/GSyjczS0jHcGoXbvj51ewmyxE11LVygnNuWU8mAQe2wHD9EUSw/YmTUI/5949vw8///UE6OEbmpMvKQ5T",
-        "scale": 0.0008903878,
+        "scale": 0.0008903877,
         "normalized": true
       }
     },
@@ -9140,7 +9183,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "LAy+xyTLLGFs9TgWWQHFNf/7wLwaC9FdVji5Jiy29Jc6sFoyy/ExA8MhOG4BY9JAucLeWhI3IdYDl6wJVvRISGQ4Lia10LFJ7+spHSu7FruozrMqvEJIxi/jQTi33fHArzJJ4zLPKKXcUB6SL6vHJUMxs8rqgWzbPu8Ila3KDhYgACVVJicjaOnyqQn9Q8BYHRR86UXsTPVDSEPB1uQ/OdG/qtbiwShEi7quNKEm3DPkP2Eb0+64u67c1BL9/gcQnrUEROhlISu99EElYvelHupDNKXSQ5/UFwe4SUrkKbnMP0yoqRf0xNK5rrXvKiL57Pdkw0Lsze/iFQTBut3DK08kuzpu0FYcCyiwzKLBzykmt9y7JnjgvCQeAC1Tt/8lxuC2uRzpMvr9F8Y3uv/xKJ4XDREN7VVHq8xZTQYi1uO/4xnGOTzb9h4QEZnOLsjoAU2lui3+zCP96SPMyUjwnSce5xjA5U8zv9UvIx5BzRhCziZ0+wH7xrMu1bhPF0ZZ",
-        "scale": 0.0008819252,
+        "scale": 0.0008819251,
         "normalized": true
       }
     },
@@ -9259,27 +9302,34 @@
       "published": "2026-08-12T08:00:00+00:00",
       "first_seen": "2026-08-12T08:06:30.167555+00:00",
       "summary": "ASUS JAPANは、ゲーミングブランド「Republic of Gamers(ROG)」より、34型ウルトラワイドOLEDゲーミングモニター「ROG Swift OLED PG34WCDN」を8月14日から順次発売する。価格は232,920円。全国の家電量販店およびECサイトで取り扱う。",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 5.9,
-      "reading_score": 6.76,
-      "notion_score": 6.49,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "ニュース 大須賀光輝 2026年8月12日 17:00 ASUS JAPANは、ゲーミングブランド「Republic of Gamers(ROG)」より、34型ウルトラワイドOLEDゲーミングモニター「ROG Swift OLED PG34WCDN」を8月14日から順次発売する。価格は232,920円。全国の家電量販店およびECサイトで取り扱う。 解像度3,440×1,440ドットの34型タンデムRGB QD-OLEDパネルを採用したゲーミングモニター。最大360Hzのリフレッシュレートと0.03ms(GTG)の応答速度を実現するほか、RGBストライプ配列のサブピクセルにより、従来のQD-OLEDで生じやすかった文字の色にじみを抑えたという。 パネルのアスペクト比は21:9、曲率は1,800R。独自の「ROG RGB Stripe Pixel」テクノロジーにより文字の視認性を高めており、ゲームだけでなく、資料作成やコンテンツ制作などの用途も想定する。 パネル表面には独自開発の「BlackShieldフィルム」を採用。既存のQD-OLEDパネルと比べて耐傷性を2.5倍に高めたほか、明るい環境での黒レベル認識性能を最大40％向上させた。周囲が明るい環境でも、深みのある黒を表示できるという。 表示性能は、HDRピーク輝度1,300cd/m 2 、コントラスト比150万:1。色域はDCI-P3 99％、sRGB 135％で、10bit表示による約10億7,370万色の表示に対応する。色精度はΔE≦2。HDR10もサポートする。 最大リフレッシュレートは360Hz、応答速度は0.03ms(GTG)。AMD FreeSync Premium ProとNVIDIA G-SYNCをサポートし、ティアリングを抑えた滑らかな映像表示を実現するという。Extreme Low Motion Blur、GamePlus、GameVisual、GameFast Input、Shadow Boostといったゲーム向け機能も備える。 焼き付き対策として「ASUS OLED Care Pro」を搭載。Neo近接センサーがユーザーの離席を検知すると、自動的に画面を黒くしてパネルへの負荷を軽減する。ピクセルクリーニングや輝度調整などの保護機能も備える。 AI機能は、AI Visual、Dynamic Crosshair、Dynamic Shadow Boostを搭載。1組のキーボードとマウスで2台のPCを切り替えて操作できるKVMスイッチにも対応する。専用ソフト「DisplayWidget Center」から各種設定を変更できるほか、カラーキャリブレーションレポートも確認できる。 インターフェイスはDisplayPort 2.1a(UHBR20)、HDMI 2.1×2、DisplayPort Alt Mode対応USB Type-C×1。USB Type-Cは最大90Wの給電に対応する。USB 3.2 Gen 1 Type-A×3のUSBハブとイヤホンジャックも備える。スピーカーは非搭載。 スタンドは上20度/下3度のチルト、左右30度のスイーベル、110mmの高さ調整に対応。100×100mmのVESAマウントも利用できる。このほか、Aura Sync対応ライティング、1/4インチ三脚用ソケット、ケンジントンセキュリティースロットを備える。 スタンドを含む外形寸法は81.28×27.61×56.27cm(幅×奥行き×高さ)、重量は8.3kg。スタンドを除く重量は5.6kg。",
+      "base_score": 8.15,
+      "reading_score": 8.85,
+      "notion_score": 8.56,
+      "grade": "S",
       "tags": [
+        "consumer",
+        "research",
+        "ai",
         "ec",
         "marketing",
         "strategy"
       ],
-      "reason": "有市场或战略判断价值；与EC/零售直接相关；语义增量：与实际工作场景语义接近",
+      "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
+          "AI",
+          "ユーザー",
           "ブランド",
+          "コンテンツ",
           "EC",
           "価格"
         ],
         "formats": [
+          "調査レポート",
           "新商品／新サービス発表"
         ],
         "intents": [
@@ -9290,31 +9340,35 @@
         ]
       },
       "concepts": [
+        "AI",
+        "ユーザー",
         "ブランド",
+        "コンテンツ",
         "EC",
         "価格"
       ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.853,
-        "rule_match_strength": 0.824,
-        "experience_similarity": 0.832,
-        "repetition_penalty": 0.27,
+        "knowledge_match_strength": 3.655,
+        "rule_match_strength": 0.839,
+        "experience_similarity": 0.847,
+        "repetition_penalty": 0.95,
         "gap_bonus": 0.0,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.795,
-        "increment_type": "direct_work_use"
+        "semantic_bonus": 0.592,
+        "increment_type": "mostly_duplicate"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "Fv7U9yPZFTM6GTL2Sv3YFz3Ivu0q8tEuWUrxFh+9rbwrvU4qvgsa6gQn6lInRvgt2/fnBfwmBbXewLgDVQMBDEcBD0OQ4/0O6wIoMi/zTPqo6/ZLzzM9pyACGlLC+e7aEDId8C3jFsi1BR/HLrfoKS4gotv+3DbRNfS2rKH7HiQL+QVFBk1BN9njqekMM/BDKBxZyzUFRL1APDTfzfUyNNDfreLZtfM/tOPESbQk6SHIBib98vCj167luigb5c4t0bP1DuEyECQBwSAsJP3MKt82DL/LINYaBjkTJRENDNT+SSG75RfuAPC8/uD6P07f2NtB7CP2/RfWJhXb5c/qEuQFyREw9VcnTRrZutjfzjwvvPHWF1PnszEJNR5U2swg+NSf6xDpMSH/LMcUz+8bB7IxHiEFHhcF09oYOwU34d7fz/20NS3X9UTzNNPPRgLlBCiz3SQX3RLr3Cbx2DARti0w4QG5wEUGx90UUTow4M5OgUAV0gjvtegL35sfFTkl",
-        "scale": 0.0010968349,
+        "q": "GuXM+jDIHxxSKiXsUwrgI1fHpuIo2skvY0j1Lhe3nrdJnVEdtPAl5QMl6n4fRtws0vT8H+4fDbzYxLQGXtUBHlkUD0yhzv0H+fIrPlH0Pvuc5ORZxD81oyvnHUvC6Me5CVcX6CrgLLa3JTnKLb7CPDsuo8v6xk3WMQG5na7fKED9Ah1UD2FUW9falN/5PeFUJAxTrFn7R7FiRjTTyuc7Qc/HvtzWlQdXnu7OYMEx3hSvEzoG5umQ2rnUpyEX289C0KTsBNtAHi7wxio4I/fOMc48EbvFNLkyACL2Kyb7GbUGViinzwj39dXG7tTtSk7m28FO1C/x7SLVLQPMzNDnDAgLxjM4+1woPCbDs9fXvFsyyNvOMHvEqCv3KRFq2ec0ANud7xPpNQ4AQLkbu98uErMfFS/7LiETutc0NglBwdzOxPeUNk/JDksCQrLIQejX70adwTE14iDg6CMG10kSuS4e3QmjslYpxNUSUlAv4+ZSgTg23/bqsfUWwJQxBjE+",
+        "scale": 0.0009296044,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "3dcb62bb8be8cdccf5",
@@ -9635,7 +9689,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KCD6zz7JFhU4NywIRALsEjq148QMBuMbNjXrCynVyd9EvysE1OIw7uUJElEjYQ8YutfrOgUz+NLsrrX9Zu8SO38cEDPE7t4qz+EVJDPNHdmgvtMR6xs21CkbLVbQy9qu5TAs4yrlJL34HRrQN8m4PSMLts4Hoy7aMtvAuNPqGiQC7h01MCo5N9rt3ODYQtw7KQ43zDcMSPE6OEXH6L8qObjSxdj1syIouPbAQtxA5S3lGkIQ6Oaw2rjhyA8w5v0QrrX8BNQ1KC799zokIOjXLNoZKcrJIuXo/g7EMDACJawYShS82Bnn29Xz2scFKTP44tNA1kbT4/PgFBzyvsTiFAspwwkNA3AVChX409nY2UQb1tTb/UDVxyD0JDY/9ABB6drR+iPKKAfuR90D1f4gGboJEhgeFiAdnds3Nfcp1Pbmy+DSSFfs6i/6M6PILd/i+jPRvgwr2jHs6j3i4yrtwB4VBx3Z5koo3wMMLlgv79sjwDc+3RbQ39AQzsckIis4",
-        "scale": 0.0011296304,
+        "scale": 0.0011296303,
         "normalized": true
       }
     },
@@ -10026,7 +10080,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "NgTp82zQFxFX+08WX/76PUa/vMofMO40RyjyPTez0tE3rk4Qy/MWxfEYIVcSXNQ90/TwNexM/LTCoalMYfbtF2VSJi2y38Yc2/oJP0XXQPLD38ML0U9Bv0LsTkPwyOak3jUcq2fBJ6rNODTOS7mkJSA/rrsEry7KJOevpbfcHi4M8hg8NBtJW8jrv7v1Ruk0LyRZwkrqR6YuRhrP2sQXKbDIxtm3yVU5w87XNdJi5izdN1U16PDKx87nvhhN2/wMusj+FwcjCyHcriExM9m1OuQdIamyUMUDBg/wLiv0KLMOPRLBukMD27C38PIAIB3mtscH1Vvk1ALhOP7/u67dIUUprhEx6mcPIQbG5OLZyiAqsfPhCH/Y5yoSCSFE4PAwt92n9CfVJTHwX7VF2u0ZF6EC+zwCEDgw1vMtKfsAyezPxe3WHhT54SIALc7BKbTR8UnOzB4N8xfW4R3p10cDjiQp/P+64lg7xRcMGyhj79gyuCpW1vcDw/QV4rxBFyQk",
-        "scale": 0.0009796589,
+        "scale": 0.000979659,
         "normalized": true
       }
     },
@@ -10267,7 +10321,7 @@
         "rule_match_strength": 0.861,
         "experience_similarity": 0.865,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -10671,7 +10725,7 @@
         "rule_match_strength": 0.866,
         "experience_similarity": 0.868,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.56,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -10915,7 +10969,7 @@
         "rule_match_strength": 0.877,
         "experience_similarity": 0.882,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -10983,7 +11037,7 @@
         "rule_match_strength": 1.218,
         "experience_similarity": 0.865,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.28,
@@ -10994,7 +11048,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "F+3iz0TLOjle+1cBcd/GHE3Rt8IiCrUXPB7XLySov6leyEod0PpM8fL+IkMlUgMevOT3HfBEHLK+m6YPf+UjMnQiDAav1eMZ0+1NSzrHH+WbvN8l8iE1vVXvQHa71bXbFCcf8h6uNZz1MBm+X7qrLVZAwOAIuGTDPN3lov/wUBzTAwJIQVlESMHfudr7EfJHHw0wxzbZZMJcRkjP5+QvQbbmpeDspyI4s+fDMNk4/0rGGEE18pO/xcPb0CAZ5xsusdH2BeQlEzgA4kA1J+i7QMchKdaxNt4X7TbQJDv0CKPeVSeashzb2Nrd5a8TRjPZ+dw00GrEA+sLIPnmtcPQOgEEsPk6114RHgu9vtnh3kNT5urU/2C6nC4MOCZL2/o3uNbe8TTMOQIHTMQX2SMdHcYo+zA0LEAG088wU+ZAo9bNut/KHkrL+F76QMSnarXj2DvDyxMRzCTd3gD9xRAXpiH4zSSp3j0ev/8SS11R5t0msA1b7+vJ684ssrVPGiJK",
-        "scale": 0.0009356308,
+        "scale": 0.0009356309,
         "normalized": true
       }
     },
@@ -11218,51 +11272,76 @@
       "published": "2026-08-12T02:00:00+00:00",
       "first_seen": "2026-08-12T08:06:26.778961+00:00",
       "summary": "そのAIスピーカーは、机の上でもぞもぞ動くらしい。OpenAIが元Appleの伝説的デザイナー、ジョニー・アイブと組んで進めてきたハードウェア事業。その第一弾は、どうやらAI搭載のスマートホームスピーカーに落ち着きそうです。ただし、アシスタ…",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 6.3,
-      "reading_score": 6.76,
-      "notion_score": 6.52,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "そのAIスピーカーは、机の上でもぞもぞ動くらしい。 OpenAIが元Appleの伝説的デザイナー、 ジョニー・アイブ と組んで進めてきたハードウェア事業。その第一弾は、どうやら AI搭載のスマートホームスピーカー に落ち着きそうです。 ただし、アシスタント機能を積んだAmazon Echo DotやGoogle Home Speakerとは、根っこの発想が違う。OpenAIのパックは、動き回ることを想定して作られているとか。 もっとも詳しい情報を伝えているのは Bloomberg です。匿名の関係者によると、形はドーナツ型で、大きさはアイスホッケーのパックほど。直径約7.62cm、厚さ約2.54cmのサイズ。 近しいものでいえば、ニベアクリームの青缶の大きい方くらい。こちらは直径約9.7cm、厚さ約2.9cmなので、全体的なフォルムやボリューム感が似ています。手のひらに乗せてみるとイメージしやすいのでは。 発売は2027年内を見込んでおり、価格は300〜400米ドル前後（1米ドル160円換算でおよそ4万8000〜6万4000円）とされ、たいていのスマートスピーカーよりずいぶん高いです。 その差額で何が手に入るかというと、 「勝手に動くパーツ」 とのこと。ユーザーとやりとりしている最中に、本体の一部がひとりでに動く。狙いは、生きているように感じさせることだとか。 擬人化されたホッケーパック型のロボットペットが愛おしく感じるのか、それとも不気味なのか。こればかりは体験してみないと何とも言えないところです。 単なるスマートホームのハブではなく、位置づけは「相棒」。机に置いても、手に持っても使える。リュックに入れて職場まで連れていく、という絵まで想定されているらしいです。5分たりともAIの友だちと離れていられない人には、たまらない提案なのではないでしょうか。 そして、ディスプレイは非搭載。つまり僕らは声で頼み、返ってくる声だけを頼りに、「正しい答えであってくれ」と祈るしかありません。聞き取り中を示すLEDと、周囲を捉えるためのセンサー類は入るとされ、カメラが含まれる可能性もあるようです。 Bloombergの編集者であるマーク・ガーマン氏は Xでこんなふうに書いています 。 重要なポイントは、これが見た目も手触りも振る舞いも、Appleの製品とはまるで違うという点だ。Appleがいま計画しているものとも別物だ。 もっとも、この身をよじる“AIホッケーパック”がまったく前例のない発想かというと、そんなことはなく、むしろAppleを含む各社がずっと触ってきた領域です。 去年、AppleのMachine Learning Research部門が「ELEGNT」という ロボットランプの研究 を公開しています。Pixarのマスコット、ルクソーJr.を思い出させるあれ。ELEGNTは人の動きを追い、一緒に本を読むふりをして、作業の合間にちょっと気まぐれな振る舞いを見せます。 たとえば、天気を聞かれると、即答せずに、いったん窓の外を“見に行く”仕草をしてから答える（たぶんその間に、AIが答えを組み立てているのでしょう）。 こちらは想像通りに「可愛い」と思える。ただ、あれはOpenAIが必要としている「世界を変えるハードウェア」ほどの機能は持てません。OpenAIは スマートフォンを含む複数のAI製品 も仕込んでいるとされますが、“AIホッケーパック”より変になるのか、まともになるのかは分かりません。 ついでに、周辺のゴタゴタも書いておきましょう。Appleは、元Apple社員を多数抱えるChatGPTの作り手が営業秘密を持ち出したとして訴訟を起こしています。OpenAI側はこれを「根拠がない」魔女狩りだと切り捨て、 自社のAI展開でつまずいたAppleがそれを覆い隠すための訴訟だ と反論。 見る前に叩くべきじゃないのは分かっています。それでもOpenAIの初号機は、サム・アルトマンとジョニー・アイブが最初に手を組んだときに漂っていた「ジャンルごと塗り替える」空気に対して、どうにも物足りなく聞こえます。 企業同士の小競り合いから目を離して考えるべき本当の問いは、こう。僕らの暮らしに、AIガジェットがもう一つ、本当に要るのか。どうしても選べと言われたら、僕はPixarのランプを取るでしょう。 …と、ここまでは米GIZMODOのKyle Barr記者の談。ただ訳しながら、引っかかっていたことがありまして。 OpenAIが目指しているのが“AIホッケーパック”だったとしても、Appleの「Pixarのランプ」とは狙いが全然違うはずで、それでいったら日本には LOVOT という可愛いロボットの筆頭格みたいなものもいます。ペットロボットというジャンル自体もじわじわ拡大中ですし。 せっかくなら、OpenAIのハードウェアは体験のほうであっと言わせてほしいところ。触った瞬間に「そう来たか」となる何か。もぞもぞ動くパーツが本当にその答えなのか、僕にはまだ判断がつきません。 ただ、日本ではAIガジェット（それがホームスピーカーみたいなものであっても）は、まだまだチャンスがあるともいえます。総務省の『 令和7年版 情報通信白書 』によると、2024年時点で「インターネットに接続できる家電」の世帯保有率は15.8%。 スマートフォンの90.5%と並べると、まったく根づいたとは言いにくい。そこに約6万円の相棒が乗り込んでくるかも、という話になります。 “AIホッケーパック”が、まるっとその生活を変えることになれば、それは「ジャンルごと塗り替える」期待に応えたともいえると思うんですよね。続報を待ちましょう。 Source: Gizmodo US , Bloomberg , 総務省 Daily Weekly Monthly Amazon Daily Weekly Monthly Amazon",
+      "base_score": 8.85,
+      "reading_score": 10.0,
+      "notion_score": 10.0,
+      "grade": "S",
       "tags": [
+        "consumer",
+        "research",
         "ai",
+        "ec",
         "strategy"
       ],
-      "reason": "有市场或战略判断价值；涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；语义增量：可能补充反例/边界；与实际工作场景语义接近",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
-          "AI"
+          "AI",
+          "ChatGPT",
+          "ユーザー",
+          "EC",
+          "Amazon",
+          "価格",
+          "研究"
         ],
-        "formats": [],
-        "intents": [],
-        "signals": []
+        "formats": [
+          "調査レポート",
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知",
+          "調査結果共有",
+          "知識解説"
+        ],
+        "signals": [
+          "PR／告知色が強い"
+        ]
       },
       "concepts": [
-        "AI"
+        "AI",
+        "ChatGPT",
+        "ユーザー",
+        "EC",
+        "Amazon",
+        "価格",
+        "研究"
       ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.869,
-        "rule_match_strength": 0.836,
-        "experience_similarity": 0.834,
-        "repetition_penalty": 0.257,
-        "gap_bonus": 0.0,
+        "knowledge_match_strength": 6.922,
+        "rule_match_strength": 0.859,
+        "experience_similarity": 0.862,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.0,
-        "boundary_bonus": 0.0,
-        "semantic_bonus": 0.362,
-        "increment_type": "general_relevance"
+        "boundary_bonus": 0.58,
+        "semantic_bonus": 1.466,
+        "increment_type": "boundary_or_counterexample"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "K/rt/VrNEjkqBSkPQBXJIiTTi+MnA8MnKRsEByzGxOgzoD0CsdEg2Pz++UEeMd8ulQHGR+kw/trYvKslSfv9JkkTCA+u5OEc58s2Iy37H+fcz+04zDwewSbrSFni5rvG5kwl7kHpKtDOHjHOC629Nk9AyNYPsSnoQQa8q8PAPyMQFxooDSUvWfQA183vROVM/xdCxCWtX+dQPCTPxrAmI9T3u97ZyPF/usvlJdMx5B7LE0Iq5fKXw7vI0DIeAAUV3ajrGdwrBCnT1hgcNPToK8w7GdbTRZcGDCbuKRXVGsgQcDiysCTHBO+e5sr+OB3i6OE85hbc1fHbGje9yuT8OTMutS4X/FInKTLY6PPozGYV1vLZH2za+C4uKiNG6wc8/+rE3yXQL/3par0jEfsMFcUu6jwXIBQYw9IOMgA2t/jXq+rdE0ne+C4NHc+/LO/y9yfGvfcpxB/LwQgY30Qytg4W0B+sCjYd/uARFyElBfUh0hc3+gTx4/wjx6QTHSk4",
-        "scale": 0.0010761513,
+        "q": "NPrY2FvMJDAvDykHSQrKJyfgrvAfCNgaOTADGiav2Nsvrzz9v90l1OwB+lopON9Cof3tQv0d+NTZxaIOPwYHL2guEh608PAf4sE6Lj/0JerKyewv4CQe1TfeNE7d2c691lIW9kXrKMzfIRq+F7C2RE0zx8YIrTLdWQK+sbHBPSsQESJBGjQ3Pfr30b7mKus+ABw6wDPFWPpWPCrUyrsgMszmst7msQxmutXGOdQ46iTOCkcd4NyByMza1ScU8QkevLfmCN0wDi7g2Sc4MubYI9QwFMvKPLAFARfXIzXcBcYKYiy+sx7Z+NOw58L8KiHa4OUt3TrrzuvzFzzPx+fuLDIkty4f9lc7JivR2+jVx0Epy/PSDlvI4TYbFh1E3flLB8rG1R3KKPvyZa0m6fAUHr8lAzUpKh80stwWLwEsu/fYu+3LGT3S+TAUEdPFLuXy+jq8xQod1B7Fvh3+xjEpsx0l3D669k458OYNKzArA/Qozhc7/Qn27eodtrcYFS9C",
+        "scale": 0.0010686428,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "4712a7abd571a49b09",
@@ -11366,7 +11445,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KPMK71q1BjNO/0f+WuW5PTbkpMESJvosPFitOCvMwrpJtkQT3tELv/gUIFcRRt4hte3hTek2L6fZuadBX/IEG1wfNjSt6/091csFP0f6L7fP2vEc2Uosy1nkO0DWp9Wz0DQY6DzlIYH0Jya8S+PaOR5FvN8ElhfEUdnEy83IGjYeCiQzNiodRsnp/+T2TcM/Ih5s4xrlS9s3+C+858UMYIbb0cvZqy4xve/GR78ptjDgOGYh9uS1urTMryQxxuIcw7z+LuM7Nizk1R89SOS+PeEMScOoN+DB+TPlOFAJGq3oVhPnzyD67+PL5NH3JEjMxuosrkfb3UXxEwrTx6LJQhk2sCwx+1xHOR7R6tbYrzX6vgHNAWS/2S8nHTQd5elWv8HP6gXZQhEEVL0YswcZQLwXEFAVOE4tywdBBuYUv9/i4+Os/iTn3uXuH6vgUc3ABlDivT4rvjDyykPQ4iUJjhAn3C6t9V4U0A/6EBpC8tNdzQpJ2NoMu8so0LYlEywt",
-        "scale": 0.0009669046,
+        "scale": 0.0009669045,
         "normalized": true
       }
     },
@@ -11625,7 +11704,7 @@
         "rule_match_strength": 1.058,
         "experience_similarity": 0.871,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -12001,7 +12080,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "M/XN3DjHMjE1GC8GVhPdLy/Dt8oLIMglM0DuOTvkvuI4qjoI28krzPTzDVgxWfInwPvfXxIrA9zWu6geTdgGOGYnBRG8zcoR9+0eM0TNGb2q5P0i3hMywTIFSk7LzuKp5S8U8SzPHon/Fyq3WZmiQFc+xLD7rjfkR/fJtbvmCRcHCyJLFUE4Xt7yyMHGLfgwHCVG2zHgTspRSUzE1dUhUZ/OqdfeoEE2qenTPswc6Ce5FTkLwc6oxt3nswUV4BwlrsQO+90qHyIL3TMmUODDIOEgD9PgO+z0+UHTE0btN7sDOxzTzivU57fG1cHlLDbozNcjzU/s/A36Jxrqx9HXMD8AvRcO3n8cFxvl4NjR0jgk1NrmGFuvoB/cDUNL6OdH9eDgzC7xOvzKVe4m9AcZPLIW+TUjRyVDy+EaT/Qu0+quwfy4RC7I31buEKzCLsvP5kG6zy8f1jL48TnjxTg7tQstxlW+6z026s4rODdF5vAMxkt1zg3d1dUcy7cxCzo1",
-        "scale": 0.0009972014,
+        "scale": 0.0009972015,
         "normalized": true
       }
     },
@@ -12845,7 +12924,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "FvvB9WX1ER8tJT/vSyffJEevpM/mFcY4OT3zSw7issgwzDsYzNALrcAYIHv6dQcm0u/LOBck8NzRtrU5OO0JPWoRESHL5+I6xucRHin8Pe691NIv0zUpuTAQLhzW1rrGAyzx5yzEYdXoRRflJ73JRC8zyrsauz7gPd75z8TsMSwHHxdEMStLW8n80Oa2BOUvCSxA1CnzJOE5NQTb4+I8VsXXu+LiwDtfy+azG9w//SHN/ztE6eWk7tHcxisK2RoywcYfEOEb/y/mziVSQPfxM7AaNdflM9MY5jznLS71/ND4JSbt0/3W/uP6q5r0GDnZ1ulBwyCp4iz3MA/wsbTUG0gHugso8S4OEhTG3tfs5jAZw9DV33/I2yEjA04mzPciBvO59j/aJN/8Y9424goIB6cg/DQo/B4mvaQjPR0PyOvD9+7YBxbv0y4rFbfJOsvU12XStTBMxigE1hTs4ko8kwoz5y254zT+7sQSEzc64d8yphJG6PjS5/MouKkwEA09",
-        "scale": 0.0010559282,
+        "scale": 0.001055928,
         "normalized": true
       }
     },
@@ -13244,23 +13323,31 @@
       "published": "2026-08-11T11:00:00+00:00",
       "first_seen": "2026-08-12T08:06:26.778583+00:00",
       "summary": "ファッションも重視する人へ…？いろんな意味で話題のMetaスマートグラス。ただ普通にかけるだけでは物足りないというユーザーに向けて、ピカピカに目立てるRay-BanコラボのAIグラスが誕生しましたよ。24金のゴールドで輝け！これまでAppl…",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 6.25,
-      "reading_score": 6.73,
-      "notion_score": 5.68,
-      "grade": "B",
+      "content_checked": true,
+      "content_excerpt": "ファッションも重視する人へ…？ いろんな意味で 話題 の Metaスマートグラス 。ただ普通にかけるだけでは物足りないというユーザーに向けて、 ピカピカ に目立てる Ray-Banコラボ のAIグラスが誕生しましたよ。 これまで Apple （アップル）の数々の製品を カスタム し、とにかく ゴールド で輝かせるデザインに仕上げてきた Caviar （キャビア）からの最新モデル。その名も 「Odyssey（ オデッセイ ）」 。 ギリシャ神話をもとにした英雄譚をネーミングに配し、 24カラット の 純金 を散りばめて、今回は Ray-Ban Meta のスマートグラスを生まれ変わらせました！ フレーム に ゴールド を使うのはもちろんのこと、 テンプル （つる）の先端となる 耳元 にまで 24金 が用いられています。さらには、カメラ撮影の ボタン にも 純金 を使用して、 Caviar の ブランドロゴ をヒンジ部にデザイン。 否が応でもスペシャルなバージョンのスマートグラスであることが目に入る仕様となっていますね〜。 いかにも ゴツい スマートグラスをかけてますと周囲に悟られない、さりげなく日常利用できるモデル。そういうコンセプトが市場で求められる反面、 Caviar が目指しているのは、あからさまに リッチ なガジェットを使用中ですって、 公然 と アピール できる インパクト です。 かけているときは当然のこと、ケースにしまっているときも、 ワニ革 の 特製ケース をセットにし、やはり 高級感 あふれる 特別仕様 のモデルを所有しているんだという満足をユーザーにもたらしてくれます。ただし、そのお値段は 6,840ドル （約108万円）ですけど。 さすがに 100万円超 はキツいかなという人に向けては、ちょっぴりピカピカに目立つ仕様を抑えた シルバーモデル もご用意。こちらは100万円切りの 6,130ドル （約97万円）で販売されています。 セレブにとって、たった10万円ほどの差なんて大したことなさそうなので、きっと迷わずゴールドモデルが選ばれるんでしょうけどね。庶民にはうらやましい限りの世界の話です。 Source: Caviar Daily Weekly Monthly Amazon Daily Weekly Monthly Amazon",
+      "base_score": 9.15,
+      "reading_score": 10.0,
+      "notion_score": 10.0,
+      "grade": "S",
       "tags": [
         "consumer",
-        "ai"
+        "ai",
+        "ec",
+        "marketing",
+        "strategy",
+        "method"
       ],
-      "reason": "涉及消费者/用户行为；涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "reason": "涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；可能形成可复用方法；语义增量：可能补充证据/案例；与实际工作场景语义接近",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
           "AI",
-          "ユーザー"
+          "ユーザー",
+          "ブランド",
+          "Amazon",
+          "市場",
+          "ケース"
         ],
         "formats": [],
         "intents": [],
@@ -13268,29 +13355,34 @@
       },
       "concepts": [
         "AI",
-        "ユーザー"
+        "ユーザー",
+        "ブランド",
+        "Amazon",
+        "市場",
+        "ケース"
       ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.875,
-        "rule_match_strength": 0.843,
-        "experience_similarity": 0.852,
-        "repetition_penalty": 0.31,
-        "gap_bonus": 0.0,
-        "evidence_bonus": 0.0,
+        "knowledge_match_strength": 1.96,
+        "rule_match_strength": 0.851,
+        "experience_similarity": 0.869,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.61,
+        "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.381,
-        "increment_type": "general_relevance"
+        "semantic_bonus": 1.263,
+        "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "JhXi3jmuHfw95zX8dDHcOTDKuNkaLcIiakgHIiDE3dlJoy0Qv9IX6uP9EWsxR/cepA7jQu4OEMjYzoMTcOUBKmwxKi7JvtoF4OUWRCrhQPzG2t9Y5UwxljcNTSnKzM/FxzQg8CnlFqHdM2LC9smoMTgmx+EFpE2rf+7bv5XcLVP5HjU5OD80V937vdviTuVEGCxNx0YNX8IwQ0S679MFHrvYldTbnR9IobezPL4nEjjbSlsw+uyB963ns/0k0OIppqvtDLEgEjHwwhMbQtnHU8IfG8+2T4Ln9SrlOTbWGLckRkXYrxTK7sPU3t7XVzAJ5eoZthvcx//GOSu6y+DXLhg7tC0k9WsiJg7N3e3ZyWEXxgCgEFK15D0lNB8z4ARX7NG9+iDJHfrbKL9D6/cFEMweMDM0Hy1cueQeVQw0v/jhr9i6LT3SBzjiJ7zGQMDC/hrQuPwfzTfjsB7BzDQ1lCogvBTBD00n698ROUh09+sY10VA2Bbz1bU6q8E2/iw4",
-        "scale": 0.0009368822,
+        "q": "KADW8TKjIQku+C0LUQXISSvZt8QoGs4mW0UEEhK3y847mDYE0Msm5un/AH8sPOhGqfPvN+gNAsXZypEUZeICQHg3Jy/V1sce6c8XVjHoMvSyuNFX4Ewspzb1ODPZueTO100V7TjiGqzaMEXEHsyoPEU2yNYIr07AdPHUuLvkKkL+GjQ5GD5CZ+rjwcHdO+k9FSlG01n7Zs9OUT2z28sYHcjjrMvstS9Ps7mxTLsy7iTERVoE8OSE7LH7ugAl2fYjrLLl/d5HASHo2xsrKueaU740Is+2OY/oFBfhRFXZMLAJWzfgsyjb5LrO2dnbQ0Tr3N8TqiLcygPeNjKjytjrMiYwvTtH92ovMh/Hx+3YzUsbsuDEKlq91T0oNiEy4f5G2si56xK5KOrmNt804u8DH8IXBSc1JydZxvMuUwo9u+7Kst6sHzPa80EHH728NOzL5DvRrvoTvi3gtkzFxjZNmBI5xyrQ/0IT9dcpS1db5fIixT444iT0zcsupaM+HxtH",
+        "scale": 0.000936705,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "3700158827064bf327",
@@ -13423,7 +13515,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ne/b5DLgMwsjBzIcbQbELFDw0+oc/MMnODT2LBjdsuY41ycaut8mytADIXwcaOo+1Q/bNwoi+Ofe2LANOvIKIH81GTbJ6PMnAeYdQiH+FeSu0s5I6Cc1xS3jRUbowdq+8FMg3jy/FK3yKRPWJuPYJVImutbwwxvcRBDgr7XkDB4iEhw2HCxoUtAOsrfPH+009yYf10LhT9heKxrP1NMiF8fixdfhrTZL0vH1J9It+T3Z/0gPAu6v2fzc1hQ03QEvx6bc7OoeCiXwzQlGMOG3EdYWHdioNbnaDCXCFCniEMD5Qi/HtAndAuHb0qzpLCzPu9Yjs0bz6AHqFjvF4eLsRDI2szUF6mU9NAzBxMnL4CEdwOTcFGPawjEZHxM76eo64O3N3QfEAAwDQ9Ef8uYFKroeHyk0OCc03ekbIgcSsurIwePBD0vh7Bz3IMXEOtXl0Ta70SUlr0vm1z7oqBIioA8dzCfCATYtwckYMCJE8AEh0Rs55fz/DtYkvbJDEBNM",
-        "scale": 0.0010794868,
+        "scale": 0.0010794867,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:12:27.090660+00:00"
@@ -13751,7 +13843,7 @@
         "rule_match_strength": 0.86,
         "experience_similarity": 0.869,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.308,
@@ -13762,7 +13854,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Punx8m3aMjo/LDoQVunCNki0xb4mEu4vVkvWQyDJqq1QsFoT2Nk/xucbMFYqZf4uuuPGSwMzML3FyrkAY+wbO38ENjy69NIo1On3IQ22KNCw0ukozE06qUXyPGjAqd+11Dk56CTIIKLWEjPXS5SuPE8nqr77n0/OUui0vdvTKhng/ig7Jy0qN8vKv+bUGPtQNh9OyzvuXdBATEGy0fAhUbfKqtLylkhSori3PLs9AzLXK0Iq6eye4qjAxx8zuwggwLISBOA+I0LKq0Y2Nd3IPOZJNb6jLrDgHRPOSyzpFaEUQyK3wSHo59Tuy7foLmnl1NVMsDfD9hPyJzPdvbnPIjMsox0yy2c7GTPM1dbB2j8qyvHC6Wu/rB4wGl5L7+pL1c+55DTrMO8AUdQ6w+MoCq8PDiYYP0oHvfBMOfgjqtTS1e+eUmC8+hv9Loq4RLzN5DrCrhcw0zfj0FDvzjbxoS4k2Cm1xDY13ukhKl9B5wEfvB1mwfnW4csMy5hjJzdO",
-        "scale": 0.0008950695,
+        "scale": 0.0008950696,
         "normalized": true
       }
     },
@@ -13831,7 +13923,7 @@
         "rule_match_strength": 1.077,
         "experience_similarity": 0.851,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -13842,7 +13934,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "SdnNzHjSIx47UEbsZPDZFmrYyacYEM0xZU/OOAm5sNJIuDMe4/AZ5d4FNnczThdEruv1RxtACMXcrLkZZvL4O20UFleg59cw0csRUDfZQMvT38wr9DQrizH+Lnbims204Twp7kbuJajqMivVM4nFQmEqp7v9g0jFWOu2lMXhKTrT6y9dKEJPS8zcq93OGAhNRR8l0zfjO8FIRku2ye8KXKa8r7fek048gufVOacVBEbEDVQv6Ouj1afWwxILywYjwdAsGe9kKC7rt0JFBuWVSMczL86xRaTj9SvbGFHmBpcZLCnCuSjfws/g06IJNx3lrAQYwGHS7h4mIxun08fjHzwysBsc53NFIUC60fOw0T5OxuXGBlfOgRYd+FJO6wZI19CH+SzIHOPrUPAqyAg6IpktICQPMEgplOVUQgkks9e5x83BKTDI5T0MMLS1W5/s6DjCriMxvx/90Tb6z2LylCEs1kGu6lg50vMmW1hRqvcNlAJ1xwvR/fQuq5xV9FBa",
-        "scale": 0.0008580561,
+        "scale": 0.000858056,
         "normalized": true
       }
     },
@@ -14030,7 +14122,7 @@
         "rule_match_strength": 0.86,
         "experience_similarity": 0.866,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.309,
@@ -14041,7 +14133,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ttro82LsO0shLkX+QgLFOU3Bvq4gBNQnRju4PjzMsaVFs0kQyts7x/wkLWY4dh0su+KvMRExJ9bRuM4NYNslOX8KNjWx5tlDwMn7CiLGIdqv1coy10I4vUjnWlq5scKq100t/R+yJ5rGDDfSUJe+QTw2mMv7lmTER+u2qtXQEh7kCSJDKy8vM9W1s/LeHfRSMCJIwUMGXMwzRTi/1PAwR7vYs8z1plNBsbXNOb4x+ULeGEk8++6T1J7kzyUsw/wxur8XDs8yIT3TokAWPejMS91FNa2hNsLpICzxaEDfGJP5UCi+sxbi6c/hxMMCG03uvthRsUbD9PLqGi3ns7/jN0EfhxhJ224iEzi3ttnG0l0MuPu0AViyqyJAMF43+vZD09K65zLfKf78V9E9ze8oDLUbDSIgOjcbzuUhR/4YpLbs4u6dXFbN6BMBLpW4R8Gv4UnTlQwpzSHo2UT+30P/qRk01B+4vTct+vUjMUA4+eUizhlt1wnR1OYhw65IKDRE",
-        "scale": 0.0008923577,
+        "scale": 0.0008923578,
         "normalized": true
       }
     },
@@ -14127,7 +14219,7 @@
         "method"
       ],
       "reason": "包含调查/数据；可能形成可复用方法；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
-      "screening_note": "",
+      "screening_note": "正文未自动读取：未抽取到正文",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -14165,7 +14257,8 @@
         "q": "RwLK1SjoHEBSIyMGYA7qIBO5288S++I+PB0APiPIyucpwiwLsMcevsEiP2YiddxD1/LePAkrBdndn4ENR/kSGlElNCS87Pc9BegeNR3ZFuLI0sgY1y0syx/xO0/IqeKq/joC/RbeQcbHLyznONGsJFQdy+kaqGu6UPzKvsbfFPsVHBxFNyUPRQcK9+W9Re9JKjxTzjfKJsRCPiXE3ckbTcCevN3itydSir3gO9gc5TTrF14oy8ex5afktC4SuwMvlqD8ANgoGTvt7C4lSdnVF8gEMb+6QvQY4gnHAzL6+40NSRy7qBbd8PLDzcL1Iiny7tovq2HC79H+Djm51tvoHEhBuBso81QPKAzI3L7b1R840+62/HfszjjaOV1kwwhX5+/CEh+5NAzsQrvw3wEEEqsZEyI2FzgZubpRNvw8yvfIz+ybB2D77xgaUa2cXqD40j+e9FE10hru1vrU9EknvCcY+zutIywu6u0NMlRG1RorrUkh4wzu1LM/xdIk5Sgk",
         "scale": 0.0009778116,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "a9686df8d0f64613ff",
@@ -14417,7 +14510,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "ROTt5yT6Hh5SJxvqF+DaHWrRtK0564T6ZTH+CxrNr8VXsTUQ3vxEwRURDWlHYfItrSzLRQoVAb3MwbYhfe/hPXIpMEaj+ssV1uYeDEK9M/qS9tgizR4+mj7PPVPPsLGf7kEC2jC7KZbhFDvqO7qdRlQmnLMbvii7XQ2/v978KigSHyQhG01qUcXjrLcVPwJAJjdVq20NS706KQrO2PsXZa2zs8fr20FViNXYSMk5BCOcID9D0w275bLPxyQa2N9Wt8gACtQrOCaxtjdEJNOQRb8h8rSKRJkoMTXIRRnX9KklaSGqwyL5Arq8wd7uJCT49NBJvm3uBAnnLQ3Zw76+BC83uRQrz1ILSi6rzPbIu19Cv/TGGXu1qzwBOx5B0eRJ/O+p4ibRFxgLINI/yAgQDaMLCDYrIDsrsQAfRhsvr+bCtdLmVirO8UTsF5m3V+TO0DLMyTEN8gzk8Dv4zngSoDI/1DTV4zwP5QE8MEI76wEUvRtd0xvWxdonk4FSAx1E",
-        "scale": 0.0008905434,
+        "scale": 0.0008905433,
         "normalized": true
       }
     },
@@ -14921,7 +15014,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KwzI2UPUCTtCOjMZcfnkODwAtswZCb0YMBvl9ivi27lRwU0g49cCAOozAWEgVPI30Ma+VwZC3s7au8s5fwcNSFf78TnX8ek6z/QfPTzwNdO20d4qzTtRzyXZJESvwKS8+jErDSncDsHvHSvTPb7mQjToysQRm1TTPfHTy8elLRMTBh8oFkVCNOL54tvlPr9Q/xw+wS4CSfNDM0XxtKoqS8bwtuDKpDZTuOvPOecPBf/H8UsovwW63Kzb2Bvt2PchlrjoFQgnCi7S4gw+M+roHMApJabXOM8D+hDnEyvcBa7eVhbU60AJ6N3z37INQRfexNs4wknF2UPfOy3l4snpHDsy1C4n2FMmOiPEx9LexFUM0f267G7UxyoQDAxF3fJH7u/B8SDlHg/wI+Qb0fYFLMYD7TwLKikisgBSVOdVvOm76dydGyn39SINJZyuQerM3yDYxvg13Qv29RLo2DHhrBcX8SG241Ij3+kfK00149YbxBQz4QzQxugSw6YUFzIa",
-        "scale": 0.0010385672,
+        "scale": 0.0010385671,
         "normalized": true
       }
     },
@@ -14971,7 +15064,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "M93c9WLLKQF/Ek0YRNvTNVW9gs46CfcsSjjSMv6b4rxgv0gltOkfvN4TQV4ncR4toP7VVNI4Fa/PrqcnZucMFVJONy2V59RNvgT0STH5Us7KxKIlnUYZjEnJU1PUt6OpAD45zkTxLakCH0LIJLCXOTkpqarqnVLha8nOyLnpDSrqCTlEOSZ1VrQDuf/vGQJFKDx0yUDOJ5UncCW44MYpRLG75Nq6x0pdk+XORJMd9DjbP04v29aj5snmqQxVteoGsOET5/EfCxnToVM0O/yoRewwRqOON8b5HAzUJg0MBL/lSUrZ1Crf58if5METO1K5wMcsryjY9P0CWAnQsa37N0UDoh4933dJQR+r2rb24FIbourS602syjgdRRBQ1PFg49SZDvnXKvkWRt9I3hknRpDxEzUUSCIiopwnPu45w9HWwdDcMR69txbqLr+5Tr7Lx2jZsD83vRHmvjLxt0gcuzgE4zOlxmQd7w4QHTpR495E2C1D4xj479Mg0bQ6IUJc",
-        "scale": 0.0008597198,
+        "scale": 0.0008597199,
         "normalized": true
       }
     },
@@ -14994,7 +15087,7 @@
         "ai"
       ],
       "reason": "涉及AI实际影响；语义增量：可能补充反例/边界",
-      "screening_note": "",
+      "screening_note": "正文未自动读取：HTTP 404",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -15027,7 +15120,8 @@
         "q": "MPPdxU7eLjFNC0Dxf/2xPjXVmdn//sZASEnIHA+70t1IyS0Rr+oS7ejyI1wxNedEwOcEL+NLBMffnLQpLP0qE2A4Az7T3tg7zco1OTb9M+LZtb1I4zgsvmrsV0Ha9cLM8105BDPzOb/cHvnEFayhOUE0trzvsjmfU8i7rLXQGygYKT83HypAYubx0snfC/MjDjEivE3FOMAuKizb3s47QsW8x90FsvhI0ufhKK4O+SzQBlYb29y539bn5Swc5A0zx5n44u0YRz4X6DAGPeS9QMcWKLu/YKr36kDTNSnaEq3cYBWzzfLF7eSv2comPCHd4+cz5krP9/MCHDXA49zxNDJLoCAj+2UaPRrA59nV0iAx1hXJA0/K5jIe/TpK1uxk2ujA+gLTHO74QcYbCfUbGaUXEhhEGSsoztwUG/IQssbIvOjRDD/M9hYNOtfQNKoA1z/I0xkfqSTjxgILrj8TxPoY8zObCEw5ptwkNTBIEQ8N3yxf2/DzC98JtrVO4yZD",
         "scale": 0.0009985811,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "3f523a8be94187852d",
@@ -15077,7 +15171,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MP3y1UzuNiUtKiUCVvbnJDTbwMYXJfgTRybOM/u/2988pRcH4vEw4MscOXkXVBkUydfDOtspAcTnvq1ISwMJPW0jTD/S6+E56uYXLkTKLv3Lutwrtg8jq0X2SEbW1snSvjEZ6EHjL7/qDTLGSbS4KjQylOj8syDmQuKoutDRBS8A9SwwHh0kYNTf9+ToGuRFKCpO3zsKRNAmMSS34tQvPdThsenYvUJBw/fhI6JM3THTI0wn7s69zt/z2RxC0QYsr77sCskuNx0VxhlGCeG5Ld4QNM2qFOn88xzIFxYLHr7tRyfT0xXx3dvZxM8PGDXQ+M4ns0jSEQvrEPzTxtHhPR4ywAwhAXhALyLT3czIvlAGz/XDAH/hxSQWF0Qw2v491Oq76je9LAjnV9M2xtQW/cX7GR8DHywz3/4dPdr9y+P7ufzVGiHu+h3WP76xRbu78ljMrzoYzxQY1hXC6UcYqBwd4xbQ4VYu2gAZMB5AAuof1hUnqP3zwc8ttcA/CSQ2",
-        "scale": 0.0010499472,
+        "scale": 0.001049947,
         "normalized": true
       }
     },
@@ -15260,7 +15354,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "X97o5VPzDhEuLzIFPhvSNi/JuLjw+asqNDa7S/fa07o/pxkhx+0zwuEIF2gtNOkwx/bxOgM57/HzsdgUNhUcG2EsCSu/1N9h+exJJDDhMQHM4/EcxBgcvTAIUj67x9m64nEP1DfgKZbMHxHlKZzZMW4cgcMUv0fXUAbVpsDHPh8qBR9LFTZiTLj/revvSv4jGBIllUv3Tq5jM0jc2+8ISJvY4fLZmwNNmsHTLt7sCRz0DFgixOSf7szfuBsM5PIKxNHjGt03KhQAxypSXdnsCNIKM9/dUcr/2AvFEDz7D7LnWSOVyRTrB/LA9LnySCjl0esvyDnX2wHzFjDuuNfuMSskqygC+2YhIRbJzfPVu0A3u9rKKk3Z6ikVKS8l/eFA/9Kw6TvmKg72UNEPDAYcGq8tHhUl+CJM4O84YQQX2+S11dXBGzy04yPnJtuwFM3N8T7B1BQ85ybA3g4d5QoOgRYG+VKc+VFGrv8DLiY+7AQssRND0Qjy5sU1yb0HCD5W",
-        "scale": 0.0010039269,
+        "scale": 0.0010039267,
         "normalized": true
       }
     },
@@ -15713,7 +15807,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "NPjk0EvrAUF0BywxVe/rNl/Bkcsl+sk6UvvgZCajsNRln2gq78oL/+Y1M1clUd81nvrLZewo7eHczrQyY+gxQXQlNVKr3dxF2vRBN0jrZtea28IY2UQ4v0LbMF65nKu4/zsk5TO8AYTkDUnAL6e2SyhAsOjqpynBF+Pzrq28JzLCJjMzOhlUP+X8gdshSflcJz9pt2ALPtw6PPLXtKcbMdHbudv0yiR3mM+7QdEb4EOqKF010gCfpK3QpiVDwutKysAM9OgrB0aatgo5OO23NsYsLM31GMEWNAPwFhQGItHqcSeXuS3p7fLHxfIhIxa0y885mje2/BXTPyXRz7ndEDYFxxsVtF/qVTvkvO3MyUAlz+/rFWetyCQjRlFI3whP8va4/TT0SevhV8sfuxA7MaAd8GUSLg04icgrYAJCz6jFwObDLyW3DB75JZ2SMuTc21K72xcP6SwTtjj+0S7XnypC0SDYqzYOwuEsH2E+8c40whY9y+bVq+k3t6o1KCot",
-        "scale": 0.0008798341,
+        "scale": 0.0008798344,
         "normalized": true
       }
     },
@@ -15776,7 +15870,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JPPe90/aHShBJCv3KPPEHSbDvbL9BLkxO0q7LTjm0cUxsDMHyeoxxPscFlcSX/4i4uTlUPwmDbrtsbQJVgQLNXIgCz/G1N811+cDTELlXc6209QUy1IY0EHvQTG7y966708O7SjANrPgPBe6NLvdJkszsrn4uUXjP9/jt8ThGh0Z/CFAPz4xVK/o3d68D/Y8FUND0z/zQvM4HVHE6NUtb7bZxdL3uy5BoPbuR6ojBk/1G0wt7dKi3b7xzhIm0h8AvdvhFt9PLCj9yipAOPTfNc8vO73QR8kB7x3ZKFHoDpUHIi6+phbo/ty/4s/0AS3Wteo/5jnY8BL2GzTqlsHrJBNDpSEX4zYZJBvPx9HwvFAZxtjd8n+2yBX5GUw8+PU10bioAAvONxzmSLkSt+kY9a4eFB0iGhpSyK5IPxoOz/Hx0+66VjDe/xsMK6+8M7zE9C/IvTI/7gT87SLw7yQQuSob8yfB+i8Y1AYbDUFGDOcU0Stduvnu6cgitMUbFBcp",
-        "scale": 0.0010206648,
+        "scale": 0.0010206649,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:06:09.623710+00:00"
@@ -15981,7 +16075,7 @@
         "rule_match_strength": 0.892,
         "experience_similarity": 0.9,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -16185,44 +16279,56 @@
       "published": "2026-08-10T03:18:53+00:00",
       "first_seen": "2026-08-12T08:07:07.391517+00:00",
       "summary": "6月～7日に開かれたサッカー「FIFAワールドカップ（W杯）2026」を全104試合ライブ配信したDAZN（ダゾーン）で、国内のユニーク視聴者数が大会前の約5倍に増加した。日本代表戦以外の試合が視聴全体の80％を占めたほか、大会期間中には新規加入者の30％がプロ野球も視聴。ワールドカップを入り口に、ほかの試合や競技へ関心が広がったことがわかった。 The post W杯でDAZN利用者が約5倍に 延べ視聴者数は約6700万人、日本戦以外が視聴の8割 first appeared on AdverTimes.（アドタイ） by 宣伝会議 .",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 6.0,
-      "reading_score": 6.67,
-      "notion_score": 5.58,
-      "grade": "B",
-      "tags": [],
-      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "content_checked": true,
+      "content_excerpt": "運営するDAZN Japan Investmentはは8月7日、「FIFAワールドカップ2026」の視聴データやファンエンゲージメントをまとめた総括レポートを発表した。大会全体の延べ視聴者数は約6700万人、ユニーク視聴者数は約1615万人、総視聴数は約4億5250万、総視聴時間は約8340万時間となり、DAZN史上最多視聴を記録した。集計対象期間は6月12日から7月28日まで。 国内で全104試合をライブ配信したのはDAZNのみ。日本代表戦、準決勝、3位決定戦、決勝は無料で配信し、地上波放送と組み合わせて幅広い視聴機会をつくった。日本代表戦のライブ配信では延べ約1100万人が視聴し、中でも「日本対スウェーデン」がDAZN Japan史上最多の視聴者数を記録した。 視聴の内訳を見ると、日本代表戦のみの視聴は20％にとどまり、日本戦以外も見た人が80％を占めた。日本代表の敗退後も決勝トーナメントを中心に高い視聴者数が続いたという。 日本戦以外のライブ視聴者数では、決勝の「スペイン対アルゼンチン」がトップ。アルゼンチン対スイスの準々決勝、フランス対イングランドの3位決定戦、フランス対モロッコの準々決勝、ノルウェー対イングランドの準々決勝が続いた。 全体の54％がライブ視聴だった一方、深夜・早朝の試合が多かったことから、見逃し配信やモバイル端末も活用された。視聴デバイスはテレビが41％で最多となり、モバイル37％、PC12％、タブレット9％、その他1％だった。 年代別では55歳以上が26％で最も多く、25～34歳が20％、18～24歳と35～44歳が各19％、45～54歳が16％だった。幅広い年代が視聴したことに加え、スマートフォンだけではなく、テレビを使ったリビングでのスポーツ観戦も定着しつつあるとしている。 「見る」から「体験する」へ 3D自由視点など導入 今大会では、シュートの初速や選手の最高時速、パスの軌道などをリアルタイムでグラフィック表示する「データテインメント」を「Party Live」として提供。複数の映像から好きな画角を選べるマルチアングルや、3Dの自由視点でプレーを追体験できる「イマーシブビュー」も展開した。 イマーシブビューでは、決勝のスペイン対アルゼンチンが日本代表戦以外で最多のアクセスを記録した。DAZNは、コアなサッカーファンにはプレーを詳しく分析する手段を、ライト層には新感覚の映像体験を提供したとしている。 次のページ 1 2 この記事の感想を 教えて下さい。 この記事の感想を教えて下さい。 0 発見があった 0 特に見るべき ものがなかった 0 もっと知りたい 全体の54％がライブ視聴だった一方、深夜・早朝の試合が多かったことから、見逃し配信やモバイル端末も活用された。視聴デバイスはテレビが41％で最多となり、モバイル37％、PC12％、タブレット9％、その他1％だった。 年代別では55歳以上が26％で最も多く、25～34歳が20％、18～24歳と35～44歳が各19％、45～54歳が16％だった。幅広い年代が視聴したことに加え、スマートフォンだけではなく、テレビを使ったリビングでのスポーツ観戦も定着しつつあるとしている。 今大会では、シュートの初速や選手の最高時速、パスの軌道などをリアルタイムでグラフィック表示する「データテインメント」を「Party Live」として提供。複数の映像から好きな画角を選べるマルチアングルや、3Dの自由視点でプレーを追体験できる「イマーシブビュー」も展開した。 イマーシブビューでは、決勝のスペイン対アルゼンチンが日本代表戦以外で最多のアクセスを記録した。DAZNは、コアなサッカーファンにはプレーを詳しく分析する手段を、ライト層には新感覚の映像体験を提供したとしている。",
+      "base_score": 6.75,
+      "reading_score": 8.5,
+      "notion_score": 8.09,
+      "grade": "A",
+      "tags": [
+        "research"
+      ],
+      "reason": "包含调查/数据；语义增量：可能补充证据/案例",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
-        "topics": [],
-        "formats": [],
+        "topics": [
+          "データ",
+          "分析"
+        ],
+        "formats": [
+          "調査レポート",
+          "ランキング／まとめ"
+        ],
         "intents": [],
         "signals": []
       },
-      "concepts": [],
+      "concepts": [
+        "データ",
+        "分析"
+      ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.878,
-        "rule_match_strength": 0.857,
-        "experience_similarity": 0.847,
-        "repetition_penalty": 0.294,
-        "gap_bonus": 0.0,
-        "evidence_bonus": 0.0,
+        "knowledge_match_strength": 2.727,
+        "rule_match_strength": 0.85,
+        "experience_similarity": 0.851,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.44,
+        "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.441,
-        "increment_type": "general_relevance"
+        "semantic_bonus": 1.018,
+        "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "DAv+0mDZBU9dOR8MVPHFIkOs0sUADdgaQ0LcGfepxNQ1wVgYzuosytgcCXccUwFFvdkZH/JDDqnRxKVEZuwOK2FLBj7D/9E4w+MRFzzZJNzO3ccntjxUrWMKSDWzwKSO6jwe5T7XOp73IjLgRdPMRi4BtLQGiVLXL+vHp8PyCzcW6BU6JUZYQur40bzZWOljJjxD1SfcRJE8ODvc29IfGqy3sv3bjDtGufXdLdUX8yi7SUgE1+CxytThs/Af3dIRo7QZIfFDFTHc2zMrKOLCPtM0KMGhOef6/ibfBBfvFqEIYh/w10Hh4szNxsgtWBvfz/ZDrGWx5DEXQ/4AzJ7bIkAbshgS1mkyIRy6wdDh2zY0t9na1kS83z/4ERhR4+w1xuXI+kDCOgMLT9wK3QkkOrUFFCJACyMns+cyR/A0s+6S4brpFUj21S4IKb+zUdfDz2CfwCVFvjPl5Cfi3B8LqBwREiCt4380rOYjMmtS8uI+oEA25wEG3PBD2bsJ/xVE",
-        "scale": 0.0009391399,
+        "q": "GQ/t2DbVDSw5JCsNS/3cIDW8ys4MEdsLTkTcKfDFx9pCykwnxfUyyeIVGGAbV/Q9u9kLH/xRF7nYwKchV9sZMTAq9jPB7dkoyO4aMSrYI+rB08st1DdLrFEPPja9zMCq6kwY3CvdJL/vK0XdN9LNN0EItNgTkz3aLO/SwbrhB0IRAxRENkRgPf/5ss3rRfVVEx8kySTjOaVCPjn67uYjGq7RwuzjgT08ufrvJc4RCxbFSUX42d675sLjvxAc8N4Rra0cF/E/DRvZ0y4rI+m/OcwpKL6ZPuYH+A7jKh/zGrYJUiXt0S3x4ebS08oWWQzh7eQzxlvN5yf/O/j1u73hICwMwxIg51szHh+8t7fb0zAjttXh+zvSwCrxCRE36OMl0uXG+TjHMA4RQOsL3QcoLrkVGRsrESUUreEyQQQqsgGb3dTkGkjz6CcCQL6/XtTJyVSSwSkwwS3X3Snx0xsWuCEFDyO+3lEuyOIUMk069OU9qTc9+APs4uo13qwQ/CU3",
+        "scale": 0.0010433524,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "bae83986dc6e658724",
@@ -16478,7 +16584,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ng3fsnXxFx1FJmwwHgPlITW3x9klG8g1NkbgQwjtwdI8oDcA2tdOseUbKnw0Xtokpc8DLPcoLb3EmZ4rUhHvQW1VGknQ3s1b8OoYGELsOszP+uUH3EJVsELUUFrF0vWc6B9ExVLXSKD4NSnWPMyyO000jLsFpELE98iwl8HnHwoX7CcyGzk/XuzIwdPAMRIPOEl1wT7CVbY6KS20670qTNbXwwXOnzc7seECM8Uv1SjYIlkcvd+tt6fQzONd6e0SxufUC9IXJCoczU9QVty2GsARQq2ucL766jDOHCDS/5jHNRPZ4iTf4sfIy67yPEzux7At0j3byyXdWyb6lamiOiNOkw0hKnhRKRPSu8vnvEYUlAjg8WPP5ztFKzc53/I20MayFlHKNBgDUbMT2u8yG5IfAi8dNzJD1+ZVX+Aflcvou/SeI1H/6hn5PMG3O8bZ1CrVuAE1pS3MySgSyWoCgRoe0Sup809Osf74QCNC7w4kujdG79MF6tAd3Jw2MudO",
-        "scale": 0.0008885673,
+        "scale": 0.000888567,
         "normalized": true
       }
     },
@@ -16539,19 +16645,25 @@
       "published": "2026-08-10T02:16:48+00:00",
       "first_seen": "2026-08-12T08:07:08.477881+00:00",
       "summary": "横浜・みなとみらいにあるセゾンアートショップにて、写真家・瀧本幹也氏による写真展「SEZON MUSEUM OF MODERN ART Photographs by Mikiya Takimoto」が開催中だ。 The post 写真家・瀧本幹也が切り取る、菊竹清訓設計・セゾン現代美術館の新たな風景 first appeared on AdverTimes.（アドタイ） by 宣伝会議 .",
-      "content_checked": false,
-      "content_excerpt": "",
-      "base_score": 6.0,
-      "reading_score": 6.66,
-      "notion_score": 5.63,
-      "grade": "B",
-      "tags": [],
-      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与实际工作场景语义接近",
+      "content_checked": true,
+      "content_excerpt": "横浜・みなとみらいにあるセゾンアートショップにて、写真家・瀧本幹也氏による写真展「SEZON MUSEUM OF MODERN ART Photographs by Mikiya Takimoto」が開催中だ。 瀧本氏は、1974 年愛知県生まれ。広告写真やCM映像に加え、作品発表や写真集の出版など幅広く活動。映像分野では、是枝裕和監督作品『そして父になる』『海街diary』『三度目の殺人』、Netflix シリーズ『阿修羅のごとく』などで撮影監督を務める。ポートレイトや静物、建築、風景など多様な被写体と向き合う中で培った独自の視点と卓越した技術により、国内外で高い評価を得ている。近年の主な展覧会は『建築×写真ここのみに在る光』(東京都写真美術館 2018)、『隈研吾展』(東京国立近代美術館 2021)、『CHAOS 2023』 (OGATA Paris 2023)、『丹下健三と隈研吾』展(パリ日本文化会館 2024)、『LUMIÈRE / PRIÈRE』(ヒルサイドフォーラム 東京 2024)、「Mikiya TAKIMOTO」(Clémentine de la Féronnière 2025）、『正倉院 THE SHOW』(上野の森美術館 2025)など。 本展は、2026年に開館45周年を迎え、6月にリニューアルオープンした軽井沢のセゾン現代美術館を撮り下ろしたもの。同美術館は、建築家・菊竹清訓が設計し、庭園の基本構想は彫刻家・若林奮が手がけている。今回、瀧本氏は建築、庭園、浅間山の自然環境と向き合いながら、シノゴ（4×5判）フィルムで撮影した新作23点を展示する。細かな演出や依頼は設けず、建築や庭園、浅間山の自然環境と向き合うなかで、瀧本自身の視点と感性によって切り取られた風景がフィルムにおさめられている。 また、本展のために撮り下ろされた作品を収録した写真集が、9月に発行される。 瀧本幹也《SEZON MUSEUM OF MODERN ART #02》 2026年 C-type print 36.6×28.8cm © Mikiya TAKIMOTO / Courtesy of MT Gallery 瀧本幹也《SEZON MUSEUM OF MODERN ART #03》 2026年 C-type print 36.6×28.8cm © Mikiya TAKIMOTO / Courtesy of MT Gallery 瀧本幹也《SEZON MUSEUM OF MODERN ART #04》 2026年 C-type print 36.6×28.8cm © Mikiya TAKIMOTO / Courtesy of MT Gallery 場所：セゾンアートショップ (ヨコハマグランドインターコンチネンタルホテル１F) 時間：10時〜18時 定休日：木曜日 ※祝日は営業 入場料：無料",
+      "base_score": 6.5,
+      "reading_score": 7.24,
+      "notion_score": 6.15,
+      "grade": "A",
+      "tags": [
+        "marketing"
+      ],
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
       "screening_note": "",
       "screening": "semantic_v6",
       "learning_features": {
-        "topics": [],
-        "formats": [],
+        "topics": [
+          "広告"
+        ],
+        "formats": [
+          "セミナー／イベント"
+        ],
         "intents": [
           "参加募集／イベント告知"
         ],
@@ -16559,28 +16671,31 @@
           "イベント色が強い"
         ]
       },
-      "concepts": [],
+      "concepts": [
+        "広告"
+      ],
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.852,
-        "rule_match_strength": 0.826,
-        "experience_similarity": 0.833,
-        "repetition_penalty": 0.35,
-        "gap_bonus": 0.0,
+        "knowledge_match_strength": 2.612,
+        "rule_match_strength": 0.827,
+        "experience_similarity": 0.839,
+        "repetition_penalty": 0.95,
+        "gap_bonus": 0.17,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.808,
+        "semantic_bonus": 0.55,
         "increment_type": "mostly_duplicate"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "KuPVxyXXHytLAUHyTuLZME/g064RLdgsPTbTMSXBtdhBzjUi7N0C5vb+LmU3SOcwzc3UTvE4BcvIoK1HOdkONXMkLSvh5slR0f7aNCbmM8i54u9P0Thrz0y4DEy7wdy33R4b91XFR7LeGSfLQ6LDXzobvNEHg0LBTeTH5azHHUkyDCE4LjQ/f8D72s7eRAsvFkhC4UYcLb0lGELF+Mc1Qqy20dHauj88vcqwJZgs2yTuI0QkAdCL7MbYlwYJywscxdb6GtwJGCHjzjBSOtq8QeFCKcG/Psz8HA2lWyvpKsDrXTHmtwr0A5zM/asAXGEB8sURmkTY8ivyLS6/vJPJITY4sys3KWEgOBOL987N1FT5yQK9IG7p6xg/NjJI3iNGwNPI4EfLGBPLStpR7uo5JIkPAToSKDUX2+dCBv/pxfjOvPG2FED75w0DFqKtUcrR2SLavhP+0Rjo2S/v3Eg/iFUM4Abd0hcj1fsSLiFI5/Q9uA5CrhEVxcgiop5YDCEe",
-        "scale": 0.0009409907,
+        "q": "JujJ3SHJGzZSEDzvSNzjNVX/x6wXGdwsPTffNDTTw9FEyTYh5tIC9AUGOlYpT9Qpz9TFRQIt/cDXocwiNeUHN3gbIkDN09IzwgjZICDyG8Ws3e9M1jNs0EfSL066z+zA2h4c8ki5OK/fICvDUJ3JVyUbxMbwgT6+QtvX0bjPH0spDDNINz9EY8nowcroL+02EUQ200UgL8M1HkfQ6MJAP528xcnuvU4poM+wQqEh/SbgHkYo/uaM6r/Wox8F3PwttuEVHuIaJiXTxDlHJPDEQuY9L6rHQ8X6DwqlZEHeJbf4TiXarAQC+Lbd7638TWML6tMioDXJBCPpHzfDvKDSDDI0tR0qGGcuNiih5MnA21EHy/O6GWrM0CE0U0FE3hs81NG97FnFGxrSON1O2fctIZUZByYZHjUMzPJIBgr1wOfAzuSpNUPq7RQHI46qVNLY1C3QxBEi2Bvv3Cvu1Tw3q08X4AXbxSgczQAWGylQ9fI1uApOvQX6wdAurYRPEiok",
+        "scale": 0.0009509562,
         "normalized": true
-      }
+      },
+      "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
     },
     {
       "id": "14c90438fb26b5216a",
@@ -16870,7 +16985,7 @@
         "rule_match_strength": 1.047,
         "experience_similarity": 0.878,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -17025,7 +17140,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Dfbm4mzXISpJOWDWXwEHGVnApOkZ/PEZMCbQNAnkqeZiwW73zOkhqOoTHmgzZe4xsQULPNIwCaXWyKM1S+AhCGEaHim06uE0A+IhKzPrPPPB08UpqEUlg2T3RVPJ4cjdAyz/z0PePKH0MAymTsXEO0gj0cnwmBzZcgGqvqzgCQ8dCC43J0QzVM/2uPLcHw4qTx9p0EjWRNs6SUi86f4ye8fRxMa7sTFixufMJdkazje9H0QtydyBvq/p4jFBzv8bq9cCBudCHArd1xojEd6zK9UTQ9S9QbrQECLkGyP5EM71EDTNAgXfEc7E467hJzHTqb4b3lju0BzxOyLPxfzFRSgUmjgI4Uo+MhO3v+gH0h0uzwbSGF7LslMKCy0j3t47+8XF5xnHMR8QQbo69NQeBLIHBk42KB0Xrd8cPQkKndPSuvrKAxO460EDQLC5Xpe18VzavhIDsQXryS7Y0TAlligyzjbH+mdO2vkSGjM44/ww4DYoxfAA8+Me28IuCDQt",
-        "scale": 0.0009615476,
+        "scale": 0.0009615478,
         "normalized": true
       }
     },
@@ -17122,7 +17237,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JwvQ8xjkCDA/CkQaUtvmKCXHusYMD9swRUTWHxDSyMg0nioK09wezuD7MGIaWwA2v+/sPf8oAdnjqMIaTvcQK382Bji05tMX7NMUNTbILc2p3vQGyCQ+tUXrUDTU1uKi7VYf1xzUIJfQFA+7CsSuPlMWo84LoTHZQNbYwdTRDirpBTU7Ei1MXc0N2uLeJ+o5KQpP2T4OTdddQhPk398VSM/ZzAPawRctsdbKONIVCCzJGlIi4cum37LG1QQn3gsAtMLp+eInLCLY1zNMOPDcGc4YEs/PNNLqBS/AMj7uI7b7Ny3KxBfe9uDLxMAVOyra4NUs10ny8+/wHCzSxNr7Xgk3vRYR/mMbLRTM5M/Xzy0r6uTG8krNzSQeJWRE6/RN8dPAyxXuOPQEQrdF6+sWHLYbCyIfDCEs0uE2LAkgyuHK0AiiK1LE5h3uJLe0KuDS+UHJ2icf0xXpyy8B0CwYvionAECj7lY4DwI2GUM19Ncc1hxrvvvX2dMNwak8ISE9",
-        "scale": 0.0010498664,
+        "scale": 0.0010498662,
         "normalized": true
       }
     },
@@ -17492,7 +17607,7 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 5.235,
+        "knowledge_match_strength": 5.233,
         "rule_match_strength": 0.855,
         "experience_similarity": 0.876,
         "repetition_penalty": 0.0,
@@ -17785,7 +17900,7 @@
         "rule_match_strength": 0.863,
         "experience_similarity": 0.873,
         "repetition_penalty": 0.95,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
         "semantic_bonus": 0.608,
