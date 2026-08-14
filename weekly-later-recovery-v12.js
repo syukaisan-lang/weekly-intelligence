@@ -49,7 +49,7 @@
         ...next,
         status:'later',
         status_origin:prev.status_origin||TRUSTED_STATUS_ORIGIN,
-        status_action:'status',
+        status_action:prev.status_action||'status',
         status_updated_at:Number(prev.status_updated_at||prev.updated_at||0),
         updated_at:Math.max(pt,nt)
       };
@@ -95,12 +95,12 @@
       for(const [id,r] of Object.entries(remote)){
         if(r?.status!=='later')continue;
         const local=state?.[id];
-        // Do not override an explicit later decision made after the backup, nor an explicit read/skip/save.
-        // Only recover absent/new state or the known buggy feedback-auto-read transition.
+        // Never override a deliberate explicit read/skip/save. Only repair absent/new state or
+        // the known buggy transition where feedback itself replaced Later with Read.
         const recoverable=!local||local.status==='new'||(local.status==='read'&&local.status_action==='feedback');
         if(!recoverable)continue;
         const updated=Math.max(Number(local?.updated_at||0),Number(r.updated_at||0));
-        state[id]={...local,...r,status:'later',status_origin:r.status_origin||TRUSTED_STATUS_ORIGIN,status_action:'status',updated_at:updated};
+        state[id]={...local,...r,status:'later',status_origin:r.status_origin||TRUSTED_STATUS_ORIGIN,status_action:r.status_action||'status',status_updated_at:Number(r.status_updated_at||r.updated_at||0),updated_at:updated};
         restored++;
       }
       if(restored&&typeof save==='function')save();
@@ -118,14 +118,16 @@
   if(typeof feedback==='function'){
     const previousFeedback=feedback;
     window.feedback=feedback=function(a,v){
-      const wasLater=state?.[a.id]?.status==='later'||(()=>{try{return st(a.id).status==='later';}catch(_){return false;}})();
+      let before=null;
+      try{before={...(state?.[a.id]||st(a.id)||{})};}catch(_){before={...(state?.[a.id]||{})};}
+      const wasLater=before.status==='later';
       previousFeedback(a,v);
       if(wasLater){
         const cur=state?.[a.id]||{};
         cur.status='later';
-        cur.status_origin=TRUSTED_STATUS_ORIGIN;
-        cur.status_action='status';
-        cur.status_updated_at=Number(cur.status_updated_at||Date.now());
+        cur.status_origin=before.status_origin||TRUSTED_STATUS_ORIGIN;
+        cur.status_action=before.status_action||'status';
+        cur.status_updated_at=Number(before.status_updated_at||before.updated_at||Date.now());
         cur.updated_at=Date.now();
         state[a.id]=cur;
         if(typeof save==='function')save();
