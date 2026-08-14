@@ -46,6 +46,7 @@ jobs:
           test -f index.html
           test -f knowledge.html
           test -f knowledge-temporal-v7.js
+          test -f knowledge-temporal-list-v7.js
           test -f work-system.html
           test -f work-system.js
           test -f work-system-intent-v3.js
