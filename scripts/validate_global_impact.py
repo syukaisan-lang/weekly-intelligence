@@ -26,11 +26,18 @@ def main()->int:
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
     require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles','DENTSU_SOURCE','html_feed_fallback','/articles/')
     require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_STATUS','_normalized_status','_is_positive_adoption','status_action','queue_grades','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
-    require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
+    require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图','later')
     require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留','status_action','S/A/B')
     require('weekly-source-audit-v9.js','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_FEEDBACK','QUEUE_GRADES','S\',\'A\',\'B','baseFeedback=feedback','raw.status=\'read\'','status_action=STATUS_ACTION_FEEDBACK','sourceStats','isRecommendedUnread','isAutoArchived','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','未处理归档','C 不进入处理队列','建议停用','复制来源统计')
-    require('index.html','weekly-attention-v8.js','weekly-source-audit-v9.js','weekly-state-sync.js','最近12周反馈','最近90天','最近8周','未处理归档','S + A + B','C 不进入处理队列','一次点击','0/17','隐性跳过')
+    require('weekly-later-recovery-v12.js','RECOVERY_KEY','preserveLater',"prev.status==='later'&&next.status==='read'&&next.status_action==='feedback'",'recoverWeeklyLater',"if(st(a.id).status==='later')return false","gf.value='ALL'",'status_updated_at')
+    require('index.html','weekly-attention-v8.js','weekly-source-audit-v9.js','weekly-state-sync.js','weekly-later-recovery-v12.js','最近12周反馈','最近90天','最近8周','未处理归档','S + A + B','C 不进入处理队列','一次点击','0/17','隐性跳过','稍后看','不受 S/A/B/C 限制')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
+
+    index=read('index.html')
+    if index.find('weekly-later-recovery-v12.js') < index.find('weekly-source-audit-v9.js'):
+        raise AssertionError('Later recovery guard must load after source-audit queue wrappers')
+    if index.find('weekly-later-recovery-v12.js') < index.find('weekly-state-sync.js'):
+        raise AssertionError('Later recovery must load after encrypted state restore helpers')
 
     require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback','ISO_DATE','evidence\\s*period')
     require('scripts/sync_notion_temporal.py','enrich_item_temporal','base.build_item','confidence_counts')
@@ -51,20 +58,28 @@ def main()->int:
     source_audit=read('weekly-source-audit-v9.js')
     if "status_origin!==TRUSTED_STATUS_ORIGIN" not in source_audit:
         raise AssertionError('legacy read/save state must not count as trusted human reading')
-    if "effective.status==='new'||effective.status==='later'" not in source_audit:
-        raise AssertionError('feedback must auto-process new/later articles in one click')
+    if "effective.status==='new'" not in source_audit:
+        raise AssertionError('feedback must auto-process NEW articles in one click')
     if "raw.status_action=STATUS_ACTION_FEEDBACK" not in source_audit:
         raise AssertionError('auto-read caused by feedback must remain distinguishable from explicit read')
     if "return isUnlabeled(a)&&isQueueGrade(a)&&isExpiredUnlabeled(a)" not in source_audit:
         raise AssertionError('archive must contain only expired S/A/B, never C')
     if "if(!isQueueGrade(a))return false" not in source_audit:
-        raise AssertionError('C must not enter the processing queue')
+        raise AssertionError('C must not enter the automatic processing queue')
     if "s.status==='read'&&s.status_action===STATUS_ACTION_STATUS" not in source_audit:
         raise AssertionError('source adoption must distinguish explicit read from feedback auto-read')
     if "readingProgress==='archive'" not in source_audit:
         raise AssertionError('expired S/A/B must remain reviewable in archive view')
     if 'applyFeedback(' in source_audit:
         raise AssertionError('implicit source passes must never directly train content preference')
+
+    later=read('weekly-later-recovery-v12.js')
+    if "const wasLater=before.status==='later'" not in later or "cur.status='later'" not in later:
+        raise AssertionError('feedback must preserve an explicit Later bookmark')
+    if "local.status==='read'&&local.status_action==='feedback'" not in later:
+        raise AssertionError('historical feedback-auto-read Later records must remain recoverable')
+    if "if(key==='later')" not in later or "sf.value='all'" not in later:
+        raise AssertionError('Later view must be independent from grade/status filters')
 
     lifecycle=read('scripts/weekly_lifecycle.py')
     if "status in ('read', 'save') and st.get('status_origin') != TRUSTED_STATUS_ORIGIN" not in lifecycle:
@@ -123,7 +138,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 17 sources -> S/A/B one-click processing -> source yield clean -> one-click encrypted delta backup without clipboard -> semantic/temporal Weekly aligned.')
+    print('Global impact validation passed: 17 sources -> S/A/B automatic queue + grade-independent Later bookmarks -> recoverable encrypted history -> clean source yield -> one-click delta backup -> semantic/temporal Weekly aligned.')
     return 0
 
 
