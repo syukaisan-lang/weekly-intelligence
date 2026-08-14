@@ -57,6 +57,7 @@ jobs:
           test -f semantic-worker.bundle.js
           test -f private-knowledge.js
           test -f weekly-progress.js
+          test -f weekly-attention-v8.js
           test -f weekly-state-sync.js
           test -f scripts/sync_notion.py
           test -f scripts/sync_notion_temporal.py
@@ -70,6 +71,7 @@ jobs:
           test -f scripts/weekly_semantic.py
           test -f scripts/weekly_semantic_runtime.py
           test -f scripts/weekly_embed_node.mjs
+          test -f scripts/weekly_lifecycle.py
           test -f scripts/update_feeds_personalized.py
           test -f scripts/update_feeds_temporal.py
           test -f scripts/save_to_notion.py
