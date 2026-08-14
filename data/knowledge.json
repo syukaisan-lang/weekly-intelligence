@@ -1,13 +1,30 @@
 {
   "meta": {
     "source": "Notion / 情報収集と整理",
-    "snapshot_at": "2026-08-14T01:13:34.461193+00:00",
+    "snapshot_at": "2026-08-14T01:19:55.738977+00:00",
     "schema_version": 5,
     "encrypted_full_data": true,
     "item_count": 149,
     "comments_included_in_encrypted_data": true,
     "page_body_included_in_encrypted_data": true,
-    "comments_scope": "page-level open/unresolved comments via Notion Public API"
+    "comments_scope": "page-level open/unresolved comments via Notion Public API",
+    "temporal_evidence": {
+      "enabled": true,
+      "priority": "evidence_period > published_at > collected_at",
+      "confidence_counts": {
+        "low": 136,
+        "high": 8,
+        "medium": 5
+      },
+      "domain_counts": {
+        "technology": 62,
+        "consumer": 55,
+        "methodology": 3,
+        "general": 15,
+        "market_price": 11,
+        "channel_ec": 3
+      }
+    }
   },
   "metrics": {
     "total": 658,
