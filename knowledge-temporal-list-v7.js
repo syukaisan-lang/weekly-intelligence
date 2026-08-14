@@ -1,4 +1,5 @@
 // Temporal labels/sorting for the ordinary Knowledge list.
+// 普通列表按有效证据时间排序：调查/数据发生时间 > 发布日 > Notion 收录日。
 (() => {
   const BASE_CURRENT_ROWS=currentRows;
   const BASE_RENDER_LIST=renderList;
