@@ -17,12 +17,13 @@
       let dot=0,norm=0,scale=Number(scales[j]||0),start=j*dim;
       for(let i=0;i<dim;i++){const x=packed[start+i]*scale;dot+=av[i]*x;norm+=x*x;}
       const sim=norm?dot/Math.sqrt(norm):0,id=String(e.id||'');
-      if(!best.has(id)||sim>best.get(id))best.set(id,sim);
+      const old=best.get(id);if(!old||sim>old.score)best.set(id,{id,score:sim,temporal:e.temporal||null});
     }
-    return [...best].map(([id,score])=>({id,score})).filter(x=>x.score>=.77).sort((x,y)=>y.score-x.score).slice(0,limit);
+    return [...best.values()].filter(x=>x.score>=.77).sort((x,y)=>y.score-x.score).slice(0,limit);
   }
   function impact(a){
-    const t=`${a.knowledge_context?.increment_type||''} ${a.reason||''}`;
+    const t=`${a.knowledge_context?.increment_type||''} ${a.reason||''}`,tb=Number(a.knowledge_context?.temporal_update_bonus||0);
+    if(tb>0||/时间更新|時間更新|更新20\d{2}|既有时间证据/i.test(t))return ['时间更新','temporal','与旧 Knowledge 语义接近，但新文章可能更新了较早的消费者/技术等时效性证据，不按普通重复处理。'];
     if(/mostly_duplicate|重复|重複/i.test(t))return ['重复较高','duplicate','与既有 Knowledge 语义很接近，重点确认有没有新证据或边界。'];
     if(/boundary_or_counterexample|反例|边界/i.test(t))return ['补边界 / 反例','boundary','可能修正已有判断，优先看成立条件和反例。'];
     if(/knowledge_gap|知识空白|待验证/i.test(t))return ['补知识空白','gap','与现有规则相关，但 Knowledge 覆盖相对薄弱。'];
@@ -37,12 +38,12 @@
     document.querySelectorAll('#articleList .article').forEach(card=>{
       const link=card.querySelector('.article-title');if(!link)return;
       const a=articles.find(x=>x.url===link.getAttribute('href')||x.title===link.textContent.trim());if(!a?.semantic_vector)return;
-      const ks=top(a,'notion',5).map(m=>({item:kmap.get(m.id),score:m.score})).filter(x=>x.item).slice(0,3),rs=top(a,'rule',5).map(m=>({item:rmap.get(m.id),score:m.score})).filter(x=>x.item).slice(0,3);
+      const ks=top(a,'notion',5).map(m=>({item:kmap.get(m.id),score:m.score,temporal:m.temporal})).filter(x=>x.item).slice(0,3),rs=top(a,'rule',5).map(m=>({item:rmap.get(m.id),score:m.score})).filter(x=>x.item).slice(0,3);
       if(!ks.length&&!rs.length)return;
       card.querySelector('.related-knowledge')?.remove();
       const [label,cls,desc]=impact(a),box=document.createElement('div');box.className='related-knowledge semantic-v6-relations';
       const rh=rs.length?`<div class="related-group"><div class="related-group-label">Work System · Semantic v6</div>${rs.map(x=>`<a href="work-system.html" data-work-query="${esc(x.item.title||'')}"><span>${esc(x.item.title||'未命名规则')}</span><small>语义匹配 ${x.score.toFixed(2)} · ${esc(x.item.maturity||'')}</small></a>`).join('')}</div>`:'<div class="related-empty">没有强语义匹配的 Work System 规则。</div>';
-      const kh=ks.length?`<div class="related-group"><div class="related-group-label">Knowledge · Semantic v6</div>${ks.map(x=>`<a href="knowledge.html#knowledgeResultsAnchor" data-related-id="${esc(x.item.id||'')}"><span>${esc(x.item.title||'Knowledge')}</span><small>语义匹配 ${x.score.toFixed(2)} · ${esc(x.item.category||'未分类')}</small></a>`).join('')}</div>`:'<div class="related-empty">没有强语义匹配的旧 Knowledge。</div>';
+      const kh=ks.length?`<div class="related-group"><div class="related-group-label">Knowledge · Semantic + Time</div>${ks.map(x=>{const d=x.item.effective_date||x.temporal?.effective_date||x.item.date||'';return `<a href="knowledge.html#knowledgeResultsAnchor" data-related-id="${esc(x.item.id||'')}"><span>${esc(x.item.title||'Knowledge')}</span><small>语义匹配 ${x.score.toFixed(2)}${d?` · 证据时间 ${esc(String(d).slice(0,10))}`:''} · ${esc(x.item.category||'未分类')}</small></a>`}).join('')}</div>`:'<div class="related-empty">没有强语义匹配的旧 Knowledge。</div>';
       box.innerHTML=`<div class="related-head"><div><span>🧠 与你的知识体系比较</span><small>${esc(desc)}</small></div><span class="knowledge-impact ${esc(cls)}">${esc(label)}</span></div>${rh}${kh}`;
       const controls=card.querySelector('.controls');controls?card.insertBefore(box,controls):card.appendChild(box);
     });
