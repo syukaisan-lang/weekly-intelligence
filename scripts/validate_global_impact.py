@@ -58,6 +58,8 @@ def main()->int:
         if trigger not in update:raise AssertionError(f'Weekly must rescore after {trigger} changes')
     for upstream in ('workflow_run:','Sync Notion knowledge','Sync personal work system','github.event.workflow_run.conclusion'):
         if upstream not in update:raise AssertionError(f'Weekly must listen to successful upstream workflow completion: {upstream}')
+    for safe_commit in ('ref: main','fetch-depth: 0','/tmp/weekly-articles.json','/tmp/weekly-source-status.json','git reset --hard origin/main','git add data/articles.json data/source_status.json','for attempt in 1 2 3'):
+        if safe_commit not in update:raise AssertionError(f'Weekly commit path must remain conflict-safe: {safe_commit}')
     if 'run: python scripts/update_feeds_temporal.py' not in update:raise AssertionError('Weekly workflow must run adaptive temporal updater')
     if 'build_system_model_v2.py' in update or 'build_system_model_v3.py' in update:
         raise AssertionError('Weekly workflow must not overwrite the unified Work System model')
@@ -70,7 +72,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: Knowledge/Work System semantic-time context -> rolling 12-week feedback -> adaptive 8-week source yield -> 90-day hot storage -> attention budget -> encrypted backup are aligned.')
+    print('Global impact validation passed: Knowledge/Work System semantic-time context -> rolling 12-week feedback -> adaptive 8-week source yield -> 90-day hot storage -> attention budget -> encrypted backup -> conflict-safe Weekly commits are aligned.')
     return 0
 
 
