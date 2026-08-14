@@ -1,7 +1,7 @@
 import { pipeline, env } from '@huggingface/transformers';
 
 const MODEL = 'Xenova/multilingual-e5-small';
-env.useBrowserCache = true;
+env.useBrowserCache = typeof caches !== 'undefined';
 if (env.backends && env.backends.onnx && env.backends.onnx.wasm) env.backends.onnx.wasm.numThreads = 1;
 
 let extractorPromise;
