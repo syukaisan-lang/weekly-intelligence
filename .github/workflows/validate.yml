@@ -45,17 +45,21 @@ jobs:
         run: |
           test -f index.html
           test -f knowledge.html
+          test -f knowledge-temporal-v7.js
           test -f work-system.html
           test -f work-system.js
           test -f work-system-intent-v3.js
           test -f work-system-precision-v4.js
           test -f work-system-semantic-v5.js
           test -f work-system-vector-v6.js
+          test -f work-system-temporal-v7.js
           test -f semantic-worker.bundle.js
           test -f private-knowledge.js
           test -f weekly-progress.js
           test -f weekly-state-sync.js
           test -f scripts/sync_notion.py
+          test -f scripts/sync_notion_temporal.py
+          test -f scripts/temporal_knowledge.py
           test -f scripts/sync_work_system.py
           test -f scripts/work_taxonomy.py
           test -f scripts/work_taxonomy_v4.py
@@ -63,6 +67,7 @@ jobs:
           test -f scripts/build_system_model_precision.py
           test -f scripts/build_semantic_index.py
           test -f scripts/weekly_semantic.py
+          test -f scripts/weekly_semantic_runtime.py
           test -f scripts/weekly_embed_node.mjs
           test -f scripts/update_feeds_personalized.py
           test -f scripts/save_to_notion.py
