@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-14T02:41:29.740687+00:00",
+  "generated_at": "2026-08-14T02:43:55.602968+00:00",
   "expected_sources": 17,
   "successful_sources": 17,
   "failed_sources": [],
-  "raw_new_count": 1,
-  "deduped_count": 1,
-  "deep_read_count": 0,
+  "raw_new_count": 8,
+  "deduped_count": 8,
+  "deep_read_count": 8,
   "sources": [
     {
       "name": "CNET Japan 最新情報　総合",
@@ -52,7 +52,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 8,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null
     },
     {
@@ -111,8 +111,8 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 217,
-  "semantic_deep_read_count": 0,
+  "semantic_rescored_count": 225,
+  "semantic_deep_read_count": 2,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -125,7 +125,7 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 318,
+    "hot_count": 326,
     "cold_count": 0
   }
 }
