@@ -1,1 +1,2 @@
-// Feedback attribution v7: separate content subject from research/presentation method.
+// Feedback attribution v7
+window.weeklyFeedbackAttributionVersion='subject-method-v7';
