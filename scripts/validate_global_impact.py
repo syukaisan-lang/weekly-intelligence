@@ -26,6 +26,7 @@ def main()->int:
     require('scripts/weekly_semantic.py','semantic-index.enc.json','weekly_embed_node.mjs','multilingual-e5')
     require('scripts/weekly_embed_node.mjs','semantic-worker.bundle.js','rule_similarity','knowledge_similarity','experience_similarity')
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
+    require('scripts/update_feeds_temporal.py','temporal_update','semantic_v7_temporal','p.refresh_existing_scores')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
 
@@ -55,7 +56,7 @@ def main()->int:
     update=read('.github/workflows/update.yml')
     for trigger in ('data/knowledge.enc.json','data/system-model.enc.json','data/semantic-index.enc.json'):
         if trigger not in update:raise AssertionError(f'Weekly must rescore after {trigger} changes')
-    if 'update_feeds_personalized.py' not in update:raise AssertionError('Weekly workflow must run personalized updater')
+    if 'run: python scripts/update_feeds_temporal.py' not in update:raise AssertionError('Weekly workflow must run temporal v7 updater')
     if 'build_system_model_v2.py' in update or 'build_system_model_v3.py' in update:
         raise AssertionError('Weekly workflow must not overwrite the unified Work System model')
 
@@ -69,7 +70,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: time-aware Knowledge -> Work System -> Weekly -> subject-aware feedback -> backup are aligned.')
+    print('Global impact validation passed: time-aware Knowledge -> Work System -> Weekly temporal v7 -> subject-aware feedback -> backup are aligned.')
     return 0
 
 
