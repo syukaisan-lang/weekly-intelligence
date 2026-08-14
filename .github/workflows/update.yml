@@ -5,9 +5,22 @@ on:
   schedule:
     # Friday 19:05 Japan time = Friday 10:05 UTC
     - cron: "5 10 * * 5"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update_feeds_personalized.py"
+      - "scripts/weekly_semantic.py"
+      - "scripts/weekly_semantic_runtime.py"
+      - "scripts/personal_relevance.py"
+      - "requirements.txt"
+      - ".github/workflows/update.yml"
 
 permissions:
   contents: write
+
+concurrency:
+  group: weekly-intelligence-update
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -16,12 +29,22 @@ jobs:
       DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+      SEMANTIC_MODEL_ID: intfloat/multilingual-e5-small
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
+      - name: Cache embedding model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: multilingual-e5-small-v1
+      - name: Install feed and semantic dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.4,<3"
+          python -m pip install -r requirements.txt
       - name: Fetch and screen feeds against latest Knowledge and Work System
         run: python scripts/update_feeds_personalized.py
       - name: Commit refreshed dashboard data
@@ -29,5 +52,6 @@ jobs:
           git config user.name "reading-dashboard-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "Update weekly intelligence"
+          git diff --cached --quiet || git commit -m "Update weekly intelligence with semantic v6"
+          git pull --rebase origin main
           git push
