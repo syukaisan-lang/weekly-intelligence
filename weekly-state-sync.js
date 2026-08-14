@@ -204,21 +204,41 @@
   async function backup(){
     if(backupInFlight){toast('备份正在准备中，请不要重复点击。');return;}
     backupInFlight=true;
-    const button=document.getElementById('backupWeeklyStateBtn');if(button)button.disabled=true;
+    const button=document.getElementById('backupWeeklyStateBtn');
+    const normalLabel=button?.textContent||'备份本周标记';
+    if(button){button.disabled=true;button.textContent='检查备份…';}
+    setCloudStatus('正在检查新的标记…');
     const reserved=reserveBackupWindow();
     try{
       await ensureValidatedPassphrase();
       const metaDoc=await fetchCloudMeta();
       const candidates=deltaCandidates(cloudCursor(metaDoc));
-      if(!candidates.length){closeReservedWindow(reserved);localStorage.removeItem(DIRTY_SINCE_KEY);setCloudStatus('云端已是最新');toast('没有新的标记需要备份。');return;}
+      if(!candidates.length){
+        closeReservedWindow(reserved);
+        localStorage.removeItem(DIRTY_SINCE_KEY);
+        setCloudStatus('云端已是最新 · 无需重复备份');
+        if(button){
+          button.textContent='已备份 ✓';
+          setTimeout(()=>{if(!backupInFlight&&button.textContent==='已备份 ✓')button.textContent=normalLabel;},2400);
+        }
+        toast('云端已经是最新，没有新的标记需要备份。');
+        return;
+      }
+      if(button)button.textContent='打开确认页…';
       const built=await buildDeltaIssue(metaDoc,candidates);
       localStorage.setItem(BACKUP_PENDING_KEY,built.env.created_at||new Date().toISOString());
       setCloudStatus('备份请求待确认');
       navigateBackupWindow(reserved,built.url);
       const remain=built.total-built.count;
       toast(remain>0?`已准备 ${built.count} 条增量备份。提交后还有 ${remain} 条，下次再点一次备份即可。`:`已准备 ${built.count} 条增量备份。GitHub 页面只需点 Submit。`);
-    }catch(e){closeReservedWindow(reserved);toast('备份失败：'+e.message);}
-    finally{backupInFlight=false;if(button)button.disabled=false;}
+    }catch(e){
+      closeReservedWindow(reserved);
+      setCloudStatus('备份未完成');
+      toast('备份失败：'+e.message);
+    }finally{
+      backupInFlight=false;
+      if(button){button.disabled=false;if(button.textContent!=='已备份 ✓')button.textContent=normalLabel;}
+    }
   }
 
   async function fetchDeltaEnvelopes(metaDoc){
