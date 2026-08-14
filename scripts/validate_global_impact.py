@@ -25,7 +25,7 @@ def main()->int:
     require('scripts/weekly_embed_node.mjs','semantic-worker.bundle.js','rule_similarity','knowledge_similarity','experience_similarity')
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
     require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles','DENTSU_SOURCE','html_feed_fallback','/articles/')
-    require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','decrypt_weekly_state','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
+    require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','TRUSTED_STATUS_ORIGIN','human_v10','_normalized_status','decrypt_weekly_state','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图')
     require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留')
     require('weekly-source-audit-v9.js','TRUSTED_STATUS_ORIGIN','human_v10','sourceStats','isRecommendedUnread','isExpiredUnlabeled','isAutoArchived','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','未处理归档','建议停用','复制来源统计')
@@ -59,6 +59,10 @@ def main()->int:
         raise AssertionError('expired/unlabeled recommendations must remain reviewable in archive view')
     if 'applyFeedback(' in source_audit:
         raise AssertionError('implicit source passes must never directly train content preference')
+
+    lifecycle=read('scripts/weekly_lifecycle.py')
+    if "status in ('read', 'save') and st.get('status_origin') != TRUSTED_STATUS_ORIGIN" not in lifecycle:
+        raise AssertionError('backend source yield must ignore legacy untrusted read/save state')
 
     sources=json.loads(read('config/sources.json'))
     names={str(x.get('name') or '') for x in sources}
@@ -96,7 +100,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 17 active sources + resilient Dentsu listing -> trusted human read state -> unread + unprocessed archive queues -> explicit/implicit source yield -> semantic/temporal Weekly -> encrypted backup are aligned.')
+    print('Global impact validation passed: 17 active sources + resilient Dentsu listing -> trusted human read state in UI and backend -> unread + unprocessed archive queues -> explicit/implicit source yield -> semantic/temporal Weekly -> encrypted backup are aligned.')
     return 0
 
 
