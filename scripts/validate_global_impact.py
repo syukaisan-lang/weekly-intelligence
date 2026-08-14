@@ -73,8 +73,12 @@ def main()->int:
         raise AssertionError('backend adoption must not treat negative-feedback auto-read as positive')
 
     state_sync=read('weekly-state-sync.js')
-    for needle in ('schema:3','status_origin','status_action','BACKUP_WINDOW_NAME','backupInFlight','openExactlyOneBackupPage','backupWeeklyStateBtn'):
-        if needle not in state_sync:raise AssertionError(f'Weekly backup must preserve one-click state and single-window behavior: {needle}')
+    for needle in ('schema:3','status_origin','status_action','BACKUP_WINDOW_NAME','backupInFlight','reserveBackupWindow','copyBackupLine','clipboardLine','navigateBackupWindow','backupWeeklyStateBtn'):
+        if needle not in state_sync:raise AssertionError(f'Weekly backup must preserve one-click state and clipboard handoff: {needle}')
+    if "body=`STATE_ENVELOPE_B64: ${encoded}" in state_sync or "body=${encodeURIComponent(body)}" in state_sync:
+        raise AssertionError('encrypted Weekly payload must never be embedded in the GitHub URL')
+    if 'if(url.length>2000)' not in state_sync:
+        raise AssertionError('Weekly backup confirmation URL must stay short')
     if "window.open(url,'_blank','noopener,noreferrer')" in state_sync:
         raise AssertionError('backup must not reintroduce noopener null-return double-navigation bug')
 
@@ -114,7 +118,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 17 sources -> S/A/B one-click processing queue (C excluded) -> explicit vs feedback auto-read separated -> source yield remains clean -> single-window encrypted backup -> semantic/temporal Weekly are aligned.')
+    print('Global impact validation passed: 17 sources -> S/A/B one-click processing queue (C excluded) -> source yield remains clean -> short-URL clipboard encrypted backup -> semantic/temporal Weekly are aligned.')
     return 0
 
 
