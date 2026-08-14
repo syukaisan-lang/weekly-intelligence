@@ -1,4 +1,4 @@
-// Weekly v8: rolling preference memory + adaptive attention budget.
+// Weekly v11 attention: rolling preference memory + adaptive S/A/B attention budget.
 (() => {
   const FEEDBACK_WINDOW_MS=84*24*60*60*1000;
   const MIN_BUDGET=8, BASE_BUDGET=14, MAX_BUDGET=20;
@@ -17,7 +17,6 @@
   }
   rebuildPrefs=function(){
     const all=data.articles||[];
-    // Reuse the existing topic + semantic learning stack, but only with recent feedback.
     data.articles=all.filter(a=>inRollingWindow(a));
     try{baseRebuild();}finally{data.articles=all;}
   };
@@ -33,11 +32,18 @@
       else if(fb==='less')m+=1;
       else if(fb==='bad')m+=.55;
       if(status==='save')p+=.8;
-      else if(status==='read')p+=.2;
+      // A feedback click now auto-marks read. Only an explicit read-status action carries
+      // a small positive signal; negative feedback must not be cancelled by auto-read.
+      else if(status==='read'&&s.status_action==='status'&&!['bad','less'].includes(fb))p+=.2;
       else if(status==='skip')m+=.7;
       if(p||m){pos+=p;neg+=m;n++;}
     }
     return {pos,neg,n};
+  }
+  function queueUnread(a){
+    const api=window.weeklySourceAuditV11||window.weeklySourceAuditV10;
+    if(api?.isRecommendedUnread)return api.isRecommendedUnread(a);
+    return progressBucketFor(a)==='unread'&&['S','A','B'].includes(grade(score(a)));
   }
   function attentionBudget(){
     const f=feedbackStats();let b=BASE_BUDGET;
@@ -48,7 +54,7 @@
       else if(ratio<=.32)b-=5;
       else if(ratio<=.44)b-=3;
     }
-    const unread=(data.articles||[]).filter(a=>progressBucketFor(a)==='unread');
+    const unread=(data.articles||[]).filter(queueUnread);
     const sCount=unread.filter(a=>grade(score(a))==='S').length;
     if(sCount>=6)b+=2;
     return Math.max(MIN_BUDGET,Math.min(MAX_BUDGET,Math.max(b,sCount)));
@@ -68,7 +74,7 @@
   }
   function applyBudget(){
     const hint=ensureHint(),gf=document.getElementById('gradeFilter');
-    if(readingProgress!=='unread'||gf?.value!=='SA'){
+    if(readingProgress!=='unread'||!['SAB','SA','ALL'].includes(gf?.value||'')){
       document.querySelectorAll('#articleList .article').forEach(c=>c.style.display='');
       if(hint)hint.textContent='';return;
     }
@@ -80,13 +86,12 @@
       card.style.display=show?'':'none';if(show)kept++;
     }
     const shown=cards.filter(c=>c.style.display!=='none').length;
-    const vc=document.getElementById('visibleCount');if(vc)vc.textContent=`${shown} 篇推荐${cards.length>shown?` / ${cards.length} 候选`:''}`;
+    const vc=document.getElementById('visibleCount');if(vc)vc.textContent=`${shown} 篇待处理${cards.length>shown?` / ${cards.length} 候选`:''}`;
     const f=feedbackStats();
-    if(hint)hint.textContent=`动态注意力预算：本周优先显示约 ${budget} 篇；最近12周反馈会滚动调整内容与数量，S级始终保留。${f.n<4?' 当前反馈样本较少，先使用中性预算。':''}`;
+    if(hint)hint.textContent=`动态注意力预算：本周优先显示约 ${budget} 篇 S/A/B；最近12周反馈会滚动调整内容与数量，S级始终保留，C不进入处理队列。${f.n<4?' 当前反馈样本较少，先使用中性预算。':''}`;
   }
   renderArticles=function(){baseRender();applyBudget();};
 
-  // Rebuild once so old feedback outside the rolling window no longer locks current preferences.
   rebuildPrefs();
   if(typeof render==='function')render();else renderArticles();
 })();
