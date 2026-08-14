@@ -1,5 +1,5 @@
 // Reconcile feedback with the reading queue on every device.
-// Hard invariant: once learning feedback exists, the article must never appear in unread/pending.
+// Feedback removes an article from pending, but must NOT destroy an explicit Later bookmark.
 (() => {
   const TRUSTED_STATUS_ORIGIN='human_v10';
 
@@ -12,7 +12,9 @@
   function markFeedbackProcessed(id){
     const cur=state?.[id];
     if(!cur||!cur.feedback)return false;
-    if(cur.status!=='new'&&cur.status!=='later')return false;
+    // Explicit Later is a bookmark. Keep it in the Later list even after feedback.
+    if(cur.status==='later')return false;
+    if(cur.status!=='new')return false;
     const now=Date.now();
     cur.status='read';
     cur.status_origin=TRUSTED_STATUS_ORIGIN;
@@ -23,21 +25,22 @@
     return true;
   }
 
-  // Repair existing records created while feedback and unread/later diverged.
+  // Repair only NEW+feedback records. Never migrate Later bookmarks to Read.
   let migrated=false;
   for(const id of Object.keys(state||{}))migrated=markFeedbackProcessed(id)||migrated;
   if(migrated&&typeof save==='function')save();
 
-  // Queue bucket guard used by the progress layer.
+  // Pending queue guard: feedback means processed, regardless of Later bookmark status.
   if(typeof progressBucketFor==='function'){
     const previousProgressBucketFor=progressBucketFor;
     progressBucketFor=function(a){
-      if(hasFeedback(a))return 'read';
+      const s=st(a.id).status;
+      if(s==='later')return 'later';
+      if(hasFeedback(a)&&s==='new')return 'read';
       return previousProgressBucketFor(a);
     };
   }
 
-  // Source-audit/attention API has its own unread classifier. Patch the exported API too.
   for(const key of ['weeklySourceAuditV11','weeklySourceAuditV10']){
     const api=window[key];
     if(api&&typeof api.isRecommendedUnread==='function'&&!api.__feedbackPendingFix){
@@ -47,8 +50,6 @@
     }
   }
 
-  // The source-audit layer also closes over its original unread classifier inside visible().
-  // This final wrapper guarantees that no feedback-labelled item can leak into the unread view.
   if(typeof visible==='function'){
     const previousVisible=visible;
     visible=function(a){
@@ -57,7 +58,6 @@
     };
   }
 
-  // Correct tab counts even if an older source-audit script is still present in cache.
   if(typeof updateProgressTabs==='function'){
     const previousUpdateProgressTabs=updateProgressTabs;
     updateProgressTabs=function(){
@@ -74,7 +74,6 @@
     };
   }
 
-  // Preserve existing feedback learning, then persist the processed/read state immediately.
   if(typeof feedback==='function'){
     const previousFeedback=feedback;
     window.feedback=feedback=function(a,v){
