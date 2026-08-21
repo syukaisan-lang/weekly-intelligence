@@ -3,10 +3,10 @@
     "encrypted_full_data": true,
     "snapshot_at": "2026-08-14T02:51:33.228Z",
     "note": "Weekly reading state is stored as an encrypted base snapshot plus encrypted incremental deltas; no plaintext reading state is stored.",
-    "latest_at": "2026-08-14T12:52:56.235Z",
-    "cursor_updated_at": 1786711901149,
-    "cursor_id": "7667fe7dd51cef8efa",
-    "delta_count": 2,
+    "latest_at": "2026-08-21T12:31:13.615Z",
+    "cursor_updated_at": 1787315438716,
+    "cursor_id": "f0a4f6d9d15c78bd94",
+    "delta_count": 3,
     "deltas": [
       {
         "path": "data/weekly-state-deltas/20260814033507779-4.enc.json",
@@ -21,6 +21,13 @@
         "cursor_updated_at": 1786711901149,
         "cursor_id": "7667fe7dd51cef8efa",
         "entry_count": 40
+      },
+      {
+        "path": "data/weekly-state-deltas/20260821123113615-6.enc.json",
+        "created_at": "2026-08-21T12:31:13.615Z",
+        "cursor_updated_at": 1787315438716,
+        "cursor_id": "f0a4f6d9d15c78bd94",
+        "entry_count": 24
       }
     ]
   }
