@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-21T11:06:40.689933+00:00",
+  "generated_at": "2026-08-21T11:10:19.664526+00:00",
   "expected_sources": 17,
   "successful_sources": 17,
   "failed_sources": [],
   "raw_new_count": 0,
   "deduped_count": 0,
-  "deep_read_count": 7,
+  "deep_read_count": 0,
   "sources": [
     {
       "name": "CNET Japan 最新情報　総合",
@@ -112,7 +112,7 @@
   ],
   "semantic_model_family": "multilingual-e5",
   "semantic_rescored_count": 450,
-  "semantic_deep_read_count": 7,
+  "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
