@@ -1,13 +1,19 @@
-// v17: lightweight focus queue + precise negative-feedback reasons.
+// v17: lightweight focus queue + precise positive/negative feedback reasons.
 (() => {
   const VIEW_KEY='weekly_intelligence_view_v2';
-  const REASONS=[
+  const POS_REASONS=[
+    ['work_direct','工作直接相关'],['evidence','有数据/案例'],['reusable','方法可复用'],
+    ['japan_consumer','日本市场/消费者'],['novelty','新知识/反例'],['ai_practical','AI实操']
+  ];
+  const NEG_REASONS=[
     ['too_generic','太泛'],['promo','活动/宣传'],['not_work','和工作无关'],
     ['known','已经知道'],['no_evidence','缺数据/案例'],['topic','主题不感兴趣']
   ];
-  const REASON_WEIGHTS={too_generic:-.18,promo:-.30,not_work:-.34,known:-.12,no_evidence:-.20,topic:-.26};
+  const NEG_WEIGHTS={too_generic:-.18,promo:-.30,not_work:-.34,known:-.12,no_evidence:-.20,topic:-.26};
   const scoreCache=new Map();
+  let reasonProfileCache=null;
 
+  function text(a){return `${a?.title||''} ${a?.summary||''} ${a?.reason||''} ${(a?.content_excerpt||'').slice(0,900)}`;}
   function safeScore(a){const id=String(a?.id||'');if(scoreCache.has(id))return scoreCache.get(id);let s=5;try{s=Number(score(a))||5;}catch(_){s=Number(a?.reading_score??5)||5;}scoreCache.set(id,s);return s;}
   function safeGrade(a){try{return grade(safeScore(a));}catch(_){return a?.grade||'C';}}
   function hs(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
@@ -42,18 +48,57 @@
   }
   function updateFocusTab(){ensureFocusTab();const el=document.querySelector('[data-progress="focus"] .segment-count');if(el)el.textContent=String(focusRows().length);document.querySelectorAll('[data-progress]').forEach(x=>x.classList.toggle('active',x.dataset.progress===readingProgress));}
 
-  function reasonPenalty(a){return REASON_WEIGHTS[hs(a).feedback_reason]||0;}
-  if(typeof score==='function'){const prevScore=score;score=function(a){return Math.max(0,Math.min(10,prevScore(a)+reasonPenalty(a)));};}
+  function reasonAffinity(a,key){
+    const t=text(a),kc=a?.knowledge_context||{},inc=kc.increment_type||'';
+    if(key==='work_direct')return inc==='direct_work_use'||/GTM|EC|Amazon|楽天|広告|市場|マーケ|顧客|CRM|CVR|価格/i.test(t)?1:0;
+    if(key==='evidence')return /調査|データ|統計|実証|実験|アンケート|ケース|事例|前年比|％|%/i.test(t)?1:0;
+    if(key==='reusable')return /方法|手法|フレームワーク|プロセス|運用|改善|検証|ノウハウ|how.?to/i.test(t)?1:0;
+    if(key==='japan_consumer')return /日本|国内|消費者|生活者|購買|顧客|ユーザー|小売|リテール/i.test(t)?1:0;
+    if(key==='novelty')return ['knowledge_gap','boundary_or_counterexample','rule_evidence'].includes(inc)||/新た|初|反例|意外|変化|転換|盲点/i.test(t)?1:0;
+    if(key==='ai_practical')return /Claude|ChatGPT|生成AI|AIエージェント|AI.?agent|LLM/i.test(t)&&/活用|業務|運用|実装|ワークフロー|スキル|skill|自動化/i.test(t)?1:0;
+    if(key==='too_generic')return !/調査|データ|事例|方法|手法|実証|具体|数字|％|%/i.test(t)?1:0;
+    if(key==='promo')return /セミナー|ウェビナー|イベント|開催|登壇|申込|キャンペーン|発売|提供開始|PR/i.test(t)?1:0;
+    if(key==='not_work')return /芸能|アイドル|ゲーム|スポーツ|旅行|観光|グルメ/i.test(t)?1:.2;
+    if(key==='known')return inc==='mostly_duplicate'?1:.15;
+    if(key==='no_evidence')return !/調査|データ|統計|実証|実験|事例|ケース|％|%/i.test(t)?1:0;
+    return 0;
+  }
+  function buildReasonProfile(){
+    const counts={};
+    for(const a of data?.articles||[]){
+      const s=hs(a),r=s.feedback_reason,fb=s.feedback;if(!r||!fb)continue;
+      const ts=Number(s.feedback_reason_updated_at||s.status_updated_at||0)||Date.parse(a?.first_seen||a?.published||'')||0;
+      if(ts&&Date.now()-ts>84*86400000)continue;
+      const sign=(fb==='more'?1:(fb==='accurate'?.55:(fb==='less'?-1:(fb==='bad'?-.55:0))));
+      counts[r]=(counts[r]||0)+sign;
+    }
+    reasonProfileCache=counts;return counts;
+  }
+  function learnedReasonDelta(a){
+    const p=reasonProfileCache||buildReasonProfile();let d=0;
+    for(const [k,w] of Object.entries(p)){
+      if(!w)continue;const affinity=reasonAffinity(a,k);if(!affinity)continue;
+      d+=Math.max(-.22,Math.min(.18,w*.045))*affinity;
+    }
+    return Math.max(-.48,Math.min(.42,d));
+  }
+  function ownReasonAdjustment(a){const s=hs(a);return NEG_WEIGHTS[s.feedback_reason]||0;}
+  if(typeof score==='function'){
+    const prevScore=score;
+    score=function(a){return Math.max(0,Math.min(10,prevScore(a)+learnedReasonDelta(a)+ownReasonAdjustment(a)));};
+  }
+
   function articleFromCard(card){const link=card.querySelector('.article-title');if(!link)return null;const href=link.getAttribute('href'),title=link.textContent.trim();return (data?.articles||[]).find(a=>a.url===href||a.title===title)||null;}
   function findCard(a){return [...document.querySelectorAll('#articleList .article')].find(c=>articleFromCard(c)?.id===a.id)||null;}
-  function persistReason(a,key){const raw=state?.[a.id]||{};if(key)raw.feedback_reason=key;else delete raw.feedback_reason;raw.feedback_reason_updated_at=Date.now();state[a.id]=raw;save();scoreCache.clear();}
+  function persistReason(a,key){const raw=state?.[a.id]||{};if(key)raw.feedback_reason=key;else delete raw.feedback_reason;raw.feedback_reason_updated_at=Date.now();state[a.id]=raw;save();scoreCache.clear();reasonProfileCache=null;}
 
   let commitFeedback=null;
   function openReasonPicker(a,v){
+    const positive=['accurate','more'].includes(v),reasons=positive?POS_REASONS:NEG_REASONS;
     const card=findCard(a);if(!card){commitFeedback?.(a,v);return;}
     card.querySelector('.feedback-reasons')?.remove();
     const box=document.createElement('div');box.className='feedback-reasons';
-    box.innerHTML=`<span class="feedback-reason-label">为什么不要？</span>${REASONS.map(([k,t])=>`<button type="button" data-reason="${k}" class="reason-chip">${t}</button>`).join('')}<button type="button" data-reason="" class="reason-chip reason-skip">不选原因</button>`;
+    box.innerHTML=`<span class="feedback-reason-label">${positive?'为什么值得推？':'为什么不要？'}</span>${reasons.map(([k,t])=>`<button type="button" data-reason="${k}" class="reason-chip">${t}</button>`).join('')}<button type="button" data-reason="" class="reason-chip reason-skip">不选原因</button>`;
     card.querySelector('.controls')?.appendChild(box);requestAnimationFrame(()=>box.classList.add('show'));
     box.querySelectorAll('[data-reason]').forEach(btn=>btn.addEventListener('click',()=>{
       persistReason(a,btn.dataset.reason||null);
@@ -66,7 +111,7 @@
     commitFeedback=feedback;
     feedback=function(a,v){
       const current=hs(a).feedback;
-      if(['bad','less'].includes(v)&&current!==v){openReasonPicker(a,v);return;}
+      if(['accurate','more','bad','less'].includes(v)&&current!==v){openReasonPicker(a,v);return;}
       return commitFeedback(a,v);
     };
   }
@@ -76,11 +121,11 @@
     renderArticles=function(){
       scoreCache.clear();prevRender();updateFocusTab();
       const hint=document.getElementById('weeklyAttentionHint');
-      if(readingProgress==='focus'&&hint)hint.textContent=`优先阅读：从当前 S/A/B 队列中按个人分、工作直接性、知识增量与重复度选出 ${focusRows().length} 篇。完整候选仍在“当前队列”。`;
+      if(readingProgress==='focus'&&hint)hint.textContent=`优先阅读：从当前 S/A/B 队列中按个人分、工作直接性、知识增量与重复度选出 ${focusRows().length} 篇。正/负反馈原因会用于缩小推荐范围。`;
     };
   }
 
   try{const saved=JSON.parse(localStorage.getItem(VIEW_KEY)||'{}')||{};if(saved.progress==='focus'&&typeof readingProgress!=='undefined')readingProgress='focus';else if(!saved.progress&&typeof readingProgress!=='undefined')readingProgress='focus';}catch(_){}
   ensureFocusTab();updateFocusTab();
-  window.weeklyFocusFeedbackV17={focusRows,focusValue,reasonPenalty,updateFocusTab};
+  window.weeklyFocusFeedbackV17={focusRows,focusValue,learnedReasonDelta,updateFocusTab};
 })();
