@@ -61,7 +61,19 @@ jobs:
           python -m pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.4,<3"
           python -m pip install -r requirements.txt
       - name: Fetch and screen feeds against latest Knowledge and Work System
-        run: python scripts/update_feeds_temporal.py
+        run: |
+          for attempt in 1 2; do
+            echo "Weekly refresh attempt ${attempt}/2"
+            if python scripts/update_feeds_temporal.py; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 2 ]; then
+              echo "Weekly refresh failed; retrying automatically in 30 seconds"
+              sleep 30
+            fi
+          done
+          echo "Weekly refresh failed after automatic retry" >&2
+          exit 1
       - name: Commit refreshed dashboard data safely
         run: |
           git config user.name "reading-dashboard-bot"
