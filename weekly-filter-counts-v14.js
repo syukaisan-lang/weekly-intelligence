@@ -1,4 +1,4 @@
-// Final filter guard + live option counts.
+// Final filter guard + live option counts, optimized for mobile.
 // Fixes legacy bug where gradeFilter=SAB was treated as no grade filter.
 (() => {
   function gradeAllowed(filter,g){
@@ -32,11 +32,24 @@
     return opt.textContent.replace(/\s*\(\d+\)\s*$/,'');
   }
 
+  // A single count refresh used to call semantic score hundreds/thousands of times.
+  // Temporarily memoize the final score function for this refresh only.
+  function withScoreMemo(fn){
+    if(typeof score!=='function')return fn();
+    const original=score,cache=new Map();
+    score=function(a){
+      const key=String(a?.id||'');
+      if(cache.has(key))return cache.get(key);
+      const v=original(a);cache.set(key,v);return v;
+    };
+    try{return fn();}finally{score=original;}
+  }
+
   function countWith(select,value){
     const old=select.value;
     select.value=value;
     let n=0;
-    try{n=(data.articles||[]).filter(a=>visible(a)).length;}finally{select.value=old;}
+    try{for(const a of data.articles||[])if(visible(a))n++;}finally{select.value=old;}
     return n;
   }
 
@@ -50,27 +63,34 @@
     }
   }
 
+  let pending=false;
   function updateAllFilterCounts(){
-    updateSelectCounts('gradeFilter');
-    updateSelectCounts('statusFilter');
-    updateSelectCounts('sourceFilter');
+    pending=false;
+    withScoreMemo(()=>{
+      updateSelectCounts('gradeFilter');
+      updateSelectCounts('statusFilter');
+      updateSelectCounts('sourceFilter');
+    });
+  }
+  function scheduleCounts(){
+    if(pending)return;pending=true;
+    const run=()=>updateAllFilterCounts();
+    if('requestIdleCallback' in window)requestIdleCallback(run,{timeout:350});
+    else setTimeout(run,60);
   }
 
   if(typeof renderArticles==='function'){
     const previousRenderArticles=renderArticles;
     renderArticles=function(){
       previousRenderArticles();
-      updateAllFilterCounts();
+      scheduleCounts();
     };
   }
 
   for(const id of ['gradeFilter','statusFilter','sourceFilter']){
-    document.getElementById(id)?.addEventListener('change',()=>{
-      // Existing listeners perform the render; this runs afterward as a safe count refresh.
-      setTimeout(updateAllFilterCounts,0);
-    });
+    document.getElementById(id)?.addEventListener('change',scheduleCounts);
   }
 
-  window.weeklyFilterV14={gradeAllowed,updateAllFilterCounts};
-  updateAllFilterCounts();
+  window.weeklyFilterV14={gradeAllowed,updateAllFilterCounts,scheduleCounts};
+  scheduleCounts();
 })();
