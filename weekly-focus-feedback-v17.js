@@ -69,7 +69,7 @@
       const s=hs(a),r=s.feedback_reason,fb=s.feedback;if(!r||!fb)continue;
       const ts=Number(s.feedback_reason_updated_at||s.status_updated_at||0)||Date.parse(a?.first_seen||a?.published||'')||0;
       if(ts&&Date.now()-ts>84*86400000)continue;
-      const sign=(fb==='more'?1:(fb==='accurate'?.55:(fb==='less'?-1:(fb==='bad'?-.55:0))));
+      const sign=(fb==='more' ? 1 : (fb==='accurate' ? .55 : (fb==='less' ? -1 : (fb==='bad' ? -.55 : 0))));
       counts[r]=(counts[r]||0)+sign;
     }
     reasonProfileCache=counts;return counts;
