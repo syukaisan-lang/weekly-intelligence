@@ -1,40 +1,40 @@
 {
-  "generated_at": "2026-08-14T12:31:21.615133+00:00",
+  "generated_at": "2026-08-21T11:03:33.879275+00:00",
   "expected_sources": 17,
   "successful_sources": 17,
   "failed_sources": [],
-  "raw_new_count": 0,
-  "deduped_count": 0,
-  "deep_read_count": 0,
+  "raw_new_count": 205,
+  "deduped_count": 205,
+  "deep_read_count": 76,
   "sources": [
     {
       "name": "CNET Japan 最新情報　総合",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 30,
       "error": null
     },
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 10,
       "error": null
     },
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 20,
       "error": null
     },
     {
       "name": "ECマーケター by 株式会社いつも",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null
     },
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 30,
       "error": null
     },
     {
@@ -52,7 +52,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 7,
       "error": null
     },
     {
@@ -64,31 +64,31 @@
     {
       "name": "ITmedia マーケティング 最新記事一覧",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null
     },
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 30,
       "error": null
     },
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 10,
       "error": null
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 6,
       "error": null
     },
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 28,
       "error": null
     },
     {
@@ -100,18 +100,18 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 20,
       "error": null
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 12,
       "error": null
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 245,
+  "semantic_rescored_count": 450,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -131,7 +131,7 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 346,
+    "hot_count": 551,
     "cold_count": 0
   }
 }
