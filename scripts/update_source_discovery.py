@@ -6,7 +6,7 @@ import json
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
+from urllib.parse import parse_qs, parse_qsl, unquote, urlencode, urljoin, urlsplit, urlunsplit
 
 import feedparser
 import requests
@@ -20,9 +20,11 @@ TRACKING_START = datetime(2026, 8, 10, tzinfo=timezone.utc)
 RETENTION_DAYS = 45
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
 DATE_RE = re.compile(r'(20\d{2})[./年-](\d{1,2})[./月-](\d{1,2})(?:日)?(?:\s+(\d{1,2}):(\d{2}))?')
+MARKZINE_SOURCE = 'MarkeZine:新着一覧'
+MARKZINE_FEEDER_URL = 'https://feeder.co/discover/f5a21ad90c/markezine-jp'
 
 SECONDARY = {
-    'MarkeZine:新着一覧': [
+    MARKZINE_SOURCE: [
         {'name': 'article_listing', 'url': 'https://markezine.jp/article', 'article_re': r'/article/detail/\d+', 'pages': 4},
         {'name': 'column_listing', 'url': 'https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0', 'article_re': r'/article/detail/\d+', 'pages': 4},
     ],
@@ -116,6 +118,63 @@ def fetch_feed_rows(src):
         if published and published < TRACKING_START:
             continue
         rows.append(row(src['name'], url, title, getattr(e, 'summary', '') or getattr(e, 'description', ''), published, 'feed_cache'))
+    return rows
+
+
+def decode_candidates(href, base_url):
+    raw = html.unescape(str(href or ''))
+    out = [urljoin(base_url, raw)]
+    try:
+        query = parse_qs(urlsplit(raw).query)
+        for key in ('url', 'u', 'target', 'redirect', 'redirect_url', 'dest', 'destination'):
+            for value in query.get(key, []):
+                out.append(unquote(value))
+    except Exception:
+        pass
+    out.extend(re.findall(r'https?://markezine\.jp/article/detail/\d+[^\s"\'<>]*', raw, re.I))
+    return out
+
+
+def feeder_context(a):
+    title = clean(a.get_text(' ', strip=True))
+    best = ''
+    node = a
+    for _ in range(5):
+        node = getattr(node, 'parent', None)
+        if node is None:
+            break
+        text = clean(node.get_text(' ', strip=True))
+        if len(text) > len(best) and len(text) <= 2200:
+            best = text
+        if len(text) >= 80:
+            break
+    if title and best.startswith(title):
+        best = best[len(title):].strip(' -–—|｜:：')
+    best = re.sub(r'\b(Read full|Read more|Open)\b', ' ', best, flags=re.I)
+    return clean(best)[:1400]
+
+
+def fetch_markezine_feeder_rows():
+    r = requests.get(MARKZINE_FEEDER_URL, headers={'User-Agent': UA, 'Accept-Language': 'ja,en;q=0.7'}, timeout=25, allow_redirects=True)
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, 'html.parser')
+    rows = []
+    seen = set()
+    for a in soup.find_all('a', href=True):
+        title = clean(a.get_text(' ', strip=True))
+        if len(title) < 8:
+            continue
+        found = ''
+        for candidate in decode_candidates(a.get('href'), r.url):
+            u = norm_url(candidate)
+            p = urlsplit(u)
+            if p.netloc.lower() == 'markezine.jp' and re.search(r'/article/detail/\d+$', p.path):
+                found = u
+                break
+        if not found or found in seen:
+            continue
+        seen.add(found)
+        rows.append(row(MARKZINE_SOURCE, found, title, feeder_context(a), None, 'markezine_feeder'))
     return rows
 
 
@@ -241,11 +300,22 @@ def update_cache():
             except Exception as exc:
                 errors.append(f"feed_cache: {str(exc)[:180]}")
 
+        if name == MARKZINE_SOURCE:
+            try:
+                rows = fetch_markezine_feeder_rows()
+                fresh.extend(rows)
+                methods.append('markezine_feeder')
+                method_counts['markezine_feeder'] = len(rows)
+            except Exception as exc:
+                errors.append(f"markezine_feeder: {str(exc)[:180]}")
+
+        successful_secondary = []
         for spec in SECONDARY.get(name, []):
             try:
                 rows = fetch_listing_rows(name, spec)
                 fresh.extend(rows)
                 methods.append(spec['name'])
+                successful_secondary.append(spec['name'])
                 method_counts[spec['name']] = len(rows)
             except Exception as exc:
                 errors.append(f"{spec['name']}: {str(exc)[:180]}")
@@ -266,7 +336,15 @@ def update_cache():
         all_fresh.extend(fresh)
 
         has_secondary = bool(SECONDARY.get(name))
-        if has_secondary and len(methods) >= 2:
+        if name == 'ウェブ電通報／ビジネスにもっとアイデアを。' and 'official_listing' in methods:
+            coverage_status = 'enhanced'
+        elif name == MARKZINE_SOURCE:
+            # Feeder protects against RSS roll-off, but it is not independent proof that the
+            # official /article and /column listings were exhaustively captured.
+            coverage_status = 'enhanced' if successful_secondary else ('partial' if methods else 'unverified')
+        elif has_secondary and successful_secondary and 'feed_cache' in methods:
+            coverage_status = 'enhanced'
+        elif has_secondary and successful_secondary:
             coverage_status = 'enhanced'
         elif has_secondary and methods:
             coverage_status = 'partial'
