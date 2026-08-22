@@ -1,4 +1,4 @@
-// Weekly v20: complete encrypted backup for all local fields that affect reading state or recommendation learning.
+// Weekly v20.1: complete encrypted backup for all local fields that affect reading state or recommendation learning.
 // Keeps schema-4 restore compatibility while adding feedback_reason + feedback_reason_updated_at.
 (() => {
   const REPO='syukaisan-lang/weekly-intelligence';
@@ -9,7 +9,7 @@
   const MIGRATION_KEY='weekly_intelligence_backup_schema_v20';
   const TRUSTED_STATUS_ORIGIN='human_v10';
   const BACKUP_WINDOW_NAME='weeklyStateBackupConfirm';
-  const MAX_DELTA_ENTRIES=50;
+  const MAX_DELTA_ENTRIES=200;
   const MAX_ISSUE_URL_LENGTH=7500;
   let backupInFlight=false;
 
@@ -156,7 +156,10 @@
       const url=`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
       if(url.length<=MAX_ISSUE_URL_LENGTH)return {url,env,count,total:candidates.length};
       if(count===1)throw new Error('单条备份数据异常过大，无法生成 GitHub 确认页');
-      count=Math.max(1,Math.floor(count/2));
+      // Adjust by the actual encoded URL size instead of repeatedly halving. This normally converges in 1-2 retries.
+      const ratio=MAX_ISSUE_URL_LENGTH/url.length;
+      const estimated=Math.floor(count*ratio*.92);
+      count=Math.max(1,Math.min(count-1,estimated));
     }
     throw new Error('无法生成增量备份');
   }
@@ -168,7 +171,7 @@
       await ensureValidatedPassphrase();const metaDoc=await fetchCloudMeta();const candidates=deltaCandidates(cloudCursor(metaDoc));
       if(!candidates.length){closeReservedWindow(reserved);localStorage.removeItem(DIRTY_SINCE_KEY);setCloudStatus('完整云备份已是最新');if(button){button.textContent='已备份 ✓';setTimeout(()=>{if(!backupInFlight&&button.textContent==='已备份 ✓')button.textContent=normalLabel;},2400);}toast('阅读状态、反馈和具体原因都已是最新，无需重复备份。');return;}
       if(button)button.textContent='打开确认页…';const built=await buildDeltaIssue(metaDoc,candidates);localStorage.setItem(BACKUP_PENDING_KEY,built.env.created_at||new Date().toISOString());setCloudStatus('完整备份请求待确认');navigateBackupWindow(reserved,built.url);
-      const remain=built.total-built.count;toast(remain>0?`已准备 ${built.count} 条完整增量备份；提交后还有 ${remain} 条，再点一次即可。`:`已准备 ${built.count} 条完整增量备份；GitHub 页面直接点 Submit。`);
+      const remain=built.total-built.count;toast(remain>0?`本次已尽量装满：${built.count} 条；提交后仍有 ${remain} 条待备份。`:`本次已一次打包 ${built.count} 条完整增量；GitHub 页面直接点 Submit。`);
     }catch(e){closeReservedWindow(reserved);setCloudStatus('完整备份未完成');toast('备份失败：'+e.message);}
     finally{backupInFlight=false;if(button){button.disabled=false;if(button.textContent!=='已备份 ✓')button.textContent=normalLabel;}}
   }
@@ -196,7 +199,7 @@
     const tools=document.getElementById('weeklyStateTools'),backupBtn=document.getElementById('backupWeeklyStateBtn');if(!tools||!backupBtn)return false;
     backupBtn.onclick=backup;
     const restoreBtn=[...tools.querySelectorAll('button')].find(b=>b!==backupBtn&&/恢复云端/.test(b.textContent||''));if(restoreBtn)restoreBtn.onclick=restore;
-    const help=[...tools.querySelectorAll('span')].find(x=>x.id!=='weeklyCloudStatus');if(help)help.textContent='完整备份：阅读状态、正负反馈和“为什么值得/不值得”的具体原因；仅提交新增/变更密文。';
+    const help=[...tools.querySelectorAll('span')].find(x=>x.id!=='weeklyCloudStatus');if(help)help.textContent='完整备份：阅读状态、正负反馈和具体原因；单次最多尝试200条，并按 GitHub 安全长度自动装满。';
     tools.dataset.backupSchema='5';refreshCloudStatus();return true;
   }
 
