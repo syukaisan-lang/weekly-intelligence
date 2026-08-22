@@ -4,7 +4,7 @@
   const coverageLabel = {enhanced:'增强覆盖',cached:'缓存覆盖',partial:'部分覆盖',unverified:'待验证'};
   const coverageClass = {enhanced:'status-ok',cached:'status-ok',partial:'status-pending',unverified:'status-pending'};
   const methodLabel = {
-    feed_cache:'RSS日缓存',article_listing:'文章页',column_listing:'コラム页',new_article_listing:'新着页',
+    feed_cache:'RSS日缓存',markezine_feeder:'Feeder备援',article_listing:'文章页',column_listing:'コラム页',new_article_listing:'新着页',
     serialization_listing:'连载页',conference_listing:'Conference页',official_listing:'官方列表',
     official_rss:'官方RSS',feeder:'Feeder',rolling_cache:'滚动缓存',direct_listing:'新着列表'
   };
