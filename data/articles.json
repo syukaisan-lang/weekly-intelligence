@@ -1,19 +1,19 @@
 {
   "meta": {
     "tracking_start": "2026-08-10",
-    "generated_at": "2026-08-21T11:19:05.557884+00:00",
+    "generated_at": "2026-08-22T04:05:54.404950+00:00",
     "screening_mode": "openai_api_if_configured_else_heuristic",
-    "new_this_run": 0,
-    "knowledge_context_refreshed_at": "2026-08-21T11:20:25.732770+00:00",
-    "knowledge_context_rescored_count": 450,
+    "new_this_run": 48,
+    "knowledge_context_refreshed_at": "2026-08-22T04:07:16.603950+00:00",
+    "knowledge_context_rescored_count": 498,
     "personalization_version": "semantic_v8_adaptive_temporal",
     "semantic_model_family": "multilingual-e5",
-    "semantic_rescored_count": 450,
+    "semantic_rescored_count": 498,
     "semantic_deep_read_count": 0,
     "temporal_update_enabled": true,
     "rolling_feedback_window_days": 84,
     "adaptive_attention_budget": true,
-    "xtrend_discovery": "feeder_verified_parser_with_summary",
+    "xtrend_discovery": "official_rss_plus_feeder_plus_rolling_cache",
     "lifecycle_version": "adaptive_v11",
     "hot_retention_days": 90,
     "unlabeled_source_pass_days": 0,
@@ -24,20 +24,2621 @@
       "B"
     ],
     "trusted_status_origin": "human_v10",
-    "hot_article_count": 551,
+    "hot_article_count": 599,
     "cold_article_count": 0,
     "cold_records_keep": "id/url/title/date/source/score/feedback-features for dedupe and learning memory"
   },
   "articles": [
+    {
+      "id": "f5cc73a15fcea4307b",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01427/00001",
+      "title": "5 スタバ×110年老舗 本気のコラボ論 スターバックス上陸30周年、不変の店舗戦略 霧島酒造と組んだ必然",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.204467+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.85,
+      "reading_score": 7.21,
+      "notion_score": 6.98,
+      "grade": "A",
+      "tags": [
+        "strategy"
+      ],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.881,
+        "rule_match_strength": 0.85,
+        "experience_similarity": 0.856,
+        "repetition_penalty": 0.305,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.394,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "HgvV3kzIExUzRC4DZRryNiDFw9Q1COcvSFroNDPJstE5rDklrfoJzM4nJmQObgQsi8zWVQZHCL3RoMMwausESV8CUkbO/+VB9OUmMzrXF+O91dAgyjZGrznbSj++1dLUyUYJAU/ERJz5LRXpSsjLKhMUtdUip0/fVcnDlLXkEFgG/CMJFxggXtft/v6rBeJdGzo331T0WtlESSPDwOkiSYHMl8HMvG5XjOX0Mc8G8xjpS3QVvPidy6jMywn48jkRlc0a69ki+EbZyTMrafHFQ8dRQ6K5JKPr5iXLKxELMJgfTQTJsPnT/dq3sb76DkDD1No50yni2QvfQxPUz63lHksiww9c6VQeTADsvePQ2ykqsMPKAF63oE81KDcg7dVG18vI8FKzTPf1Vtg+2esYDZ4X7j8hSio7vOwJZxAe0uvOy/TCQiO98BMIH5O5Qbz53CS+kRE74Szw1y/2t04anw1TxRvN7zY149MaNz5m9u4R0Alm2g0RwcX8yIpoFiJF",
+        "scale": 0.0009114706,
+        "normalized": true
+      }
+    },
+    {
+      "id": "27fb76a473ad123e4a",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01411/00009",
+      "title": "4 世界のマーケ新潮流～カンヌライオンズ2026 バイロン・シャープが“宿敵”と合意した「5つの真実」 差別化は無意味？",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.204139+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.46,
+      "notion_score": 5.4,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.897,
+        "rule_match_strength": 0.853,
+        "experience_similarity": 0.863,
+        "repetition_penalty": 0.367,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.348,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "OvrJ3V3bGiQ3MjX1awCwHSXkrrELJM80EFr1ED/xwNxaxC4L2N4J8A4PEU48f/lAyuXzM/4z6bLTzMITafbxSWj7HiO358USy+TyFxm9/dKj1MshwEVDxD3tFUDVxc3b9DoM40HTKMXYICHnNsgBLT8TwcIR0R/TWdnSp7zIGTIQEg0rChY4OtDT5Ni9LPVAHjVF6D/jPsdQNkbe3/AsKLna0rPkykVJ0NjdT+IT6UjjI08A6/ORv97jvwgF5f4Lpr0PKOwnMRvbzR03NunlI9YTJ7S/FsjjEiLFEj8FEKAnJRL3zS/c6N7UxaD7NCfPxd4syDzC7CPZJjHbt8i/Gzozth86514uPi7n3dDv6io92g/IBSqiqkT8IBRZ7/9U78DX3SrKJAPmWdw13/oXNN4eEP1DJjwtxe0eP9RC1tzRy/W2S1XN/RsPFbG5TMnV/RrQsiom1yPh0Cjvwi3/uxEO3Au9+Vkwy/UaPFA5Bf4wxxlh0yTc2OQlxpc4CyYw",
+        "scale": 0.0010350094,
+        "normalized": true
+      }
+    },
+    {
+      "id": "ff5dfbc41fdff66aa6",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/00947/00293",
+      "title": "3 「日経デザイン」発！ NEWS＆TREND コクヨが90年ぶりに本社移転 コンセプトは「発見の散歩道」",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.203803+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.43,
+      "notion_score": 5.39,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.883,
+        "rule_match_strength": 0.855,
+        "experience_similarity": 0.856,
+        "repetition_penalty": 0.311,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.409,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "HhjX3zPqCic9FTYyRQ/ZNSvNp9obBeQtODvUJirp2sQvwCEVxN0Jwcv7L2gxX/IQqePoQv8vCcnkubYhQQISQH8OCyflxO0v8voLIw/NEOKz7cYm3jI82z7yNj/L19Wyy0YJ/gjiK8fbDBXrQbDgLCwns+EDnkbaOOjpxtW8ERYBDyNAMS4sL/Dh6vTfJvgpFBsk1jzdSvdFKTXL7OkvMsDsxOfEvU85mt7IENQF/yzRBD0IzOOlvbPB3x4P7QkauroMBek1ASjm0yE2Me/mIfsrLdHCNsYCBAXeGTDzG7vPHxfS7Cr64fbV2dXuN2Th++k1uDzRwS3XFCfurdjmHyAv1gk84UAXGR3L3+bc0TQB1eq/6UbawzouISM99Ao9AMms0APULOQGP84pz+YeFaf/Dy0bGEML1uxFIPcM3fvg6gDeJi7Z4xEgJsDXMsrs/VbSwCZB4hX47RLjszsAuhsn3BTlAjAl6dEUQU44/tsevhtB5fkJ49gb2KslHR8t",
+        "scale": 0.001140932,
+        "normalized": true
+      }
+    },
+    {
+      "id": "f98e9e243880000337",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01411/00003",
+      "title": "2 世界のマーケ新潮流～カンヌライオンズ2026 P＆G最高ブランド責任者がAIロボ化 現代マーケに必須の「3つの声」",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.203487+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 7.2,
+      "reading_score": 7.5,
+      "notion_score": 6.48,
+      "grade": "A",
+      "tags": [
+        "ai",
+        "marketing"
+      ],
+      "concepts": [
+        "AI",
+        "ブランド"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI",
+          "ブランド"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.892,
+        "rule_match_strength": 0.873,
+        "experience_similarity": 0.881,
+        "repetition_penalty": 0.348,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.402,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "DxDb40jc+isaGivof+O7QRbhw8wDIs43PUPNIB/k385oqzkAvukW0QcHJzcxbvZErP3nKxBaFLfXxs0EaRUON3H0Ii6w3cwVytb8EjHID+Kw2N4v0zkyw0QANDHM19bZ6DcT8knQEKfiEA/uNs3cJVoMvL8b0B7MXdG+p72/GBUk9ihFGhRLO8vK1tHNIO8tFyxY6zPlUthcJETh09kcO8XdssDpxj5It/DOK9QK9S/AI0sT4wamyq/R3jUIzQ8SiLrqJuEuRDrl1xg4M/LrMfQeGMXBKcr5BBrOBD0AC6UeNxbUxyLf8cjG1cMOOz3f/+BC5D/T0TTgDRTZzsfZGy88wwsw3VQOPBj48Njv2zUfvOnWCWSoySkOFxE79Q5V9sLFyiXhFhD5RrU28AMVIrEm+yZIGSksyOceQfIb09LLzwS4OlLGAA8uKa6zO8vO6C3Q1R07uS3S4TDv3xwOqzASug20/1Ag5NcpMT8tBxM0tAlY2+bg3OgQzKNFI0gm",
+        "scale": 0.0010380755,
+        "normalized": true
+      }
+    },
+    {
+      "id": "4037f6a4636e90a6ee",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/theme",
+      "title": "ブランド価値向上 の人気記事",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.203143+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.5,
+      "reading_score": 6.85,
+      "notion_score": 5.81,
+      "grade": "B",
+      "tags": [
+        "marketing"
+      ],
+      "concepts": [
+        "ブランド"
+      ],
+      "learning_features": {
+        "topics": [
+          "ブランド"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.894,
+        "rule_match_strength": 0.877,
+        "experience_similarity": 0.869,
+        "repetition_penalty": 0.356,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.394,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "KPLg10fZATw5+ygaTvfCKDXKyM8HFvVYRzfcBjfFzN1IvUkd1M8O0rcYIWIqK/Io4eDGOAg1Rs36tpYKbgP4PlIcNiTs6tku8u0rNha7I+G3xdcm1zE3tSbMJE7G38TI4iwl9j7OG6rEI0XuJMDGOEYgxc3ztkHlf9i/o9/cCBME+j84HzorM9YAx+KuKeZNGS9gyj/eRfMmCULMx9k9Nr3Cr/DqsCpbudbOROAq/RnUTUAd2d6/1LvhwhoG2fwNrrbmGOdHGB//8iE0VdK1RtoeJbnSJ7PwHjTEJT7wJ7XcOSW/uyXWxsLWvNUUKDXt8txGyhbM9wv9PBbh4tTZE0Qatg4r8loeHRXJvJ24xRz3xuq++mHZsgoaGEMu4/o+37XHyhbKMxwGNdhECdEKKrwY5kEWLiguv+0hTAkg8M/h3dnNPlPU5jIbK5K9Ob/V5jzA2CMD1S8K0kPM7ikRuy0t5CCr+SAV5eI8Riw96ewb7TRE2Rr03dUYuuVHGSsp",
+        "scale": 0.0010288395,
+        "normalized": true
+      }
+    },
+    {
+      "id": "641cbcca71401ac8d6",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/watch/00013/02948",
+      "title": "2 Hot Topics 不二家が弱点克服で焼き菓子強化 「ペコちゃん」活用のデザイン戦略",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.202929+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.85,
+      "reading_score": 6.86,
+      "notion_score": 6.7,
+      "grade": "B",
+      "tags": [
+        "strategy"
+      ],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.89,
+        "rule_match_strength": 0.859,
+        "experience_similarity": 0.856,
+        "repetition_penalty": 0.93,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.404,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "J/bexkbHGQBSMUYpafrfHUrFoMQgAA4RRibuHiOu1tJL2jQY0d0HttIOVGMzcf0l2vcFKudMH+bf2KAeYOv5RHwgDzHe8tAtAL8XNhPZNt/V48AvzDBCzTfcVT6xvsLGzS4v8inQOaTWPSPJY660E1tSxMoHxjfHXODausPHF0D8BC0lLRQkPNrV8/S6SNxYHx9UvFAGSeQ6PhnY3NcaTLDQssLwmkNZ1OCwPL8awSbMN0w91O6fub7I1iQj2AELscIc+OMoDzMCsClBZdfwHr1DPMHJTsgDBjDFAzEEOIHsOUWz1Qjc9sPRwKMEPDLM+MVFpz381ynhFhHkxNj6JzwQsQsN8HkXHDvI0d27yUgY2vG+4izNyCIvJEQixhlj7QOK1AfrSQLlVtlL4u0KEKga9SoNEC0szdcSKxEc0Pi3tvPINVrD/gUZOrO9NKXT3CSkyxgb1yQCySPuCBoQoDoOyCix7itLx90VLkU+3OUxsyE40hT71t8PsqlXHyxG",
+        "scale": 0.0009625758,
+        "normalized": true
+      }
+    },
+    {
+      "id": "6e334b118511be9d90",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01445",
+      "title": "3 ANA・JAL新サービスの裏側 全8回",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.202600+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.36,
+      "notion_score": 5.34,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.87,
+        "rule_match_strength": 0.845,
+        "experience_similarity": 0.852,
+        "repetition_penalty": 0.258,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.413,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "IxLm2V315TJuJVY8LOrHRiyzt9gI/+EaZ0niQhqbzdhMtQsG1dQ509NPP3gxdvEvwezLKiREA8+6rIkrWAIdPlJFalXF+9dQ2fccMzXTN9ud1tQYsiw8sVjYPCm5y8DBxUYo+jjNQ6fmLT/XR7TcMysOpegHnjXWN7ettM7CLygG6ChKGj5QWuXq2NnRFg88Jm1i6Tm/Q+spLh7Yte8oQMW9js7DqCdnpN/9EfETBAqqREsS3s+2rKTfrSMKyvbYvsUoIbxKHCj5uls3L/6qML8lKMW5d7fuCxvTIkDSE4HNPjGsq0/kwaLBsdQwLjbmzN5E1TzjzRUAKBbUqNzyFFJBwhE930U+Giy62p3bn1gyk7LmCz7cwhE6KDRy4g9AzMW6xx/GJxQVWOQy5fsaIq4m/yL9FiUyyOQSVxcbwbnAtdGmQHHL3DckLauUN8z5umSouyZY4DDXv0TX5TMekCgQuifE7iY83+VALU1QzSASqjFo4vH569o1uos+QSNc",
+        "scale": 0.0008752922,
+        "normalized": true
+      }
+    },
+    {
+      "id": "40b276734e09edd722",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01184",
+      "title": "2 Gaming FOCUS",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.202372+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.4,
+      "notion_score": 5.38,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.869,
+        "rule_match_strength": 0.854,
+        "experience_similarity": 0.862,
+        "repetition_penalty": 0.257,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.458,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "JPO2yi/WCyw5Gj/+T+0DBzrV1bAwBg1CZT++KjK619AfsVQa4M856ds3LFgnNsta0ezQFA1LNqLpuZcdWukAIwUkKTTc5tYtCM0EKwzyOum78qs9wSwrxC3kR1C71ufN7jIk6EXfNKjCNxfLEc/OE1ozsNvhkR/rZdTK167XIBoKOT85H0JQYeAW5e/GN9csIyZ/4E3vMNFMQWrN2sRCVNDYmNPjrTlJoevVQ907yiqdQ0c56Pubr7q4vC0Jw+8jk7rz+rowIy3XtxMaOP/EPuwgGMujLtQJCD/yNyfbB6b4QiDWzSb079K1u8P8HT7WyME9sU7x0xfxFx/cjMjHDUsdwx081C8hNyDQ3Nr01B5P273AOmiuwi0OCjE939Zfv8rGxQTHOwwLJNpA5PUlF6koISYiITceprovZ/c309yn5xa0MDa1xiYdHbu2KMXn8x6lvjoS4SXg1FjlxBEyoi4X2Aqu7EYut+InPRcs8vFFwTtP3Sjt1OgipdlTK2Ax",
+        "scale": 0.0009495517,
+        "normalized": true
+      }
+    },
+    {
+      "id": "93661f1215c3068162",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01222",
+      "title": "1 東京ゲームショウ事前情報",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.202145+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.57,
+      "notion_score": 5.55,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与 Work System 语义相关",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.86,
+        "rule_match_strength": 0.841,
+        "experience_similarity": 0.838,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.646,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "KPbu3UH7ECIzBUT8RfoCHCzkqswM/PouHzXQBh7BxPE+vioc8Nwv4s0qJz4RONsc0O7cIAstFtEBs7X8L+z9GSEvLijR49s35OoTJAv9EQGsv+Ir0DAlzEDiJC7C4/XM4jor90AAMYHNFC7DN7zcHy4Szc3qvxzXJN7c1Ob0IggQCi4rLhVANf70+vDNP/QnDhVf1zHkMNgVHDLozdsWNcvVs9vOzEAxqOL+HOEz4R/PMjgi9PfWy9Dp1hgI5wUPvdHuJOU3ECDy0DwyPgfZIvAZHdf3OND5BhLxOin+AMvlNh/c2w0I7N3b1c0F+hnQx9E/2UbdyxDwBQXrvdTiETEo1RcwAi8aJRjB8snq2hsszeaxK03CxjP4ADU05uMn5frJ0f7iLREIOuYy6eUUGMcV9SACITgLx+Y1WAEO1+bdyvvZLB7i0hceKNbaFuDf/DTLzCkq5x7rwCLl8iQgmRUc4fa11UQm3AgYNREx7O82zA0uyhfl7dki1tEvMj0x",
+        "scale": 0.0012409219,
+        "normalized": true
+      }
+    },
+    {
+      "id": "ac44012a3ed88311f6",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01443/00005",
+      "title": "10 酒税法で大変革 ビール「新ポジショニングマップ」 アサヒ「スーパードライ3.0」は「冷え」訴求 第一想起で1.8倍狙う",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.201938+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.85,
+      "reading_score": 7.55,
+      "notion_score": 7.25,
+      "grade": "A",
+      "tags": [
+        "strategy"
+      ],
+      "concepts": [
+        "ポジショニング"
+      ],
+      "learning_features": {
+        "topics": [
+          "ポジショニング"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.884,
+        "rule_match_strength": 0.862,
+        "experience_similarity": 0.87,
+        "repetition_penalty": 0.316,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.674,
+        "increment_type": "direct_work_use"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Q/q3v0bnHQ44TlrxYOHTOiy9qtEiDtk2MFETFTitrcZ9kDoXse8t2PwdQF03OgVBm93pXPAnAaoFuYQ8brMlQWQwLjy0yO8szPxJGla/Mt2JvdApxVkmqkvmH1/Rs9zsyUgP5ESZUrLoIynQaqynI2suuMb/vELLYM/ewLbRBzwA/y5AJhFmXKb+8Lq6Nc5CFyk57jzoOeJbNTup6OgsTqrEt9LuqTdnksDzGdUr3ViWKVQJBAGw277lwgQO5x0lgaUCHQUeHyv4pVs7PObUPKtNMamgOs/46B7NQTn/EoMEU+q6rQyR7caivdPqKEzM1sQ05k3d1QsPNgfev87wC0YVryY56mwaNwbf5tz1509HqtDVBXfPrDkgGwgvAghCzNW82RrSSecAZeUlAPcz6q0X+P0kJV8WqNYLUvkissW+zOSrO2na7CETKZrELL/tCCqvkiM30R/u+RX5y1j6hFUjtSzg91hI5s9UJ1hgCvv9wyNV8w8Ny8YlvLxW+yoT",
+        "scale": 0.0008729876,
+        "normalized": true
+      }
+    },
+    {
+      "id": "cd63bba17e3034aa36",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01428/00001",
+      "title": "9 色の再定義 みずほFGが色起点のブランディング 「青」の再定義で若年世代に訴求",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.201619+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.52,
+      "notion_score": 5.46,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.886,
+        "rule_match_strength": 0.862,
+        "experience_similarity": 0.861,
+        "repetition_penalty": 0.325,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.425,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "PfbkqV7cJRlQJCkDbPnHNRHFrbI1H+YzXjHoNizfz6ZXtjAauPQ3ydciJnAQcBs0yNbZT+ow/rnP14YXL+sKV3slETa5zcov6vQiGg6JIQ3dvOYezikj0j/oTF/Wu86+xCgM5iTVNqrY/x68Q7nEFjYctrP8pkTfVebMjLXMHyMGABBCNFlKZcTbvtbcLNMsHwtQ+TfjReBVODzF/NVfS8LarOfVuUtLq9XPOcAu9Cu/OmAzzeLG46P07iEK1EVHrJIfMdwgIDH3rDoyEOnHItoqNrS1N7P2DQvaKAzmK6YENx3Luzj5+K/pusnvLSj3B80zskzN4gX7IQTwudq/ESskpi805X81KxPT2drbvBsq2uju3Vm6sxkN+jZW9QdG+bCkvCXiPyDmOdBBGN0ZHrcc+ysUFDcrwhIpUucZw/fruezDDjCw6iQAKa6kS8/1AWK92UpIwhXj2zrlqU8jiiIsxfPFBEdH19wkFTZl7e0jyjxI3vfu07EusasxKBtP",
+        "scale": 0.0009389184,
+        "normalized": true
+      }
+    },
+    {
+      "id": "3e2a9e3aeb28e0fe92",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01227/00024",
+      "title": "8 藤原義昭の「逆算の戦略論」 注目集まる新職種「FDE」 マーケターが人ごとでいられないわけ",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.201313+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.85,
+      "reading_score": 7.02,
+      "notion_score": 6.82,
+      "grade": "B",
+      "tags": [
+        "strategy"
+      ],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.904,
+        "rule_match_strength": 0.86,
+        "experience_similarity": 0.859,
+        "repetition_penalty": 0.51,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.353,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "QPzI2T3WEENZMDkYZADXQCWfsuALEtAtO0MBOyPWvdNFtxkT0PUS0uUCQjQcf/4l3wnOQwBM9uTH16wYTQH6I3IdMze04Mw37ts1SB/bKue2xe4N3ShVrFfwMx+zpsnIyTEkFT7VIsbTLhvcPsP7Nz87tMEWvEbcRv7UprjbJksBDBNGFAhAVe/k4O7NGegnEjJjyjG4WLdBKS3JwOU9ONK0rdHntDFKw+DUBbEKxx7CG0op3fiTrL7u7hcE6RgerqoNHeggDyX0skIOPP7ME9U0G77SW9DzED/gCiwEHokdKyrZwTHg1MLJzJr2IkPA69Af1VfJ7PnyEibTkNj8GiIspBg3Al0gSS2909jwzQsmu/PPClrWtSUlIkRe6PY4yd/S1inYTg74cuogEvb4FKhCGA4hLioxx9AqIuo/2OXM5QO0HlrbBxXsMaq8QIXRCjiyySNNxhfYnQztvQ4jjgQS3yHJNDAi5N8NQTFX6fsmujM+4wz01sQVvqtCE0A4",
+        "scale": 0.00098193,
+        "normalized": true
+      }
+    },
+    {
+      "id": "383efb5b0de4a3d0cd",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01444/00002",
+      "title": "7 まだ間に合う！ AIと歩む戦略立案術 マーケの目的を明確化するAIプロンプト 若手の提案の質が劇的向上",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.200961+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 7.55,
+      "reading_score": 7.9,
+      "notion_score": 7.65,
+      "grade": "A",
+      "tags": [
+        "ai",
+        "strategy"
+      ],
+      "concepts": [
+        "AI"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.917,
+        "rule_match_strength": 0.882,
+        "experience_similarity": 0.893,
+        "repetition_penalty": 0.448,
+        "gap_bonus": 0.06,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.302,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "FvDMumG7Ag9kGUUWbwrdOj7KqtMPBgUXPFrbLybj38dgvh8D1uoWwgwBRTNCf/kuqvXaLgYw6tjYqLL9W/L2QGcZGUOd4a8YwMwZNTvDI+i5zfEPtkoxvj/xPVK69M3FyEkb4CrWPaTyKR62GbDPQk4lpdEDrC/pYeHIqsXRBST2+yw4MRhUXdvr5Me5PvQxFDxRxEb3Y+5mN0rn1ew4N9W7kdHnpylSo7XTHsMQ0SrIQT8Z1NWu0MDWzTX44B4BmL/yMNg5PxjW1i8WPd3pN9ohHqi8TP/s+UXeKUIDD5oMRhmh3EHw47nDuq4hTz+35sQ95knm2/YBGBDSvdHeJic7wggw/VYCEwzh7tXIyywf0Pe9AEuh0DUfEUFGCPY+5cifxh/5QfvsTNhl/swnJ6MZ/C0qJxwft/URXPoZnO7X0fu8OW694xDSOrPCK7m12UjHtzge0TnW3kDG1woVpCA8wUO5ElRF1ug1PhJK/wM9zxhb+wrjtbQk1sdGEU0t",
+        "scale": 0.0009424167,
+        "normalized": true
+      }
+    },
+    {
+      "id": "e0a2b7e2b4d5abc210",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01444/00001",
+      "title": "2 まだ間に合う！ AIと歩む戦略立案術 若手が戦略立案をハックするフレーム AIで戦略のオープン化が加速",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.200581+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 7.55,
+      "reading_score": 7.8,
+      "notion_score": 7.57,
+      "grade": "A",
+      "tags": [
+        "ai",
+        "strategy"
+      ],
+      "concepts": [
+        "AI"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.909,
+        "rule_match_strength": 0.864,
+        "experience_similarity": 0.874,
+        "repetition_penalty": 0.415,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.335,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "GeXV02e0GBhRFkYCXwTYODzMttQT//cWRFPyLzDe0M1iriIE2M0iqwMdWUc1d/gfrOPwQfE3AdXYj7kaVukHN2cUFSuS3rwk2NINJC/OJNWv1toozT0suz/uTkTI9dfEyE4a+UbjP4z3Jgi6G7zdTkkbr7gEoTfOa93OrrHjITAKBy02OzRgXPAI9tjIR/wqCixcuETpY91NRVfu3/M8Ur+7gcrIoRtNrqvhR70LwkXGPVc0y+Gc0cfR0jzj4hgYi7z9Hds5RjfX5Tg5OtLVHs4mJ5XCNwb1CCXSEijqIIIQPQ+4xlX77buwz74bPEPCv8RQtDzoz9/i7yPZqOv1HTUvwRYo+lAKHQbj8srUwjMUzt3NGGGYwT0mBE1KEOswyKiawgn0QBTca9hjAuEsJrL+BzwyEyoguN0RTvwftN7mwhS6LGbD4AbiQca8JsTC8S61lCYUzkLM1DXx3Qciqg4dy0TAFDlC8N85Ni409O1F1SlI7wH1wdAvyqlGFEhA",
+        "scale": 0.0009221341,
+        "normalized": true
+      }
+    },
+    {
+      "id": "17ef7d501c85d6e836",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01428/00003",
+      "title": "10 色の再定義 マルハニチロ、社名変更の裏側 食欲減退色「青」の採用を巡る大激論",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.200035+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 4.8,
+      "reading_score": 5.24,
+      "notion_score": 4.19,
+      "grade": "C",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.889,
+        "rule_match_strength": 0.869,
+        "experience_similarity": 0.867,
+        "repetition_penalty": 0.338,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.412,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "JPatvTXgHxFbKR4IZwq2GTHTwbcVAt41VTD3MyK0ubI7u/kUtvz9yNwYOXo5a/Mf5PDUXeIlEsHqyZc3Rv0NSH8gOiHKr98hBdcWLAyyJOjEt9UU2h8arT3mPEXQwsrK2j774R29SsLuHxXdPL/ULE0exrn6xUzLYuXynsTcJjwB/SNRF0g+WdjF4urAJ+MzFB5U5UDYQNxMGSDc5ukuUrnNpNznuj9Gvu7tK7cu8jDoI2Ijzc+x0p3vxSE31jYvuZj7D+YBMDQGySM8Lty8GNUjIbfQQLMB+TnAQiAeNqLzSQvfwyreEMbZ1aUIPirW9+QssEbF6hvmNSPr1vDLLjsXxDFAAn9DKhG72uDYvSYmrubMB13KxAz5GCtC3/NL29HN5BrhHfnKUb8tAPAAEbYnAB4HCz4q3QIfPfoz0ejmzNPbFj+/2CICHa3QOcjk9VXIs05TzCb22Sn9vC8SohkN2QbeHj4nv8s2RUJM+fUovx1J6+zw4Jk2qKZZCwE3",
+        "scale": 0.0009860088,
+        "normalized": true
+      }
+    },
+    {
+      "id": "eac1464138a1dc8d39",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01925",
+      "title": "9 インサイド ポスト「BeReal」に10～20代が夢中 「setlog」が似て非なる3つの理由",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.199747+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.08,
+      "notion_score": 5.11,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.884,
+        "rule_match_strength": 0.857,
+        "experience_similarity": 0.865,
+        "repetition_penalty": 0.79,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.416,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Juzc00bTEu9W/i0TUwLPNC6+k9wJH/oiU1gAViuXl89Pm0sH6PUHpOkGOW4qUAs+wt/sc/1J2aXXu5AFWOkJP08vGi3IsuUp+MoPMVTEDuLhx7I45E87ukfFVErg2a+/2FwBxCHDWa7oK0TGIKu+LUktsbX0hxvITwDAncvcGDEHICNcDCpKS9vuxNvcId48WDZh1Uu4RPVoaCO5798nYZe8uu0FtyJQlsy6V90U9CrOQFMZvvGNzcjk0zYTBvNMqrgT8/FLKy3wxyEHJfumJd3/Q+e1OqLu+iTmHzQDM7P6NSu5uSfm2bK1w5fgD2Xt4KJAzE3LCxTZIRfVl9W/LjMWrTot/W8UPTi79tfK6Dokz8jKC2TmmDALGT4+7+gc6e3b+TKVZBgSZ71D/uoYHZ8TJhdCACQxuAIWcegbuO3SufmXMzPH8zEIJpvPWMPjxGSotEpJrCbiyi7apSQozgAVs0Hh81RAy80lS19E5/8ozjZnyuPl5LMzxYEwFTE3",
+        "scale": 0.0008820526,
+        "normalized": true
+      }
+    },
+    {
+      "id": "2866b8f97f480c8d3c",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01421/00002",
+      "title": "5 徹底調査！タレントパワーランキング2026 企業も注目する人気タレント「トップ100」を一挙公開",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.199426+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.75,
+      "reading_score": 7.01,
+      "notion_score": 6.8,
+      "grade": "B",
+      "tags": [
+        "research"
+      ],
+      "concepts": [
+        "調査"
+      ],
+      "learning_features": {
+        "topics": [
+          "調査"
+        ],
+        "formats": [
+          "調査レポート",
+          "ランキング／まとめ"
+        ],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "包含调查/数据；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.883,
+        "rule_match_strength": 0.847,
+        "experience_similarity": 0.851,
+        "repetition_penalty": 0.33,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.37,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "FhneyTXjFCtOGC4KT/3NIjHsv7UeALUmMzzZFS7pye0OpzsDyOkT4hINNT8ffxwawPDOMA04EcrzlrTsX+kaNmobHx7J6sUc59gFPzvXBtK/3dEA7Bkp0lP6SiDZ1PC+9zEX5xO2J6ziJTDQH87GLhAYwNLzwS7MWN3DsNrrECDt+hQxITAoNcnG6ubLSPBWJjxS5FkGTMQzLzjV1ugLMczNx8XarUg3q8/rJsEW8TvRIlEk5uetwqbOywoU2vkUrcz7D+ccKDfk7y82MvG7J9MqNri+KuIA9DLKEzj7FaoKQCbf2BH//QTet8vWC0zfsd5evj3AAxbvNDrX5dH2DDBE2Bkl7FgFKxvZzNHM4yYXxcDY+EvQ0yAEKCoT8v1A+cjC5BPcGA8YaMkP6CAoHcocAyAeJSAgs/oYM9dRv/XU6+myJ1/Z6SAsGKGsTrrs9i3HzS9FyyPr2yfj1zT24P4n8v3M+UghwAIkJj8o+u0y5x8l9urk1MU3+Moa9E4p",
+        "scale": 0.0010858835,
+        "normalized": true
+      }
+    },
+    {
+      "id": "5c2733036d6adda448",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01439/00007",
+      "title": "2 自分年金を増やす最新投資術 70歳まで待って年金42％増は得なのか 繰り上げ・繰り下げの損益分岐点",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.199093+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.15,
+      "notion_score": 5.15,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.904,
+        "rule_match_strength": 0.861,
+        "experience_similarity": 0.861,
+        "repetition_penalty": 0.45,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.355,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "FAfPw0XbDy9UFyQbT/ThPFmcysEoFMs9Uj4PQD3r2sI6ojMP1cQqyukLQi8wU/0f2db9JwlWPOLGyK4ZUQQWPFgpCy/ezrUo7hAvTVPMCOes9vc6yUIjw0v2SlnG3OWy1Ej+9EDJEZvMXibHLsXLPkIazdIKw1fef/HBk9zWFx/s+zAh/v8nd90I4tHjPuRJMy5K4UHGSuFUJiy77tYpTrTSoQDipTZOldblMuYx2Se8QUMxyaC38NPOryol8RIzlLnj9dQhGEUP8konLgTQNPH8GqzGKObaABHvHUrgIpICOjG8pxnzz8jEpcL9LTzX2cwa0xPdBefmAhncqNPhEjQgsBUj+EwgHx7U88nazh8n5tPo/lGgxy4pBzk20gss982uzUHZZwXWSsEmCucgFKYK+DcmIEkNo+IhTgVC0/i++guyNEbZ7CD9Ja26PdH3+Fal4wsv6kHmpRLethYnkRgI3xLS1kc8wcojRjB25fMhxSAvzuvJ0ZkowJc8IhxV",
+        "scale": 0.0009647155,
+        "normalized": true
+      }
+    },
+    {
+      "id": "c0e74c5a7a6e95d2a5",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01928",
+      "title": "10 インサイド セブン新広告会社の社長に聞く 好調の裏にある決定的な課題と対策",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.198791+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.5,
+      "reading_score": 7.28,
+      "notion_score": 6.16,
+      "grade": "A",
+      "tags": [
+        "marketing"
+      ],
+      "concepts": [
+        "広告"
+      ],
+      "learning_features": {
+        "topics": [
+          "広告"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.893,
+        "rule_match_strength": 0.876,
+        "experience_similarity": 0.88,
+        "repetition_penalty": 0.36,
+        "gap_bonus": 0.17,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.637,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Kee/xi/LIxZpRSsGYvrQNTzQr8U/CdhCNU3fIg+qvOdIzkoK5+ZP0PMZGlotbvIlv/z5RPk54djPoZMsZNIxTE4dHUi+4tpI7NUXLv3FI9C/4bkY3S8ox0XvQXHNwdTKwFMU0jnlUazlJhrhLZXFLmUw1MoNsUDlUPHArLv8Jjv36jI7Dh4+Ttz9qQG/LPRSK0Uy2UrnRNEuLiS8ztI3MqrMsuD7vEZOseHJMMwa5gbUH1cjzNKr15b/0A4K2Q1Fnrz3HMYpGigK0Uk5Hv7oHL45O7XFQbf12jC2/ELNFqn+Iy+4rCznCrq/taoVElTfub4fq1Tc5xYALj6yuNrZMC8UnzZG52ARJxXI/uLc30kduuT48X+4yjHuCDwo6upb9/TXyB3pM/7ucPYe8woKOqkT5w0rQkQ67eAHMQkluMao4xWsR2i36gYRMre7LbXr0FnAzjI41DHbxf/3wBYcnCAI2BHQ30c0vv8QLytYxfktxDRj7/vjyMsqyLBXNyMo",
+        "scale": 0.0009452591,
+        "normalized": true
+      }
+    },
+    {
+      "id": "dfa70e3647fb1897db",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/watch/00013/02944",
+      "title": "7 Hot Topics Ray-Ban Metaを使って分かった普及の条件 Google、Appleとの違いは？",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.198411+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.67,
+      "notion_score": 5.58,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.873,
+        "rule_match_strength": 0.853,
+        "experience_similarity": 0.858,
+        "repetition_penalty": 0.27,
+        "gap_bonus": 0.39,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.44,
+        "increment_type": "knowledge_gap"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "JBXR7FW2UA5ODkgAWAitLybuvs06EcgHUDLvNyPN08tI1jAG3vU52svUH0UyXgcaovHlIwAnB8zi6IEaM8Y7J3QZOi3f4/Mz67ExQi7RMeu91cJB3hIMsz/eSynE4cnM11YV+T/ZJr/QIy6xGNDXM0cyzsMNsinAZPDZsa7KEDYDL0cuLlJCUtEExcbET+w8PiFdy0oJQudJYCzt3MgXKNvmttb9siZDuNLFON09DyPxJSEz4MaqyO7R5AYfzecNmpoC5coiCynm9xc8QeW3IqYMKcTXH+z0DO3UHi3aMYPqTh/Pxynb1ajdzrLgHC3Z2NU5vkLE7jDdDTjbqNvWNy40oyUf3nQSFzLazN7130cSuQGlIU3U8EUfMzkf8fdv3+Kw6ES6OP79O9sy99/1DaExBjUmATRKpAodZgIautnXseXEH0vZBiMGHKvdQ8/k4leZwAwCrRb3ug7S6y89rAsyuf+9CC9GyeYvWyFe6uYbyDdY7Qjs+Msgobwu+Ddk",
+        "scale": 0.0009748029,
+        "normalized": true
+      }
+    },
+    {
+      "id": "9f2fa08b529b380169",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01445/00003",
+      "title": "3 ANA・JAL新サービスの裏側 開始から2年半 「JAL Life Statusプログラム」は成功したのか",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.198009+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.34,
+      "notion_score": 5.32,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.878,
+        "rule_match_strength": 0.846,
+        "experience_similarity": 0.841,
+        "repetition_penalty": 0.291,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.382,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "QQ7v203pLx9tMlI6MubvZE20rsUZBeQKZkAAORC83f5Nlzj7x94yp+Q5LWcqf/pku+jnRSBVGsnH0IwtQ+0QcUIiGVO7/NI51vcnFR/gJeyz6/QpwiwtvT/KMknb27XG1l8S7A7EKZfeIh20N9/hX0YhkdkMknXVMb+jq8SrMjwq1gZFGyM3VtX309/uEB5FH0xCxj2hY+k2QCHO0r4eSMDbp9XspEVrjuHnVt8m9yq5JnMNzMafrcDPnhco3xkDuNAL/bg8HTESrFU1KPK8IcwCIMHCTMDz6DG+AkjjAZfhVDW0zDfM5ay6oqX9Oizfvcw+rzfY0QEPCiDJsNPdOFU5sQFL1VpSLQye5abMsWcyvNjg30vYtTFFDzxu4Qg61tO5ACK2EvwDV8kM5RskQqb6Bk0TQCgrxMoqWAUft9fKrdamF2bb6B4RYLuYN93XwESYpTVj0BzS0U3VwjwGwg8Zqz7CFh5A2OMdTk5i7wH9qShfzPr35Ngn1K8ZNB1E",
+        "scale": 0.0008762823,
+        "normalized": true
+      }
+    },
+    {
+      "id": "94b2fb12d7027d0ecb",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01184/00075",
+      "title": "2 Gaming FOCUS 『マリオカート ワールド』が本領発揮 ラリー追加に見る拡張性の高さ",
+      "published": null,
+      "first_seen": "2026-08-22T04:05:54.197622+00:00",
+      "summary": "",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.38,
+      "notion_score": 5.36,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.866,
+        "rule_match_strength": 0.847,
+        "experience_similarity": 0.85,
+        "repetition_penalty": 0.242,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.437,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "KwHL4jSsLDRCETn1YPnzIUHsz8oo8PYgU1HbFB352M88qTEcwMYT29kPKU8JbQI5y9oGLeI7IsLNybobagDeRFMeLyDmrO42+d0fLTD0LOnJBNg4wS0mxDbCPkje1r+9/EIK2SHNULzWIxjIF/DRGjIe17UU1hbmNPTCrsO+9Rr/NFlGKjo0RcDcsObbIOQ4MhlBtUj5Kd8rOUzZzchLOdX0w7j6rCpCvNb+QNMx1SidJ0Qm9v2B07Tqywfvzwolp7/wAOUXHEvwxB4QKeK3RdUZH7iiSKkCATbHNDXuCokNQQDT4Cnz5snEyboQHDXt4NRHwTr96xPXCAgUqMzPDzbnswEj7UUpRRjKutPQyltB0eC/HFDB4yP7ODQ84eFR/dyx0OK+Lw3oXeJB6Ps+CK0G9zkbGUwapM9KVfc6yunawfnENk3n9iz8QNi0Q7QB7yStvyAp0RPw4kL9wBE+sCIt4S6v30Ao2uUwNCY+2OgztB9A+Bz39gIPr+At9hE0",
+        "scale": 0.0010172698,
+        "normalized": true
+      }
+    },
+    {
+      "id": "ed4347a79c01b21962",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01428/00004",
+      "title": "「第一生命」のブランドカラーが赤から青に 企業理念から議論",
+      "published": "2026-08-18T15:01:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "2026年4月、第一ライフグループはグループ名称を第一生命グループからDaiichi Lifeグループに変更した。それに伴い、ブランドカラーを青に統一。「Daiichi Life Blue」はステークホルダーの人生やグループの無限の可能性を表現している。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 7.2,
+      "reading_score": 7.7,
+      "notion_score": 6.65,
+      "grade": "A",
+      "tags": [
+        "ai",
+        "marketing"
+      ],
+      "concepts": [
+        "AI",
+        "ブランド"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI",
+          "ブランド"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.88,
+        "rule_match_strength": 0.851,
+        "experience_similarity": 0.847,
+        "repetition_penalty": 0.53,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.44,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Uxja2mjqGycpJhMMXxrUJTrMuMEdGttAVj/jRjrjtuUijyson/Ab1OgDFmMYatdJzujJYhFC5a/i1Ig3Pe0dVncaLAnW8L8s4Ns3PCa2OgCmsc0YuBA8zlbwO3fD7eLK5k4ACR24Ro7ZBjHCT8HgNytAysn+wlG6V/TGsbXHKDsqABQqSlEqQNXP3e7gMtNgFOQ4wzfEf85yPTDCvtkWKLHsycTvklAuudjidKNBBCzcCWkw48+gjqH0ygIpxh8yr7XZEcY0SBXiux1JH8y9AMgZC7i1FrPZ6xzMIj/lGKQZRTbTvizpA7e3wLTrLk7h6uUuxjbt0y7bI/bK2rvWBiX/rA0V0ncnJyXh6enq0jsUyuzn/1/XwicqODs90e0z8c/P9D7NIAnlZMUe5g4cAsMPDRQQ6SZB0wVBPhEvoNX2wb/xIjje5EIvJI+/MN3d8UzQyVRjzhT9tkLX3FcvuidZ4wLl9FUjpuoKOUlD/vEQwzFTwfj2+aQlyaMeHfYw",
+        "scale": 0.0009307495,
+        "normalized": true
+      }
+    },
+    {
+      "id": "5c54facdb5d89f3a1e",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/watch/00013/02950",
+      "title": "皿もご飯も不要 ハウス食品「チャチャめし」が狙うタイパ需要",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "ハウス食品が2026年7月に発売した「チャチャめし」は、ご飯も皿も不要な新発想のレトルトカレーだ。ご飯の代わりに独自の「とうもろこし米」を採用し、袋のままレンジで温めるだけで食べられる。タイムパフォーマンスを重視する若年層のニーズを背景に開発され、ハウス食品は新たなレトルト食品カテゴリーとして育成を目指している。米を使ったカレーライスに近い食感と満足感があるというが、実際はどうか。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.3,
+      "notion_score": 5.28,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": [
+          "PR／告知色が強い"
+        ]
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 1.788,
+        "rule_match_strength": 0.839,
+        "experience_similarity": 0.85,
+        "repetition_penalty": 0.95,
+        "gap_bonus": 0.06,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.263,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Gfjr2GDvGv80NBYBSQ/BNUXG0sQAIdQXORj+MibC0sw8zEII0tr72O0gE1ojSgEgwOvOOeY1C9br1MgWYQMXGmoeDT3G9/xA/egiGDjHHf+3y9cBtzE3sFD+UzvN2MXS7DPu1yG0EcT2TjLJR8q2NzQm6ckHxjbPOezQoMP2DCfTEDkcFhwhJ+by6dv3HMs8HPlJySkCUMVWIkHS4t0uW8HRxtj6oTFRshCoM8g61RrPMFoV+cqgzNvmwxcZ3QIqpMwaF+IvJzD14xw4L9nMG9UyNOXcN9gE9SLNISHw+8ESPRjT2g/p++TR35v7IyzWy/lTzDbQ+xXrISnr2tTtMB0I0Q0e6n8oOxzC5tbv0EYs3wHh4kTPthsdLFI22e5aF9+m/SjLORm1OdEq0uwDGLMXGR4eIhQdxNYgJAkoxvnKxQC6JS7q/CDUONi/HtroAB/DxRg0xDTi0S727D3amA4N2xrOzio55e05CEItGOsjyRcitQ7X7PMQw6EUIwwn",
+        "scale": 0.0010946253,
+        "normalized": true
+      }
+    },
+    {
+      "id": "15535129f8443efc4d",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01444/00005",
+      "title": "戦略の9割は、実行時に止まる AIに”つまずく場所”を先読みさせよ",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "よく練られた戦略でも、実行に移す瞬間、必ず立ちはだかる「壁＝課題」がある。組織の壁、現場の壁、顧客の壁。その壁を先読みせずに動き出すと、戦略は途中で形骸化する。AIに「実行段階でつまずく壁」を先読みさせ、人間が優先課題を特定する。この役割分担で、戦略を「動く戦略」に変える技術を解説する。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 8.7,
+      "reading_score": 9.13,
+      "notion_score": 8.88,
+      "grade": "S",
+      "tags": [
+        "consumer",
+        "ai",
+        "strategy"
+      ],
+      "concepts": [
+        "AI",
+        "顧客"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI",
+          "顧客"
+        ],
+        "formats": [
+          "解説／ハウツー"
+        ],
+        "intents": [
+          "知識解説"
+        ],
+        "signals": []
+      },
+      "reason": "涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 1.683,
+        "rule_match_strength": 0.868,
+        "experience_similarity": 0.872,
+        "repetition_penalty": 0.95,
+        "gap_bonus": 0.11,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.383,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Pd7I0T7gCfpEJi8QYirnMinBq+78H98zQ0TdSA7i3eM4vTcUxNk4mfb9Llkda/cmj/LrS/4h8M70s8QxTOj7J39BCRy8zOgy880uQzXhNODK4dEP0yQGrz7XX26669Gc9iwe+xTrRLDtKfO8TbvUQ0smpMX6qSnOON7lsrDBD1UW/Tk6MAlsXeAb2fi6O+spFBlZqyjdV8JwPzTO6NA+HtPTsM3yqiQ8xt3+DLAf4QXNBl0X3u2s6LT75y0B7Tnzv6kDB9s3LA0AxDIPN+3WHNYsLsTMRdPm7iXaECL4LLH8SBm0zywB8crc66kCIzjM4toorz3z5ATZCx7btf4NMycjtQsj5VsSFAXI4MgGyDUpvu23JWi50hYKLjI+FQhG2MuxxSLTN/nddO4l6+UXK7wYCCotGTw+utsaK/EHxNHBuvfAKWKR9S30U7nCOa7U10TYqTEs3hrNwPcLySEkofwH8Um7Nkwq5cU1KiFWAucJtypW6AHxvrwMztAv/Sxg",
+        "scale": 0.0009894653,
+        "normalized": true
+      }
+    },
+    {
+      "id": "787c1aca8ebef371bc",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01182/00100",
+      "title": "アスリート施設に「eスポーツラボ」 国際競争力の強化目指す",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "オリンピックやパラリンピックの選手をはじめ、トップレベル競技者の国際競技力の向上を図る施設「ハイパフォーマンススポーツセンター 味の素ナショナルトレーニングセンター」。ここにeスポーツ選手向けの「eスポーツラボ」が新設された。どのような場所なのか。メディア向け発表会の様子を紹介する。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.85,
+      "reading_score": 7.54,
+      "notion_score": 7.3,
+      "grade": "A",
+      "tags": [
+        "strategy"
+      ],
+      "concepts": [
+        "競争"
+      ],
+      "learning_features": {
+        "topics": [
+          "競争"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；语义增量：与 Work System 语义相关",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.937,
+        "rule_match_strength": 0.838,
+        "experience_similarity": 0.834,
+        "repetition_penalty": 0.56,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.634,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "CfzazWDcHSpH5jESfg7kL2O3n+MJBdAmRBfmHzrf7clS0lwcgclGu+0VF3EZehIyyRPKNPwgILbYt6lBMgEMMGoSOCLE1NgP69ggOkfSX/aR5eMfxSowskD8KVLL+JCuASr8zUvsJcLjOi7nKqOrMFgNsc4NsT7tYxPcp9nS7x8f+SpEKxxJSNnbruHIOv1dLDhL1hgALMkJWjXm4NY3HsrRquLHvjpUxOm8CadN5CWuKFAdAdOq55vonQwlyA8LkbcB+cQ/MTTKzC5GN/7QOc4iHarJMsvm5ge58mUQ/Lf0UDjR3yHu98O84L8nICvW/cY0xCDf7S7jUjzEnK34Pz35wgAo9GAKPwfR4K7s318xxgrXCGzrui8YM0BRANtC8/vJFv3rJBEgW8dCt+gxJ8EpREoKGio7vb4xOfEo28e20uvSKFbQyjnkJZnAOeapsl6lpg9PyxX1zwPH6S36rCoj2xONy0USr/P3QDNa/6wUwvs61vkWz8odz9ZGCzRE",
+        "scale": 0.0009347645,
+        "normalized": true
+      }
+    },
+    {
+      "id": "717cb88d06c185fea8",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01927",
+      "title": "DAZN笹本CEOが料金表示騒動後に初激白 W杯での教訓と成長戦略",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "2026年6～7月に行われたFIFAワールドカップ（W杯）北中米大会の全104試合をライブ配信したDAZN。期間限定の新プラン「DAZN Soccer」を訴求したが、12カ月間は解約できないプランにもかかわらず、当初3カ月間のキャンペーン価格「月額980円」を大きく表示していたことに批判が殺到し、謝罪と返金対応に追い込まれた。日経クロストレンドは、この騒動が起きてからメディア初となるDAZN Japan笹本裕CEOへの単独インタビューを実施。同氏は、表示の分かりやすさを改善すると陳謝したうえで、大会期間中のユニーク視聴者数が約1615万人、総視聴数が4億を超えたと明らかにした。ユーザーの新規獲得で規模が拡大したことにより、より積極的な投資が可能になったと話す。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 8.55,
+      "reading_score": 9.25,
+      "notion_score": 8.96,
+      "grade": "S",
+      "tags": [
+        "consumer",
+        "strategy",
+        "method"
+      ],
+      "concepts": [
+        "ユーザー",
+        "価格",
+        "成長"
+      ],
+      "learning_features": {
+        "topics": [
+          "ユーザー",
+          "価格",
+          "成長"
+        ],
+        "formats": [
+          "インタビュー／対談",
+          "キャンペーン／販促"
+        ],
+        "intents": [
+          "販促告知",
+          "調査結果共有"
+        ],
+        "signals": [
+          "再利用できる方法論",
+          "PR／告知色が強い"
+        ]
+      },
+      "reason": "涉及消费者/用户行为；有市场或战略判断价值；可能形成可复用方法；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 1.37,
+        "rule_match_strength": 0.847,
+        "experience_similarity": 0.848,
+        "repetition_penalty": 0.95,
+        "gap_bonus": 0.06,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.626,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Lhbl2lG7DkY2My/obvnHCk/BrLIZFas9VT3mIwu21rgjrUEywgkg2cskIXssaPtHr+0IIPQ4B7zNorUlS+MYOFAjGUDD5d8jy+wnFhXrEga7sc84tUM/mls2UH3D1MzL6jwF6U7PKcX1HSjiPbKwN0sLyMj1gWPISLrsvrHkMSf+2h8eFUt0Wgjt18IBHvhL+j9N4DHRPKBCPDfA68c2J63ixtn3jE8znfbMQ5sGFDK1IlwD6d2fy9Lq2vcV3OMaoNMdBs9CCR4D8zcQJPnHMsY0GMa2J8wA7SjgJ0LqIZkEUzPXyirk3tfPy5czWRHDwNshsWDQzwIFTfzm18DwMTQjrAE70FQmGQbO2c3r1zUUvvLU+G3A0VQFChdcruRFve/A/kX2LfD9OOYOyhYVG7oeGCcgHkYOy90nOvxOz+PE8MnXElTe2DIGG66kRebh2lmXxCRc0C3rBifqtiUbrhMI+AKZ61ggt+EVJF1M6/cnkxZC0yH84Og71b0iEQ09",
+        "scale": 0.00094572,
+        "normalized": true
+      }
+    },
+    {
+      "id": "bd6932687673db44fa",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/00894/00018",
+      "title": "AIスキル競争に捕らわれるマーケター 今磨くべき「問い」の力",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "AI活用の講座を受け、次々と登場するツールを試す。そんな「AI化」に追われるマーケターが増えている。ライバルも同じAIを使える以上、もはや活用ノウハウだけでは差はつかない。今本当に磨くべきスキルは、優れた答えを得るための技術ではない。マーケティングリーダーシップの専門家であるトーマス・バルタ氏は、AIに捕らわれるマーケターに発想の転換を促す。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 8.4,
+      "reading_score": 10.0,
+      "notion_score": 9.76,
+      "grade": "S",
+      "tags": [
+        "ai",
+        "marketing",
+        "strategy"
+      ],
+      "concepts": [
+        "AI",
+        "競争"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI",
+          "競争"
+        ],
+        "formats": [
+          "解説／ハウツー"
+        ],
+        "intents": [
+          "知識解説"
+        ],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；涉及AI实际影响；语义增量：可能补充反例/边界",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 1.615,
+        "rule_match_strength": 0.863,
+        "experience_similarity": 0.868,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.06,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.48,
+        "semantic_bonus": 1.23,
+        "increment_type": "boundary_or_counterexample"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Os/PzBDCEQkmCS4gfwTeTDDIvO8TFsUaK0bzDBXO9NNDtSYJx+79wRQCLkkdUQ5Eqw3pOecv9cvft8chL/YPOGQECTK4zOIl38s6TEnVQdva5+8i6Dcc0CrpIkLh1eC/3kf/+z3ZJ8DlEQXVJ67YQFQTs9AgxUTJO/bfqKTTBzwNEDUPIwdSXdnszMjgMu03ESpN7CnrQNg9Qzbi1ekuIM7a187mxidE4t31GsIA2hrVGjQf8didx8nf4xrw5DQVs7DvBeQjHi8S3TAPJuzqIM4tFMzOR+HYCxfNFTvuB7soKyrWyx3m9tPLz7YlKRrR1AMgzTvC3fPqLDbl0N3qQjcjvwNE5nHwIw+y2dLT1A5H5eTWEFHYzC4iKiAuBAtU+9Wv4yPnOPXfU+Mg9P4OIbQkLR0bHilNqMcgC/4x5Nniw+HRIlW1EjLjKN3OJIrv/RLKxSMI0iHW1x7y1hIKngQN1CqwDhgr6/QsNjxJ++8SuyZl8wUC3tIO0NI7CSgb",
+        "scale": 0.001106067,
+        "normalized": true
+      }
+    },
+    {
+      "id": "50f81be592bf1b8c9f",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/00967/00015",
+      "title": "生成AIに参照される企業サイトとは noteが掲げる「本拠地」戦略",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "情報発信はSNS、採用は求人サイト、販売はECモールというように自社サイトを持つ企業でも、Web活用は分散しがちだ。加えて生成AIや検索結果の要約が広がり、リンクをクリックせず情報収集を終える「ゼロクリック」も無視できない。Webサイトの存在感が揺らぐ今、コンテンツ発信プラットフォーム「note」の法人向けサービス「note pro」が掲げるのが「インターネット上のビジネスの本拠地」というコンセプトだ。なぜnote上の企業サイトが「本拠地」となり、AI時代の資産となり得るのか。note取締役CFOの鹿島幸裕氏に、その狙いを聞いた。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 9.05,
+      "reading_score": 9.67,
+      "notion_score": 9.38,
+      "grade": "S",
+      "tags": [
+        "ai",
+        "ec",
+        "marketing",
+        "strategy"
+      ],
+      "concepts": [
+        "生成AI",
+        "AI",
+        "SNS",
+        "コンテンツ",
+        "EC"
+      ],
+      "learning_features": {
+        "topics": [
+          "生成AI",
+          "AI",
+          "SNS",
+          "コンテンツ",
+          "EC"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；涉及AI实际影响；与EC/零售直接相关；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 2.097,
+        "rule_match_strength": 0.852,
+        "experience_similarity": 0.862,
+        "repetition_penalty": 0.95,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.565,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Lv/ZmyXZIVQ3Ej0ZfyrVJ0bQsMsEM7QdO2v8Phrg190shjURvNUmsOgIRWQXOBlTsufwK9wZ7NrRs8EcOeopM24YOwmW3fYR78xORygNF8/M9O0ezyQ5tDHrVmLNzOK4+mv9AEjUOcDrNiHCJK2zTEodsMj4jQvhVeznlbDE/iz4DTUxIxtKVdbY7gDfRexOHRJCpzD3VbIqQxnL5Po3LLrhp9rbtDI3p9XGN80y8T+w+VoF2/uSx6Xd1hsE4xkwrbQCG/oxIiD44j0yTuPgJeAmNO/iT9nl4DXRBSru9q3QJjrBrA3i+uK53bEXJUbC/c0A60LO3/31Kj3csuTJQ00ymwoN5HIDLQDF5uDi5BE3wQbPC3PC8TwtLmU56wsv2OC2+hTTKvH6WN8hAq8QEqQn8TMNFi4soNgYQwoZ0d/KzhnDEkfO/yTqLbi1E5wCDEqpxhdBsgj38eLt3DwvnQsw50LX7SFD590qOiNK9ugR3yhg7AjMztAQm7BMBCJF",
+        "scale": 0.0009729355,
+        "normalized": true
+      }
+    },
+    {
+      "id": "6f75da8eeadfed1152",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01445/00006",
+      "title": "還元率のANAとサービス連係のJAL モバイル事業の違いを徹底分析",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "空のライバル対決は、ついにモバイル通信事業でも――。ANAが2026年3月に「ANAモバイル」をスタートさせ、一足先に参入していたJALとの利用者獲得合戦が白熱している。両社は顧客との接点を日常生活まで広げることを狙い、今のところ、いずれも好調だという。ただ、根本的な開発思想が全く異なり、その違いはサービス仕様に大きく表れている。両社のモバイル戦略を解説する。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 8.75,
+      "reading_score": 9.1,
+      "notion_score": 8.89,
+      "grade": "S",
+      "tags": [
+        "consumer",
+        "research",
+        "strategy"
+      ],
+      "concepts": [
+        "顧客",
+        "分析"
+      ],
+      "learning_features": {
+        "topics": [
+          "顧客",
+          "分析"
+        ],
+        "formats": [
+          "解説／ハウツー"
+        ],
+        "intents": [
+          "知識解説"
+        ],
+        "signals": []
+      },
+      "reason": "包含调查/数据；涉及消费者/用户行为；有市场或战略判断价值；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.865,
+        "rule_match_strength": 0.83,
+        "experience_similarity": 0.836,
+        "repetition_penalty": 0.56,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.352,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Kx3S1WHbNh41PEYMDwLgIhnOxsAHJLoSTjjhMfrY2eUrhD8Q2+Acw9kYHk02f+g/wcsINxUqFNi01JUKLgIgQlUsOUK9zwsv+uAwLDf/JNXO5P0VpjQFs0btLUzu6sPW+Ub7/k7LGbPrNQ/fEdHiTUUUrMAHjEDgGt26lNzmJiHy7CNCJT05W+vwrM3PKNpSEhtF5EfbZekwSBjUvOQRQL2wptLfqFBMnOPMUOwP/AfDGEUnz8KnwKXYqfwhyQH5xfUcApwzDjLq7BY8IuDaN7MPPt/GNdrc8ATZDEfn6Yf5OjXLpiPn9dr93K3rLSi4sNQnwSnl6Q0FDP7Rp9YAOBUjuCgOAWlWLkHsuqzo50EeyeHOBUu+2WoBFytn6QxB98eF5ULWH//tbes78hECJc0oLzoJE/Rh1cYLMyQfyL2+rcTWIFvsACsLKZjUYNbO1126vyBI2h/g4kcA0DEWwA8f41KvNS8e4uoNMy80EOfsrCQ43Sr5+Ngl2dkiFho/",
+        "scale": 0.0009875909,
+        "normalized": true
+      }
+    },
+    {
+      "id": "c1114d7270a79258d4",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01930",
+      "title": "カルビーが芋のミルクをセブンでテスト販売 狙うは「ゆる健康」市場",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "日本の紙パック飲料市場、とりわけ「植物性ミルク」の市場が活況だ。そんな中、新たな挑戦者が現れた。2026年5月と8月、カルビーがさつまいもを主原料とした植物性飲料ブランド「次のミルク」をテスト発売し、飲料市場へ本格参入を狙う。一方、豆乳シリーズで守りを固めるキッコーマンは、江崎グリコの「アーモンド効果」を意識した新たな一手を打つ。それぞれの勝ち筋はどこにあるのか。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 7.35,
+      "reading_score": 7.7,
+      "notion_score": 7.48,
+      "grade": "A",
+      "tags": [
+        "marketing",
+        "strategy"
+      ],
+      "concepts": [
+        "ブランド",
+        "市場"
+      ],
+      "learning_features": {
+        "topics": [
+          "ブランド",
+          "市場"
+        ],
+        "formats": [
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": [
+          "PR／告知色が強い"
+        ]
+      },
+      "reason": "有市场或战略判断价值；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.878,
+        "rule_match_strength": 0.832,
+        "experience_similarity": 0.836,
+        "repetition_penalty": 0.48,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.309,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "OQPt02LPOBArQSIXOvbhHUXbu8Mc/8giKSr1HC0G3O8WvlQVyuYh2w0JDEkoUgIuxt8LJwsqFvbq1rEIKfUHRGglJDO56gIV09AaOx7fMe6lytEQ2iAruD3rI2HPzvbE6x4Y4C6yALz3NDHkNqraGkYMwdQBvzbJRuTFvc70Kx/33B4jECsiH87Q2unmGeYbHwcnxEAZMNY6IE3a5PEySrLJtdbptTM7sgLXJtsw6kPqKDUP68qVzNns3f0c2fkvoe4MLOISCxH2zRszH/izG+EiH7/OPMUD7yvR+BjhI6khRhvBzC3r08XM4ej5GDnV0Oc35D3B6RcLKCDI48byGBMNvwQk51UeMCm879bbxDoe3ArdFErQyFAUDCMSBfFEDfjD3y3QLfa9f+gN2eAVOb4H9yUhERc9v9keGxoJ9/XU0fLKMVHi8w4ADdjbQMrX9THSwx0b1xT25R/z1zbilyIK5ibQ6jsY6vYpIEtV39oc1fwv7B4K0vYo5bRFCkQ7",
+        "scale": 0.0011463718,
+        "normalized": true
+      }
+    },
+    {
+      "id": "24b8775748fe36e1fb",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/00589/00352",
+      "title": "キャンプブーム終息でも熱狂 アース製薬の価格10倍、1万円超え虫よけ",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "ヒット商品の“卵”が集まる応援購入サービス「Makuake」。新しい商品やサービスを世に出したい企業・団体と、それをいち早く手に入れたいサポーターをつなぐプラットフォームとして人気だ。発売前に消費者の反応を探れることから、企業・団体にとって商品開発力を鍛える場としても重宝されている。そんなマクアケには大企業発の商品・サービスも多い。例えば2026年夏はアース製薬が手掛けた虫よけキャンプギアに人気が集まっている。害虫対策商品の多くは小売店で数百円から1000円台で売られている中、この“新商品”の価格は驚異の1万円超えだ。一体、どんなものか。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 8.65,
+      "reading_score": 10.0,
+      "notion_score": 9.89,
+      "grade": "S",
+      "tags": [
+        "consumer",
+        "ec",
+        "strategy"
+      ],
+      "concepts": [
+        "消費者",
+        "購入",
+        "小売",
+        "価格"
+      ],
+      "learning_features": {
+        "topics": [
+          "消費者",
+          "購入",
+          "小売",
+          "価格"
+        ],
+        "formats": [
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": [
+          "PR／告知色が強い"
+        ]
+      },
+      "reason": "涉及消费者/用户行为；有市场或战略判断价值；与EC/零售直接相关；语义增量：可能更新2024年前后的既有时间证据；与实际工作场景语义接近",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v8_adaptive_temporal",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 1.083,
+        "rule_match_strength": 0.856,
+        "experience_similarity": 0.869,
+        "repetition_penalty": 0.72,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 1.33,
+        "increment_type": "temporal_update",
+        "temporal_update": true
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "RhDSzlnSN/g8LjA2O/blKUaysKE78dsWTin/NyG2wbsjmjEN2+syufkBBnIjT+w1gef1Vf8a8tTpqr4Cc/H8HH4OHkau8c4R0tFAMz7kP/+01rEeuCYbnkTwSGbEyvSp/xwX8UXYE9/eSi+2SquqQU0y56cpvUrEXOy7xenpByD1Gy1QGjU5RebiwansHfJfNR1S3EcRUcc3ISK2xcNIKqC2n8HJpTxsiu7ZU+wpCEzdGkokDeKUt6XpvQsq2fYam9j+9ucfByUB+zAvINrAR68ZJM26KtLgF0GvFFXhC70oQgWrux236+7MvqHpPkbj1NxRqyvp8QIGKxix5tXULzwdsxk82Hg5GB7Ryfz410AzvOeh6ke8sisjHzRL8wMl5tGcCR3FLAAPfOQ6x+8FDLMpICE5Dxoqqt8PNBNMzsK20+LNZjnN3jvzOZvYHdXcEkjJuhVS6xvfwiXRtXHxtR8f9QbF8kYVt95OHlpV4PUIox9r8zcMyPMtuZpMODcz",
+        "scale": 0.0009186437,
+        "normalized": true
+      }
+    },
+    {
+      "id": "d3d43971ac0623ed0a",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01439/00010",
+      "title": "実は“おいしい”国勢調査員 時給以上のメリットがある副業を一挙紹介",
+      "published": "2026-08-19T15:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "2026年8月4日発売の「日経トレンディ2026年9月号」では、「自分年金を増やす最新投資術」を特集。スポットワーカーの平均月収はわずか2.8万円。それでも発想を変えれば、副業は“稼ぎ”以上の価値を生む。国勢調査員から交通誘導警備員、ミステリーショッパー、さらにはタクシードライバーまで。収入に加え、人脈や次の仕事につながるチャンス、独立への道まで見えてくる副業もある。月3万円を目標に、効率よく収入と将来の可能性を広げる副業の選び方を探る。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.75,
+      "reading_score": 8.67,
+      "notion_score": 8.25,
+      "grade": "A",
+      "tags": [
+        "research"
+      ],
+      "concepts": [
+        "調査"
+      ],
+      "learning_features": {
+        "topics": [
+          "調査"
+        ],
+        "formats": [
+          "調査レポート",
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": [
+          "PR／告知色が強い"
+        ]
+      },
+      "reason": "包含调查/数据；语义增量：可能补充反例/边界",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 1.18,
+        "rule_match_strength": 0.853,
+        "experience_similarity": 0.854,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.39,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.58,
+        "semantic_bonus": 1.19,
+        "increment_type": "boundary_or_counterexample"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "L/jh8Ei8CxkwNyYIUAnuOzzAmc8B/rFAOFnMEDvbyPD2ljsuwukcuuwZYTz4fghdv/LOK+1F89TjvrMhbAIDCWkvRSKl0twx7/P7NU3ODcuj4PcG1jVEsErxVFbTyemmEVv7+z7KPZ/wPkPFRNWZPFopw7zgj2CxUtbgr8UCGDfcEww7+hExOvPz28v3MLwyOipb1DLYT8FARjms6sUqQ7mSl+76jlEvub7mL8VA2DTYKzAE2MqxyqDzzCMsxQoZm7wHIPhPLj0L7QlDQ+bjDtsmRKbCKdoFDDLOGTXC95kVRg+ytA3u9ObNxrXsKT3mgQI9v0iy/sjVJQDTxqoDMDUssic5zV8mKO/H2NLmxxQ6vNKh+mDXwC4bFz9x3TMw7dmaAyqzUhHnWcMF3gn9Jrs0GRM3JUgbs7lQTvhG3vrY1vGtJlL/+O4SK5TARMTqA0vn3idXyDfswxvZtSwKm/v85yrDAlYt6bgfImBXAP4yvkJW0hPxqdsVuZo7JjI1",
+        "scale": 0.0009176313,
+        "normalized": true
+      }
+    },
+    {
+      "id": "ee0d163399cd882574",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01222/00087",
+      "title": "集英社ゲームズ、『呪術廻戦 RUMBLE: SURVIVATON』を初の試遊出展【TGS2026】",
+      "published": "2026-08-20T03:30:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "集英社ゲームズは「東京ゲームショウ2026」に出展すると発表した。世界初の『呪術廻戦 RUMBLE: SURVIVATON』の試遊と、日本初の『UN:Me』の試遊を用意する。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.99,
+      "notion_score": 6.11,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：可能更新2022年前后的既有时间证据",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v8_adaptive_temporal",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.853,
+        "rule_match_strength": 0.842,
+        "experience_similarity": 0.837,
+        "repetition_penalty": 0.43,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 1.154,
+        "increment_type": "temporal_update",
+        "temporal_update": true
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Lgzi9F3cKTQvK0T1NfreNVK7tc8ICQQwQSayJhDFt+MnpkUizvAcyeQhIjkUfwUmsQL0KfVL/8DZwqE8VvEJB1obJi6k2e0vyOYUSTfWIQuvvMQ5yzVDmFXbU1Sz7b+y/TEp8lPUNJfkFRO0Rr7bIig/0tztrzHbNuHTrdXqHTcSADcbGSNOP9Pk3dzjX+IMDhdiujbpKOYyEUnQ3N0pS47BxrHNvzInut/dSuE5206wJ0887vGcsL/6wjYY4dcTx7oXBeUtFirjrxw1HfaVJtUMKM/RM7kE1SnhNjUT9cIIUynPxBkYAevT4uveCUrgtuM50UTdyRfWUhzNurfqOiAktCMc9FUaRRbQvejs4jUu3iioMzi+wlD4MhQs6NpE3+C23iTtDSTvYMApyQBGCqknDhsSFyYingNCRPkb0tO93ODUJC3z1TH3KdjLTvPGEEWsuQgroxTZzSYB2Sb0hzQSCCSm7U0Qv/khOkUx7c5Joi44uioS+tQP46goJjhM",
+        "scale": 0.000989285,
+        "normalized": true
+      }
+    },
+    {
+      "id": "0a5c86b227ac49aee4",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01222/00093",
+      "title": "GALLERIA、TGS期間中のステージイベント第一弾を発表【TGS2026】",
+      "published": "2026-08-20T04:30:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "ゲーミングPCブランドの「GALLERIA」は「東京ゲームショウ2026」に出展する。会期中にブースで予定しているステージイベントのプログラムの一部を公開した。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.5,
+      "reading_score": 6.84,
+      "notion_score": 5.83,
+      "grade": "B",
+      "tags": [
+        "marketing"
+      ],
+      "concepts": [
+        "ブランド"
+      ],
+      "learning_features": {
+        "topics": [
+          "ブランド"
+        ],
+        "formats": [
+          "セミナー／イベント"
+        ],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.861,
+        "rule_match_strength": 0.834,
+        "experience_similarity": 0.833,
+        "repetition_penalty": 0.44,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.385,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Egj68VLTIgpDJDn6TvYOJjfbyd0MD+UxPC63GQu5u94oyDQc4+cd8QEhGDb7RAA9tQP8IBEk97zs07YdQ+QPKmARDlCk6eUlz/AMNx71M+y62eci6h4q2CTwPkXYDsa/5ikS7THgQIHdIAm7N8vlMBggxM3wrS3sLN7TtMTiFkIOBBIsJQFDKdnf3t7vJ+w3IApJ6jH0JeAyMC7l3NspNrTOy9X+2BsVrgPhTsxCyCfBC0gqGv64vcjp0hIm8uMcycH/FeIZKSru1AsfJffoNNUKHenEPLH08wv9OiHxI879Vybg5xIfA+DY0+oH/hf6wN9A1RzX4BnPBgjt0cbeOSkbzDUR40IaKBzc3ejwzT8a1+SmI1DC2TDuOS5V9vAz8Oe54R3kFR0BP9YgxPwZItgbA0EOMTQatscqMww5v/vRvuXeHCjW2hPxPbXiE9jbCy7U0yEo2h3nyiDo4D/+pygk8gapx04V4AL5D0cQ9Msiyh0xpxbs2v4E2c4jGwYn",
+        "scale": 0.0011848894,
+        "normalized": true
+      }
+    },
+    {
+      "id": "ba9ee3e9e980cae0bf",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01222/00083",
+      "title": "VRChatがTGS初出展 日替わりのステージ企画などを用意【TGS2026】",
+      "published": "2026-08-20T05:30:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "没入型ソーシャルプラットフォーム「VRChat」を運営する米国のVRChat Inc.は、2026年9月17～21日に開催される「東京ゲームショウ2026」（TGS2026）に初出展する。日替わりのスペシャルステージや体験コーナーなどを展開する。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.42,
+      "notion_score": 5.38,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [
+          "参加募集／イベント告知"
+        ],
+        "signals": [
+          "イベント色が強い"
+        ]
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.925,
+        "rule_match_strength": 0.834,
+        "experience_similarity": 0.836,
+        "repetition_penalty": 0.52,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.331,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "KSQFA1zdHhg/JEneMPHvIz/duOQLB90ZTz29JRHZxcQaqFIQ998f5f4hGTkWSB41tvvqKPJFAsHT1bgOZvESFH8cBjiT49MzxfD6JjUIN+i2tu8h3jI1u0/oU0jR/8zP8jMP8VDHLZPiK/rEMszKRiglsrMEmCDZQd/gsc/0Hz4J8gYzJSBbOM7nu+zzOtUnJgBmzDYDG95DHzfJ5MggN7/AwNnt0Ccuuwu9W9pN4C3HJEki7PaiwtrruhkvzgMQ1rUCBPcbOAXmxhMtJfPjJ9cjItPNIq7p9hLrJikcFsIPMR/a0BMJBgHP8LElCSzdofBOwTPc4RvZCQbarb7tQg8opzEm5VsQK/Ta18YGxDUd3umsBkTEvTT+DiVY2ehf9uzF1RzzCBn1RsxE0Q0KHNAm7EETKkESvuQ8QPtD0+nSxebGFyzn0w3zJL3PKO3a503H2x03uyvtvCzj3EMLkiob/A25yWsd0wMTG0coD7AqryU/vwXp4egbysgqKRYo",
+        "scale": 0.0010615171,
+        "normalized": true
+      }
+    },
+    {
+      "id": "94d2b4f45173d86321",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01222/00086",
+      "title": "スマイルゲート、『デッドアカウント』のローグライトRPGを出展【TGS2026】",
+      "published": "2026-08-20T06:30:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "スマイルゲートは、2026年9月17～21日に開催される「東京ゲームショウ2026」に出展すると発表した。『MIRESI』と『デッドアカウント～二つの蒼い炎～』の2つのタイトルでブースを展開する。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.98,
+      "notion_score": 6.1,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [
+          "参加募集／イベント告知"
+        ],
+        "signals": [
+          "イベント色が強い"
+        ]
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：可能更新2022年前后的既有时间证据",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v8_adaptive_temporal",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.851,
+        "rule_match_strength": 0.819,
+        "experience_similarity": 0.837,
+        "repetition_penalty": 0.48,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 1.038,
+        "increment_type": "temporal_update",
+        "temporal_update": true
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "LB/f+z7JGTYUFkb3SOXxDUjA4dQfLec0KTC7LRvXt8gygTsO5/oX1u37E2UtTe0T1hIHI/sezeLR2LIAUe4VAyz5JjSy6Oco0+YOISfHI/PK4eol+xoezTDvLUjQ9Ni1ETkb7TTvNbHhFxXELNrePCcZxrLl0B3eONHBvtPoHjQfACQPISw5MNHv4ODrMeMbHQxI4x/2K+E5OTq729I7ZrDLzc/83CoepO/vLeku5y7GGj8r8vydw777viIMA/wwy939//gjDS3txQcvHOjINeAVKPjANqYPDR70Kz/3CsIQQTPJ2QsNDOrE+9v/JSPytNUw0zXe1SLMGBPKwsjbHx0b1CwN+T8dHA7g3QvY1UFB8ezAAUGq1Tv2LyU9Bd1GC9bF+S3tHRoCQdcztPoKJc4QFB0iFw/6sfohRw4d7ubnxfbFMSXe4Aj3KNHcNOTX+C/UyRkw8wf10yTv8BvxiiQICAq/uEQr1Q0aG0sg/ew4wSskwxLz0ODv1rcm/zMw",
+        "scale": 0.0011816748,
+        "normalized": true
+      }
+    },
+    {
+      "id": "2c0a801b710acd0604",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01222/00090",
+      "title": "デジタルハリウッド大学、TGS2026に学生制作の8作品を出展【TGS2026】",
+      "published": "2026-08-20T08:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "デジタルハリウッド大学は、「東京ゲームショウ2026」に出展する。学内ゲーム制作コミュニティー「デジタルハリウッドゲームス」による学生制作作品8点を展示する。展示作品は時間帯によって入れ替わるという。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.14,
+      "notion_score": 5.17,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.867,
+        "rule_match_strength": 0.851,
+        "experience_similarity": 0.848,
+        "repetition_penalty": 0.9,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.457,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "KRbu3GPkJjhtHVP/Uw7NDkfvzd3/GOspOhuoDSHB0ccyvC4f8eIQ8eEVQGXgXwwh0fEAPQo5xsXmzrUXd/0bHnoYHkGryPM1yuToOlHfNuiyt7ghxiEtzVnlYD3A87K52yooCkHgQ5vwNR3HS8XVOgcevakBnzjDLu/Px8b0OS0AFBBVFCk1Ptj1w+7kE+sjLCxfxCrkK+42L0/e6d1EPKXSxbrxviAfv/LTN9Mp0iraKVcpBvmrtsTy0Akb3P4O0rMKHNUpPRvmywgyQgTIMNInKsu9NcHz4Sf0PTYWG6j8NivcxxcPAOzC19DtETPys8M9xUnc2hraBh/Otr3XLi0c4CMn5XsSExm7xt7bnxlA1QCtCUmnvCgLRyld9fdaCc2r+SXTMRf3UbA0x98yA7Qb/Sk6DjsGwtk7P/UizvKlw+HU/DTO+w0AKb+xI8zYAkbn6ywtzhjlrAPk21MGgTAt7B2q2l4azhQUFT4v898cwh9LtwH94eABzKsb+TZF",
+        "scale": 0.0010100555,
+        "normalized": true
+      }
+    },
+    {
+      "id": "fcd8c012e2724e5ada",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01222/00091",
+      "title": "「CLIP STUDIO PAINT」がTGS2026のインディーゲーム企画に協賛【TGS2026】",
+      "published": "2026-08-20T09:00:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "イラスト制作アプリ「CLIP STUDIO PAINT」は「東京ゲームショウ2026」のインディーゲーム企画にシルバースポンサーとして協賛する。会場ではイラスト体験コーナーを用意。インディーゲームコーナーで無料配布される公式ガイドブック上でのクリエイター対談企画なども実施する。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.7,
+      "reading_score": 7.03,
+      "notion_score": 6.02,
+      "grade": "B",
+      "tags": [
+        "ai"
+      ],
+      "concepts": [
+        "AI"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI"
+        ],
+        "formats": [
+          "インタビュー／対談"
+        ],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.872,
+        "rule_match_strength": 0.839,
+        "experience_similarity": 0.839,
+        "repetition_penalty": 0.53,
+        "gap_bonus": 0.06,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.37,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Bxrm2FHdPh43FFHpSgPgFUnXsdwhGOsiSCTAISDOx9wSwFAg7NsQ5f8qK00SQgBwthz7JO038cXiyMT/TvUGKHQIHUWNu8hAr9n6NTLkNN+vmNI51y4p0EbpaDvY3Ma18jQj7zC8K4HsKxSwLtauSCsqrsHqjjjGW/DAsb/hHEgRES9POCtFVtXu2NX2O9A+JiJUuw8SMd02LzPC2+otS8nFzNrdpjoorvHOSOw2+z3NGFggAe6pybPWygIR2e4oxa4KGeMNQiXi3B80IvjYIsgdQs++/ND5BR/wMCfsBLL+MjDE1Ozr+/C7zOwcFTX40dA6wjfh7SLRH//N1bDXNhMrwBUg9kUlGQTN8PbMtyE4zfuo/0WotikGLjxNAvlt3fC04hTkOQQHXb1Gw+YUNsET/DoJFx49ueg1L/4hoerP0t26FyLn5w4bK4PQQMjf21/f7TQmxgXqyhvu1zQcnSMbABO63WQL9SYYOCYZFNMYyCBVvg7r3OYtyc08FxRA",
+        "scale": 0.0010168704,
+        "normalized": true
+      }
+    },
+    {
+      "id": "e5aeeb8836f9c1b4b7",
+      "source": "日経クロストレンド 新着",
+      "category": "Marketing",
+      "url": "https://xtrend.nikkei.com/atcl/contents/18/01222/00085",
+      "title": "ネットマーブル、『シャンフロ』初のゲーム含む3タイトルを出展【TGS2026】",
+      "published": "2026-08-20T09:30:00+00:00",
+      "first_seen": "2026-08-22T04:03:34.737342+00:00",
+      "summary": "ネットマーブルは、「東京ゲームショウ2026」に『シャングリラ・フロンティア ～七つの最強種～』『俺だけレベルアップな件：KARMA』『パールインブルー』の3タイトルを出展する。TGS2026のポータルサイトもオープンした。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.0,
+      "reading_score": 6.54,
+      "notion_score": 5.53,
+      "grade": "B",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与 Work System 语义相关",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.856,
+        "rule_match_strength": 0.825,
+        "experience_similarity": 0.843,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.566,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "IQ7d22DeGS5bGzHsUffQL1PBqdgXDvAkPz+7KS7Fu+Zmpk0Vz9Ac7wwcRVcJRuIjr//vYxlR6N/e16gwWentJGcaGiGC5/ku7wACPFLyQdyv0gAn9SkXwHnsSnLr56e1AT7v8T7sLKbBNBuqM8CwJB0xtNgFqS+/WMrgxubmIUcBAik4FRNSMNoB8sDfOdM0NRxktkLvSbNBL0XU8sYUPqnSpJjr1TsVrOHVU8Q/+jWmOF0p7/2BpbUCwTb0wfIjx70DHOIWQB7iyBk/P/mpV8oGGtOoRZMLCwHZWkwE96EdPxDSuTLt5Pa65bD8DST9v9Y5y0m+zg7cORjK4Ne0LDkWrikZ60QRJSjJ1urfwyls6w3KCEKmqS/8FABQCsJXEd+r/DzoBwDiUMpatuf8KsgO8i/xBzMUmvIuNRYN0OrL0emqPFbn1REKKMHRMcrI70na3i9MkjXuvhLt2j/4mRoi4RKd0GIsqQMhL0Yk1/tq2A5RvhruB+8Kr5o/BiAU",
+        "scale": 0.0009442588,
+        "normalized": true
+      }
+    },
+    {
+      "id": "3014f001dcf159b26f",
+      "source": "CNET Japan 最新情報　総合",
+      "category": "家電情報",
+      "url": "https://japan.cnet.com/article/35251655",
+      "title": "新型スマートウォッチ「Pixel Watch 5」何ができる？ 「41mm」「45mm」どちらを選ぶべきか？",
+      "published": "2026-08-22T01:35:00+00:00",
+      "first_seen": "2026-08-22T04:05:26.296373+00:00",
+      "summary": "グーグルは8月20日、スマートウォッチ「Pixel Watch 5」を発売した。従来通り、41mmモデルと45mmモデルの2サイズが用意されているPixel Watch 5。どちらのサイズを選ぶべきだろうか？",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 3.75,
+      "reading_score": 4.27,
+      "notion_score": 3.22,
+      "grade": "C",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": [
+          "PR／告知色が強い"
+        ]
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.872,
+        "rule_match_strength": 0.829,
+        "experience_similarity": 0.83,
+        "repetition_penalty": 0.266,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.316,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "HRfV7zjeDBYsBR8TSBTnMizltcwe97wbVjHVGi7szthF1RgJ8d1C6Pf//TdJQOs15v37Kv4N+9b+yMgKWucLB1YnBw3b1cYHGd8aNjWzDe2i1/NF4Dg+oiflRDrKx9yw1z/w2ingFaj7H0nZFbPRHVlJ2PEg2znWOv/VsMTWEREPLCs1E1M8PfPssdUBWvUkG/MazG3uYc4pTSLi5ucgRr+92MblxBxdld3QY8YHDiTy9TQJydbFzernoP0L3+I1ovYECt0sCDXR2iwwP/KsAd4jF9e6MMr3CDbVIEUIHbIOWgrN6B0F/M/gwtH1NCz30sgOuBbY5APUBB7csenTJP8vtBg+0H8XQhPY+/3N5ko3w/TdJ1TByUYUQBk27PU+JdjK2jvBG/f9HeEaySgGELoOHi0eKhsizO8LMvY2yv7G2fDMNSnkFEcHFdfJW87l7i+6wfIXtyrr5Q78xik1vRAY0Di+zFIZ++EOQjVK68kgviIk+BHc7M0it54J5BBC",
+        "scale": 0.0010939434,
+        "normalized": true
+      }
+    },
+    {
+      "id": "31eaa409859dda39e6",
+      "source": "ITmedia ビジネスオンライン 最新記事一覧",
+      "category": "Business",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/22/news001.html",
+      "title": "なぜ一流は仕事帰りに寄り道する？ 「自分時間」に切り替える習慣",
+      "published": "2026-08-21T23:00:00+00:00",
+      "first_seen": "2026-08-22T04:05:52.114567+00:00",
+      "summary": "仕事帰りにカフェへ寄る、3分間ゆっくり歩く――。一流が実践する「サードプレイス」で、仕事モードから自分時間へ切り替える習慣を紹介する。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 4.3,
+      "reading_score": 5.0,
+      "notion_score": 4.71,
+      "grade": "C",
+      "tags": [
+        "method"
+      ],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "可能形成可复用方法；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.878,
+        "rule_match_strength": 0.855,
+        "experience_similarity": 0.866,
+        "repetition_penalty": 0.41,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.67,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "KOHMt03hCitAOSDvUhTIPDa6q+cABsVAJwTxWSLE0M0o2SENxNH9oPcBTmMgV/MtxN/3N/4498kEsqM5VPIQCn9YH1LTyckkFOkrRSzrI9Ot8a4T+C4sviXubz3H17rLzzgP/iXcFMPkOSXnU6XNNUwKrPgWukzvVfzRyciyECsCKxs5EusvXtkN4erKI/w1JSxNxVnsK8leSRfH4c49Xr21tuHaux1Kv+j4/8Ib7wPvLToF28rQz7LsxwQW1xwZo64MGuQeJCW/yRo+UNm7MOYdCL60LdruBCbNAhz0DZbfSgPY3Cfi8bWyzrXoRkrp1M4m1Su/8A/0GT3NpejzFyQ2nwsWBWIJUD2xz9fayxI82ey+ImzDxiUpME0X+Chh1fXyzETdLegNTPcc6PYQKLMtChwdEycWwPM8RBHqz+nJ3O3BEES97ioSR6vCSqra20DXwi0NqCrFujbtsjgwvB8q9yvg+lU07+QLJ0NK3e8bsiU82QTb2M0s3sBOGiwz",
+        "scale": 0.0010030501,
+        "normalized": true
+      }
+    },
+    {
+      "id": "ae13f15bbb4e4044b2",
+      "source": "CNET Japan 最新情報　総合",
+      "category": "家電情報",
+      "url": "https://japan.cnet.com/article/35251822",
+      "title": "Xiaomi、スマホやタブレット11モデルを値上げ--メモリー高騰で吸収しきれず 対象機種一覧",
+      "published": "2026-08-21T22:26:00+00:00",
+      "first_seen": "2026-08-22T04:05:26.297313+00:00",
+      "summary": "Xiaomi Japanは8月21日、日本で販売中のスマートフォンとタブレット計11モデルの市場想定価格を引き上げると、公式Xで発表した。上げ幅は最大2万円。新価格は9月1日午前0時から、モデルごとに順次切り替わる。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 5.6,
+      "reading_score": 6.31,
+      "notion_score": 6.0,
+      "grade": "B",
+      "tags": [
+        "strategy"
+      ],
+      "concepts": [
+        "価格",
+        "市場"
+      ],
+      "learning_features": {
+        "topics": [
+          "価格",
+          "市場"
+        ],
+        "formats": [
+          "ランキング／まとめ"
+        ],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.922,
+        "rule_match_strength": 0.84,
+        "experience_similarity": 0.842,
+        "repetition_penalty": 0.4,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.522,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "HusG30nc9Ss7BEn9R/raIhjb4tcqDMUjSSn2LA3j0tYz6jQb5fIV5M378X8URAUsu+/vVf4ZBefcxKX0Kf8oN20FDRTB+gQ68OU8LwfiGuTazMMd0SMmviTsJVLk1Mam40P25zXZQKTeKRzTJajJLTcbuc8byibYKBbovrcSIyXZCjQvFUFiTuH3o8UHNvgZKRJC10jlQc03GwS83vsgKtTcwLbVtEEuvOjII8IA+SzJAEwrxvmQ2svU3Qga6OIq08Lf+dtREyQD5BwaKOWuNtMZGNDePskNDg/HHzj4GaQHZROj4hICD8y71tD9OTrr3uIp1zD98/vjGx/o5dH3LzoPuQMRG3wvUBrlut7gxFQmwubsB27f0zEJMBxH5BIz+fOy5RvxHSz9PtYGyAwz/rMgCRMiHhwmldAWSi02uOLD4r7DLT7kzh/iI6e8Ruzl71TI1fwa+SHP8DH80x74pzoa8xPE8jQyzt8ZNzgsEdMjwRQZ5SHuA9kPwI4ICCI+",
+        "scale": 0.0010977411,
+        "normalized": true
+      }
+    },
+    {
+      "id": "edacafc85a56bdfbc7",
+      "source": "CNET Japan 最新情報　総合",
+      "category": "家電情報",
+      "url": "https://japan.cnet.com/article/35251821",
+      "title": "FANZA、成人向けAIコンテンツを作成→公開できる新サービス「スタジオ」24日から先行体験",
+      "published": "2026-08-21T22:05:00+00:00",
+      "first_seen": "2026-08-22T04:05:26.298314+00:00",
+      "summary": "デジタルコマースは8月17日、成人向けエンタメプラットフォーム「FANZA」で新サービス「FANZAスタジオ」を提供すると発表した。運営はデジタル・リンクが担う。つくり手はAIで成人向け作品をつくり、そのまま公開してファンに届けられる。正式ローンチを前に、8月24日から先行体験の参加者を募る。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 5.95,
+      "reading_score": 6.91,
+      "notion_score": 6.04,
+      "grade": "B",
+      "tags": [
+        "ai",
+        "marketing"
+      ],
+      "concepts": [
+        "AI",
+        "コンテンツ"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI",
+          "コンテンツ"
+        ],
+        "formats": [
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": []
+      },
+      "reason": "涉及AI实际影响；语义增量：可能更新2025年前后的既有时间证据",
+      "screening_note": "",
+      "screening": "semantic_v8_adaptive_temporal",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.922,
+        "rule_match_strength": 0.829,
+        "experience_similarity": 0.851,
+        "repetition_penalty": 0.55,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.898,
+        "increment_type": "temporal_update",
+        "temporal_update": true
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "C/DZzznfNRc76jn0TfPnDj3Tw8kUHNwFRTHjCyXT198+zkAi/hAE0NoYSlEiUP5CwATNM/wsGebbweALXvweAn8jG0CP8u8h3OMHRCkAJtu/3f0p2xcgt0D6PEnV1svV6T8q3hrbG7TsNBucKb3FJEEWrdEVmDm/U+fSxrjeDhX0BhVOOD4iSbL3zdECJu8pGgo8vzDfT/UgPzDn9egRDrrfsN3l40E8uvbWHdgeCR7IFlEvz/K938Tw4SAcywgH2tMQA/4hExTMzkkXJeO6OdkZNNXIRLYNCRfOHx8NBMQKPSW0zQcDB9u3uKEXKDHw2ekb4DAA7PD6DhzHr8XgNRMWqRcX30kPJiuo5OD9vTFA6gjc/C2+zR8bHzcl3fce6t++8hflLRH8MdEh4vgHMZ74+CkdHR8Qo9AnSB8arPfD0gL4CyfY9B8DGMa6Q832+R3v7R8p+Rnr8/rq4hYKmzkcCSe79TUz7xM3CixL4P0kxRJfweD62uUL4sAfCCs5",
+        "scale": 0.0011371071,
+        "normalized": true
+      }
+    },
+    {
+      "id": "4c9c5746d931c75060",
+      "source": "ITmedia ビジネスオンライン 最新記事一覧",
+      "category": "Business",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/22/news013.html",
+      "title": "Uber Eats黒字化の立役者 Airbnb新社長が明かす「脱・インバウンド依存」の勝算",
+      "published": "2026-08-21T22:00:00+00:00",
+      "first_seen": "2026-08-22T04:05:52.115533+00:00",
+      "summary": "記録的なインバウンド特需に沸くAirbnb。だが為替や国際情勢に依存する成長モデルに危機感を抱き「脱・インバウンド依存」へとかじを切る。2月にトップに就任したUber Eats Japan黒字化の立役者・中川晋太郎代表取締役が狙うのは、26兆円規模の国内旅行・消費市場だ。ホテルとの消耗戦を避け、イベント連携や体験・サービスへの領域拡張によって日本人に新たな滞在習慣を根付かせる「巨大プラットフォーム化」の勝算に迫る。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 6.3,
+      "reading_score": 6.78,
+      "notion_score": 6.53,
+      "grade": "B",
+      "tags": [
+        "ai",
+        "strategy"
+      ],
+      "concepts": [
+        "AI",
+        "市場",
+        "成長"
+      ],
+      "learning_features": {
+        "topics": [
+          "AI",
+          "市場",
+          "成長"
+        ],
+        "formats": [
+          "セミナー／イベント"
+        ],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.881,
+        "rule_match_strength": 0.842,
+        "experience_similarity": 0.841,
+        "repetition_penalty": 0.4,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.349,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "NArO6FHPL007TFnvYfLNFDSyx9ckBY5RLzT3LPW5t9wmq00TsOQWoPMKIS4wZPgppufSUc1UHcW6tZtJUtsDRmIcIGHE0/Nl/c05XR7fF9qb68pDjVMthzvufnjixMvO0zEH+zCGN8DvOwsBOqSyMmFAyLcsr3vra9nalNb/EgrjxhcQIC5Hb+rH3ebnIuFbBUBj2VzlN7VHFSex/bVWRMHDo9DhmRRLq9GzL6I1Azz3JUc6xOG+r83JzxIaBRsxiNDsBd0qEh8Lwy47N9+oQsYqGcrAOr3uDQXUHTrsHJHrSznEqB7ZANjA6aYmKzLRwMNZzD/T0x34FiHKkcfVJVIrlxgU4XAkUfzZu7QDzEE52gn7/nOerS8dEDVozPNOwvGR4UzHLyDsV9Mv+vcNFq4uGDAMJUJQytQFMQUQ2urGrNzOGFL/1Bn/ZaujOIPv41qyog1W3x/D8QPYu2ECgSXl5SPY50om9N4qPFxoHQkitS19yObk1OxDx5xUGQw3",
+        "scale": 0.0008637811,
+        "normalized": true
+      }
+    },
+    {
+      "id": "89d9327cbcf439ff67",
+      "source": "CNET Japan 最新情報　総合",
+      "category": "家電情報",
+      "url": "https://japan.cnet.com/article/35251820",
+      "title": "非携帯キャリアのJTOWERが「電波オークション」で周波数を落札--その使い道とは 同社説明",
+      "published": "2026-08-21T21:45:00+00:00",
+      "first_seen": "2026-08-22T04:05:26.299034+00:00",
+      "summary": "インフラシェアリング大手のJTOWERが周波数オークションに参入し、26GHz帯ミリ波の割当を国内のインフラシェアリング事業者として初めて取得した。1つの無線設備を複数キャリアで共用する仕組みを軸に、通信インフラの効率化モデルを本格展開する。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 5.6,
+      "reading_score": 6.25,
+      "notion_score": 6.02,
+      "grade": "B",
+      "tags": [
+        "strategy"
+      ],
+      "concepts": [
+        "シェア"
+      ],
+      "learning_features": {
+        "topics": [
+          "シェア"
+        ],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；语义增量：与 Work System 语义相关",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.853,
+        "rule_match_strength": 0.835,
+        "experience_similarity": 0.84,
+        "repetition_penalty": 0.0,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.616,
+        "increment_type": "general_relevance"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "LQ/j1VD7JlYvOSv4RAHMOxzLs8QD/LItKkPJLfbZ37lfqG0yvsYxnOUE/3AndBUvvQfbQf1n5eDI3LRIS+oBO1M5ERKBCO9F5uJALDDYP87Ard1KsQ0dxTf5WD6msJ2qFEsH0gy5MrLOCiDBEMDHIk4xw6o8y1bbJeLBoK/VNzT3JhRFOzd/Tvr06tDiWxtRMnNOo0ThXMc0Shrbru4Zd9K9yNS+m0hHkabiXss4Fk3f3ykhruqS1ITP9CQEywIRybL1FNExCyD/t/1uWwyqT8YsONXiUgDd8z3sKSrK/rPrRCS+uVfV2bvkxI3/SD8HqOZHvkzR5vXzGAro06reLDItlhcg+2skOzbEzffj0FYxxcXq93LXzkQRQy439/pO4t6VrBWu/x0FeMow5xsF/qAL6ScTKxQvlOBDVyUuw+nm4gCwIkS5+i4NI7OyMcfzyEifsAtd1xvTtiX07T4noycGuETB7EYVtdYXFEpV/MwSikdXwzDZ8NYjvqUx+CRA",
+        "scale": 0.0008811062,
+        "normalized": true
+      }
+    },
+    {
+      "id": "bc3930836049e63b2a",
+      "source": "ITmedia ビジネスオンライン 最新記事一覧",
+      "category": "Business",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/22/news006.html",
+      "title": "「まるで水風呂」の水冷ウェア なぜ軽さを捨てた？ 重さ2キロでここまで冷える理由",
+      "published": "2026-08-21T21:00:00+00:00",
+      "first_seen": "2026-08-22T04:05:52.116230+00:00",
+      "summary": "猛暑が続く中、暑さ対策グッズの選択肢が広がっている。ファン付きウェアに続き、電気で冷やした水を循環させる「水冷ウェア」も登場。軽さや携帯性より「冷やす」ことを優先した新製品の狙いとは。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 3.75,
+      "reading_score": 4.18,
+      "notion_score": 3.15,
+      "grade": "C",
+      "tags": [],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [
+          "新商品／新サービス発表"
+        ],
+        "intents": [
+          "商品・サービス告知"
+        ],
+        "signals": []
+      },
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.864,
+        "rule_match_strength": 0.831,
+        "experience_similarity": 0.831,
+        "repetition_penalty": 0.38,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.356,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "JQvMvEbm9Q45Hy8CVzL4CR/FuuES8L4rPRXqKBTU6sZixz8U3vEM4fwoE1wiZ+E13vj9RuwE9tP14J88UOUkNXpDNiPn5vAg6NITLAe9POe68tE2zxs7lx3+S1bNwdq9zjz8xjkIPKTYKT21FsrRLkkir/UJ0TLOYPvZzrjVLlL2JzJcKDMyU+306ePEMOE0Ph03skgPZNk0GCW079IxWaarv+wMpfxJsMDWDecNCRrkJj815PmqvMjzvDFCpx4er7wjCLs3AigCyQQVQuHKO8pINLK6OajW/RzGESztBa0bQ/rB6y26+vje6KH6K0jD7cQ/sC/tBujlCTns1tjWJyMn2AUe8n8WOC3V6u7Q3F8o7fTM+C/lziY6JTQj8RJA88G7FQfNBwzVUe74+fokGI79CzQSLDErpssjKBEsv/DfzNzCNifq+ikLOsq5P9YDzBmprhYP0wXdyyb4s0gVqP4b4Q/R6RcIwfInFFBF8/oNpBgovQrv9ewcsrE0CSc4",
+        "scale": 0.0010324588,
+        "normalized": true
+      }
+    },
+    {
+      "id": "95f204c1eb562aa645",
+      "source": "ITmedia ビジネスオンライン 最新記事一覧",
+      "category": "Business",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/22/news003.html",
+      "title": "ダイソーが「脱100円」路線なのに、なぜセリアは「100円」で高収益なのか 業界2トップが快進撃を続ける理由",
+      "published": "2026-08-21T20:00:00+00:00",
+      "first_seen": "2026-08-22T04:05:52.116858+00:00",
+      "summary": "100円ショップ業界の2トップであるダイソーとセリア。それぞれの戦略をひもとく。",
+      "content_checked": false,
+      "content_excerpt": "",
+      "base_score": 5.6,
+      "reading_score": 6.1,
+      "notion_score": 5.84,
+      "grade": "B",
+      "tags": [
+        "strategy"
+      ],
+      "concepts": [],
+      "learning_features": {
+        "topics": [],
+        "formats": [],
+        "intents": [],
+        "signals": []
+      },
+      "reason": "有市场或战略判断价值；语义增量：与既有 Knowledge 语义重复较高",
+      "screening_note": "",
+      "screening": "semantic_v6",
+      "knowledge_context": {
+        "used": true,
+        "version": "semantic_v6",
+        "knowledge_match_strength": 0.885,
+        "rule_match_strength": 0.864,
+        "experience_similarity": 0.855,
+        "repetition_penalty": 0.58,
+        "gap_bonus": 0.0,
+        "evidence_bonus": 0.0,
+        "boundary_bonus": 0.0,
+        "semantic_bonus": 0.437,
+        "increment_type": "mostly_duplicate"
+      },
+      "semantic_vector": {
+        "version": 1,
+        "family": "multilingual-e5",
+        "dim": 384,
+        "q": "Ggn5+zDeHBwoIET1aCfRER/Er8s29McMPTEWPBXBzcpHxS4T7PULwc/+H0IiY+ELwOIFRwEyBtbnwaUUOQUiOX8JCS7aseInD9goLy/6MubW39wc8EsSsSTeV1kK0sq75T7u/EDtJM/3JyS+LcjjM0ozv8saoFXYPfTMuuPeIBfw5ysbIiQiP/blzvmzIA0gAihI4ijUTMw6QiLJ0scrJ6Dph8/Zqlg7xOTiMMAS0BzOF0sy9uyT06TP2hMn5Rku0tEHz9hAHCD01hg/QAGoWtwkCcjCLsf/BiHn+VHoFJEQPhnUyBG66qnasrLhOyy72r4XpkLX7QPsJTjhvd7tDyw0yBAf/FIPSBTZxfMEsEU3xffd91e41CD5MjYy5w5D+Ni/zifBA+vvYfgt3vYYD7YOEjcfICE4yewlKQEn1tPOzfLYLjvWBBwbG7/XLMbr8zLcxC0U5RsAyDfq0iMGrygR+Bbd+hgK1cQrM2tB5AQawh9E5hrz7Mke+LomGSQv",
+        "scale": 0.0010717281,
+        "normalized": true
+      }
+    },
     {
       "id": "3976b6b953530f69d0",
       "source": "日経クロストレンド 新着",
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/01222/00084?n_cid=nbpnxr_rss",
       "title": "バンナム、『ACE COMBAT 8』などをTGSブースで試遊出展【TGS2026】",
-      "published": null,
+      "published": "2026-08-20T12:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.678727+00:00",
-      "summary": "約23時間前 バンダイナムコエンターテインメントは「東京ゲームショウ2026」の出展を発表した。出展タイトルは『ACE COMBAT 8: WINGS OF THEVE』『ドラゴンボール ゼノバース３』『ONE PIECE 海のごちそうレストラン』『BLEACH Mirrors High』など。「ファミリーゲームパーク」への試遊出展や「アソビストア出張所」でのグッズ販売も発表した。 全文を読む",
+      "summary": "1日前 バンダイナムコエンターテインメントは「東京ゲームショウ2026」の出展を発表した。出展タイトルは『ACE COMBAT 8: WINGS OF THEVE』『ドラゴンボール ゼノバース３』『ONE PIECE 海のごちそうレストラン』『BLEACH Mirrors High』など。「ファミリーゲームパーク」への試遊出展や「アソビストア出張所」でのグッズ販売も発表した。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 6.65,
@@ -59,27 +2660,27 @@
         "signals": []
       },
       "reason": "与EC/零售直接相关；语义增量：与实际工作场景语义接近",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 0.859,
-        "rule_match_strength": 0.837,
+        "rule_match_strength": 0.838,
         "experience_similarity": 0.841,
         "repetition_penalty": 0.46,
         "gap_bonus": 0.0,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.867,
+        "semantic_bonus": 0.873,
         "increment_type": "mostly_duplicate"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "LxPh5FnZJSc1IlwTS/XgDGXBrs0GDf07VxqoIybWwtlJph8o3/dC4/IbDloQfwUspPDzPv4z/svcy7UQc977GGEbNWC0AflA1fDzTyjjQcmuzsky2zFDlDzuS1DYytem/DMdCEDFGrfVJBfHQKzROx0mtbjkniTTP+fBwdXREj74A1keKi9iILLgxuLlVM4TKxd1sh4QJMUzLEzJ5OYdPpbEuMnxpDpOrAnRSNIv/0LZIUYBCfWXvrH8oR8R6ucYrKQGCdpKKhzpwCkvMAOxSswNENGcMoYNBwPbRCr7D7sFWxzIyyYu++i52Ob7FDHShttpxUDY0y7YDCrnrsX3WTAf7UgpzlQ/ET7azOXFoGJE1wGvCTmsvEP0NCpM1b1p8MabCxToJQ7pTrdTyeokDawQFjA2JDUin9BVCxEt1OS4svfGLTHs3R/3KJPONtvRE024tRVS2SHPtz7v4kHSmTYl9h6hyXIQ0/0NPTJA381CnjlgxjbS3e/6qY0dAzAZ",
-        "scale": 0.0009210873,
+        "q": "MBLi5VLYJCYyI1gUSfbkDGbDs80GDf44URStIiTbwdxKqSAm2vhC4+8bEVkQewUrp+v0PQQx/c3jzbISb975GVgVN124/PpC1Ov1TSXkQMa0zcky3jFDlTjuSE7Wz9yp/TcdCUDFGLbVJhfHOq/TOCEhuLXonyvXPenCwtbQDj/3A1oeKCxeH7XlyufkT9IOJxN0tx0JIr4vJUnP6OgcPpjEucryqTVNsQfPStQuAD3WIkEDBvmVvLX4pB4P6ukXr6QJCdxFJiDnwyQwNQSySs4LENOdL4EHBwHZRij6Db0FXSDJzSom/Oq/2ef5ETHUieFmxT/Y1TDYCyfotc/3WzAf70gqzVI9DDncy+bIoWBA2gWxCDavvUPyMylP18Nn9syfCQ7oKxHoTbpSxuweC7APEyo1JjQhotFTDBAv0+W7rvPELDLl3h36KJDMMdjSEU63uBdU1R7UuDzx4UHUmDkp8x6izXIS3PsOOjA/3dE7oTxgzD3R3+v8q5Uc/jIW",
+        "scale": 0.0009412523,
         "normalized": true
       }
     },
@@ -89,14 +2690,14 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/01222/00092?n_cid=nbpnxr_rss",
       "title": "『野田クリの野望』がTGSで番組オリジナルゲー???を試遊出展【TGS2026】",
-      "published": null,
+      "published": "2026-08-20T10:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.678257+00:00",
-      "summary": "1日前 TOKYO MX（東京メトロポリタンテレビジョン）で毎週火曜に放送中のゲームバラエティー番組『野田クリの野望～ゲーム天下統一への道～』が、9月17～21日に千葉・幕張メッセで開催される「東京ゲームショウ2026」（TGS2026）に出展する。 全文を読む",
+      "summary": "2日前 TOKYO MX（東京メトロポリタンテレビジョン）で毎週火曜に放送中のゲームバラエティー番組『野田クリの野望～ゲーム天下統一への道～』が、9月17～21日に千葉・幕張メッセで開催される「東京ゲームショウ2026」（TGS2026）に出展する。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 6.0,
       "reading_score": 6.16,
-      "notion_score": 5.19,
+      "notion_score": 5.18,
       "grade": "B",
       "tags": [],
       "concepts": [],
@@ -111,27 +2712,27 @@
         ]
       },
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 0.865,
-        "rule_match_strength": 0.833,
+        "rule_match_strength": 0.832,
         "experience_similarity": 0.836,
         "repetition_penalty": 0.57,
         "gap_bonus": 0.0,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.364,
+        "semantic_bonus": 0.358,
         "increment_type": "mostly_duplicate"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "DTPkAWzgJSEwHzkIavr1KDbjvs8RHOxCODm7KQ7Gw+88tT4X6cQJANcvHE0OR+Ygtgr9MAkn78niwsAXafMKFGQEEkSy0eBAz/gLOS/2P9y+zeU36jkpzEoLSUza9sys8RMW+0/fMZfUOBrGPK/oMSItudrogSGxStK9t8bbDT0g+B47IDhSIebt0+8CRekiJSR0zijlHNg2NBvz0+QPUr+8sdbkuDARsAHZOM8r9TTbK0sm4daWt8L9uAwg1eobzbYR/vIqORbpyyEULQTQNcQHP86+MMMW4BLfNwMT+7P8NyH/zw8G/fnE2sMA/S3eleBAvEfOvQraLRv8wMzvTAwQtyoe2FUtDBq5w+zx4Sgt3vvLEUfFvUMIJAlk6/ZU7+7B/iLkEAHqU7cr3+IdJrkTBT0MJjUBptYrVfUo4NjRzuHIURLfwzMBKb/CRcLMAC/c0Rg3uSbxtBcC5DDViy0pASCyy2cJ1OoPIitA7eNFsi45xS0A89wwtqAgFCcn",
-        "scale": 0.0010422708,
+        "q": "DDTlAmnhJiEuHjgIZvv2JjXkwM8RHOtCODi8KQzIxO88tT4W6sUJANYvHE0PReYftwn+Lwgn8cvixL8XafMJFGMDE0K00eA+0PgMNy72P9u/z+Q26zgozUgKSUza9s6t8hIW+0zfMJjVNxrIOrDoMSQtutrpgSCyStLAuMbaDDwf+R85HzdRIebt0vABROkhJCRyzyfoHNc1Mxry1uUPUsG+s9jluS8RsgDaN88p9DTcLEkn39eYucP7tw4g1ewbzrcT//QpOBXoyiETLgPSNcQFPs++L8UV4RLfNgQS+7T9OCEAzg0F/PnG28UB/i7eleA/vEbPwQraLBn8wc7vSwsQuCge2VUsCxm6xezy4Sgs4PrMEkbGvkIIJAhj7PZT8O7B/yPkEADpUbgp3uEaJroTBTwMIzUBptYrVPYo4djT0OLIUBLgxDIBKL/CRcLM/y3d0hc2vCbxthYD5C/VjS8mAR6zzmQI1OoOISs97ONEsy43xywB89wvtqEgFCcm",
+        "scale": 0.0010578831,
         "normalized": true
       }
     },
@@ -141,9 +2742,9 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/01428/00006?n_cid=nbpnxr_rss",
       "title": "女子に人気のランドセルで「黒系」「白系」が急上昇 男子はシルバー",
-      "published": null,
+      "published": "2026-08-20T15:01:00+00:00",
       "first_seen": "2026-08-21T11:03:33.677908+00:00",
-      "summary": "約20時間前 「天使のはね」で知られるランドセルメーカーのセイバンの調査で、女の子の好きなランドセルの色に、黒系や白系といった意外な色が浮上。背景には、デザインや素材の変化に加え、子どもの意思を尊重したい親心もあるようだ。 全文を読む",
+      "summary": "1日前 「天使のはね」で知られるランドセルメーカーのセイバンの調査で、女の子の好きなランドセルの色に、黒系や白系といった意外な色が浮上。背景には、デザインや素材の変化に加え、子どもの意思を尊重したい親心もあるようだ。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 6.75,
@@ -167,27 +2768,27 @@
         "signals": []
       },
       "reason": "包含调查/数据；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 1.13,
-        "rule_match_strength": 0.849,
+        "rule_match_strength": 0.85,
         "experience_similarity": 0.845,
         "repetition_penalty": 0.83,
         "gap_bonus": 0.06,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.395,
+        "semantic_bonus": 0.396,
         "increment_type": "mostly_duplicate"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "OgTQyjHSFiM8CTL9bAnnJyjVx9gPD88iOjQCNRnpz8Yu1xcV4e/9zfYX/FEXR/g6zvHlPu4eDurvzZ8HSuMOT1EjFkDN0tMg+/j6GR3TNfTt49EH8BgZvjfvJknapdij5Bz89SboELv+Hj7NPM3nKCc0zuABtS7uWOzMstXuGBkLBURUIEY9NOP2vuTgFewxKB8q1EHwMu0HMBnVz+QYNMa1w+ThgR9Tz+7LMeUg7C3kFi8H4/OY6rzevw4f5A4g0cIK9O4nM1D32Cw2Hce4OuYcE9axHrH/5gHQIjLcENL5Hi7k1iP2AN7M1MXZJw3h4tQx2RzK8gG0KBjh4tP1KSwp3gMc6m0OExrL6Nnl0D8U1wXaD0/tyQwECT0d3QQ8++W54C/TEwHZXMom3usaE8weBBgGEyNgsfk3Lus/wA7q2d27FCDh5RwcKb/GQdH60kvS2SYs1h367Sfq1D8E1/8Y7DXg+DAH3/UQNjIj7uok2EI00f/8DeAUwMIm8DU3",
-        "scale": 0.0011825861,
+        "q": "OAbTyy/VFiM5BTECbArnKCrUzNkQEdAhNy4BNBntzsYw1xgO3O760vIY/lIYSfo30O7jPvIeEevwy58ITeANTkwgGUTNz9Mj9/b+GR3VN/Ls4dEI7xsZvTPsJEvXqN2g5B/+9ibjELb7HUDNNsvmKSou0+EDszDuXOzOstTrFBgIB0RUHEM/M+T4webdEfEyJB0q1UbvMeYHLBbX1OUXNce2wePigRpS0OnIM+Uf7CzjFy8H4vOR7b3ewBIe5g0d0r0L8vQoL1L22i43Jca6POccFNauH6j/5f3OJi3cD9L5ITDl1SPv/+DQ0cnZJxLh5dky2R7J9gC1Khfh5dj0LC4r4QQd6m4QDxfL6d3m0D8O2AjcDVDtyAwDCj0k3gs3/ei13yrSGAXVYMsp1+kTE8wbAhIGFCFdrvU8Me9FvQ/t1Ny4FSTe5xwZKrbGP8/3003Q2ygt1Rv67Sfn00MD2AIX6zHi+zIJ5/QONzMj7Osl00cz1Aj6DdsWvsQm6zU2",
+        "scale": 0.0011756955,
         "normalized": true
       }
     },
@@ -197,14 +2798,14 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/01399/00003?n_cid=nbpnxr_rss",
       "title": "NMB48は3400万円突破 メルカリに苦戦のモバオクが“推し活クラファン”",
-      "published": null,
+      "published": "2026-08-20T15:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.677604+00:00",
-      "summary": "約20時間前 開始からわずか9日で目標金額2000万円を突破。NMB48の「MVリメイクプロジェクト」が大きな反響を呼んだ。このクラウドファンディングプロジェクトを実施したのは、モバオクが2026年7月にリリースしたアプリ「エモオク」。クラウドファンディング、オークション、グッズ販売を一体化したプラットフォームだ。開発の背景には、IPホルダーとファン双方のニーズがあった。スマホ時代以降にメルカリの台頭で苦戦してきたモバオクが見いだした、新たな勝ち筋に迫る。 全文を読む",
+      "summary": "1日前 開始からわずか9日で目標金額2000万円を突破。NMB48の「MVリメイクプロジェクト」が大きな反響を呼んだ。このクラウドファンディングプロジェクトを実施したのは、モバオクが2026年7月にリリースしたアプリ「エモオク」。クラウドファンディング、オークション、グッズ販売を一体化したプラットフォームだ。開発の背景には、IPホルダーとファン双方のニーズがあった。スマホ時代以降にメルカリの台頭で苦戦してきたモバオクが見いだした、新たな勝ち筋に迫る。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 6.0,
-      "reading_score": 6.53,
-      "notion_score": 5.47,
+      "reading_score": 6.97,
+      "notion_score": 6.1,
       "grade": "B",
       "tags": [],
       "concepts": [],
@@ -218,28 +2819,29 @@
         ],
         "signals": []
       },
-      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
-      "screening": "semantic_v6",
+      "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：可能更新2025年前后的既有时间证据",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
+      "screening": "semantic_v8_adaptive_temporal",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 0.918,
-        "rule_match_strength": 0.844,
-        "experience_similarity": 0.852,
+        "rule_match_strength": 0.842,
+        "experience_similarity": 0.848,
         "repetition_penalty": 0.53,
         "gap_bonus": 0.11,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.359,
-        "increment_type": "mostly_duplicate"
+        "semantic_bonus": 0.862,
+        "increment_type": "temporal_update",
+        "temporal_update": true
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "PPHi0XjYCCIuNTH8Sf7hHGXixKAj7eAISDHbFUTM9OMwwkcD1vwiv/QTLGtETP0fqtL5Z/ZJDMOuv4hQdwfqOnInEzya5e856gITSkvRJte5wOkryTchtFsdX3/Usbmo9E4X5SynO7bTJBzBPK6XPDsSwdASq1aqSgulkbLPOTj25yU7OkJLNvvftrQJMPVCNEFSs1PlTNNNNSHNzsElVcvXos/PimNQvuDfY6YgF0jAHUcr8fOBy7ID1RZQ2u0+vrIhDtcdHi304h0dNuyJZbokIdakIMbq+P/dEh7p750oRzXJxe7D6tXRwY8IMSkKz9cSuTLj0xj9LR/s2KX6LD0KmSwf+l8cIxOv0NPXsClD0fPXAkiuvj4uKTRU8f9C+seZ6BbdBgPsT/E/1yYT+qs9Hj4mHCsywOAMNBQus9TLt8bPOj+8AiflTKGlYNDlDhmo4jxHtyLJ7Rr8ymUZlzgN2hPA2kEOyP8eKiMiAs42zAxo6wnc7Owet6okAB0w",
-        "scale": 0.0009092818,
+        "q": "OvHi2XHdByMnMy/8Q//lHWPlyaMh7uMHQy3dE0HP9OUvw0X+1v4hwvISLGdARv4Zr9H3ZPhCD8ezxIxQcALoPGohEzid4u836AEVR0XZI9e/wuosyTcguVUaV3vVtMCt+Uka6imoObjVIRzFNbWXOT0OyNQQr1asSQunl7XRMjT06Sc6NkBHNPvfubgLKfhCLztOuVPlTNJKMhzS0MIjU8/ZptPTkF9LxN3gYqUcGEXAHkIs7vSBzbcD2RdO3fA+xLUgCtscGyrw5BoZOe+NZL0jIdmmHsjn+P7cFBno7qAnRjXKye3A6djVw5AGMCgM0toRvTHk1xf9KRvs3K76LToJnS4k/FscIRO00NfXsSU91vXYAEO1vz4sJzNV7wQ8/Mub6hLgCQTrTfY71SQN+bI3HDolGyktxN4MMRcttdPOuMnOOD+7BCbjR6GqYNHmDhes6TtBuCDL7x38yWcbmzsM1xDJ3T8Oz/0dJiEh/s8x0gxj7g3e6uket64l/hkr",
+        "scale": 0.0009469825,
         "normalized": true
       }
     },
@@ -249,13 +2851,13 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/01439/00008?n_cid=nbpnxr_rss",
       "title": "パソコン作成は無効？ 相続トラブルを防ぐ「正しい遺言書」とは",
-      "published": null,
+      "published": "2026-08-20T15:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.677319+00:00",
-      "summary": "約20時間前 2026年8月4日発売の「日経トレンディ2026年9月号」では、「自分年金を増やす最新投資術」を特集。親が元気なうちは、相続対策を先送りしがちだ。しかし認知症などで判断能力が低下すると、預金の引き出しや不動産売却、生前贈与が難しくなり、残された家族が思わぬ壁に直面する。相続税の負担だけでなく、遺産分割を巡る争いを防ぐには、家族信託や遺言書、贈与制度の活用を早めに検討することが欠かせない。相続税や贈与税の計算方法も一から説明する。 全文を読む",
+      "summary": "1日前 2026年8月4日発売の「日経トレンディ2026年9月号」では、「自分年金を増やす最新投資術」を特集。親が元気なうちは、相続対策を先送りしがちだ。しかし認知症などで判断能力が低下すると、預金の引き出しや不動産売却、生前贈与が難しくなり、残された家族が思わぬ壁に直面する。相続税の負担だけでなく、遺産分割を巡る争いを防ぐには、家族信託や遺言書、贈与制度の活用を早めに検討することが欠かせない。相続税や贈与税の計算方法も一から説明する。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 6.55,
-      "reading_score": 8.2,
+      "reading_score": 8.19,
       "notion_score": 7.8,
       "grade": "A",
       "tags": [
@@ -278,27 +2880,27 @@
         ]
       },
       "reason": "可能形成可复用方法；语义增量：可能补充证据/案例",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 1.612,
-        "rule_match_strength": 0.838,
-        "experience_similarity": 0.846,
+        "rule_match_strength": 0.837,
+        "experience_similarity": 0.845,
         "repetition_penalty": 0.0,
         "gap_bonus": 0.5,
         "evidence_bonus": 0.32,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.954,
+        "semantic_bonus": 0.945,
         "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "K+jQvybNGTtPAhwZWOTqL1XOzNABCb1UOErYQSvry+QdizgUvu8D7rMNMmf4f9tEq/XtR9Za/cWsrcb2Scr2NmYd/Cij0dESA+MMOjr0N8+StNwEzz1Kyhr0LmfZ1+2jzTw/GSfNPorBJBDMN6bVUFoCqtbWlBrGTgn4paT1HDrqKiFP/ypKScEHv+X6O/YtIPtMpma6Qdl/Mzmt3c00QbnRqPIOwC84t7vDQNIw3BzWO28k7ey3uefNzhwh6fhAxZTb3d1CHhLt8zZhVA/iFtsfNsq5PMrw/SLaKhLd+pPhQlixkQcKBw3c4b/oQ2vM0ukz7Djh6NvdNj7YyNPwOSonszknBm0SCwHQ2+zb6xo+4su++HLPxEYdHURK5Cow//ey7TrZLeX1YeMQztb7ObYrCDEQFjol19s+SvdVz+uh8gSoVj/16hf+SovSMuD/CTmj4CJKxB/pxgvlvEcNphAN2SK290Ewsc0hKy1lCvX7sTRItgzb6qEMra00/Q1f",
-        "scale": 0.0009321488,
+        "q": "JevSwSTQGz5L/xwZWOTrL1vLzdEADr5XNkjZQSvvyuUdizcUvO0F7q8OM2r3f9pBqfbrSNdcAcOtqcX4SMb0OWQZ/SqjztIV/+IQPTj2O82RrdwEzz5MyxnxK2jW2PCizT9EGCXIQInAJxHMMqXTU1z+qtrYlBvIUgj3o6LyGTnqKyJP+SpJSsQKwOj6N/QrG/hNqGu6Q9l8MDux4c0xQ7fRp/IRvy88uLfCQ88y2xnVQXAm6u2wuenMzRwi5/o/x5HY2+FBGRTq8zZiWg7lFtkdN8m3PMXs/B/cMRLa+ZHfRVuzjQgABw/i3r3kRm/N1Oky6zjj7NjfOEDUzNXxPS0qszspCGwSB//N2u7d6xo85cy9+nTSwUQcHEVO5C8u/viu7jfYMOfwY+UOytT2ObUqBC4PFjwj09ZES/lWzeui7wSmV0L15xYASoPQMdz8DD2h4CJHxB/twwzlukoLoxMO3R+8+kUxtcsgKy5kCff6rzRHuhHa6JoNqa40+w5i",
+        "scale": 0.0009201943,
         "normalized": true
       }
     },
@@ -308,14 +2910,14 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/01445/00004?n_cid=nbpnxr_rss",
       "title": "ANA、JAL機内食の「細かすぎる違い」 植物由来ラーメン、特別食",
-      "published": null,
+      "published": "2026-08-20T15:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.677055+00:00",
-      "summary": "約20時間前 機内食で航空会社を選ぶ人は少ないかもしれない。一方で、食事がおいしければ旅の満足度が一気に増すのも事実。ANAとJALは、機内食を重要な顧客体験と位置づけ、年何回もメニュー改定を実施している。近年の両社の機内食戦略は、「日本らしさ」や「うま味」を生かす点では共通する一方、健康に配慮した機内食を求めるなどの顧客ニーズへの対応や、外部シェフとの連携方法には違いが見られる。機内食特有の開発プロセスから、ANAとJALのスタンスの細かな違いを探る。 全文を読む",
+      "summary": "1日前 機内食で航空会社を選ぶ人は少ないかもしれない。一方で、食事がおいしければ旅の満足度が一気に増すのも事実。ANAとJALは、機内食を重要な顧客体験と位置づけ、年何回もメニュー改定を実施している。近年の両社の機内食戦略は、「日本らしさ」や「うま味」を生かす点では共通する一方、健康に配慮した機内食を求めるなどの顧客ニーズへの対応や、外部シェフとの連携方法には違いが見られる。機内食特有の開発プロセスから、ANAとJALのスタンスの細かな違いを探る。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 8.55,
       "reading_score": 10.0,
-      "notion_score": 9.77,
+      "notion_score": 9.76,
       "grade": "S",
       "tags": [
         "consumer",
@@ -340,27 +2942,27 @@
         ]
       },
       "reason": "涉及消费者/用户行为；有市场或战略判断价值；可能形成可复用方法；语义增量：可能补充证据/案例",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 1.357,
-        "rule_match_strength": 0.846,
-        "experience_similarity": 0.831,
+        "rule_match_strength": 0.843,
+        "experience_similarity": 0.833,
         "repetition_penalty": 0.0,
         "gap_bonus": 0.17,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.994,
+        "semantic_bonus": 0.978,
         "increment_type": "rule_evidence"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "M/XhzVnpKi86MSENNATiJyq71Nz6BPYSLyT5F/fT5tkl4S4dvtEbsfQWFD8gYftK3NjrKvYxCPTNzbodSfX8F0MUHyrNwuQu/fAkICboItrH5+omxxAhuz0BQij28rjM1Tr9DSPhNtv0GyblLcb1Ok4Tx+L8uDPYJsPItODpFkrj+0BCFzYKOfLo9+OwCtY2DDRV0E/zJ/IpNRnp2fslIuzcwdL2sCkytf3ZHuIZ6xDxHjH+FtiyxcH5rPk56hUKvNgOFcUbBwsLzSA0MdyzCMEFOOy9P8v15SPRDC7TFbPqLAzdyi3v99jS07wEEiDS3clA0yLn+SoBGALgwvH+NishxAU88388MSnKzMfO200l0vTF/1DRzR39IS47ygU15fXFATveIgjYLMQ60/kNGscWFTUVFgw43usqKe4LyLjmz+7XKU7r7iEHLq7GH9/Z2UnJnSM+7iz46Tzi8RvawQof+R7VEjYl8dkCJzwuCPj+vhE29RPyAef86LgZ/xU3",
-        "scale": 0.0011954948,
+        "q": "Lffl0VTrKjI2LyAQLgPiJiu62dz7BvgSKCD2FPTU5tkk4y4YvdMct/IXE0EcXPtF39fnKvsvC/TOzrwfSfD5GzsQISrOv+It+e8mICPsJNnN5eokyBQiujoAPiv0873L1TwCDyLgN9jzGiTlKMbyOVAPyOP5tjPdJsLLtuHqEkfi/EBAETUMOPPr9+WuBto0BzNX0lL3J/AlMxbq3vwhIu3bw9L2siMyufjYIOEa6w7wIi/+ENmsx8T5rfw77RYJv9cOFcsaAw0JziEwN961BMMEOO+8Pcfx6B7RFSrTFrXrLQ/exyzr9drV0b4BEyLP384/1SDnACr/GAHhw/X+Oy0ixAY+8388LybKzcvS20og1vfH/k/SzCD7Hy9BzQkx5/nE/jfeJQrVLcg6zvcIGccTEzATFQw23egsJ/AKx7nqzO7YKFDq7iAHLqrJId7U3knKoiQ+8Cr56Trh7h7ZxQwe+hvYFTkn+NkDJDosBvv/vxQy+Brx/uP86L8d/BM2",
+        "scale": 0.0012151733,
         "normalized": true
       }
     },
@@ -370,9 +2972,9 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/00105/00247?n_cid=nbpnxr_rss",
       "title": "AIがかなえる「元カレを見返すドレス」の提案 対話ECの本質はインサイト",
-      "published": null,
+      "published": "2026-08-20T15:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.676727+00:00",
-      "summary": "約20時間前 AIを用いた対話型のアパレルECサイト「Daydream」は、色や服のカテゴリーを選択するのではなく、服を選ぶきっかけとなった機会や、自分をどう見せたいのか、を対話型で伝えると商品がレコメンドされる。買い手の“事情”を商品の特徴に翻訳する、膨大なデータに裏付けされたサービスだ。このデータの外販も始めているという。 全文を読む",
+      "summary": "1日前 AIを用いた対話型のアパレルECサイト「Daydream」は、色や服のカテゴリーを選択するのではなく、服を選ぶきっかけとなった機会や、自分をどう見せたいのか、を対話型で伝えると商品がレコメンドされる。買い手の“事情”を商品の特徴に翻訳する、膨大なデータに裏付けされたサービスだ。このデータの外販も始めているという。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 9.25,
@@ -403,14 +3005,14 @@
         "signals": []
       },
       "reason": "包含调查/数据；涉及消费者/用户行为；涉及AI实际影响；与EC/零售直接相关；语义增量：可能补充证据/案例；与实际工作场景语义接近",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 1.228,
         "rule_match_strength": 0.866,
-        "experience_similarity": 0.878,
+        "experience_similarity": 0.879,
         "repetition_penalty": 0.0,
         "gap_bonus": 0.06,
         "evidence_bonus": 0.4,
@@ -422,8 +3024,8 @@
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "QN3Vz0PKRAVAEBQRdBQJJRrgqdL2D8IYSynZLgyrx9FPtS4R2too0/INOV5ITwk0tgMHNwY1BsLvt7U1UQ0gKncJAyqg3PAu29ggVy+6FtDRz84X7yEcnSj8OGb51cLA2TkcAzPcU8fuDgDCLqDMRl8an8Qho0H/ZvHGubu7LkAIFi8uHzRUb+r0273+MOlLMBItqzH4U+k2GQ/S29MtKq3LueUEoxlHru67Sc88AjK9NzQi5d6oy6a5zA0f0g8gurDm89JQSRr04jMuN9bHPK8sDb3QM6fv8SnAHBfpFsAPPyvQ0izX9Neq4rPvLCTh3tVI1kHg7AraMgnVqePpV/dAui0Mzn/+LRe+1K70xhYey/PIEFy2xiEVDTxA5Ak46dbA7RXh8vnYVeVJ+ujyG60jEB8u7SFYvOQqYPwJz+vY1dfdIkXo8RQHENrkPdfV7Vmrvkw6tQLc2Srw1zQhuiQo+yTQ/jI64us7OkczAPwPskFa5PIA6NwEu7kzIAQn",
-        "scale": 0.000999717,
+        "q": "Qd7U0ETKQwc9DxMRdBUKJh3jqdL3EcMXRibbKgqrxNFPtC4P1NYp0/INO2JKTQgzuAIHOQo1CMHxubM4UAwhLHQHBSyh2+8x1tgkWi+/F8vVy88V8SYbmin5NWX21MK92D0gAznZVsjvDQC+LZ7LSGEYnsIhokUBafHHubm3KkEIFDEtGzNTdOv33Lz6LutMLxAusTb4Uuc0Fw3Q3c4tKa/LteUGohhGr+y8S81BADG3ODQk5eGiyKm2zRAf0REbvq7l9tZSQh324zUtO9XGPbIsDLvONKPs8yW/HxfmF78NQy3PzyzQ79as4LLuLije3tZJ1UHh8ArXMQvVq+npXfg+vTAMzH8ELxS81bD3xRYcy/nLEF24wSMWDT5G5A016NfA6BHf8/vWVuVN9uLvHKwgDhot8SFbuuMuY/8JzevZ0dbgIkfl8RYHD9XiPtXQ7lmqwE87swDd2Svt0jgiuyQn+SLP/zY/5uo6OkY3/f0Or0ZW5vj+6tgEubkzHgIm",
+        "scale": 0.0009881007,
         "normalized": true
       }
     },
@@ -433,13 +3035,13 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/watch/00013/02953?n_cid=nbpnxr_rss",
       "title": "オイシックスの新おせちは「ラーメン」 隠れた需要を発掘、目標2億円",
-      "published": null,
+      "published": "2026-08-20T15:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.676351+00:00",
-      "summary": "約20時間前 食品宅配サービス「Oisix（オイシックス）」を展開するオイシックスは2027年の正月に向けて、神奈川県湯河原町の名店「飯田商店」と共同開発した「???田商店監修らぁ麺おせち」の予約販売を始めている。04年からおせちを展開してきた同社が、今回あえて“ラーメン”を組み合わせた背景には、「おせちに飽きた後に食べたくなるもの」としてラーメンを挙げる消費者インサイト、従来のおせちではファミリー層を取り込みにくかったという課題、そして高価格帯ラーメン市場への進出を探る狙いがある。伝統的なおせちに、温かく自由度のある“年明けラーメン”体験を重ねることで、年末年始の食卓提案を広げて2億～3億円の売り上げを目指す。 全文を読む",
+      "summary": "1日前 食品宅配サービス「Oisix（オイシックス）」を展開するオイシックスは2027年の正月に向けて、神奈川県湯河原町の名店「飯田商店」と共同開発した「???田商店監修らぁ麺おせち」の予約販売を始めている。04年からおせちを展開してきた同社が、今回あえて“ラーメン”を組み合わせた背景には、「おせちに飽きた後に食べたくなるもの」としてラーメンを挙げる消費者インサイト、従来のおせちではファミリー層を取り込みにくかったという課題、そして高価格帯ラーメン市場への進出を探る狙いがある。伝統的なおせちに、温かく自由度のある“年明けラーメン”体験を重ねることで、年末年始の食卓提案を広げて2億～3億円の売り上げを目指す。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 7.65,
-      "reading_score": 8.55,
+      "reading_score": 8.56,
       "notion_score": 8.22,
       "grade": "A",
       "tags": [
@@ -464,27 +3066,27 @@
         "signals": []
       },
       "reason": "涉及消费者/用户行为；有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 1.372,
-        "rule_match_strength": 0.845,
-        "experience_similarity": 0.857,
+        "rule_match_strength": 0.846,
+        "experience_similarity": 0.858,
         "repetition_penalty": 0.74,
         "gap_bonus": 0.34,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.602,
+        "semantic_bonus": 0.609,
         "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "I/7czVLxCyM1UkMIavvZKFO6pborEN8JPycaJCvZztpHrVoVxuQdx7sjLVs1awEim+XYO9c04PGx3sUyfhT9KWvpEx/J6AETC90YMxjVK9uo9eUy5QwhnzcgSFvbwLa51kAk+0DaJtbuOha+Q6ypLjFGvgEQk0PNZNbOqbTt7x7sAjYiEkc4R+zOv+S3EdFHQi5X4DUFX85VLhzA3+EhRsHZytvxqklFmOezFMIn7jHgFVQ759CN4LgG0CIy8w8NvcPlC9o7LS37qygWKOahQucvIqzKTtgAKDTTCB/5EMkQPhyzyR3h+s+u0JonOTnQzPFOzBy09+/uLB7ksND2Giz/1PA38H8cIybCzuoBy0Msx9a/AWvCtEMhJjo26vkt3/2zCCLcEg/PI8UcxssgCKr9/i0QH0Uc1vVFLPksyczgywK4Pyjq8RzqONekH8il8kaxuhg/FxHn5CXv3B7kofcs+yjD40o/1e4pH09k89stniM61v/2vt0Hpq05FiUy",
-        "scale": 0.0009805244,
+        "q": "HgHaz1DzCiQxTkEIaf3ZKle8p7sqEt8JPiUdIire0dxFrlwSxOMbx7knL1s0agQinOHXO9ky5PSz3cUxexX9KmroFSHI6AEUBt0cMRjXLtip9uY25Q0hnDUhQ1vbwra11UAl+0LYKNjrOxS6P66oLzRCvwAOlEXLZdbRqrTr7xzt/zUhEEc5R+3Rv+S2D9JEQC1W4joFXstTLRq/4t4iSMPZytzvqkRHnOWyGMMp6y/eFVM649KG4L0H0SYu8xEMvr7kCts9Ky38rCkUKuaiQOgvIKvITtP+KjPTCSD7EskRPxuzyh7c99Cwy54nOjvP0PJNzxq09/HsKB/ksdL5HSz+1vE4738dJCTDzu0BzEAuxtnAAGnDtEQgKDo67f0t4v60Bx3YEhPMJMgdwMwaCqf5/ysNIEMe1vJHLP0uyc/gyQO5PSjo8B/rOdWlHcWj80ezvBk+FhDn4SHt3iHlofgu/CjD4k1B2e4oIE9m8d0unyc31QP1v9sIp682EyIw",
+        "scale": 0.0009834584,
         "normalized": true
       }
     },
@@ -494,9 +3096,9 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/00958/00120?n_cid=nbpnxr_rss",
       "title": "1位は「P＆G最高ブランド責任者がAIロボ化 現代マーケに必須の『3つの声』」【デザイン】お薦め記事10選",
-      "published": null,
+      "published": "2026-08-20T15:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.675979+00:00",
-      "summary": "約20時間前 2026年7月に公開した記事の中から、有料会員の訪問者数（ユニークユーザー、UU）などを参考に、デザイン業界の皆さんにお薦め記事10本をピックアップ！ 1位は「P＆G最高ブランド責任者がAIロボ化 現代マーケに必須の『3つの声』」でした。 全文を読む",
+      "summary": "1日前 2026年7月に公開した記事の中から、有料会員の訪問者数（ユニークユーザー、UU）などを参考に、デザイン業界の皆さんにお薦め記事10本をピックアップ！ 1位は「P＆G最高ブランド責任者がAIロボ化 現代マーケに必須の『3つの声』」でした。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 8.35,
@@ -524,27 +3126,27 @@
         "signals": []
       },
       "reason": "涉及消费者/用户行为；涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 0.904,
-        "rule_match_strength": 0.868,
-        "experience_similarity": 0.881,
+        "rule_match_strength": 0.867,
+        "experience_similarity": 0.88,
         "repetition_penalty": 0.45,
         "gap_bonus": 0.06,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.355,
+        "semantic_bonus": 0.353,
         "increment_type": "mostly_duplicate"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "+/Da6DvJA0wv9h4DZfTSTyDZy+gRLdxFV0y7KRzbwL5fuin6ug4iuvj4QVtAcOkpnO3dJwtCBq7kpcT+awAHKWgCDCfC4dkp78kEMjzPF8K3zdUy40UusUz3S0rVyuuh8iwn70HAJqPrCyvPK8PLR0sTu84CwjG0Wb2Wq7m8DAUNExhMNFNRMrjn47rTOfMxHSZT1kDpXcNAMzfF6dMNSbzds9DhpDdTn9jOUNEB7Sa+I1sX4Q2jyrHP2SsJvfYNl8ju4Nc1LjP94SY4VsvuMvY4JtC1Hdkb+ELZKkbtDqQUQBLM0RfA5d3G5LwBSU7c6t9Z4VzFzCbfJh3Y19jRQiRIzhNA3msZKxPe1uTvuCkUrfLs8n+zpSYaEkEx8wxm9M2+3SPeGBUAO40t6fv+GrQd7is7LkUfreZYPNcltMDCu+6tLV7J6R0uQITDX9G94UvC3CMIoCTpAiju1EsUwSshvDar8V8o+9ouRUko8RwntxxS1vb669Erua0+A1AZ",
-        "scale": 0.000942571,
+        "q": "+e3d7TjKBEwq9h4FYPXTTyLXzOkTLd9FVkm7Khrcvrthuyr7uAsiuPb5P1w8bekln+vcJwk+B7DlpcMBavsHKmUCDSbC39Ys7cYEMDzSGcG6y9Qw5Ectr0v0SknXy/Ci9Cop7EK/KKLtDCrQI8HJSkoSu88DxTK8V7eWqri8BgcIGRhKMFVONLnn5LvVNfAwGCVT2kDtXsY9NDXG7tQLSL/htdDjqTZRn9TPU9AC7ye5J1gZ4A6fybLN3CwLvPgOnsTv3do3KzP64Sc5W8jxMPM4J861HdgY/kLZMkLtEKgSRRHN0Re25ODH5bz+TFLe6N9Z3VnGyybjIx7W3d3QRyRGzxNC3GkZKhPd1Obzti4PsvLx8X+zoSQdE0Y19Q9i9s683CLhHBf+Oo8w6fj7Grcc6ic6LkUgrepdONkmtL7Ht/CvLV3H5x8vOoLFYdG730rA3yQFniHsASzt0UoTwi4htzSt7WMr/9gtQ0Yr7hsitR5R1f757M4qubI/AksY",
+        "scale": 0.0009449475,
         "normalized": true
       }
     },
@@ -554,9 +3156,9 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/01444/00006?n_cid=nbpnxr_rss",
       "title": "AIと描く1枚の戦略図 「上司を動かす提案書」を完成させる3つの問い",
-      "published": null,
+      "published": "2026-08-20T15:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.675615+00:00",
-      "summary": "約20時間前 戦略立案の最終ゴールは、戦略を「考えること」ではなく、戦略を「動かすこと」だ。組織を動かす戦略には、共通の特徴があった。それは、すべての要素が「1枚」に収まっていることだ。目的、論点、戦略、課題、対策。これらが1枚で見渡せて初めて、経営層を動かし、現場を巻き込み、顧客に届く戦略になる。本稿では、戦略Ⅹ（テン）フレームの集大成として、AIと共に「動く1枚戦略」を完成させる技術を解説する。 全文を読む",
+      "summary": "1日前 戦略立案の最終ゴールは、戦略を「考えること」ではなく、戦略を「動かすこと」だ。組織を動かす戦略には、共通の特徴があった。それは、すべての要素が「1枚」に収まっていることだ。目的、論点、戦略、課題、対策。これらが1枚で見渡せて初めて、経営層を動かし、現場を巻き込み、顧客に届く戦略になる。本稿では、戦略Ⅹ（テン）フレームの集大成として、AIと共に「動く1枚戦略」を完成させる技術を解説する。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 8.7,
@@ -586,27 +3188,27 @@
         "signals": []
       },
       "reason": "涉及消费者/用户行为；有市场或战略判断价值；涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 1.795,
-        "rule_match_strength": 0.861,
+        "rule_match_strength": 0.863,
         "experience_similarity": 0.862,
         "repetition_penalty": 0.95,
         "gap_bonus": 0.39,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.373,
+        "semantic_bonus": 0.371,
         "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "Itep1lO7/SstNjMoaxzTQUrHuQYJA/UyLGH4JS7A3sknvEEO4+AZs/8LP1MYf/kum/TVM/MJ+NbovKoZR6oUOVUNEybDxdYcyrRFSzjkQ+21x/gN0CAqqh/rXGPE4b630TMU2DnqVrPsMyHRLMXYZ1QOwtkGnS7kQfuz0rzW+VXXBypWLhlMZegY4MS6K/oPIitFyBn1SNc8Li3f7OszNtG7qM3Msy0+2cPGGLYj3xfH7msg0uKY27fp2CjgzC8vucD7Fd5DOxb80UYrOgHkHMhrNrfgUeHf8BzNFzTrEsQCMCjQ0BYQ9MTU6sAGOC/O7cUw1jrawBHcICPAo+vgPzQeqAIa/2f+HxG74uTvxy8yzwK1J32htEYTATcr7/hS58PAyyQENOb2T+8v8+QDL6EU8z8QITY6rd9BFBcLsuW1wuiwSGO36CAKPrLZLM/XAT/ZkDkh3Bm63Rv21x83q/8WyVmtKS8w6NowIjdVA/YouRNJ3A0F0LUatMwYDhU2",
-        "scale": 0.0009776175,
+        "q": "Htyt01K9+ysqNjMoah7SQ0zEuQULCPcxKF76JSzB28oovkAM3+AYtvoMP1caf/YsnPTVMvkL+tTqu6UcRqsUPlMNFijDw9ccyLFMTDflR+61xPgQ0iQsqB3qWmDC4b+4zzQY1TvrV7PrMx7PKMPaaFUKw9oInzLjQvu40LvR9VfXBixUKxVIaekY4ce5Jv0NICtEzR/xR9U3LS3g7ekyNdC8qM7LsStC28LDFrYl4BfF7m0e0OGR2rjn2CvfzzEtur38FuJDORj90UkpPv/kHslqN7bfUdzc8BrMGzToE8UAMSrQzhkL88PV5r8EODDN7sYx1TzawQ/dIiS/pe7dQTUeqAUbAGkBHw+54eTyxjEuzwe4KH6hsUUYAjkw8fxO6sS9yyH/N+j0Uu8y7uIBKp8S8jwQJjY8qdtFFBgLseW0vuWxSWa15yILP67aLMvXAEHXkjkg3Bm53hr11yE2rAEXylSuKzQz7NsvITlX//cptRdI3Q4Gz7IctM0WDBY2",
+        "scale": 0.0009704572,
         "normalized": true
       }
     },
@@ -616,13 +3218,13 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/01428/00005?n_cid=nbpnxr_rss",
       "title": "脱・串カツ田中を込めた「青紫系」 デジタル上で最も美しい色に",
-      "published": null,
+      "published": "2026-08-20T15:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.675261+00:00",
-      "summary": "約20時間前 旧串カツ田中ホールディングスが、2026年3月にユニシアホールディングスに社名変更。海の意味で「シア（SEA）」を社名に入れたが、ロゴには海の青系ではなく、青紫系の色を採用。食欲減退の青系イメージを避けつつ高貴な印象の紫系を入れ、成長を期待する色にしたという。 全文を読む",
+      "summary": "1日前 旧串カツ田中ホールディングスが、2026年3月にユニシアホールディングスに社名変更。海の意味で「シア（SEA）」を社名に入れたが、ロゴには海の青系ではなく、青紫系の色を採用。食欲減退の青系イメージを避けつつ高貴な印象の紫系を入れ、成長を期待する色にしたという。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 6.85,
-      "reading_score": 7.51,
+      "reading_score": 7.52,
       "notion_score": 7.23,
       "grade": "A",
       "tags": [
@@ -640,27 +3242,27 @@
         "signals": []
       },
       "reason": "有市场或战略判断价值；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 0.88,
-        "rule_match_strength": 0.848,
-        "experience_similarity": 0.841,
+        "knowledge_match_strength": 0.881,
+        "rule_match_strength": 0.849,
+        "experience_similarity": 0.842,
         "repetition_penalty": 0.5,
         "gap_bonus": 0.39,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 0.387,
+        "semantic_bonus": 0.389,
         "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "QQj04kPYHjpAIhDgS+67Li7T0ePqAMwuOk/+MiGwx+A/uxgMywv60MYCNkAobPI2wMrSPu4qCLTX2L0XNvcKKHYc/yLQ0+QfBej7RTTFGQa71cgk3D0nvkXwNkLUzeXSyxn76hnjOrQFFTazK77iIj4ypcvixkbmU8bbvdLHNjoB3QwyGGFBM7fN3fTeKNFKHAMb5CUEPeVgKEPn0/UoQcnKztrdljNBwOTPKM4d7ybrBV8s7/GBzKXbyDYt1Rs5ucjcHc0pSDXz0iNCOf26Q8QWHNDKI6L65E/1ETvuC6MORAjIxgcAEL/V0sP8Myzo6us11DvEAB//OCfa2N7RGxsbsQYa/n0QKvXby+f+qjskwfPh+l7ZwAYUNRo97thE1/ei4jHmDg/nW8Q48vkDA7gfAhgMDiwFywRHGP0T0N3s4fnNDy3d+AUMHdukW9Ld7VDZxz0w8/bg70jo4lXuvC1I+xfe8CUu5dgaSkxD+/cbnyNGwvMH+9Ar2Kk7BxYV",
-        "scale": 0.0010634752,
+        "q": "QAnz5jvbHTk4Hw/lRfC/Li/V1+bsBM4rNUf/Lhy4yeM8vhYIywv51cUCND4mZvMyxMzWPfEpCLrc27wWMvcLKG8Z/iHR0uMdAeb+QDHOGQXB1sgl3zwlvkLuMD7W0enRzRoA7hfjNrUCEjG1JcHmIz0uqcvjxkTnUMjev9LJMzj/3gwzFVs9MrzQ3fXdI9ZHFwIZ6SYFO+ZbIz/p2PUpQcvPztvgnC8/xuTRKc8b7iXsBVwr7PSBz6rbyzco1hk3vcjhGtQnQTb01iI+Ovy9PcoUGtLKIZ755Un2EzXvCacOQwnNxgb7EMTZ0cb5Myzp7e0y1TjHAR/8NSfb3ObSHRsYtggY/XoQJvbczuoArjYhxvbm91vZwgcTNBc98d093Pmj4S7lEQ7lVsg67fj/ArsbBBAMECkEzABGFgAT0uDs3PnQDC7d+QULG9epVNTd71DczTsx8vXg70Xo41LwwCxH/Bfh8yYt7NgaR0pE/P0aoSRCxfkJ/swn2683AxIU",
+        "scale": 0.0011131942,
         "normalized": true
       }
     },
@@ -670,14 +3272,14 @@
       "category": "Marketing",
       "url": "https://xtrend.nikkei.com/atcl/contents/18/01182/00101?n_cid=nbpnxr_rss",
       "title": "『ウマ娘』英語版ローカライズ キャラの魅力を伝える翻訳の独自手法【CEDEC2026】",
-      "published": null,
+      "published": "2026-08-20T15:00:00+00:00",
       "first_seen": "2026-08-21T11:03:33.674959+00:00",
-      "summary": "約20時間前 ゲーム開発者向けイベント「CEDEC2026」にて、2025年6月に英語版をリリースしたゲーム『ウマ娘 プリティーダービー』のローカライズ事例を共有するセッションが開催された。個性的なキャラクターが多い『ウマ娘 プリティーダービー』で、それぞれの魅力を海外ユーザーにどう伝えたのか。話し方に特徴のあるウマ娘をピックアップして、ローカライゼーションの独自手法を紹介した。 全文を読む",
+      "summary": "1日前 ゲーム開発者向けイベント「CEDEC2026」にて、2025年6月に英語版をリリースしたゲーム『ウマ娘 プリティーダービー』のローカライズ事例を共有するセッションが開催された。個性的なキャラクターが多い『ウマ娘 プリティーダービー』で、それぞれの魅力を海外ユーザーにどう伝えたのか。話し方に特徴のあるウマ娘をピックアップして、ローカライゼーションの独自手法を紹介した。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 8.35,
       "reading_score": 10.0,
-      "notion_score": 9.75,
+      "notion_score": 9.74,
       "grade": "S",
       "tags": [
         "consumer",
@@ -711,27 +3313,27 @@
         ]
       },
       "reason": "涉及消费者/用户行为；与EC/零售直接相关；可能形成可复用方法；语义增量：可能补充证据/案例；与实际工作场景语义接近",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
         "knowledge_match_strength": 0.98,
-        "rule_match_strength": 0.844,
-        "experience_similarity": 0.846,
+        "rule_match_strength": 0.843,
+        "experience_similarity": 0.845,
         "repetition_penalty": 0.0,
         "gap_bonus": 0.34,
         "evidence_bonus": 0.32,
         "boundary_bonus": 0.0,
-        "semantic_bonus": 1.225,
+        "semantic_bonus": 1.22,
         "increment_type": "knowledge_gap"
       },
       "semantic_vector": {
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "P9jG6miuPCI8LyHoYOr7KULf2MooIqVEQBOvLR64k71NqUsI3gsirvYaI0YpYvBDsfAXPu85DrPWra82ddwJIGwfAyS4u+Aw1fP1M1PoKc6t4MNRzFgTpVD3YDXT6rOI7EUp90XTJ6/gKPeeP6/VTkoWv63vuiG5cO2/o8H8CkEO8EgjMF9JS+rb3OPlNeIxKixYnVv8N+c9TkLEx+QiXrC5xMfqnCZlq/OiRLgmwCC3N0klKuOg6qD4xTVfyeNcqaLsDtwvHwoJxx8gIOSoN7MMOsCQONPa5DbdKFLRFsD+TkHmyw76+9m85sbq+j7gptsvwmPaEi7OJh3grtrzWD8XrhIP0WkqNyW5vcLV0CVB4wrg52+quD3u/S4wAPVM08q1yRn2DQIIZctXp/0NP7Mj/UEiCDgQ3fdkMvEPzvLMvuXVKz/C+BoKM6SnPcva6R20vD49oxHu3xbpwEUTqDs133eFFX882eFDR0c7DfImhipAwhDc19ElvqBDDDk9",
-        "scale": 0.000884712,
+        "q": "PNfI7meyOSI5Lx/nX+v6KkDg28woI6hCOw+vLB63kMBNqUcD3AojrfMZI0QrXew/tO8WPfM3DbbarLE2c9gJIGcfAyS7ueAy1PT2M1LtKc6v38ROzVgTpk/1WzDU7beL7UMr+kTUJrHgKvigPK/aT0oSw6zswCK6bey/o8L9B0AP8EkiLF5DS+3e4OTlM+YtJipYoFn4NOU9TD3FyOUeXbO9wsjrnCJjsfOjRrgnwB+2OEcnKeSg6aT4xzRcxuNcqaXrD94wHQsKyR0eIueoN7YLOb6PN9HW5jbfK1HSGr77TELoyw72/dm+5Mbo+T/dq94uxGPbESzOJBvesd7zWT8VsBMQ02cqNie6v8PV0SI95Azj52ytuDvv+y8yAPtH1tC2xhb1DwYKZs1Vpv0MPrMg/z4jCjgN4fVkM+4MzfPQvOfSJz6/+BgLM6KrO8va6x2zvzw6nxH04xfoxEcUqzo24HWIFH8+3t5ASUY8C/klhS5CxBHb1s4lv6JBDDc7",
+        "scale": 0.0008995583,
         "normalized": true
       }
     },
@@ -896,7 +3498,7 @@
         "rule_match_strength": 2.36,
         "experience_similarity": 0.874,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -972,7 +3574,7 @@
         "rule_match_strength": 1.32,
         "experience_similarity": 0.865,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -2109,7 +4711,7 @@
         "rule_match_strength": 0.877,
         "experience_similarity": 0.886,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.85,
@@ -2424,7 +5026,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "NN7vyC/fFyAxGyrcfw3aDAHf1/AZDe4bGkQOIyPA598qxjsb1ukLzvwJLW4jMe89wPcBLPUV9cz2vskcPu0lOl4hIC/d3/4+5+YzIhHZL+7v5e0i5hIb0SzwP0LS19zp2R8P7iTaKOj4MR3IBsDSK2ghxuIAug/hSNrDu73QDj7+ACI9DCEvTO70zsnKGvo+Gf4szSvnQNBOGyrR2/0xJtzazO3lpwU+rgzEAOUk+Rra/lce8e2+zbjb2h8j7fMb2M7y6t0vDxoA1ScqOt7HF8syHdz1RK3o5yvSDTjuF7EYQx3ctgnoAr7I+L0KKy/S580/5iX15gscJC7L1O71GCcuzAob9VYJJBfn3uHo3xgsxv/XAVC4vjMBDBpEyvtG88zP2ATSE/3iTeIp3+gIHbIZBiQOBCs41OIBG9z31+bFvPPYLDfc9Qz/Hr3gNdDvAiXXywsp0yLo6hrj2Sj+vCAq1yLR+C0+4dEJNjRDB+cN0zZF6+oMB9wR2Mc5+gos",
-        "scale": 0.0012233208,
+        "scale": 0.0012233209,
         "normalized": true
       }
     },
@@ -2622,7 +5224,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "R+66yiTmFBE28Ewpfw/dMTnbxfcc+9wkQzINPSDlzupBuyALttAh1NP8DH86ZuJgt9vSXPwq6NDYyLobUPslQksyGDiJ1vI63vMmMCPiLe6zxOsi6iQwuFDWOTvN7LfV5lQrEv7TO4vhGQyuMcfPH3Mms9MBojq3UAbUmLjKCzQN+/tNRSFpR+Hp39DUDvI3JwBTnlLCLMBnKTC43dBLLcrNorzttjpsy8nSMdAY9Sqi7lFT5uO+yODUwgUE4xgbrooCBdA/MiUA0RoSVNPlFvQXO+KwSNz+8gLKCjjfEb38QDrH3ifo6+nE1ZIcKkHduttBqTjpuxUNJkOzzvUBS0kfqhv8A3YOHuXF6NwHwyhF4PXmBFGm1WgjHiBG9Ak4zsTc2BazAwDuVbUr3+gREa0gICcyJi4wzuUJL+sdxuLC0tbSHEqvDCX8Kdi1Xc3i7ymsyuU84x/o2fvx7h4VkycT3EaLAGNt488yJC1E7gIIvfVp2fYDDaspw510CQw1",
-        "scale": 0.0009592547,
+        "scale": 0.0009592546,
         "normalized": true
       }
     },
@@ -3107,7 +5709,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Kgjc+kb5FTYkDDkNK/jdNE+xwdAL88L4VEMGOUq+99Et0jYR0t8fzPkZIFMCQQQx1tjtRQwfFvaztMgiTw0OJUwdGhSg1N0p3+wNJjUDO/6m9s0VyD4dujsWJDzU077EFCgU90fKMMvmIBfqJMXgCDg0y9Y+skLIO+TBjsz4FO8V8AhELyUVUgDP0ODeJ+JCIyZM2xzzP/AhPCzL2cg8RcDpp9TKqBZHuOr3NL4j3EHB+38x7ePIo8LxxPk//AIAsNfVGtIhMjIs0y0fN+zaUNorLdLFP7vy5P/YG0Pk/84GMAvIuycMDtr447j1H0/h4MMp0TDNFff4LyDq1u3oGAEOsxcn60UxJRen9ufpxD820/vZATbH7SgeMkQ23dVB1uqd8gjOGvcHObsr0OwpFc4GBhb2GSgUtgoUJRU11PbL4eDUDS7k8hT3BJ/VIuLKBVz1sSMoxSwA4wvgu0nxlxIw2w633iRK4toM/0BS5vMtuhwuxg738tU45bYpBxoU",
-        "scale": 0.0011055264,
+        "scale": 0.0011055262,
         "normalized": true
       }
     },
@@ -3201,7 +5803,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KwjE5jbNFTBGB0kPYejsKEWntMn4Lr4+Tk/GORu9ya05khcE599BzNEULU8ZefMzpeT0UhMzE8bOqq4bWfkrPHoXGEC24+Qt3sYcRyXjK7ya7+Agwys6rDoCWmTEweqh61od7xvQN5rYHBCpLJWdQUgyqMT4oCPbYMnap7bUCycQBTA9FDlGZb3p0t3SJuxMJjBdtUgKastKUiS80vI/Qs/Mjfz1rjM2nN3PXagu/zDHLlEl662lwa7M0CAM5AsSlcbeGcc3Jjrny0BEStLdPL4MGsvDSbPt7xzEKjPeH6sNVTzGpDXg2dnK17AULj/Zu95Q2FDK8v7yLD7Dotn7UxNXwSct438VPiLEuc7a1TIrxtvWCHW+yEAaJlw/8/lX7MWz6THWSg3qSLw6z/AbGKAQBCwdCBYnyOw6SPc+zdzYwOHDMle48kH5JKC2HbjFAkG2tyU/1hje2DPwzSv7qCo940Cy4FcY5AE8IUdI5+kUwkhr1+vnr7/8tKZaPCdg",
-        "scale": 0.00089169,
+        "scale": 0.0008916901,
         "normalized": true
       }
     },
@@ -3254,7 +5856,7 @@
         "rule_match_strength": 0.88,
         "experience_similarity": 0.879,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -5061,7 +7663,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Pu32+WHMLw8PFS8NVvLWOxbFnbsUCOUxOxrYNxvpvtBBzUkKyvcZ6AonMV1VSAIc0fTgCfUbG8i40qgeVush/FgGTB/H9sr/1tgGGinOJ/LJ1+gC3jlFyS3zRDfQxtCp3D4AyVHkGbUADTLTM7rXPzE3tMrulD7LY+C+rML4ECcXCB1HI1cROanR6tXnHw9PDSlVxRf8RrUrFjK+xdk4N82/uL3ns1M9zfLZPqw1/TbEIzYZ5f2B16jatRY5zfody8oKJ9o4BxDvniIWJvHGQcUlJ97FOK8LHSXPEBjyJagFU0e8zBPY0eXC6s8JQiXL9c0+yk+/yAkGIgDayNrEBhRCuyIs9lw8Pwfa2efc5E8tvP3j4W/R2y0RBGYbD+1Vv/PG3jDQGQobOvQW4RYsCqkFFjoCLRgnvgckVQsAxO7KytzVMA3n1BoHGsfmS+PkCT3SxRwn5y3z6APByT8ftiQo+ezj02Ee3g4xHysy5QkZ7BtO3xH90dn+x7I5Ii86",
-        "scale": 0.0010480614,
+        "scale": 0.0010480613,
         "normalized": true
       }
     },
@@ -6292,7 +8894,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "J/jR4Dr8GBdJ4BoaVvXTHFSz0u43JO4oRDbxNhf2xsRGvD4OyQc+yd0cS11HOBMmsBDrLeozGbLNsbwFUeEmJ1AfLAPT0OxB8g0WMjzLPNm9t7ow7gwnwhriP0nKwMj170Ef0xjDNpf1Gwq4PMSzMVpFwe0FgTOjUuK6uKfVPwgmGyk3IThCObnv4MfbPA9TPgoS9VTORKVHJweg3+0BSZbTxd3spRpOxbzPKN4x/TrQHkoj1PW+8dXn1AEuu/Ikzq77BNw/JCQJ00EeGca9KdEWNMvHNNrP9R3EKSryFcbsOBnFzBsC6MHF7KYBMU/0xccx0zni8hrmKwPT0N3CP0Nipi9JAn0mMRCj8Ozh1SP5x9zV60vh5Q0kIjZQ4Pkw8fftASjZKRsMI8MI+eATJ7IBFv0YAEAgtQZASe03vw+/xvfu6zjQ2xAHMJfaPbHK207Ksx4ZwC3h7yn35DQBpyL+ryPB9DwrzPwXMDRg6eYhzh8/DgHyA90lxcMyDR04",
-        "scale": 0.0010253046,
+        "scale": 0.0010253044,
         "normalized": true
       }
     },
@@ -6480,7 +9082,7 @@
         "rule_match_strength": 0.878,
         "experience_similarity": 0.888,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -6676,7 +9278,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MgHYvjXdFRQ7IEEsRRHiICmmwLweKOxGM0HsSAvL171cvUYA2er70fAeGFgjYvYqoevxMf49B7/1x8ogU9wrP1cfHBzb6vo2+uUqKxfEEM/M49ol2TcjtiP5P1rhwujE4EIW8yfyGsEAESrMN76oPlU02dYVrjPdOfqtwbQCKBwB7yE1ByYnQ+7+yNLCF+BVMCMd8UreR8Y3NxHU5tAnS8/Rpu3lxjM3sdzHO9cv8zXZHDwK5OWkxdYBxQEe9BIJo8wGBfYlHzLw4i8gCtWrK/8sLOPLPsn0AirkDhf3JLUMMRbS0iHS8tDN2srrLhjU3eo40z7b6v7uMzfCyNLRKDUV0hsq6X8rJwvJvOnzwTcxyeTW6Ey6ui4QDURJzRc45ubS2hTUHwrhVLsV5vcLFq8O+ikWGkJAt/Y3O+kzvf7J2POhLC7kAB/2HK2xMcfd4zi31xgVwSnT4zDp01L8xBIn5SnV10sr8OkUPjpF8doU5DhAzgjk0NwRyrIJHDEj",
-        "scale": 0.0010868785,
+        "scale": 0.0010868784,
         "normalized": true
       }
     },
@@ -6921,7 +9523,7 @@
         "rule_match_strength": 0.962,
         "experience_similarity": 0.866,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.306,
@@ -6994,7 +9596,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "NP/c2DK7GhMh9CwlQd35HiHcxO8IK8MWTTvrIyHDydAyryQA4+kE1QAKJjcXZAM1tQbQOu03A8btq8MJNP8PEn8Y+zGm4MkX1+sJESrVH9qz0P7z2B4isjnvMkTE2vKk5EAl9jLVKJv8LQG6KtC6WjUYxuD2uBbTU+7Js7PnBD36CAlHHSdeMb0H4d3dQu8tJil0syj2V8wzGDXJ5d08McrY0uAVwRQPu+HNRM4p9yTLHDgd796Y3r/f+CgH1gcSusYDE+YTGjHp8R4cMNTkGM8PEdDROub8CivCGhH8G78KRirO2SXm7dXY6+cRLSrpyOcx2z/o5PPmNBjxweb3SzwYywsK6GYVEAja3OXmsCwT0tLBKD+41DP0LRQ1HvtM98jHAiP1NujlT9sq8w4REdwW+TowCTYlveYRQ/Umx+/Z2/jJL0jTBhL5HL7MItzn1CTtxBcK2C3g1hHi1iopyBwv6yTU7Uc96AI6KzskC9oe0R1N3QHOyeEg3L4eCidI",
-        "scale": 0.0011461724,
+        "scale": 0.0011461726,
         "normalized": true
       }
     },
@@ -7236,7 +9838,7 @@
         "rule_match_strength": 1.135,
         "experience_similarity": 0.866,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -7514,7 +10116,7 @@
         "rule_match_strength": 0.882,
         "experience_similarity": 0.872,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -7674,7 +10276,7 @@
         "rule_match_strength": 1.563,
         "experience_similarity": 0.902,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -8622,7 +11224,7 @@
         "rule_match_strength": 1.582,
         "experience_similarity": 0.866,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -8696,7 +11298,7 @@
         "rule_match_strength": 0.878,
         "experience_similarity": 0.882,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.56,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -9930,7 +12532,7 @@
         "rule_match_strength": 0.869,
         "experience_similarity": 0.869,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.85,
@@ -10863,7 +13465,7 @@
         "rule_match_strength": 1.432,
         "experience_similarity": 0.88,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -11026,7 +13628,7 @@
         "rule_match_strength": 0.872,
         "experience_similarity": 0.888,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.61,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -11317,7 +13919,7 @@
         "rule_match_strength": 1.318,
         "experience_similarity": 0.887,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -11590,7 +14192,7 @@
         "rule_match_strength": 1.048,
         "experience_similarity": 0.877,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -11679,7 +14281,7 @@
         "rule_match_strength": 1.88,
         "experience_similarity": 0.884,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -11767,7 +14369,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "FOXL1SLGKSRFLhP7ZwDmExaruKkTBMj+TDvbRge/wb9Rrh0Xyc9Fs+gHOFgCWe8Ow/f5WgEsAd31ra4RSPkpIX8RKDbky9g15vYETzHqJ9erw+UvyykvtD7oQUHVwuaU0lwX8DzZTaP0Jg22N6PYLkUSvNMMmDnoO/Dgv87i/CL6+xk6HzlRVN0EywHMHf5IOzJDukDZT+xlSDS95QI7KLbVseTnoDNQkt7KMMY07y3XIUoXx9jAwrfJ2h0O3AoVv7P3/d43GjP24DIkQ/jAM9oVMbLbD9IG9jDKFyfxF5sJOB+8yh7vAtDTwcP+VyzKx8I4vUTj8wn/JTK/mfPaTRsqthMj+XsGOffCwfDcyTIwyvHMFWXesy4SJEktBP5K4uzG8TbvKeX5U9g88uUWHp0TGzkXNhg6zswnOgYj0NnFxfvON07H+kD6Jq7BObbhFj+cmio00ifF1hftyEsGrxwh1ES75Rgm2fIrTys8+PcPvzxX5Avmy8kh7MlIExJN",
-        "scale": 0.0009902116,
+        "scale": 0.0009902114,
         "normalized": true
       }
     },
@@ -11845,7 +14447,7 @@
         "rule_match_strength": 1.662,
         "experience_similarity": 0.872,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -12751,7 +15353,7 @@
         "rule_match_strength": 1.163,
         "experience_similarity": 0.877,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.61,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -13439,7 +16041,7 @@
         "rule_match_strength": 1.573,
         "experience_similarity": 0.873,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -13682,7 +16284,7 @@
         "rule_match_strength": 1.32,
         "experience_similarity": 0.879,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -14008,7 +16610,7 @@
         "signals": []
       },
       "reason": "有市场或战略判断价值；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
@@ -14028,7 +16630,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "F+Dh8UTKCxRGPjfzLhPuFli4w+w08bwyWkzcIBPZzc4tkgwGxuQKvuP2OkwoWuAWuObySBc0+N3fvYImc+kJP0YmAT/C6vot1PILKS4bGrnT1fMXyDwgtTPuNWXxB+G46TMM+jneMcQSLzHXRq3KFjwwmswGqU3PKvHLruDe/h4K5S46KyI2W+Pk1tbVMNg+JzZc4lnsYdQbP0CV58IjSre4quvSgTFmpuPlOc8z6zXWGmAb1ser66z0uTYx2Rkgssnj+NcsLTH1xUElUwDMRbwhF7ivGuLe+CfqHirx/rkiIiKuxgPd59nMxNMDNE8OxOs2xyzS9iD0NBDqt73nKTMovQMPzl0bSRbUy9TQ4iI81sHA107M1CEQEzpR3RlM4Lay1ynEM+/gN80q4w/vEMgN+R44LzEt29AcKvNEyMTzx/a6SlLh4+j3QaW3PrTK2x+8wzlF7xLY8h8M00IAyS8h60fQ0zw10/QfM1U2/QASvTdJsBUB8+cdycow+xEo",
-        "scale": 0.0010076326,
+        "scale": 0.0010076325,
         "normalized": true
       }
     },
@@ -14078,7 +16680,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MyEDtmnLDCJIOjEOXfX2IT/K0dEcBeUNQTnwRyvpxtUzv0QLydgbzNIsH2QmWPU6p83kJetDG9DDsawuQg32Vn8REU/B2QUi+ukwQzXJI8DF2tMQ9BBfuDj9SVn1sOOt4Rn751a9I7HhNC3nX6nKSlUYlcAblzjRQODHtbLzLyD+BCEhHUUfINfU08zUHdgXFig810zRQtFnPxvhytkpN63GtPvljERPu/HFSbgA9DzDH2kp8ciU0LfcuxtL1Qgpz8YH+wA4CzcdrBQnOQS8LthMTOmoPMbo5y3gHxT1A58VYQzb1TjG/cbS27nKRCrg+fddrDHd+BnsHCv3zuTzMCgbtPQb+nlLJSm0ytPgyE4uzPa1/EWvpy83ID8c1RA//ci57TDkIQ3UVLk1s/cR94j7Jj5HGDw4vtotMwk23Pa7vOnDP2DI7xoDMJm9Q+G7403EzhwjwQfZrEbOumHVghYprCvWBEUo6PgQNT81Au4uqAFa3vsB39P2vbcUHh8j",
-        "scale": 0.0009505206,
+        "scale": 0.0009505205,
         "normalized": true
       }
     },
@@ -14178,7 +16780,7 @@
         ]
       },
       "reason": "涉及消费者/用户行为；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend：Feeder公开索引的标题/摘要用于筛选；未读取会员正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
@@ -14772,7 +17374,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "Ge3f1WeyHjEpF1sFf+bCIS640+UeHQUpNFrLD/ju1t5UxkcJx/5KwOH5NVUoWPpAqO6mFuM5E9miptIjOfIXKXwVCzyr5NZBzegiOi/BVNbL5O4TwUQ8qjDhFji62famuU767kPaEq/kPQDQPsy1Q1UssOP8rE7XUta0p7rjChwL/ilIKyA8Xs3ouuXcKeE7JSlmvE/ZXJ5FOkrCx9cvN8zru9nN1UFTuvbcR4oqzgrWF19CwNGOy5nX3ewuriAXptLlEegeKR3knxkrJ+DGUfopIca3Zt3W/THWDh7RJcELSSz110Xq3MbK68EDLDC/5Nke4Ev56O3kHxDI2cLkNCU2uDcU624RKDe3xcHYwigPwe/R/Gmm4UcMG0NXANxT6NHg8EDNLQP3Ob0p5vsdDqILKlgiHVM+wO42PRQLz/y5vAW3GUnm6zbqJryzOLC83Ebiyzov4Sn0xyDXzT4osTYf2iCt6kY6wwweKTgt4QRAxw9RsQPs3eQOxsUkAywz",
-        "scale": 0.0009558704,
+        "scale": 0.0009558703,
         "normalized": true
       }
     },
@@ -14888,7 +17490,7 @@
         "rule_match_strength": 1.485,
         "experience_similarity": 0.867,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -15047,7 +17649,7 @@
         "rule_match_strength": 1.172,
         "experience_similarity": 0.889,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -15119,7 +17721,7 @@
         "rule_match_strength": 1.39,
         "experience_similarity": 0.87,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -15191,7 +17793,7 @@
         "rule_match_strength": 2.348,
         "experience_similarity": 0.866,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -15905,7 +18507,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "UgfoxVXQJR8+BzEnerXMLzbKuNY3HM09N1XHMyuxz8dE0iccqu8rlfQGUEkeftg4pfjKRN47EbD6mqoMURIAJXQwTTK7zsY8/bz3QzrWIeuQs95BsyVRxnnJdlTS3+i/uGQP7CvQS6baHx2XEKW9TXsgpNADnx3Hdd/FgrLXKEDp4iRgAk5mb+/T6NvQIAxcIUdgtToOT8t/PzfPztU5U+qwmrbSjARbouzZD7ks5yLMNEgizLOEyebiyy408/MVnrXj7dFMJzsGziVLa/HHLq5BNLviL9Db5SLKBD76BY8hLCKRjSX+6eybzZgBWjysqbsvxFfV9vn3JTWwyuXpVi1Bwxki8VkLPSHQ7rzA2Egfx9yT+jrEuR0oM1Uz69Zi4LGwtB4CVh71WNY09uUlFb1E9xwaAy4k8sUGRPsGztrjrf2yFW+yHiIXLcXFPrvF2k/QrS811SL0wjLg3xcziB0t5DmREGpb271AEUc/BNsd0S1c0vjb3dUM14dTLTRW",
-        "scale": 0.0008493715,
+        "scale": 0.0008493716,
         "normalized": true
       }
     },
@@ -16169,7 +18771,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JwnS1XvL7z9LLRoWUNvaLSDNrL4dFu0xLlIDDyOq0d1RsiH+1OEUxvI2TykNZ/sfztjiOhJYJ9m0uLE0XeIZH2gtQCrs8ck02PovGRrBJuaB+voeykFFoE3XNzLa4uLAwjoS6DrjNbbgJxm9c6S3NEwfvNMMrjb4d9O/ps3FQSvo8EpEBiYxb8zv59bLLQZMQ0xU+FgDPu1FJzvLzvJFPL++jazRpSVGi/PYDdcr3iTdO2QV2Lyq6aT2vzD3w/79oLDdNNxKRkIIujstL/q0NME9PrLDP+v36D3QET3lPZXtLxTSsUPS57G6h8kmOinK1dtXyi/c7gXpFSTVqdMCC00qxRY5v1MiKyHItsPJvy0Tt9HdBWq+mA8aFUY6/8ZQv960kyngUBHqUN064ucVOacr+Dk2Aikwyd4nRwouzrvC5eamRU/NBiQFQr64G6z93UapoB5J6Dr1uRm95v8olSw3wxqa6lo409JLNExiAO08zjgo1A3g1+0moatYOTpG",
-        "scale": 0.0009038119,
+        "scale": 0.000903812,
         "normalized": true
       }
     },
@@ -16205,7 +18807,7 @@
         "signals": []
       },
       "reason": "涉及消费者/用户行为；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
@@ -16514,7 +19116,7 @@
         "signals": []
       },
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
@@ -16758,7 +19360,7 @@
         "signals": []
       },
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "knowledge_context": {
         "used": true,
@@ -17017,7 +19619,7 @@
       "content_excerpt": "世の中のほとんどのビジネスやプロダクトは、マーケットの全顧客をもれなく成長ルートに導くことはできません。カスタマーダイナミクス内での課題を明確にするために、失敗ルート（Failure route）として把握します（図4-12）。 失敗ルートの理由としては、プロダクトの独自性と便益の提案内容が、①提供すべき顧客層に届いていない（認知されていない）、②顧客層に届いているが理解されていない、③顧客ニーズに合っていない／もしくは合わなくなった、という3つがあります。その場合、「顧客心理」が変化しないので購入意向も形成されず、購入行動に移りません。 また、一時は購入していたが、競合や代替品の存在で顧客ニーズが満たせなくなってしまった、もしくは顧客を取り巻く環境変化で顧客ニーズ自体が変化した場合、顧客は離反します。 具体的には、次の5つの失敗ルートがあります。 F1 ：「セグ9 未認知顧客」の認知は獲得したが、そもそも顧客に便益と独自性が理解されなかった、またはニーズやインサイトに合わず購入意向のない「セグ8 消極 認知未購入顧客」になるルート F2 ：購入意向があったものの、様々な情報に触れたり体験したりする中で消失してしまった「セグ7 積極 認知未購入顧客」から購入意向を喪失して「セグ8 消極 認知未購入顧客」になるルート F3 ：同様に、「セグ5 積極 離反顧客」から購入意向を喪失して「セグ6 消極 離反顧客」になるルート F4 ：一般顧客からの離反で、一度は顧客化したが競合や代替品に移った、顧客側の都合でニーズ自体が消失したといった理由により「セグ3 積極 一般顧客」から購入意向を喪失した「セグ4 消極 一般顧客」経由で「セグ6 消極 離反顧客」に移行するルート F5 ：F2と同様に購入意向を喪失する動態で、「セグ1 積極 ロイヤル顧客」から「セグ2 消極 ロイヤル顧客」を経由し、セグ4の低頻度に移行する、またはセグ6へと離反するルート。長期的に売上や高い利益を支える積極ロイヤル層の離反は、ビジネスのインパクトが短期的にも長期のLTVにも最も大きい 購入意向を保ったまま頻度が減る、セグ1からセグ3への移行、そのまま離反するセグ3からセグ5への移行という動態もありますが、ここではFルートと捉えていません。 また、セグ9と、主に失敗ルートで着地するセグ8、セグ6には「（競合）（カテゴリー外）」と記しました。これらのセグメントの顧客は、自社プロダクトの対象顧客でありながら、競合商品やカテゴリー外の代替品を使っている状態です。 次項では、復帰ルートを解説します。 会員になると、既読やブックマーク（また読みたい記事）の管理ができます。今後、会員限定記事も予定しています。登録は無料です",
       "base_score": 8.15,
       "reading_score": 10.0,
-      "notion_score": 9.67,
+      "notion_score": 9.66,
       "grade": "S",
       "tags": [
         "consumer",
@@ -17057,7 +19659,7 @@
         "rule_match_strength": 1.02,
         "experience_similarity": 0.879,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.23,
@@ -17119,7 +19721,7 @@
         "rule_match_strength": 0.865,
         "experience_similarity": 0.863,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -17514,7 +20116,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "UgHW9z7tETM8JhrgXwDYGC3UytQRCOMxJ0QKSBy91+UovVEVvg4AwcgjOXMcWuM/4dPoQ+cr/8/c0a8oZBkhF39CODS/3ck4AeMbJFLeLeHh5tch6B8rtDbuTzjyweC3604H4EnAHtoRKiXIHbvLLTc0zMj8oC7OZ8LIwMXXI0/i3jQjGzsxbPf80+nXGhBQBjZA6j7kRKhAHyW04vAaK9fiiOfdqDFSqwjZHq8q8CvuGkUZ3L6zzKDDpB8i2+cO1NkU5sUNLh0F1CQ3Iu/cNZJHMbC1O8P26w/XEi3dEKnqNynD0Afb7Naw3qcHMyjXzuxEqzXC5ijsMhjDzsvcJ0IIvCAk8UoWLx/es9T3yEAy2ASs9D6j0BoLEQ85y+ot9f3fAx/a+AfmRMks1fEmALceFAsFJEEh0dEFLdosv93T3fLMQk/M9R0dHcjdRqfeuzLGzSdJ2P7n5Qn4zDcIqhEm+iCt/0Q04NspPkBg4w0FyR9i0CEUHP0n2atkCPQw",
-        "scale": 0.0010266367,
+        "scale": 0.0010266369,
         "normalized": true
       }
     },
@@ -20025,7 +22627,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "SQK8zUDeESRFD0cJYvzQMzWoocYZ/M5uSUTmUCS+3tovolsbxAU65+VAAmoxc+RFugTyWiYdE7Pxr5c9U+r6T10XHFHY0M8f1fAkNyXWIvOe6M4jyjpFqznYSk3o27+pxjAiCEPSKLn1IibtJrnYNFcuvrj+r1rRXfy+x8TkIBsW6CEjDShGUOfg2c3QJRdX+iwq4kDKXsx/ITW9zL8tPrTgs+bQolBPtOvTNbYg7iTrLFAt7dzZyMDPuAVZ3PA2ycXq6bYMJxPwzUo5QPPWALc3PK3ASqL18yC/EDrgF4gqRj7bsBr/5MjJqq8QGw3X5qA+uzXU+zH4UxPL0NrVNgcho+ox5nYsTi2z6LPcxFkSq9zr8GetsCYY60dUzuxD7t3ZDzK5GvnUU9Em2wsUIbMLHSMVODk/ttA0I/YjutjSz+nOJ1bw0h4WMZ66LMTb2UmcyD1N3jDd3xjmzj4tnTMQ5haj9Eo9te4ONzg6vAcRshNV4Pjp+skuwapADxRB",
-        "scale": 0.0009284561,
+        "scale": 0.0009284562,
         "normalized": true
       }
     },
@@ -21343,7 +23945,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "MPnNtiDwKUcrIh0EcfLQRySx2eMkAdMuNzLwETjb2uo6rzH/2+AZ6N4RNkcjcQMZygPmVf886eLWva/9et7vMn8EESSqBukw3AIMNxvZCsmiwckW/issxDPsLV7XreGs7zkX/ivUQcXzPyO2ObnMPFIe4erzrTr1QNDgt8fzHkfZ5hkoBjxHU+4H5uLiMAhNKBZQ0TbhT9NdKySx7egWNsjIqfHRtyctoNjWKuMk/zHVJVkrtfeS07XlyCYUzu4kpOflFuA1KiUFxywhRfj0Br8oCr3IHOQB+fTV8kL0/6AlHizYyCP81wTIzMPqL0kHqc1FwjPcCCX1RB3Mu9gDQjI/xxMj520HEQrW1q7t3C8+1ua83FaewkcYJy8m4gM+576/7i3GEBLxW88d8Oj8RL8iEAcKMzop3tIlFucxx9G15+fATUvSBxAAUprPELrK6izG3R1TvR/Wvx/JwVATsi0b5hrK/1k4zvolIyQ95u8lpiQ/5v79zdsDxMNHACNk",
-        "scale": 0.0010250345,
+        "scale": 0.0010250343,
         "normalized": true
       }
     },
@@ -21966,7 +24568,7 @@
       "grade": "B",
       "tags": [],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
@@ -22018,7 +24620,7 @@
         "research"
       ],
       "reason": "包含调查/数据；语义增量：可能补充证据/案例",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -22072,7 +24674,7 @@
       "grade": "C",
       "tags": [],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
@@ -22231,7 +24833,7 @@
         "marketing"
       ],
       "reason": "涉及AI实际影响；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -22287,7 +24889,7 @@
         "marketing"
       ],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
@@ -22709,7 +25311,7 @@
         "method"
       ],
       "reason": "涉及AI实际影响；可能形成可复用方法；语义增量：可能补充证据/案例",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -22819,7 +25421,7 @@
         "ec"
       ],
       "reason": "与EC/零售直接相关；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -23119,7 +25721,7 @@
         "method"
       ],
       "reason": "可能形成可复用方法；语义增量：可能补充证据/案例",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
@@ -23152,7 +25754,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "L/vfwl3ODyhYJTf/Ys7TR2ST0KYHGcNfbkXUGEPr1L8Xg1glydgYyPQwO2YfXd1LwenOSBNlGcTWrqgPawEVLnovFTO9xbxC7N4sM0rFHdmgzc/zqyNNtjj+UzrN5d6r7Ekd7jK1K4K9UxbHSrDOSjf6p9XWpUzEf+zUmbbkCCng+Sk08RY7WMTizszpZrk3QDVh2D7BQe5TOzug6rs9XrG8mOjgqEIsrdjOW90m4z3USVgy69OpyLLjsBchz/46i7fyN+NKF0QP6VFZOP+8HPQMLYm9N8bVFz/LElPaJrLdMDKwhxfm1+rNxLsAME/orddAwDLd9drmKh/LwMDrD0sWzSwl32Y0Dxy/59Dfwx4Yv7my/ly2zScrBjVe2Cw47s6p0jPWZwzhR8IPxgUPW7o0/B86EFMVrMwxZRpW3d658wStK0vz1hkLJpzANerv7VHM0Rw+yjvisAnCwh8jofkI9ym67FNEvOkxSD1r+P4sry8/sQXK2Iw2xKw+P/Ro",
-        "scale": 0.0008645624,
+        "scale": 0.0008645623,
         "normalized": true
       }
     },
@@ -23173,7 +25775,7 @@
       "grade": "B",
       "tags": [],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
@@ -23438,7 +26040,7 @@
         "marketing"
       ],
       "reason": "包含调查/数据；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -23920,7 +26522,7 @@
         "marketing"
       ],
       "reason": "涉及消费者/用户行为；涉及AI实际影响；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -24086,7 +26688,7 @@
         "method"
       ],
       "reason": "涉及AI实际影响；可能形成可复用方法；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -24672,7 +27274,7 @@
         "strategy"
       ],
       "reason": "有市场或战略判断价值；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [
@@ -24724,7 +27326,7 @@
       "grade": "B",
       "tags": [],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与实际工作场景语义接近；与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
@@ -24874,7 +27476,7 @@
       "grade": "B",
       "tags": [],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
@@ -24922,7 +27524,7 @@
       "grade": "B",
       "tags": [],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
@@ -24970,7 +27572,7 @@
       "grade": "B",
       "tags": [],
       "reason": "与核心主题相关度有限，主要作为信息雷达保留；语义增量：与既有 Knowledge 语义重复较高",
-      "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
+      "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "semantic_v6",
       "learning_features": {
         "topics": [],
@@ -26146,7 +28748,7 @@
         "rule_match_strength": 0.861,
         "experience_similarity": 0.865,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -26571,7 +29173,7 @@
         "rule_match_strength": 0.866,
         "experience_similarity": 0.868,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.56,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -26815,7 +29417,7 @@
         "rule_match_strength": 0.877,
         "experience_similarity": 0.882,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
@@ -27581,7 +30183,7 @@
         "rule_match_strength": 1.058,
         "experience_similarity": 0.871,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.85,
@@ -28901,7 +31503,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "FvvB9WX1ER8tJT/vSyffJEevpM/mFcY4OT3zSw7issgwzDsYzNALrcAYIHv6dQcm0u/LOBck8NzRtrU5OO0JPWoRESHL5+I6xucRHin8Pe691NIv0zUpuTAQLhzW1rrGAyzx5yzEYdXoRRflJ73JRC8zyrsauz7gPd75z8TsMSwHHxdEMStLW8n80Oa2BOUvCSxA1CnzJOE5NQTb4+I8VsXXu+LiwDtfy+azG9w//SHN/ztE6eWk7tHcxisK2RoywcYfEOEb/y/mziVSQPfxM7AaNdflM9MY5jznLS71/ND4JSbt0/3W/uP6q5r0GDnZ1ulBwyCp4iz3MA/wsbTUG0gHugso8S4OEhTG3tfs5jAZw9DV33/I2yEjA04mzPciBvO59j/aJN/8Y9424goIB6cg/DQo/B4mvaQjPR0PyOvD9+7YBxbv0y4rFbfJOsvU12XStTBMxigE1hTs4ko8kwoz5y254zT+7sQSEzc64d8yphJG6PjS5/MouKkwEA09",
-        "scale": 0.0010559281,
+        "scale": 0.0010559282,
         "normalized": true
       }
     },
@@ -30055,7 +32657,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "KAbh0GzcEjRYVED6N+jKI1OWyrQoBucvS0D4RibmwMw/zU0E5uwTxtj/M1sxXu1Ft97dUdpKK9bjtJsCXf31IngdMija5PtBBNktMkLfI+2z0csQ0RVJp0T0RGPIr/Wt70UG4EDMG7//JCe4aJeyOEQSs+X1nEnkWPW9sqf4/UbHA0wzJy07VO3q387RLfxFICxN7k/hQLdeSyO20t1CQsbQid71oBlBtf7CO7cj1UDjM2QVv7+B2tTQpxQZ1/0erL7i+exMKzHsyEINM+S9WO05QKHILtcH/ivIIinsGpYKUwrLyTzM37fPz7cARCPx6ctfuDC4/vfvQQrTyc3gG0EDwA0w+Xk3M0vcyNfUvVsew+TC/Wujqxf7HD461uRm4s209TnKKPDTTbkmxPQSFKsHFDQKESk6r+IzJRoxzOq119i/Nju0AzcJPaPMSbPA8Tq6pSRR60fs0zjnzjDprzoP9yXDvE4vveYbJVA57PoTviRP4Af61NEWopY9HyVM",
-        "scale": 0.0009183655,
+        "scale": 0.0009183654,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:43:18.085899+00:00"
@@ -32108,7 +34710,7 @@
         "rule_match_strength": 0.892,
         "experience_similarity": 0.9,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -32507,7 +35109,7 @@
         "rule_match_strength": 0.867,
         "experience_similarity": 0.884,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -32750,7 +35352,7 @@
         "family": "multilingual-e5",
         "dim": 384,
         "q": "JujJ3SHJGzZSEDzvSNzjNVX/x6wXGdwsPTffNDTTw9FEyTYh5tIC9AUGOlYpT9Qpz9TFRQIt/cDXocwiNeUHN3gbIkDN09IzwgjZICDyG8Ws3e9M1jNs0EfSL066z+zA2h4c8ki5OK/fICvDUJ3JVyUbxMbwgT6+QtvX0bjPH0spDDNINz9EY8nowcroL+02EUQ200UgL8M1HkfQ6MJAP528xcnuvU4poM+wQqEh/SbgHkYo/uaM6r/Wox8F3PwttuEVHuIaJiXTxDlHJPDEQuY9L6rHQ8X6DwqlZEHeJbf4TiXarAQC+Lbd7638TWML6tMioDXJBCPpHzfDvKDSDDI0tR0qGGcuNiih5MnA21EHy/O6GWrM0CE0U0FE3hs81NG97FnFGxrSON1O2fctIZUZByYZHjUMzPJIBgr1wOfAzuSpNUPq7RQHI46qVNLY1C3QxBEi2Bvv3Cvu1Tw3q08X4AXbxSgczQAWGylQ9fI1uApOvQX6wdAurYRPEiok",
-        "scale": 0.0009509562,
+        "scale": 0.000950956,
         "normalized": true
       },
       "semantic_deep_read_attempted_at": "2026-08-14T01:18:03.817036+00:00"
@@ -33930,7 +36532,7 @@
         "rule_match_strength": 1.053,
         "experience_similarity": 0.876,
         "repetition_penalty": 0.0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.0,
         "semantic_bonus": 1.31,
