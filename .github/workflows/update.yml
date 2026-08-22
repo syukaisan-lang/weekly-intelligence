@@ -17,6 +17,8 @@ on:
       - "config/sources.json"
       - "scripts/update_feeds_personalized.py"
       - "scripts/update_feeds_temporal.py"
+      - "scripts/update_feeds_coverage.py"
+      - "scripts/update_source_discovery.py"
       - "scripts/weekly_lifecycle.py"
       - "scripts/weekly_semantic.py"
       - "scripts/weekly_semantic_runtime.py"
@@ -65,7 +67,7 @@ jobs:
         run: |
           for attempt in 1 2; do
             echo "Weekly refresh attempt ${attempt}/2"
-            if python scripts/update_feeds_temporal.py; then
+            if python scripts/update_feeds_coverage.py; then
               exit 0
             fi
             if [ "$attempt" -lt 2 ]; then
@@ -91,7 +93,7 @@ jobs:
               echo "No Weekly data changes to commit"
               exit 0
             fi
-            git commit -m "Update weekly intelligence with adaptive semantic temporal v9"
+            git commit -m "Update weekly intelligence with coverage audit v19"
             if git push origin HEAD:main; then
               exit 0
             fi
