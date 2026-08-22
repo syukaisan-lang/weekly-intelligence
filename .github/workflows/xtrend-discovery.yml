@@ -1,0 +1,55 @@
+name: XTrend discovery cache
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 09:17 / 15:17 / 21:17 Japan time. Lightweight discovery only; no semantic rescoring.
+    - cron: "17 0,6,12 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update_xtrend_discovery.py"
+      - ".github/workflows/xtrend-discovery.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: xtrend-discovery-cache
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install lightweight dependencies
+        run: python -m pip install requests beautifulsoup4 feedparser python-dateutil
+      - name: Discover XTrend from official RSS and Feeder
+        run: python scripts/update_xtrend_discovery.py
+      - name: Commit rolling discovery cache safely
+        run: |
+          git config user.name "reading-dashboard-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp data/xtrend_discovery.json /tmp/xtrend-discovery.json
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/xtrend-discovery.json data/xtrend_discovery.json
+            git add data/xtrend_discovery.json
+            if git diff --cached --quiet; then
+              echo "No XTrend discovery changes"
+              exit 0
+            fi
+            git commit -m "Update XTrend rolling discovery cache"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "XTrend cache push raced; retrying ($attempt/3)"
+            sleep 2
+          done
+          exit 1
