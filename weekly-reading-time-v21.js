@@ -78,8 +78,8 @@
   function fitBudget(rows,minutes){
     if(!Number(minutes))return rows;
     const ranked=rows.slice().sort((a,b)=>{
-      const da=(focusValue(a)+(safeGrade(a)==='S'?.35:0))/Math.pow(estimateMinutes(a),.45);
-      const db=(focusValue(b)+(safeGrade(b)==='S'?.35:0))/Math.pow(estimateMinutes(b),.45);
+      const da=(focusValue(a)+(safeGrade(a)==='S' ? .35 : 0))/Math.pow(estimateMinutes(a),.45);
+      const db=(focusValue(b)+(safeGrade(b)==='S' ? .35 : 0))/Math.pow(estimateMinutes(b),.45);
       return db-da||focusValue(b)-focusValue(a);
     });
     const out=[];let used=0;
@@ -92,9 +92,13 @@
     const all=allFocusRows().filter(matchesUiFilters);
     const target=budgetMode==='30'?30:budgetMode==='60'?60:0;
     const selected=fitBudget(all,target);
-    focusCache={all,selected,target};return focusCache;
+    focusCache={all,selected,selectedIds:new Set(selected.map(a=>String(a.id))),target};return focusCache;
   }
   function invalidate(){focusCache=null;}
+
+  // Mobile performance v18 asks the v17 API for Focus rows before rendering. Replace that API
+  // with the corrected queue semantics so positive feedback is not dropped before v21 visibility runs.
+  if(window.weeklyFocusFeedbackV17)window.weeklyFocusFeedbackV17.focusRows=allFocusRows;
 
   // Replace only Focus visibility. Other views keep the existing layered visibility pipeline.
   if(typeof visible==='function'){
@@ -102,7 +106,7 @@
     visible=function(a){
       if(typeof readingProgress==='undefined'||readingProgress!=='focus')return previousVisible(a);
       if(!isFocusCandidate(a)||!matchesUiFilters(a))return false;
-      return new Set(currentFocus().selected.map(x=>String(x.id))).has(String(a.id));
+      return currentFocus().selectedIds.has(String(a.id));
     };
   }
 
