@@ -74,7 +74,10 @@
     const previousVisible=visible;
     visible=function(a){
       if(typeof readingProgress==='undefined'||readingProgress!=='later')return previousVisible(a);
-      if(!previousVisible(a))return false;
+      // Later is an explicit bookmark queue: do not run heavy personalized/semantic scoring here.
+      if(hs(a).status!=='later')return false;
+      const src=document.getElementById('sourceFilter')?.value||'all';
+      if(src!=='all'&&a.source!==src)return false;
       return model().sets[mode].has(String(a.id));
     };
   }
@@ -131,8 +134,18 @@
   if(typeof renderArticles==='function'){
     const previousRender=renderArticles;
     renderArticles=function(){
-      if(typeof readingProgress!=='undefined'&&readingProgress==='later')model();
-      previousRender();updatePanel();annotateCards();
+      const isLater=typeof readingProgress!=='undefined'&&readingProgress==='later';
+      if(!isLater){previousRender();updatePanel();return;}
+      const m=model(),ordered=(m[mode]||m.recycle),ids=new Set(ordered.map(a=>String(a.id))),full=Array.isArray(data?.articles)?data.articles:[];
+      const arranged=[...ordered,...full.filter(a=>!ids.has(String(a.id)))];
+      const sortToggle=document.getElementById('personalizedSort'),wasChecked=!!sortToggle?.checked;
+      // Preserve the user's global sort setting, but render Later from the lightweight cached order.
+      try{
+        data.articles=arranged;if(sortToggle)sortToggle.checked=false;previousRender();
+      }finally{
+        data.articles=full;if(sortToggle)sortToggle.checked=wasChecked;
+      }
+      updatePanel();annotateCards();
     };
   }
   if(typeof setProgress==='function'){
