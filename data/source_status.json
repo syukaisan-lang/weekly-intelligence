@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-28T12:03:27.910580+00:00",
-  "expected_sources": 17,
-  "successful_sources": 17,
+  "generated_at": "2026-08-28T22:04:44.523600+00:00",
+  "expected_sources": 16,
+  "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 394,
-  "deduped_count": 394,
-  "deep_read_count": 76,
+  "raw_new_count": 4,
+  "deduped_count": 4,
+  "deep_read_count": 0,
   "sources": [
     {
       "name": "CNET Japan 最新情報　総合",
       "status": "ok",
-      "new_count": 59,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -34,7 +34,7 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 31,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -58,7 +58,7 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 63,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -94,7 +94,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 6,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -106,7 +106,7 @@
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -118,7 +118,7 @@
     {
       "name": "ITmedia マーケティング 最新記事一覧",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -128,25 +128,9 @@
       "coverage_errors": []
     },
     {
-      "name": "MarkeZine:新着一覧",
-      "status": "ok",
-      "new_count": 49,
-      "error": null,
-      "coverage_status": "partial",
-      "coverage_methods": [
-        "feed_cache",
-        "markezine_feeder"
-      ],
-      "coverage_cached_count": 79,
-      "coverage_errors": [
-        "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
-        "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
-      ]
-    },
-    {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 11,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -161,7 +145,7 @@
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 5,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -173,7 +157,7 @@
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 40,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -197,19 +181,19 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 52,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 73,
+      "coverage_cached_count": 75,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 74,
+      "new_count": 2,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -223,8 +207,8 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 895,
-  "semantic_deep_read_count": 2,
+  "semantic_rescored_count": 816,
+  "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -236,23 +220,23 @@
       "B"
     ],
     "trusted_status_origin": "human_v10",
-    "active_count": 11,
-    "cold_count": 6,
-    "probe_count": 0,
-    "probe_skipped_count": 0
+    "active_count": 10,
+    "cold_count": 5,
+    "probe_count": 2,
+    "probe_skipped_count": 1
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 996,
+    "hot_count": 1000,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-08-28T11:59:24.023573+00:00",
+    "generated_at": "2026-08-28T22:03:26.199702+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
     "cached_count": 10,
-    "partial_count": 1,
+    "partial_count": 0,
     "unverified_count": 3,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
