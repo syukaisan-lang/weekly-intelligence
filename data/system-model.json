@@ -1,6 +1,6 @@
 {
   "meta": {
-    "snapshot_at": "2026-08-28T21:59:11.426304+00:00",
+    "snapshot_at": "2026-08-28T22:04:49.035482+00:00",
     "schema_version": 1,
     "encrypted_full_data": true,
     "rule_count": 142,
@@ -13,8 +13,8 @@
       "guardrail": 7
     },
     "maturity": {
-      "observed": 122,
-      "hypothesis": 20
+      "observed": 123,
+      "hypothesis": 19
     }
   },
   "gap_count": 40
