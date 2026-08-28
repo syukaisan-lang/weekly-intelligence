@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-28T22:04:44.523600+00:00",
+  "generated_at": "2026-08-28T22:09:38.052881+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 4,
-  "deduped_count": 4,
+  "raw_new_count": 0,
+  "deduped_count": 0,
   "deep_read_count": 0,
   "sources": [
     {
@@ -181,7 +181,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -193,7 +193,7 @@
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -231,7 +231,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-08-28T22:03:26.199702+00:00",
+    "generated_at": "2026-08-28T22:08:14.573524+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
