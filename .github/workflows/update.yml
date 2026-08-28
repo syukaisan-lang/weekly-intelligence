@@ -1,6 +1,5 @@
 name: Update feeds
 
-# manual refresh trigger: 2026-08-21 JST
 on:
   workflow_dispatch:
   schedule:
@@ -10,6 +9,7 @@ on:
     workflows:
       - "Sync Notion knowledge"
       - "Sync personal work system"
+      - "Source discovery cache"
     types: [completed]
   push:
     branches: [main]
@@ -27,6 +27,7 @@ on:
       - "data/knowledge.enc.json"
       - "data/system-model.enc.json"
       - "data/semantic-index.enc.json"
+      - "data/source_discovery.json"
       - ".github/workflows/update.yml"
 
 permissions:
