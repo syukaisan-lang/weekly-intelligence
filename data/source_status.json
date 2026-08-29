@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-29T01:33:22.612759+00:00",
+  "generated_at": "2026-08-29T01:37:18.394350+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 2,
-  "deduped_count": 2,
+  "raw_new_count": 0,
+  "deduped_count": 0,
   "deep_read_count": 0,
   "sources": [
     {
@@ -181,7 +181,7 @@
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -219,7 +219,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-08-29T01:32:08.920238+00:00",
+    "generated_at": "2026-08-29T01:36:07.475581+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
