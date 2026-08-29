@@ -7,6 +7,7 @@ from types import SimpleNamespace
 
 import update_feeds_temporal as t
 import update_source_discovery as discovery
+import enrich_xtrend_reading_time as xtrend_reading
 
 CACHE_PATH = t.p.base.ROOT / 'data' / 'source_discovery.json'
 _original_fetch_feed = t.p.base.fetch_feed
@@ -124,6 +125,7 @@ def main():
 
     t.p.base.main()
     t.enrich_xtrend_from_feeder_cache()
+    xtrend_reading.apply_reading_times()
     t.lifecycle.refresh_hot_only(t.p.refresh_existing_scores)
     t.mark_version()
     storage_counts = t.lifecycle.compact_articles()
