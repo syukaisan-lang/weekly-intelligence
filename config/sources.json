@@ -1,11 +1,5 @@
 [
   {
-    "name": "CNET Japan 最新情報　総合",
-    "url": "http://feed.japan.cnet.com/rss/index.rdf",
-    "category": "家電情報",
-    "priority": "low"
-  },
-  {
     "name": "ECデータラボ | 株式会社Nint (ニント)",
     "url": "http://ecdatalab.nint.jp/feed/",
     "category": "Marketing",
