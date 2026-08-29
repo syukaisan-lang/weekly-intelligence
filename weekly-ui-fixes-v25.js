@@ -1,4 +1,4 @@
-// Weekly v25: stable status counts + simpler Later reading view + final UI reconciliation.
+// Weekly v25.1: stable status counts + Later reading summary styled like priority reading.
 (() => {
   const JST=9*60*60*1000;
   const NEGATIVE=new Set(['bad','less']);
@@ -98,13 +98,23 @@
       data.articles=allRows();api.invalidate?.();return api.model();
     }catch(_){return null;}finally{data.articles=original;}
   }
+  function ensureLaterSummary(){
+    let quick=document.getElementById('weeklyLaterQuickSummary');
+    if(quick)return quick;
+    const list=document.getElementById('articleList');if(!list)return null;
+    quick=document.createElement('div');quick.id='weeklyLaterQuickSummary';quick.className='later-quick-summary reading-budget-panel';quick.hidden=true;
+    const manager=document.getElementById('weeklyLaterManager');
+    if(manager)manager.insertAdjacentElement('afterend',quick);else list.insertAdjacentElement('beforebegin',quick);
+    return quick;
+  }
   function decorateLater(){
     const active=laterScope();
     document.body.classList.toggle('weekly-later-view',active);
     const knowledgeCard=document.getElementById('knowledgeRelationUnlockCard');
-    if(knowledgeCard)knowledgeCard.classList.toggle('hidden',active||knowledgeCard.classList.contains('hidden'));
+    if(knowledgeCard&&active)knowledgeCard.classList.add('hidden');
     document.querySelectorAll('#articleList .related-knowledge').forEach(x=>{x.style.display=active?'none':'';});
-    if(!active)return;
+    const quick=ensureLaterSummary();
+    if(!active){if(quick)quick.hidden=true;return;}
 
     const directLater=typeof readingProgress!=='undefined'&&readingProgress==='later';
     const model=directLater?laterModelFull():null;
@@ -116,14 +126,14 @@
     const total=document.querySelector('#weeklyLaterManager .later-manager-total');
     if(total)total.textContent=`共 ${all.length} 篇 · ≈${allMins} 分钟`;
     const note=document.querySelector('#weeklyLaterManager .later-manager-note');
-    if(note)note.textContent=`当前 ${rows.length} 篇 · 预计约 ${mins} 分钟。按需要回看，不做知识库关联。`;
+    if(note)note.textContent=`当前 ${rows.length} 篇 · 预计约 ${mins} 分钟。`;
     const vc=document.getElementById('visibleCount');
     if(vc)vc.textContent=`${rows.length} 篇 · ≈${mins}分钟`;
 
-    let quick=document.getElementById('weeklyLaterQuickSummary');
-    const head=document.querySelector('#articleList')?.previousElementSibling;
-    if(!quick&&head){quick=document.createElement('div');quick.id='weeklyLaterQuickSummary';quick.className='later-quick-summary';head.insertAdjacentElement('afterend',quick);}
-    if(quick){quick.hidden=false;quick.textContent=`稍后看：${rows.length} 篇 · 预计约 ${mins} 分钟 · 仅保留简短提示，不加载知识关联。`;}
+    if(quick){
+      quick.hidden=false;
+      quick.innerHTML=`<div class="reading-budget-summary"><b>${rows.length} 篇</b> · 预计约 <b>${mins} 分钟</b><span>全部稍后看：${all.length} 篇 · 约 ${allMins} 分钟</span></div><div class="reading-budget-note">稍后看只保留预计阅读时间和简短提示，不加载 Knowledge / Work System 关联。</div>`;
+    }
 
     document.querySelectorAll('#articleList .article').forEach(card=>{
       const a=articleFromCard(card);if(!a)return;
