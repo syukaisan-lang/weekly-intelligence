@@ -18,7 +18,7 @@
     if(status==='later')return 'later';
     if(status==='skip')return 'skip';
     if(status==='read'||status==='save'||NEGATIVE.has(s.feedback))return 'done';
-    return safeGrade(a)==='C'?'c':'queue';
+    return ['S','A'].includes(safeGrade(a))?'queue':'c';
   }
   function weekStartMs(){
     const jst=new Date(Date.now()+JST),weekday=(jst.getUTCDay()+6)%7;
@@ -27,6 +27,11 @@
   function seenMs(a){const x=Date.parse(a?.first_seen||a?.published||a?.date||'');return Number.isFinite(x)?x:0;}
   function isThisWeek(a){return seenMs(a)>=weekStartMs();}
   function marked(a){const s=hs(a);return (s.status||'new')!=='new'||!!s.feedback;}
+  function laterScope(){
+    const rp=typeof readingProgress!=='undefined'?readingProgress:'';
+    const sf=document.getElementById('statusFilter')?.value||'all';
+    return rp==='later'||sf==='later';
+  }
 
   function topCounts(){
     const rows=allRows();
@@ -82,6 +87,10 @@
     const text=first||s;
     return text.length>58?text.slice(0,58)+'…':text;
   }
+  function currentLaterRows(){
+    const rows=allRows().filter(a=>hs(a).status==='later');
+    return rows.filter(a=>{try{return typeof visible==='function'?visible(a):true;}catch(_){return true;}});
+  }
   function laterModelFull(){
     const api=window.weeklyLaterManagerV23;if(!api?.model)return null;
     const original=data.articles;
@@ -90,19 +99,31 @@
     }catch(_){return null;}finally{data.articles=original;}
   }
   function decorateLater(){
-    const active=typeof readingProgress!=='undefined'&&readingProgress==='later';
+    const active=laterScope();
     document.body.classList.toggle('weekly-later-view',active);
+    const knowledgeCard=document.getElementById('knowledgeRelationUnlockCard');
+    if(knowledgeCard)knowledgeCard.classList.toggle('hidden',active||knowledgeCard.classList.contains('hidden'));
+    document.querySelectorAll('#articleList .related-knowledge').forEach(x=>{x.style.display=active?'none':'';});
     if(!active)return;
 
-    const model=laterModelFull();
+    const directLater=typeof readingProgress!=='undefined'&&readingProgress==='later';
+    const model=directLater?laterModelFull():null;
     const activeMode=document.querySelector('#weeklyLaterManager [data-later-mode].active')?.dataset?.laterMode||'recycle';
-    const rows=model?.[activeMode]||model?.recycle||[];
+    const rows=directLater?(model?.[activeMode]||model?.recycle||[]):currentLaterRows();
     const all=model?.all||allRows().filter(a=>hs(a).status==='later');
     const mins=rows.reduce((n,a)=>n+estimateMinutes(a),0),allMins=all.reduce((n,a)=>n+estimateMinutes(a),0);
+
     const total=document.querySelector('#weeklyLaterManager .later-manager-total');
     if(total)total.textContent=`共 ${all.length} 篇 · ≈${allMins} 分钟`;
     const note=document.querySelector('#weeklyLaterManager .later-manager-note');
     if(note)note.textContent=`当前 ${rows.length} 篇 · 预计约 ${mins} 分钟。按需要回看，不做知识库关联。`;
+    const vc=document.getElementById('visibleCount');
+    if(vc)vc.textContent=`${rows.length} 篇 · ≈${mins}分钟`;
+
+    let quick=document.getElementById('weeklyLaterQuickSummary');
+    const head=document.querySelector('#articleList')?.previousElementSibling;
+    if(!quick&&head){quick=document.createElement('div');quick.id='weeklyLaterQuickSummary';quick.className='later-quick-summary';head.insertAdjacentElement('afterend',quick);}
+    if(quick){quick.hidden=false;quick.textContent=`稍后看：${rows.length} 篇 · 预计约 ${mins} 分钟 · 仅保留简短提示，不加载知识关联。`;}
 
     document.querySelectorAll('#articleList .article').forEach(card=>{
       const a=articleFromCard(card);if(!a)return;
@@ -113,10 +134,16 @@
       let hint=card.querySelector('.later-quick-hint');
       if(!hint){hint=document.createElement('div');hint.className='later-quick-hint';const scoresNode=card.querySelector('.scores');(scoresNode||card.querySelector('.article-title'))?.insertAdjacentElement('afterend',hint);}
       if(hint)hint.textContent=`提示：${shortHint(a)}`;
+      card.querySelectorAll('.related-knowledge').forEach(x=>x.style.display='none');
     });
   }
 
-  function finalize(){rememberFullRows();repairProgressCounts();decorateLater();}
+  function clearLaterDecorations(){
+    if(laterScope())return;
+    const quick=document.getElementById('weeklyLaterQuickSummary');if(quick)quick.hidden=true;
+    document.querySelectorAll('#articleList .related-knowledge').forEach(x=>x.style.display='');
+  }
+  function finalize(){rememberFullRows();repairProgressCounts();decorateLater();clearLaterDecorations();}
 
   if(typeof updateProgressTabs==='function'){
     const previous=updateProgressTabs;
@@ -133,9 +160,9 @@
   ['gradeFilter','statusFilter','sourceFilter','personalizedSort'].forEach(id=>document.getElementById(id)?.addEventListener('change',()=>setTimeout(finalize,0)));
   document.addEventListener('click',e=>{if(e.target.closest('[data-later-mode]'))setTimeout(finalize,0);});
 
-  const observer=new MutationObserver(()=>{if(typeof readingProgress!=='undefined'&&readingProgress==='later')decorateLater();});
+  const observer=new MutationObserver(()=>{if(laterScope())decorateLater();});
   const list=document.getElementById('articleList');if(list)observer.observe(list,{childList:true,subtree:false});
 
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(finalize,0));else setTimeout(finalize,0);
-  window.weeklyUiFixesV25={allRows,repairProgressCounts,decorateLater};
+  window.weeklyUiFixesV25={allRows,repairProgressCounts,decorateLater,laterScope,currentLaterRows};
 })();
