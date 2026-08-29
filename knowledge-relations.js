@@ -7,6 +7,11 @@
     evidence:[['一次数据',/独自調査|自社調査|アンケート|実証|実験|統計|一次データ/i],['案例',/事例|ケーススタディ|導入事例|成功事例/i],['方法论',/フレームワーク|手法|プロセス|方法論|モデル/i]]
   };
   const STOP=new Set(['について','による','ため','とは','から','まで','する','した','して','いる','ある','ない','これ','それ','最新','公開','解説','ポイント','方法','実践','記事','マーケティング','business','japan']);
+  function isLaterScope(){
+    const rp=typeof readingProgress!=='undefined'?readingProgress:'';
+    const sf=document.getElementById('statusFilter')?.value||'all';
+    return rp==='later'||sf==='later';
+  }
   function kText(k){return `${k.title||''} ${k.summary||''} ${k.page_body||''} ${(k.comments||[]).map(c=>c.text||'').join(' ')}`;}
   function aText(a){return `${a.title||''} ${a.summary||''} ${a.reason||''} ${a.content_excerpt||''} ${(a.concepts||[]).join(' ')}`;}
   function rText(r){return `${r.domain||''} ${r.title||''} ${r.decision_rule||''} ${r.when||''} ${(r.questions||[]).join(' ')} ${(r.steps||[]).join(' ')} ${(r.metrics||[]).join(' ')} ${(r.traps||[]).join(' ')} ${(r.tensions||[]).join(' ')} ${(r.keywords||[]).join(' ')}`;}
@@ -40,6 +45,7 @@
   }
   function clearRelations(){document.querySelectorAll('.related-knowledge').forEach(x=>x.remove());}
   function inject(){
+    if(isLaterScope()){clearRelations();return;}
     if(!knowledge||knowledge.locked||typeof data==='undefined'||!Array.isArray(data.articles))return;
     document.querySelectorAll('#articleList .article').forEach(card=>{
       if(card.querySelector('.related-knowledge'))return;
@@ -57,14 +63,17 @@
   }
   function showUnlock(show){document.getElementById('knowledgeRelationUnlockCard')?.classList.toggle('hidden',!show);}
   async function load(promptUser=false){
+    if(!promptUser&&isLaterScope()){clearRelations();showUnlock(false);return;}
     if(typeof loadKnowledgeData!=='function')return;
     const k=await loadKnowledgeData({prompt:promptUser});
-    if(k.locked){knowledge=null;systemModel=null;showUnlock(!!k.meta?.encrypted_full_data);return;}
+    if(k.locked){knowledge=null;systemModel=null;showUnlock(!!k.meta?.encrypted_full_data&&!isLaterScope());return;}
     knowledge=k;showUnlock(false);
     try{if(typeof loadSystemModelData==='function'){const s=await loadSystemModelData({prompt:false});systemModel=s?.locked?null:s;}}catch(e){systemModel=null;}
     clearRelations();inject();
   }
   const oldRender=renderArticles;renderArticles=function(){oldRender();setTimeout(inject,0);};
-  document.getElementById('unlockWeeklyKnowledge')?.addEventListener('click',()=>load(true));
+  document.getElementById('unlockWeeklyKnowledge')?.addEventListener('click',()=>{if(!isLaterScope())load(true);});
+  document.getElementById('statusFilter')?.addEventListener('change',()=>{if(isLaterScope()){clearRelations();showUnlock(false);}else if(!knowledge)load(false);});
+  document.querySelectorAll('[data-progress]').forEach(btn=>btn.addEventListener('click',()=>setTimeout(()=>{if(isLaterScope()){clearRelations();showUnlock(false);}else if(!knowledge)load(false);},0)));
   load(false);
 })();
