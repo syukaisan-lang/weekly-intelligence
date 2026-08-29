@@ -22,7 +22,6 @@
     const fs=formats(a).join(' '),ss=signals(a).join(' '),summary=String(a?.summary||'');
     let mins=0;
     if(a?.content_checked&&chars>0){
-      // Stored excerpts are capped around 5k chars. Treat a full cap as a lower-bound signal for a longer article.
       if(!a?.content_char_count&&chars>=4800)chars=6500;
       mins=chars/600;
       if(/調査レポート|インタビュー|対談/.test(fs))mins*=1.12;
@@ -53,10 +52,10 @@
   }
   function isFocusCandidate(a){
     const s=hs(a),g=safeGrade(a),ts=articleTs(a);
-    if(!['S','A','B'].includes(g))return false;
+    // Priority reading is intentionally S/A only. B remains available in normal/all views.
+    if(!['S','A'].includes(g))return false;
     if(NEGATIVE.has(s.feedback))return false;
     if(['later','read','save','skip'].includes(s.status))return false;
-    // Positive feedback is recommendation training only; it remains unread and can stay in Focus.
     if(s.feedback&&!POSITIVE.has(s.feedback))return false;
     if(ts&&Date.now()-ts>=7*DAY)return false;
     return true;
@@ -70,7 +69,7 @@
     const gf=document.getElementById('gradeFilter')?.value||'SAB',src=document.getElementById('sourceFilter')?.value||'all',sf=document.getElementById('statusFilter')?.value||'all',g=safeGrade(a);
     if(gf==='SA'&&!['S','A'].includes(g))return false;
     if(['S','A','B'].includes(gf)&&g!==gf)return false;
-    if(gf==='SAB'&&!['S','A','B'].includes(g))return false;
+    if(gf==='SAB'&&!['S','A'].includes(g))return false;
     if(src!=='all'&&a.source!==src)return false;
     if(!['all','queue'].includes(sf))return false;
     return true;
@@ -96,11 +95,8 @@
   }
   function invalidate(){focusCache=null;}
 
-  // Mobile performance v18 asks the v17 API for Focus rows before rendering. Replace that API
-  // with the corrected queue semantics so positive feedback is not dropped before v21 visibility runs.
   if(window.weeklyFocusFeedbackV17)window.weeklyFocusFeedbackV17.focusRows=allFocusRows;
 
-  // Replace only Focus visibility. Other views keep the existing layered visibility pipeline.
   if(typeof visible==='function'){
     const previousVisible=visible;
     visible=function(a){
@@ -125,7 +121,7 @@
   function ensurePanel(){
     let panel=document.getElementById('weeklyReadingBudget');if(panel)return panel;
     panel=document.createElement('div');panel.id='weeklyReadingBudget';panel.className='reading-budget-panel';
-    panel.innerHTML='<div class="reading-budget-summary"></div><div class="reading-budget-buttons"><button type="button" data-budget="all">全部优先</button><button type="button" data-budget="30">30分钟可读</button><button type="button" data-budget="60">60分钟可读</button></div><div class="reading-budget-note">时间为估算；有正文时按日文约600字符/分钟，并对调查/访谈增加阅读成本。无正文时按文章类型估算。</div>';
+    panel.innerHTML='<div class="reading-budget-summary"></div><div class="reading-budget-buttons"><button type="button" data-budget="all">全部优先</button><button type="button" data-budget="30">30分钟可读</button><button type="button" data-budget="60">60分钟可读</button></div><div class="reading-budget-note">优先阅读仅包含 S/A；时间为估算。有正文时按日文约600字符/分钟，并对调查/访谈增加阅读成本。</div>';
     const hint=document.getElementById('weeklyAttentionHint');
     if(hint)hint.insertAdjacentElement('afterend',panel);else document.querySelector('#articleList')?.previousElementSibling?.appendChild(panel);
     panel.querySelectorAll('[data-budget]').forEach(btn=>btn.addEventListener('click',()=>{
@@ -140,11 +136,11 @@
     const active=typeof readingProgress!=='undefined'&&readingProgress==='focus';panel.hidden=!active;
     panel.querySelectorAll('[data-budget]').forEach(b=>b.classList.toggle('active',b.dataset.budget===budgetMode));
     const summary=panel.querySelector('.reading-budget-summary');
-    if(summary)summary.innerHTML=active?`<b>${cur.selected.length} 篇</b> · 预计约 <b>${selMin} 分钟</b>${cur.target?` / ${cur.target} 分钟预算`:''}<span>全部优先：${focus.length} 篇 · 约 ${allMin} 分钟</span>`:'';
+    if(summary)summary.innerHTML=active?`<b>${cur.selected.length} 篇</b> · 预计约 <b>${selMin} 分钟</b>${cur.target?` / ${cur.target} 分钟预算`:''}<span>全部优先 S/A：${focus.length} 篇 · 约 ${allMin} 分钟</span>`:'';
     const vc=document.getElementById('visibleCount');if(active&&vc)vc.textContent=`${cur.selected.length} 篇 · ≈${selMin}分钟`;
     const tab=document.querySelector('[data-progress="focus"] .segment-count');if(tab)tab.textContent=String(allFocusRows().length);
     const hint=document.getElementById('weeklyAttentionHint');
-    if(active&&hint)hint.textContent=cur.target?`优先阅读：按个人价值与预计阅读成本组合出 ${cur.target} 分钟内价值更高的一组文章。`:`优先阅读：${focus.length} 篇预计约 ${allMin} 分钟；可切换 30 / 60 分钟阅读预算。`;
+    if(active&&hint)hint.textContent=cur.target?`优先阅读仅看 S/A：按个人价值与预计阅读成本组合出 ${cur.target} 分钟内价值更高的一组文章。`:`优先阅读仅看 S/A：${focus.length} 篇预计约 ${allMin} 分钟；可切换 30 / 60 分钟阅读预算。`;
   }
 
   if(typeof renderArticles==='function'){
@@ -158,7 +154,6 @@
   for(const id of ['gradeFilter','statusFilter','sourceFilter'])document.getElementById(id)?.addEventListener('change',invalidate,{capture:true});
   document.getElementById('personalizedSort')?.addEventListener('change',invalidate,{capture:true});
 
-  // Initial paint may already have happened before this late enhancement loads.
   if(typeof renderArticles==='function')renderArticles();
   window.weeklyReadingTimeV21={estimateMinutes,allFocusRows,currentFocus,fitBudget,invalidate};
 })();
