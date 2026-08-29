@@ -1,8 +1,8 @@
-// v14.3: final filter guard + live faceted counts, aligned with S/A-only queue semantics.
+// v14.4: final filter guard + live faceted counts, aligned with S/A-only queue semantics.
 (() => {
   const SEMANTIC_STATUS=new Set(['queue','later','done','skip','c']);
   const NEGATIVE=new Set(['bad','less']);
-  function gradeAllowed(filter,g){if(filter==='ALL')return true;if(filter==='SAB')return ['S','A','B'].includes(g);if(filter==='SA')return ['S','A'].includes(g);return g===filter;}
+  function gradeAllowed(filter,g){if(filter==='ALL')return true;if(filter==='SA')return ['S','A'].includes(g);return g===filter;}
   function human(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
   function semanticBucket(a){
     if(window.weeklyReconciliationV16?.bucket)return window.weeklyReconciliationV16.bucket(a);
@@ -11,6 +11,13 @@
     if(status==='read'||status==='save'||NEGATIVE.has(s.feedback))return 'done';
     let g='C';try{g=grade(score(a));}catch(_){}return ['S','A'].includes(g)?'queue':'c';
   }
+  function installGradeOptions(){
+    const sel=document.getElementById('gradeFilter');if(!sel)return;
+    const old=sel.value;
+    sel.innerHTML='<option value="SA">S + A</option><option value="S">只看 S</option><option value="A">只看 A</option><option value="B">只看 B</option><option value="ALL">全部</option>';
+    const mapped=old==='SAB'?'SA':old;
+    sel.value=[...sel.options].some(o=>o.value===mapped)?mapped:'SA';
+  }
   function installStatusOptions(){
     const sel=document.getElementById('statusFilter');if(!sel)return;
     const old=sel.value;
@@ -18,7 +25,7 @@
     const mapped={new:'queue',read:'done',save:'done'}[old]||old;
     sel.value=[...sel.options].some(o=>o.value===mapped)?mapped:'all';
   }
-  installStatusOptions();
+  installGradeOptions();installStatusOptions();
 
   if(typeof visible==='function'){
     const previousVisible=visible;
@@ -30,7 +37,7 @@
         try{base=previousVisible(a);}finally{sfEl.value=old;}
       }else base=previousVisible(a);
       if(!base)return false;
-      const gf=document.getElementById('gradeFilter')?.value||'ALL';
+      const gf=document.getElementById('gradeFilter')?.value||'SA';
       let g='C';try{g=grade(score(a));}catch(_){}
       if(!gradeAllowed(gf,g))return false;
       if(SEMANTIC_STATUS.has(sf)&&semanticBucket(a)!==sf)return false;
@@ -39,7 +46,7 @@
   }
 
   const labels={
-    gradeFilter:{SAB:'S + A + B',SA:'S + A',S:'只看 S',A:'只看 A',B:'只看 B',ALL:'全部'},
+    gradeFilter:{SA:'S + A',S:'只看 S',A:'只看 A',B:'只看 B',ALL:'全部'},
     statusFilter:{all:'全部状态',queue:'待处理 S/A',later:'稍后看',done:'已处理/保存',skip:'已跳过',c:'B/C隐藏'},
   };
   function plainLabel(selectId,opt){const fixed=labels[selectId]?.[opt.value];if(fixed)return fixed;if(selectId==='sourceFilter'){if(opt.value==='all')return '全部来源';return opt.dataset.baseLabel||opt.textContent.replace(/\s*\(\d+\)\s*$/,'');}return opt.textContent.replace(/\s*\(\d+\)\s*$/,'');}
