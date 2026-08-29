@@ -1,4 +1,4 @@
-// Weekly v11 attention: rolling preference memory + adaptive S/A/B attention budget.
+// Weekly v11.1 attention: rolling preference memory + adaptive S/A attention budget.
 (() => {
   const FEEDBACK_WINDOW_MS=84*24*60*60*1000;
   const MIN_BUDGET=8, BASE_BUDGET=14, MAX_BUDGET=20;
@@ -32,8 +32,6 @@
       else if(fb==='less')m+=1;
       else if(fb==='bad')m+=.55;
       if(status==='save')p+=.8;
-      // A feedback click now auto-marks read. Only an explicit read-status action carries
-      // a small positive signal; negative feedback must not be cancelled by auto-read.
       else if(status==='read'&&s.status_action==='status'&&!['bad','less'].includes(fb))p+=.2;
       else if(status==='skip')m+=.7;
       if(p||m){pos+=p;neg+=m;n++;}
@@ -42,8 +40,10 @@
   }
   function queueUnread(a){
     const api=window.weeklySourceAuditV11||window.weeklySourceAuditV10;
-    if(api?.isRecommendedUnread)return api.isRecommendedUnread(a);
-    return progressBucketFor(a)==='unread'&&['S','A','B'].includes(grade(score(a)));
+    if(api?.isRecommendedUnread){
+      try{return api.isRecommendedUnread(a)&&['S','A'].includes(grade(score(a)));}catch(_){}
+    }
+    return progressBucketFor(a)==='unread'&&['S','A'].includes(grade(score(a)));
   }
   function attentionBudget(){
     const f=feedbackStats();let b=BASE_BUDGET;
@@ -81,14 +81,16 @@
     const cards=[...document.querySelectorAll('#articleList .article')];
     const budget=attentionBudget();let kept=0;
     for(const card of cards){
-      const a=articleForCard(card),isS=a&&grade(score(a))==='S';
-      const show=isS||kept<budget;
+      const a=articleForCard(card);
+      const eligible=a&&['S','A'].includes(grade(score(a)));
+      const isS=eligible&&grade(score(a))==='S';
+      const show=eligible&&(isS||kept<budget);
       card.style.display=show?'':'none';if(show)kept++;
     }
     const shown=cards.filter(c=>c.style.display!=='none').length;
     const vc=document.getElementById('visibleCount');if(vc)vc.textContent=`${shown} 篇待处理${cards.length>shown?` / ${cards.length} 候选`:''}`;
     const f=feedbackStats();
-    if(hint)hint.textContent=`动态注意力预算：本周优先显示约 ${budget} 篇 S/A/B；最近12周反馈会滚动调整内容与数量，S级始终保留，C不进入处理队列。${f.n<4?' 当前反馈样本较少，先使用中性预算。':''}`;
+    if(hint)hint.textContent=`动态注意力预算：优先显示约 ${budget} 篇 S/A；最近12周反馈会滚动调整内容与数量，S级始终保留，B/C 不进入优先队列。${f.n<4?' 当前反馈样本较少，先使用中性预算。':''}`;
   }
   renderArticles=function(){baseRender();applyBudget();};
 
