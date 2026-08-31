@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-30T12:28:57.945243+00:00",
-  "expected_sources": 15,
-  "successful_sources": 15,
+  "generated_at": "2026-08-31T00:29:32.202677+00:00",
+  "expected_sources": 14,
+  "successful_sources": 14,
   "failed_sources": [],
-  "raw_new_count": 1,
-  "deduped_count": 1,
-  "deep_read_count": 0,
+  "raw_new_count": 30,
+  "deduped_count": 30,
+  "deep_read_count": 4,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,13 +22,13 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 51,
+      "coverage_cached_count": 52,
       "coverage_errors": []
     },
     {
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 93,
+      "coverage_cached_count": 94,
       "coverage_errors": []
     },
     {
@@ -82,13 +82,13 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 12,
+      "coverage_cached_count": 13,
       "coverage_errors": []
     },
     {
@@ -118,7 +118,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -127,31 +127,19 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 25,
+      "coverage_cached_count": 26,
       "coverage_errors": []
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 15,
-      "coverage_errors": []
-    },
-    {
-      "name": "ネットショップ担当者フォーラム",
-      "status": "ok",
-      "new_count": 0,
-      "error": null,
-      "coverage_status": "cached",
-      "coverage_methods": [
-        "feed_cache"
-      ],
-      "coverage_cached_count": 68,
+      "coverage_cached_count": 16,
       "coverage_errors": []
     },
     {
@@ -169,19 +157,19 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 8,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 80,
+      "coverage_cached_count": 88,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 17,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -195,8 +183,8 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 702,
-  "semantic_deep_read_count": 0,
+  "semantic_rescored_count": 659,
+  "semantic_deep_read_count": 1,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -211,19 +199,19 @@
     "active_count": 10,
     "cold_count": 4,
     "probe_count": 2,
-    "probe_skipped_count": 1
+    "probe_skipped_count": 2
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1012,
+    "hot_count": 1042,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-08-30T12:27:50.979490+00:00",
+    "generated_at": "2026-08-31T00:28:12.130199+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
-    "cached_count": 9,
+    "cached_count": 8,
     "partial_count": 0,
     "unverified_count": 3,
     "meaning": {
