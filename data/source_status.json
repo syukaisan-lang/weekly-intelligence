@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-31T00:29:32.202677+00:00",
+  "generated_at": "2026-08-31T06:29:13.862123+00:00",
   "expected_sources": 14,
   "successful_sources": 14,
   "failed_sources": [],
-  "raw_new_count": 30,
-  "deduped_count": 30,
+  "raw_new_count": 27,
+  "deduped_count": 27,
   "deep_read_count": 4,
   "sources": [
     {
@@ -22,13 +22,13 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 4,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 52,
+      "coverage_cached_count": 56,
       "coverage_errors": []
     },
     {
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 10,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 94,
+      "coverage_cached_count": 104,
       "coverage_errors": []
     },
     {
@@ -82,7 +82,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -118,7 +118,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 2,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -127,13 +127,13 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 26,
+      "coverage_cached_count": 28,
       "coverage_errors": []
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -157,19 +157,19 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 8,
+      "new_count": 7,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 88,
+      "coverage_cached_count": 95,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 17,
+      "new_count": 4,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -183,8 +183,8 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 659,
-  "semantic_deep_read_count": 1,
+  "semantic_rescored_count": 686,
+  "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -203,11 +203,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1042,
+    "hot_count": 1069,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-08-31T00:28:12.130199+00:00",
+    "generated_at": "2026-08-31T06:27:57.348119+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
