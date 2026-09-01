@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-31T12:29:15.374405+00:00",
+  "generated_at": "2026-09-01T00:44:17.339367+00:00",
   "expected_sources": 14,
   "successful_sources": 14,
   "failed_sources": [],
-  "raw_new_count": 13,
-  "deduped_count": 13,
-  "deep_read_count": 4,
+  "raw_new_count": 37,
+  "deduped_count": 37,
+  "deep_read_count": 13,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,7 +22,7 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -46,7 +46,7 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 8,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -70,31 +70,31 @@
     {
       "name": "博報堂生活総合研究所",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 10,
       "error": null,
-      "coverage_status": "unverified",
+      "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 0,
+      "coverage_cached_count": 10,
       "coverage_errors": []
     },
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 13,
+      "coverage_cached_count": 14,
       "coverage_errors": []
     },
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -118,7 +118,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -127,19 +127,19 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 28,
+      "coverage_cached_count": 29,
       "coverage_errors": []
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 16,
+      "coverage_cached_count": 17,
       "coverage_errors": []
     },
     {
@@ -157,19 +157,19 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 6,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 98,
+      "coverage_cached_count": 104,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 18,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -183,8 +183,8 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 699,
-  "semantic_deep_read_count": 0,
+  "semantic_rescored_count": 736,
+  "semantic_deep_read_count": 7,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -203,17 +203,17 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1082,
+    "hot_count": 1119,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-08-31T12:27:52.008400+00:00",
+    "generated_at": "2026-09-01T00:42:56.781326+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
-    "cached_count": 8,
+    "cached_count": 9,
     "partial_count": 0,
-    "unverified_count": 3,
+    "unverified_count": 2,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
       "enhanced": "RSS/listing or multiple independent discovery paths plus rolling cache",
