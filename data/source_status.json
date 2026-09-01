@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-01T06:42:20.720100+00:00",
+  "generated_at": "2026-09-01T12:40:43.025440+00:00",
   "expected_sources": 14,
   "successful_sources": 14,
   "failed_sources": [],
-  "raw_new_count": 14,
-  "deduped_count": 14,
-  "deep_read_count": 2,
+  "raw_new_count": 8,
+  "deduped_count": 8,
+  "deep_read_count": 0,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,13 +22,13 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 61,
+      "coverage_cached_count": 62,
       "coverage_errors": []
     },
     {
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 5,
+      "new_count": 4,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 117,
+      "coverage_cached_count": 121,
       "coverage_errors": []
     },
     {
@@ -118,7 +118,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -163,13 +163,13 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 106,
+      "coverage_cached_count": 108,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -183,7 +183,7 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 750,
+  "semantic_rescored_count": 758,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -203,11 +203,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1133,
+    "hot_count": 1141,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-01T06:40:28.210922+00:00",
+    "generated_at": "2026-09-01T12:39:25.604721+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
