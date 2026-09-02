@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-01T12:40:43.025440+00:00",
+  "generated_at": "2026-09-02T00:41:58.059895+00:00",
   "expected_sources": 14,
   "successful_sources": 14,
   "failed_sources": [],
-  "raw_new_count": 8,
-  "deduped_count": 8,
-  "deep_read_count": 0,
+  "raw_new_count": 26,
+  "deduped_count": 26,
+  "deep_read_count": 3,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,7 +22,7 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -46,7 +46,7 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -82,13 +82,13 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 14,
+      "coverage_cached_count": 15,
       "coverage_errors": []
     },
     {
@@ -118,7 +118,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -127,19 +127,19 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 30,
+      "coverage_cached_count": 31,
       "coverage_errors": []
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 17,
+      "coverage_cached_count": 18,
       "coverage_errors": []
     },
     {
@@ -157,19 +157,19 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 9,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 108,
+      "coverage_cached_count": 117,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 14,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -183,8 +183,8 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 758,
-  "semantic_deep_read_count": 0,
+  "semantic_rescored_count": 784,
+  "semantic_deep_read_count": 1,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -203,11 +203,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1141,
+    "hot_count": 1167,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-01T12:39:25.604721+00:00",
+    "generated_at": "2026-09-02T00:40:40.143545+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
