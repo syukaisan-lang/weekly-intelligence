@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-04T10:14:05.325061+00:00",
+  "generated_at": "2026-09-04T12:40:26.413799+00:00",
   "expected_sources": 14,
   "successful_sources": 14,
   "failed_sources": [],
-  "raw_new_count": 0,
-  "deduped_count": 0,
+  "raw_new_count": 1,
+  "deduped_count": 1,
   "deep_read_count": 0,
   "sources": [
     {
@@ -169,7 +169,7 @@
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -183,7 +183,7 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 913,
+  "semantic_rescored_count": 914,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -203,11 +203,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1296,
+    "hot_count": 1297,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-04T10:12:47.808279+00:00",
+    "generated_at": "2026-09-04T12:39:11.222340+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
