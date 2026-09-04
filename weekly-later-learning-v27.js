@@ -1,11 +1,14 @@
-// Weekly v27.1: Later is the strongest positive recommendation signal.
+// Weekly v27.2: Later is the strongest positive recommendation signal.
 // Explicit positive feedback is treated mainly as a correction signal; explicit negative feedback/skip can override Later.
+// Performance: cache article features, keep Later samples across normal renders, and avoid a second render on status changes.
 (() => {
   const MARKER='later_interest';
   const DIRTY_KEY='weekly_intelligence_dirty_since_v1';
   const DAY=86400000;
   const MAX_AGE=180;
   let sampleCache=null;
+  const featureCache=new Map();
+  const deltaCache=new Map();
 
   function hs(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
   function uniq(xs){return [...new Set((xs||[]).filter(Boolean))];}
@@ -18,22 +21,25 @@
     return 0;
   }
   function features(a){
+    const key=String(a?.id||a?.url||'');
+    if(key&&featureCache.has(key))return featureCache.get(key);
     const fp=window.weeklyLearningPrecisionV15?.fingerprint?.(a)||{subjects:[],formats:[],intents:[],signals:[],raw:''};
     let topics=[];
     try{topics=typeof typedFeatures==='function'?(typedFeatures(a).topics||[]):[];}catch(_){}
-    return {subjects:uniq(fp.subjects),topics:uniq(topics),formats:uniq(fp.formats),intents:uniq(fp.intents),signals:uniq(fp.signals),raw:fp.raw||''};
+    const out={subjects:uniq(fp.subjects),topics:uniq(topics),formats:uniq(fp.formats),intents:uniq(fp.intents),signals:uniq(fp.signals),raw:fp.raw||''};
+    if(key)featureCache.set(key,out);
+    return out;
   }
   function isHeavy(fp){return /オンラインセミナー|ウェビナー|セミナー|イベント|カンファレンス|参加募集|申込|新製品|新商品|発売|キャンペーン|プレゼント|セール/i.test(fp.raw||'');}
   function sampleTs(a,s){return Number(s.later_interest_at||s.feedback_reason_updated_at||s.status_updated_at||s.updated_at||0)||Date.parse(a?.first_seen||a?.published||'')||0;}
   function hasLaterHistory(s){return s?.status==='later'||s?.feedback_reason===MARKER||Number(s?.later_interest_at||0)>0;}
   function isNegative(s){return ['bad','less'].includes(s?.feedback)||s?.status==='skip';}
+  function invalidate(){sampleCache=null;deltaCache.clear();}
 
   function buildSamples(){
     const rows=[];
     for(const a of data?.articles||[]){
       const s=hs(a);
-      // Later is the strongest positive behavioral signal. Positive feedback does not suppress it.
-      // Explicit negative feedback or an explicit skip is stronger evidence that the article should not train positive preference.
       if(isNegative(s)||!hasLaterHistory(s))continue;
       const ts=sampleTs(a,s),w=ageWeight(ts);if(!w)continue;
       const fp=features(a);if(!fp.subjects.length&&!fp.topics.length)continue;
@@ -47,25 +53,26 @@
     const core=Math.max(subj,topic*.86);if(!core)return 0;
     const ctx=Math.max(overlap(target.formats,source.formats),overlap(target.intents,source.intents));
     const sig=overlap(target.signals,source.signals);
-    // A single Later action should matter more than a routine explicit-positive correction.
     let v=.18+.34*core+.075*ctx+.055*sig;
     if(isHeavy(source)&&!isHeavy(target)&&ctx===0)v*=.35;
     return v;
   }
   function laterDelta(a){
+    const key=String(a?.id||a?.url||'');
+    if(key&&deltaCache.has(key))return deltaCache.get(key);
     const target=features(a),vals=[];
     for(const s of samples()){
       if(s.id===String(a.id))continue;
       const sim=similarity(target,s.fp);if(sim>0)vals.push(sim*s.w);
     }
     vals.sort((a,b)=>b-a);
-    // Highest positive preference channel, but still capped so base quality/evidence can matter.
-    return Math.max(0,Math.min(1.15,vals.slice(0,4).reduce((n,x)=>n+x,0)));
+    const out=Math.max(0,Math.min(1.15,vals.slice(0,4).reduce((n,x)=>n+x,0)));
+    if(key)deltaCache.set(key,out);
+    return out;
   }
   function markLaterInterest(a,cur,when=Date.now()){
     if(!cur||isNegative(cur))return false;
     cur.later_interest_at=Math.max(Number(cur.later_interest_at||0),when);
-    // Keep backwards compatibility with already-backed-up Later-interest records where possible.
     if(!cur.feedback_reason)cur.feedback_reason=MARKER;
     if(cur.feedback_reason===MARKER)cur.feedback_reason_updated_at=when;
     cur.updated_at=Math.max(Number(cur.updated_at||0),when);
@@ -81,7 +88,7 @@
       const ts=Number(s.status_updated_at||s.updated_at||0)||Date.now();
       if(markLaterInterest(a,s,ts))changed++;
     }
-    if(changed)sampleCache=null;
+    if(changed)invalidate();
     return changed;
   }
 
@@ -93,19 +100,14 @@
     const previousSetStatus=setStatus;
     window.setStatus=setStatus=function(a,v){
       const before=hs(a).status||'new';
-      const out=previousSetStatus(a,v);
-      const cur=state?.[a.id]||{};
-      const after=cur.status||'new';
-      if(before!=='later'&&after==='later')markLaterInterest(a,cur,Date.now());
-      // Leaving Later after reading/processing does NOT erase the strongest interest signal.
-      sampleCache=null;
-      setTimeout(()=>{try{renderArticles();}catch(_){}},0);
-      return out;
+      // Mark interest before the existing status pipeline renders, so one render is enough.
+      if(v==='later'&&before!=='later'){
+        const cur=state?.[a.id]||{status:before,feedback:hs(a).feedback||null};
+        markLaterInterest(a,cur,Date.now());
+      }
+      invalidate();
+      return previousSetStatus(a,v);
     };
-  }
-  if(typeof renderArticles==='function'){
-    const previousRender=renderArticles;
-    renderArticles=function(){sampleCache=null;return previousRender();};
   }
   if(typeof renderPrefs==='function'){
     const previousPrefs=renderPrefs;
@@ -122,7 +124,7 @@
     };
   }
 
-  function boot(){migrateCurrentLater();sampleCache=null;try{renderPrefs?.();}catch(_){};try{renderArticles?.();}catch(_){};}
+  function boot(){migrateCurrentLater();invalidate();try{renderPrefs?.();}catch(_){};try{renderArticles?.();}catch(_){};}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(boot,0));else setTimeout(boot,0);
-  window.weeklyLaterLearningV27={samples,laterDelta,migrateCurrentLater,invalidate:()=>{sampleCache=null;}};
+  window.weeklyLaterLearningV27={samples,laterDelta,migrateCurrentLater,invalidate};
 })();
