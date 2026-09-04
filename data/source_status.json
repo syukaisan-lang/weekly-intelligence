@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-04T09:36:11.187865+00:00",
+  "generated_at": "2026-09-04T09:58:44.593495+00:00",
   "expected_sources": 14,
   "successful_sources": 14,
   "failed_sources": [],
-  "raw_new_count": 5,
-  "deduped_count": 5,
+  "raw_new_count": 0,
+  "deduped_count": 0,
   "deep_read_count": 0,
   "sources": [
     {
@@ -22,7 +22,7 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -46,7 +46,7 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -207,7 +207,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-04T09:34:45.024184+00:00",
+    "generated_at": "2026-09-04T09:57:20.856459+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
