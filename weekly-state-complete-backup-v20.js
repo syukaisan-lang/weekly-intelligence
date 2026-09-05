@@ -1,12 +1,12 @@
-// Weekly v20.1: complete encrypted backup for all local fields that affect reading state or recommendation learning.
-// Keeps schema-4 restore compatibility while adding feedback_reason + feedback_reason_updated_at.
+// Weekly v20.2: complete encrypted backup for all local fields that affect reading state or recommendation learning.
+// Schema 6 keeps schema-4/5 restore compatibility and adds later_interest_at so long-term Preference Memory survives restore.
 (() => {
   const REPO='syukaisan-lang/weekly-intelligence';
   const CLOUD_URL='data/weekly-state.enc.json';
   const CLOUD_META_URL='data/weekly-state.json';
   const BACKUP_PENDING_KEY='weekly_intelligence_backup_pending_v1';
   const DIRTY_SINCE_KEY='weekly_intelligence_dirty_since_v1';
-  const MIGRATION_KEY='weekly_intelligence_backup_schema_v20';
+  const MIGRATION_KEY='weekly_intelligence_backup_schema_v20_2';
   const TRUSTED_STATUS_ORIGIN='human_v10';
   const BACKUP_WINDOW_NAME='weeklyStateBackupConfirm';
   const MAX_DELTA_ENTRIES=200;
@@ -44,6 +44,7 @@
     if(v?.status_updated_at)item.status_updated_at=Number(v.status_updated_at||0);
     if(reason)item.feedback_reason=reason;
     if(v?.feedback_reason_updated_at)item.feedback_reason_updated_at=Number(v.feedback_reason_updated_at||0);
+    if(v?.later_interest_at)item.later_interest_at=Number(v.later_interest_at||0);
     return item;
   }
   function meaningfulEntries(){
@@ -51,23 +52,29 @@
     for(const [id,v] of Object.entries(state||{})){
       if(!v||typeof v!=='object')continue;
       const item=stateItem(v);
-      if(item.status==='new'&&item.feedback===null&&!item.feedback_reason)continue;
+      if(item.status==='new'&&item.feedback===null&&!item.feedback_reason&&!item.later_interest_at)continue;
       out[id]=item;
     }
     return out;
   }
   function migrateExtendedFields(){
-    if(localStorage.getItem(MIGRATION_KEY)==='20')return 0;
+    if(localStorage.getItem(MIGRATION_KEY)==='6')return 0;
     const now=Date.now();let seq=0,changed=0;
     for(const [id,v] of Object.entries(state||{})){
-      if(!v||typeof v!=='object'||!v.feedback_reason)continue;
-      if(!Number(v.feedback_reason_updated_at))v.feedback_reason_updated_at=Number(v.updated_at||0)||now;
-      // Old cloud deltas did not contain feedback_reason. Move the record beyond the old cursor once,
-      // so existing reasons are included in the next incremental backup rather than only future reasons.
+      if(!v||typeof v!=='object')continue;
+      let extended=false;
+      if(v.feedback_reason){
+        extended=true;
+        if(!Number(v.feedback_reason_updated_at))v.feedback_reason_updated_at=Number(v.updated_at||0)||now;
+      }
+      if(Number(v.later_interest_at||0)>0)extended=true;
+      if(!extended)continue;
+      // Schema 6 adds Later-history timestamps. Move extended records beyond the old cursor once
+      // so pre-existing learning history is included in the next encrypted incremental backup.
       v.updated_at=now+(seq++);state[id]=v;changed++;
     }
     if(changed){save();localStorage.setItem(DIRTY_SINCE_KEY,String(now));}
-    localStorage.setItem(MIGRATION_KEY,'20');
+    localStorage.setItem(MIGRATION_KEY,'6');
     return changed;
   }
   function compareCursor(a,b){
@@ -105,9 +112,13 @@
     }catch(_){setCloudStatus('本机已保存 · 云备份状态暂时无法读取');}
   }
   async function ensureValidatedPassphrase(){
-    if(typeof loadKnowledgeData!=='function')throw new Error('Private knowledge helper is unavailable');
-    if(typeof hasKnowledgePassphrase==='function'&&hasKnowledgePassphrase())return true;
-    const k=await loadKnowledgeData({prompt:true});if(k?.locked)throw new Error('Dashboard 密码未通过验证');return true;
+    if(typeof decryptPrivateEnvelopeData!=='function')throw new Error('Private encrypted-state helper is unavailable');
+    const baseEnv=await fetchCloudEnvelope();
+    if(!baseEnv)throw new Error('Weekly 云端基线备份不存在，无法安全验证备份密码');
+    // Validate against the encrypted Weekly state itself. Weekly backup must not load/decrypt
+    // the user's Knowledge or Work System merely to verify a password.
+    await decryptPrivateEnvelopeData(baseEnv,{prompt:true});
+    return true;
   }
   function reserveBackupWindow(){
     const win=window.open('about:blank',BACKUP_WINDOW_NAME);
@@ -124,21 +135,22 @@
     return items.map(({id,v})=>[
       id,STATUS_TO_CODE[v.status]||v.status||'n',v.feedback?(FEEDBACK_TO_CODE[v.feedback]||v.feedback):'',Number(v.updated_at||0),
       v.status_origin===TRUSTED_STATUS_ORIGIN?'h':(v.status_origin||''),ACTION_TO_CODE[v.status_action]||v.status_action||'',Number(v.status_updated_at||0),
-      v.feedback_reason?(REASON_TO_CODE[v.feedback_reason]||v.feedback_reason):'',Number(v.feedback_reason_updated_at||0)
+      v.feedback_reason?(REASON_TO_CODE[v.feedback_reason]||v.feedback_reason):'',Number(v.feedback_reason_updated_at||0),Number(v.later_interest_at||0)
     ]);
   }
   function decodeRows(rows){
     const out={};
     for(const row of rows||[]){
       if(!Array.isArray(row)||!row[0])continue;
-      // First seven columns are schema-4 compatible. Schema 5 appends reason + reason timestamp.
-      const [id,s,f,u,o,a,su,fr,fru]=row;
+      // First seven columns are schema-4 compatible; schema 5 adds reason fields; schema 6 appends Later-history timestamp.
+      const [id,s,f,u,o,a,su,fr,fru,lia]=row;
       const item={status:CODE_TO_STATUS[s]||s||'new',feedback:f?(CODE_TO_FEEDBACK[f]||f):null,updated_at:Number(u||0)};
       if(o)item.status_origin=o==='h'?TRUSTED_STATUS_ORIGIN:o;
       if(a)item.status_action=CODE_TO_ACTION[a]||a;
       if(su)item.status_updated_at=Number(su);
       if(fr)item.feedback_reason=CODE_TO_REASON[fr]||fr;
       if(fru)item.feedback_reason_updated_at=Number(fru);
+      if(lia)item.later_interest_at=Number(lia);
       out[id]=item;
     }
     return out;
@@ -147,16 +159,15 @@
     let count=Math.min(MAX_DELTA_ENTRIES,candidates.length);
     while(count>=1){
       const batch=candidates.slice(0,count),rows=compactRows(batch),through=batch[batch.length-1].c;
-      const payload={schema:5,kind:'weekly-reading-delta',created_at:new Date().toISOString(),fields:['status','feedback','status_meta','feedback_reason'],rows};
+      const payload={schema:6,kind:'weekly-reading-delta',created_at:new Date().toISOString(),fields:['status','feedback','status_meta','feedback_reason','later_interest_at'],rows};
       const env=await encryptPrivatePayload(payload,{kind:'weekly-state-delta',compress:true});
-      env.cursor_updated_at=through.ts;env.cursor_id=through.id;env.entry_count=rows.length;env.backup_schema=5;env.base_snapshot_at=metaDoc?.meta?.snapshot_at||null;
+      env.cursor_updated_at=through.ts;env.cursor_id=through.id;env.entry_count=rows.length;env.backup_schema=6;env.base_snapshot_at=metaDoc?.meta?.snapshot_at||null;
       const encoded=btoa(JSON.stringify(env));
       const title='[WEEKLY-STATE] '+new Date().toISOString().slice(0,19).replace('T',' ');
-      const body=`STATE_ENVELOPE_B64: ${encoded}\n\nWeekly Intelligence 完整增量加密备份：阅读状态 + 正负反馈 + 具体反馈原因。内容已自动填好，只需点击 Submit new issue。`;
+      const body=`STATE_ENVELOPE_B64: ${encoded}\n\nWeekly Intelligence 完整增量加密备份：阅读状态 + 正负反馈 + 具体反馈原因 + 稍后看兴趣历史。内容已自动填好，只需点击 Submit new issue。`;
       const url=`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
       if(url.length<=MAX_ISSUE_URL_LENGTH)return {url,env,count,total:candidates.length};
       if(count===1)throw new Error('单条备份数据异常过大，无法生成 GitHub 确认页');
-      // Adjust by the actual encoded URL size instead of repeatedly halving. This normally converges in 1-2 retries.
       const ratio=MAX_ISSUE_URL_LENGTH/url.length;
       const estimated=Math.floor(count*ratio*.92);
       count=Math.max(1,Math.min(count-1,estimated));
@@ -169,7 +180,7 @@
     if(button){button.disabled=true;button.textContent='检查完整备份…';}setCloudStatus('正在检查阅读/学习状态…');const reserved=reserveBackupWindow();
     try{
       await ensureValidatedPassphrase();const metaDoc=await fetchCloudMeta();const candidates=deltaCandidates(cloudCursor(metaDoc));
-      if(!candidates.length){closeReservedWindow(reserved);localStorage.removeItem(DIRTY_SINCE_KEY);setCloudStatus('完整云备份已是最新');if(button){button.textContent='已备份 ✓';setTimeout(()=>{if(!backupInFlight&&button.textContent==='已备份 ✓')button.textContent=normalLabel;},2400);}toast('阅读状态、反馈和具体原因都已是最新，无需重复备份。');return;}
+      if(!candidates.length){closeReservedWindow(reserved);localStorage.removeItem(DIRTY_SINCE_KEY);setCloudStatus('完整云备份已是最新');if(button){button.textContent='已备份 ✓';setTimeout(()=>{if(!backupInFlight&&button.textContent==='已备份 ✓')button.textContent=normalLabel;},2400);}toast('阅读状态、反馈、具体原因和稍后看兴趣历史都已是最新，无需重复备份。');return;}
       if(button)button.textContent='打开确认页…';const built=await buildDeltaIssue(metaDoc,candidates);localStorage.setItem(BACKUP_PENDING_KEY,built.env.created_at||new Date().toISOString());setCloudStatus('完整备份请求待确认');navigateBackupWindow(reserved,built.url);
       const remain=built.total-built.count;toast(remain>0?`本次已尽量装满：${built.count} 条；提交后仍有 ${remain} 条待备份。`:`本次已一次打包 ${built.count} 条完整增量；GitHub 页面直接点 Submit。`);
     }catch(e){closeReservedWindow(reserved);setCloudStatus('完整备份未完成');toast('备份失败：'+e.message);}
@@ -199,14 +210,14 @@
     const tools=document.getElementById('weeklyStateTools'),backupBtn=document.getElementById('backupWeeklyStateBtn');if(!tools||!backupBtn)return false;
     backupBtn.onclick=backup;
     const restoreBtn=[...tools.querySelectorAll('button')].find(b=>b!==backupBtn&&/恢复云端/.test(b.textContent||''));if(restoreBtn)restoreBtn.onclick=restore;
-    const help=[...tools.querySelectorAll('span')].find(x=>x.id!=='weeklyCloudStatus');if(help)help.textContent='完整备份：阅读状态、正负反馈和具体原因；单次最多尝试200条，并按 GitHub 安全长度自动装满。';
-    tools.dataset.backupSchema='5';refreshCloudStatus();return true;
+    const help=[...tools.querySelectorAll('span')].find(x=>x.id!=='weeklyCloudStatus');if(help)help.textContent='完整备份：阅读状态、正负反馈、具体原因和稍后看兴趣历史；单次最多尝试200条，并按 GitHub 安全长度自动装满。';
+    tools.dataset.backupSchema='6';refreshCloudStatus();return true;
   }
 
   const migrated=migrateExtendedFields();
   if(!install()){
     const timer=setInterval(()=>{if(install())clearInterval(timer);},120);setTimeout(()=>clearInterval(timer),5000);
   }
-  if(migrated)setTimeout(()=>toast(`已发现 ${migrated} 条旧的具体反馈原因，已加入下一次完整备份。`),500);
+  if(migrated)setTimeout(()=>toast(`已发现 ${migrated} 条历史学习记录，已加入下一次完整备份。`),500);
   window.weeklyStateCompleteBackupV20={meaningfulEntries,decodeRows,refreshCloudStatus};
 })();
