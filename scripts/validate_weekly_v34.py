@@ -28,6 +28,8 @@ def main() -> int:
         "weekly-state-complete-backup-v20.js?v=20260905-1055",
         "weekly-preference-memory-v32.js",
         "weekly-ui-stability-v33.js?v=20260905-1055",
+        "weekly-mobile-performance-v18.js?v=20260905-1115",
+        "weekly-state-integrity-v22.js?v=20260905-1115",
         "weekly-later-click-v22-1.js?v=20260905-1108",
         "weekly-runtime-consistency-v35.js?v=20260905-1108",
         "0/16",
@@ -59,6 +61,16 @@ def main() -> int:
     if "Number(v.later_interest_at||0)" not in backup or "if(lia)item.later_interest_at=Number(lia)" not in backup:
         raise AssertionError("Later learning timestamp must survive encrypted backup and restore")
 
+    integrity = need(
+        "weekly-state-integrity-v22.js",
+        "const [id,s,f,u,o,a,su,fr,fru,lia]=row",
+        "if(lia)item.later_interest_at=Number(lia)",
+        "const laterInterest=Math.max(Number(prev.later_interest_at||0),Number(next.later_interest_at||0))",
+        "Opening Later is navigation only",
+    )
+    if "later.addEventListener('click'" in integrity:
+        raise AssertionError("State-integrity layer must not attach encrypted recovery to the Later tab")
+
     stability = need(
         "weekly-ui-stability-v33.js",
         "historySwitching",
@@ -88,6 +100,19 @@ def main() -> int:
     )
     if runtime.find("weekly-runtime-consistency-v35.js") >= 0:
         raise AssertionError("runtime file must contain executable JS, not self-referential loader text")
+
+    # The pagination layer used to intersect v21 Priority with the legacy v17 queue. That can make
+    # a nonzero Priority badge render zero cards. It must now take v21 currentFocus directly and
+    # preserve its value-ranked ordering.
+    mobile = need(
+        "weekly-mobile-performance-v18.js",
+        "Priority must use the same v21 selection",
+        "const api=window.weeklyReadingTimeV21",
+        "const selected=api.currentFocus()?.selected||[]",
+        "if(typeof readingProgress!=='undefined'&&readingProgress==='focus')return rows",
+    )
+    if "window.weeklyFocusFeedbackV17?.focusRows" in mobile:
+        raise AssertionError("Mobile Priority must not intersect the canonical v21 list with legacy v17 focusRows")
 
     # Later tab click is navigation only. The capture guard must suppress old v12/v22 automatic
     # cloud-recovery listeners and must not call recovery itself.
@@ -144,7 +169,7 @@ def main() -> int:
     if "CNET Japan" in names:
         raise AssertionError("CNET Japan must remain removed")
 
-    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, durable Later memory, local-only Later navigation, blocked Weekly private loaders, and one canonical Priority snapshot for count/list/time.")
+    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, durable schema-6 Later memory, local-only Later navigation, blocked Weekly private loaders, and one canonical v21 Priority source for count/list/time/pagination.")
     return 0
 
 
