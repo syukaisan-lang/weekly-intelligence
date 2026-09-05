@@ -62,6 +62,7 @@ jobs:
           test -f weekly-attention-v8.js
           test -f weekly-source-audit-v9.js
           test -f weekly-state-sync.js
+          test -f weekly-runtime-consistency-v35.js
           test -f scripts/sync_notion.py
           test -f scripts/sync_notion_temporal.py
           test -f scripts/temporal_knowledge.py
