@@ -27,10 +27,14 @@ def main()->int:
     require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles','DENTSU_SOURCE','html_feed_fallback','/articles/')
     require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_STATUS','_normalized_status','_is_positive_adoption','status_action','queue_grades','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图','later')
-    require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留','status_action','S/A/B')
-    require('weekly-source-audit-v9.js','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_FEEDBACK','QUEUE_GRADES','S\',\'A\',\'B','baseFeedback=feedback','raw.status=\'read\'','status_action=STATUS_ACTION_FEEDBACK','sourceStats','isRecommendedUnread','isAutoArchived','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','未处理归档','C 不进入处理队列','建议停用','复制来源统计')
+    require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留','status_action',"['S','A']")
+    require('weekly-source-audit-v9.js','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_FEEDBACK','QUEUE_GRADES','baseFeedback=feedback','status_action=STATUS_ACTION_FEEDBACK','sourceStats','isRecommendedUnread','isAutoArchived','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','未处理归档','建议停用','复制来源统计')
     require('weekly-later-recovery-v12.js','RECOVERY_KEY','preserveLater',"prev.status==='later'&&next.status==='read'&&next.status_action==='feedback'",'recoverWeeklyLater',"if(st(a.id).status==='later')return false","gf.value='ALL'",'status_updated_at')
-    require('index.html','weekly-attention-v8.js','weekly-source-audit-v9.js','weekly-state-sync.js','weekly-later-recovery-v12.js','最近12周反馈','最近90天','最近8周','未处理归档','S + A + B','C 不进入处理队列','一次点击','0/17','隐性跳过','稍后看','不受 S/A/B/C 限制')
+    require('index.html','weekly-attention-v8.js','weekly-source-audit-v9.js','weekly-state-sync.js','weekly-later-recovery-v12.js','未处理归档','S + A','稍后看','weekly-preference-guard-v30.js','weekly-adaptive-learning-v31.js','weekly-preference-memory-v32.js','weekly-ui-stability-v33.js')
+    require('weekly-preference-guard-v30.js','会议/活动告知','宣传/促销','广告CM/创意报道','topic','later_interest')
+    require('weekly-adaptive-learning-v31.js','reasonUsage','更多原因','priorityRows','skipSuppression')
+    require('weekly-preference-memory-v32.js','Preference Memory','combo:','laterHistory','sample_count','knowledge_context')
+    require('weekly-ui-stability-v33.js','weekly-no-knowledge','本周前保存','weeklyStickyStatus','truePriority','repairCaches')
     require('work-system.html','work-system-vector-v6.js','work-system-temporal-v7.js')
 
     index=read('index.html')
@@ -38,6 +42,12 @@ def main()->int:
         raise AssertionError('Later recovery guard must load after source-audit queue wrappers')
     if index.find('weekly-later-recovery-v12.js') < index.find('weekly-state-sync.js'):
         raise AssertionError('Later recovery must load after encrypted state restore helpers')
+    if 'knowledge-relations.js' in index:
+        raise AssertionError('Weekly must not load client-side Knowledge/Work-System relation data')
+    ordered=['weekly-queue-clarity-v29.js','weekly-preference-guard-v30.js','weekly-adaptive-learning-v31.js','weekly-preference-memory-v32.js','weekly-ui-stability-v33.js']
+    positions=[index.find(x) for x in ordered]
+    if any(x<0 for x in positions) or positions!=sorted(positions):
+        raise AssertionError('Weekly learning layers must load deterministically v29 -> v30 -> v31 -> v32 -> v33')
 
     require('scripts/temporal_knowledge.py','evidence_period','published_at','collected_at','effective_date','temporal_confidence','time_sensitive','time_domain','collected_at_fallback','ISO_DATE','evidence\\s*period')
     require('scripts/sync_notion_temporal.py','enrich_item_temporal','base.build_item','confidence_counts')
@@ -62,14 +72,8 @@ def main()->int:
         raise AssertionError('feedback must auto-process NEW articles in one click')
     if "raw.status_action=STATUS_ACTION_FEEDBACK" not in source_audit:
         raise AssertionError('auto-read caused by feedback must remain distinguishable from explicit read')
-    if "return isUnlabeled(a)&&isQueueGrade(a)&&isExpiredUnlabeled(a)" not in source_audit:
-        raise AssertionError('archive must contain only expired S/A/B, never C')
-    if "if(!isQueueGrade(a))return false" not in source_audit:
-        raise AssertionError('C must not enter the automatic processing queue')
     if "s.status==='read'&&s.status_action===STATUS_ACTION_STATUS" not in source_audit:
         raise AssertionError('source adoption must distinguish explicit read from feedback auto-read')
-    if "readingProgress==='archive'" not in source_audit:
-        raise AssertionError('expired S/A/B must remain reviewable in archive view')
     if 'applyFeedback(' in source_audit:
         raise AssertionError('implicit source passes must never directly train content preference')
 
@@ -104,11 +108,11 @@ def main()->int:
 
     sources=json.loads(read('config/sources.json'))
     names={str(x.get('name') or '') for x in sources}
-    stopped={'AV Watch','ギズモード・ジャパン','PR EDGE','ECZine:新着一覧'}
+    stopped={'AV Watch','ギズモード・ジャパン','PR EDGE','ECZine:新着一覧','CNET Japan'}
     if names & stopped:
         raise AssertionError(f'stopped/merged sources returned to active config: {sorted(names & stopped)}')
-    if len(sources)!=17:
-        raise AssertionError(f'active source count must be 17 after pruning and ECZine merge, got {len(sources)}')
+    if len(sources)!=16:
+        raise AssertionError(f'active source count must be 16 after pruning CNET and merged/stopped sources, got {len(sources)}')
     dentsu=next((x for x in sources if str(x.get('name') or '').startswith('ウェブ電通報')),None)
     if not dentsu or dentsu.get('type')!='html_feed_fallback' or 'dentsu-ho.com' not in str(dentsu.get('url') or ''):
         raise AssertionError('Dentsu must use official HTML listing fallback rather than retired RSS')
@@ -138,7 +142,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 17 sources -> S/A/B automatic queue + grade-independent Later bookmarks -> recoverable encrypted history -> clean source yield -> one-click delta backup -> semantic/temporal Weekly aligned.')
+    print('Global impact validation passed: 16 sources -> S/A priority queue -> durable Later/feedback Preference Memory -> encrypted recoverable history -> deterministic v29-v33 UI.')
     return 0
 
 
