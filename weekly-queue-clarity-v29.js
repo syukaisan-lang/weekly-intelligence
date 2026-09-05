@@ -102,10 +102,14 @@
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(sync,0));else setTimeout(sync,0);
   window.weeklyQueueClarityV29={queueRows,priorityRows,sync};
 
-  // v30 must run after v28/v29 so it can apply the final score guard and then repair queue counts.
+  function loadAdaptiveLearning(){
+    if(document.querySelector('script[data-weekly-adaptive-learning-v31]'))return;
+    const x=document.createElement('script');x.src='weekly-adaptive-learning-v31.js?v=20260905-0945';x.dataset.weeklyAdaptiveLearningV31='1';x.async=false;document.body.appendChild(x);
+  }
+  // v30 must run after v28/v29 so it can apply the final score guard; v31 then clears stale priority caches and learns from usage.
   function loadPreferenceGuard(){
-    if(document.querySelector('script[data-weekly-preference-guard-v30]'))return;
-    const s=document.createElement('script');s.src='weekly-preference-guard-v30.js?v=20260905-0930';s.dataset.weeklyPreferenceGuardV30='1';s.async=false;document.body.appendChild(s);
+    if(document.querySelector('script[data-weekly-preference-guard-v30]')){loadAdaptiveLearning();return;}
+    const s=document.createElement('script');s.src='weekly-preference-guard-v30.js?v=20260905-0930';s.dataset.weeklyPreferenceGuardV30='1';s.async=false;s.addEventListener('load',loadAdaptiveLearning,{once:true});document.body.appendChild(s);
   }
   if(document.readyState==='complete')setTimeout(loadPreferenceGuard,0);else window.addEventListener('load',()=>setTimeout(loadPreferenceGuard,0),{once:true});
 })();
