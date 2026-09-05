@@ -1,14 +1,14 @@
-// Weekly v33.1: final UI stability layer; validation trigger after CI rule cleanup.
+// Weekly v33.2: final UI stability layer.
 // - no client-side Knowledge/Work-System loading on Weekly
 // - one source of truth for Priority count/list/time
 // - explicit pre-this-week Later history view
 // - compact sticky status navigation while scrolling
 // - invalidate legacy caches without touching user reading state
 (() => {
-  const BUILD='20260905-1015-v33';
+  const BUILD='20260905-1055-v33-2';
   const BUILD_KEY='weekly_intelligence_ui_build_v33';
   const JST=9*60*60*1000;
-  let laterHistoryOnly=false;
+  let laterHistoryOnly=false,historySwitching=false;
 
   function hs(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
   function allRows(){return window.weeklyUiFixesV25?.allRows?.()||(Array.isArray(data?.articles)?data.articles:[]);}
@@ -41,10 +41,13 @@
     b.addEventListener('click',()=>{
       laterHistoryOnly=true;
       const allBtn=tabs.querySelector('[data-later-mode="all"]');
-      if(allBtn)allBtn.click();else renderArticles?.();
+      if(allBtn){
+        historySwitching=true;
+        try{allBtn.click();}finally{historySwitching=false;laterHistoryOnly=true;}
+      }else renderArticles?.();
       setTimeout(syncLaterHistory,0);
     });
-    tabs.querySelectorAll('[data-later-mode]').forEach(x=>x.addEventListener('click',()=>{laterHistoryOnly=false;},{capture:true}));
+    tabs.querySelectorAll('[data-later-mode]').forEach(x=>x.addEventListener('click',()=>{if(!historySwitching)laterHistoryOnly=false;},{capture:true}));
     return b;
   }
   function syncLaterHistory(){
@@ -60,7 +63,9 @@
 
   function truePriority(){
     const api=window.weeklyReadingTimeV21;if(!api?.currentFocus)return [];
-    try{api.invalidate?.();return api.currentFocus()?.selected||[];}catch(_){return [];}
+    // v21/v28/v30-v32 already invalidate on real state/filter mutations. Reuse that cache here;
+    // forcing a new full priority scan on every UI sync made scrolling/filtering unnecessarily expensive.
+    try{return api.currentFocus()?.selected||[];}catch(_){return [];}
   }
   function syncPriority(){
     const rows=truePriority(),mins=rows.reduce((n,a)=>n+Number(window.weeklyReadingTimeV21?.estimateMinutes?.(a)||0),0);
