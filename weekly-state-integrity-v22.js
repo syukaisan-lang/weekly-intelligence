@@ -1,4 +1,5 @@
-// Weekly v22: field-level state integrity. Later is an explicit bookmark and feedback must not overwrite it.
+// Weekly v22.2: field-level state integrity. Later is an explicit bookmark and feedback must not overwrite it.
+// Schema-6 Later-interest history is preserved during explicit encrypted restore.
 (() => {
   const BASE_URL='data/weekly-state.enc.json';
   const META_URL='data/weekly-state.json';
@@ -22,13 +23,15 @@
     const out={};
     for(const row of rows||[]){
       if(!Array.isArray(row)||!row[0])continue;
-      const [id,s,f,u,o,a,su,fr,fru]=row;
+      // schema 4: first 7 fields; schema 5: feedback reason; schema 6: later_interest_at.
+      const [id,s,f,u,o,a,su,fr,fru,lia]=row;
       const item={status:CODE_TO_STATUS[s]||s||'new',feedback:f?(CODE_TO_FEEDBACK[f]||f):null,updated_at:Number(u||0)};
       if(o)item.status_origin=o==='h'?TRUSTED_STATUS_ORIGIN:o;
       if(a)item.status_action=CODE_TO_ACTION[a]||a;
       if(su)item.status_updated_at=Number(su);
       if(fr)item.feedback_reason=CODE_TO_REASON[fr]||fr;
       if(fru)item.feedback_reason_updated_at=Number(fru);
+      if(lia)item.later_interest_at=Number(lia);
       out[id]=item;
     }
     return out;
@@ -65,6 +68,10 @@
     if(chosenStatus.status_origin)out.status_origin=chosenStatus.status_origin;else delete out.status_origin;
     if(chosenStatus.status_action)out.status_action=chosenStatus.status_action;else delete out.status_action;
     if(statusTs(chosenStatus))out.status_updated_at=statusTs(chosenStatus);else delete out.status_updated_at;
+    // later_interest_at is learning history, not the current status. Preserve the newest/highest known
+    // timestamp even if the current explicit status later becomes read/skip/save.
+    const laterInterest=Math.max(Number(prev.later_interest_at||0),Number(next.later_interest_at||0));
+    if(laterInterest)out.later_interest_at=laterInterest;else delete out.later_interest_at;
     return out;
   }
   function mergeMap(target,incoming){
@@ -125,7 +132,7 @@
     try{
       const {remote}=await remoteTimeline();
       const result=applyRemote(remote,{laterOnly:false});
-      toast(`已按字段合并云端状态：更新 ${result.updated} 条；Later 书签不会被反馈记录覆盖。`);
+      toast(`已按字段合并云端状态：更新 ${result.updated} 条；Later 书签和 Later 兴趣历史不会被反馈记录覆盖。`);
     }catch(e){toast('恢复失败：'+(e?.message||'密码不正确或备份无法读取。'));}
     finally{recovering=false;}
   }
@@ -142,11 +149,8 @@
   }
 
   function bind(){
-    const later=document.querySelector('[data-progress="later"]');
-    if(later&&!later.dataset.integrityV22){
-      later.dataset.integrityV22='1';
-      later.addEventListener('click',()=>setTimeout(()=>recoverHistoricalLater().catch(e=>{if(!String(e?.message||'').includes('Unlock cancelled'))toast('稍后看历史恢复失败：'+(e?.message||'未知错误'));}),0));
-    }
+    // Opening Later is navigation only. Encrypted remote recovery is reserved for the explicit
+    // “恢复云端” action; do not attach any recovery listener to the Later tab.
     const tools=document.getElementById('weeklyStateTools');
     const restore=tools?[...tools.querySelectorAll('button')].find(b=>/恢复云端/.test(b.textContent||'')):null;
     if(restore&&!restore.dataset.integrityV22){restore.dataset.integrityV22='1';restore.onclick=restoreAll;}
