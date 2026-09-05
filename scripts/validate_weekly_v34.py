@@ -28,6 +28,8 @@ def main() -> int:
         "weekly-state-complete-backup-v20.js?v=20260905-1055",
         "weekly-preference-memory-v32.js",
         "weekly-ui-stability-v33.js?v=20260905-1055",
+        "weekly-later-click-v22-1.js?v=20260905-1108",
+        "weekly-runtime-consistency-v35.js?v=20260905-1108",
         "0/16",
     )
     if "knowledge-relations.js" in index:
@@ -38,10 +40,11 @@ def main() -> int:
         "weekly-adaptive-learning-v31.js",
         "weekly-preference-memory-v32.js",
         "weekly-ui-stability-v33.js",
+        "weekly-runtime-consistency-v35.js",
     ]
     positions = [index.find(x) for x in order]
     if any(x < 0 for x in positions) or positions != sorted(positions):
-        raise AssertionError("Weekly learning layers must load deterministically v29 -> v30 -> v31 -> v32 -> v33")
+        raise AssertionError("Weekly learning/runtime layers must load deterministically v29 -> v30 -> v31 -> v32 -> v33 -> v35")
 
     backup = need(
         "weekly-state-complete-backup-v20.js",
@@ -52,7 +55,7 @@ def main() -> int:
         "tools.dataset.backupSchema='6'",
     )
     if "loadKnowledgeData({prompt:true})" in backup:
-        raise AssertionError("Weekly backup must validate against Weekly encrypted state, not load private Knowledge")
+        raise AssertionError("Weekly complete backup must validate against Weekly encrypted state, not private Knowledge")
     if "Number(v.later_interest_at||0)" not in backup or "if(lia)item.later_interest_at=Number(lia)" not in backup:
         raise AssertionError("Later learning timestamp must survive encrypted backup and restore")
 
@@ -66,6 +69,36 @@ def main() -> int:
     )
     if "api.invalidate?.();return api.currentFocus" in stability:
         raise AssertionError("Final UI sync must not force a full Priority recomputation every time")
+
+    # v35 is the final runtime invariant layer. It must make Priority independent from temporary
+    # mobile data slices, reset stale subordinate filters on top-level navigation, block private
+    # Knowledge/System loaders on Weekly, and reject any background password prompt.
+    runtime = need(
+        "weekly-runtime-consistency-v35.js",
+        "window.weeklyUiFixesV25?.allRows?.()",
+        "activePriorityIds",
+        "computePriority({respectFilters=false}",
+        "if(status)status.value='all';if(source)source.value='all'",
+        "if(typeof readingProgress!=='undefined'&&readingProgress==='focus')return activePriorityIds.has",
+        "BLOCKED_PRIVATE_RE=/knowledge|work-system|system-model|semantic-index/i",
+        "throw new Error('Unlock cancelled')",
+        "recoverHistoricalLater=async()=>({restoredLater:0,updated:0,disabled_on_weekly:true})",
+        "automatic_later_recovery:false",
+        "private_data_blocked:true",
+    )
+    if runtime.find("weekly-runtime-consistency-v35.js") >= 0:
+        raise AssertionError("runtime file must contain executable JS, not self-referential loader text")
+
+    # Later tab click is navigation only. The capture guard must suppress old v12/v22 automatic
+    # cloud-recovery listeners and must not call recovery itself.
+    later_click = need(
+        "weekly-later-click-v22-1.js",
+        "Later navigation is local-only",
+        "e.stopImmediatePropagation()",
+        "setProgress('later')",
+    )
+    if "recoverHistoricalLater" in later_click or "recoverWeeklyLater" in later_click:
+        raise AssertionError("Opening Later must not trigger encrypted historical recovery/password prompts")
 
     need(
         "weekly-preference-memory-v32.js",
@@ -111,7 +144,7 @@ def main() -> int:
     if "CNET Japan" in names:
         raise AssertionError("CNET Japan must remain removed")
 
-    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, deterministic learning stack, durable Later memory, no Weekly Knowledge load, stable Priority/history UI.")
+    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, durable Later memory, local-only Later navigation, blocked Weekly private loaders, and one canonical Priority snapshot for count/list/time.")
     return 0
 
 
