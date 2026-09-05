@@ -13,7 +13,13 @@
   function hs(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
   function allRows(){return window.weeklyUiFixesV25?.allRows?.()||(Array.isArray(data?.articles)?data.articles:[]);}
   function weekStartMs(){const j=new Date(Date.now()+JST),wd=(j.getUTCDay()+6)%7;return Date.UTC(j.getUTCFullYear(),j.getUTCMonth(),j.getUTCDate()-wd,0,0,0,0)-JST;}
-  function laterSince(a){const s=hs(a);const xs=[Number(s.later_interest_at||0),Number(s.status_updated_at||0),Number(s.updated_at||0),Date.parse(a?.first_seen||a?.published||'')||0].filter(x=>x>0);return xs.length?Math.min(...xs):0;}
+  function laterSince(a){
+    const s=hs(a);
+    const laterAt=Number(s.later_interest_at||0);if(laterAt>0)return laterAt;
+    const statusAt=Number(s.status_updated_at||0);if(s.status==='later'&&statusAt>0)return statusAt;
+    const updated=Number(s.updated_at||0);if(updated>0)return updated;
+    return Date.parse(a?.first_seen||a?.published||'')||0;
+  }
   function historicalLaterRows(){return allRows().filter(a=>hs(a).status==='later'&&laterSince(a)<weekStartMs());}
 
   function disableKnowledgeUi(){
@@ -41,7 +47,7 @@
       if(allBtn)allBtn.click();else renderArticles?.();
       setTimeout(syncLaterHistory,0);
     });
-    tabs.querySelectorAll('[data-later-mode]').forEach(x=>x.addEventListener('click',()=>{if(!x.dataset.laterHistory)laterHistoryOnly=false;},{capture:true}));
+    tabs.querySelectorAll('[data-later-mode]').forEach(x=>x.addEventListener('click',()=>{laterHistoryOnly=false;},{capture:true}));
     return b;
   }
   function syncLaterHistory(){
