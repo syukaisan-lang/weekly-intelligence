@@ -25,6 +25,7 @@ def main()->int:
     require('scripts/weekly_embed_node.mjs','semantic-worker.bundle.js','rule_similarity','knowledge_similarity','experience_similarity')
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
     require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles','DENTSU_SOURCE','html_feed_fallback','/articles/')
+    require('scripts/update_feeds_coverage.py','import update_feeds_temporal as t','update_source_discovery','enrich_xtrend_reading_time')
     require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_STATUS','_normalized_status','_is_positive_adoption','status_action','queue_grades','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图','later')
     require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留','status_action',"['S','A']")
@@ -130,7 +131,11 @@ def main()->int:
         if upstream not in update:raise AssertionError(f'Weekly must listen to successful upstream workflow completion: {upstream}')
     for safe_commit in ('ref: main','fetch-depth: 0','/tmp/weekly-articles.json','/tmp/weekly-source-status.json','git reset --hard origin/main','git add data/articles.json data/source_status.json','for attempt in 1 2 3'):
         if safe_commit not in update:raise AssertionError(f'Weekly commit path must remain conflict-safe: {safe_commit}')
-    if 'run: python scripts/update_feeds_temporal.py' not in update:raise AssertionError('Weekly workflow must run adaptive temporal updater')
+    if 'python scripts/update_feeds_coverage.py' not in update:
+        raise AssertionError('Weekly workflow must run coverage updater')
+    coverage=read('scripts/update_feeds_coverage.py')
+    if 'import update_feeds_temporal as t' not in coverage:
+        raise AssertionError('Coverage updater must delegate to adaptive temporal updater')
     if 'build_system_model_v2.py' in update or 'build_system_model_v3.py' in update:
         raise AssertionError('Weekly workflow must not overwrite the unified Work System model')
 
