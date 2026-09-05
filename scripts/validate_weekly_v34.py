@@ -82,6 +82,28 @@ def main() -> int:
         "server-semantic + lightweight-client-personalization",
     )
 
+    # URL identity remains primary; the second pass only suppresses current-run title aliases,
+    # preserves historical IDs, records alias sources/URLs, and reports raw vs deduped counts.
+    need(
+        "scripts/weekly_dedupe.py",
+        "SequenceMatcher",
+        "exact_title",
+        "fuzzy_title",
+        "contained_title",
+        "duplicate_sources",
+        "duplicate_urls",
+        "near_duplicate_count",
+        "dedupe_version",
+        "old = [a for a in rows if not is_new(a)]",
+    )
+    coverage = need(
+        "scripts/update_feeds_coverage.py",
+        "import weekly_dedupe",
+        "weekly_dedupe.apply(t.p.base.ART_PATH, t.p.base.STATUS_PATH)",
+    )
+    if coverage.find("weekly_dedupe.apply") > coverage.find("t.lifecycle.refresh_hot_only"):
+        raise AssertionError("Near-duplicate suppression must run before semantic rescoring")
+
     sources = json.loads(read("config/sources.json"))
     if len(sources) != 16:
         raise AssertionError(f"active source count must be 16, got {len(sources)}")
@@ -89,7 +111,7 @@ def main() -> int:
     if "CNET Japan" in names:
         raise AssertionError("CNET Japan must remain removed")
 
-    print("Weekly focused invariants passed: 16 sources, deterministic learning stack, durable Later memory, no Weekly Knowledge load, stable Priority/history UI.")
+    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, deterministic learning stack, durable Later memory, no Weekly Knowledge load, stable Priority/history UI.")
     return 0
 
 
