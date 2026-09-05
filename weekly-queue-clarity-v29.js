@@ -101,4 +101,11 @@
   ['gradeFilter','statusFilter','sourceFilter','personalizedSort'].forEach(id=>document.getElementById(id)?.addEventListener('change',()=>setTimeout(sync,0)));
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(sync,0));else setTimeout(sync,0);
   window.weeklyQueueClarityV29={queueRows,priorityRows,sync};
+
+  // v30 must run after v28/v29 so it can apply the final score guard and then repair queue counts.
+  function loadPreferenceGuard(){
+    if(document.querySelector('script[data-weekly-preference-guard-v30]'))return;
+    const s=document.createElement('script');s.src='weekly-preference-guard-v30.js?v=20260905-0930';s.dataset.weeklyPreferenceGuardV30='1';s.async=false;document.body.appendChild(s);
+  }
+  if(document.readyState==='complete')setTimeout(loadPreferenceGuard,0);else window.addEventListener('load',()=>setTimeout(loadPreferenceGuard,0),{once:true});
 })();
