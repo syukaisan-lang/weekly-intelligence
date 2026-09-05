@@ -1,5 +1,6 @@
-// v18: hard mobile performance layer.
+// v18.1: hard mobile performance layer.
 // Only a small slice of the filtered list enters the expensive card-render pipeline.
+// Priority must use the same v21 selection as the top count/time summary; never intersect it with the legacy v17 queue.
 (() => {
   const MOBILE_STEP=20, DESKTOP_STEP=60;
   let limit=window.matchMedia('(max-width: 700px)').matches?MOBILE_STEP:DESKTOP_STEP;
@@ -31,14 +32,23 @@
   function resetLimit(){limit=step();}
   function allRows(){return Array.isArray(data?.articles)?data.articles:[];}
   function selectedRows(rows){
-    if(typeof readingProgress!=='undefined'&&readingProgress==='focus'&&window.weeklyFocusFeedbackV17?.focusRows){
-      const focus=window.weeklyFocusFeedbackV17.focusRows();
-      // focusRows already applies the queue ranking; still respect source/status/grade guard through visible.
-      return focus.filter(a=>{try{return visible(a);}catch(_){return true;}});
+    if(typeof readingProgress!=='undefined'&&readingProgress==='focus'){
+      const api=window.weeklyReadingTimeV21;
+      if(api?.currentFocus){
+        try{
+          // v21 currentFocus is the canonical Priority source. At this point data.articles is still
+          // the full dataset; v35 also refreshes that snapshot before entering this renderer.
+          const selected=api.currentFocus()?.selected||[];
+          return selected.filter(a=>{try{return visible(a);}catch(_){return true;}});
+        }catch(_){}
+      }
     }
     return rows.filter(a=>{try{return visible(a);}catch(_){return true;}});
   }
   function sortRows(rows){
+    // Priority has already been value-ranked (and optionally budget-fitted) by v21. Re-sorting it
+    // by plain score here can make count/list semantics diverge and changes the intended order.
+    if(typeof readingProgress!=='undefined'&&readingProgress==='focus')return rows;
     if(!document.getElementById('personalizedSort')?.checked)return rows;
     return rows.slice().sort((a,b)=>score(b)-score(a));
   }
@@ -79,6 +89,7 @@
         window.weeklyFilterV14?.updateAllFilterCounts?.();
         window.weeklyFocusFeedbackV17?.updateFocusTab?.();
         window.weeklyReconciliationV16?.render?.();
+        window.weeklyRuntimeConsistencyV35?.refreshPrioritySnapshots?.();
       };
       if('requestIdleCallback'in window)requestIdleCallback(idle,{timeout:900});else setTimeout(idle,120);
     };
