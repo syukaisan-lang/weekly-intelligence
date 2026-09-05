@@ -1,4 +1,4 @@
-// Weekly v33: final UI stability layer.
+// Weekly v33.1: final UI stability layer; validation trigger after CI rule cleanup.
 // - no client-side Knowledge/Work-System loading on Weekly
 // - one source of truth for Priority count/list/time
 // - explicit pre-this-week Later history view
@@ -28,8 +28,6 @@
     document.querySelectorAll('#articleList .related-knowledge').forEach(x=>x.remove());
   }
 
-  // v23's normal Later mode is switched to "all" underneath, then this final visibility wrapper
-  // applies the pre-this-week condition. This keeps the old lightweight Later index intact.
   if(typeof visible==='function'){
     const prev=visible;
     visible=function(a){if(readingProgress==='later'&&laterHistoryOnly){if(!prev(a))return false;return hs(a).status==='later'&&laterSince(a)<weekStartMs();}return prev(a);};
@@ -42,7 +40,6 @@
     const all=tabs.querySelector('[data-later-mode="all"]');tabs.insertBefore(b,all||null);
     b.addEventListener('click',()=>{
       laterHistoryOnly=true;
-      // Put v23 in its complete Later set; our wrapper performs the historical cut.
       const allBtn=tabs.querySelector('[data-later-mode="all"]');
       if(allBtn)allBtn.click();else renderArticles?.();
       setTimeout(syncLaterHistory,0);
@@ -97,7 +94,6 @@
 
   function repairCaches(){
     const old=localStorage.getItem(BUILD_KEY);if(old===BUILD)return;
-    // Only derived caches are removed; user state / feedback / Later history remain untouched.
     ['weekly_intelligence_later_recycle_v23'].forEach(k=>localStorage.removeItem(k));
     localStorage.setItem(BUILD_KEY,BUILD);
     try{window.weeklyPerformanceV28?.invalidate?.({features:true});}catch(_){}
