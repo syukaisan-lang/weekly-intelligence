@@ -37,7 +37,6 @@
     intents.forEach(x=>out.push('intent:'+x));
     signals.forEach(x=>out.push('signal:'+x));
     if(inc)out.push('increment:'+inc);
-    // Combination features are the core of the deeper learner: dislike AI webinar != dislike AI.
     for(const t of topics.slice(0,4)){
       for(const f1 of formats.slice(0,2))out.push(`combo:${t} × ${f1}`);
       for(const i of intents.slice(0,2))out.push(`combo:${t} × ${i}`);
@@ -60,25 +59,18 @@
     return keys;
   }
   function buildMemory(){
-    const entries={};let samples=0,posSamples=0,negSamples=0;
-    for(const a of allRows()){
+    const rows=allRows(),entries={};let samples=0,posSamples=0,negSamples=0;
+    for(const a of rows){
       const s=hs(a),keys=contentFeatures(a);if(!keys.length)continue;
       const ts=stateTs(a,s);let touched=false;
-      if(laterHistory(s)){
-        apply(entries,keys,3.15,Number(s.later_interest_at||0)||ts);posSamples++;touched=true;
-      }
-      if(s.status==='save'){
-        apply(entries,keys,.65,Number(s.status_updated_at||0)||ts);posSamples++;touched=true;
-      }
-      if(s.feedback==='more'||s.feedback==='accurate'){
-        apply(entries,keys,s.feedback==='more'?1.25:.58,Number(s.feedback_reason_updated_at||0)||ts);posSamples++;touched=true;
-      }
+      if(laterHistory(s)){apply(entries,keys,3.15,Number(s.later_interest_at||0)||ts);posSamples++;touched=true;}
+      if(s.status==='save'){apply(entries,keys,.65,Number(s.status_updated_at||0)||ts);posSamples++;touched=true;}
+      if(s.feedback==='more'||s.feedback==='accurate'){apply(entries,keys,s.feedback==='more'?1.25:.58,Number(s.feedback_reason_updated_at||0)||ts);posSamples++;touched=true;}
       if(NEGATIVE.has(s.feedback)){
         const r=s.feedback_reason||'';
         const base={topic:3.25,promo:3.0,not_work:2.65,too_generic:1.75,no_evidence:1.9,known:1.35}[r]||(s.feedback==='less'?1.45:.8);
         apply(entries,keysByReason(keys,r),-(s.feedback==='less'?base:base*.72),Number(s.feedback_reason_updated_at||0)||ts);negSamples++;touched=true;
       }else if(s.status==='skip'){
-        // Explicit skip is useful but deliberately weak. Mere non-click/unread is never negative.
         apply(entries,keys,-.42,Number(s.status_updated_at||0)||ts);negSamples++;touched=true;
       }
       if(touched)samples++;
@@ -88,21 +80,21 @@
       e.pos=Number(e.pos.toFixed(3));e.neg=Number(e.neg.toFixed(3));
       if(e.pos+e.neg>=.16)clean[k]=e;
     }
-    const m={version:32,updated_at:new Date().toISOString(),sample_count:samples,positive_samples:posSamples,negative_samples:negSamples,entries:clean};
+    const m={version:32,updated_at:new Date().toISOString(),article_count:rows.length,sample_count:samples,positive_samples:posSamples,negative_samples:negSamples,entries:clean};
     memoryCache=m;
     try{localStorage.setItem(KEY,JSON.stringify(m));}catch(_){}
     return m;
   }
   function memory(){
+    const n=allRows().length;
+    if(memoryCache&&memoryCache.article_count===n)return memoryCache;
+    if(n)return buildMemory();
     if(memoryCache)return memoryCache;
-    // Rebuild from raw historical state whenever articles/state are available; persisted JSON is only a durable cache.
-    if(allRows().length)return buildMemory();
     try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x?.version===32)return (memoryCache=x);}catch(_){}
-    return {version:32,entries:{},sample_count:0,positive_samples:0,negative_samples:0};
+    return {version:32,article_count:0,entries:{},sample_count:0,positive_samples:0,negative_samples:0};
   }
   function net(e){
     if(!e)return 0;
-    // Newer opposite behavior can reopen a preference instead of freezing it forever.
     if(e.last_pos>e.last_neg)return e.pos-1.10*e.neg;
     if(e.last_neg>e.last_pos)return .75*e.pos-e.neg;
     return e.pos-e.neg;
@@ -154,8 +146,8 @@
     };
   }
 
-  // Build once after every layer before us has installed its own score guards.
-  invalidate();buildMemory();
+  invalidate();
+  if(allRows().length)buildMemory();
   try{renderPrefs?.();}catch(_){}
   try{renderArticles?.();}catch(_){}
   window.weeklyPreferenceMemoryV32={memory,buildMemory,invalidate,explain,contentFeatures,memorySummary};
