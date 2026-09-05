@@ -8,6 +8,7 @@ from types import SimpleNamespace
 import update_feeds_temporal as t
 import update_source_discovery as discovery
 import enrich_xtrend_reading_time as xtrend_reading
+import weekly_dedupe
 
 CACHE_PATH = t.p.base.ROOT / 'data' / 'source_discovery.json'
 _original_fetch_feed = t.p.base.fetch_feed
@@ -124,6 +125,9 @@ def main():
     t.p.deep_read_semantic_candidates = t.adaptive_semantic_deep_read
 
     t.p.base.main()
+    # Exact/canonical URL identity happens in base.main(). This conservative second pass suppresses
+    # same-story aliases across publishers before semantic rescoring, without rewriting old IDs.
+    weekly_dedupe.apply(t.p.base.ART_PATH, t.p.base.STATUS_PATH)
     t.enrich_xtrend_from_feeder_cache()
     xtrend_reading.apply_reading_times()
     t.lifecycle.refresh_hot_only(t.p.refresh_existing_scores)
