@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-05T12:36:36.839563+00:00",
-  "expected_sources": 14,
-  "successful_sources": 14,
+  "generated_at": "2026-09-06T00:25:21.900457+00:00",
+  "expected_sources": 16,
+  "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 2,
-  "deduped_count": 2,
-  "deep_read_count": 0,
+  "raw_new_count": 110,
+  "deduped_count": 110,
+  "deep_read_count": 36,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -116,6 +116,22 @@
       "coverage_errors": []
     },
     {
+      "name": "MarkeZine:新着一覧",
+      "status": "ok",
+      "new_count": 70,
+      "error": null,
+      "coverage_status": "partial",
+      "coverage_methods": [
+        "feed_cache",
+        "markezine_feeder"
+      ],
+      "coverage_cached_count": 149,
+      "coverage_errors": [
+        "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
+        "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
+      ]
+    },
+    {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
       "new_count": 0,
@@ -143,6 +159,18 @@
       "coverage_errors": []
     },
     {
+      "name": "ネットショップ担当者フォーラム",
+      "status": "ok",
+      "new_count": 38,
+      "error": null,
+      "coverage_status": "cached",
+      "coverage_methods": [
+        "feed_cache"
+      ],
+      "coverage_cached_count": 106,
+      "coverage_errors": []
+    },
+    {
       "name": "MARKETIMES（マーケタイムズ）",
       "status": "ok",
       "new_count": 0,
@@ -163,7 +191,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 151,
+      "coverage_cached_count": 153,
       "coverage_errors": []
     },
     {
@@ -183,7 +211,7 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 920,
+  "semantic_rescored_count": 1186,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -199,20 +227,21 @@
     "active_count": 9,
     "cold_count": 5,
     "probe_count": 2,
-    "probe_skipped_count": 2
+    "probe_skipped_count": 0,
+    "discovery_policy": "all configured sources are always checked; cold/probe only raises deep-read threshold"
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1303,
+    "hot_count": 1413,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-05T12:35:31.227893+00:00",
+    "generated_at": "2026-09-06T00:22:01.840965+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
-    "cached_count": 9,
-    "partial_count": 0,
+    "cached_count": 10,
+    "partial_count": 1,
     "unverified_count": 2,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
