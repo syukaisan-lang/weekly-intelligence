@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from types import SimpleNamespace
 
 import update_feeds_temporal as t
@@ -16,6 +17,14 @@ _original_fetch_feed = t.p.base.fetch_feed
 _original_fetch_text = t.p.base.fetch_text
 _cache_payload = {'articles': [], 'source_meta': {}}
 _content_char_counts = {}
+_content_completeness = {}
+PARTIAL_RE = re.compile(
+    r'ここから先は|続き(?:は|を).{0,18}(?:会員|ログイン|購読|有料|登録)|'
+    r'全文(?:を)?読む.{0,18}(?:会員|ログイン|購読|登録)|'
+    r'(?:会員|有料会員|購読者)限定|ログインして.{0,18}(?:続き|全文)|'
+    r'残り\s*\d+\s*(?:文字|ページ)|次のページ|この記事は\s*\d+\s*ページ',
+    re.I,
+)
 
 
 def load_cache():
@@ -73,31 +82,55 @@ def fetch_feed_with_discovery_cache(src):
     return SimpleNamespace(entries=merged)
 
 
+def classify_content_completeness(content: str) -> tuple[str, str]:
+    compact = ''.join(str(content or '').split())
+    if PARTIAL_RE.search(content or ''):
+        return 'partial', 'public_page_signals_paywall_or_continuation'
+    # The base extractor currently returns at most 12k characters. Near the cap means the end of the
+    # real article is unknown, so do not claim that the whole body was captured.
+    if len(compact) >= 11800:
+        return 'unknown', 'extractor_length_cap_reached'
+    if len(compact) < 240:
+        return 'unknown', 'extracted_body_too_short_to_verify'
+    return 'full', 'extracted_body_finished_without_partial_marker'
+
+
 def fetch_text_with_metrics(url):
     content, checked, error = _original_fetch_text(url)
     if checked and content:
         key = t.p.base.norm_url(url)
         if key:
-            # Preserve the length of the full extracted body before downstream code truncates it
-            # to a 5k semantic excerpt. This makes reading-time estimates materially more accurate.
             _content_char_counts[key] = len(''.join(str(content).split()))
+            completeness, reason = classify_content_completeness(content)
+            _content_completeness[key] = {'status': completeness, 'reason': reason}
     return content, checked, error
 
 
 def apply_content_char_counts():
-    if not _content_char_counts or not t.p.base.ART_PATH.exists():
+    """Persist body length plus completeness; keep function name for compatibility with existing CI."""
+    if (not _content_char_counts and not _content_completeness) or not t.p.base.ART_PATH.exists():
         return 0
     payload = json.loads(t.p.base.ART_PATH.read_text(encoding='utf-8'))
     changed = 0
     for article in payload.get('articles') or []:
         key = t.p.base.norm_url(article.get('url') or '')
         count = int(_content_char_counts.get(key) or 0)
+        meta = _content_completeness.get(key) or {}
+        row_changed = False
         if count > 0 and int(article.get('content_char_count') or 0) != count:
             article['content_char_count'] = count
+            row_changed = True
+        if meta.get('status') and article.get('content_completeness') != meta['status']:
+            article['content_completeness'] = meta['status']
+            row_changed = True
+        if meta.get('reason') and article.get('content_completeness_reason') != meta['reason']:
+            article['content_completeness_reason'] = meta['reason']
+            row_changed = True
+        if row_changed:
             changed += 1
     if changed:
         t.p.base.ART_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
-    print(f'Full body char counts captured: {changed}')
+    print(f'Body metrics captured: {changed}; completeness={len(_content_completeness)}')
     return changed
 
 
