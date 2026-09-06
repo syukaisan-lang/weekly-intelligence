@@ -8,11 +8,14 @@ from types import SimpleNamespace
 import update_feeds_temporal as t
 import update_source_discovery as discovery
 import enrich_xtrend_reading_time as xtrend_reading
+import enrich_reading_time_estimates as reading_time_estimates
 import weekly_dedupe
 
 CACHE_PATH = t.p.base.ROOT / 'data' / 'source_discovery.json'
 _original_fetch_feed = t.p.base.fetch_feed
+_original_fetch_text = t.p.base.fetch_text
 _cache_payload = {'articles': [], 'source_meta': {}}
+_content_char_counts = {}
 
 
 def load_cache():
@@ -70,6 +73,34 @@ def fetch_feed_with_discovery_cache(src):
     return SimpleNamespace(entries=merged)
 
 
+def fetch_text_with_metrics(url):
+    content, checked, error = _original_fetch_text(url)
+    if checked and content:
+        key = t.p.base.norm_url(url)
+        if key:
+            # Preserve the length of the full extracted body before downstream code truncates it
+            # to a 5k semantic excerpt. This makes reading-time estimates materially more accurate.
+            _content_char_counts[key] = len(''.join(str(content).split()))
+    return content, checked, error
+
+
+def apply_content_char_counts():
+    if not _content_char_counts or not t.p.base.ART_PATH.exists():
+        return 0
+    payload = json.loads(t.p.base.ART_PATH.read_text(encoding='utf-8'))
+    changed = 0
+    for article in payload.get('articles') or []:
+        key = t.p.base.norm_url(article.get('url') or '')
+        count = int(_content_char_counts.get(key) or 0)
+        if count > 0 and int(article.get('content_char_count') or 0) != count:
+            article['content_char_count'] = count
+            changed += 1
+    if changed:
+        t.p.base.ART_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+    print(f'Full body char counts captured: {changed}')
+    return changed
+
+
 def annotate_coverage():
     if not t.p.base.STATUS_PATH.exists():
         return
@@ -117,20 +148,26 @@ def main():
     discovery.update_cache()
     load_cache()
     t.p.base.fetch_feed = fetch_feed_with_discovery_cache
+    t.p.base.fetch_text = fetch_text_with_metrics
 
     original_sources = list(t.p.base.SOURCES)
     prepared, source_counts = t.lifecycle.prepare_sources(original_sources)
-    t.p.base.SOURCES = [s for s in prepared if not s.get('_adaptive_skip')]
+    # Discovery must always cover every configured source. Adaptive source control may raise the
+    # deep-read threshold, but it must never remove a source from title/summary/RSS discovery.
+    t.p.base.SOURCES = prepared
     t.p.base.heuristic = t.adaptive_pre_read_heuristic
     t.p.deep_read_semantic_candidates = t.adaptive_semantic_deep_read
 
     t.p.base.main()
+    apply_content_char_counts()
     # Exact/canonical URL identity happens in base.main(). This conservative second pass suppresses
     # same-story aliases across publishers before semantic rescoring, without rewriting old IDs.
     weekly_dedupe.apply(t.p.base.ART_PATH, t.p.base.STATUS_PATH)
     t.enrich_xtrend_from_feeder_cache()
     xtrend_reading.apply_reading_times()
     t.lifecycle.refresh_hot_only(t.p.refresh_existing_scores)
+    apply_content_char_counts()
+    reading_time_estimates.apply_estimates()
     t.mark_version()
     storage_counts = t.lifecycle.compact_articles()
     t.lifecycle.annotate_status(source_counts, storage_counts)
