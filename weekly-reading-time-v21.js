@@ -1,4 +1,4 @@
-// Weekly v21.3: official/source-aware reading time + 30/60 minute value-aware focus budgets.
+// Weekly v21.4: official-first, completeness-aware reading time + 30/60 minute value-aware focus budgets.
 (() => {
   const BUDGET_KEY='weekly_intelligence_reading_budget_v21';
   const NEGATIVE=new Set(['bad','less']);
@@ -12,65 +12,86 @@
   function safeGrade(a){try{return grade(safeScore(a));}catch(_){return a?.grade||'C';}}
   function articleTs(a){const x=Date.parse(a?.first_seen||a?.published||'');return Number.isFinite(x)?x:0;}
   function formats(a){return a?.learning_features?.formats||[];}
-  function signals(a){return a?.learning_features?.signals||[];}
+  function intents(a){return a?.learning_features?.intents||[];}
   function compactChars(v){return String(v||'').replace(/\s+/g,'').length;}
   function clampMinutes(v,max=60){return Math.max(1,Math.min(max,Math.round(Number(v)||0)));}
+  function roundedMinutes(v,min=1,max=60){return Math.max(min,Math.min(max,Math.floor(Number(v||0)+.5)));}
 
   function sourcePrior(a){
     const s=String(a?.source||'');
-    if(/Agenda note/.test(s))return 8;
-    if(/MarkeZine/.test(s))return 7;
-    if(/日経クロストレンド/.test(s))return 7;
-    if(/ウェブ電通報/.test(s))return 7;
-    if(/wisdom-evolution/.test(s))return 7;
-    if(/ネットショップ担当者/.test(s))return 6;
-    if(/ITmedia マーケティング/.test(s))return 6;
-    if(/AdverTimes/.test(s))return 5;
-    if(/ITmedia ビジネス/.test(s))return 5;
-    return 5;
+    if(/Agenda note/.test(s))return 6;
+    if(/MarkeZine/.test(s))return 5;
+    if(/日経クロストレンド/.test(s))return 5;
+    if(/ウェブ電通報/.test(s))return 5;
+    if(/wisdom-evolution/.test(s))return 5;
+    if(/ネットショップ担当者/.test(s))return 4;
+    if(/ITmedia マーケティング/.test(s))return 4;
+    if(/AdverTimes/.test(s))return 4;
+    if(/ITmedia ビジネス/.test(s))return 4;
+    return 4;
+  }
+  function priorForFormat(a,fs){
+    let m=sourcePrior(a);
+    if(/インタビュー|対談/.test(fs))m=Math.max(m,8);
+    else if(/調査レポート/.test(fs))m=Math.max(m,7);
+    else if(/事例|ケース|解説|ハウツー/.test(fs))m=Math.max(m,6);
+    else if(/ランキング|まとめ/.test(fs))m=Math.max(m,5);
+    else if(/セミナー|イベント|キャンペーン|販促/.test(fs))m=Math.min(m,2);
+    else if(/新商品|新サービス/.test(fs))m=Math.min(m,3);
+    return m;
+  }
+  function readingSpeed(chars,fs,is){
+    if(chars<=1800||(chars<=3000&&/調査結果共有/.test(is)))return 800;
+    if(chars<=3000)return 750;
+    if(chars>=3500&&/インタビュー|対談/.test(fs))return 600;
+    if(chars>=4000&&/調査レポート/.test(fs))return 625;
+    if(chars>=4500&&/事例|ケース|解説|ハウツー/.test(fs))return 650;
+    return 700;
+  }
+  function fallbackCompleteness(a,chars,excerpt){
+    const c=String(a?.content_completeness||'').toLowerCase();
+    if(['full','partial','unknown'].includes(c))return c;
+    if(/ここから先は|続き(?:は|を).{0,18}(?:会員|ログイン|購読|有料|登録)|(?:会員|有料会員|購読者)限定|残り\s*\d+\s*(?:文字|ページ)|次のページ/.test(excerpt))return 'partial';
+    if(chars>=11800||compactChars(excerpt)>=4900)return 'unknown';
+    return 'unknown';
   }
 
   function readingTimeInfo(a){
     const official=Number(a?.reading_time_minutes||0);
     if(official>0){
       const isXtrend=a?.reading_time_source==='xtrend_official';
-      return {minutes:clampMinutes(official,120),kind:isXtrend?'xtrend_official':'official',label:isXtrend?'XTrend官方':'官方',exact:true};
+      return {minutes:clampMinutes(official,120),kind:isXtrend?'xtrend_official':'official',label:isXtrend?'XTrend官方':'官方',confidence:'official',exact:true};
     }
     const serverEstimate=Number(a?.estimated_reading_minutes||0);
     if(serverEstimate>0){
       const src=String(a?.reading_time_estimate_source||'server_estimate');
-      const body=/body|content/.test(src);
-      return {minutes:clampMinutes(serverEstimate,60),kind:body?'body':'estimate',label:body?'正文':'估算',exact:false};
+      const confidence=String(a?.reading_time_estimate_confidence||'low');
+      let label='估算',kind='estimate';
+      if(src==='body_full'){label='正文完整';kind='body_full';}
+      else if(src==='body_partial'){label='正文部分';kind='body_partial';}
+      else if(src==='body_unknown'||src==='body_excerpt'){label='正文未确认完整';kind='body_unknown';}
+      return {minutes:clampMinutes(serverEstimate,60),kind,label,confidence,exact:false};
     }
 
-    const fs=formats(a).join(' '),ss=signals(a).join(' '),summary=String(a?.summary||'');
+    const fs=formats(a).join(' '),is=intents(a).join(' '),summary=String(a?.summary||'');
     const fullChars=Number(a?.content_char_count||0);
     const excerpt=String(a?.content_excerpt||'');
     const excerptChars=compactChars(excerpt);
-    let mins=0,kind='estimate',label='估算';
+    const chars=fullChars||excerptChars;
 
-    if(a?.content_checked&&(fullChars>0||excerptChars>0)){
-      // When the backend captured the full extracted body length, use it directly. Legacy rows only
-      // have a 5k excerpt; a near-5k excerpt is therefore treated as a lower-bound long article.
-      let chars=fullChars||excerptChars;
-      if(!fullChars&&excerptChars>=4700)chars=Math.max(chars,7200);
-      mins=chars/550;
-      if(/調査レポート|インタビュー|対談/.test(fs))mins*=1.12;
-      if(/一次データ/.test(ss)||/調査|データ|統計|アンケート/.test(summary))mins+=.7;
-      kind='body';label=fullChars?'正文':'正文片段';
-    }else{
-      mins=sourcePrior(a);
-      if(/インタビュー|対談/.test(fs))mins=Math.max(mins,10);
-      else if(/調査レポート/.test(fs))mins=Math.max(mins,9);
-      else if(/事例|ケース|解説|ハウツー/.test(fs))mins=Math.max(mins,8);
-      else if(/ランキング|まとめ/.test(fs))mins=Math.max(mins,6);
-      else if(/セミナー|イベント|キャンペーン|販促/.test(fs))mins=Math.min(mins,3);
-      else if(/新商品|新サービス/.test(fs))mins=Math.min(mins,4);
-      const summaryChars=compactChars(summary);
-      if(summaryChars>=650)mins+=1;
-      if(summaryChars>=1050)mins+=1;
+    if(a?.content_checked&&chars>0){
+      const completeness=fallbackCompleteness(a,chars,excerpt),speed=readingSpeed(chars,fs,is),observed=roundedMinutes(chars/speed,1,60);
+      if(completeness==='full')return {minutes:observed,kind:'body_full',label:'正文完整',confidence:'high',exact:false};
+      if(completeness==='partial'){
+        const mins=Math.max(observed+1,roundedMinutes(priorForFormat(a,fs),2,30));
+        return {minutes:Math.min(60,mins),kind:'body_partial',label:'正文部分',confidence:'medium',exact:false};
+      }
+      return {minutes:Math.min(60,observed+(chars>=8000?1:0)),kind:'body_unknown',label:'正文未确认完整',confidence:'medium',exact:false};
     }
-    return {minutes:Math.max(2,Math.min(30,Math.ceil(mins))),kind,label,exact:false};
+
+    let mins=priorForFormat(a,fs),summaryChars=compactChars(summary);
+    if(summaryChars>=800)mins+=.5;if(summaryChars>=1300)mins+=.5;
+    return {minutes:roundedMinutes(mins,2,30),kind:'estimate',label:'估算',confidence:'low',exact:false};
   }
   function estimateMinutes(a){return readingTimeInfo(a).minutes;}
   function timeClass(m){return m<=3?'短读':m<=7?'中读':'深读';}
@@ -152,14 +173,14 @@
       const scores=card.querySelector('.scores');if(!scores||scores.querySelector('.reading-time-score'))return;
       const info=readingTimeInfo(a),x=document.createElement('span');x.className='score reading-time-score';
       x.textContent=info.exact?`🕒 ${info.minutes} 分钟 · ${info.label}`:`≈ ${info.minutes} 分钟 · ${info.label}/${timeClass(info.minutes)}`;
-      x.title=info.exact?'站点官方标注的阅读时间':info.kind==='body'?'根据已抓取正文长度估算':'未读取完整正文，按来源与文章形式估算';
+      x.title=info.exact?'站点官方标注的阅读时间':info.kind==='body_full'?'按已确认完整正文长度估算':info.kind==='body_partial'?'正文只抓到部分，结合已读部分与文章形式估算全文':'正文完整度无法确认，时间为近似值';
       scores.appendChild(x);
     });
   }
   function ensurePanel(){
     let panel=document.getElementById('weeklyReadingBudget');if(panel)return panel;
     panel=document.createElement('div');panel.id='weeklyReadingBudget';panel.className='reading-budget-panel';
-    panel.innerHTML='<div class="reading-budget-summary"></div><div class="reading-budget-buttons"><button type="button" data-budget="all">全部优先</button><button type="button" data-budget="30">30分钟可读</button><button type="button" data-budget="60">60分钟可读</button></div><div class="reading-budget-note">优先阅读仅包含 S/A。XTrend 优先使用站点官方“读了时间”；其他文章有正文时按完整正文长度估算，没有正文时会明确标为“估算”。</div>';
+    panel.innerHTML='<div class="reading-budget-summary"></div><div class="reading-budget-buttons"><button type="button" data-budget="all">全部优先</button><button type="button" data-budget="30">30分钟可读</button><button type="button" data-budget="60">60分钟可读</button></div><div class="reading-budget-note">阅读时间优先级：站点官方时间 ＞ 已确认完整正文 ＞ 部分/未确认正文 ＞ 来源与文章形式估算。部分正文不会把已抓到的片段误当成全文。</div>';
     const hint=document.getElementById('weeklyAttentionHint');
     if(hint)hint.insertAdjacentElement('afterend',panel);else document.querySelector('#articleList')?.previousElementSibling?.appendChild(panel);
     panel.querySelectorAll('[data-budget]').forEach(btn=>btn.addEventListener('click',()=>{
