@@ -33,7 +33,7 @@ const INTENT_RULES=[
 ];
 const SIGNAL_RULES=[
   ['一次データ',/独自調査|自社調査|アンケート|実証|実験|統計|データ分析/i],
-  ['再利用できる方法論',/フレームワーク|手法|方法|プロセス|検証|改善|運用/i],
+  ['再利用できる方法论',/フレームワーク|手法|方法|プロセス|検証|改善|運用/i],
   ['イベント色が強い',/オンラインセミナー|ウェビナー|参加募集|申込|登壇|開催/i],
   ['PR／告知色が強い',/PR|発売|提供開始|キャンペーン|プレゼント|セール|予約開始/i]
 ];
@@ -106,10 +106,17 @@ function score(a){
   return Math.max(0,Math.min(10,x));
 }
 function grade(x){return x>=8.7?'S':x>=7.2?'A':x>=5.5?'B':'C';}
-function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#039;'}[m]));}
 function short(s){return s.length>28?s.slice(0,27)+'…':s;}
 function fmt(s){return s?s.slice(0,10).replaceAll('-','/'):'日期不明';}
 function label(s){return ({new:'未处理',later:'稍后看',read:'已读',save:'进 Notion',skip:'跳过'})[s]||s;}
+function contentCompletenessLabel(a){
+  if(!a?.content_checked)return '标题/摘要判断';
+  const c=String(a.content_completeness||'').toLowerCase();
+  if(c==='full')return '正文完整';
+  if(c==='partial')return '正文部分';
+  return '正文未确认完整';
+}
 function btn(text,active,fn){const b=document.createElement('button');b.type='button';b.className='btn'+(active?' active':'');b.textContent=text;b.onclick=fn;return b;}
 function feedback(a,v){const cur=st(a.id);cur.feedback=cur.feedback===v?null:v;state[a.id]=cur;save();rebuildPrefs();render();}
 function setStatus(a,v){const cur=st(a.id);cur.status=cur.status===v?'new':v;state[a.id]=cur;save();render();}
@@ -128,7 +135,7 @@ function renderArticles(){
   for(const a of arts){
     const cur=st(a.id),sc=score(a),g=grade(sc),el=document.createElement('article');el.className='article';const f=typedFeatures(a);
     const chips=[...f.topics.slice(0,4).map(x=>`主题：${x}`),...f.formats.slice(0,2).map(x=>`形式：${x}`),...f.intents.slice(0,2).map(x=>`意图：${x}`)];
-    el.innerHTML=`<div class="article-top"><div class="meta"><span class="grade grade-${g}">${g}</span><span class="muted small">${fmt(a.published)} · ${esc(a.source)}</span><span class="pill">${label(cur.status)}</span></div><div class="muted small">个人分 ${sc.toFixed(1)}</div></div><a class="article-title" target="_blank" rel="noopener noreferrer" href="${esc(a.url)}">${esc(a.title)}</a><div class="scores"><span class="score">阅读价值 <b>${Number(a.reading_score??5).toFixed(1)}</b>/10</span><span class="score">Notion价值 <b>${Number(a.notion_score??4).toFixed(1)}</b>/10</span><span class="score">${a.content_checked?'正文已检查':'标题/摘要判断'}</span></div><div class="why"><b>为什么选：</b>${esc(a.reason||'等待筛选说明')}</div><div class="tags">${chips.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>${a.screening_note?`<div class="source-note">${esc(a.screening_note)}</div>`:''}`;
+    el.innerHTML=`<div class="article-top"><div class="meta"><span class="grade grade-${g}">${g}</span><span class="muted small">${fmt(a.published)} · ${esc(a.source)}</span><span class="pill">${label(cur.status)}</span></div><div class="muted small">个人分 ${sc.toFixed(1)}</div></div><a class="article-title" target="_blank" rel="noopener noreferrer" href="${esc(a.url)}">${esc(a.title)}</a><div class="scores"><span class="score">阅读价值 <b>${Number(a.reading_score??5).toFixed(1)}</b>/10</span><span class="score">Notion价值 <b>${Number(a.notion_score??4).toFixed(1)}</b>/10</span><span class="score">${contentCompletenessLabel(a)}</span></div><div class="why"><b>为什么选：</b>${esc(a.reason||'等待筛选说明')}</div><div class="tags">${chips.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>${a.screening_note?`<div class="source-note">${esc(a.screening_note)}</div>`:''}`;
     const c=document.createElement('div');c.className='controls';[['later','稍后看'],['read','已读'],['save','进 Notion'],['skip','跳过']].forEach(([v,t])=>c.appendChild(btn(t,cur.status===v,()=>setStatus(a,v))));const lab=document.createElement('div');lab.className='feedback-label';lab.textContent='筛选反馈（分别学习主题 / 形式 / 意图）';c.appendChild(lab);[['accurate','👍 选得准'],['more','⭐ 多推类似'],['bad','👎 不值得'],['less','🚫 少推此类']].forEach(([v,t])=>c.appendChild(btn(t,cur.feedback===v,()=>feedback(a,v))));el.appendChild(c);$('articleList').appendChild(el);
   }
 }
