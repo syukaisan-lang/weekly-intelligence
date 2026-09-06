@@ -43,6 +43,8 @@ jobs:
         run: python scripts/validate_global_impact.py
       - name: Check focused Weekly invariants
         run: python scripts/validate_weekly_v34.py
+      - name: Check reading-time invariants
+        run: python scripts/validate_reading_time.py
       - name: Check required dashboard files
         run: |
           test -f index.html
@@ -78,7 +80,10 @@ jobs:
           test -f scripts/weekly_lifecycle.py
           test -f scripts/update_feeds_personalized.py
           test -f scripts/update_feeds_temporal.py
+          test -f scripts/enrich_xtrend_reading_time.py
+          test -f scripts/enrich_reading_time_estimates.py
           test -f scripts/save_to_notion.py
           test -f scripts/save_weekly_state.py
           test -f scripts/validate_weekly_v34.py
+          test -f scripts/validate_reading_time.py
           test -f .github/workflows/weekly-state-sync.yml
