@@ -33,7 +33,7 @@ const INTENT_RULES=[
 ];
 const SIGNAL_RULES=[
   ['一次データ',/独自調査|自社調査|アンケート|実証|実験|統計|データ分析/i],
-  ['再利用できる方法论',/フレームワーク|手法|方法|プロセス|検証|改善|運用/i],
+  ['再利用できる方法論',/フレームワーク|手法|方法|プロセス|検証|改善|運用/i],
   ['イベント色が強い',/オンラインセミナー|ウェビナー|参加募集|申込|登壇|開催/i],
   ['PR／告知色が強い',/PR|発売|提供開始|キャンペーン|プレゼント|セール|予約開始/i]
 ];
@@ -106,7 +106,7 @@ function score(a){
   return Math.max(0,Math.min(10,x));
 }
 function grade(x){return x>=8.7?'S':x>=7.2?'A':x>=5.5?'B':'C';}
-function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#039;'}[m]));}
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 function short(s){return s.length>28?s.slice(0,27)+'…':s;}
 function fmt(s){return s?s.slice(0,10).replaceAll('-','/'):'日期不明';}
 function label(s){return ({new:'未处理',later:'稍后看',read:'已读',save:'进 Notion',skip:'跳过'})[s]||s;}
