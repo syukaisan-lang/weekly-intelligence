@@ -221,9 +221,10 @@ def prepare_sources(sources: list[dict], articles_path: Path = ART_PATH) -> tupl
         src = deepcopy(src0)
         mode = source_mode(yields.get(src.get('name')))
         src['_adaptive_mode'] = mode
+        # Compatibility flag for older callers/validators: it is always false. Adaptive control
+        # may reduce deep reads, but `_adaptive_skip` must never remove a configured source.
+        src['_adaptive_skip'] = False
         counts[mode] += 1
-        # Adaptive source control is allowed to change how much expensive deep-reading we do,
-        # never whether the source is discovered. This preserves full weekly source coverage.
         if mode == 'cold':
             src['_deep_read_min'] = 8.0
         elif mode == 'probe':
