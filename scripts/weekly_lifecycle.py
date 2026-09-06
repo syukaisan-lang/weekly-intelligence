@@ -195,6 +195,11 @@ def source_mode(metrics: dict | None) -> str:
 
 
 def _probe_week(name: str, now=None) -> bool:
+    """Legacy helper retained for deterministic diagnostics only.
+
+    Source usefulness may reduce deep-read effort, but configured sources must still be discovered
+    every week. We therefore never use probe week rotation to skip ingestion.
+    """
     now = now or datetime.now(timezone.utc)
     week = int(now.strftime('%V'))
     slot = int(hashlib.sha1(name.encode('utf-8')).hexdigest()[:4], 16) % 4
@@ -217,13 +222,12 @@ def prepare_sources(sources: list[dict], articles_path: Path = ART_PATH) -> tupl
         mode = source_mode(yields.get(src.get('name')))
         src['_adaptive_mode'] = mode
         counts[mode] += 1
+        # Adaptive source control is allowed to change how much expensive deep-reading we do,
+        # never whether the source is discovered. This preserves full weekly source coverage.
         if mode == 'cold':
             src['_deep_read_min'] = 8.0
         elif mode == 'probe':
             src['_deep_read_min'] = 8.4
-            if not _probe_week(str(src.get('name') or '')):
-                src['_adaptive_skip'] = True
-                counts['probe_skipped'] += 1
         out.append(src)
     return out, counts
 
@@ -306,6 +310,7 @@ def annotate_status(source_counts: dict, storage_counts: dict) -> None:
         'cold_count': source_counts.get('cold', 0),
         'probe_count': source_counts.get('probe', 0),
         'probe_skipped_count': source_counts.get('probe_skipped', 0),
+        'discovery_policy': 'all configured sources are always checked; cold/probe only raises deep-read threshold',
     }
     st['storage_lifecycle'] = {
         'hot_retention_days': HOT_DAYS,
