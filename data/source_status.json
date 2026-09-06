@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-06T00:25:21.900457+00:00",
+  "generated_at": "2026-09-06T00:45:17.185886+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 110,
-  "deduped_count": 110,
-  "deep_read_count": 36,
+  "raw_new_count": 0,
+  "deduped_count": 0,
+  "deep_read_count": 0,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -118,7 +118,7 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 70,
+      "new_count": 0,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
@@ -161,7 +161,7 @@
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 38,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -185,7 +185,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -236,7 +236,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-06T00:22:01.840965+00:00",
+    "generated_at": "2026-09-06T00:43:52.121195+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
