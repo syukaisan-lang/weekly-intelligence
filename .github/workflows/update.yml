@@ -19,6 +19,8 @@ on:
       - "scripts/update_feeds_temporal.py"
       - "scripts/update_feeds_coverage.py"
       - "scripts/update_source_discovery.py"
+      - "scripts/enrich_xtrend_reading_time.py"
+      - "scripts/enrich_reading_time_estimates.py"
       - "scripts/weekly_lifecycle.py"
       - "scripts/weekly_semantic.py"
       - "scripts/weekly_semantic_runtime.py"
