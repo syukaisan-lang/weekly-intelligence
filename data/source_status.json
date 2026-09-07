@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-07T00:45:57.884011+00:00",
+  "generated_at": "2026-09-07T06:44:02.506996+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 36,
-  "deduped_count": 36,
-  "deep_read_count": 9,
+  "raw_new_count": 13,
+  "deduped_count": 13,
+  "deep_read_count": 4,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,13 +22,13 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 4,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 80,
+      "coverage_cached_count": 84,
       "coverage_errors": []
     },
     {
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 154,
+      "coverage_cached_count": 156,
       "coverage_errors": []
     },
     {
@@ -82,7 +82,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -94,7 +94,7 @@
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -118,14 +118,14 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 4,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 153,
+      "coverage_cached_count": 155,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -134,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -143,13 +143,13 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 36,
+      "coverage_cached_count": 37,
       "coverage_errors": []
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -161,13 +161,13 @@
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 6,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 112,
+      "coverage_cached_count": 113,
       "coverage_errors": []
     },
     {
@@ -185,19 +185,19 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 5,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 158,
+      "coverage_cached_count": 159,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 16,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -211,7 +211,7 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 1224,
+  "semantic_rescored_count": 1237,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -232,11 +232,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1451,
+    "hot_count": 1464,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-07T00:44:13.835094+00:00",
+    "generated_at": "2026-09-07T06:42:31.522417+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
