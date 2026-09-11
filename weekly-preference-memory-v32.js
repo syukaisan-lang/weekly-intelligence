@@ -161,7 +161,7 @@
     const inc=String(a?.knowledge_context?.increment_type||a?.increment_type||'');
     const incBonus={direct_work_use:.85,knowledge_gap:.62,rule_evidence:.52,boundary_or_counterexample:.48}[inc]||0;
     const server=Number(a?.reading_score??a?.base_score??5);
-    return server*.58+o.base*.28+o.value*.14+incBonus+(substantiveEvidence(a)?.28:0);
+    return server*.58+o.base*.28+o.value*.14+incBonus+(substantiveEvidence(a)?0.28:0);
   }
   function rescueIds(){
     if(rescueCache&&rescueCache.rev===revision)return rescueCache.ids;
