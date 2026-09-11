@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-11T06:41:41.273029+00:00",
+  "generated_at": "2026-09-11T09:36:22.841399+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 18,
-  "deduped_count": 18,
-  "deep_read_count": 4,
+  "raw_new_count": 6,
+  "deduped_count": 6,
+  "deep_read_count": 1,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,13 +22,13 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 5,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 108,
+      "coverage_cached_count": 110,
       "coverage_errors": []
     },
     {
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 8,
+      "new_count": 3,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 193,
+      "coverage_cached_count": 196,
       "coverage_errors": []
     },
     {
@@ -118,14 +118,14 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 1,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 196,
+      "coverage_cached_count": 197,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -185,7 +185,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -197,7 +197,7 @@
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -211,7 +211,7 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 1483,
+  "semantic_rescored_count": 1489,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -232,11 +232,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1710,
+    "hot_count": 1716,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-11T06:40:08.962003+00:00",
+    "generated_at": "2026-09-11T09:34:50.293649+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
