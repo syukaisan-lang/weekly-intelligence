@@ -125,14 +125,27 @@ def main() -> int:
     if "recoverHistoricalLater" in later_click or "recoverWeeklyLater" in later_click:
         raise AssertionError("Opening Later must not trigger encrypted historical recovery/password prompts")
 
-    need(
+    # Preference Memory must not overfit one negative sample into a hard semantic ban. A hard memory
+    # cap requires repeated explicit negatives, while a tiny evidence-rich exploration reserve may
+    # rescue at most two recent items and may never override v30's explicit/declared guards.
+    memory = need(
         "weekly-preference-memory-v32.js",
         "article_count",
         "combo:",
         "laterHistory",
         "knowledge_context",
         "sample_count",
+        "RESCUE_TARGET=2",
+        "x.net<=-2.15&&x.neg_n>=2",
+        "substantiveEvidence",
+        "explicitBlocked",
+        "declaredGuard",
+        "learnedSuppression",
+        "Math.max(o.value,A_FLOOR)",
     )
+    if "strongNeg.some(x=>x.key.startsWith('combo:'))" in memory:
+        raise AssertionError("A single Preference Memory negative must not hard-cap an entire semantic combo")
+
     need(
         "weekly-performance-v28.js",
         "scoreCache",
@@ -169,7 +182,7 @@ def main() -> int:
     if "CNET Japan" in names:
         raise AssertionError("CNET Japan must remain removed")
 
-    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, durable schema-6 Later memory, local-only Later navigation, blocked Weekly private loaders, and one canonical v21 Priority source for count/list/time/pagination.")
+    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, durable schema-6 Later memory, local-only Later navigation, blocked Weekly private loaders, one canonical v21 Priority source, and anti-overfitting Preference Memory with explicit-guard-safe exploration rescue.")
     return 0
 
 
