@@ -1,21 +1,16 @@
 {
-  "generated_at": "2026-09-11T00:42:15.832824+00:00",
+  "generated_at": "2026-09-11T06:41:41.273029+00:00",
   "expected_sources": 16,
-  "successful_sources": 15,
-  "failed_sources": [
-    {
-      "name": "MARKETIMES（マーケタイムズ）",
-      "error": "HTTPConnectionPool(host='marketimes.jp', port=80): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPConnection(host='marketimes.jp', port=80) at 0x7f4541ec9040>, 'Connection to"
-    }
-  ],
-  "raw_new_count": 35,
-  "deduped_count": 35,
-  "deep_read_count": 9,
+  "successful_sources": 16,
+  "failed_sources": [],
+  "raw_new_count": 18,
+  "deduped_count": 18,
+  "deep_read_count": 4,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -27,13 +22,13 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 5,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 103,
+      "coverage_cached_count": 108,
       "coverage_errors": []
     },
     {
@@ -51,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 8,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 185,
+      "coverage_cached_count": 193,
       "coverage_errors": []
     },
     {
@@ -87,7 +82,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -130,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 193,
+      "coverage_cached_count": 196,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -139,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -154,7 +149,7 @@
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -166,7 +161,7 @@
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 6,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -177,32 +172,32 @@
     },
     {
       "name": "MARKETIMES（マーケタイムズ）",
-      "status": "failed",
+      "status": "ok",
       "new_count": 0,
-      "error": "HTTPConnectionPool(host='marketimes.jp', port=80): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPConnection(host='marketimes.jp', port=80) at 0x7f4541ec9040>, 'Connection to",
-      "coverage_status": "partial",
-      "coverage_methods": [],
+      "error": null,
+      "coverage_status": "unverified",
+      "coverage_methods": [
+        "feed_cache"
+      ],
       "coverage_cached_count": 0,
-      "coverage_errors": [
-        "feed_cache: HTTPConnectionPool(host='marketimes.jp', port=80): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPConnection(host='marketimes.jp', port=80) at 0x7f4541f1b"
-      ]
+      "coverage_errors": []
     },
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 10,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 202,
+      "coverage_cached_count": 203,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 11,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -216,7 +211,7 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 1465,
+  "semantic_rescored_count": 1483,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -237,17 +232,17 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1692,
+    "hot_count": 1710,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-11T00:40:12.816072+00:00",
+    "generated_at": "2026-09-11T06:40:08.962003+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
     "cached_count": 10,
-    "partial_count": 2,
-    "unverified_count": 1,
+    "partial_count": 1,
+    "unverified_count": 2,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
       "enhanced": "RSS/listing or multiple independent discovery paths plus rolling cache",
