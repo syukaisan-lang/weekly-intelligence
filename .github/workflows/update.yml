@@ -28,6 +28,9 @@ on:
       - "scripts/update_feeds.py"
       - "weekly-priority-policy.js"
       - "scripts/apply_priority_policy.cjs"
+      - "scripts/free_review_candidates.cjs"
+      - "scripts/retry_uncertain_public_content.py"
+      - "scripts/build_articles_brief.cjs"
       - "scripts/review_priority_content.py"
       - "requirements.txt"
       - "data/knowledge.enc.json"
@@ -85,20 +88,26 @@ jobs:
           done
           echo "Weekly refresh failed after automatic retry" >&2
           exit 1
+      - name: Retry evidence-poor articles from public pages only
+        run: python scripts/retry_uncertain_public_content.py
       - name: Apply evidence-based reading policy
         run: node scripts/apply_priority_policy.cjs
+      - name: Build fast home article payload
+        run: node scripts/build_articles_brief.cjs
       - name: Commit refreshed dashboard data safely
         run: |
           git config user.name "reading-dashboard-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cp data/articles.json /tmp/weekly-articles.json
+          cp data/articles-brief.json /tmp/weekly-articles-brief.json
           cp data/source_status.json /tmp/weekly-source-status.json
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/weekly-articles.json data/articles.json
+            cp /tmp/weekly-articles-brief.json data/articles-brief.json
             cp /tmp/weekly-source-status.json data/source_status.json
-            git add data/articles.json data/source_status.json
+            git add data/articles.json data/articles-brief.json data/source_status.json
             if git diff --cached --quiet; then
               echo "No Weekly data changes to commit"
               exit 0
