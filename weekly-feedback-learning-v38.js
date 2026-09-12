@@ -68,6 +68,15 @@
     }catch(_){cache.set(a,null);return null;}
   }
   function cosine(a,b){let dot=0;for(let i=0;i<384;i++)dot+=a.v[i]*b.v[i];return dot/(a.norm*b.norm);}
+  function titlePieces(a){
+    const title=String(a.title||'').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
+    const out=new Set();for(let i=0;i<title.length-2;i++)out.add(title.slice(i,i+3));return out;
+  }
+  function lexicalSimilarity(a,b){
+    const left=titlePieces(a),right=titlePieces(b);if(!left.size||!right.size)return 0;
+    let matches=0;for(const part of left)if(right.has(part))matches++;
+    return matches/Math.min(left.size,right.size);
+  }
   function events(a,s){
     const out=[],bad=NEG.has(s.feedback)||s.status==='skip';
     if(!bad&&(s.status==='later'||Number(s.later_interest_at||0)>0||s.feedback_reason==='later_interest'))
@@ -87,8 +96,9 @@
       const s=getState(a)||{};
       for(const e of events(a,s)){
         const age=Math.max(0,(now-e.at)/DAY);
-        if(age>365)continue;
-        samples.push({...e,weight:e.weight*(age<90?1:age<180?.8:.6),context:dimensions(a),vec:vector(a,cache)});
+        // Old feedback remains part of history, but recent choices dominate.
+        const ageFactor=age<90?1:age<180?.8:age<365?.6:age<730?.4:.25;
+        samples.push({...e,weight:e.weight*ageFactor,context:dimensions(a),vec:vector(a,cache)});
       }
     }
     const scores=new WeakMap();
@@ -106,15 +116,21 @@
         if(s.reason==='topic'&&!topic)continue;
         if(s.weight<0&&['no_evidence','too_generic'].includes(s.reason)&&
             a.priority_review?.verdict==='recommend')continue;
-        const sim=v&&s.vec?cosine(v,s.vec):0;
+        const exactVector=!!(v&&s.vec);
+        const sim=exactVector?cosine(v,s.vec):0;
+        // Archived articles lose their vector at 90 days. Their exact topic,
+        // presentation and title still provide a weak, conservative signal.
+        const lexical=!exactVector&&topic&&samePresentation&&
+          s.context.family===context.family?lexicalSimilarity(a,s.article):0;
         // E5 embeddings have a high baseline similarity even on unrelated
         // articles. Require unusually close meaning AND contextual agreement.
-        if(sim<.925||(!topic&&sim<.965)||
-            (s.weight<0&&s.reason!=='topic'&&!samePresentation&&sim<.955))continue;
-        const closeness=clamp((sim-.91)/.075,0,1);
+        if(exactVector&&(sim<.925||(!topic&&sim<.965)||
+            (s.weight<0&&s.reason!=='topic'&&!samePresentation&&sim<.955)))continue;
+        if(!exactVector&&lexical<.35)continue;
+        const closeness=exactVector?clamp((sim-.91)/.075,0,1):clamp(lexical-.2,0,.35);
         const strength=s.weight*closeness*(topic?1:.6)*(samePresentation?1:.72)*
           (s.weight>0?reasonFit(s.reason,a):1);
-        const match={id:s.article.id,title:s.article.title,reason:s.label,similarity:sim,strength};
+        const match={id:s.article.id,title:s.article.title,reason:s.label,similarity:exactVector?sim:lexical,strength,method:exactVector?'semantic':'archived_title'};
         (strength<0?negatives:positives).push(match);
       }
       positives.sort((a,b)=>b.strength-a.strength);
@@ -129,7 +145,9 @@
       const result={delta,cap,positives:positives.slice(0,3),negatives:negatives.slice(0,3),sampleCount:samples.length};
       scores.set(a,result);return result;
     }
-    return {explain,sampleCount:samples.length};
+    return {explain,sampleCount:samples.length,positiveSamples:samples.filter(s=>s.weight>0).length,
+      negativeSamples:samples.filter(s=>s.weight<0).length,
+      archivedSamples:samples.filter(s=>!s.vec).length};
   }
   return {makeModel,family};
 });

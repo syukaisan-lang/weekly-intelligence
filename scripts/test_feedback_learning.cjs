@@ -36,6 +36,11 @@ const alone=engine.makeModel([negativeA],a=>negState[a.id],now).explain(related)
 assert(alone.delta>=-.35&&alone.cap===10,'single negative is only a light ranking signal');
 const neutral=engine.makeModel([mk('read','生成AI業務活用の分析手法')],()=>({status:'read'}),now);
 assert.equal(neutral.sampleCount,0,'completed read is not an endorsement');
+const archived=mk('archived','生成AI業務活用の分析方法',null);
+const older=engine.makeModel([archived],()=>({status:'later',later_interest_at:now-800*86400000}),now);
+assert.equal(older.sampleCount,1,'old feedback remains in history after a year');
+assert.equal(older.archivedSamples,1,'missing vectors are reported');
+assert(older.explain(method).delta>0,'archived matching title still gives a weak positive signal');
 
 // Execute the final browser adapter; the user's state stays local and changes
 // invalidate the learned model without making a network request.
@@ -47,6 +52,8 @@ const ctx={window:{weeklyFeedbackLearningV38:engine,weeklyPriorityPolicy:policy,
 vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(path.join(root,'weekly-feedback-runtime-v38.js'),'utf8'),ctx);
 assert.equal(ctx.window.weeklyFeedbackRuntimeV38.stats().samples,2);
+assert.equal(ctx.window.weeklyFeedbackRuntimeV38.stats().unmatched_records,1,
+  'the coverage diagnostic reports feedback on articles missing from the current library');
 const rev=ctx.window.weeklyFeedbackRuntimeV38.stats().revision;
 ctx.save();assert.equal(saved,1);assert(ctx.window.weeklyFeedbackRuntimeV38.stats().revision>rev);
 assert(invalidations>=2);

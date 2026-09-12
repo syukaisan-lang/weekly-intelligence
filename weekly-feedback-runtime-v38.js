@@ -47,7 +47,24 @@
   }
   // Rendering uses the same cached model and per-article results until the
   // history changes; changing tabs and filters should never retrain it.
-  window.weeklyFeedbackRuntimeV38={explain:a=>activeModel().explain(a),stats:()=>({revision,samples:activeModel().sampleCount,articles:rowsCount}),invalidate};
+  function stats(){
+    const current=activeModel(),marked=Object.entries(state||{}).filter(([,s])=>
+      !!s&&(['later','save','skip'].includes(s.status)||Number(s.later_interest_at||0)>0||!!s.feedback));
+    return {revision,samples:current.sampleCount,positive:current.positiveSamples,negative:current.negativeSamples,
+      archived_without_vectors:current.archivedSamples,records_on_device:marked.length,
+      unmatched_records:marked.filter(([id])=>!articleById.has(String(id))).length,articles:rowsCount};
+  }
+  if(typeof renderPrefs==='function'){
+    const previousPrefs=renderPrefs;
+    renderPrefs=function(){
+      const output=previousPrefs(),root=document.getElementById('learnedPrefs');if(!root)return output;
+      root.querySelector('.feedback-coverage-v38')?.remove();
+      const s=stats(),note=document.createElement('div');note.className='muted small precision-learning-note feedback-coverage-v38';
+      note.textContent=`本机历史覆盖：${s.records_on_device} 条有明确标记的记录，当前文章库之外 ${s.unmatched_records} 条；参与匹配的正向 ${s.positive}、负向 ${s.negative} 个信号。${s.archived_without_vectors?`${s.archived_without_vectors} 个旧文章信号缺少向量，只能按标题与内容形式弱匹配。`:''}其他设备的加密备份需主动恢复后才会参与。`;
+      root.appendChild(note);return output;
+    };
+  }
+  window.weeklyFeedbackRuntimeV38={explain:a=>activeModel().explain(a),stats,invalidate};
   invalidate();
   try{window.weeklyRuntimeConsistencyV35?.refreshPrioritySnapshots?.();}catch(_){}
 })();
