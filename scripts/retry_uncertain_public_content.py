@@ -13,7 +13,7 @@ from datetime import datetime, timedelta, timezone
 from functools import lru_cache
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
 from urllib.request import Request, urlopen
 from urllib.robotparser import RobotFileParser
 
@@ -140,6 +140,34 @@ def robots_allow(host, scheme, url):
     return rules is True or bool(rules and rules.can_fetch(USER_AGENT, url))
 
 
+def fetch_public_text(url, feeds):
+    """Check each redirect's robots policy before requesting its target."""
+    current = url
+    for _ in range(4):
+        parts = urlsplit(current)
+        if parts.scheme not in ('http', 'https') or not parts.netloc or not robots_allow(parts.netloc, parts.scheme, current):
+            return '', False, 'robots_or_unavailable'
+        try:
+            response = feeds.requests.get(current, headers={'User-Agent': USER_AGENT}, timeout=12,
+                                           allow_redirects=False)
+        except feeds.requests.RequestException as exc:
+            return '', False, str(exc)[:120]
+        if response.status_code in (301, 302, 303, 307, 308) and response.headers.get('Location'):
+            current = urljoin(current, response.headers['Location'])
+            continue
+        if response.status_code != 200:
+            return '', False, f'HTTP {response.status_code}'
+        if 'html' not in response.headers.get('content-type', ''):
+            return '', False, '非HTML正文'
+        soup = feeds.BeautifulSoup(response.text, 'html.parser')
+        for element in soup(['script', 'style', 'nav', 'header', 'footer', 'aside']):
+            element.decompose()
+        text = feeds.clean(' '.join(p.get_text(' ', strip=True)
+                                    for p in soup.select('article p, main p, .article p, .entry-content p')))
+        return text[:12000], bool(text), None if text else '未抽取到正文'
+    return '', False, '跳转次数过多'
+
+
 def main():
     import update_feeds as feeds
     import update_feeds_coverage as coverage
@@ -165,7 +193,11 @@ def main():
         now = datetime.now(timezone.utc).isoformat()
         a['free_public_retry_at'] = now
         counts['attempted'] += 1
-        content, checked, error = feeds.fetch_text(url)
+        content, checked, error = fetch_public_text(url, feeds)
+        if error == 'robots_or_unavailable':
+            counts['robots_blocked'] += 1
+            a['free_public_retry_status'] = 'robots_or_unavailable'
+            continue
         if checked and content and len(content) > len(a.get('content_excerpt') or ''):
             a['content_excerpt'] = content[:5000]
             a['content_checked'] = True
