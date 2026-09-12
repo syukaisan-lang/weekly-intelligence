@@ -1,5 +1,6 @@
 import base64
 import sys
+import types
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
@@ -46,6 +47,19 @@ class RecheckTests(unittest.TestCase):
                                         {'recent'}, {}), [])
         rows = [article(str(i), f'内容{i}', url=f'https://same.example.org/{i}') for i in range(12)]
         self.assertEqual(len(recheck.select(rows, {a['id'] for a in rows}, {})), recheck.MAX_PER_HOST)
+
+    def test_redirect_checks_destination_robots_before_second_request(self):
+        calls = []
+
+        def get(url, **_):
+            calls.append(url)
+            return types.SimpleNamespace(status_code=302, headers={'Location': 'https://blocked.example/private'})
+
+        feeds = types.SimpleNamespace(requests=types.SimpleNamespace(get=get, RequestException=Exception))
+        with patch.object(recheck, 'robots_allow', side_effect=lambda host, *_: host == 'open.example'):
+            content, checked, error = recheck.fetch_public_text('https://open.example/article', feeds)
+        self.assertEqual((content, checked, error), ('', False, 'robots_or_unavailable'))
+        self.assertEqual(calls, ['https://open.example/article'])
 
     def test_real_candidates_are_read_only_and_include_summary_gaps(self):
         ids = recheck.candidate_ids()
