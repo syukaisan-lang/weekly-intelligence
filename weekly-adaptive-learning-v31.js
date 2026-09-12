@@ -8,7 +8,12 @@
   function hs(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
   function allRows(){return window.weeklyUiFixesV25?.allRows?.()||(Array.isArray(data?.articles)?data.articles:[]);}
   function subjects(a){
-    try{return window.weeklyPreferenceGuardV30?.subjects?.(a)||[];}catch(_){return [];}
+    try{
+      const topics=window.weeklyPreferenceGuardV30?.subjects?.(a)||[];
+      const f=typedFeatures(a);
+      const context=[...(f.formats||[]),...(f.intents||[])].sort().join(' × ');
+      return context?topics.map(t=>t+' × '+context):[];
+    }catch(_){return [];}
   }
   function ownLater(a){const s=hs(a);return s.status==='later'||s.feedback_reason==='later_interest'||Number(s.later_interest_at||0)>0;}
   function ageWeight(ts){

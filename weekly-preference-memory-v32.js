@@ -1,12 +1,8 @@
-// Weekly v32.1: unified long-term Preference Memory built from article content + historical behavior.
-// Keeps learning sparse/lightweight in the browser: article semantics are already computed server-side;
-// this layer learns durable topic × format × intent × evidence combinations from the user's own history.
-// v32.1 adds anti-overfitting protection: repeated explicit negatives still block, but one noisy historical
-// pattern cannot erase fresh, evidence-rich work-relevant articles. Up to two recent evidence-rich items may
-// be rescued to the A threshold only when no explicit/hard preference guard blocks them.
+// Preference Memory: rank evidence-qualified articles with contextual feedback.
+// A low-volume week is allowed to remain empty; no exploration score rescue.
 (() => {
   const KEY='weekly_intelligence_preference_memory_v32';
-  const DAY=86400000, MAX_AGE=365, A_FLOOR=7.2, RESCUE_DAYS=7, RESCUE_TARGET=2;
+  const DAY=86400000, MAX_AGE=365, A_FLOOR=7.2, RESCUE_DAYS=7, RESCUE_TARGET=0;
   const NEGATIVE=new Set(['bad','less']);
   const GENERIC=new Set(['AI','生成AI','EC','eコマース','市場','調査','データ','広告','ブランド','消費者','顧客','ユーザー','マーケティング','コンテンツ']);
   const STRONG_INCREMENT=new Set(['direct_work_use','knowledge_gap','rule_evidence','boundary_or_counterexample']);
@@ -48,11 +44,10 @@
     signals.forEach(x=>out.push('signal:'+x));
     if(inc)out.push('increment:'+inc);
     for(const t of topics.slice(0,4)){
-      for(const f1 of formats.slice(0,2))out.push(`combo:${t} × ${f1}`);
-      for(const i of intents.slice(0,2))out.push(`combo:${t} × ${i}`);
-      for(const s of signals.slice(0,1))out.push(`combo:${t} × ${s}`);
+      for(const f1 of formats.slice(0,2)){
+        for(const i of (intents.length?intents.slice(0,2):['内容分享']))out.push(`combo:${t} × ${f1} × ${i}`);
+      }
     }
-    for(const f1 of formats.slice(0,2))for(const i of intents.slice(0,2))out.push(`combo:${f1} × ${i}`);
     return uniq(out).slice(0,28);
   }
   function featureKind(k){return k.split(':',1)[0];}
@@ -63,10 +58,10 @@
     for(const k of keys){const e=entry(map,k),v=Math.abs(value)*w;if(value>0){e.pos+=v;e.pos_n++;e.last_pos=Math.max(e.last_pos,ts);}else{e.neg+=v;e.neg_n++;e.last_neg=Math.max(e.last_neg,ts);}}
   }
   function keysByReason(keys,reason){
-    if(reason==='topic'||reason==='not_work')return keys.filter(k=>k.startsWith('topic:')||k.startsWith('combo:'));
-    if(reason==='promo')return keys.filter(k=>/^(format|intent|signal|combo):/.test(k));
-    if(reason==='too_generic'||reason==='no_evidence'||reason==='known')return keys.filter(k=>/^(signal|increment|combo):/.test(k));
-    return keys;
+    // Only an explicit topic rejection transfers at topic level. Rejected event or
+    // PR formats never teach a global dislike of analysis, evidence or AI methods.
+    if(reason==='topic')return keys.filter(k=>k.startsWith('topic:')||k.startsWith('combo:'));
+    return keys.filter(k=>k.startsWith('combo:'));
   }
   function buildMemory(){
     const rows=allRows(),entries={};let samples=0,posSamples=0,negSamples=0;
@@ -81,7 +76,7 @@
         const base={topic:3.25,promo:3.0,not_work:2.65,too_generic:1.75,no_evidence:1.9,known:1.35}[r]||(s.feedback==='less'?1.45:.8);
         apply(entries,keysByReason(keys,r),-(s.feedback==='less'?base:base*.72),Number(s.feedback_reason_updated_at||0)||ts);negSamples++;touched=true;
       }else if(s.status==='skip'){
-        apply(entries,keys,-.42,Number(s.status_updated_at||0)||ts);negSamples++;touched=true;
+        apply(entries,keysByReason(keys,''),-.42,Number(s.status_updated_at||0)||ts);negSamples++;touched=true;
       }
       if(touched)samples++;
     }
@@ -123,8 +118,8 @@
     // combination. Hard caps require repeated explicit negative evidence on the same learned feature.
     const repeatedStrong=picked.filter(x=>x.net<=-2.15&&x.neg_n>=2);
     let cap=10;
-    if(repeatedStrong.some(x=>x.key.startsWith('combo:'))||repeatedStrong.length>=2)cap=6.9;
-    if(repeatedStrong.some(x=>x.net<=-4.2&&x.neg_n>=2))cap=5.4;
+    if(repeatedStrong.some(x=>x.key.startsWith('combo:')||x.key.startsWith('topic:')))cap=6.9;
+    if(repeatedStrong.some(x=>x.net<=-4.2&&/^(combo|topic):/.test(x.key)))cap=5.4;
     return {delta,cap,parts:picked,hardNegative:cap<A_FLOOR,repeatedStrong};
   }
 
@@ -163,33 +158,21 @@
     const server=Number(a?.reading_score??a?.base_score??5);
     return server*.58+o.base*.28+o.value*.14+incBonus+(substantiveEvidence(a)?0.28:0);
   }
-  function rescueIds(){
-    if(rescueCache&&rescueCache.rev===revision)return rescueCache.ids;
-    const rows=allRows(),normal=[],candidates=[];
-    for(const a of rows){
-      if(!stateEligible(a))continue;
-      const o=baseOutcome(a);
-      if(o.value>=A_FLOOR){normal.push(a);continue;}
-      const server=Number(a?.reading_score??a?.base_score??5);
-      if(normal.length>=RESCUE_TARGET&&server<7.0)continue;
-      if(server<6.8||o.base<6.55||!substantiveEvidence(a)||o.e.hardNegative||explicitBlocked(a))continue;
-      candidates.push({a,o,rank:rescueRank(a,o)});
-    }
-    const need=Math.max(0,RESCUE_TARGET-normal.length);
-    candidates.sort((x,y)=>y.rank-x.rank||Number(y.a?.reading_score||0)-Number(x.a?.reading_score||0));
-    const ids=new Set(candidates.slice(0,need).map(x=>articleKey(x.a)));
-    rescueCache={rev:revision,ids,count:ids.size,normal:normal.length};
-    return ids;
-  }
+  // A recommendation may be empty. Never raise a score to fill the queue.
+  function rescueIds(){return new Set();}
 
   if(previousScore){
     score=function(a){
       const key=articleKey(a),hit=key?scoreCache.get(key):null;
       if(hit&&hit.rev===revision)return hit.value;
-      const o=baseOutcome(a),rescued=key&&rescueIds().has(key);
-      // Rescue never overrides v30 explicit/hard guards or repeated negative memory. It only prevents
-      // aggregate Preference Memory from collapsing a fresh evidence-rich weekly queue to zero.
-      const value=Math.max(0,Math.min(10,rescued?Math.max(o.value,A_FLOOR):o.value));
+      const o=baseOutcome(a),rescued=false;
+      const editorial=window.weeklyPriorityPolicy?.assess(a);
+      const declared=window.weeklyPreferenceGuardV30?.declaredGuard?.(a)?.cap??10;
+      const learned=window.weeklyPreferenceGuardV30?.learnedSuppression?.(a)?.cap??10;
+      const skipCap=window.weeklyAdaptiveLearningV31?.skipSuppression?.(a)?.cap??10;
+      // Personal preference ranks qualifying content. It cannot manufacture evidence.
+      const adjustment=Math.max(-.6,Math.min(.35,o.value-Number(a.reading_score??5)));
+      const value=editorial?Math.max(0,Math.min(editorial.score+adjustment,editorial.cap,o.e.cap,declared,learned,skipCap)):Math.min(o.value,6.9);
       if(key)scoreCache.set(key,{rev:revision,value,rescued});return value;
     };
   }
@@ -215,7 +198,7 @@
       root.querySelector('.preference-memory-v32')?.remove();
       const s=memorySummary(),r=rescueSummary(),box=document.createElement('div');box.className='muted small precision-learning-note preference-memory-v32';
       const pos=s.positive.map(x=>labelKey(x.k)).join(' / '),neg=s.negative.map(x=>labelKey(x.k)).join(' / ');
-      box.innerHTML=`<b>长期 Preference Memory</b>：${s.samples} 个历史行为样本。${pos?`<br>偏好：${esc(pos)}`:''}${neg?`<br>降权：${esc(neg)}`:''}<br>学习单位是“主题 × 形式 × 意图 × 证据/知识增量”的组合；稍后看权重最高，未点击不算负反馈。<br><b>防过拟合保护</b>：单次历史负反馈只降权，不再直接封死整个组合；重复明确负反馈仍可硬过滤。高证据/高工作增量文章在未命中明确负偏好时最多保留 ${RESCUE_TARGET} 个探索位${r.count?`（当前 ${r.count}）`:''}。`;
+      box.innerHTML=`<b>长期 Preference Memory</b>：${s.samples} 个历史行为样本。${pos?`<br>偏好：${esc(pos)}`:''}${neg?`<br>降权：${esc(neg)}`:''}<br>学习单位是“主题 × 形式 × 意图 × 证据/知识增量”的组合；稍后看权重最高，未点击不算负反馈。<br>先检查正文用途与证据，再用偏好排序；不为凑数量提级。单次负反馈仅降权，重复明确负反馈按具体内容组合生效。`;
       root.appendChild(box);
     };
   }

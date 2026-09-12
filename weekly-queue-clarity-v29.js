@@ -54,7 +54,7 @@
     const h=head.querySelector('h2'),p=head.querySelector('p');
     const rp=typeof readingProgress!=='undefined'?readingProgress:'';
     const copy={
-      focus:['优先阅读','这里只显示“待处理 S/A”里再次排序后的优先子集；下面的阅读时间和篇数就是当前实际优先清单。'],
+      focus:['优先阅读','已核对用途与正文依据，最多精选 5 篇；按顺序阅读即可。没有达标文章就留空，不凑数。'],
       unread:['待处理 S/A','这是完整的未处理 S/A 队列；“优先阅读”只是从这里再挑出最值得先看的部分。'],
       week:['本周文章','本周新入库文章的状态分布；“本周待处理 S/A”与跨周的“待处理 S/A”不是同一个范围。'],
       later:['稍后看','你主动留下的阅读清单；这是最高权重的推荐学习信号。'],
@@ -73,7 +73,7 @@
     const rows=priorityRows(),mins=priorityMinutes(rows),mode=localStorage.getItem(BUDGET_KEY)||'all';
     const summary=panel.querySelector('.reading-budget-summary');
     if(summary)summary.innerHTML=`<b>${rows.length} 篇优先阅读</b> · 预计约 <b>${mins} 分钟</b>${mode==='30'||mode==='60'?` / ${mode} 分钟预算`:''}<span>来源：待处理 S/A ${queueRows().length} 篇中再筛选</span>`;
-    const note=panel.querySelector('.reading-budget-note');if(note)note.textContent='这里的篇数就是下方实际显示的“优先阅读”清单，不等于全部待处理 S/A。';
+    const note=panel.querySelector('.reading-budget-note');if(note)note.textContent='优先保证内容价值，再满足时间预算；最多 5 篇，不为凑数提级。';
     const vc=document.getElementById('visibleCount');if(vc)vc.textContent=`${rows.length} 篇优先阅读 · ≈${mins}分钟`;
   }
   function sync(){updateHierarchy();updateReconciliation();sectionCopy();updateBudgetPanel();}

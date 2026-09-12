@@ -96,30 +96,18 @@
   function estimateMinutes(a){return readingTimeInfo(a).minutes;}
   function timeClass(m){return m<=3?'短读':m<=7?'中读':'深读';}
 
-  function focusValue(a){
-    if(window.weeklyFocusFeedbackV17?.focusValue){try{return Number(window.weeklyFocusFeedbackV17.focusValue(a))||safeScore(a);}catch(_){}}
-    const kc=a?.knowledge_context||{};let v=safeScore(a),inc=kc.increment_type||'';
-    if(safeGrade(a)==='S')v+=1.15;
-    if(inc==='direct_work_use')v+=.55;
-    if(inc==='knowledge_gap')v+=.48;
-    if(inc==='rule_evidence')v+=.42;
-    if(inc==='boundary_or_counterexample')v+=.45;
-    if(inc==='mostly_duplicate')v-=.62;
-    return v;
-  }
+  function focusValue(a){return safeScore(a);}
   function isFocusCandidate(a){
     const s=hs(a),g=safeGrade(a),ts=articleTs(a);
-    if(!['S','A'].includes(g))return false;
+    if(!['S','A'].includes(g)||!window.weeklyPriorityPolicy?.assess(a).eligible)return false;
     if(NEGATIVE.has(s.feedback))return false;
     if(['later','read','save','skip'].includes(s.status))return false;
     if(s.feedback&&!POSITIVE.has(s.feedback))return false;
-    if(ts&&Date.now()-ts>=7*DAY)return false;
+    if(!ts||ts>Date.now()||Date.now()-ts>=7*DAY)return false;
     return true;
   }
-  function focusLimit(rows){const strong=rows.filter(a=>safeGrade(a)==='S'||safeScore(a)>=7.8).length;return Math.max(15,Math.min(30,Math.max(18,strong+8)));}
   function allFocusRows(){
-    const rows=(data?.articles||[]).filter(isFocusCandidate).sort((a,b)=>focusValue(b)-focusValue(a));
-    return rows.slice(0,focusLimit(rows));
+    return (data?.articles||[]).filter(isFocusCandidate).sort((a,b)=>focusValue(b)-focusValue(a));
   }
   function matchesUiFilters(a){
     const gf=document.getElementById('gradeFilter')?.value||'SAB',src=document.getElementById('sourceFilter')?.value||'all',sf=document.getElementById('statusFilter')?.value||'all',g=safeGrade(a);
@@ -131,16 +119,7 @@
     return true;
   }
   function fitBudget(rows,minutes){
-    if(!Number(minutes))return rows;
-    const ranked=rows.slice().sort((a,b)=>{
-      const da=(focusValue(a)+(safeGrade(a)==='S' ? .35 : 0))/Math.pow(estimateMinutes(a),.45);
-      const db=(focusValue(b)+(safeGrade(b)==='S' ? .35 : 0))/Math.pow(estimateMinutes(b),.45);
-      return db-da||focusValue(b)-focusValue(a);
-    });
-    const out=[];let used=0;
-    for(const a of ranked){const m=estimateMinutes(a);if(used+m<=minutes){out.push(a);used+=m;}}
-    if(!out.length&&ranked.length)out.push(ranked[0]);
-    return out.sort((a,b)=>focusValue(b)-focusValue(a));
+    return window.weeklyPriorityPolicy?.select(rows,{value:focusValue,minutes:estimateMinutes,budget:Number(minutes)||0})||[];
   }
   function currentFocus(){
     if(focusCache)return focusCache;
@@ -151,7 +130,7 @@
   }
   function invalidate(){focusCache=null;}
 
-  if(window.weeklyFocusFeedbackV17)window.weeklyFocusFeedbackV17.focusRows=allFocusRows;
+  if(window.weeklyFocusFeedbackV17)window.weeklyFocusFeedbackV17.focusRows=()=>currentFocus().selected;
 
   if(typeof visible==='function'){
     const previousVisible=visible;
@@ -180,7 +159,7 @@
   function ensurePanel(){
     let panel=document.getElementById('weeklyReadingBudget');if(panel)return panel;
     panel=document.createElement('div');panel.id='weeklyReadingBudget';panel.className='reading-budget-panel';
-    panel.innerHTML='<div class="reading-budget-summary"></div><div class="reading-budget-buttons"><button type="button" data-budget="all">全部优先</button><button type="button" data-budget="30">30分钟可读</button><button type="button" data-budget="60">60分钟可读</button></div><div class="reading-budget-note">阅读时间优先级：站点官方时间 ＞ 已确认完整正文 ＞ 部分/未确认正文 ＞ 来源与文章形式估算。部分正文不会把已抓到的片段误当成全文。</div>';
+    panel.innerHTML='<div class="reading-budget-summary"></div><div class="reading-budget-buttons"><button type="button" data-budget="all">精选 5 篇以内</button><button type="button" data-budget="30">30分钟可读</button><button type="button" data-budget="60">60分钟可读</button></div><div class="reading-budget-note">阅读时间优先级：站点官方时间 ＞ 已确认完整正文 ＞ 部分/未确认正文 ＞ 来源与文章形式估算。部分正文不会把已抓到的片段误当成全文。</div>';
     const hint=document.getElementById('weeklyAttentionHint');
     if(hint)hint.insertAdjacentElement('afterend',panel);else document.querySelector('#articleList')?.previousElementSibling?.appendChild(panel);
     panel.querySelectorAll('[data-budget]').forEach(btn=>btn.addEventListener('click',()=>{
@@ -197,9 +176,9 @@
     const summary=panel.querySelector('.reading-budget-summary');
     if(summary)summary.innerHTML=active?`<b>${cur.selected.length} 篇</b> · 预计约 <b>${selMin} 分钟</b>${cur.target?` / ${cur.target} 分钟预算`:''}<span>全部优先 S/A：${focus.length} 篇 · 约 ${allMin} 分钟</span>`:'';
     const vc=document.getElementById('visibleCount');if(active&&vc)vc.textContent=`${cur.selected.length} 篇 · ≈${selMin}分钟`;
-    const tab=document.querySelector('[data-progress="focus"] .segment-count');if(tab)tab.textContent=String(allFocusRows().length);
+    const tab=document.querySelector('[data-progress="focus"] .segment-count');if(tab)tab.textContent=String(cur.selected.length);
     const hint=document.getElementById('weeklyAttentionHint');
-    if(active&&hint)hint.textContent=cur.target?`优先阅读仅看 S/A：按个人价值与阅读成本组合出 ${cur.target} 分钟内价值更高的一组文章。`:`优先阅读仅看 S/A：${focus.length} 篇预计约 ${allMin} 分钟；可切换 30 / 60 分钟阅读预算。`;
+    if(active&&hint)hint.textContent=cur.target?`优先阅读仅看 S/A：按个人价值与阅读成本组合出 ${cur.target} 分钟内价值更高的一组文章。`:`优先阅读：只推荐已确认有具体用途和正文依据的 S/A，最多 5 篇，不凑数。同一报道去重后按价值排序。`;
   }
 
   if(typeof renderArticles==='function'){
