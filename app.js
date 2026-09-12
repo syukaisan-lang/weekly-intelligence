@@ -144,7 +144,7 @@ function renderArticles(){
       why.textContent=editorial.eligible?`阅读用途：${editorial.use}。${editorial.reason}`:`${editorial.decision}：${editorial.reason}`;
       if(editorial.eligible){
         const proof=document.createElement('details');proof.className='priority-evidence';
-        const summary=document.createElement('summary');summary.textContent='查看正文依据';proof.appendChild(summary);
+        const summary=document.createElement('summary');summary.textContent=editorial.kind==='summary_case'?'查看公开摘要依据':'查看正文依据';proof.appendChild(summary);
         for(const quote of editorial.evidence){const p=document.createElement('p');p.textContent=quote;proof.appendChild(p);}
         el.appendChild(proof);
       }
