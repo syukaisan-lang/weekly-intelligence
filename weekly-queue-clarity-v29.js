@@ -54,7 +54,7 @@
     const h=head.querySelector('h2'),p=head.querySelector('p');
     const rp=typeof readingProgress!=='undefined'?readingProgress:'';
     const copy={
-      focus:['优先阅读','已核对用途与正文依据，不设篇数上限；按顺序阅读即可。没有达标文章就留空，不凑数。'],
+      focus:['优先阅读','按公开摘要或正文的具体依据筛选，不设篇数上限；按顺序阅读即可。没有达标文章就留空，不凑数。'],
       unread:['待处理 S/A','这是完整的未处理 S/A 队列；“优先阅读”只是从这里再挑出最值得先看的部分。'],
       week:['本周文章','本周新入库文章的状态分布；“本周待处理 S/A”与跨周的“待处理 S/A”不是同一个范围。'],
       later:['稍后看','你主动留下的阅读清单；这是最高权重的推荐学习信号。'],
