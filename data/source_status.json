@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-12T00:22:31.784893+00:00",
+  "generated_at": "2026-09-12T04:46:13.614279+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 3,
-  "deduped_count": 3,
+  "raw_new_count": 0,
+  "deduped_count": 0,
   "deep_read_count": 0,
   "sources": [
     {
@@ -118,7 +118,7 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
@@ -185,7 +185,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -224,9 +224,9 @@
       "B"
     ],
     "trusted_status_origin": "human_v10",
-    "active_count": 9,
-    "cold_count": 5,
-    "probe_count": 2,
+    "active_count": 8,
+    "cold_count": 2,
+    "probe_count": 6,
     "probe_skipped_count": 0,
     "discovery_policy": "all configured sources are always checked; cold/probe only raises deep-read threshold"
   },
@@ -236,7 +236,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-12T00:21:21.235030+00:00",
+    "generated_at": "2026-09-12T04:45:02.112066+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,

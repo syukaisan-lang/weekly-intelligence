@@ -1,15 +1,15 @@
 {
   "meta": {
     "tracking_start": "2026-08-10",
-    "generated_at": "2026-09-12T00:22:31.784893+00:00",
+    "generated_at": "2026-09-12T04:46:13.614279+00:00",
     "screening_mode": "openai_api_if_configured_else_heuristic",
-    "new_this_run": 3,
+    "new_this_run": 0,
     "xtrend_reading_time_direct": true,
-    "xtrend_reading_time_checked_at": "2026-09-12T00:22:32.643887+00:00",
+    "xtrend_reading_time_checked_at": "2026-09-12T04:46:14.110964+00:00",
     "xtrend_reading_time_checked_count": 80,
     "xtrend_reading_time_updated_count": 0,
     "xtrend_reading_time_failed_count": 80,
-    "knowledge_context_refreshed_at": "2026-09-12T00:28:45.566681+00:00",
+    "knowledge_context_refreshed_at": "2026-09-12T04:52:28.259485+00:00",
     "knowledge_context_rescored_count": 1494,
     "personalization_version": "semantic_v8_adaptive_temporal",
     "semantic_model_family": "multilingual-e5",
@@ -44,7 +44,7 @@
       "摘要足够": 182,
       "值得精读": 31
     },
-    "priority_policy_updated_at": "2026-09-12T00:28:47.358Z"
+    "priority_policy_updated_at": "2026-09-12T04:52:30.304Z"
   },
   "articles": [
     {
@@ -284,7 +284,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01463/00002/ parse_miss: article_header_category\">エンタメ</h2> <p class=\"article_header_readTime\">10 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\" | https://xtrend.nikkei.com/atcl/contents/18/01463/00002 parse_miss: article_header_category\">エンタメ</h2> <p class=\"article_header_readTime\">10 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"",
       "knowledge_context": {
         "used": true,
@@ -867,7 +867,7 @@
       "title": "東京ゲームショウ、出展社数は過去最多 30周年を祝う企画を実施【TGS2026】",
       "published": "2026-09-11T06:00:00+00:00",
       "first_seen": "2026-09-11T06:36:58.726295+00:00",
-      "summary": "約18時間前 コンピュータエンターテインメント協会は2026年9月10日、「東京ゲームショウ2026」の最新出展情報や会場マップ、グッズ、ステージイベントや公式番組のプログラムなどを公開した。国内から540社、海外から過去最高となる53の国・地域の598社が出展。出展社数は計1138社で、2025年を上回る最多出展社数での開催となる。 全文を読む",
+      "summary": "約23時間前 コンピュータエンターテインメント協会は2026年9月10日、「東京ゲームショウ2026」の最新出展情報や会場マップ、グッズ、ステージイベントや公式番組のプログラムなどを公開した。国内から540社、海外から過去最高となる53の国・地域の598社が出展。出展社数は計1138社で、2025年を上回る最多出展社数での開催となる。 全文を読む",
       "content_checked": false,
       "content_excerpt": "",
       "base_score": 6,
@@ -891,7 +891,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01222/00106/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">4 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/01222/00106 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">4 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -910,8 +910,8 @@
         "version": 1,
         "family": "multilingual-e5",
         "dim": 384,
-        "q": "BST49ULVGCJNGzDvWeXvBjTlzNMsE9sySjKqLROszuQtvjsjydoN3+odFUMIRigjrOzrPANB+b3ovNEfSvERJn8DFjub8gc6xOLuJC/nLNysyegl7SdGuzj7SVvTCNSo/SgJ/zDcMZrrMRa7S8jBNxYZxssDmhy+QdHersr8HSwCAio4Ky1GJszl1tTTP900JjlmvR7rJNYpCjjbz+UyQajPydTnxS8vsQDvSM8k5DjPEEwi5vqdz9PpwBsY1esSxrHl/OINNxT/5SkzHe/VT/AKPtHPItj+6RX3IS0CCMYRQQvhwRsRBQnf4eMJCTrvv9NCyzm8xyzzJwfmtLffQy0o0Sgr3l4LJATpy+PlyzAwy9um9VumuTD9IRJZ9udY9NSwBCHsHAz6U7QiwvUjFrQpADQZLUACxNpKJQlB1ejIxOfBGxvr3foJK5nDRM3c/j7MyCdFxxzpuxfZzCDqvSlM9hOn71wQ0+oQJ1UrBcw3vhg/vBfz8OgT0MAbDiUh",
-        "scale": 0.0010674073,
+        "q": "BSX49ULWGSJNGzDvWeXwBjTmzNMsFNsySjOqLBOtzeQtvTsjyNoN3+odFUIIRigjrOzsPANB+b3ovNEfSvARJ38DFjub8gc7xOLuIy/oLNysyegm7ihGuzj7SVvTCNWn/SgJ/y/dMZrqMRa7S8jBNxcZxswEmhy+QdDersv7HCsCAio4Ky1GJszk1dXTP900JzlnvR/sJdYpCzncz+UyQafPydTnxS8wsf/wSM8j5DnPEEwi5vqd0NTpwBwY1usSx7Hl/OINNxT/5SozHe/VT/AKPtHQItj/6RX3IS0BCcYRQQrhwRsRBQnf4eMJCTvuv9NCyzm7xyzzJgjmtbffQywn0Sgr3l4LJAPpyuPmyzAwy9um9VumuTD9IRJZ9udY89SwBCHtHAz5U7MiwfUiF7QpADMZLEACw9pLJQhB1ujIxefBGxrs3foIK5jDRM3c/j7MyCdFxxvpuxfZzSDqvihM9hKo710Q0+kRJ1UsBcw4vhg+vBfz8OgT0L8cDiUh",
+        "scale": 0.0010669714,
         "normalized": true
       },
       "estimated_reading_minutes": 2,
@@ -1520,7 +1520,7 @@
         "rule_match_strength": 1.913,
         "experience_similarity": 0.877,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -4157,7 +4157,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01455/00007/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">7 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/01455/00007 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">7 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -4224,7 +4224,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/watch/00013/02967/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"arti | https://xtrend.nikkei.com/atcl/contents/watch/00013/02967 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"arti",
       "knowledge_context": {
         "used": true,
@@ -4310,7 +4310,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00105/00248/ parse_miss: ticle_header_category\">技術・データ</h2> <p class=\"article_header_readTime\">10 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl | https://xtrend.nikkei.com/atcl/contents/18/00105/00248 parse_miss: ticle_header_category\">技術・データ</h2> <p class=\"article_header_readTime\">10 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl",
       "knowledge_context": {
         "used": true,
@@ -4395,7 +4395,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01455/00005/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">10 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl | https://xtrend.nikkei.com/atcl/contents/18/01455/00005 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">10 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl",
       "knowledge_context": {
         "used": true,
@@ -4468,7 +4468,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01473/00004/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">13 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"art | https://xtrend.nikkei.com/atcl/contents/18/01473/00004 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">13 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"art",
       "knowledge_context": {
         "used": true,
@@ -4550,7 +4550,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00958/00123/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">1 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/00958/00123 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">1 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -4625,7 +4625,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01946/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01946 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -4707,7 +4707,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/watch/00013/02965/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">4 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/watch/00013/02965 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">4 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -4780,7 +4780,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01475/00001/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">12 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\" | https://xtrend.nikkei.com/atcl/contents/18/01475/00001 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">12 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"",
       "knowledge_context": {
         "used": true,
@@ -4865,7 +4865,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01453/00005/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">5 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar | https://xtrend.nikkei.com/atcl/contents/18/01453/00005 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">5 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar",
       "knowledge_context": {
         "used": true,
@@ -4942,7 +4942,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00589/00358/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar | https://xtrend.nikkei.com/atcl/contents/18/00589/00358 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar",
       "knowledge_context": {
         "used": true,
@@ -5154,7 +5154,7 @@
         "rule_match_strength": 1.435,
         "experience_similarity": 0.89,
         "repetition_penalty": 0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.61,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -5219,7 +5219,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01222/00104/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">2 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/01222/00104 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">2 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -5406,7 +5406,7 @@
         "rule_match_strength": 1.048,
         "experience_similarity": 0.874,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -5829,7 +5829,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01446/ parse_miss: e=\"2026-09-10\">2026.09.10</time> <p class=\"articleList_item_readTime\">15 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01446/00002/\" data-atlas-track | https://xtrend.nikkei.com/atcl/contents/18/01446 parse_miss: e=\"2026-09-10\">2026.09.10</time> <p class=\"articleList_item_readTime\">15 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01446/00002/\" data-atlas-track",
       "knowledge_context": {
         "used": true,
@@ -5977,7 +5977,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01222/00105/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">2 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/01222/00105 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">2 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -6553,7 +6553,7 @@
         "rule_match_strength": 2.005,
         "experience_similarity": 0.884,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -7572,7 +7572,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00109/ parse_miss: e=\"2026-09-10\">2026.09.10</time> <p class=\"articleList_item_readTime\">7 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/00109/00231/\" data-atlas-tracka | https://xtrend.nikkei.com/atcl/contents/18/00109 parse_miss: e=\"2026-09-10\">2026.09.10</time> <p class=\"articleList_item_readTime\">7 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/00109/00231/\" data-atlas-tracka",
       "knowledge_context": {
         "used": true,
@@ -7641,7 +7641,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00151/ parse_miss: e=\"2026-09-10\">2026.09.10</time> <p class=\"articleList_item_readTime\">9 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/00151/00077/\" data-atlas-tracka | https://xtrend.nikkei.com/atcl/contents/18/00151 parse_miss: e=\"2026-09-10\">2026.09.10</time> <p class=\"articleList_item_readTime\">9 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/00151/00077/\" data-atlas-tracka",
       "knowledge_context": {
         "used": true,
@@ -8126,7 +8126,7 @@
         "rule_match_strength": 0.88,
         "experience_similarity": 0.891,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -9672,7 +9672,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00151/00077/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/00151/00077 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -9751,7 +9751,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01460/00001/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">5 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/01460/00001 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">5 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -9830,7 +9830,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00109/00231/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">7 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/00109/00231 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">7 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -9912,7 +9912,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01446/00002/ parse_miss: =\"article_header_category\">海外</h2> <p class=\"article_header_readTime\">15 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl | https://xtrend.nikkei.com/atcl/contents/18/01446/00002 parse_miss: =\"article_header_category\">海外</h2> <p class=\"article_header_readTime\">15 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl",
       "knowledge_context": {
         "used": true,
@@ -9985,7 +9985,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00607/00099/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"arti | https://xtrend.nikkei.com/atcl/contents/18/00607/00099 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"arti",
       "knowledge_context": {
         "used": true,
@@ -10054,7 +10054,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01473/00003/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">13 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"art | https://xtrend.nikkei.com/atcl/contents/18/01473/00003 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">13 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"art",
       "knowledge_context": {
         "used": true,
@@ -10133,7 +10133,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01944/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01944 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -10214,7 +10214,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01453/00004/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar | https://xtrend.nikkei.com/atcl/contents/18/01453/00004 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar",
       "knowledge_context": {
         "used": true,
@@ -10290,7 +10290,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00589/00359/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar | https://xtrend.nikkei.com/atcl/contents/18/00589/00359 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar",
       "knowledge_context": {
         "used": true,
@@ -10361,7 +10361,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01122/00032/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/01122/00032 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -10618,7 +10618,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01473/ parse_miss: e=\"2026-09-11\">2026.09.11</time> <p class=\"articleList_item_readTime\">13 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01473/00004/\" data-atlas-track | https://xtrend.nikkei.com/atcl/contents/18/01473 parse_miss: e=\"2026-09-11\">2026.09.11</time> <p class=\"articleList_item_readTime\">13 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01473/00004/\" data-atlas-track",
       "knowledge_context": {
         "used": true,
@@ -12189,7 +12189,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00323/00074/ parse_miss: ime=\"2026-09-09\">2026.09.09</time> <p class=\"article_header_readTime\">4 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/00323/00074 parse_miss: ime=\"2026-09-09\">2026.09.09</time> <p class=\"article_header_readTime\">4 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -12256,7 +12256,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00607/ parse_miss: e=\"2026-09-11\">2026.09.11</time> <p class=\"articleList_item_readTime\">6 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/watch/00013/02967/\" data-atlas-tra | https://xtrend.nikkei.com/atcl/contents/18/00607 parse_miss: e=\"2026-09-11\">2026.09.11</time> <p class=\"articleList_item_readTime\">6 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/watch/00013/02967/\" data-atlas-tra",
       "knowledge_context": {
         "used": true,
@@ -12330,7 +12330,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01351/ parse_miss: e=\"2026-09-09\">2026.09.09</time> <p class=\"articleList_item_readTime\">11 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01351/00003/\" data-atlas-track | https://xtrend.nikkei.com/atcl/contents/18/01351 parse_miss: e=\"2026-09-09\">2026.09.09</time> <p class=\"articleList_item_readTime\">11 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01351/00003/\" data-atlas-track",
       "knowledge_context": {
         "used": true,
@@ -12532,7 +12532,7 @@
         "rule_match_strength": 0.874,
         "experience_similarity": 0.883,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -12640,7 +12640,7 @@
         "rule_match_strength": 1.488,
         "experience_similarity": 0.879,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.77,
@@ -13412,7 +13412,7 @@
         "rule_match_strength": 1.372,
         "experience_similarity": 0.884,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -14171,7 +14171,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01455/00003/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/01455/00003 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -14259,7 +14259,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01455/00004/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/01455/00004 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -14328,7 +14328,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00631/00035/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">5 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/00631/00035 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">5 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -14405,7 +14405,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01196/00011/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/01196/00011 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -14492,7 +14492,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01276/00013/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/01276/00013 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -14559,7 +14559,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01351/00003/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl | https://xtrend.nikkei.com/atcl/contents/18/01351/00003 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl",
       "knowledge_context": {
         "used": true,
@@ -14633,7 +14633,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01473/00002/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">12 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"art | https://xtrend.nikkei.com/atcl/contents/18/01473/00002 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">12 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"art",
       "knowledge_context": {
         "used": true,
@@ -14701,7 +14701,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00607/00098/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"arti | https://xtrend.nikkei.com/atcl/contents/18/00607/00098 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"arti",
       "knowledge_context": {
         "used": true,
@@ -14775,7 +14775,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01453/00003/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"a | https://xtrend.nikkei.com/atcl/contents/18/01453/00003 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"a",
       "knowledge_context": {
         "used": true,
@@ -15837,7 +15837,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00681/00185/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">1 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/00681/00185 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">1 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -16925,7 +16925,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01451/ parse_miss: e=\"2026-09-08\">2026.09.08</time> <p class=\"articleList_item_readTime\">6 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01451/00001/\" data-atlas-tracka | https://xtrend.nikkei.com/atcl/contents/18/01451 parse_miss: e=\"2026-09-08\">2026.09.08</time> <p class=\"articleList_item_readTime\">6 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01451/00001/\" data-atlas-tracka",
       "knowledge_context": {
         "used": true,
@@ -16992,7 +16992,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01453/ parse_miss: e=\"2026-09-11\">2026.09.11</time> <p class=\"articleList_item_readTime\">5 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01453/00005/\" data-atlas-tracka | https://xtrend.nikkei.com/atcl/contents/18/01453 parse_miss: e=\"2026-09-11\">2026.09.11</time> <p class=\"articleList_item_readTime\">5 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01453/00005/\" data-atlas-tracka",
       "knowledge_context": {
         "used": true,
@@ -17173,7 +17173,7 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 4.323,
+        "knowledge_match_strength": 4.322,
         "rule_match_strength": 0.841,
         "experience_similarity": 0.87,
         "repetition_penalty": 0,
@@ -17803,7 +17803,7 @@
         "rule_match_strength": 1.312,
         "experience_similarity": 0.889,
         "repetition_penalty": 0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -18045,7 +18045,7 @@
         "rule_match_strength": 0.982,
         "experience_similarity": 0.873,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.62,
@@ -19000,7 +19000,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/watch/00013/02966/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/watch/00013/02966 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -19067,7 +19067,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00947/00315/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">1 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/00947/00315 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">1 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -19141,7 +19141,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01453/00002/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">7 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar | https://xtrend.nikkei.com/atcl/contents/18/01453/00002 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">7 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar",
       "knowledge_context": {
         "used": true,
@@ -19226,7 +19226,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01941/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01941 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -19306,7 +19306,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01936/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">14 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl | https://xtrend.nikkei.com/atcl/contents/casestudy/00012/01936 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">14 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl",
       "knowledge_context": {
         "used": true,
@@ -19381,7 +19381,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01451/00001/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/01451/00001 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -19448,7 +19448,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00464/00035/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/00464/00035 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -19517,7 +19517,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01473/00001/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">12 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"art | https://xtrend.nikkei.com/atcl/contents/18/01473/00001 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">12 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"art",
       "knowledge_context": {
         "used": true,
@@ -19590,7 +19590,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00079/00365/ parse_miss: =\"article_header_category\">海外</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/00079/00365 parse_miss: =\"article_header_category\">海外</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -19665,7 +19665,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00589/00356/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">4 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/00589/00356 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">4 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -19930,7 +19930,7 @@
         "rule_match_strength": 0.855,
         "experience_similarity": 0.857,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.044,
@@ -20921,7 +20921,7 @@
         "rule_match_strength": 0.862,
         "experience_similarity": 0.87,
         "repetition_penalty": 0,
-        "gap_bonus": 0.61,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -21250,7 +21250,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01186/ parse_miss: e=\"2026-09-07\">2026.09.07</time> <p class=\"articleList_item_readTime\">18 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01186/00005/\" data-atlas-track | https://xtrend.nikkei.com/atcl/contents/18/01186 parse_miss: e=\"2026-09-07\">2026.09.07</time> <p class=\"articleList_item_readTime\">18 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01186/00005/\" data-atlas-track",
       "knowledge_context": {
         "used": true,
@@ -21328,7 +21328,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01455/ parse_miss: e=\"2026-09-11\">2026.09.11</time> <p class=\"articleList_item_readTime\">7 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01455/00007/\" data-atlas-tracka | https://xtrend.nikkei.com/atcl/contents/18/01455 parse_miss: e=\"2026-09-11\">2026.09.11</time> <p class=\"articleList_item_readTime\">7 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01455/00007/\" data-atlas-tracka",
       "knowledge_context": {
         "used": true,
@@ -21395,7 +21395,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01241/ parse_miss: e=\"2026-09-07\">2026.09.07</time> <p class=\"articleList_item_readTime\">6 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01241/00020/\" data-atlas-tracka | https://xtrend.nikkei.com/atcl/contents/18/01241 parse_miss: e=\"2026-09-07\">2026.09.07</time> <p class=\"articleList_item_readTime\">6 min read</p> <div class=\"articleList_item_bookmark\"> <button class=\"-btn\" type=\"button\" data-path=\"/atcl/contents/18/01241/00020/\" data-atlas-tracka",
       "knowledge_context": {
         "used": true,
@@ -22059,7 +22059,7 @@
         "rule_match_strength": 1.482,
         "experience_similarity": 0.867,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -22365,7 +22365,7 @@
         "rule_match_strength": 1.347,
         "experience_similarity": 0.884,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -22965,7 +22965,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01455/00001/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/01455/00001 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">9 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -23053,7 +23053,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01455/00002/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">13 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl | https://xtrend.nikkei.com/atcl/contents/18/01455/00002 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">13 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl",
       "knowledge_context": {
         "used": true,
@@ -23122,7 +23122,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01186/00005/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">18 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\" | https://xtrend.nikkei.com/atcl/contents/18/01186/00005 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">18 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"",
       "knowledge_context": {
         "used": true,
@@ -23207,7 +23207,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00921/00069/ parse_miss: ticle_header_category\">技術・データ</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article | https://xtrend.nikkei.com/atcl/contents/18/00921/00069 parse_miss: ticle_header_category\">技術・データ</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article",
       "knowledge_context": {
         "used": true,
@@ -23283,7 +23283,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00486/00015/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl | https://xtrend.nikkei.com/atcl/contents/18/00486/00015 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl",
       "knowledge_context": {
         "used": true,
@@ -23362,7 +23362,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01466/00005/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">2 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"arti | https://xtrend.nikkei.com/atcl/contents/18/01466/00005 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">2 min</p> <p class=\"article_header_nxrCharge\">エンタ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"arti",
       "knowledge_context": {
         "used": true,
@@ -23430,7 +23430,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01241/00020/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/01241/00020 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">6 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -23512,7 +23512,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01453/00001/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">7 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar | https://xtrend.nikkei.com/atcl/contents/18/01453/00001 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">7 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar",
       "knowledge_context": {
         "used": true,
@@ -23581,7 +23581,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01376/00008/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl | https://xtrend.nikkei.com/atcl/contents/18/01376/00008 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> <p class=\"article_header_nxrCharge\">有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"articl",
       "knowledge_context": {
         "used": true,
@@ -23661,7 +23661,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00961/00130/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">1 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/00961/00130 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">1 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -23740,7 +23740,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01454/00002/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">2 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"# | https://xtrend.nikkei.com/atcl/contents/18/01454/00002 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">2 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"#",
       "knowledge_context": {
         "used": true,
@@ -23816,7 +23816,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/00480/00246/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\" | https://xtrend.nikkei.com/atcl/contents/18/00480/00246 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">11 min</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"article_action_btn\"> <a class=\"c-iconBtn -print\" href=\"",
       "knowledge_context": {
         "used": true,
@@ -23898,7 +23898,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "reading_time_xtrend_error": "https://xtrend.nikkei.com/atcl/contents/18/01459/00005/ parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar | https://xtrend.nikkei.com/atcl/contents/18/01459/00005 parse_miss: ticle_header_category\">マーケ・消費</h2> <p class=\"article_header_readTime\">8 min</p> <p class=\"article_header_nxrCharge\">トレンディ有料会員限定記事</p> </div> <div class=\"article_action\"> <ul class=\"article_action_btnGroup\"> <li class=\"ar",
       "knowledge_context": {
         "used": true,
@@ -24687,7 +24687,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend 仅基于公开新着页标题/公开信息判断；未使用会员登录正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -25114,7 +25114,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -26459,7 +26459,7 @@
         "rule_match_strength": 0.881,
         "experience_similarity": 0.885,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -27245,7 +27245,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -27312,7 +27312,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -27379,7 +27379,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -27446,7 +27446,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -27513,7 +27513,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -28800,7 +28800,7 @@
         "rule_match_strength": 0.869,
         "experience_similarity": 0.877,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -29662,7 +29662,7 @@
       "reason": "正文不足，不能凭标题、摘要或相关度认定值得精读",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -29743,7 +29743,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -29827,7 +29827,7 @@
       "reason": "未明确对应EC、营销、消费者研究、GTM或AI业务流程",
       "screening_note": "XTrend：官方RSS + Feeder公开摘要 + 滚动发现缓存用于筛选；未读取会员正文。",
       "screening": "editorial_v36",
-      "reading_time_xtrend_checked_at": "2026-09-12T00:22:32.643887+00:00",
+      "reading_time_xtrend_checked_at": "2026-09-12T04:46:14.110964+00:00",
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
@@ -33690,7 +33690,7 @@
         "rule_match_strength": 0.87,
         "experience_similarity": 0.856,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.69,
@@ -33897,7 +33897,7 @@
         "rule_match_strength": 1.187,
         "experience_similarity": 0.88,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -34084,7 +34084,7 @@
         "rule_match_strength": 1.227,
         "experience_similarity": 0.87,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.789,
@@ -34187,7 +34187,7 @@
         "rule_match_strength": 1.065,
         "experience_similarity": 0.88,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -37948,7 +37948,7 @@
         "rule_match_strength": 0.876,
         "experience_similarity": 0.888,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -38234,7 +38234,7 @@
         "rule_match_strength": 0.877,
         "experience_similarity": 0.887,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -38959,7 +38959,7 @@
         "rule_match_strength": 0.855,
         "experience_similarity": 0.87,
         "repetition_penalty": 0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.56,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.674,
@@ -39058,7 +39058,7 @@
         "rule_match_strength": 1.942,
         "experience_similarity": 0.862,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -39352,7 +39352,7 @@
         "rule_match_strength": 1.56,
         "experience_similarity": 0.877,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -40047,7 +40047,7 @@
         "rule_match_strength": 2.748,
         "experience_similarity": 0.868,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -40692,7 +40692,7 @@
         "rule_match_strength": 1.387,
         "experience_similarity": 0.869,
         "repetition_penalty": 0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -41527,7 +41527,7 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 1.357,
+        "knowledge_match_strength": 1.355,
         "rule_match_strength": 0.855,
         "experience_similarity": 0.86,
         "repetition_penalty": 0.92,
@@ -42868,7 +42868,7 @@
         "rule_match_strength": 0.875,
         "experience_similarity": 0.883,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -43351,7 +43351,7 @@
         "rule_match_strength": 0.88,
         "experience_similarity": 0.89,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -43920,7 +43920,7 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 4.162,
+        "knowledge_match_strength": 4.16,
         "rule_match_strength": 0.872,
         "experience_similarity": 0.887,
         "repetition_penalty": 0,
@@ -44671,7 +44671,7 @@
         "rule_match_strength": 0.868,
         "experience_similarity": 0.879,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -44914,7 +44914,7 @@
         "rule_match_strength": 0.869,
         "experience_similarity": 0.878,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -45189,7 +45189,7 @@
         "rule_match_strength": 0.872,
         "experience_similarity": 0.866,
         "repetition_penalty": 0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -45577,7 +45577,7 @@
         "rule_match_strength": 1.582,
         "experience_similarity": 0.876,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -46105,7 +46105,7 @@
         "rule_match_strength": 0.87,
         "experience_similarity": 0.86,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -46201,7 +46201,7 @@
         "rule_match_strength": 1.395,
         "experience_similarity": 0.865,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.55,
@@ -47211,7 +47211,7 @@
         "rule_match_strength": 1.497,
         "experience_similarity": 0.888,
         "repetition_penalty": 0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -51886,7 +51886,7 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 1.217,
+        "knowledge_match_strength": 1.218,
         "rule_match_strength": 0.844,
         "experience_similarity": 0.85,
         "repetition_penalty": 0.86,
@@ -53905,7 +53905,7 @@
         "rule_match_strength": 1.387,
         "experience_similarity": 0.866,
         "repetition_penalty": 0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.61,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -54176,7 +54176,7 @@
         "rule_match_strength": 1.047,
         "experience_similarity": 0.876,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -56615,7 +56615,7 @@
         "rule_match_strength": 0.866,
         "experience_similarity": 0.869,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.85,
@@ -56712,7 +56712,7 @@
         "rule_match_strength": 1.215,
         "experience_similarity": 0.866,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -56789,7 +56789,7 @@
         "rule_match_strength": 0.868,
         "experience_similarity": 0.873,
         "repetition_penalty": 0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.61,
         "evidence_bonus": 0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -59902,7 +59902,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 6.66
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "c11a6aab2e21d0b7aa",
@@ -60333,7 +60333,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 4.7
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "b996c7f050ad6e2572",
@@ -61116,7 +61116,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 6.4
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "e94be60b86bcfa7e3a",
@@ -61412,7 +61412,7 @@
         "rule_match_strength": 0.887,
         "experience_similarity": 0.894,
         "repetition_penalty": 0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -61659,7 +61659,7 @@
         "rule_match_strength": 1.487,
         "experience_similarity": 0.879,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -61815,7 +61815,7 @@
         "rule_match_strength": 1.048,
         "experience_similarity": 0.877,
         "repetition_penalty": 0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -62016,7 +62016,7 @@
         "rule_match_strength": 1.043,
         "experience_similarity": 0.863,
         "repetition_penalty": 0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.56,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -62114,7 +62114,7 @@
         "rule_match_strength": 1.665,
         "experience_similarity": 0.873,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.85,
@@ -62432,7 +62432,7 @@
       "content_excerpt": "ここまで、新商品を次々と発売すると、ある時点で売上が急激に落ちてしまう「ミルフィーユの崩壊」という現象を解説しました。 では、これを防ぐにはどうすればいいのでしょうか？ 理想的な対策は、1番目の商品、もしくは継続率の高い商品をできるだけ伸ばしていくことです。その上で取るべき策は、次の2つになります。 ① WHO＆WHATをよく確認し、1番目もしくは継続率の高い商品を売り伸ばす ② 潜在顧客層の大きさと継続性のポテンシャルを確かめた上で、新商品を投入し、継続率が高い顧客を見極めて主要顧客にする（＝良い売上に集中投資する） 1つ目から解説していきます。ほとんどのビジネスは、2番目以降の商品は最初の商品の継続率を超えられません。ここまで紹介した図では、すべての商品を同じ継続率と仮定しているので、ほぼ同じ落ち方をしていますが、実際には最初に出して成功した商品の継続率がいちばん高いことが多いです。 したがって、最初のアイテムを誰に提案したらいいか、WHO＆WHATを地道に探して策を講じることが第一歩になります。ここで有用なのが、NPI（次回購入意向）を含めて顧客を9つにセグメントする9segsと、セグメントした上で一人の顧客を掘り下げるN1分析です。 次第に新規獲得が難しくなり獲得コストが上がるため、それを嫌って商品数を増やしたくなるのですが、それは根本的な解決策ではありません。 仮に3つ目まで商品を増やしていたとして、発売期間の長い1番目が、最も平均LTVが高くなります。ですので、簡単に諦めず、潜在顧客層の大きさを定量的に確認して、そこでの拡大を考えるべきです。 次に、N1分析の過程で2番目、3番目の商品の可能性が見えたら、そのポテンシャルを確かめた上で新商品を投入し、併売を促します。 2番目、3番目の平均LTVはたしかに低くなりますが、だからといって切り捨てていいわけではありません。2番目、3番目を購入する複数の顧客層において、継続率が高いWHO＆WHATを見つけ、その潜在顧客層に集中投資していきます。つまり、良い売上に選択的に投資するのです。 そして、後発商品が大きくヒットし、先発商品の継続率を上回ることもあります。その場合、最初に立てていた戦略にこだわらず、その商品を看板商品として売り伸ばしていくよう集中投資していきます。つまり、複数の商品の間で、良い売上に選択的に投資するわけです。 例えば5つの商品まで出していた場合、平均で見ると最初の商品の継続率が高いので、これが最も良い売上となります。対して後発の3、4、5番目は継続率が低い、悪い売上と言えます。 ただしそれぞれの顧客層の売上構成を見ると、その中でも継続率のばらつきがある、すなわち良い売上と悪い売上が存在します。ですので、それぞれで良い売上を最大化し、悪い売上を最小化します。 この策を取ると、売上が一時的に鈍化することはあるかもしれませんが、利益が無駄に減ることはありません。ですので、次の打ち手に移れるのです。 このように、良い売上を見極めなければ、営業利益が減り、辻褄を合わせるために、プロモーション費や開発費など何かしらカットせざるを得なくなります。もし、次に投資すべき良い売上の芽が見つかっていても、着手できません。 利益がないと、酸素がなくなるようなもので、身動きが取れなくなるのです。利益が出ていれば、良い売上と悪い売上を精査する時間的な余裕ができ、投資もしっかりと行えます。だから、継続率とLTVにこだわり、利益を確保することが重要なのです。 会員になると、既読やブックマーク（また読みたい記事）の管理ができます。今後、会員限定記事も予定しています。登録は無料です",
       "base_score": 8.2,
       "reading_score": 5.8,
-      "notion_score": 8.48,
+      "notion_score": 8.46,
       "grade": "B",
       "tags": [
         "consumer",
@@ -62473,7 +62473,7 @@
         "rule_match_strength": 0.99,
         "experience_similarity": 0.883,
         "repetition_penalty": 0.95,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0,
         "boundary_bonus": 0,
         "semantic_bonus": 0.319,
@@ -62503,7 +62503,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 8.77
+      "retrieval_reading_score": 8.75
     },
     {
       "id": "6551ffd533959b3a52",
@@ -63964,7 +63964,7 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 4.357,
+        "knowledge_match_strength": 4.355,
         "rule_match_strength": 0.874,
         "experience_similarity": 0.88,
         "repetition_penalty": 0.95,
@@ -66374,7 +66374,7 @@
         "rule_match_strength": 0.873,
         "experience_similarity": 0.879,
         "repetition_penalty": 0,
-        "gap_bonus": 0.56,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -67660,7 +67660,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 4.53
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "e95c2b008d15b86e2c",
@@ -67732,7 +67732,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 5.82
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "d96589fe0fdc84bd22",
@@ -69578,7 +69578,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 5.59
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "5f46772fd0e2203021",
@@ -70950,7 +70950,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 5.54
+      "retrieval_reading_score": 5.8
     },
     {
       "id": "bbd37a3cff6d10620d",
@@ -74462,7 +74462,7 @@
         "rule_match_strength": 1.432,
         "experience_similarity": 0.874,
         "repetition_penalty": 0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -74746,7 +74746,7 @@
         "rule_match_strength": 1.873,
         "experience_similarity": 0.89,
         "repetition_penalty": 0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -76170,7 +76170,7 @@
         "rule_match_strength": 1.318,
         "experience_similarity": 0.876,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -77864,7 +77864,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 7
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "2f335ab1ccfdf7901e",
@@ -79094,7 +79094,7 @@
         "rule_match_strength": 0.878,
         "experience_similarity": 0.885,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -81095,7 +81095,7 @@
         "rule_match_strength": 1.192,
         "experience_similarity": 0.884,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -81658,7 +81658,7 @@
         "rule_match_strength": 1.573,
         "experience_similarity": 0.888,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -81993,7 +81993,7 @@
         "rule_match_strength": 0.987,
         "experience_similarity": 0.893,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.7,
@@ -82176,7 +82176,7 @@
         "rule_match_strength": 1.053,
         "experience_similarity": 0.869,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -84195,7 +84195,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 7.33
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "b5a012bf8b1a3157ae",
@@ -85358,7 +85358,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 7.4
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "36ae0a8c67021ea7c4",
@@ -86292,7 +86292,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 6.53
+      "retrieval_reading_score": 5.8
     },
     {
       "id": "8f6e09e888305ac532",
@@ -87154,7 +87154,7 @@
         "rule_match_strength": 2.188,
         "experience_similarity": 0.891,
         "repetition_penalty": 0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.61,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -87723,7 +87723,7 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 1.065,
+        "knowledge_match_strength": 1.067,
         "rule_match_strength": 0.842,
         "experience_similarity": 0.845,
         "repetition_penalty": 0.7,
@@ -88047,7 +88047,7 @@
         "rule_match_strength": 1.205,
         "experience_similarity": 0.882,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -91576,7 +91576,7 @@
         "rule_match_strength": 1.572,
         "experience_similarity": 0.854,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.754,
@@ -91686,7 +91686,7 @@
         "rule_match_strength": 2.36,
         "experience_similarity": 0.874,
         "repetition_penalty": 0,
-        "gap_bonus": 0.61,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -91776,7 +91776,7 @@
         "rule_match_strength": 1.32,
         "experience_similarity": 0.865,
         "repetition_penalty": 0,
-        "gap_bonus": 0.33,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -93637,7 +93637,7 @@
         "rule_match_strength": 1.847,
         "experience_similarity": 0.877,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -94413,7 +94413,7 @@
         "rule_match_strength": 1.493,
         "experience_similarity": 0.876,
         "repetition_penalty": 0,
-        "gap_bonus": 0.28,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -94762,7 +94762,7 @@
         "rule_match_strength": 0.88,
         "experience_similarity": 0.879,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -95060,7 +95060,7 @@
         "rule_match_strength": 0.862,
         "experience_similarity": 0.87,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -99874,7 +99874,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 7.04
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "f7be5e5958f22a120b",
@@ -100259,7 +100259,7 @@
         "rule_match_strength": 0.878,
         "experience_similarity": 0.888,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -100804,7 +100804,7 @@
         "rule_match_strength": 0.962,
         "experience_similarity": 0.866,
         "repetition_penalty": 0,
-        "gap_bonus": 0.7,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.306,
@@ -101187,7 +101187,7 @@
         "rule_match_strength": 1.135,
         "experience_similarity": 0.866,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -101278,7 +101278,7 @@
         "rule_match_strength": 1.302,
         "experience_similarity": 0.883,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -101727,7 +101727,7 @@
         "rule_match_strength": 1.565,
         "experience_similarity": 0.902,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -104495,7 +104495,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 5.52
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "6821b6c8adb8ababc7",
@@ -104706,7 +104706,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 6.84
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "e4227151f6f463d570",
@@ -105465,7 +105465,7 @@
         "rule_match_strength": 0.869,
         "experience_similarity": 0.869,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -106257,7 +106257,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 6.53
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "179b613da07186e615",
@@ -107191,7 +107191,7 @@
         "rule_match_strength": 1.318,
         "experience_similarity": 0.887,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -107304,7 +107304,7 @@
         "rule_match_strength": 1.745,
         "experience_similarity": 0.89,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.55,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -107419,7 +107419,7 @@
         "rule_match_strength": 2.208,
         "experience_similarity": 0.897,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -107518,7 +107518,7 @@
         "rule_match_strength": 1.048,
         "experience_similarity": 0.877,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.47,
@@ -107624,7 +107624,7 @@
         "rule_match_strength": 1.888,
         "experience_similarity": 0.884,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -108802,7 +108802,7 @@
         "rule_match_strength": 1.163,
         "experience_similarity": 0.888,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -109678,7 +109678,7 @@
         "rule_match_strength": 1.132,
         "experience_similarity": 0.881,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.49,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -109843,7 +109843,7 @@
         "rule_match_strength": 1.573,
         "experience_similarity": 0.873,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -111192,7 +111192,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 7.4
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "7667fe7dd51cef8efa",
@@ -111258,7 +111258,7 @@
         "rule_match_strength": 0.868,
         "experience_similarity": 0.874,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -111703,7 +111703,7 @@
         "rule_match_strength": 1.487,
         "experience_similarity": 0.867,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -114409,7 +114409,7 @@
         "rule_match_strength": 0.878,
         "experience_similarity": 0.87,
         "repetition_penalty": 0,
-        "gap_bonus": 0.67,
+        "gap_bonus": 0.7,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -114491,7 +114491,7 @@
         "rule_match_strength": 1.027,
         "experience_similarity": 0.879,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.23,
@@ -115561,7 +115561,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 10
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "6941db2efe1ac34891",
@@ -116790,7 +116790,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 5.35
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "1fd5d842d2a8089fb5",
@@ -118254,7 +118254,7 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 2.523,
+        "knowledge_match_strength": 2.522,
         "rule_match_strength": 0.859,
         "experience_similarity": 0.858,
         "repetition_penalty": 0,
@@ -118339,7 +118339,7 @@
       "knowledge_context": {
         "used": true,
         "version": "semantic_v6",
-        "knowledge_match_strength": 3.677,
+        "knowledge_match_strength": 3.678,
         "rule_match_strength": 0.853,
         "experience_similarity": 0.853,
         "repetition_penalty": 0,
@@ -118904,7 +118904,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 9.95
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "8f32e95dccaebd3020",
@@ -119133,7 +119133,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 5.72
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "7742bdff406774a592",
@@ -119517,7 +119517,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 10
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "c53bf94862d5f6e829",
@@ -120258,7 +120258,7 @@
         "rule_match_strength": 1.025,
         "experience_similarity": 0.87,
         "repetition_penalty": 0,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -125626,7 +125626,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 6.52
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "19180b2cfa35b30fcf",
@@ -125989,7 +125989,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 6.58
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "09fe00e7a69995e958",
@@ -126356,7 +126356,7 @@
         "rule_match_strength": 0.861,
         "experience_similarity": 0.865,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -126899,7 +126899,7 @@
         "rule_match_strength": 0.866,
         "experience_similarity": 0.868,
         "repetition_penalty": 0,
-        "gap_bonus": 0.56,
+        "gap_bonus": 0.67,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -127211,7 +127211,7 @@
         "rule_match_strength": 0.877,
         "experience_similarity": 0.882,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0,
         "semantic_bonus": 1.31,
@@ -127704,7 +127704,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 10
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "4712a7abd571a49b09",
@@ -128180,7 +128180,7 @@
         "rule_match_strength": 1.058,
         "experience_similarity": 0.871,
         "repetition_penalty": 0,
-        "gap_bonus": 0.39,
+        "gap_bonus": 0.28,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.85,
@@ -128681,7 +128681,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 6.66
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "53d33e0565d6398d8f",
@@ -128994,7 +128994,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 6.82
+      "retrieval_reading_score": 5.4
     },
     {
       "id": "4f8fbc9b91df3d0971",
@@ -131161,7 +131161,7 @@
         "rule_match_strength": 1.077,
         "experience_similarity": 0.851,
         "repetition_penalty": 0,
-        "gap_bonus": 0.55,
+        "gap_bonus": 0.39,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -132208,7 +132208,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 10
+      "retrieval_reading_score": 5.8
     },
     {
       "id": "6b59b27bfbde5749ff",
@@ -132282,7 +132282,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 7.46
+      "retrieval_reading_score": 5.8
     },
     {
       "id": "ccdd7c595f5feda47b",
@@ -134175,7 +134175,7 @@
         "kind": "brief",
         "confidence": "low"
       },
-      "retrieval_reading_score": 10
+      "retrieval_reading_score": 5.8
     },
     {
       "id": "1e9fa6493c8545af86",
@@ -134472,7 +134472,7 @@
         "rule_match_strength": 0.867,
         "experience_similarity": 0.884,
         "repetition_penalty": 0,
-        "gap_bonus": 0.44,
+        "gap_bonus": 0.33,
         "evidence_bonus": 0.4,
         "boundary_bonus": 0.58,
         "semantic_bonus": 1.79,
@@ -136328,7 +136328,7 @@
         "rule_match_strength": 0.863,
         "experience_similarity": 0.873,
         "repetition_penalty": 0.95,
-        "gap_bonus": 0.49,
+        "gap_bonus": 0.44,
         "evidence_bonus": 0,
         "boundary_bonus": 0,
         "semantic_bonus": 0.608,
