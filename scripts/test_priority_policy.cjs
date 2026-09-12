@@ -20,12 +20,22 @@ assert.deepEqual(policy.assess({...event,reason:'工作相关 数据 方法 分�
 assert.equal(policy.assess({...measured,source:'Unknown source'}).score,policy.assess(measured).score);
 assert.equal(policy.assess({...measured,content_completeness:'partial'}).cap,8.6);
 const selected=policy.select(articles);
-assert(selected.length<=5);
-assert(selected.every(a=>policy.assess(a).evidence.length>=2));
+assert(selected.length>5, "all qualifying articles must remain available beyond the fifth");
+assert(selected.every(a=>policy.assess(a).evidence.length>=1));
 assert.deepEqual(policy.select([event]),[],'no forced quota');
 assert.deepEqual(policy.select([method],{budget:30,minutes:()=>31}),[],'never overflow budget');
 assert.equal(policy.select([method,{...method,id:'duplicate',url:'https://another.example/story'}]).length,1);
 assert(policy.select([method,measured]).includes(measured),'different articles remain distinct');
+// A short survey must not be dropped solely because it is short.
+assert(policy.assess(article('90235c8067f82e7bfb')).eligible);
+// Distinct conclusions/angles with a similar title are not duplicates.
+assert.equal(policy.sameStory(method,{...method,url:'https://another.example/story',content_excerpt:'別の結論を持つ記事。'.repeat(30)}),false);
+const missed={...method,title:'タイトルに職種のキーワードがない記事',summary:'',content_excerpt:'具体的な比較手順と判断に使える新しい方法を説明する本文。'};
+missed.priority_review={version:37,two_pass:true,source_signature:policy.sourceSignature(missed),verdict:'recommend',
+ confidence:'medium',use:'用于评估竞品的定价差异',gain:'给出价格区间与转化分组的比较方法',evidence:[missed.content_excerpt]};
+assert(policy.assess(missed).eligible,'content review can recover a keyword-missed article');
+assert(!policy.assess({...missed,content_excerpt:'changed source'}).eligible,'stale review cannot certify changed source');
+assert(!policy.assess({...missed,priority_review:{...missed.priority_review,evidence:['原文中不存在的一段没有依据的内容']}}).eligible,'invented evidence rejected');
 // Execute real preference memory with a contextual event rejection and no browser storage.
 const states={},storage=new Map();
 const ctx={console,Date,Set,Map,Math,JSON,Number,String,Array,RegExp,

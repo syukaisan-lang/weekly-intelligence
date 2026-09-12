@@ -28,6 +28,7 @@ on:
       - "scripts/update_feeds.py"
       - "weekly-priority-policy.js"
       - "scripts/apply_priority_policy.cjs"
+      - "scripts/review_priority_content.py"
       - "requirements.txt"
       - "data/knowledge.enc.json"
       - "data/system-model.enc.json"
@@ -86,6 +87,8 @@ jobs:
           done
           echo "Weekly refresh failed after automatic retry" >&2
           exit 1
+      - name: Review reading value and audit omissions
+        run: python scripts/review_priority_content.py
       - name: Apply evidence-based reading policy
         run: node scripts/apply_priority_policy.cjs
       - name: Commit refreshed dashboard data safely

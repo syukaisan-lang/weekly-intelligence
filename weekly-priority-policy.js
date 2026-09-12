@@ -5,7 +5,7 @@
   if(typeof module==='object'&&module.exports)module.exports=api;
   else root.weeklyPriorityPolicy=api;
 })(typeof window==='object'?window:this,function(){
-  const VERSION=36, MAX_ITEMS=5;
+  const VERSION=37;
   const DOMAINS=[
     ['竞争分析',/競合分析|競合調査|競争分析|競合.{0,10}(比較|データ)/i,'对照竞品的价格、渠道和销售表现'],
     ['AI业务流程',/(?:AI|ChatGPT|Claude|Gemini|LLM).{0,45}(?:業務|ワークフロー|データ分析|販促|メルマガ|広告運用|市場調査)|(?:業務|販促|メルマガ).{0,45}(?:AI|ChatGPT|Claude|Gemini)/i,'改进数据分析或营销执行流程'],
@@ -31,12 +31,33 @@
   const METHOD=/比較|切り分け|検証|分解|分類|セグメント|仮説|集計|計測|指標|判断|分析|検討|テスト|設計/i;
   const OBJECT=/価格|競合|データ|売上|利益|顧客|購買|購入|広告|CVR|ROAS|CPA|チャネル|商品|検索|プロンプト|リピート|ブランド|メルマガ/i;
   const DETAIL=/手順|観点|方法|フレームワーク|実践|ケース|事例|戦略|ポイント|どう決め|比較|なぜ|何が|背景|見極め/i;
+  // A source-bound content review may correct both false positives and false negatives.
+  // Review evidence must be an exact excerpt from currently available source material.
+  function sourceSignature(a){
+    const text=[a.title||'',a.summary||'',a.content_excerpt||'',a.content_checked?'1':'0'].join('\u001f');
+    let hash=2166136261;for(const char of text){hash=Math.imul(hash^char.codePointAt(0),16777619)>>>0;}
+    return hash.toString(16).padStart(8,'0');
+  }
+  function reviewedAssessment(a){
+    const r=a.priority_review;
+    if(!r||!r.two_pass||r.version!==VERSION||r.source_signature!==sourceSignature(a))return null;
+    if(!['recommend','brief','skip','uncertain'].includes(r.verdict))return null;
+    const available=clean((a.summary||'')+' '+(a.content_excerpt||''));
+    const evidence=(r.evidence||[]).filter(x=>typeof x==='string'&&clean(x).length>=12&&available.includes(clean(x)));
+    if(r.verdict!=='uncertain'&&!evidence.length)return null;
+    if(r.verdict==='recommend'&&(!r.use||!r.gain||r.confidence==='low'))return null;
+    const eligible=r.verdict==='recommend';
+    return {version:VERSION,eligible,score:eligible?8.3:r.verdict==='skip'?5.3:5.8,cap:eligible?8.6:6.9,
+      decision:{recommend:'值得阅读',brief:'摘要足够',skip:'跳过',uncertain:'待核验'}[r.verdict],
+      reason:r.gain||r.reason,domain:r.domain||'',use:r.use||'',evidence,kind:r.kind||'review',
+      confidence:r.confidence||'low',reviewed:true};
+  }
   const cache=new WeakMap();
   function assess(a){
-    const inputs=[a.title,a.summary,a.content_excerpt,a.content_checked,a.content_completeness];
+    const inputs=[a.title,a.summary,a.content_excerpt,a.content_checked,a.content_completeness,a.priority_review];
     const hit=cache.get(a);
     if(hit&&inputs.every((v,i)=>v===hit.inputs[i]))return hit.result;
-    const result=assessSource(a);cache.set(a,{inputs,result});return result;
+    const result=reviewedAssessment(a)||assessSource(a);cache.set(a,{inputs,result});return result;
   }
   function assessSource(a){
     const {head,body}=sourceText(a),title=clean(a.title),lead=body.slice(0,900);
@@ -47,23 +68,23 @@
     if(ROUNDUP.test(title))return reject('摘要足够','合集或排行榜，避免重复占用优先阅读名额');
     if(/新CM|CM出演|CM公開|CM放映|CMに.{0,20}起用|記念広告|ブランドムービー/.test(title)&&!STUDY.test(title))return reject('跳过','创意或广告发布消息，未提供效果验证',5.3);
     const domain=DOMAINS.find(([,re])=>re.test(head));
-    if(!domain)return reject('跳过','未明确对应EC、营销、消费者研究、GTM或AI业务流程',5.4);
+    if(!domain)return reject('待核验','关键词未命中不能证明无关，等待内容复核');
     [out.domain,,out.use]=domain;
     if(BASIC.test(title)&&!STUDY.test(title))return reject('摘要足够','基础定义或入门内容，未确认进阶增量');
     const bodyLength=body.replace(/\s/g,'').length;
-    if(!a.content_checked||bodyLength<600)return reject('待核验','正文不足，不能凭标题、摘要或相关度认定值得精读');
+    if(!a.content_checked||bodyLength<160)return reject('待核验','正文不足，不能凭标题、摘要或相关度认定值得精读');
     const rows=sentences(body);
     const results=rows.filter(s=>METRIC.test(s)&&NUMBER.test(s)&&!FUTURE.test(s)&&!EVENT.test(s));
     const methods=rows.filter(s=>METHOD.test(s)&&OBJECT.test(s)&&s.length>=45&&!EVENT.test(s)&&!FUTURE.test(s));
     const isStudy=STUDY.test(title)||STUDY.test(head.slice(0,250));
-    const methodArticle=DETAIL.test(title)&&methods.length>=3&&bodyLength>=1600;
-    const measuredCase=results.length>=1&&methods.length>=2&&bodyLength>=1800&&(/事例|実現|改革|改善|戦略|成長|成果/.test(title));
+    const methodArticle=DETAIL.test(title)&&methods.length>=2;
+    const measuredCase=results.length>=1&&methods.length>=2&&(/事例|実現|改革|改善|戦略|成長|成果/.test(title));
     if(PROMO.test(title)&&!/調査結果|実態調査|調査レポート/.test(title)&&!measuredCase)return reject('摘要足够','产品、服务或渠道发布，缺少可迁移的实施过程与验证');
     // A short survey bulletin may be useful, but a summary normally carries its value.
-    if(!methodArticle&&!measuredCase&&!(isStudy&&results.length>=2&&bodyLength>=1800))return reject('摘要足够','有相关信息，但未确认足够的方法细节或证据值得阅读全文');
+    if(!methodArticle&&!measuredCase&&!(isStudy&&results.length>=1))return reject('待核验','规则尚不能确认阅读价值，等待内容复核；不能据此判定不值得读');
     out.kind=measuredCase?'case':methodArticle?'method':'research';
     out.evidence=[...new Set([...results.slice(0,1),...methods.slice(0,2),...results])].slice(0,2).map(s=>s.slice(0,220));
-    if(out.evidence.length<2)return reject('待核验','缺少两处可核对的正文依据');
+    if(out.evidence.length<1)return reject('待核验','缺少可核对的正文依据');
     out.confidence=a.content_completeness==='full'?'high':'medium';
     out.score=out.kind==='case'?8.8:out.kind==='method'?8.3:7.6;
     // Partial bodies can qualify on observed evidence, but cannot receive S from a presumed full read.
@@ -76,20 +97,18 @@
   function titleTokens(a){const t=clean(a.title).toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');return new Set(Array.from({length:Math.max(0,t.length-2)},(_,i)=>t.slice(i,i+3)));}
   function sameStory(a,b){
     if(a.url===b.url&&a.url)return true;
-    const x=titleTokens(a),y=titleTokens(b);if(!x.size||!y.size)return false;
-    const n=[...x].filter(k=>y.has(k)).length;
-    return n/Math.min(x.size,y.size)>.66;
+    const x=clean(a.content_excerpt),y=clean(b.content_excerpt);
+    return x.length>=160&&x===y;
   }
-  function select(rows,{assessment=assess,value=a=>assessment(a).score,minutes=()=>4,budget=0,limit=MAX_ITEMS}={}){
+  function select(rows,{assessment=assess,value=a=>assessment(a).score,minutes=()=>4,budget=0}={}){
     const ranked=rows.filter(a=>assessment(a).eligible).slice().sort((a,b)=>value(b)-value(a)||String(a.id).localeCompare(String(b.id)));
     const selected=[];let used=0;
     for(const a of ranked){
-      if(selected.length>=limit)break;
       if(selected.some(b=>sameStory(a,b)))continue;
       const m=minutes(a);if(budget&&used+m>budget)continue;
       selected.push(a);used+=m;
     }
     return selected;
   }
-  return {VERSION,MAX_ITEMS,assess,select,sameStory,sourceText};
+  return {VERSION,assess,select,sameStory,sourceText,sourceSignature};
 });

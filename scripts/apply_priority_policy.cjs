@@ -10,11 +10,11 @@ for(const a of payload.articles){
   const result=policy.assess(a);
   a.priority_assessment=result;
   // Retain the upstream retrieval score for diagnosis, never present it as reading value.
-  if(a.screening!=='editorial_v36')a.retrieval_reading_score=a.reading_score;
+  if(!/^editorial_v/.test(a.screening||''))a.retrieval_reading_score=a.reading_score;
   a.reading_score=result.score;
   a.grade=result.score>=8.7?'S':result.score>=7.2?'A':result.score>=5.5?'B':'C';
   a.reason=result.eligible?`${result.use}；${result.reason}`:result.reason;
-  a.screening='editorial_v36';
+  a.screening='editorial_v37';
   counts[result.decision]=(counts[result.decision]||0)+1;
 }
 payload.meta.priority_policy_version=policy.VERSION;
