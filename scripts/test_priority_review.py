@@ -35,5 +35,16 @@ class ReviewTests(unittest.TestCase):
         self.assertEqual(audited['one']['verdict'], 'recommend')
         self.assertIn('双向审核', seen[0])
 
+    def test_failed_batch_isolates_single_bad_article(self):
+        other = {**self.a, 'id': 'two', 'title': '別記事'}
+        def create(**args):
+            rows = json.loads(args['input'].split('文章：', 1)[1].split('\n待审核', 1)[0])
+            return SimpleNamespace(output_text=json.dumps({'reviews': [self.r] if len(rows)>1 else
+                [{**self.r, 'id': rows[0]['id']}] if rows[0]['id']=='one' else []}))
+        client = SimpleNamespace(responses=SimpleNamespace(create=create))
+        result, failed = review.review_with_fallback(client, 'configured-model', [self.a, other])
+        self.assertEqual(set(result), {'one'})
+        self.assertEqual(failed, ['two'])
+
 if __name__ == '__main__':
     unittest.main()

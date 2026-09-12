@@ -15,6 +15,7 @@
   let activePriorityIds=new Set();
   let focusObserver=null;
   let syncingCount=false;
+  let syncTimer=0;
 
   function blockedPrivateResult(){return {meta:{encrypted_full_data:true},locked:true,weekly_blocked:true};}
   function privateAllowed(){return Date.now()<explicitPrivateUntil;}
@@ -86,7 +87,6 @@
     try{
       data.articles=rows;
       if(!respectFilters){if(grade)grade.value='SA';if(status)status.value='all';if(source)source.value='all';}
-      api.invalidate?.();
       const selected=api.currentFocus()?.selected||[];
       return selected.slice();
     }catch(_){return [];}
@@ -120,7 +120,8 @@
     }
   }
   function scheduleSync(){
-    [0,80,350,1100].forEach(ms=>setTimeout(()=>{disableAutomaticLaterRecovery();syncPriorityUi();},ms));
+    clearTimeout(syncTimer);
+    syncTimer=setTimeout(()=>{disableAutomaticLaterRecovery();syncPriorityUi();},0);
   }
 
   // Final visibility rule for Priority. It uses a snapshot computed from the canonical full article set,

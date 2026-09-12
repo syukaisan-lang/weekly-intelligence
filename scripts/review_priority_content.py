@@ -14,8 +14,11 @@ ROOT = Path(__file__).resolve().parents[1]
 VERSION = 37
 PROFILE = """用户是有经验的日本EC/营销/GTM从业者，会用AI、MCP和统计分析。
 希望获取能改善商业判断、消费者理解、竞争分析、营销策略、AI数据分析与业务流程的内容。
+日常场景涉及销售、广告、市场/竞品研究、消费者研究、Google Sheets/Workspace 和日本市场业务；
+尤其偏好可实践的漏斗诊断、ROI/情景建模、分群实验、KPI与基线校验等。
 也重视有启发的新观点、可迁移的方法、反例和边界条件，不只看有数字的文章。
-不要重复基础AI/提示词/MCP/统计入门。纯活动报名、普通PR、泛科技新闻通常不值得推荐。
+不要重复基础AI/提示词/MCP/统计入门，也不要只讲 Claude/MCP 的泛泛演示；
+偏好易读的实务说明而非 API 文档或规格文档。纯活动报名、普通PR、泛科技新闻通常不值得推荐。
 不要把有实质方法或结论的活动回顾误判为活动预告，也不要把有用的功能工作流评估误判为普通新品新闻。
 用户的目标是选出来的都想看，同时不必去低等级文章里找漏选；没有篇数配额。
 短文章也可能很值得读；篇幅、数字多少、媒体名称、关键词或语义相似度都不是阅读价值本身。
@@ -92,6 +95,21 @@ def retry_missing_body(a):
     else:
         a['priority_body_retry_status'] = 'unavailable'
 
+def review_with_fallback(client, model, batch):
+    """Isolate a malformed article so a single weak review cannot lose six others."""
+    try:
+        first = review_batch(client, model, batch)
+        audited = review_batch(client, model, batch, list(first.values()))
+        return audited, []
+    except Exception as exc:
+        if len(batch) == 1:
+            print(f'Priority article unresolved: {type(exc).__name__}')
+            return {}, [batch[0]['id']]
+        middle = len(batch) // 2
+        left, left_errors = review_with_fallback(client, model, batch[:middle])
+        right, right_errors = review_with_fallback(client, model, batch[middle:])
+        return {**left, **right}, left_errors + right_errors
+
 def main():
     file = ROOT / 'data/articles.json'
     payload = json.loads(file.read_text(encoding='utf-8'))
@@ -117,17 +135,13 @@ def main():
         client = OpenAI(api_key=key, timeout=60, max_retries=2)
         for offset in range(0, len(pending), 6):
             batch = pending[offset:offset + 6]
-            try:
-                first = review_batch(client, model, batch)
-                audited = review_batch(client, model, batch, list(first.values()))
-                for a in batch:
+            audited, failed = review_with_fallback(client, model, batch)
+            errors += len(failed)
+            for a in batch:
+                if a['id'] in audited:
                     a['priority_review'] = {**audited[a['id']], 'version': VERSION,
                         'source_signature': source_signature(a), 'two_pass': True,
                         'reviewed_at': datetime.now(timezone.utc).isoformat()}
-            except Exception as exc:
-                errors += len(batch)
-                # Report the error class, never credentials or request content.
-                print(f'Priority batch unresolved: {type(exc).__name__}, articles={len(batch)}')
     complete = sum(bool(a.get('priority_review', {}).get('two_pass')
                        and a['priority_review'].get('version') == VERSION
                        and a['priority_review'].get('source_signature') == source_signature(a)

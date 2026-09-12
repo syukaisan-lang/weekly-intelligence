@@ -7,7 +7,10 @@
   // Budgets are optional reading plans; every new visit starts with the full recommendation set.
   let budgetMode='all';
   localStorage.setItem(BUDGET_KEY,'all');
-  let focusCache=null;
+  const focusCache=new Map();
+  let rankedCache=null;
+  let rankedSourceCount=-1;
+  let rankedHour=-1;
 
   function hs(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
   function safeScore(a){try{return Number(score(a))||5;}catch(_){return Number(a?.reading_score??5)||5;}}
@@ -109,7 +112,13 @@
     return true;
   }
   function allFocusRows(){
-    return (data?.articles||[]).filter(isFocusCandidate).sort((a,b)=>focusValue(b)-focusValue(a));
+    const rows=window.weeklyUiFixesV25?.allRows?.()||(data?.articles||[]);
+    const hour=Math.floor(Date.now()/3600000);
+    if(rankedCache&&rankedSourceCount===rows.length&&rankedHour===hour)return rankedCache;
+    rankedHour=hour;
+    focusCache.clear();rankedSourceCount=rows.length;
+    rankedCache=rows.filter(isFocusCandidate).sort((a,b)=>focusValue(b)-focusValue(a));
+    return rankedCache;
   }
   function matchesUiFilters(a){
     const gf=document.getElementById('gradeFilter')?.value||'SAB',src=document.getElementById('sourceFilter')?.value||'all',sf=document.getElementById('statusFilter')?.value||'all',g=safeGrade(a);
@@ -124,13 +133,19 @@
     return window.weeklyPriorityPolicy?.select(rows,{value:focusValue,minutes:estimateMinutes,budget:Number(minutes)||0})||[];
   }
   function currentFocus(){
-    if(focusCache)return focusCache;
+    // The first render may precede the asynchronous articles.json fetch.
+    const count=(window.weeklyUiFixesV25?.allRows?.()||(data?.articles||[])).length;
+    if(count!==rankedSourceCount){focusCache.clear();rankedCache=null;rankedSourceCount=count;}
+    const key=[document.getElementById('gradeFilter')?.value,document.getElementById('statusFilter')?.value,
+      document.getElementById('sourceFilter')?.value,budgetMode,Math.floor(Date.now()/3600000)].join('\u001f');
+    if(focusCache.has(key))return focusCache.get(key);
     const all=allFocusRows().filter(matchesUiFilters);
     const target=budgetMode==='30'?30:budgetMode==='60'?60:0;
     const selected=fitBudget(all,target);
-    focusCache={all,selected,selectedIds:new Set(selected.map(a=>String(a.id))),target};return focusCache;
+    const result={all,selected,selectedIds:new Set(selected.map(a=>String(a.id))),target};
+    focusCache.set(key,result);return result;
   }
-  function invalidate(){focusCache=null;}
+  function invalidate(){focusCache.clear();rankedCache=null;rankedSourceCount=-1;rankedHour=-1;}
 
   if(window.weeklyFocusFeedbackV17)window.weeklyFocusFeedbackV17.focusRows=()=>currentFocus().selected;
 
@@ -188,7 +203,7 @@
 
   if(typeof renderArticles==='function'){
     const previousRender=renderArticles;
-    renderArticles=function(){invalidate();previousRender();annotateCards();updatePanel();};
+    renderArticles=function(){previousRender();annotateCards();updatePanel();};
   }
   if(typeof setProgress==='function'){
     const previousSet=setProgress;
