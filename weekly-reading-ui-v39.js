@@ -19,11 +19,15 @@
   function focus(){try{return window.weeklyReadingTimeV21?.currentFocus?.().selected||[];}catch(_){return [];}}
 
   function notice(){
-    const box=$('weeklyReviewNotice'),audit=data?.meta?.priority_review_audit;
+    const box=$('weeklyReviewNotice'),audit=data?.meta?.priority_review_audit,free=data?.meta?.free_priority_audit;
     if(!box)return;
     if(!allRows().length){box.hidden=true;return;}
-    if(audit?.status==='complete'){box.hidden=true;return;}
     box.hidden=false;
+    if(free?.status==='complete_with_uncertainty'){
+      box.textContent=`免费证据筛查已检查本周 ${free.examined} 篇，推荐 ${free.recommended} 篇（其中 ${free.summary_only} 篇仅有公开摘要），${free.uncertain} 篇依据不足。未进行付费模型深度复核，不能保证零漏选。`;
+      return;
+    }
+    if(audit?.status==='complete'){box.hidden=true;return;}
     if(!audit){box.textContent='本次复核状态未知；优先阅读还不能视为完整的漏选检查。';return;}
     const total=Math.max(0,Number(audit.total||0)),done=Math.max(0,Number(audit.reviewed||0));
     box.textContent=audit.model_configured
@@ -39,12 +43,13 @@
       title.textContent=`优先阅读 ${rows.length} 篇 · 约 ${mins} 分钟`;
       subtitle.textContent=rows.length?'从第一篇开始读；这里只放有具体阅读依据的文章。':
         filteredOut?'当前高级筛选没有匹配文章，展开筛选可以调整。':
+        data?.meta?.free_priority_audit?.status==='complete_with_uncertainty'?'免费证据筛查未选出达标文章；依据不足的文章仍可能有漏选。':
         data?.meta?.priority_review_audit?.status==='complete'?'当前没有达到优先阅读标准的文章，不为了凑数推荐。':
-        '现有正文规则尚未选出文章；复核未完成，不能据此判断没有值得读的文章。';
+        '现有规则尚未选出文章；筛查未完成，不能据此判断没有值得读的文章。';
       const empty=$('emptyState');
       if(empty&&!rows.length&&!filteredOut&&data?.meta?.priority_review_audit?.status!=='complete'){
         const p=empty.querySelector('p');
-        if(p)p.textContent='当前正文规则尚未选出文章，内容复核仍未完成；不能排除其他等级有值得读的内容。';
+        if(p)p.textContent='当前免费规则尚未选出文章，依据不足的文章仍可能有漏选。';
       }
     }else{
       const label={week:'本周文章',later:'稍后看',unread:'待处理 S/A',archive:'未处理归档',marked:'已标记',read:'已读',skip:'已跳过',all:'全部文章'}[active]||'文章列表';
@@ -90,7 +95,7 @@
       const gain=document.createElement('p'),use=document.createElement('p');
       gain.className='weekly-card-gain';use.className='weekly-card-use';
       const evidence=editorial.evidence?.[0]||'';
-      gain.textContent=editorial.reviewed?`新信息：${editorial.reason}`:`原文看点：${evidence||editorial.reason}`;
+      gain.textContent=editorial.reviewed?`新信息：${editorial.reason}`:`${editorial.kind==='summary_case'?'公开摘要依据':'原文看点'}：${evidence||editorial.reason}`;
       use.textContent=`可用在：${editorial.use}`;
       brief.append(gain,use);
       const time=document.createElement('span');time.className='weekly-card-time';
