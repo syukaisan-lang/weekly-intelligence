@@ -5,7 +5,7 @@
   if(typeof module==='object'&&module.exports)module.exports=api;
   else root.weeklyPriorityPolicy=api;
 })(typeof window==='object'?window:this,function(){
-  const VERSION=37;
+  const VERSION=40;
   const DOMAINS=[
     ['竞争分析',/競合分析|競合調査|競争分析|競合.{0,10}(比較|データ)/i,'对照竞品的价格、渠道和销售表现'],
     ['AI业务流程',/(?:AI|ChatGPT|Claude|Gemini|LLM).{0,45}(?:業務|ワークフロー|データ分析|販促|メルマガ|広告運用|市場調査)|(?:業務|販促|メルマガ).{0,45}(?:AI|ChatGPT|Claude|Gemini)/i,'改进数据分析或营销执行流程'],
@@ -14,6 +14,7 @@
     ['广告与CRM',/広告効果|効果測定|広告運用|運用型広告|メルマガ|ブランドリフト|(?<![a-z])(?:ROAS|CPA|CVR|CRM|LTV|NPS)(?![a-z])/i,'改进投放、转化或客户留存判断'],
     ['EC运营',/(?<![a-z])EC(?![a-z])|eコマース|通販|Amazon|アマゾン|楽天|Shopify|D2C/i,'检验EC运营、渠道或转化决策'],
     ['品牌与GTM',/マーケティング|ブランド戦略|ブランディング|ポジショニング|市場創造|市場参入|市場開拓|顧客獲得|海外展開|ローカライズ|価格戦略|(?<![a-z])GTM(?![a-z])/i,'补充定位、市场进入或增长判断'],
+    ['增长与留存',/継続率|新商品.{0,12}(?:成長|罠)|(?:既存商品|既存顧客).{0,25}(?:利益|成長|維持)/i,'检验新品扩张、既有客户留存与利润结构'],
     ['团队管理',/マーケ組織|マーケティング組織|マネジメント|チーム運営|1on1|カスタマーサクセス/i,'改进团队协作或客户经营判断']
   ];
   function clean(v){return String(v||'').normalize('NFKC').replace(/https?:\/\/\S+/g,'').replace(/The post .*?first appeared on.*$/i,'').replace(/\s+/g,' ').trim();}
@@ -24,13 +25,17 @@
   const PROMO=/提供開始|販売開始|発売|ローンチ|新発売|新機能|新フォーマット|発表|リリース|スタート|オープン|展開を拡充/i;
   const STUDY=/調査|分析|検証|研究|白書|レポート/i;
   const ROUNDUP=/アクセスランキング|ネッ担まとめ|編集後記|おすすめ.{0,6}[0-9]+選|企業[0-9]+選/i;
+  const CORPORATE_NEWS=/資本業務提携|サービス提供を開始|プラットフォーム.{0,100}連携|業務提携|新サービス開始/i;
   const BASIC=/初心者|入門|基礎知識|とは[?？]|の定義と|MCP.{0,12}(始め方|設定方法)|プロンプト.{0,10}入門/i;
-  const METRIC=/(?:売上|売り上げ|利益|収益|開封率|クリック率|転換率|購入率|購買|購入|成約|離脱|シェア|流入|広告費|制作時間|作業時間|CVR|ROAS|CPA|LTV|利用率|回答|検索|コスト)/i;
+  const METRIC=/(?:売上|売り上げ|利益|収益|開封率|クリック率|転換率|購入率|購買|購入|注文金額|成約|離脱|シェア|流入|広告費|制作時間|作業時間|CVR|ROAS|CPA|LTV|利用率|回答|検索|コスト)/i;
   const NUMBER=/\d+(?:\.\d+)?\s*(?:%|倍|割|万円|億円|兆円|ポイント)|[一二三四五六七八九]分の[一二三四五六七八九]/;
   const FUTURE=/予定|見込|目指|期待|最大.{0,8}(?:還元|OFF)|ポイント還元|割引クーポン/i;
   const METHOD=/比較|切り分け|検証|分解|分類|セグメント|仮説|集計|計測|指標|判断|分析|検討|テスト|設計/i;
   const OBJECT=/価格|競合|データ|売上|利益|顧客|購買|購入|広告|CVR|ROAS|CPA|チャネル|商品|検索|プロンプト|リピート|ブランド|メルマガ/i;
   const DETAIL=/手順|観点|方法|フレームワーク|実践|ケース|事例|戦略|ポイント|どう決め|比較|なぜ|何が|背景|見極め/i;
+  const OUTCOME=/向上|改善|増加|上昇|伸び|短縮|削減|到達|達成|低下|減少|倍にな|倍に|成果|貢献/i;
+  const EXECUTION=/活用|導入|分析|開発|設計|改善|運用|比較|提案|支援|配信|制作|検証|計測|組み合わせ|生成|データから|履歴から/i;
+  const TEASER=/全文を読む|続きを読む|詳細はこちら|クリックして|申し込みはこちら/i;
   // A source-bound content review may correct both false positives and false negatives.
   // Review evidence must be an exact excerpt from currently available source material.
   function sourceSignature(a){
@@ -66,32 +71,56 @@
     // Event promises remain announcements even if they promise strategy, data or case studies.
     if((EVENT.test(head+' '+lead)&&!RECAP.test(title))||((body.match(/本講演|今回の講演|参加費|開催日時/g)||[]).length>=2))return reject('跳过','活动报名或预告，方法与结果尚未在本文交付',5.3);
     if(ROUNDUP.test(title))return reject('摘要足够','合集或排行榜，避免重复占用优先阅读名额');
+    if(CORPORATE_NEWS.test(title)&&!STUDY.test(title))return reject('摘要足够','企业合作或产品消息，未交付可复用的决策依据');
     if(/新CM|CM出演|CM公開|CM放映|CMに.{0,20}起用|記念広告|ブランドムービー/.test(title)&&!STUDY.test(title))return reject('跳过','创意或广告发布消息，未提供效果验证',5.3);
     const domain=DOMAINS.find(([,re])=>re.test(head));
-    if(!domain)return reject('待核验','关键词未命中不能证明无关，等待内容复核');
+    if(!domain)return reject('待核验','免费规则未确认业务关联；不能据此断定无阅读价值');
     [out.domain,,out.use]=domain;
     if(BASIC.test(title)&&!STUDY.test(title))return reject('摘要足够','基础定义或入门内容，未确认进阶增量');
     const bodyLength=body.replace(/\s/g,'').length;
-    if(!a.content_checked||bodyLength<160)return reject('待核验','正文不足，不能凭标题、摘要或相关度认定值得精读');
+    // Public summaries can carry verifiable results even when robots/paywall
+    // rules prevent a full-body fetch. Require both an observed business
+    // outcome and a separate, concrete implementation detail; title alone
+    // and promotional numbers do not qualify.
+    if(!a.content_checked||bodyLength<160){
+      const summary=clean(a.summary),rows=sentences(summary.replace(TEASER,'').trim());
+      const outcomes=rows.filter(s=>METRIC.test(s)&&NUMBER.test(s)&&OUTCOME.test(s)&&!FUTURE.test(s)&&!EVENT.test(s));
+      const implementations=rows.filter(s=>EXECUTION.test(s)&&OBJECT.test(s)&&s.length>=40&&!EVENT.test(s)&&!FUTURE.test(s));
+      const cleanSource=summary.length>=110&&summary.length<=900&&!/新着一覧|最新の投稿|フォロワー|今すぐフォロー|優先するニュース提供元/.test(summary);
+      const pair=outcomes.flatMap(x=>implementations.filter(y=>x!==y).map(y=>[x,y]))[0];
+      const clearCase=cleanSource&&!!pair
+        &&!PROMO.test(title)&&!STUDY.test(title)&&!BASIC.test(title);
+      if(!clearCase)return reject('待核验','公开摘要未同时交付可核对的业务结果与实施细节；正文不足');
+      out.kind='summary_case';out.evidence=[pair[1],pair[0]].map(s=>s.slice(0,220));
+      out.confidence='medium';out.score=7.7;out.cap=8.2;out.eligible=true;out.decision='值得阅读';
+      out.reason='公开摘要同时给出实施方式与业务结果；正文未核实完整';
+      return out;
+    }
     const rows=sentences(body);
     const results=rows.filter(s=>METRIC.test(s)&&NUMBER.test(s)&&!FUTURE.test(s)&&!EVENT.test(s));
     const methods=rows.filter(s=>METHOD.test(s)&&OBJECT.test(s)&&s.length>=45&&!EVENT.test(s)&&!FUTURE.test(s));
     const isStudy=STUDY.test(title)||STUDY.test(head.slice(0,250));
+    const decisionStudy=isStudy&&/購買|購入|商品探索|価格|値上げ|顧客|消費者|生活者|広告|EC|マーケティングKPI|検索|ギフト|メルマガ/.test(title)
+      &&!/ランサムウェア|サイバー攻撃|市場規模|通販・EC市場/.test(title);
     const methodArticle=DETAIL.test(title)&&methods.length>=2;
     const measuredCase=results.length>=1&&methods.length>=2&&(/事例|実現|改革|改善|戦略|成長|成果/.test(title));
-    if(PROMO.test(title)&&!/調査結果|実態調査|調査レポート/.test(title)&&!measuredCase)return reject('摘要足够','产品、服务或渠道发布，缺少可迁移的实施过程与验证');
+    const diagnostic=/(?:成長|利益|顧客|売上|ブランド).{0,12}(?:罠|失敗|崩壊|課題)|(?:罠|失敗|崩壊).{0,12}(?:成長|利益|顧客|売上|ブランド)/.test(title)
+      &&rows.filter(s=>/なぜなら|一方で|しかし|そのため|理由|可能性/.test(s)&&OBJECT.test(s)).length>=2
+      &&rows.some(s=>/継続率|潜在顧客|利益率|便益|既存商品/.test(s)&&/必要|策|判断|見直|改善|最大化/.test(s));
+    if(PROMO.test(title)&&!/調査結果|実態調査|調査レポート/.test(title)&&!measuredCase&&!diagnostic)return reject('摘要足够','产品、服务或渠道发布，缺少可迁移的实施过程与验证');
     // A short survey bulletin may be useful, but a summary normally carries its value.
-    if(!methodArticle&&!measuredCase&&!(isStudy&&results.length>=1))return reject('待核验','规则尚不能确认阅读价值，等待内容复核；不能据此判定不值得读');
-    out.kind=measuredCase?'case':methodArticle?'method':'research';
-    out.evidence=[...new Set([...results.slice(0,1),...methods.slice(0,2),...results])].slice(0,2).map(s=>s.slice(0,220));
+    if(!methodArticle&&!measuredCase&&!diagnostic&&!(decisionStudy&&results.length>=1))return reject('待核验','规则尚不能确认阅读价值；不能据此判定不值得读');
+    out.kind=measuredCase?'case':methodArticle?'method':diagnostic?'diagnostic':'research';
+    const diagnosticEvidence=diagnostic?rows.filter(s=>/なぜなら|こうした事態|解決するには/.test(s)&&/継続率|潜在顧客|利益|商品/.test(s)):[];
+    out.evidence=[...new Set([...diagnosticEvidence,...results.slice(0,1),...methods.slice(0,2),...results])].slice(0,2).map(s=>s.slice(0,220));
     if(out.evidence.length<1)return reject('待核验','缺少可核对的正文依据');
     out.confidence=a.content_completeness==='full'?'high':'medium';
-    out.score=out.kind==='case'?8.8:out.kind==='method'?8.3:7.6;
+    out.score=out.kind==='case'?8.8:out.kind==='method'?8.3:out.kind==='diagnostic'?8.1:7.6;
     // Partial bodies can qualify on observed evidence, but cannot receive S from a presumed full read.
     out.cap=out.confidence==='high'?9.2:8.6;
     out.score=Math.min(out.score,out.cap);
     out.eligible=true;out.decision='值得精读';
-    out.reason=out.kind==='case'?'正文同时包含实施细节与量化结果':out.kind==='method'?'正文提供可复用的分析步骤或决策方法':'正文包含多项研究结果及分析，可用于检验业务假设';
+    out.reason=out.kind==='case'?'正文同时包含实施细节与量化结果':out.kind==='method'?'正文提供可复用的分析步骤或决策方法':out.kind==='diagnostic'?'正文给出问题成因与可采取的判断方法':'正文包含研究结果及分析，可用于检验业务假设';
     return out;
   }
   function titleTokens(a){const t=clean(a.title).toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');return new Set(Array.from({length:Math.max(0,t.length-2)},(_,i)=>t.slice(i,i+3)));}

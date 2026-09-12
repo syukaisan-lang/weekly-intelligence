@@ -195,9 +195,11 @@
     const vc=document.getElementById('visibleCount');if(active&&vc)vc.textContent=`${cur.selected.length} 篇 · ≈${selMin}分钟`;
     const tab=document.querySelector('[data-progress="focus"] .segment-count');if(tab)tab.textContent=String(cur.selected.length);
     const hint=document.getElementById('weeklyAttentionHint');
-    if(active&&hint)hint.textContent=cur.target?`优先阅读仅看 S/A：这是 ${cur.target} 分钟阅读安排；其余 ${Math.max(0,cur.all.length-cur.selected.length)} 篇仍值得读，切回“全部值得读”即可查看。`:`优先阅读：只推荐已确认有具体用途和正文依据的 S/A，不设篇数上限，不凑数。同一报道去重后按价值排序。`;
+    if(active&&hint)hint.textContent=cur.target?`优先阅读仅看 S/A：这是 ${cur.target} 分钟阅读安排；其余 ${Math.max(0,cur.all.length-cur.selected.length)} 篇仍值得读，切回“全部值得读”即可查看。`:`优先阅读：仅推荐有公开摘要或正文具体依据的 S/A，不设篇数上限，不凑数。同一报道去重后按价值排序。`;
     const audit=data?.meta?.priority_review_audit;
-    if(active&&hint&&(!audit||audit.status!=='complete'))hint.textContent+=` 内容复核尚未完成${audit?`：${audit.unresolved} 篇待核验`:''}，当前不能视为已完整筛选。`;
+    const free=data?.meta?.free_priority_audit;
+    if(active&&hint&&free?.status==='complete_with_uncertainty')hint.textContent+=` 免费规则已检查 ${free.examined} 篇，${free.uncertain} 篇证据不足；没有付费模型深度复核。`;
+    else if(active&&hint&&(!audit||audit.status!=='complete'))hint.textContent+=` 内容复核尚未完成${audit?`：${audit.unresolved} 篇待核验`:''}，当前不能视为已完整筛选。`;
 
   }
 

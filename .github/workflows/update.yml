@@ -49,8 +49,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
       SEMANTIC_MODEL_ID: intfloat/multilingual-e5-small
     steps:
       - uses: actions/checkout@v7
@@ -87,8 +85,6 @@ jobs:
           done
           echo "Weekly refresh failed after automatic retry" >&2
           exit 1
-      - name: Review reading value and audit omissions
-        run: python scripts/review_priority_content.py
       - name: Apply evidence-based reading policy
         run: node scripts/apply_priority_policy.cjs
       - name: Commit refreshed dashboard data safely
