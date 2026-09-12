@@ -179,7 +179,7 @@
 
   function invalidate(){revision++;scoreCache.clear();memoryCache=null;rescueCache=null;try{window.weeklyReadingTimeV21?.invalidate?.();}catch(_){};try{window.weeklyPerformanceV28?.invalidate?.();}catch(_){};}
   if(typeof save==='function'){
-    const prev=save;save=function(){invalidate();const out=prev();setTimeout(()=>{if(!rebuilding){rebuilding=true;try{buildMemory();}finally{rebuilding=false;}}},0);return out;};
+    const prev=save;save=function(){invalidate();return prev();};
   }
   document.getElementById('resetLearning')?.addEventListener('click',()=>{try{localStorage.removeItem(KEY);}catch(_){}invalidate();},{capture:true});
 

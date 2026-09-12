@@ -31,7 +31,9 @@ def main() -> int:
         "weekly-mobile-performance-v18.js?v=20260905-1115",
         "weekly-state-integrity-v22.js?v=20260905-1115",
         "weekly-later-click-v22-1.js?v=20260905-1108",
-        "weekly-runtime-consistency-v35.js?v=20260905-1108",
+        "weekly-runtime-consistency-v35.js?v=20260912-38",
+        "weekly-feedback-learning-v38.js?v=20260912-38",
+        "weekly-feedback-runtime-v38.js?v=20260912-38",
         "0/16",
     )
     if "knowledge-relations.js" in index:

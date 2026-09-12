@@ -39,7 +39,10 @@ jobs:
             node --check "$f"
           done
       - name: Check priority selection regressions
-        run: node scripts/test_priority_policy.cjs
+        run: |
+          node scripts/test_priority_policy.cjs
+          node scripts/test_feedback_learning.cjs
+          python scripts/test_priority_review.py
       - name: Check Python syntax
         run: python -m py_compile scripts/*.py
       - name: Check cross-system impact

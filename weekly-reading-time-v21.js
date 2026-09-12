@@ -4,8 +4,13 @@
   const NEGATIVE=new Set(['bad','less']);
   const POSITIVE=new Set(['accurate','more']);
   const DAY=86400000;
-  let budgetMode=localStorage.getItem(BUDGET_KEY)||'all';
-  let focusCache=null;
+  // Budgets are optional reading plans; every new visit starts with the full recommendation set.
+  let budgetMode='all';
+  localStorage.setItem(BUDGET_KEY,'all');
+  const focusCache=new Map();
+  let rankedCache=null;
+  let rankedSourceCount=-1;
+  let rankedHour=-1;
 
   function hs(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
   function safeScore(a){try{return Number(score(a))||5;}catch(_){return Number(a?.reading_score??5)||5;}}
@@ -107,7 +112,13 @@
     return true;
   }
   function allFocusRows(){
-    return (data?.articles||[]).filter(isFocusCandidate).sort((a,b)=>focusValue(b)-focusValue(a));
+    const rows=window.weeklyUiFixesV25?.allRows?.()||(data?.articles||[]);
+    const hour=Math.floor(Date.now()/3600000);
+    if(rankedCache&&rankedSourceCount===rows.length&&rankedHour===hour)return rankedCache;
+    rankedHour=hour;
+    focusCache.clear();rankedSourceCount=rows.length;
+    rankedCache=rows.filter(isFocusCandidate).sort((a,b)=>focusValue(b)-focusValue(a));
+    return rankedCache;
   }
   function matchesUiFilters(a){
     const gf=document.getElementById('gradeFilter')?.value||'SAB',src=document.getElementById('sourceFilter')?.value||'all',sf=document.getElementById('statusFilter')?.value||'all',g=safeGrade(a);
@@ -122,13 +133,19 @@
     return window.weeklyPriorityPolicy?.select(rows,{value:focusValue,minutes:estimateMinutes,budget:Number(minutes)||0})||[];
   }
   function currentFocus(){
-    if(focusCache)return focusCache;
+    // The first render may precede the asynchronous articles.json fetch.
+    const count=(window.weeklyUiFixesV25?.allRows?.()||(data?.articles||[])).length;
+    if(count!==rankedSourceCount){focusCache.clear();rankedCache=null;rankedSourceCount=count;}
+    const key=[document.getElementById('gradeFilter')?.value,document.getElementById('statusFilter')?.value,
+      document.getElementById('sourceFilter')?.value,budgetMode,Math.floor(Date.now()/3600000)].join('\u001f');
+    if(focusCache.has(key))return focusCache.get(key);
     const all=allFocusRows().filter(matchesUiFilters);
     const target=budgetMode==='30'?30:budgetMode==='60'?60:0;
     const selected=fitBudget(all,target);
-    focusCache={all,selected,selectedIds:new Set(selected.map(a=>String(a.id))),target};return focusCache;
+    const result={all,selected,selectedIds:new Set(selected.map(a=>String(a.id))),target};
+    focusCache.set(key,result);return result;
   }
-  function invalidate(){focusCache=null;}
+  function invalidate(){focusCache.clear();rankedCache=null;rankedSourceCount=-1;rankedHour=-1;}
 
   if(window.weeklyFocusFeedbackV17)window.weeklyFocusFeedbackV17.focusRows=()=>currentFocus().selected;
 
@@ -159,7 +176,7 @@
   function ensurePanel(){
     let panel=document.getElementById('weeklyReadingBudget');if(panel)return panel;
     panel=document.createElement('div');panel.id='weeklyReadingBudget';panel.className='reading-budget-panel';
-    panel.innerHTML='<div class="reading-budget-summary"></div><div class="reading-budget-buttons"><button type="button" data-budget="all">精选 5 篇以内</button><button type="button" data-budget="30">30分钟可读</button><button type="button" data-budget="60">60分钟可读</button></div><div class="reading-budget-note">阅读时间优先级：站点官方时间 ＞ 已确认完整正文 ＞ 部分/未确认正文 ＞ 来源与文章形式估算。部分正文不会把已抓到的片段误当成全文。</div>';
+    panel.innerHTML='<div class="reading-budget-summary"></div><div class="reading-budget-buttons"><button type="button" data-budget="all">全部值得读</button><button type="button" data-budget="30">30分钟可读</button><button type="button" data-budget="60">60分钟可读</button></div><div class="reading-budget-note">阅读时间优先级：站点官方时间 ＞ 已确认完整正文 ＞ 部分/未确认正文 ＞ 来源与文章形式估算。部分正文不会把已抓到的片段误当成全文。</div>';
     const hint=document.getElementById('weeklyAttentionHint');
     if(hint)hint.insertAdjacentElement('afterend',panel);else document.querySelector('#articleList')?.previousElementSibling?.appendChild(panel);
     panel.querySelectorAll('[data-budget]').forEach(btn=>btn.addEventListener('click',()=>{
@@ -178,12 +195,15 @@
     const vc=document.getElementById('visibleCount');if(active&&vc)vc.textContent=`${cur.selected.length} 篇 · ≈${selMin}分钟`;
     const tab=document.querySelector('[data-progress="focus"] .segment-count');if(tab)tab.textContent=String(cur.selected.length);
     const hint=document.getElementById('weeklyAttentionHint');
-    if(active&&hint)hint.textContent=cur.target?`优先阅读仅看 S/A：按个人价值与阅读成本组合出 ${cur.target} 分钟内价值更高的一组文章。`:`优先阅读：只推荐已确认有具体用途和正文依据的 S/A，最多 5 篇，不凑数。同一报道去重后按价值排序。`;
+    if(active&&hint)hint.textContent=cur.target?`优先阅读仅看 S/A：这是 ${cur.target} 分钟阅读安排；其余 ${Math.max(0,cur.all.length-cur.selected.length)} 篇仍值得读，切回“全部值得读”即可查看。`:`优先阅读：只推荐已确认有具体用途和正文依据的 S/A，不设篇数上限，不凑数。同一报道去重后按价值排序。`;
+    const audit=data?.meta?.priority_review_audit;
+    if(active&&hint&&(!audit||audit.status!=='complete'))hint.textContent+=` 内容复核尚未完成${audit?`：${audit.unresolved} 篇待核验`:''}，当前不能视为已完整筛选。`;
+
   }
 
   if(typeof renderArticles==='function'){
     const previousRender=renderArticles;
-    renderArticles=function(){invalidate();previousRender();annotateCards();updatePanel();};
+    renderArticles=function(){previousRender();annotateCards();updatePanel();};
   }
   if(typeof setProgress==='function'){
     const previousSet=setProgress;

@@ -154,7 +154,7 @@ function renderArticles(){
   }
 }
 function render(){renderMetrics();renderCoverage();renderPrefs();sourceOptions();renderArticles();}
-async function init(){try{[data,status]=await Promise.all([fetch('data/articles.json',{cache:'no-store'}).then(r=>r.json()),fetch('data/source_status.json',{cache:'no-store'}).then(r=>r.json())]);rebuildPrefs();$('lastUpdated').textContent=data.meta?.generated_at?`最近更新 ${new Date(data.meta.generated_at).toLocaleString('ja-JP')}`:'尚未首次刷新';render();}catch(e){$('coverageWarning').classList.remove('hidden');$('coverageWarning').textContent='无法读取数据文件：'+e.message;}}
+async function init(){try{[data,status]=await Promise.all([fetch('data/articles.json',{cache:'no-cache'}).then(r=>r.json()),fetch('data/source_status.json',{cache:'no-cache'}).then(r=>r.json())]);rebuildPrefs();$('lastUpdated').textContent=data.meta?.generated_at?`最近更新 ${new Date(data.meta.generated_at).toLocaleString('ja-JP')}`:'尚未首次刷新';render();}catch(e){$('coverageWarning').classList.remove('hidden');$('coverageWarning').textContent='无法读取数据文件：'+e.message;}}
 ['gradeFilter','statusFilter','sourceFilter','personalizedSort'].forEach(id=>$(id).addEventListener('change',renderArticles));
 $('resetLearning').addEventListener('click',()=>{if(confirm('确定只清空偏好学习？已读/稍后看/Notion/跳过状态会保留。')){Object.keys(state).forEach(id=>{if(state[id])state[id].feedback=null;});save();rebuildPrefs();render();}});
 init();

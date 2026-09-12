@@ -224,7 +224,8 @@ async function unlock(){
 }
 document.addEventListener('DOMContentLoaded',()=>{
   $w('unlockWorkSystem')?.addEventListener('click',unlock);
-  $w('playbookSearch')?.addEventListener('input',renderRules);
+  let queryTimer=0;
+  $w('playbookSearch')?.addEventListener('input',()=>{clearTimeout(queryTimer);queryTimer=setTimeout(renderRules,120)});
   $w('lockWorkSystem')?.addEventListener('click',()=>lockPrivateData(true));
   document.querySelectorAll('[data-system-mode]').forEach(b=>b.addEventListener('click',()=>{systemMode=b.dataset.systemMode;syncModeButtons();renderAll();}));
 });
