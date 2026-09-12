@@ -1,5 +1,5 @@
 from __future__ import annotations
-import base64,os,re
+import base64,hashlib,os,re
 from dataclasses import dataclass
 from typing import Iterable
 import numpy as np
@@ -68,7 +68,7 @@ class SemanticMatcher:
     def __init__(self):
         p=crypto.decrypt(INDEX_ENC)
         if not p:raise RuntimeError('Encrypted semantic index is unavailable.')
-        self.meta=p.get('meta') or {};self.entries=p.get('entries') or [];self.matrix=decode_index(p);self.kinds=np.asarray([str(e.get('kind') or '') for e in self.entries],dtype=object);self.ids=np.asarray([str(e.get('id') or '') for e in self.entries],dtype=object);self.model=SentenceTransformer(str(self.meta.get('model') or os.getenv('SEMANTIC_MODEL_ID') or 'intfloat/multilingual-e5-small'))
+        self.meta=p.get('meta') or {};self.entries=p.get('entries') or [];self.matrix=decode_index(p);self.kinds=np.asarray([str(e.get('kind') or '') for e in self.entries],dtype=object);self.ids=np.asarray([str(e.get('id') or '') for e in self.entries],dtype=object);self.model=SentenceTransformer(str(self.meta.get('model') or os.getenv('SEMANTIC_MODEL_ID') or 'intfloat/multilingual-e5-small'));self._article_cache={}
     def _agg(self,sims,kind):
         mask=self.kinds==kind
         if not np.any(mask):return 0.,0.
@@ -84,17 +84,23 @@ class SemanticMatcher:
             if t:return t
         return {}
     def analyze(self,articles:Iterable[dict]):
-        articles=list(articles);texts=[];spans=[]
+        articles=list(articles);texts=[];spans=[];out={}
         for a in articles:
-            c=article_chunks(a);start=len(texts);texts.extend(c);spans.append((start,len(texts)))
-        if not texts:return {}
-        vectors=self.model.encode(texts,batch_size=32,show_progress_bar=True,normalize_embeddings=True,convert_to_numpy=True).astype(np.float32);out={}
-        for a,(start,end) in zip(articles,spans):
+            c=article_chunks(a);key=str(a.get('id') or '')
+            signature=hashlib.sha256('\n'.join(c).encode('utf-8')).hexdigest()
+            cached=self._article_cache.get(key)
+            if cached and cached[0]==signature:
+                out[key]=cached[1];continue
+            start=len(texts);texts.extend(c);spans.append((a,key,signature,start,len(texts)))
+        if not texts:return out
+        vectors=self.model.encode(texts,batch_size=32,show_progress_bar=True,normalize_embeddings=True,convert_to_numpy=True).astype(np.float32)
+        for a,key,signature,start,end in spans:
             av=vectors[start:end]
             if not av.size:continue
             doc=av.mean(axis=0);n=float(np.linalg.norm(doc));doc=doc/n if n else doc;sims=np.max(av@self.matrix.T,axis=0);rm,rmean=self._agg(sims,'rule');km,kmean=self._agg(sims,'notion');em,emean=self._agg(sims,'private');tm=self._top_temporal(sims)
             ad,ay,aconf,abasis=article_temporal_meta(a)
-            out[str(a.get('id') or '')]=SemanticResult(quantize(doc.astype(np.float32)),rm,km,em,rmean,kmean,emean,ay,ad,aconf,abasis,tm.get('effective_date'),tm.get('temporal_confidence'),tm.get('time_sensitive'),tm.get('time_domain'))
+            result=SemanticResult(quantize(doc.astype(np.float32)),rm,km,em,rmean,kmean,emean,ay,ad,aconf,abasis,tm.get('effective_date'),tm.get('temporal_confidence'),tm.get('time_sensitive'),tm.get('time_domain'))
+            out[key]=result;self._article_cache[key]=(signature,result)
         return out
 
 def temporal_update_bonus(result,quality):

@@ -2,11 +2,14 @@
 (() => {
   const JST=9*60*60*1000;
   const NEGATIVE=new Set(['bad','less']);
-  let canonical=[];
+  let canonical=[],canonicalSource=null;
 
   function rememberFullRows(){
     const rows=Array.isArray(data?.articles)?data.articles:[];
-    if(rows.length>canonical.length)canonical=rows.slice();
+    if(rows.length>=canonical.length&&rows!==canonicalSource){
+      if(rows.length!==canonical.length||rows[0]!==canonical[0]||rows.at(-1)!==canonical.at(-1))canonical=rows.slice();
+      canonicalSource=rows;
+    }
     return canonical.length?canonical:rows;
   }
   function allRows(){return rememberFullRows();}

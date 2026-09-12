@@ -154,7 +154,27 @@ function renderArticles(){
   }
 }
 function render(){renderMetrics();renderCoverage();renderPrefs();sourceOptions();renderArticles();}
-async function init(){try{[data,status]=await Promise.all([fetch('data/articles.json',{cache:'no-cache'}).then(r=>r.json()),fetch('data/source_status.json',{cache:'no-cache'}).then(r=>r.json())]);rebuildPrefs();$('lastUpdated').textContent=data.meta?.generated_at?`最近更新 ${new Date(data.meta.generated_at).toLocaleString('ja-JP')}`:'尚未首次刷新';render();}catch(e){$('coverageWarning').classList.remove('hidden');$('coverageWarning').textContent='无法读取数据文件：'+e.message;}}
+let fullArticlesLoaded=false,fullArticlesPromise=null;
+async function loadFullArticles(){
+  if(fullArticlesLoaded)return;
+  if(fullArticlesPromise)return fullArticlesPromise;
+  fullArticlesPromise=fetch('data/articles.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}`);return r.json();}).then(full=>{
+    const existing=new Map((data.articles||[]).map(a=>[String(a.id),a]));
+    data.articles=full.articles.map(a=>{const old=existing.get(String(a.id));if(old){Object.assign(old,a);return old;}return a;});
+    data.meta=full.meta;fullArticlesLoaded=true;
+    window.weeklyFeedbackRuntimeV38?.invalidate?.();window.weeklyPreferenceMemoryV32?.invalidate?.();
+    window.weeklyReadingTimeV21?.invalidate?.();render();
+  }).catch(e=>{
+    const warning=$('coverageWarning');warning.classList.remove('hidden');warning.textContent=`历史文章详情暂时无法加载：${e.message}。本周清单仍可使用。`;
+  }).finally(()=>{fullArticlesPromise=null;});
+  return fullArticlesPromise;
+}
+window.weeklyLoadFullArticles=loadFullArticles;
+async function init(){try{
+  const articleRequest=fetch('data/articles-brief.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}`);return r.json();}).catch(()=>{fullArticlesLoaded=true;return fetch('data/articles.json',{cache:'no-cache'}).then(r=>r.json());});
+  [data,status]=await Promise.all([articleRequest,fetch('data/source_status.json',{cache:'no-cache'}).then(r=>r.json())]);
+  rebuildPrefs();$('lastUpdated').textContent=data.meta?.generated_at?`最近更新 ${new Date(data.meta.generated_at).toLocaleString('ja-JP')}`:'尚未首次刷新';render();
+}catch(e){$('coverageWarning').classList.remove('hidden');$('coverageWarning').textContent='无法读取数据文件：'+e.message;}}
 ['gradeFilter','statusFilter','sourceFilter','personalizedSort'].forEach(id=>$(id).addEventListener('change',renderArticles));
 $('resetLearning').addEventListener('click',()=>{if(confirm('确定只清空偏好学习？已读/稍后看/Notion/跳过状态会保留。')){Object.keys(state).forEach(id=>{if(state[id])state[id].feedback=null;});save();rebuildPrefs();render();}});
 init();
