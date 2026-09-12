@@ -30,7 +30,7 @@
   let revision=0;
 
   function hs(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
-  function text(a){return `${a?.title||''} ${a?.summary||''} ${a?.reason||''} ${(a?.content_excerpt||'').slice(0,1200)}`;}
+  function text(a){return `${a?.title||''} ${a?.summary||''} ${(a?.content_excerpt||'').slice(0,1200)}`;}
   function uniq(xs){return [...new Set((xs||[]).filter(Boolean))];}
   function ageWeight(ts){
     if(!ts)return .7;

@@ -135,13 +135,13 @@ def main() -> int:
         "laterHistory",
         "knowledge_context",
         "sample_count",
-        "RESCUE_TARGET=2",
+        "RESCUE_TARGET=0",
         "x.net<=-2.15&&x.neg_n>=2",
         "substantiveEvidence",
         "explicitBlocked",
         "declaredGuard",
         "learnedSuppression",
-        "Math.max(o.value,A_FLOOR)",
+        "function rescueIds(){return new Set();}",
     )
     if "strongNeg.some(x=>x.key.startsWith('combo:'))" in memory:
         raise AssertionError("A single Preference Memory negative must not hard-cap an entire semantic combo")
@@ -182,7 +182,7 @@ def main() -> int:
     if "CNET Japan" in names:
         raise AssertionError("CNET Japan must remain removed")
 
-    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, durable schema-6 Later memory, local-only Later navigation, blocked Weekly private loaders, one canonical v21 Priority source, and anti-overfitting Preference Memory with explicit-guard-safe exploration rescue.")
+    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, durable schema-6 Later memory, local-only Later navigation, blocked Weekly private loaders, one canonical v21 Priority source, and anti-overfitting Preference Memory without quota-based score rescue.")
     return 0
 
 

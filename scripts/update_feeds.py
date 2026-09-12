@@ -79,13 +79,20 @@ def parse_date(e):
             except Exception:pass
     return None
 
+def contains_term(text, term):
+    # Latin abbreviations are tokens: EC must not match NEC/OECD, AI must not match retail.
+    pat = re.escape(term)
+    if re.fullmatch(r'[A-Za-z0-9]+', term):
+        pat = r'(?<![A-Za-z])' + pat + r'(?![A-Za-z])'
+    return bool(re.search(pat, text or '', re.I))
+
 def tags(text):
-    low=text.lower();return [t for t,words in KEYWORDS.items() if any(w.lower() in low for w in words)]
+    return [t for t, words in KEYWORDS.items() if any(contains_term(text, w) for w in words)]
 
 def concepts(text):
     low=(text or '').lower();out=[]
     for term in CONCEPT_TERMS:
-        if term.lower() in low and term not in out:out.append(term)
+        if contains_term(text, term) and term not in out:out.append(term)
     return out[:12]
 
 def match_rules(text,rules):
@@ -213,7 +220,7 @@ def main():
     arts=list(existing.values())
     for a in arts:
         if not a.get('learning_features'):
-            full=' '.join([a.get('title',''),a.get('summary',''),a.get('reason',''),a.get('content_excerpt','')[:5000]])
+            full=' '.join([a.get('title',''),a.get('summary',''),a.get('content_excerpt','')[:5000]])
             a['learning_features']=learning_features(full);a['concepts']=a['learning_features']['topics']
     arts.sort(key=lambda a:(a.get('published') or a.get('first_seen') or ''),reverse=True)
     now=datetime.now(timezone.utc).isoformat();ART_PATH.write_text(json.dumps({'meta':{'tracking_start':'2026-08-10','generated_at':now,'screening_mode':'openai_api_if_configured_else_heuristic','new_this_run':len(new)},'articles':arts},ensure_ascii=False,indent=2),encoding='utf-8')

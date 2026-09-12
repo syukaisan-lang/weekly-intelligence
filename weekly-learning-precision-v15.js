@@ -22,7 +22,7 @@
   const PROMO_RE=/新製品|新商品|新サービス|発売|予約開始|提供開始|キャンペーン|プレゼント|セール/i;
   const METHOD_RE=/調査|分析|データ|統計|実証|実験|ケース|事例|フレームワーク|手法|方法|検証|改善/i;
 
-  function text(a){return `${a?.title||''} ${a?.summary||''} ${a?.reason||''}`;}
+  function text(a){return `${a?.title||''} ${a?.summary||''}`;}
   function uniq(xs){return [...new Set(xs.filter(Boolean))];}
   function subjects(a){
     const t=text(a),specific=SUBJECT_RULES.filter(([,re])=>re.test(t)).map(([n])=>n);

@@ -9,6 +9,7 @@ on:
       - "**.html"
       - "scripts/**.py"
       - "scripts/**.mjs"
+      - "scripts/**.cjs"
       - ".github/workflows/**.yml"
       - "semantic-worker-source.txt"
 
@@ -37,6 +38,8 @@ jobs:
             echo "Checking $f"
             node --check "$f"
           done
+      - name: Check priority selection regressions
+        run: node scripts/test_priority_policy.cjs
       - name: Check Python syntax
         run: python -m py_compile scripts/*.py
       - name: Check cross-system impact

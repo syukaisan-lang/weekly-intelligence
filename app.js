@@ -44,12 +44,12 @@ const LOW_VALUE_INTENTS=new Set(['参加募集／イベント告知','リード�
 function save(){localStorage.setItem(STATE_KEY,JSON.stringify(state));}
 function st(id){return state[id]||{status:'new',feedback:null};}
 function unique(xs){return [...new Set(xs.filter(Boolean))];}
-function textOf(a){return `${a.title||''} ${a.summary||''} ${a.reason||''} ${(a.content_excerpt||'').slice(0,1600)}`;}
+function textOf(a){return `${a.title||''} ${a.summary||''} ${(a.content_excerpt||'').slice(0,1600)}`;}
 function matchRules(text,rules){return rules.filter(([,re])=>re.test(text)).map(([name])=>name);}
 function inferredTopics(a){
   const text=textOf(a), low=text.toLowerCase(), out=[];
-  (a.learning_features?.topics||a.concepts||[]).forEach(x=>{if(x&&String(x).trim())out.push(String(x).trim());});
-  TOPIC_TERMS.forEach(x=>{if(low.includes(x.toLowerCase()))out.push(x);});
+  (a.learning_features?.topics||a.concepts||[]).forEach(x=>{if(x&&String(x).trim()&&(!/^[a-z0-9]+$/i.test(x)||new RegExp('(?<![a-z])'+String(x).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![a-z])','i').test(text)))out.push(String(x).trim());});
+  TOPIC_TERMS.forEach(x=>{if(/^[a-z0-9]+$/i.test(x)?new RegExp('(?<![a-z])'+x+'(?![a-z])','i').test(text):low.includes(x.toLowerCase()))out.push(x);});
   return unique(out).filter(x=>!['strategy','consumer','research','marketing','method','ai','ec'].includes(String(x).toLowerCase())).slice(0,14);
 }
 function typedFeatures(a){
@@ -131,11 +131,25 @@ function renderPrefs(){
 function sourceOptions(){const sel=$('sourceFilter'),cur=sel.value,arr=[...new Set((data.articles||[]).map(a=>a.source))].sort();sel.innerHTML='<option value="all">全部来源</option>'+arr.map(s=>`<option value="${esc(s)}">${esc(short(s))}</option>`).join('');if(arr.includes(cur))sel.value=cur;}
 function visible(a){const g=grade(score(a)),gf=$('gradeFilter').value,sf=$('statusFilter').value,src=$('sourceFilter').value,as=st(a.id).status;if(gf==='SA'&&!['S','A'].includes(g))return false;if(['S','A','B'].includes(gf)&&g!==gf)return false;if(sf==='active'&&as==='skip')return false;if(!['all','active'].includes(sf)&&as!==sf)return false;if(src!=='all'&&a.source!==src)return false;return true;}
 function renderArticles(){
-  let arts=(data.articles||[]).filter(visible);if($('personalizedSort').checked)arts.sort((a,b)=>score(b)-score(a));$('visibleCount').textContent=`${arts.length} 篇`;$('emptyState').classList.toggle('hidden',arts.length>0);$('articleList').innerHTML='';
+  let arts=(data.articles||[]).filter(visible);if($('personalizedSort').checked&&(typeof readingProgress==='undefined'||readingProgress!=='focus'))arts.sort((a,b)=>score(b)-score(a));$('visibleCount').textContent=`${arts.length} 篇`;$('emptyState').classList.toggle('hidden',arts.length>0);$('articleList').innerHTML='';
+  if(typeof readingProgress!=='undefined'&&readingProgress!=='focus'){$('emptyState').querySelector('h3').textContent='当前筛选下没有文章';$('emptyState').querySelector('p').textContent='可以切换视图或调整筛选条件。';}
+  if(typeof readingProgress!=='undefined'&&readingProgress==='focus'&&!arts.length){$('emptyState').querySelector('h3').textContent='当前没有达标的优先阅读';$('emptyState').querySelector('p').textContent='不为凑数推荐。其他文章仍可在本周或全部中查看，正文不足的会标为待核验。';}
   for(const a of arts){
     const cur=st(a.id),sc=score(a),g=grade(sc),el=document.createElement('article');el.className='article';const f=typedFeatures(a);
     const chips=[...f.topics.slice(0,4).map(x=>`主题：${x}`),...f.formats.slice(0,2).map(x=>`形式：${x}`),...f.intents.slice(0,2).map(x=>`意图：${x}`)];
     el.innerHTML=`<div class="article-top"><div class="meta"><span class="grade grade-${g}">${g}</span><span class="muted small">${fmt(a.published)} · ${esc(a.source)}</span><span class="pill">${label(cur.status)}</span></div><div class="muted small">个人分 ${sc.toFixed(1)}</div></div><a class="article-title" target="_blank" rel="noopener noreferrer" href="${esc(a.url)}">${esc(a.title)}</a><div class="scores"><span class="score">阅读价值 <b>${Number(a.reading_score??5).toFixed(1)}</b>/10</span><span class="score">Notion价值 <b>${Number(a.notion_score??4).toFixed(1)}</b>/10</span><span class="score">${contentCompletenessLabel(a)}</span></div><div class="why"><b>为什么选：</b>${esc(a.reason||'等待筛选说明')}</div><div class="tags">${chips.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>${a.screening_note?`<div class="source-note">${esc(a.screening_note)}</div>`:''}`;
+    const editorial=window.weeklyPriorityPolicy?.assess(a);
+    if(editorial){
+      const why=el.querySelector('.why');
+      why.textContent=editorial.eligible?`阅读用途：${editorial.use}。${editorial.reason}`:`${editorial.decision}：${editorial.reason}`;
+      if(editorial.eligible){
+        const proof=document.createElement('details');proof.className='priority-evidence';
+        const summary=document.createElement('summary');summary.textContent='查看正文依据';proof.appendChild(summary);
+        for(const quote of editorial.evidence){const p=document.createElement('p');p.textContent=quote;proof.appendChild(p);}
+        el.appendChild(proof);
+      }
+    }
+
     const c=document.createElement('div');c.className='controls';[['later','稍后看'],['read','已读'],['save','进 Notion'],['skip','跳过']].forEach(([v,t])=>c.appendChild(btn(t,cur.status===v,()=>setStatus(a,v))));const lab=document.createElement('div');lab.className='feedback-label';lab.textContent='筛选反馈（分别学习主题 / 形式 / 意图）';c.appendChild(lab);[['accurate','👍 选得准'],['more','⭐ 多推类似'],['bad','👎 不值得'],['less','🚫 少推此类']].forEach(([v,t])=>c.appendChild(btn(t,cur.feedback===v,()=>feedback(a,v))));el.appendChild(c);$('articleList').appendChild(el);
   }
 }
