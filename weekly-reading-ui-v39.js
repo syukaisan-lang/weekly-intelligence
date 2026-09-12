@@ -19,12 +19,12 @@
   function focus(){try{return window.weeklyReadingTimeV21?.currentFocus?.().selected||[];}catch(_){return [];}}
 
   function notice(){
-    const box=$('weeklyReviewNotice'),audit=data?.meta?.priority_review_audit,free=data?.meta?.free_priority_audit;
+    const box=$('weeklyReviewNotice'),audit=data?.meta?.priority_review_audit,free=data?.meta?.free_priority_audit,retry=data?.meta?.free_public_retry_audit;
     if(!box)return;
     if(!allRows().length){box.hidden=true;return;}
     box.hidden=false;
     if(free?.status==='complete_with_uncertainty'){
-      box.textContent=`免费证据筛查已检查本周 ${free.examined} 篇，推荐 ${free.recommended} 篇（其中 ${free.summary_only} 篇仅有公开摘要），${free.uncertain} 篇依据不足。未进行付费模型深度复核，不能保证零漏选。`;
+      box.textContent=`免费证据筛查已检查本周 ${free.examined} 篇，推荐 ${free.recommended} 篇（其中 ${free.summary_only} 篇仅有公开摘要），${free.uncertain} 篇依据不足。${retry?`另尝试公开正文 ${retry.attempted} 篇、读到 ${retry.readable} 篇；robots 或不可用规则阻止 ${retry.robots_blocked} 篇。`:''}未进行付费模型深度复核，不能保证零漏选。`;
       return;
     }
     if(audit?.status==='complete'){box.hidden=true;return;}
@@ -142,7 +142,7 @@
   }
   if(typeof setProgress==='function'){
     const previous=setProgress;
-    window.setProgress=setProgress=function(key){const out=previous(key);sync();return out;};
+    window.setProgress=setProgress=function(key){const out=previous(key);if(!PRIMARY.has(key)||key==='later')window.weeklyLoadFullArticles?.();sync();return out;};
   }
   for(const id of ['gradeFilter','statusFilter','sourceFilter'])$(id)?.addEventListener('change',schedule);
   sync();
