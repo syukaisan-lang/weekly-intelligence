@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T06:28:56.643244+00:00",
+  "generated_at": "2026-09-12T09:32:53.166633+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
@@ -225,8 +225,8 @@
     ],
     "trusted_status_origin": "human_v10",
     "active_count": 8,
-    "cold_count": 2,
-    "probe_count": 6,
+    "cold_count": 3,
+    "probe_count": 5,
     "probe_skipped_count": 0,
     "discovery_policy": "all configured sources are always checked; cold/probe only raises deep-read threshold"
   },
@@ -236,7 +236,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-12T06:27:48.302482+00:00",
+    "generated_at": "2026-09-12T09:31:20.687824+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
