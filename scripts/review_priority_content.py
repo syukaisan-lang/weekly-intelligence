@@ -11,7 +11,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = 37
+VERSION = 40
 PROFILE = """用户是有经验的日本EC/营销/GTM从业者，会用AI、MCP和统计分析。
 希望获取能改善商业判断、消费者理解、竞争分析、营销策略、AI数据分析与业务流程的内容。
 日常场景涉及销售、广告、市场/竞品研究、消费者研究、Google Sheets/Workspace 和日本市场业务；
