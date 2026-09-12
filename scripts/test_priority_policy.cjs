@@ -14,6 +14,7 @@ for(const id of ['3a49d0636275e486b9','509d0c61f6bf42c5ed','7ed22727b43fc307f1',
 }
 assert(policy.assess(method).eligible);
 assert(policy.assess(measured).eligible);
+assert.equal(policy.assess(article('c5b40d1098c65903cf')).kind,'diagnostic','evidence-backed qualitative diagnostics matter without a measured case outcome');
 assert.equal(policy.assess({...method,content_checked:false}).eligible,false);
 assert.equal(policy.assess({...method,content_excerpt:'本文を読む'}).eligible,false);
 assert.deepEqual(policy.assess({...event,reason:'工作相关 数据 方法 分析 EC AI',reading_score:10,knowledge_context:{increment_type:'direct_work_use'}}),policy.assess(event));
@@ -31,11 +32,24 @@ assert(policy.assess(article('90235c8067f82e7bfb')).eligible);
 // Distinct conclusions/angles with a similar title are not duplicates.
 assert.equal(policy.sameStory(method,{...method,url:'https://another.example/story',content_excerpt:'別の結論を持つ記事。'.repeat(30)}),false);
 const missed={...method,title:'タイトルに職種のキーワードがない記事',summary:'',content_excerpt:'具体的な比較手順と判断に使える新しい方法を説明する本文。'};
-missed.priority_review={version:37,two_pass:true,source_signature:policy.sourceSignature(missed),verdict:'recommend',
+missed.priority_review={version:policy.VERSION,two_pass:true,source_signature:policy.sourceSignature(missed),verdict:'recommend',
  confidence:'medium',use:'用于评估竞品的定价差异',gain:'给出价格区间与转化分组的比较方法',evidence:[missed.content_excerpt]};
 assert(policy.assess(missed).eligible,'content review can recover a keyword-missed article');
 assert(!policy.assess({...missed,content_excerpt:'changed source'}).eligible,'stale review cannot certify changed source');
 assert(!policy.assess({...missed,priority_review:{...missed.priority_review,evidence:['原文中不存在的一段没有依据的内容']}}).eligible,'invented evidence rejected');
+// A public summary with an observed outcome and its implementation can be read
+// without circumventing a paywall. A title or a polluted feed list cannot.
+for(const id of ['f15b2cc0bfa93454a9','6ef6a8f7a7a3348653']){
+  const a=article(id),result=policy.assess(a);
+  assert.equal(result.kind,'summary_case',id);
+  assert.equal(result.eligible,true,id);
+  assert.equal(result.confidence,'medium',id);
+  assert(result.evidence.every(q=>a.summary.includes(q)),id);
+  assert(!policy.assess({...a,summary:''}).eligible,'title alone cannot certify value');
+}
+for(const id of ['b12149eb36cca97ca0','6c95ebf816b2870f75','5422e964416d3fbd7b']){
+  assert(!policy.assess(article(id)).eligible,`polluted source or platform policy is not a deep read: ${id}`);
+}
 // Execute real preference memory with a contextual event rejection and no browser storage.
 const states={},storage=new Map();
 const ctx={console,Date,Set,Map,Math,JSON,Number,String,Array,RegExp,
