@@ -129,7 +129,7 @@ def main()->int:
         if trigger not in update:raise AssertionError(f'Weekly must rescore after {trigger} changes')
     for upstream in ('workflow_run:','Sync Notion knowledge','Sync personal work system','github.event.workflow_run.conclusion'):
         if upstream not in update:raise AssertionError(f'Weekly must listen to successful upstream workflow completion: {upstream}')
-    for safe_commit in ('ref: main','fetch-depth: 0','/tmp/weekly-articles.json','/tmp/weekly-source-status.json','git reset --hard origin/main','git add data/articles.json data/source_status.json','for attempt in 1 2 3'):
+    for safe_commit in ('ref: main','fetch-depth: 0','/tmp/weekly-articles.json','/tmp/weekly-articles-brief.json','/tmp/weekly-source-status.json','git reset --hard origin/main','git add data/articles.json data/articles-brief.json data/source_status.json','for attempt in 1 2 3'):
         if safe_commit not in update:raise AssertionError(f'Weekly commit path must remain conflict-safe: {safe_commit}')
     if 'python scripts/update_feeds_coverage.py' not in update:
         raise AssertionError('Weekly workflow must run coverage updater')
