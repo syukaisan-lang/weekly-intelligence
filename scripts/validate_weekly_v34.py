@@ -25,7 +25,7 @@ def need(path: str, *needles: str) -> str:
 def main() -> int:
     index = need(
         "index.html",
-        "weekly-state-complete-backup-v20.js?v=20260905-1055",
+        "weekly-state-complete-backup-v20.js?v=20260913-1",
         "weekly-preference-memory-v32.js",
         "weekly-ui-stability-v33.js?v=20260905-1055",
         "weekly-mobile-performance-v18.js?v=20260905-1115",
@@ -55,6 +55,9 @@ def main() -> int:
         "schema:6",
         "backup_schema=6",
         "later_interest_at",
+        "weekly_state_t=${Date.now()}",
+        "for(let attempt=0;attempt<2;attempt++)",
+        "本机标记没有丢失",
         "decryptPrivateEnvelopeData(baseEnv,{prompt:true})",
         "tools.dataset.backupSchema='6'",
     )

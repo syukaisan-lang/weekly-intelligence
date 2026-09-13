@@ -86,8 +86,14 @@
     for(const [id,v] of Object.entries(meaningfulEntries())){const c={ts:Number(v.updated_at||0),id};if(compareCursor(c,cur)>0)cur=c;}
     return cur;
   }
+  function freshUrl(url){
+    const separator=String(url).includes('?')?'&':'?';
+    return `${url}${separator}weekly_state_t=${Date.now()}`;
+  }
   async function fetchJson(url,{optional=false}={}){
-    const r=await fetch(url,{cache:'no-store',credentials:'same-origin',referrerPolicy:'no-referrer'});
+    // GitHub Pages can briefly serve stale JSON even when the browser cache is disabled.
+    // A unique query prevents a new delta from being built against an old cloud cursor.
+    const r=await fetch(freshUrl(url),{cache:'no-store',credentials:'same-origin',referrerPolicy:'no-referrer'});
     if(r.status===404&&optional)return null;if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json();
   }
   async function fetchCloudEnvelope(){return fetchJson(CLOUD_URL,{optional:true});}
@@ -117,8 +123,27 @@
     if(!baseEnv)throw new Error('Weekly 云端基线备份不存在，无法安全验证备份密码');
     // Validate against the encrypted Weekly state itself. Weekly backup must not load/decrypt
     // the user's Knowledge or Work System merely to verify a password.
-    await decryptPrivateEnvelopeData(baseEnv,{prompt:true});
-    return true;
+    // A different section may have left another password in memory. Clear it and prompt once
+    // automatically instead of making the first backup click fail with an opaque crypto error.
+    let lastError=null;
+    for(let attempt=0;attempt<2;attempt++){
+      try{await decryptPrivateEnvelopeData(baseEnv,{prompt:true});return true;}
+      catch(error){
+        lastError=error;
+        if(String(error?.message||'').toLowerCase().includes('cancel'))throw error;
+        if(attempt===0&&typeof lockPrivateData==='function')lockPrivateData(false);
+      }
+    }
+    const error=new Error('Weekly 备份密码未通过验证，请重新输入正确密码');
+    error.cause=lastError;throw error;
+  }
+  function backupErrorMessage(error){
+    const raw=String(error?.message||error||'').trim(),lower=raw.toLowerCase();
+    if(lower.includes('cancel'))return {cancelled:true,text:'已取消云备份；本周标记仍已安全保存在本机。'};
+    if(lower.includes('密码')||lower.includes('operationerror')||lower.includes('operation-specific'))return {cancelled:false,text:'备份未完成：密码未通过验证。请重新点击备份并输入 Weekly 备份密码。'};
+    if(lower.includes('failed to fetch')||lower.includes('networkerror')||/^http \d+$/i.test(raw))return {cancelled:false,text:'备份未完成：暂时无法读取云端状态。请检查网络后重试。'};
+    if(lower.includes('helper')||lower.includes('encryptprivatepayload'))return {cancelled:false,text:'备份组件没有正确加载。请刷新页面后重试。'};
+    return {cancelled:false,text:`备份未完成：${raw||'未知错误'}。本机标记没有丢失，可刷新后重试。`};
   }
   function reserveBackupWindow(){
     const win=window.open('about:blank',BACKUP_WINDOW_NAME);
@@ -183,7 +208,10 @@
       if(!candidates.length){closeReservedWindow(reserved);localStorage.removeItem(DIRTY_SINCE_KEY);setCloudStatus('完整云备份已是最新');if(button){button.textContent='已备份 ✓';setTimeout(()=>{if(!backupInFlight&&button.textContent==='已备份 ✓')button.textContent=normalLabel;},2400);}toast('阅读状态、反馈、具体原因和稍后看兴趣历史都已是最新，无需重复备份。');return;}
       if(button)button.textContent='打开确认页…';const built=await buildDeltaIssue(metaDoc,candidates);localStorage.setItem(BACKUP_PENDING_KEY,built.env.created_at||new Date().toISOString());setCloudStatus('完整备份请求待确认');navigateBackupWindow(reserved,built.url);
       const remain=built.total-built.count;toast(remain>0?`本次已尽量装满：${built.count} 条；提交后仍有 ${remain} 条待备份。`:`本次已一次打包 ${built.count} 条完整增量；GitHub 页面直接点 Submit。`);
-    }catch(e){closeReservedWindow(reserved);setCloudStatus('完整备份未完成');toast('备份失败：'+e.message);}
+    }catch(e){
+      closeReservedWindow(reserved);const failure=backupErrorMessage(e);
+      setCloudStatus(failure.cancelled?'本机已保存 · 已取消云备份':'本机已保存 · 完整备份未完成');toast(failure.text);
+    }
     finally{backupInFlight=false;if(button){button.disabled=false;if(button.textContent!=='已备份 ✓')button.textContent=normalLabel;}}
   }
   async function fetchDeltaEnvelopes(metaDoc){
@@ -216,6 +244,7 @@
 
   const migrated=migrateExtendedFields();
   if(!install()){
+    document.addEventListener('DOMContentLoaded',install,{once:true});
     const timer=setInterval(()=>{if(install())clearInterval(timer);},120);setTimeout(()=>clearInterval(timer),5000);
   }
   if(migrated)setTimeout(()=>toast(`已发现 ${migrated} 条历史学习记录，已加入下一次完整备份。`),500);
