@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-16T11:50:02.760415+00:00",
+  "generated_at": "2026-09-16T17:10:14.433514+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 11,
-  "deduped_count": 11,
-  "deep_read_count": 0,
+  "raw_new_count": 12,
+  "deduped_count": 12,
+  "deep_read_count": 1,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,7 +22,7 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -46,7 +46,7 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -94,13 +94,13 @@
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 16,
+      "coverage_cached_count": 17,
       "coverage_errors": []
     },
     {
@@ -118,7 +118,7 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 0,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
@@ -185,7 +185,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -197,7 +197,7 @@
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 11,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -211,8 +211,8 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 1701,
-  "semantic_deep_read_count": 0,
+  "semantic_rescored_count": 1713,
+  "semantic_deep_read_count": 1,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -232,11 +232,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 1928,
+    "hot_count": 1940,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-16T11:48:32.524861+00:00",
+    "generated_at": "2026-09-16T17:09:02.491432+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
