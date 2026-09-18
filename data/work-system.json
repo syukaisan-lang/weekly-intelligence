@@ -1,6 +1,6 @@
 {
   "meta": {
-    "snapshot_at": "2026-09-11T09:31:23.319998+00:00",
+    "snapshot_at": "2026-09-18T09:31:22.723040+00:00",
     "schema_version": 1,
     "encrypted_full_data": true,
     "source_count": 3,
@@ -8,7 +8,7 @@
     "rule_count": 0,
     "synthesis": "deterministic_candidates",
     "taxonomy_version": 4,
-    "classification_updated_at": "2026-09-11T09:31:23.786755+00:00"
+    "classification_updated_at": "2026-09-18T09:31:23.221923+00:00"
   },
   "sources": [
     {
@@ -73,7 +73,7 @@
     }
   ],
   "source_hashes": {
-    "19gBiQuP8kjMRkzhuNRXXKKZS7Cn-yKJUZdADPOYJDos": "a11ec3c23dd806c2e10acaf1e885a95961fa049b8cf4484fbdf4b8087ed79938",
+    "19gBiQuP8kjMRkzhuNRXXKKZS7Cn-yKJUZdADPOYJDos": "49b23c2994352b63a0ed01138f342e034764951f81ca0a6d7c0d39e8e3dd5259",
     "13nPr94W9YHfZi_SkFk1i38WAHdO8pdEq": "6b36c8029a92bbc8c8a841a3e4e98a4313b8d6f8eb15f2ff6b73b40c79806db7",
     "1bBVlTpIodFbSLK8l2CsukALFdSq9m5hpxLHMK7liaug": "f5d6ba31a1dce80507fdae07c74e2f8b936c35228ee507b138415c688bbb6fd2"
   },
