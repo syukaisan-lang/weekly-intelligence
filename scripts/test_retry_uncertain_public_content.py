@@ -1,5 +1,7 @@
 import base64
+import json
 import sys
+import tempfile
 import types
 import unittest
 from datetime import datetime, timezone
@@ -8,6 +10,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import retry_uncertain_public_content as recheck
+import weekly_lifecycle
 
 
 def article(id_, name, dimension=0, **extra):
@@ -19,6 +22,17 @@ def article(id_, name, dimension=0, **extra):
 
 
 class RecheckTests(unittest.TestCase):
+    def test_incremental_backup_rows_feed_server_learning(self):
+        rows = [['picked-b', 'l', 'm', 200, 'h', 's', 190, 'w', 180, 175]]
+        decoded = weekly_lifecycle._decode_delta_rows(rows)
+        self.assertEqual(decoded['picked-b']['status'], 'later')
+        self.assertEqual(decoded['picked-b']['feedback'], 'more')
+        self.assertEqual(decoded['picked-b']['feedback_reason'], 'work_direct')
+        self.assertEqual(decoded['picked-b']['later_interest_at'], 175)
+        state = {'picked-b': {'status': 'new', 'updated_at': 100}}
+        weekly_lifecycle._merge_state(state, decoded)
+        self.assertEqual(state['picked-b']['updated_at'], 200)
+
     def test_only_backed_up_matching_feedback_changes_fetch_order(self):
         liked = article('old', '有用な方法')
         match = article('match', '新しい実務', 0)
@@ -62,9 +76,13 @@ class RecheckTests(unittest.TestCase):
         self.assertEqual(calls, ['https://open.example/article'])
 
     def test_real_candidates_are_read_only_and_include_summary_gaps(self):
-        ids = recheck.candidate_ids()
-        self.assertIsInstance(ids, set)
-        self.assertGreater(len(ids), 0)
+        row = article('gap', '生成AIを業務分析に活用', first_seen=datetime.now(timezone.utc).isoformat(),
+                      content_checked=False, content_excerpt='')
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'articles.json'
+            path.write_text(json.dumps({'articles': [row]}, ensure_ascii=False), encoding='utf-8')
+            ids = recheck.candidate_ids(path)
+        self.assertEqual(ids, {'gap'})
 
 
 if __name__ == '__main__':
