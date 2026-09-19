@@ -25,15 +25,15 @@ def need(path: str, *needles: str) -> str:
 def main() -> int:
     index = need(
         "index.html",
-        "weekly-state-complete-backup-v20.js?v=20260913-1",
+        "weekly-state-complete-backup-v20.js?v=20260919-1",
         "weekly-preference-memory-v32.js",
-        "weekly-ui-stability-v33.js?v=20260905-1055",
+        "weekly-ui-stability-v33.js?v=20260919-1",
         "weekly-mobile-performance-v18.js?v=20260905-1115",
         "weekly-state-integrity-v22.js?v=20260905-1115",
         "weekly-later-click-v22-1.js?v=20260905-1108",
-        "weekly-runtime-consistency-v35.js?v=20260912-38",
-        "weekly-feedback-learning-v38.js?v=20260912-38",
-        "weekly-feedback-runtime-v38.js?v=20260912-38",
+        "weekly-runtime-consistency-v35.js?v=20260919-1",
+        "weekly-feedback-learning-v38.js?v=20260919-1",
+        "weekly-feedback-runtime-v38.js?v=20260919-1",
         "0/16",
     )
     if "knowledge-relations.js" in index:
@@ -58,6 +58,10 @@ def main() -> int:
         "weekly_state_t=${Date.now()}",
         "for(let attempt=0;attempt<2;attempt++)",
         "本机标记没有丢失",
+        "prefersPortableBackup()",
+        "无需登录 GitHub",
+        "weeklyStateFileRestoreBtn",
+        "portable_backup=true",
         "decryptPrivateEnvelopeData(baseEnv,{prompt:true})",
         "tools.dataset.backupSchema='6'",
     )
@@ -83,6 +87,8 @@ def main() -> int:
         "const laterAt=Number(s.later_interest_at||0);if(laterAt>0)return laterAt",
         "本周前保存",
         "weeklyStickyStatus",
+        "weeklyBackToTop",
+        "window.scrollTo({top:0,behavior:'smooth'})",
     )
     if "api.invalidate?.();return api.currentFocus" in stability:
         raise AssertionError("Final UI sync must not force a full Priority recomputation every time")
@@ -99,12 +105,33 @@ def main() -> int:
         "if(typeof readingProgress!=='undefined'&&readingProgress==='focus')return activePriorityIds.has",
         "BLOCKED_PRIVATE_RE=/knowledge|work-system|system-model|semantic-index/i",
         "throw new Error('Unlock cancelled')",
+        "b.id==='weeklyStateFileRestoreBtn'",
         "recoverHistoricalLater=async()=>({restoredLater:0,updated:0,disabled_on_weekly:true})",
         "automatic_later_recovery:false",
         "private_data_blocked:true",
     )
     if runtime.find("weekly-runtime-consistency-v35.js") >= 0:
         raise AssertionError("runtime file must contain executable JS, not self-referential loader text")
+
+    feedback_runtime = need(
+        "weekly-feedback-runtime-v38.js",
+        "function personalizedAssessment(a)",
+        "editorial.decision==='待核验'",
+        "x.reason==='稍后看'",
+        "kind:'preference_rescue'",
+        "personalizedAssessment,stats,invalidate",
+    )
+    if "editorial.decision==='跳过'" in feedback_runtime:
+        raise AssertionError("personalized B rescue must never promote an editorial skip")
+
+    need(
+        "scripts/weekly_lifecycle.py",
+        "STATE_META_PATH",
+        "def _decode_delta_rows",
+        "def _merge_state",
+        "base + {len(deltas)} deltas",
+        "later_interest_at",
+    )
 
     # The pagination layer used to intersect v21 Priority with the legacy v17 queue. That can make
     # a nonzero Priority badge render zero cards. It must now take v21 currentFocus directly and
@@ -118,6 +145,14 @@ def main() -> int:
     )
     if "window.weeklyFocusFeedbackV17?.focusRows" in mobile:
         raise AssertionError("Mobile Priority must not intersect the canonical v21 list with legacy v17 focusRows")
+
+    need(
+        "weekly-reading-time-v21.js",
+        "function focusAssessment(a)",
+        "weeklyFeedbackRuntimeV38?.personalizedAssessment",
+        "assessment:focusAssessment",
+        "活动/宣传不能被偏好救回",
+    )
 
     # Later tab click is navigation only. The capture guard must suppress old v12/v22 automatic
     # cloud-recovery listeners and must not call recovery itself.
