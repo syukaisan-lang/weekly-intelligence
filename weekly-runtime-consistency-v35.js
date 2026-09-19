@@ -25,7 +25,7 @@
   document.addEventListener('click',e=>{
     const b=e.target instanceof Element?e.target.closest('button'):null;if(!b)return;
     const t=String(b.textContent||'');
-    if(b.id==='backupWeeklyStateBtn'||/恢复云端/.test(t))explicitPrivateUntil=Date.now()+120000;
+    if(b.id==='backupWeeklyStateBtn'||b.id==='weeklyStateFileRestoreBtn'||/恢复(?:云端|备份)/.test(t))explicitPrivateUntil=Date.now()+120000;
   },true);
 
   const originalDecrypt=window.decryptPrivateEnvelopeData;
