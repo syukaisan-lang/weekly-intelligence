@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-18T16:35:22.077718+00:00",
+  "generated_at": "2026-09-19T00:15:53.423929+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 1,
-  "deduped_count": 1,
-  "deep_read_count": 0,
+  "raw_new_count": 7,
+  "deduped_count": 7,
+  "deep_read_count": 10,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 245,
+      "coverage_cached_count": 246,
       "coverage_errors": []
     },
     {
@@ -185,19 +185,19 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 6,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 258,
+      "coverage_cached_count": 264,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -211,8 +211,8 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 1840,
-  "semantic_deep_read_count": 0,
+  "semantic_rescored_count": 1847,
+  "semantic_deep_read_count": 10,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -225,18 +225,18 @@
     ],
     "trusted_status_origin": "human_v10",
     "active_count": 8,
-    "cold_count": 1,
-    "probe_count": 7,
+    "cold_count": 7,
+    "probe_count": 1,
     "probe_skipped_count": 0,
     "discovery_policy": "all configured sources are always checked; cold/probe only raises deep-read threshold"
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 2067,
+    "hot_count": 2074,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-18T16:34:03.165518+00:00",
+    "generated_at": "2026-09-19T00:14:25.175189+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
