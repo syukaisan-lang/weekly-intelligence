@@ -106,7 +106,7 @@ def main()->int:
 
     require('scripts/save_weekly_state.py','weekly-state-delta','weekly-state-deltas','cursor_updated_at','cursor_id','entry_count','save_delta','Base Weekly state backup is missing')
     require('.github/workflows/weekly-state-sync.yml','data/weekly-state-deltas','增量会自动与历史基线合并恢复')
-    require('weekly-state-complete-backup-v20.js','prefersPortableBackup','portable_backup=true','weeklyStateFileRestoreBtn','无需登录 GitHub')
+    require('weekly-state-complete-backup-v20.js','MOBILE_ISSUE_URL_LENGTH=3000','issueUrlLimit','sessionStorage.setItem','location.assign(url)','提交后按返回即可')
     require('weekly-feedback-runtime-v38.js','personalizedAssessment','preference_rescue',"editorial.decision==='待核验'",'strongLater')
 
     sources=json.loads(read('config/sources.json'))
@@ -149,7 +149,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 16 sources -> evidence + precise B rescue -> durable Later/feedback memory -> base+delta learning -> mobile encrypted files -> one return-to-top control.')
+    print('Global impact validation passed: 16 sources -> evidence + precise B rescue -> durable Later/feedback memory -> base+delta learning -> same-tab mobile cloud backup -> one return-to-top control.')
     return 0
 
 

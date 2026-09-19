@@ -25,7 +25,7 @@ def need(path: str, *needles: str) -> str:
 def main() -> int:
     index = need(
         "index.html",
-        "weekly-state-complete-backup-v20.js?v=20260919-1",
+        "weekly-state-complete-backup-v20.js?v=20260919-2",
         "weekly-preference-memory-v32.js",
         "weekly-ui-stability-v33.js?v=20260919-1",
         "weekly-mobile-performance-v18.js?v=20260905-1115",
@@ -58,10 +58,10 @@ def main() -> int:
         "weekly_state_t=${Date.now()}",
         "for(let attempt=0;attempt<2;attempt++)",
         "本机标记没有丢失",
-        "prefersPortableBackup()",
-        "无需登录 GitHub",
-        "weeklyStateFileRestoreBtn",
-        "portable_backup=true",
+        "MOBILE_ISSUE_URL_LENGTH=3000",
+        "sessionStorage.setItem('weekly_intelligence_backup_return_v1',location.href)",
+        "location.assign(url)",
+        "提交后按返回即可",
         "decryptPrivateEnvelopeData(baseEnv,{prompt:true})",
         "tools.dataset.backupSchema='6'",
     )
@@ -105,7 +105,6 @@ def main() -> int:
         "if(typeof readingProgress!=='undefined'&&readingProgress==='focus')return activePriorityIds.has",
         "BLOCKED_PRIVATE_RE=/knowledge|work-system|system-model|semantic-index/i",
         "throw new Error('Unlock cancelled')",
-        "b.id==='weeklyStateFileRestoreBtn'",
         "recoverHistoricalLater=async()=>({restoredLater:0,updated:0,disabled_on_weekly:true})",
         "automatic_later_recovery:false",
         "private_data_blocked:true",
