@@ -26,7 +26,7 @@ def main()->int:
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
     require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles','DENTSU_SOURCE','html_feed_fallback','/articles/')
     require('scripts/update_feeds_coverage.py','import update_feeds_temporal as t','update_source_discovery','enrich_xtrend_reading_time')
-    require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_STATUS','_normalized_status','_is_positive_adoption','status_action','queue_grades','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
+    require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_STATUS','STATE_META_PATH','_decode_delta_rows','_merge_state','later_interest_at','_normalized_status','_is_positive_adoption','status_action','queue_grades','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图','later')
     require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留','status_action',"['S','A']")
     require('weekly-source-audit-v9.js','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_FEEDBACK','QUEUE_GRADES','baseFeedback=feedback','status_action=STATUS_ACTION_FEEDBACK','sourceStats','isRecommendedUnread','isAutoArchived','EXPIRE_MS=7','implicitSkip','explicitSkip','S/A采纳','未处理归档','建议停用','复制来源统计')
@@ -106,6 +106,8 @@ def main()->int:
 
     require('scripts/save_weekly_state.py','weekly-state-delta','weekly-state-deltas','cursor_updated_at','cursor_id','entry_count','save_delta','Base Weekly state backup is missing')
     require('.github/workflows/weekly-state-sync.yml','data/weekly-state-deltas','增量会自动与历史基线合并恢复')
+    require('weekly-state-complete-backup-v20.js','prefersPortableBackup','portable_backup=true','weeklyStateFileRestoreBtn','无需登录 GitHub')
+    require('weekly-feedback-runtime-v38.js','personalizedAssessment','preference_rescue',"editorial.decision==='待核验'",'strongLater')
 
     sources=json.loads(read('config/sources.json'))
     names={str(x.get('name') or '') for x in sources}
@@ -147,7 +149,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 16 sources -> S/A priority queue -> durable Later/feedback Preference Memory -> encrypted recoverable history -> deterministic v29-v33 UI.')
+    print('Global impact validation passed: 16 sources -> evidence + precise B rescue -> durable Later/feedback memory -> base+delta learning -> mobile encrypted files -> one return-to-top control.')
     return 0
 
 

@@ -18,6 +18,7 @@ from dateutil import parser as dtparser
 ROOT = Path(__file__).resolve().parents[1]
 ART_PATH = ROOT / 'data' / 'articles.json'
 STATE_PATH = ROOT / 'data' / 'weekly-state.enc.json'
+STATE_META_PATH = ROOT / 'data' / 'weekly-state.json'
 STATUS_PATH = ROOT / 'data' / 'source_status.json'
 PASS = os.getenv('DASHBOARD_PASSPHRASE', '')
 HOT_DAYS = 90
@@ -47,24 +48,99 @@ def queue_time(a: dict):
     return _dt(a.get('first_seen') or a.get('published'))
 
 
+STATUS_CODES = {'n': 'new', 'l': 'later', 'r': 'read', 's': 'save', 'k': 'skip'}
+FEEDBACK_CODES = {'a': 'accurate', 'm': 'more', 'b': 'bad', 'l': 'less'}
+ACTION_CODES = {'f': 'feedback', 's': 'status'}
+REASON_CODES = {
+    'e': 'evidence', 'n': 'novelty', 'w': 'work_direct', 'r': 'reusable',
+    'c': 'consumer', 'j': 'japan_market', 'i': 'ai_practical',
+    'k': 'knowledge_delta', 'g': 'too_generic', 'p': 'promo',
+    'o': 'not_work', 'd': 'known', 'x': 'no_evidence', 't': 'topic',
+}
+
+
+def _decrypt_state_envelope(path: Path) -> dict:
+    env = json.loads(path.read_text(encoding='utf-8'))
+    salt = base64.b64decode(env['salt'])
+    iv = base64.b64decode(env['iv'])
+    ct = base64.b64decode(env['ciphertext'])
+    kdf = PBKDF2HMAC(
+        algorithm=hashes.SHA256(), length=32, salt=salt,
+        iterations=int(env.get('iterations') or 600_000),
+    )
+    key = kdf.derive(PASS.encode('utf-8'))
+    raw = AESGCM(key).decrypt(iv, ct, None)
+    if env.get('compression') == 'gzip':
+        raw = gzip.decompress(raw)
+    return json.loads(raw.decode('utf-8'))
+
+
+def _decode_delta_rows(rows: list) -> dict:
+    out = {}
+    for row in rows or []:
+        if not isinstance(row, list) or not row or not row[0]:
+            continue
+        values = list(row) + [''] * max(0, 10 - len(row))
+        id_, status, feedback, updated, origin, action, status_updated, reason, reason_updated, later_at = values[:10]
+        item = {
+            'status': STATUS_CODES.get(status, status or 'new'),
+            'feedback': FEEDBACK_CODES.get(feedback, feedback) if feedback else None,
+            'updated_at': int(updated or 0),
+        }
+        if origin:
+            item['status_origin'] = TRUSTED_STATUS_ORIGIN if origin == 'h' else origin
+        if action:
+            item['status_action'] = ACTION_CODES.get(action, action)
+        if status_updated:
+            item['status_updated_at'] = int(status_updated)
+        if reason:
+            item['feedback_reason'] = REASON_CODES.get(reason, reason)
+        if reason_updated:
+            item['feedback_reason_updated_at'] = int(reason_updated)
+        if later_at:
+            item['later_interest_at'] = int(later_at)
+        out[str(id_)] = item
+    return out
+
+
+def _merge_state(target: dict, incoming: dict) -> None:
+    for id_, value in (incoming or {}).items():
+        if not isinstance(value, dict):
+            continue
+        current = target.get(str(id_)) or {}
+        if not current or int(value.get('updated_at') or 0) > int(current.get('updated_at') or 0):
+            target[str(id_)] = value
+
+
 def decrypt_weekly_state() -> dict:
+    """Restore the encrypted base plus every incremental backup in cursor order."""
     if not PASS or not STATE_PATH.exists():
         return {}
     try:
-        env = json.loads(STATE_PATH.read_text(encoding='utf-8'))
-        salt = base64.b64decode(env['salt'])
-        iv = base64.b64decode(env['iv'])
-        ct = base64.b64decode(env['ciphertext'])
-        kdf = PBKDF2HMAC(
-            algorithm=hashes.SHA256(), length=32, salt=salt,
-            iterations=int(env.get('iterations') or 600_000),
-        )
-        key = kdf.derive(PASS.encode('utf-8'))
-        raw = AESGCM(key).decrypt(iv, ct, None)
-        if env.get('compression') == 'gzip':
-            raw = gzip.decompress(raw)
-        payload = json.loads(raw.decode('utf-8'))
-        return payload.get('state') or {}
+        payload = _decrypt_state_envelope(STATE_PATH)
+        state = {}
+        _merge_state(state, payload.get('state') or {})
+        meta = {}
+        if STATE_META_PATH.exists():
+            meta = (json.loads(STATE_META_PATH.read_text(encoding='utf-8')).get('meta') or {})
+        deltas = meta.get('deltas') if isinstance(meta.get('deltas'), list) else []
+        deltas = sorted(deltas, key=lambda d: (
+            int((d if isinstance(d, dict) else {}).get('cursor_updated_at') or 0),
+            str((d if isinstance(d, dict) else {}).get('cursor_id') or ''),
+        ))
+        for entry in deltas:
+            rel = entry.get('path') if isinstance(entry, dict) else entry
+            if not rel:
+                continue
+            path = ROOT / str(rel)
+            if not path.exists():
+                print('Weekly lifecycle: missing encrypted delta:', rel)
+                continue
+            delta = _decrypt_state_envelope(path)
+            incoming = _decode_delta_rows(delta.get('rows') or []) if delta.get('rows') else (delta.get('state') or {})
+            _merge_state(state, incoming)
+        print(f'Weekly lifecycle: restored {len(state)} feedback records from base + {len(deltas)} deltas')
+        return state
     except Exception as exc:
         print('Weekly lifecycle: encrypted feedback unavailable:', exc)
         return {}

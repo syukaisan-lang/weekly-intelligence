@@ -2,7 +2,7 @@
 // - no client-side Knowledge/Work-System loading on Weekly
 // - one source of truth for Priority count/list/time
 // - explicit pre-this-week Later history view
-// - compact sticky status navigation while scrolling
+// - one compact fixed return-to-top action while scrolling
 // - invalidate legacy caches without touching user reading state
 (() => {
   const BUILD='20260905-1055-v33-2';
@@ -81,17 +81,12 @@
   function ensureSticky(){
     let bar=document.getElementById('weeklyStickyStatus');if(bar)return bar;
     bar=document.createElement('div');bar.id='weeklyStickyStatus';bar.className='weekly-sticky-status';bar.hidden=true;
-    bar.innerHTML='<div class="sticky-status-label">阅读状态</div><div class="sticky-status-buttons"></div>';
+    bar.innerHTML='<button id="weeklyBackToTop" type="button" aria-label="返回页面顶部">↑ 返回顶部</button>';
     document.body.appendChild(bar);
-    const host=bar.querySelector('.sticky-status-buttons');
-    const defs=[['focus','优先'],['week','本周'],['unread','待处理'],['later','稍后看'],['read','已读'],['all','全部']];
-    for(const [k,label] of defs){const b=document.createElement('button');b.type='button';b.dataset.stickyProgress=k;b.innerHTML=`${label} <b>0</b>`;b.addEventListener('click',()=>setProgress?.(k));host.appendChild(b);}
+    bar.querySelector('#weeklyBackToTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
     return bar;
   }
-  function syncSticky(){
-    const bar=ensureSticky();
-    bar.querySelectorAll('[data-sticky-progress]').forEach(b=>{const k=b.dataset.stickyProgress,src=document.querySelector(`[data-progress="${k}"] .segment-count`),n=b.querySelector('b');if(n)n.textContent=src?.textContent||'0';b.classList.toggle('active',k===readingProgress);});
-  }
+  function syncSticky(){ensureSticky();}
   function installStickyVisibility(){
     const bar=ensureSticky(),target=document.querySelector('.reading-progress');if(!target)return;
     if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>{const e=es[0];bar.hidden=!!e?.isIntersecting;},{threshold:.05});io.observe(target);}else{window.addEventListener('scroll',()=>{bar.hidden=target.getBoundingClientRect().bottom>0;},{passive:true});}

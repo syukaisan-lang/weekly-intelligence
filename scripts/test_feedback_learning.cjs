@@ -36,6 +36,8 @@ const alone=engine.makeModel([negativeA],a=>negState[a.id],now).explain(related)
 assert(alone.delta>=-.35&&alone.cap===10,'single negative is only a light ranking signal');
 const neutral=engine.makeModel([mk('read','生成AI業務活用の分析手法')],()=>({status:'read'}),now);
 assert.equal(neutral.sampleCount,0,'completed read is not an endorsement');
+const manual=engine.makeModel([method],()=>({feedback_reason:'manual_b_pick',feedback_reason_updated_at:now}),now);
+assert.equal(manual.positiveSamples,1,'opening a B article is retained as a deliberate positive selection');
 const archived=mk('archived','生成AI業務活用の分析方法',null);
 const older=engine.makeModel([archived],()=>({status:'later',later_interest_at:now-800*86400000}),now);
 assert.equal(older.sampleCount,1,'old feedback remains in history after a year');
@@ -48,9 +50,14 @@ const data={articles:[event,method,related]},state={...states},storage=new Map()
 let invalidations=0,saved=0;
 const ctx={window:{weeklyFeedbackLearningV38:engine,weeklyPriorityPolicy:policy,
   weeklyReadingTimeV21:{invalidate:()=>invalidations++},weeklyUiFixesV25:{allRows:()=>data.articles}},
-  data,state,st:id=>state[id]||{},score:()=>9,save:()=>{saved++;},document:{getElementById:()=>null}};
+  data,state,st:id=>state[id]||{},score:()=>9,save:()=>{saved++;},document:{getElementById:()=>null,addEventListener:()=>{}}};
 vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(path.join(root,'weekly-feedback-runtime-v38.js'),'utf8'),ctx);
+const rescued=ctx.window.weeklyFeedbackRuntimeV38.personalizedAssessment(related);
+assert.equal(rescued.personalized,true,'a strong Later match rescues an evidence-uncertain B false negative');
+assert(rescued.score>=7.2&&ctx.score(related)>=7.2,'rescued B becomes an A-level priority candidate');
+assert.equal(ctx.window.weeklyFeedbackRuntimeV38.personalizedAssessment(event).eligible,false,
+  'an event or promotion cannot be rescued by personalization');
 assert.equal(ctx.window.weeklyFeedbackRuntimeV38.stats().samples,2);
 assert.equal(ctx.window.weeklyFeedbackRuntimeV38.stats().unmatched_records,1,
   'the coverage diagnostic reports feedback on articles missing from the current library');

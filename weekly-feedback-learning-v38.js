@@ -82,6 +82,7 @@
     if(!bad&&(s.status==='later'||Number(s.later_interest_at||0)>0||s.feedback_reason==='later_interest'))
       out.push({weight:1.0,label:'稍后看',at:Number(s.later_interest_at||s.status_updated_at||0)});
     if(!bad&&s.status==='save')out.push({weight:.48,label:'收藏',at:Number(s.status_updated_at||0)});
+    if(!bad&&s.feedback_reason==='manual_b_pick')out.push({weight:.58,label:'从B主动打开',reason:'manual_b_pick',at:Number(s.feedback_reason_updated_at||s.updated_at||0)});
     if(!bad&&s.feedback==='more')out.push({weight:.82,label:s.feedback_reason||'希望多看',reason:s.feedback_reason||'',at:Number(s.feedback_reason_updated_at||0)});
     if(!bad&&s.feedback==='accurate')out.push({weight:.25,label:s.feedback_reason||'判断准确',reason:s.feedback_reason||'',at:Number(s.feedback_reason_updated_at||0)});
     // Reading to completion by itself says little about whether the article was good.
