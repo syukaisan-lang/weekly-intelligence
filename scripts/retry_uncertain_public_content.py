@@ -61,6 +61,7 @@ def feedback_examples(rows, state):
         negative = s.get('feedback') in ('bad', 'less')
         skipped = s.get('status') == 'skip'
         positive = (s.get('status') == 'later' or s.get('later_interest_at')
+                    or s.get('feedback_reason') == 'manual_b_pick'
                     or s.get('status') == 'save' or s.get('feedback') in ('accurate', 'more'))
         if not negative and not positive and not skipped:
             continue
