@@ -152,6 +152,35 @@
   }
   function closeReservedWindow(win){if(win&&!win.closed){try{win.close();}catch(_){}}}
   function navigateBackupWindow(win,url){if(win&&!win.closed){try{win.location.replace(url);win.opener=null;return;}catch(_){}}location.href=url;}
+  function prefersPortableBackup(){return matchMedia('(max-width: 760px),(pointer: coarse)').matches;}
+  async function deliverPortableBackup(env){
+    const stamp=new Date().toISOString().replace(/[:.]/g,'-'),name=`weekly-reading-backup-${stamp}.json`;
+    const content=JSON.stringify(env),blob=new Blob([content],{type:'application/json'});
+    const file=typeof File==='function'?new File([blob],name,{type:'application/json'}):null;
+    if(file&&navigator.share&&navigator.canShare?.({files:[file]})){
+      try{await navigator.share({files:[file],title:'Weekly Intelligence 加密备份'});return 'shared';}
+      catch(error){if(error?.name==='AbortError')throw new Error('Share cancelled');}
+    }
+    const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;
+    document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);return 'downloaded';
+  }
+  async function backupPortable(){
+    if(backupInFlight){toast('备份正在准备中，请不要重复点击。');return;}
+    backupInFlight=true;const button=document.getElementById('backupWeeklyStateBtn'),normalLabel=button?.textContent||'备份到手机';
+    if(button){button.disabled=true;button.textContent='生成加密文件…';}setCloudStatus('正在生成手机加密备份…');
+    try{
+      await ensureValidatedPassphrase();
+      const entries=meaningfulEntries(),payload={schema:6,kind:'weekly-reading-state',created_at:new Date().toISOString(),
+        fields:['status','feedback','status_meta','feedback_reason','later_interest_at'],state:entries};
+      const env=await encryptPrivatePayload(payload,{kind:'weekly-state',compress:true});
+      env.backup_schema=6;env.portable_backup=true;env.entry_count=Object.keys(entries).length;
+      await deliverPortableBackup(env);
+      setCloudStatus('本机已保存 · 手机加密备份已生成');
+      toast(`已生成 ${env.entry_count} 条完整加密备份。请在系统分享菜单保存到“文件”或云盘；无需登录 GitHub。`);
+      if(button){button.textContent='已生成 ✓';setTimeout(()=>{if(!backupInFlight&&button.textContent==='已生成 ✓')button.textContent=normalLabel;},2400);}
+    }catch(e){const failure=backupErrorMessage(e);setCloudStatus(failure.cancelled?'本机已保存 · 已取消文件备份':'本机已保存 · 手机备份未完成');toast(failure.text);}
+    finally{backupInFlight=false;if(button){button.disabled=false;if(button.textContent!=='已生成 ✓')button.textContent=normalLabel;}}
+  }
   function deltaCandidates(cursor){
     return Object.entries(meaningfulEntries()).map(([id,v])=>({id,v,c:{ts:Number(v.updated_at||0),id}}))
       .filter(x=>compareCursor(x.c,cursor)>0).sort((a,b)=>compareCursor(a.c,b.c));
@@ -200,6 +229,7 @@
     throw new Error('无法生成增量备份');
   }
   async function backup(){
+    if(prefersPortableBackup())return backupPortable();
     if(backupInFlight){toast('备份正在准备中，请不要重复点击。');return;}
     backupInFlight=true;const button=document.getElementById('backupWeeklyStateBtn'),normalLabel=button?.textContent||'备份本周标记';
     if(button){button.disabled=true;button.textContent='检查完整备份…';}setCloudStatus('正在检查阅读/学习状态…');const reserved=reserveBackupWindow();
@@ -234,11 +264,40 @@
       save();if(typeof rebuildPrefs==='function')rebuildPrefs();if(typeof render==='function')render();if(typeof updateProgressTabs==='function')updateProgressTabs();localStorage.removeItem(BACKUP_PENDING_KEY);await refreshCloudStatus();toast(`已恢复完整云端状态：更新 ${applied} 条，本机较新的 ${keptLocal} 条保留。`);
     }catch(_){toast('恢复失败：密码不正确或备份无法读取。');}
   }
+  function ensurePortableRestoreInput(){
+    let input=document.getElementById('weeklyStateFileInput');if(input)return input;
+    input=document.createElement('input');input.id='weeklyStateFileInput';input.type='file';input.accept='application/json,.json';input.hidden=true;
+    input.addEventListener('change',async()=>{
+      const file=input.files?.[0];input.value='';if(!file)return;
+      try{
+        const env=JSON.parse(await file.text());
+        if(env?.kind!=='weekly-state')throw new Error('不是 Weekly 完整备份文件');
+        const payload=await decryptPrivateEnvelopeData(env,{prompt:true}),incoming=payload?.state||{};
+        if(!incoming||typeof incoming!=='object')throw new Error('备份文件没有可恢复的阅读状态');
+        let applied=0,keptLocal=0;
+        for(const [id,rv] of Object.entries(incoming)){
+          if(!rv||typeof rv!=='object')continue;
+          const remoteTs=Number(rv.updated_at||0),lv=state[id],localTs=Number(lv?.updated_at||0);
+          if(!lv||remoteTs>localTs){state[id]={...rv,updated_at:remoteTs};applied++;}else keptLocal++;
+        }
+        save();if(typeof rebuildPrefs==='function')rebuildPrefs();if(typeof render==='function')render();
+        if(typeof updateProgressTabs==='function')updateProgressTabs();
+        toast(`已恢复备份文件：更新 ${applied} 条，本机较新的 ${keptLocal} 条保留。`);
+      }catch(error){toast(`恢复文件失败：${String(error?.message||'密码不正确或文件无法读取')}。`);}
+    });
+    document.body.appendChild(input);return input;
+  }
   function install(){
     const tools=document.getElementById('weeklyStateTools'),backupBtn=document.getElementById('backupWeeklyStateBtn');if(!tools||!backupBtn)return false;
     backupBtn.onclick=backup;
     const restoreBtn=[...tools.querySelectorAll('button')].find(b=>b!==backupBtn&&/恢复云端/.test(b.textContent||''));if(restoreBtn)restoreBtn.onclick=restore;
-    const help=[...tools.querySelectorAll('span')].find(x=>x.id!=='weeklyCloudStatus');if(help)help.textContent='完整备份：阅读状态、正负反馈、具体原因和稍后看兴趣历史；单次最多尝试200条，并按 GitHub 安全长度自动装满。';
+    let fileRestore=document.getElementById('weeklyStateFileRestoreBtn');
+    if(!fileRestore){fileRestore=document.createElement('button');fileRestore.id='weeklyStateFileRestoreBtn';fileRestore.type='button';fileRestore.className='btn secondary';fileRestore.textContent='恢复备份文件';restoreBtn?.insertAdjacentElement('afterend',fileRestore);}
+    fileRestore.onclick=()=>ensurePortableRestoreInput().click();
+    if(prefersPortableBackup())backupBtn.textContent='备份到手机';
+    const help=[...tools.querySelectorAll('span')].find(x=>x.id!=='weeklyCloudStatus');if(help)help.textContent=prefersPortableBackup()
+      ?'手机备份会生成完整加密文件，可保存到系统“文件”或云盘，无需登录 GitHub。'
+      :'桌面端可同步加密增量到 GitHub；也可恢复手机生成的完整加密备份文件。';
     tools.dataset.backupSchema='6';refreshCloudStatus();return true;
   }
 
