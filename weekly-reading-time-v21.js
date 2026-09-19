@@ -102,9 +102,12 @@
   function timeClass(m){return m<=3?'短读':m<=7?'中读':'深读';}
 
   function focusValue(a){return safeScore(a);}
+  function focusAssessment(a){
+    return window.weeklyFeedbackRuntimeV38?.personalizedAssessment?.(a)||window.weeklyPriorityPolicy?.assess(a);
+  }
   function isFocusCandidate(a){
     const s=hs(a),g=safeGrade(a),ts=articleTs(a);
-    if(!['S','A'].includes(g)||!window.weeklyPriorityPolicy?.assess(a).eligible)return false;
+    if(!['S','A'].includes(g)||!focusAssessment(a)?.eligible)return false;
     if(NEGATIVE.has(s.feedback))return false;
     if(['later','read','save','skip'].includes(s.status))return false;
     if(s.feedback&&!POSITIVE.has(s.feedback))return false;
@@ -130,7 +133,7 @@
     return true;
   }
   function fitBudget(rows,minutes){
-    return window.weeklyPriorityPolicy?.select(rows,{value:focusValue,minutes:estimateMinutes,budget:Number(minutes)||0})||[];
+    return window.weeklyPriorityPolicy?.select(rows,{assessment:focusAssessment,value:focusValue,minutes:estimateMinutes,budget:Number(minutes)||0})||[];
   }
   function currentFocus(){
     // The first render may precede the asynchronous articles.json fetch.
@@ -195,7 +198,7 @@
     const vc=document.getElementById('visibleCount');if(active&&vc)vc.textContent=`${cur.selected.length} 篇 · ≈${selMin}分钟`;
     const tab=document.querySelector('[data-progress="focus"] .segment-count');if(tab)tab.textContent=String(cur.selected.length);
     const hint=document.getElementById('weeklyAttentionHint');
-    if(active&&hint)hint.textContent=cur.target?`优先阅读仅看 S/A：这是 ${cur.target} 分钟阅读安排；其余 ${Math.max(0,cur.all.length-cur.selected.length)} 篇仍值得读，切回“全部值得读”即可查看。`:`优先阅读：仅推荐有公开摘要或正文具体依据的 S/A，不设篇数上限，不凑数。同一报道去重后按价值排序。`;
+    if(active&&hint)hint.textContent=cur.target?`优先阅读仅看 S/A：这是 ${cur.target} 分钟阅读安排；其余 ${Math.max(0,cur.all.length-cur.selected.length)} 篇仍值得读，切回“全部值得读”即可查看。`:`优先阅读：正文价值达标，或与你过去从 B 主动留下的具体内容高度相似；活动/宣传不能被偏好救回。不设篇数上限，不凑数。`;
     const audit=data?.meta?.priority_review_audit;
     const free=data?.meta?.free_priority_audit;
     if(active&&hint&&free?.status==='complete_with_uncertainty')hint.textContent+=` 免费规则已检查 ${free.examined} 篇，${free.uncertain} 篇证据不足；没有付费模型深度复核。`;
