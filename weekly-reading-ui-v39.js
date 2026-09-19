@@ -41,7 +41,7 @@
     if(active==='focus'){
       const filteredOut=!rows.length&&Number(window.weeklyReadingTimeV21?.allFocusRows?.().length||0)>0;
       title.textContent=`优先阅读 ${rows.length} 篇 · 约 ${mins} 分钟`;
-      subtitle.textContent=rows.length?'从第一篇开始读；这里只放有具体阅读依据的文章。':
+      subtitle.textContent=rows.length?'从第一篇开始读；包含正文价值达标与高置信偏好补漏。':
         filteredOut?'当前高级筛选没有匹配文章，展开筛选可以调整。':
         data?.meta?.free_priority_audit?.status==='complete_with_uncertainty'?'免费证据筛查未选出达标文章；依据不足的文章仍可能有漏选。':
         data?.meta?.priority_review_audit?.status==='complete'?'当前没有达到优先阅读标准的文章，不为了凑数推荐。':
@@ -76,26 +76,22 @@
     const open=document.body.classList.contains('weekly-views-expanded');
     more.setAttribute('aria-expanded',String(open));more.textContent=open?'收起管理':'更多视图';
     document.body.classList.toggle('weekly-priority-mode',active==='focus');
-    const bar=$('weeklyStickyStatus');
-    if(bar&&!$('weeklyStickyMore')){
-      const b=document.createElement('button');b.type='button';b.id='weeklyStickyMore';b.textContent='更多';
-      b.addEventListener('click',()=>{document.body.classList.add('weekly-views-expanded');views();document.querySelector('.reading-progress')?.scrollIntoView({behavior:'smooth',block:'start'});});
-      bar.querySelector('.sticky-status-buttons')?.appendChild(b);
-    }
   }
 
   function cards(){
     if(mode()!=='focus')return;
     document.querySelectorAll('#articleList .article[data-bulk-article-id]').forEach(card=>{
       if(card.querySelector('.weekly-card-brief'))return;
-      const a=article(card.dataset.bulkArticleId),editorial=a&&window.weeklyPriorityPolicy?.assess(a);
+      const a=article(card.dataset.bulkArticleId),editorial=a&&
+        (window.weeklyFeedbackRuntimeV38?.personalizedAssessment?.(a)||window.weeklyPriorityPolicy?.assess(a));
       const title=card.querySelector('.article-title'),controls=card.querySelector('.controls');
       if(!a||!editorial?.eligible||!title||!controls)return;
       const brief=document.createElement('div');brief.className='weekly-card-brief';
       const gain=document.createElement('p'),use=document.createElement('p');
       gain.className='weekly-card-gain';use.className='weekly-card-use';
       const evidence=editorial.evidence?.[0]||'';
-      gain.textContent=editorial.reviewed?`新信息：${editorial.reason}`:`${editorial.kind==='summary_case'?'公开摘要依据':'原文看点'}：${evidence||editorial.reason}`;
+      gain.textContent=editorial.personalized?`偏好补漏：${editorial.reason}`:
+        editorial.reviewed?`新信息：${editorial.reason}`:`${editorial.kind==='summary_case'?'公开摘要依据':'原文看点'}：${evidence||editorial.reason}`;
       use.textContent=`可用在：${editorial.use}`;
       brief.append(gain,use);
       const time=document.createElement('span');time.className='weekly-card-time';
