@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-20T16:18:15.934795+00:00",
+  "generated_at": "2026-09-21T05:09:28.553190+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 0,
-  "deduped_count": 0,
+  "raw_new_count": 13,
+  "deduped_count": 13,
   "deep_read_count": 0,
   "sources": [
     {
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 3,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 251,
+      "coverage_cached_count": 254,
       "coverage_errors": []
     },
     {
@@ -185,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 10,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 271,
+      "coverage_cached_count": 281,
       "coverage_errors": []
     },
     {
@@ -211,7 +211,7 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 1864,
+  "semantic_rescored_count": 1877,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -232,11 +232,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 2091,
+    "hot_count": 2104,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-20T16:16:47.436514+00:00",
+    "generated_at": "2026-09-21T05:08:09.425929+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
