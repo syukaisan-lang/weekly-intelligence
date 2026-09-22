@@ -1,16 +1,11 @@
 {
-  "generated_at": "2026-09-21T13:03:08.611013+00:00",
+  "generated_at": "2026-09-22T05:12:35.250498+00:00",
   "expected_sources": 16,
-  "successful_sources": 15,
-  "failed_sources": [
-    {
-      "name": "Campaign Japan 日本 - 深層",
-      "error": "HTTPConnectionPool(host='www.campaignjapan.com', port=80): Read timed out. (read timeout=15)"
-    }
-  ],
-  "raw_new_count": 0,
-  "deduped_count": 0,
-  "deep_read_count": 0,
+  "successful_sources": 16,
+  "failed_sources": [],
+  "raw_new_count": 13,
+  "deduped_count": 13,
+  "deep_read_count": 1,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -51,26 +46,26 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 3,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 254,
+      "coverage_cached_count": 257,
       "coverage_errors": []
     },
     {
       "name": "Campaign Japan 日本 - 深層",
-      "status": "failed",
+      "status": "ok",
       "new_count": 0,
-      "error": "HTTPConnectionPool(host='www.campaignjapan.com', port=80): Read timed out. (read timeout=15)",
-      "coverage_status": "partial",
-      "coverage_methods": [],
+      "error": null,
+      "coverage_status": "unverified",
+      "coverage_methods": [
+        "feed_cache"
+      ],
       "coverage_cached_count": 0,
-      "coverage_errors": [
-        "feed_cache: HTTPConnectionPool(host='www.campaignjapan.com', port=80): Read timed out. (read timeout=20)"
-      ]
+      "coverage_errors": []
     },
     {
       "name": "博報堂生活総合研究所",
@@ -190,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 10,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 281,
+      "coverage_cached_count": 291,
       "coverage_errors": []
     },
     {
@@ -216,7 +211,7 @@
     }
   ],
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 1877,
+  "semantic_rescored_count": 1890,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -237,17 +232,17 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 2104,
+    "hot_count": 2117,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-21T13:01:22.782598+00:00",
+    "generated_at": "2026-09-22T05:10:54.611284+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
     "cached_count": 10,
-    "partial_count": 2,
-    "unverified_count": 1,
+    "partial_count": 1,
+    "unverified_count": 2,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
       "enhanced": "RSS/listing or multiple independent discovery paths plus rolling cache",
