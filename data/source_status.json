@@ -1,11 +1,16 @@
 {
-  "generated_at": "2026-09-24T05:04:59.196316+00:00",
+  "generated_at": "2026-09-24T12:00:49.647355+00:00",
   "expected_sources": 16,
-  "successful_sources": 16,
-  "failed_sources": [],
-  "raw_new_count": 38,
-  "deduped_count": 37,
-  "deep_read_count": 13,
+  "successful_sources": 15,
+  "failed_sources": [
+    {
+      "name": "Campaign Japan 日本 - 深層",
+      "error": "HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=15)"
+    }
+  ],
+  "raw_new_count": 17,
+  "deduped_count": 16,
+  "deep_read_count": 3,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -28,7 +33,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 145,
+      "coverage_cached_count": 148,
       "coverage_errors": []
     },
     {
@@ -46,31 +51,31 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 6,
+      "new_count": 5,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 264,
+      "coverage_cached_count": 269,
       "coverage_errors": []
     },
     {
       "name": "Campaign Japan 日本 - 深層",
-      "status": "ok",
+      "status": "failed",
       "new_count": 0,
-      "error": null,
-      "coverage_status": "unverified",
-      "coverage_methods": [
-        "feed_cache"
-      ],
+      "error": "HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=15)",
+      "coverage_status": "partial",
+      "coverage_methods": [],
       "coverage_cached_count": 0,
-      "coverage_errors": []
+      "coverage_errors": [
+        "feed_cache: HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=20)"
+      ]
     },
     {
       "name": "博報堂生活総合研究所",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -82,7 +87,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -106,7 +111,7 @@
     {
       "name": "ITmedia マーケティング 最新記事一覧",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -118,14 +123,14 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 5,
+      "new_count": 6,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 264,
+      "coverage_cached_count": 270,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -134,7 +139,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -161,7 +166,7 @@
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 8,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -185,7 +190,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 9,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -197,7 +202,7 @@
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 2,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -216,8 +221,8 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 1956,
-  "semantic_deep_read_count": 2,
+  "semantic_rescored_count": 1972,
+  "semantic_deep_read_count": 1,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -237,17 +242,17 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 2183,
+    "hot_count": 2199,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-24T05:03:19.496490+00:00",
+    "generated_at": "2026-09-24T11:58:50.423322+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
     "cached_count": 10,
-    "partial_count": 1,
-    "unverified_count": 2,
+    "partial_count": 2,
+    "unverified_count": 1,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
       "enhanced": "RSS/listing or multiple independent discovery paths plus rolling cache",
