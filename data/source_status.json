@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T14:58:06.396705+00:00",
+  "generated_at": "2026-09-25T15:10:18.953111+00:00",
   "expected_sources": 16,
   "successful_sources": 15,
   "failed_sources": [
@@ -65,12 +65,12 @@
       "status": "failed",
       "new_count": 0,
       "error": "HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=15)",
-      "coverage_status": "partial",
-      "coverage_methods": [],
+      "coverage_status": "unverified",
+      "coverage_methods": [
+        "feed_cache"
+      ],
       "coverage_cached_count": 0,
-      "coverage_errors": [
-        "feed_cache: HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=20)"
-      ]
+      "coverage_errors": []
     },
     {
       "name": "博報堂生活総合研究所",
@@ -93,7 +93,7 @@
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 31,
+      "coverage_cached_count": 30,
       "coverage_errors": []
     },
     {
@@ -148,7 +148,7 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 70,
+      "coverage_cached_count": 69,
       "coverage_errors": []
     },
     {
@@ -246,13 +246,13 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-25T14:56:18.873000+00:00",
+    "generated_at": "2026-09-25T15:08:28.944867+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
     "cached_count": 10,
-    "partial_count": 2,
-    "unverified_count": 1,
+    "partial_count": 1,
+    "unverified_count": 2,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
       "enhanced": "RSS/listing or multiple independent discovery paths plus rolling cache",
