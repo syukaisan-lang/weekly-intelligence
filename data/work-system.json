@@ -1,14 +1,14 @@
 {
   "meta": {
-    "snapshot_at": "2026-09-18T09:31:22.723040+00:00",
+    "snapshot_at": "2026-09-25T14:39:29.945218+00:00",
     "schema_version": 1,
     "encrypted_full_data": true,
     "source_count": 3,
-    "note_count": 353,
+    "note_count": 358,
     "rule_count": 0,
     "synthesis": "deterministic_candidates",
     "taxonomy_version": 4,
-    "classification_updated_at": "2026-09-18T09:31:23.221923+00:00"
+    "classification_updated_at": "2026-09-25T14:39:30.422573+00:00"
   },
   "sources": [
     {
@@ -21,7 +21,7 @@
       "kind": "book",
       "label": "读书笔记",
       "name": "読書メモ.xlsx",
-      "modifiedTime": "2026-08-12T11:19:09.675Z"
+      "modifiedTime": "2026-09-21T00:41:43.331Z"
     },
     {
       "kind": "field_manual",
@@ -41,7 +41,7 @@
     },
     {
       "name": "市场 / GTM / Positioning",
-      "count": 38
+      "count": 41
     },
     {
       "name": "执行 / 管理 / Stakeholder",
@@ -57,7 +57,7 @@
     },
     {
       "name": "商品 / 新品上市",
-      "count": 12
+      "count": 14
     },
     {
       "name": "数据 / KPI / 测量",
@@ -73,8 +73,8 @@
     }
   ],
   "source_hashes": {
-    "19gBiQuP8kjMRkzhuNRXXKKZS7Cn-yKJUZdADPOYJDos": "49b23c2994352b63a0ed01138f342e034764951f81ca0a6d7c0d39e8e3dd5259",
-    "13nPr94W9YHfZi_SkFk1i38WAHdO8pdEq": "6b36c8029a92bbc8c8a841a3e4e98a4313b8d6f8eb15f2ff6b73b40c79806db7",
+    "19gBiQuP8kjMRkzhuNRXXKKZS7Cn-yKJUZdADPOYJDos": "2e869215235dba44bd824563d3e8a3bb7171c004a5b5afe4e6cf948ad2a12712",
+    "13nPr94W9YHfZi_SkFk1i38WAHdO8pdEq": "e5a45ffa2531e8a2260946bdd1b5f40a027bb53ffa29483650e9877538ccec6f",
     "1bBVlTpIodFbSLK8l2CsukALFdSq9m5hpxLHMK7liaug": "f5d6ba31a1dce80507fdae07c74e2f8b936c35228ee507b138415c688bbb6fd2"
   },
   "scenario_counts": [
@@ -103,6 +103,10 @@
       "count": 9
     },
     {
+      "name": "定价 / 价格弹性",
+      "count": 8
+    },
+    {
       "name": "评价 / Review",
       "count": 8
     },
@@ -115,8 +119,8 @@
       "count": 7
     },
     {
-      "name": "定价 / 价格弹性",
-      "count": 6
+      "name": "市场进入 / GTM",
+      "count": 7
     },
     {
       "name": "EC流量结构",
@@ -132,10 +136,6 @@
     },
     {
       "name": "Stakeholder / 谈判",
-      "count": 4
-    },
-    {
-      "name": "市场进入 / GTM",
       "count": 4
     },
     {
