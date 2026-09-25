@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-25T05:09:43.510782+00:00",
+  "generated_at": "2026-09-25T12:03:28.293656+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
-  "raw_new_count": 44,
-  "deduped_count": 43,
-  "deep_read_count": 12,
+  "raw_new_count": 21,
+  "deduped_count": 20,
+  "deep_read_count": 3,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,13 +22,13 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 6,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 154,
+      "coverage_cached_count": 156,
       "coverage_errors": []
     },
     {
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 11,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 272,
+      "coverage_cached_count": 283,
       "coverage_errors": []
     },
     {
@@ -82,7 +82,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -118,14 +118,14 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 8,
+      "new_count": 3,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 278,
+      "coverage_cached_count": 281,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -134,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 2,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -143,7 +143,7 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 68,
+      "coverage_cached_count": 70,
       "coverage_errors": []
     },
     {
@@ -161,7 +161,7 @@
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 7,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -185,19 +185,19 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 16,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 325,
+      "coverage_cached_count": 326,
       "coverage_errors": []
     },
     {
       "name": "日経クロストレンド 新着",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -216,8 +216,8 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 2028,
-  "semantic_deep_read_count": 2,
+  "semantic_rescored_count": 2048,
+  "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -237,11 +237,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 2255,
+    "hot_count": 2275,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-25T05:07:18.950247+00:00",
+    "generated_at": "2026-09-25T12:01:14.423567+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
