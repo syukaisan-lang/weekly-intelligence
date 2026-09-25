@@ -1,10 +1,10 @@
 {
   "meta": {
     "source": "Notion / 情報収集と整理",
-    "snapshot_at": "2026-09-18T13:49:43.979076+00:00",
+    "snapshot_at": "2026-09-25T14:44:48.523652+00:00",
     "schema_version": 5,
     "encrypted_full_data": true,
-    "item_count": 156,
+    "item_count": 157,
     "comments_included_in_encrypted_data": true,
     "page_body_included_in_encrypted_data": true,
     "comments_scope": "page-level open/unresolved comments via Notion Public API",
@@ -12,13 +12,13 @@
       "enabled": true,
       "priority": "evidence_period > published_at > collected_at",
       "confidence_counts": {
-        "low": 142,
+        "low": 143,
         "high": 9,
         "medium": 5
       },
       "domain_counts": {
+        "consumer": 57,
         "technology": 67,
-        "consumer": 56,
         "general": 16,
         "methodology": 3,
         "market_price": 11,
@@ -27,12 +27,12 @@
     }
   },
   "metrics": {
-    "total": 665,
+    "total": 666,
     "read": 659,
-    "stock": 156,
+    "stock": 157,
     "rejected": 509,
     "undecided": 0,
-    "added_30d": 5,
+    "added_30d": 4,
     "added_90d": 15
   },
   "categories": [
@@ -56,8 +56,8 @@
     },
     {
       "name": "スキル",
-      "total": 52,
-      "stock": 28,
+      "total": 53,
+      "stock": 29,
       "rejected": 24
     },
     {
@@ -110,35 +110,35 @@
     },
     {
       "name": "CRM / LTV",
-      "count": 79
+      "count": 80
     },
     {
       "name": "ブランド成長",
-      "count": 76
+      "count": 77
     },
     {
       "name": "市場 / 競合",
-      "count": 71
+      "count": 72
     },
     {
       "name": "消費者インサイト",
-      "count": 67
+      "count": 68
     },
     {
       "name": "調査設計",
-      "count": 59
+      "count": 60
     },
     {
       "name": "広告効果",
-      "count": 57
+      "count": 58
     },
     {
       "name": "EC成長",
-      "count": 54
+      "count": 55
     },
     {
       "name": "マネジメント",
-      "count": 44
+      "count": 45
     },
     {
       "name": "SNS / UGC",
@@ -158,11 +158,11 @@
     },
     {
       "name": "生成AI実務",
-      "count": 16
+      "count": 17
     },
     {
       "name": "商品開発",
-      "count": 15
+      "count": 16
     },
     {
       "name": "AI Search / AEO",
