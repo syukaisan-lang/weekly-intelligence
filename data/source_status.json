@@ -1,13 +1,8 @@
 {
-  "generated_at": "2026-09-25T15:10:18.953111+00:00",
+  "generated_at": "2026-09-25T17:22:30.549568+00:00",
   "expected_sources": 16,
-  "successful_sources": 15,
-  "failed_sources": [
-    {
-      "name": "Campaign Japan 日本 - 深層",
-      "error": "HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=15)"
-    }
-  ],
+  "successful_sources": 16,
+  "failed_sources": [],
   "raw_new_count": 1,
   "deduped_count": 0,
   "deep_read_count": 0,
@@ -62,9 +57,9 @@
     },
     {
       "name": "Campaign Japan 日本 - 深層",
-      "status": "failed",
+      "status": "ok",
       "new_count": 0,
-      "error": "HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=15)",
+      "error": null,
       "coverage_status": "unverified",
       "coverage_methods": [
         "feed_cache"
@@ -246,7 +241,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-25T15:08:28.944867+00:00",
+    "generated_at": "2026-09-25T17:20:57.895184+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
