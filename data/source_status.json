@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-26T05:12:09.337903+00:00",
+  "generated_at": "2026-09-26T11:37:12.565605+00:00",
   "expected_sources": 16,
   "successful_sources": 16,
   "failed_sources": [],
   "raw_new_count": 1,
   "deduped_count": 0,
-  "deep_read_count": 2,
+  "deep_read_count": 0,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -217,7 +217,7 @@
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
   "semantic_rescored_count": 2055,
-  "semantic_deep_read_count": 2,
+  "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -241,7 +241,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-26T05:10:25.408418+00:00",
+    "generated_at": "2026-09-26T11:35:25.978433+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
