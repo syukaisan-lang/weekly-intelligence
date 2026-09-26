@@ -4,7 +4,7 @@
   const PRIMARY=new Set(['focus','week','later']);
   const $=id=>document.getElementById(id);
   document.body.classList.add('weekly-compact-ui');
-  let articlesById=new Map(),articlesLength=-1,scheduled=false;
+  let articlesById=new Map(),articlesLength=-1,scheduled=false,auditCache=null;
 
   function allRows(){return window.weeklyUiFixesV25?.allRows?.()||(data?.articles||[]);}
   function article(id){
@@ -17,12 +17,29 @@
   function mode(){return typeof readingProgress==='undefined'?'focus':readingProgress;}
   function minutes(a){return Number(window.weeklyReadingTimeV21?.estimateMinutes?.(a)||0);}
   function focus(){try{return window.weeklyReadingTimeV21?.currentFocus?.().selected||[];}catch(_){return [];}}
+  function currentAudit(){
+    const rows=allRows(),version=window.weeklyPriorityPolicy?.VERSION||0,key=`${version}:${rows.length}`;
+    if(auditCache?.key===key)return auditCache.value;
+    const cutoff=Date.now()-7*86400000,counts={examined:0,recommended:0,summary:0,uncertain:0};
+    for(const a of rows){
+      const seen=Date.parse(a.first_seen||a.published||'');if(!Number.isFinite(seen)||seen<cutoff)continue;
+      const result=window.weeklyPriorityPolicy?.assess?.(a);if(!result)continue;counts.examined++;
+      if(result.eligible){counts.recommended++;if(String(result.kind||'').startsWith('summary_'))counts.summary++;}
+      else if(result.decision==='待核验')counts.uncertain++;
+    }
+    auditCache={key,value:counts};return counts;
+  }
 
   function notice(){
     const box=$('weeklyReviewNotice'),audit=data?.meta?.priority_review_audit,free=data?.meta?.free_priority_audit,retry=data?.meta?.free_public_retry_audit;
     if(!box)return;
     if(!allRows().length){box.hidden=true;return;}
     box.hidden=false;
+    if(free&&Number(free.version||0)!==Number(window.weeklyPriorityPolicy?.VERSION||0)){
+      const live=currentAudit();
+      box.textContent=`新版免费证据规则已即时检查近7天 ${live.examined} 篇，推荐 ${live.recommended} 篇（其中 ${live.summary} 篇仅有公开摘要），${live.uncertain} 篇仍待核验。推荐不再要求标题必须写明“案例/研究”，但仍不会用标题或泛 AI 词单独放行。`;
+      return;
+    }
     if(free?.status==='complete_with_uncertainty'){
       box.textContent=`免费证据筛查已检查本周 ${free.examined} 篇，推荐 ${free.recommended} 篇（其中 ${free.summary_only} 篇仅有公开摘要），${free.uncertain} 篇依据不足。${retry?`另尝试公开正文 ${retry.attempted} 篇、读到 ${retry.readable} 篇；robots 或不可用规则阻止 ${retry.robots_blocked} 篇。`:''}未进行付费模型深度复核，不能保证零漏选。`;
       return;
@@ -91,7 +108,7 @@
       gain.className='weekly-card-gain';use.className='weekly-card-use';
       const evidence=editorial.evidence?.[0]||'';
       gain.textContent=editorial.personalized?`偏好补漏：${editorial.reason}`:
-        editorial.reviewed?`新信息：${editorial.reason}`:`${editorial.kind==='summary_case'?'公开摘要依据':'原文看点'}：${evidence||editorial.reason}`;
+        editorial.reviewed?`新信息：${editorial.reason}`:`${editorial.kind?.startsWith('summary_')?'公开摘要依据':'原文看点'}：${evidence||editorial.reason}`;
       use.textContent=`可用在：${editorial.use}`;
       brief.append(gain,use);
       const time=document.createElement('span');time.className='weekly-card-time';

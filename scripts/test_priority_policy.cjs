@@ -15,8 +15,8 @@ for(const id of ['3a49d0636275e486b9','509d0c61f6bf42c5ed','7ed22727b43fc307f1',
 assert(policy.assess(method).eligible);
 assert(policy.assess(measured).eligible);
 assert.equal(policy.assess(article('c5b40d1098c65903cf')).kind,'diagnostic','evidence-backed qualitative diagnostics matter without a measured case outcome');
-assert.equal(policy.assess({...method,content_checked:false}).eligible,false);
-assert.equal(policy.assess({...method,content_excerpt:'本文を読む'}).eligible,false);
+assert.equal(policy.assess({...method,content_checked:false,summary:''}).eligible,false);
+assert.equal(policy.assess({...method,content_excerpt:'本文を読む',summary:''}).eligible,false);
 assert.deepEqual(policy.assess({...event,reason:'工作相关 数据 方法 分析 EC AI',reading_score:10,knowledge_context:{increment_type:'direct_work_use'}}),policy.assess(event));
 assert.equal(policy.assess({...measured,source:'Unknown source'}).score,policy.assess(measured).score);
 assert.equal(policy.assess({...measured,content_completeness:'partial'}).cap,8.6);
@@ -50,6 +50,17 @@ for(const id of ['f15b2cc0bfa93454a9','6ef6a8f7a7a3348653']){
 for(const id of ['b12149eb36cca97ca0','6c95ebf816b2870f75','5422e964416d3fbd7b']){
   assert(!policy.assess(article(id)).eligible,`polluted source or platform policy is not a deep read: ${id}`);
 }
+// Strong source evidence must not depend on title wording. These fixtures cover
+// multi-result analysis, an operational playbook and strategy-rich public summaries.
+for(const id of ['ab118fc40837a1e900','edaf7e40672a4cf84b','2d4dd4656682f8e9d8','13ab79cb6cc281659d']){
+  const result=policy.assess(article(id));assert(result.eligible,`evidence-backed false negative: ${id}`);assert(result.evidence.length,id);
+}
+for(const id of ['7d1c4119b00b585043','1fa0deabe243c1329c','5390ae17c5549f58fc']){
+  const a=article(id),result=policy.assess(a);
+  assert.equal(result.kind,'summary_framework',id);assert(result.evidence.every(q=>policy.sourceText(a).head.includes(q)),id);
+}
+assert(!policy.assess(article('6874daf97c2b2656d1')).eligible,'fee-change notice is not a deep read');
+assert(!policy.assess(article('f9526e7e0f661b507f')).eligible,'celebrity campaign announcement remains blocked');
 // Execute real preference memory with a contextual event rejection and no browser storage.
 const states={},storage=new Map();
 const ctx={console,Date,Set,Map,Math,JSON,Number,String,Array,RegExp,

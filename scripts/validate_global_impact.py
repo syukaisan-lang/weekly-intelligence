@@ -108,6 +108,7 @@ def main()->int:
     require('.github/workflows/weekly-state-sync.yml','data/weekly-state-deltas','增量会自动与历史基线合并恢复')
     require('weekly-state-complete-backup-v20.js','MOBILE_ISSUE_URL_LENGTH=3000','issueUrlLimit','sessionStorage.setItem','location.assign(url)','提交后按返回即可')
     require('weekly-feedback-runtime-v38.js','personalizedAssessment','preference_rescue',"editorial.decision==='待核验'",'strongLater')
+    require('weekly-interaction-performance-v40.js','one-write + immediate-card + idle-batch','requestIdleCallback(flush,{timeout:650})','later_interest_at','human_v10')
 
     sources=json.loads(read('config/sources.json'))
     names={str(x.get('name') or '') for x in sources}

@@ -24,7 +24,7 @@ for(const a of payload.articles){
   const ts=Date.parse(a.first_seen||a.published||'');
   if(Number.isFinite(ts)&&ts>=weekStart&&ts<=Date.now()){
     freeAudit.examined++;
-    if(result.eligible){freeAudit.recommended++;if(result.kind==='summary_case')freeAudit.summary_only++;}
+    if(result.eligible){freeAudit.recommended++;if(String(result.kind||'').startsWith('summary_'))freeAudit.summary_only++;}
     else if(result.decision==='待核验')freeAudit.uncertain++;
     else if(result.decision==='跳过')freeAudit.skipped++;
     else freeAudit.brief++;
