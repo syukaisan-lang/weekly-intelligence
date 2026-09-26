@@ -34,6 +34,7 @@ def main() -> int:
         "weekly-runtime-consistency-v35.js?v=20260919-1",
         "weekly-feedback-learning-v38.js?v=20260919-1",
         "weekly-feedback-runtime-v38.js?v=20260919-1",
+        "weekly-interaction-performance-v40.js?v=20260926-1",
         "0/16",
     )
     if "knowledge-relations.js" in index:
@@ -122,6 +123,20 @@ def main() -> int:
     )
     if "editorial.decision==='跳过'" in feedback_runtime:
         raise AssertionError("personalized B rescue must never promote an editorial skip")
+
+    interaction = need(
+        "weekly-interaction-performance-v40.js",
+        "localStorage.setItem(STATE_KEY,JSON.stringify(state))",
+        "v==='later'?fastLater(a):previousSetStatus(a,v)",
+        "requestIdleCallback(flush,{timeout:650})",
+        "mode:'one-write + immediate-card + idle-batch'",
+        "later_interest_at",
+        "weekly_intelligence_dirty_since_v1",
+    )
+    if "previousSetStatus(a,'later')" not in interaction:
+        raise AssertionError("fast Later path must retain a safe storage-failure fallback")
+    if index.find("weekly-interaction-performance-v40.js") < index.find("weekly-reading-ui-v39.js"):
+        raise AssertionError("interaction batching must be the final status wrapper")
 
     need(
         "scripts/weekly_lifecycle.py",

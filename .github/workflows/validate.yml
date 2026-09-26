@@ -44,6 +44,7 @@ jobs:
         run: |
           node scripts/test_priority_policy.cjs
           node scripts/test_feedback_learning.cjs
+          node scripts/test_interaction_performance.cjs
           node scripts/test_articles_brief.cjs
           python scripts/test_priority_review.py
           python scripts/test_retry_uncertain_public_content.py
@@ -76,6 +77,7 @@ jobs:
           test -f weekly-source-audit-v9.js
           test -f weekly-state-sync.js
           test -f weekly-runtime-consistency-v35.js
+          test -f weekly-interaction-performance-v40.js
           test -f scripts/sync_notion.py
           test -f scripts/sync_notion_temporal.py
           test -f scripts/temporal_knowledge.py
