@@ -68,7 +68,7 @@ async function restore(){
     toast(/cancel/i.test(m)?'已取消恢复。':'恢复失败：密码不正确或云端备份无法读取。');
   }finally{busy=false;if(b){b.disabled=false;b.textContent=label||'恢复云端'}}
 }
-function install(){const b=document.getElementById('eventCloudBackupBtn'),r=document.getElementById('eventCloudRestoreBtn');if(!b||!r)return false;b.onclick=backup;r.onclick=restore;refresh();window.addEventListener('pageshow',()=>setTimeout(refresh,150));return true}
+function install(){const b=document.getElementById('eventCloudBackupBtn')||document.getElementById('exportBtn'),r=document.getElementById('eventCloudRestoreBtn')||document.getElementById('importBtn');if(!b||!r)return false;b.onclick=backup;r.onclick=restore;refresh();window.addEventListener('pageshow',()=>setTimeout(refresh,150));return true}
 if(!install())document.addEventListener('DOMContentLoaded',install,{once:true});
 window.eventCloudV1={backup,restore,refresh};
 })();
