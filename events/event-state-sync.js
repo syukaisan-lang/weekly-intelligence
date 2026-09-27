@@ -4,6 +4,8 @@ const ENV_URL='event-state.enc.json';
 const META_URL='event-state.json';
 const WEEKLY_ENV='../data/weekly-state.enc.json';
 const PENDING='event_radar_backup_pending_v1';
+const PENDING_PAYLOAD='event_radar_backup_payload_v1';
+const PENDING_TITLE='event_radar_backup_title_v1';
 let busy=false;
 
 const api=()=>window.EventRadarState;
@@ -29,7 +31,10 @@ async function refresh(){
     const cloudAt=Date.parse(m?.meta?.latest_at||m?.meta?.snapshot_at||0)||0;
     const local=latestTs(localState());
     const pending=localStorage.getItem(PENDING);
-    if(pending&&cloudAt>=Date.parse(pending))localStorage.removeItem(PENDING);
+    if(pending&&cloudAt>=Date.parse(pending)){
+      localStorage.removeItem(PENDING);localStorage.removeItem(PENDING_PAYLOAD);localStorage.removeItem(PENDING_TITLE);
+    }
+    if(localStorage.getItem(PENDING_PAYLOAD)){status('有一份加密备份待提交 · 点“备份云端”继续');return}
     if(localStorage.getItem(PENDING)){status('加密备份已提交 · 等待 GitHub 写入');return}
     if(local>remote){status('本机已保存 · 有活动反馈待云备份');return}
     if(!e){status('本机已保存 · 尚无活动云备份');return}
@@ -37,14 +42,32 @@ async function refresh(){
   }catch(_){status('本机已保存 · 云端状态暂时无法读取')}
 }
 function openIssue(url){
-  if(isMobile()){sessionStorage.setItem('event_radar_backup_return_v1',location.href);location.assign(url);return}
+  if(isMobile()){
+    sessionStorage.setItem('event_radar_backup_return_v2',location.href);
+    const u=new URL(url);
+    const relative=u.pathname+u.search;
+    location.assign('https://github.com/login?return_to='+encodeURIComponent(relative));
+    return;
+  }
   const w=window.open(url,'eventStateBackup');if(!w)location.assign(url);
+}
+function pendingIssueUrl(){
+  const payload=localStorage.getItem(PENDING_PAYLOAD),title=localStorage.getItem(PENDING_TITLE);
+  if(!payload||!title)return '';
+  const body='EVENT_STATE_ENVELOPE_B64: '+payload+'\n\nTokyo Event Radar 加密反馈备份。内容已填好，只需点击 Submit new issue。';
+  return 'https://github.com/'+REPO+'/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body);
 }
 async function backup(){
   if(busy)return;busy=true;
   const b=document.getElementById('backupEventStateBtn'),old=b?.textContent||'备份云端';
   if(b){b.disabled=true;b.textContent='准备加密…'}status('正在检查活动反馈…');
   try{
+    const retryUrl=pendingIssueUrl();
+    if(retryUrl){
+      status('重新打开 GitHub 提交页');
+      toast('继续上次的加密备份。若刚完成 GitHub 登录，这次会直接带上完整内容。');
+      openIssue(retryUrl);return;
+    }
     const s=localState(),count=Object.keys(s).length;
     if(!count){status('没有活动反馈需要备份');toast('还没有活动反馈。');return}
     await validatePassword();
@@ -57,7 +80,12 @@ async function backup(){
     const body='EVENT_STATE_ENVELOPE_B64: '+encoded+'\n\nTokyo Event Radar 加密反馈备份。内容已填好，只需点击 Submit new issue。';
     const url='https://github.com/'+REPO+'/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body);
     if(isMobile()&&url.length>6500)throw new Error('反馈数据过大，请先用电脑备份');
-    localStorage.setItem(PENDING,created);status('备份请求待确认');toast('GitHub 页面打开后直接点 Submit new issue。');openIssue(url);
+    localStorage.setItem(PENDING,created);
+    localStorage.setItem(PENDING_PAYLOAD,encoded);
+    localStorage.setItem(PENDING_TITLE,title);
+    status('备份请求待确认');
+    toast(isMobile()?'会先经过 GitHub 登录页；登录后直接提交已填好的 Issue。若内容没带上，返回本站再点一次“备份云端”。':'GitHub 页面打开后直接点 Submit new issue。');
+    openIssue(url);
   }catch(e){status('本机已保存 · 云备份未完成');toast('备份未完成：'+(e?.message||e))}
   finally{busy=false;if(b){b.disabled=false;b.textContent=old}}
 }
