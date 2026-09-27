@@ -6,11 +6,14 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   sync:
     if: github.event.issue.user.login == 'syukaisan-lang' && startsWith(github.event.issue.title, '[EVENT-STATE]')
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -29,3 +32,13 @@ jobs:
             git commit -m 'Backup Event feedback state'
             git push
           fi
+      - name: Confirm and close request
+        if: success()
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --body "✅ Event Radar 反馈已加密备份。仓库中只保存密文。"
+          gh issue close "${{ github.event.issue.number }}"
+      - name: Report failure
+        if: failure()
+        run: |
+          ERR=$(cat /tmp/event_state_error.txt 2>/dev/null || echo 'Unknown error')
+          gh issue comment "${{ github.event.issue.number }}" --body "❌ Event Radar 备份失败：$ERR"
