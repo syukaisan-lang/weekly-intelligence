@@ -1,0 +1,264 @@
+// Weekly v20.2: complete encrypted backup for all local fields that affect reading state or recommendation learning.
+// Schema 6 keeps schema-4/5 restore compatibility and adds later_interest_at so long-term Preference Memory survives restore.
+(() => {
+  const REPO='syukaisan-lang/weekly-intelligence';
+  const CLOUD_URL='data/weekly-state.enc.json';
+  const CLOUD_META_URL='data/weekly-state.json';
+  const BACKUP_PENDING_KEY='weekly_intelligence_backup_pending_v1';
+  const DIRTY_SINCE_KEY='weekly_intelligence_dirty_since_v1';
+  const MIGRATION_KEY='weekly_intelligence_backup_schema_v20_2';
+  const TRUSTED_STATUS_ORIGIN='human_v10';
+  const MAX_DELTA_ENTRIES=200;
+  const MAX_ISSUE_URL_LENGTH=7500;
+  const MOBILE_ISSUE_URL_LENGTH=3000;
+  let backupInFlight=false;
+
+  const STATUS_TO_CODE={new:'n',later:'l',read:'r',save:'s',skip:'k'};
+  const CODE_TO_STATUS={n:'new',l:'later',r:'read',s:'save',k:'skip'};
+  const FEEDBACK_TO_CODE={accurate:'a',more:'m',bad:'b',less:'l'};
+  const CODE_TO_FEEDBACK={a:'accurate',m:'more',b:'bad',l:'less'};
+  const ACTION_TO_CODE={feedback:'f',status:'s'};
+  const CODE_TO_ACTION={f:'feedback',s:'status'};
+  const REASON_TO_CODE={
+    evidence:'e',novelty:'n',work_direct:'w',reusable:'r',consumer:'c',japan_market:'j',ai_practical:'i',knowledge_delta:'k',
+    too_generic:'g',promo:'p',not_work:'o',known:'d',no_evidence:'x',topic:'t'
+  };
+  const CODE_TO_REASON=Object.fromEntries(Object.entries(REASON_TO_CODE).map(([k,v])=>[v,k]));
+
+  function toast(text){
+    let box=document.getElementById('weeklyStateToast');
+    if(!box){box=document.createElement('div');box.id='weeklyStateToast';box.className='save-toast';document.body.appendChild(box);}
+    box.textContent=text;box.classList.add('show');clearTimeout(box._timer);box._timer=setTimeout(()=>box.classList.remove('show'),6500);
+  }
+  function setCloudStatus(text){const el=document.getElementById('weeklyCloudStatus');if(el)el.textContent=text;}
+  function normalizedBackupStatus(v){
+    const status=v?.status||'new';
+    if((status==='read'||status==='save')&&v?.status_origin!==TRUSTED_STATUS_ORIGIN)return 'new';
+    return status;
+  }
+  function stateItem(v){
+    const status=normalizedBackupStatus(v),feedback=v?.feedback??null,reason=v?.feedback_reason||null;
+    const item={status,feedback,updated_at:Number(v?.updated_at||0)};
+    if(v?.status_origin)item.status_origin=v.status_origin;
+    if(v?.status_action)item.status_action=v.status_action;
+    if(v?.status_updated_at)item.status_updated_at=Number(v.status_updated_at||0);
+    if(reason)item.feedback_reason=reason;
+    if(v?.feedback_reason_updated_at)item.feedback_reason_updated_at=Number(v.feedback_reason_updated_at||0);
+    if(v?.later_interest_at)item.later_interest_at=Number(v.later_interest_at||0);
+    return item;
+  }
+  function meaningfulEntries(){
+    const out={};
+    for(const [id,v] of Object.entries(state||{})){
+      if(!v||typeof v!=='object')continue;
+      const item=stateItem(v);
+      if(item.status==='new'&&item.feedback===null&&!item.feedback_reason&&!item.later_interest_at)continue;
+      out[id]=item;
+    }
+    return out;
+  }
+  function migrateExtendedFields(){
+    if(localStorage.getItem(MIGRATION_KEY)==='6')return 0;
+    const now=Date.now();let seq=0,changed=0;
+    for(const [id,v] of Object.entries(state||{})){
+      if(!v||typeof v!=='object')continue;
+      let extended=false;
+      if(v.feedback_reason){
+        extended=true;
+        if(!Number(v.feedback_reason_updated_at))v.feedback_reason_updated_at=Number(v.updated_at||0)||now;
+      }
+      if(Number(v.later_interest_at||0)>0)extended=true;
+      if(!extended)continue;
+      // Schema 6 adds Later-history timestamps. Move extended records beyond the old cursor once
+      // so pre-existing learning history is included in the next encrypted incremental backup.
+      v.updated_at=now+(seq++);state[id]=v;changed++;
+    }
+    if(changed){save();localStorage.setItem(DIRTY_SINCE_KEY,String(now));}
+    localStorage.setItem(MIGRATION_KEY,'6');
+    return changed;
+  }
+  function compareCursor(a,b){
+    const at=Number(a?.ts||0),bt=Number(b?.ts||0);if(at!==bt)return at-bt;
+    return String(a?.id||'').localeCompare(String(b?.id||''));
+  }
+  function latestLocalCursor(){
+    let cur={ts:0,id:''};
+    for(const [id,v] of Object.entries(meaningfulEntries())){const c={ts:Number(v.updated_at||0),id};if(compareCursor(c,cur)>0)cur=c;}
+    return cur;
+  }
+  function freshUrl(url){
+    const separator=String(url).includes('?')?'&':'?';
+    return `${url}${separator}weekly_state_t=${Date.now()}`;
+  }
+  async function fetchJson(url,{optional=false}={}){
+    // GitHub Pages can briefly serve stale JSON even when the browser cache is disabled.
+    // A unique query prevents a new delta from being built against an old cloud cursor.
+    const r=await fetch(freshUrl(url),{cache:'no-store',credentials:'same-origin',referrerPolicy:'no-referrer'});
+    if(r.status===404&&optional)return null;if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json();
+  }
+  async function fetchCloudEnvelope(){return fetchJson(CLOUD_URL,{optional:true});}
+  async function fetchCloudMeta(){return (await fetchJson(CLOUD_META_URL,{optional:true}))||{meta:{}};}
+  function cloudCursor(metaDoc){
+    const meta=metaDoc?.meta||{};
+    if(Number(meta.cursor_updated_at||0))return {ts:Number(meta.cursor_updated_at),id:String(meta.cursor_id||'')};
+    return {ts:Date.parse(meta.snapshot_at||0)||0,id:'\uffff'};
+  }
+  function cloudLatestMs(metaDoc,baseEnv){const meta=metaDoc?.meta||{};return Date.parse(meta.latest_at||meta.snapshot_at||baseEnv?.created_at||0)||0;}
+  async function refreshCloudStatus(){
+    try{
+      const [metaDoc,baseEnv]=await Promise.all([fetchCloudMeta(),fetchCloudEnvelope()]);
+      const pending=localStorage.getItem(BACKUP_PENDING_KEY),cloudLatest=cloudLatestMs(metaDoc,baseEnv),pendingTs=pending?Date.parse(pending):0;
+      if(pending&&cloudLatest>=pendingTs)localStorage.removeItem(BACKUP_PENDING_KEY);
+      const dirty=compareCursor(latestLocalCursor(),cloudCursor(metaDoc))>0;
+      if(!dirty)localStorage.removeItem(DIRTY_SINCE_KEY);
+      if(localStorage.getItem(BACKUP_PENDING_KEY)){setCloudStatus('加密完整备份已提交 · 等待 GitHub 写入');return;}
+      if(dirty){setCloudStatus('本机已自动保存 · 有阅读/学习状态待备份');return;}
+      if(!baseEnv){setCloudStatus('本机自动保存 · 尚无云端备份');return;}
+      setCloudStatus(`完整云备份 ${new Date(cloudLatest||Date.now()).toLocaleString('ja-JP')}`);
+    }catch(_){setCloudStatus('本机已保存 · 云备份状态暂时无法读取');}
+  }
+  async function ensureValidatedPassphrase(){
+    if(typeof decryptPrivateEnvelopeData!=='function')throw new Error('Private encrypted-state helper is unavailable');
+    const baseEnv=await fetchCloudEnvelope();
+    if(!baseEnv)throw new Error('Weekly 云端基线备份不存在，无法安全验证备份密码');
+    // Validate against the encrypted Weekly state itself. Weekly backup must not load/decrypt
+    // the user's Knowledge or Work System merely to verify a password.
+    // A different section may have left another password in memory. Clear it and prompt once
+    // automatically instead of making the first backup click fail with an opaque crypto error.
+    let lastError=null;
+    for(let attempt=0;attempt<2;attempt++){
+      try{await decryptPrivateEnvelopeData(baseEnv,{prompt:true});return true;}
+      catch(error){
+        lastError=error;
+        if(String(error?.message||'').toLowerCase().includes('cancel'))throw error;
+        if(attempt===0&&typeof lockPrivateData==='function')lockPrivateData(false);
+      }
+    }
+    const error=new Error('Weekly 备份密码未通过验证，请重新输入正确密码');
+    error.cause=lastError;throw error;
+  }
+  function backupErrorMessage(error){
+    const raw=String(error?.message||error||'').trim(),lower=raw.toLowerCase();
+    if(lower.includes('cancel'))return {cancelled:true,text:'已取消云备份；本周标记仍已安全保存在本机。'};
+    if(lower.includes('密码')||lower.includes('operationerror')||lower.includes('operation-specific'))return {cancelled:false,text:'备份未完成：密码未通过验证。请重新点击备份并输入 Weekly 备份密码。'};
+    if(lower.includes('failed to fetch')||lower.includes('networkerror')||/^http \d+$/i.test(raw))return {cancelled:false,text:'备份未完成：暂时无法读取云端状态。请检查网络后重试。'};
+    if(lower.includes('helper')||lower.includes('encryptprivatepayload'))return {cancelled:false,text:'备份组件没有正确加载。请刷新页面后重试。'};
+    return {cancelled:false,text:`备份未完成：${raw||'未知错误'}。本机标记没有丢失，可刷新后重试。`};
+  }
+  function isMobileBackup(){return matchMedia('(max-width: 760px),(pointer: coarse)').matches;}
+  function issueUrlLimit(){return isMobileBackup()?MOBILE_ISSUE_URL_LENGTH:MAX_ISSUE_URL_LENGTH;}
+  function openBackupConfirmation(url){
+    if(isMobileBackup()){
+      // Keep GitHub login and its return redirect in the same browser tab. Android browsers and
+      // in-app webviews frequently lose the authentication hand-off from an async popup.
+      sessionStorage.setItem('weekly_intelligence_backup_return_v1',location.href);
+      location.assign(url);return;
+    }
+    const win=window.open(url,'weeklyStateBackupConfirm');
+    if(!win)location.assign(url);
+  }
+  function deltaCandidates(cursor){
+    return Object.entries(meaningfulEntries()).map(([id,v])=>({id,v,c:{ts:Number(v.updated_at||0),id}}))
+      .filter(x=>compareCursor(x.c,cursor)>0).sort((a,b)=>compareCursor(a.c,b.c));
+  }
+  function compactRows(items){
+    return items.map(({id,v})=>[
+      id,STATUS_TO_CODE[v.status]||v.status||'n',v.feedback?(FEEDBACK_TO_CODE[v.feedback]||v.feedback):'',Number(v.updated_at||0),
+      v.status_origin===TRUSTED_STATUS_ORIGIN?'h':(v.status_origin||''),ACTION_TO_CODE[v.status_action]||v.status_action||'',Number(v.status_updated_at||0),
+      v.feedback_reason?(REASON_TO_CODE[v.feedback_reason]||v.feedback_reason):'',Number(v.feedback_reason_updated_at||0),Number(v.later_interest_at||0)
+    ]);
+  }
+  function decodeRows(rows){
+    const out={};
+    for(const row of rows||[]){
+      if(!Array.isArray(row)||!row[0])continue;
+      // First seven columns are schema-4 compatible; schema 5 adds reason fields; schema 6 appends Later-history timestamp.
+      const [id,s,f,u,o,a,su,fr,fru,lia]=row;
+      const item={status:CODE_TO_STATUS[s]||s||'new',feedback:f?(CODE_TO_FEEDBACK[f]||f):null,updated_at:Number(u||0)};
+      if(o)item.status_origin=o==='h'?TRUSTED_STATUS_ORIGIN:o;
+      if(a)item.status_action=CODE_TO_ACTION[a]||a;
+      if(su)item.status_updated_at=Number(su);
+      if(fr)item.feedback_reason=CODE_TO_REASON[fr]||fr;
+      if(fru)item.feedback_reason_updated_at=Number(fru);
+      if(lia)item.later_interest_at=Number(lia);
+      out[id]=item;
+    }
+    return out;
+  }
+  async function buildDeltaIssue(metaDoc,candidates){
+    let count=Math.min(MAX_DELTA_ENTRIES,candidates.length);
+    while(count>=1){
+      const batch=candidates.slice(0,count),rows=compactRows(batch),through=batch[batch.length-1].c;
+      const payload={schema:6,kind:'weekly-reading-delta',created_at:new Date().toISOString(),fields:['status','feedback','status_meta','feedback_reason','later_interest_at'],rows};
+      const env=await encryptPrivatePayload(payload,{kind:'weekly-state-delta',compress:true});
+      env.cursor_updated_at=through.ts;env.cursor_id=through.id;env.entry_count=rows.length;env.backup_schema=6;env.base_snapshot_at=metaDoc?.meta?.snapshot_at||null;
+      const encoded=btoa(JSON.stringify(env));
+      const title='[WEEKLY-STATE] '+new Date().toISOString().slice(0,19).replace('T',' ');
+      const body=`STATE_ENVELOPE_B64: ${encoded}\n\nWeekly Intelligence 完整增量加密备份：阅读状态 + 正负反馈 + 具体反馈原因 + 稍后看兴趣历史。内容已自动填好，只需点击 Submit new issue。`;
+      const url=`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+      const limit=issueUrlLimit();
+      if(url.length<=limit)return {url,env,count,total:candidates.length};
+      if(count===1)throw new Error('单条备份数据异常过大，无法生成 GitHub 确认页');
+      const ratio=limit/url.length;
+      const estimated=Math.floor(count*ratio*.92);
+      count=Math.max(1,Math.min(count-1,estimated));
+    }
+    throw new Error('无法生成增量备份');
+  }
+  async function backup(){
+    if(backupInFlight){toast('备份正在准备中，请不要重复点击。');return;}
+    backupInFlight=true;const button=document.getElementById('backupWeeklyStateBtn'),normalLabel=button?.textContent||'备份本周标记';
+    if(button){button.disabled=true;button.textContent='检查完整备份…';}setCloudStatus('正在检查阅读/学习状态…');
+    try{
+      await ensureValidatedPassphrase();const metaDoc=await fetchCloudMeta();const candidates=deltaCandidates(cloudCursor(metaDoc));
+      if(!candidates.length){localStorage.removeItem(DIRTY_SINCE_KEY);setCloudStatus('完整云备份已是最新');if(button){button.textContent='已备份 ✓';setTimeout(()=>{if(!backupInFlight&&button.textContent==='已备份 ✓')button.textContent=normalLabel;},2400);}toast('阅读状态、反馈、具体原因和稍后看兴趣历史都已是最新，无需重复备份。');return;}
+      if(button)button.textContent='打开确认页…';const built=await buildDeltaIssue(metaDoc,candidates);localStorage.setItem(BACKUP_PENDING_KEY,built.env.created_at||new Date().toISOString());setCloudStatus('完整备份请求待确认');
+      const remain=built.total-built.count;
+      toast(remain>0?`本次先备份 ${built.count} 条；提交后返回本站，再点一次可继续备份其余 ${remain} 条。`:`已准备 ${built.count} 条加密增量；GitHub 页面直接点 Submit new issue。`);
+      openBackupConfirmation(built.url);
+    }catch(e){
+      const failure=backupErrorMessage(e);
+      setCloudStatus(failure.cancelled?'本机已保存 · 已取消云备份':'本机已保存 · 完整备份未完成');toast(failure.text);
+    }
+    finally{backupInFlight=false;if(button){button.disabled=false;if(button.textContent!=='已备份 ✓')button.textContent=normalLabel;}}
+  }
+  async function fetchDeltaEnvelopes(metaDoc){
+    const deltas=Array.isArray(metaDoc?.meta?.deltas)?metaDoc.meta.deltas:[];
+    const results=await Promise.all(deltas.map(async d=>{const path=typeof d==='string'?d:d?.path;if(!path)return null;try{return await fetchJson(path,{optional:true});}catch(_){return null;}}));return results.filter(Boolean);
+  }
+  function mergeRemoteState(target,incoming){
+    for(const [id,rv] of Object.entries(incoming||{})){
+      if(!rv||typeof rv!=='object')continue;const remoteTs=Number(rv.updated_at||0),localTs=Number(target[id]?.updated_at||0);
+      if(!target[id]||remoteTs>localTs)target[id]={...rv,updated_at:remoteTs};
+    }
+  }
+  async function restore(){
+    try{
+      const [baseEnv,metaDoc]=await Promise.all([fetchCloudEnvelope(),fetchCloudMeta()]);if(!baseEnv){toast('目前还没有云端备份。');return;}
+      const deltaEnvs=await fetchDeltaEnvelopes(metaDoc),remote={};const basePayload=await decryptPrivateEnvelopeData(baseEnv,{prompt:true});
+      if(basePayload?.state&&typeof basePayload.state==='object')mergeRemoteState(remote,basePayload.state);
+      for(const env of deltaEnvs){const payload=await decryptPrivateEnvelopeData(env,{prompt:true});if(payload?.rows)mergeRemoteState(remote,decodeRows(payload.rows));else if(payload?.state&&typeof payload.state==='object')mergeRemoteState(remote,payload.state);}
+      let applied=0,keptLocal=0;for(const [id,rv] of Object.entries(remote)){const remoteTs=Number(rv.updated_at||0),lv=state[id],localTs=Number(lv?.updated_at||0);if(!lv||remoteTs>localTs){state[id]={...rv,updated_at:remoteTs};applied++;}else keptLocal++;}
+      save();if(typeof rebuildPrefs==='function')rebuildPrefs();if(typeof render==='function')render();if(typeof updateProgressTabs==='function')updateProgressTabs();localStorage.removeItem(BACKUP_PENDING_KEY);await refreshCloudStatus();toast(`已恢复完整云端状态：更新 ${applied} 条，本机较新的 ${keptLocal} 条保留。`);
+    }catch(_){toast('恢复失败：密码不正确或备份无法读取。');}
+  }
+  function install(){
+    const tools=document.getElementById('weeklyStateTools'),backupBtn=document.getElementById('backupWeeklyStateBtn');if(!tools||!backupBtn)return false;
+    backupBtn.onclick=backup;
+    const restoreBtn=[...tools.querySelectorAll('button')].find(b=>b!==backupBtn&&/恢复云端/.test(b.textContent||''));if(restoreBtn)restoreBtn.onclick=restore;
+    const staleFileRestore=document.getElementById('weeklyStateFileRestoreBtn');if(staleFileRestore)staleFileRestore.remove();
+    backupBtn.textContent='备份云端';
+    const help=[...tools.querySelectorAll('span')].find(x=>x.id!=='weeklyCloudStatus');if(help)help.textContent=isMobileBackup()
+      ?'手机会在当前页面打开 GitHub，登录后直接提交已填好的加密备份；提交后按返回即可。'
+      :'加密增量会在 GitHub 确认页自动填好，直接提交即可。';
+    tools.dataset.backupSchema='6';refreshCloudStatus();return true;
+  }
+
+  const migrated=migrateExtendedFields();
+  if(!install()){
+    document.addEventListener('DOMContentLoaded',install,{once:true});
+    const timer=setInterval(()=>{if(install())clearInterval(timer);},120);setTimeout(()=>clearInterval(timer),5000);
+  }
+  if(migrated)setTimeout(()=>toast(`已发现 ${migrated} 条历史学习记录，已加入下一次完整备份。`),500);
+  window.weeklyStateCompleteBackupV20={meaningfulEntries,decodeRows,refreshCloudStatus};
+})();
