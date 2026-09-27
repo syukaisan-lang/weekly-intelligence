@@ -30,12 +30,14 @@ jobs:
             echo 'No state changes to commit'
           else
             git commit -m 'Backup Event feedback state'
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
       - name: Confirm and close request
         if: success()
         run: |
           gh issue comment "${{ github.event.issue.number }}" --body "✅ Event Radar 反馈已加密备份。仓库中只保存密文。"
+          gh issue edit "${{ github.event.issue.number }}" --body "Encrypted Event Radar backup processed successfully; payload removed."
           gh issue close "${{ github.event.issue.number }}"
       - name: Report failure
         if: failure()
