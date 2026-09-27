@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "events" / "event-state.enc.json"
 META = ROOT / "events" / "event-state.json"
 MAX_ENVELOPE_BYTES = 180_000
+MAX_ENTRIES = 5000
 
 def fail(message: str) -> None:
     Path("/tmp/event_state_error.txt").write_text(message, encoding="utf-8")
@@ -31,6 +32,15 @@ def iso_ms(value: object) -> int:
         return int(datetime.fromisoformat(text.replace("Z", "+00:00")).timestamp() * 1000)
     except Exception:
         return 0
+
+def load_meta() -> dict:
+    if not META.exists():
+        return {"meta": {}}
+    try:
+        doc = json.loads(META.read_text(encoding="utf-8"))
+        return doc if isinstance(doc, dict) else {"meta": {}}
+    except Exception:
+        return {"meta": {}}
 
 def main() -> None:
     event_path = os.environ.get("GITHUB_EVENT_PATH")
@@ -69,9 +79,21 @@ def main() -> None:
     ciphertext = valid_b64(str(env.get("ciphertext") or ""), "ciphertext")
     if len(ciphertext) < 16:
         fail("Ciphertext is too short")
+
     created_at = str(env.get("created_at") or "")
     if not iso_ms(created_at):
         fail("created_at is invalid")
+    entry_count = int(env.get("entry_count") or 0)
+    cursor = int(env.get("cursor_updated_at") or 0)
+    if entry_count < 0 or entry_count > MAX_ENTRIES:
+        fail("entry_count is invalid")
+    if entry_count > 0 and cursor <= 0:
+        fail("cursor_updated_at is missing")
+
+    old = load_meta().get("meta") or {}
+    old_cursor = int(old.get("cursor_updated_at") or 0)
+    if old_cursor and cursor and cursor < old_cursor:
+        fail("This browser has an older Event Radar state than the current cloud backup. Restore cloud state first, then retry.")
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(env, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
@@ -80,10 +102,11 @@ def main() -> None:
         "schema": 2,
         "snapshot_at": created_at,
         "latest_at": created_at,
-        "entry_count": int(env.get("entry_count") or 0),
-        "note": "Tokyo Event Radar feedback is stored only as an encrypted full snapshot."
+        "cursor_updated_at": cursor,
+        "entry_count": entry_count,
+        "note": "Tokyo Event Radar feedback is stored only as an encrypted full snapshot; no plaintext feedback is stored."
     }}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Saved encrypted event state: {len(ciphertext)} ciphertext bytes")
+    print(f"Saved encrypted event state: {entry_count} entries, {len(ciphertext)} ciphertext bytes")
 
 if __name__ == "__main__":
     try:
