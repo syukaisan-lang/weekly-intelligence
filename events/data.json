@@ -677,11 +677,11 @@
       "id": "louvre-renaissance-2026",
       "title": "ルーヴル美術館展　ルネサンス",
       "bucket": "now",
-      "category": "西洋美术/大型特展",
+      "category": "美术馆特展",
       "start_date": "2026-09-09",
       "end_date": "2026-12-13",
       "venue": "国立新美術館 企画展示室1E",
-      "area": "六本木",
+      "area": "六本木/乃木坂",
       "price_min": 2400,
       "price_max": 2400,
       "ticket_status": "on_sale",
@@ -690,19 +690,18 @@
       "announcement_date": "2025-09-04",
       "backfilled_from_archive": true,
       "last_verified_at": "2026-09-27",
-      "recommendation": 94,
+      "recommendation": 96,
       "tags": [
-        "卢浮宫",
-        "文艺复兴",
-        "达·芬奇",
-        "大型特展",
+        "ルーヴル",
+        "ルネサンス",
+        "レオナルド・ダ・ヴィンチ",
         "绘画",
         "雕塑",
-        "工艺"
+        "国立新美术馆"
       ],
-      "why": "不是普通常设展，而是从卢浮宫精选50余件文艺复兴作品，并包含达·芬奇《美しきフェロニエール》日本初公开；内容密度和稀缺性都足以成为专程目的地。",
-      "drawback": "热门大型特展周末可能拥挤；12/7–12/13最后一周改为日時指定制。",
-      "ticket_note": "目前一般当日券成人¥2,400。9/9–12/6有效的当日券在售；12/7–12/13需购买日時指定券，详细规则将另行公布。",
+      "why": "50余件卢浮宫藏品覆盖绘画、雕塑、版画、素描和工艺，核心是达·芬奇《美しきフェロニエール》首次来日；属于内容密度高、作品本身稀缺性很强的大型特展。",
+      "drawback": "属于传统大型美术馆展，互动性和空间沉浸感不如你偏好的体验型活动；周末热门时段可能较拥挤。",
+      "ticket_note": "当前一般当日券¥2,400；9/9–12/6期间普通票无需日時指定。12/7–13改为日時指定制；周日18:00闭馆、17:30停止入场。",
       "source_url": "https://www.nact.jp/exhibition_special/2026/louvre2026/",
       "ticket_url": "https://www.ntv.co.jp/louvre2026/ticket/",
       "learning_features": {
@@ -712,45 +711,44 @@
           "欧洲古典艺术"
         ],
         "formats": [
-          "大型博物馆特展"
+          "大型美术馆特展"
         ],
         "experiences": [
-          "名作鉴赏",
-          "艺术史",
-          "稀有来日作品"
+          "名作原作鉴赏",
+          "跨媒介作品"
         ],
         "signals": [
           "需购票",
-          "大型热门展",
-          "最后一周日時指定"
+          "热门大型展",
+          "日本初公开作品"
         ]
       },
       "release_history": [
         {
           "date": "2025-09-04",
-          "type": "first_public_announcement",
-          "note": "展览正式公布"
+          "type": "official_announcement",
+          "note": "展览举办决定公开"
         },
         {
           "date": "2026-06-18",
-          "type": "ticket_sale_start",
-          "note": "前售券开始销售"
+          "type": "advance_sale",
+          "note": "前售票开始"
         },
         {
           "date": "2026-09-09",
-          "type": "exhibition_open",
-          "note": "东京展开展"
+          "type": "exhibition_start",
+          "note": "东京展开幕"
         }
       ]
     },
     {
       "id": "hojoki-2121-2026",
-      "title": "方丈記に学ぶ —生きるを編み直す小さな建築—",
+      "title": "企画展「方丈記に学ぶ –生きるを編み直す小さな建築–」",
       "bucket": "now",
       "category": "建筑×设计",
       "start_date": "2026-08-28",
       "end_date": "2027-01-11",
-      "venue": "21_21 DESIGN SIGHT ギャラリー1＆2",
+      "venue": "21_21 DESIGN SIGHT GALLERY 1 & 2",
       "area": "六本木/东京Midtown",
       "price_min": 1700,
       "price_max": 1700,
@@ -760,47 +758,41 @@
       "announcement_date": null,
       "backfilled_from_archive": true,
       "last_verified_at": "2026-09-27",
-      "recommendation": 93,
+      "recommendation": 94,
       "tags": [
         "建筑",
         "设计",
-        "空间",
         "方丈记",
+        "生活方式",
         "安藤忠雄建筑",
-        "可进入装置"
+        "21_21"
       ],
-      "why": "从《方丈记》的九平方米小庵出发，让建筑家、设计师和艺术家重新构想居住与生活；部分作品可进入体验，与你对建筑、空间和思想性展览的兴趣高度匹配。",
-      "drawback": "主题偏建筑与生活哲学，不是强娱乐型；如果只想轻松看展，阅读和思考比重较高。",
-      "ticket_note": "一般¥1,700，10:00–19:00；10/31六本木Art Night特别延长至22:00。",
-      "source_url": "https://www.2121designsight.jp/program/hojoki/",
-      "ticket_url": "https://www.2121designsight.jp/program/hojoki/",
+      "why": "从《方丈记》的小建筑出发讨论现代生活与构筑环境，建筑、设计、生活哲学和展场空间本身形成交叉，与你喜欢的建筑/城市空间型内容非常贴合。",
+      "drawback": "内容偏思考型，不是强娱乐活动；如果当天只想轻松消遣，会比沉浸式展更需要耐心。",
+      "ticket_note": "一般¥1,700；10:00–19:00，18:30停止入场。10/31六本木Art Night延长至22:00。",
+      "source_url": "https://2121designsight.jp/program/hojoki/index.html",
+      "ticket_url": "https://2121designsight.jp/program/hojoki/index.html",
       "learning_features": {
         "subjects": [
           "建筑",
-          "居住文化",
+          "生活设计",
           "方丈记"
         ],
         "formats": [
-          "设计展览",
-          "空间装置"
+          "设计企划展"
         ],
         "experiences": [
-          "可进入空间",
-          "建筑观察",
-          "生活方式思考"
+          "空间思考",
+          "建筑展示",
+          "生活方式观察"
         ],
         "signals": [
           "需购票",
+          "专业/思考向",
           "长期展期"
         ]
       },
-      "release_history": [
-        {
-          "date": "2026-08-28",
-          "type": "exhibition_open",
-          "note": "开展"
-        }
-      ]
+      "release_history": []
     },
     {
       "id": "sottsass-artizon-2026",
@@ -809,7 +801,7 @@
       "category": "设计/美术馆",
       "start_date": "2026-06-23",
       "end_date": "2026-10-04",
-      "venue": "アーティゾン美術館 6階展示室",
+      "venue": "アーティゾン美術館",
       "area": "京桥",
       "price_min": 1200,
       "price_max": 1500,
@@ -819,25 +811,25 @@
       "announcement_date": null,
       "backfilled_from_archive": true,
       "last_verified_at": "2026-09-27",
-      "recommendation": 92,
+      "recommendation": 93,
       "tags": [
         "设计",
-        "家具",
+        "Sottsass",
         "产品设计",
-        "Memphis",
-        "意大利设计",
-        "结束临近"
+        "家具",
+        "建筑",
+        "Artizon"
       ],
-      "why": "20世纪意大利设计巨匠Sottsass的系统展，设计史、产品、视觉语言都和你偏好的设计/创意内容高度匹配，而且现在只剩最后一周。",
-      "drawback": "不是沉浸式体验；如果对设计史兴趣不高，展览更偏作品与语境理解。",
-      "ticket_note": "10/4闭幕，属于高优先级结束提醒。Web日時指定¥1,200，现场¥1,500；同票可看同时举办展。",
+      "why": "Sottsass本身就是20世纪设计史核心人物之一，内容比普通设计商品展更系统；同时Artizon空间和同场展可以一起看，单位时间内容密度高。",
+      "drawback": "距离闭幕只剩一周，周末预约热门时段可能收紧；属于设计史展，互动性较弱。",
+      "ticket_note": "日時指定预约制。Web票一般¥1,200，现场¥1,500；有空位时当天也可购票。10/4闭幕。",
       "source_url": "https://www.artizon.museum/exhibition_sp/sottsass2026/",
       "ticket_url": "https://www.artizon.museum/exhibition_sp/sottsass2026/",
       "learning_features": {
         "subjects": [
-          "工业设计",
-          "意大利设计",
-          "Memphis"
+          "现代设计史",
+          "Ettore Sottsass",
+          "家具/产品设计"
         ],
         "formats": [
           "美术馆设计展"
@@ -847,74 +839,73 @@
           "实物鉴赏"
         ],
         "signals": [
-          "需预约建议",
-          "结束临近",
-          "一票多展"
+          "需预约",
+          "即将结束"
         ]
       },
-      "release_history": [
-        {
-          "date": "2026-06-23",
-          "type": "exhibition_open",
-          "note": "开展"
-        }
-      ]
+      "release_history": []
     },
     {
       "id": "shojo-manga-infinity-2026",
       "title": "少女漫画・インフィニティ　萩尾望都×山岸凉子×大和和紀 三人展",
       "bucket": "future",
-      "category": "漫画×原画展",
+      "category": "动漫×原画展",
       "start_date": "2026-10-28",
       "end_date": "2027-02-08",
       "venue": "国立新美術館 企画展示室2E",
-      "area": "六本木",
+      "area": "六本木/乃木坂",
       "price_min": 2000,
       "price_max": 2200,
       "ticket_status": "on_sale",
       "ticket_sale_start": "2026-07-28",
       "ticket_deadline": "2026-10-27",
-      "announcement_date": null,
+      "announcement_date": "2026-07-14",
       "backfilled_from_archive": true,
       "last_verified_at": "2026-09-27",
-      "recommendation": 88,
+      "recommendation": 92,
       "tags": [
         "漫画",
         "原画",
-        "创作资料",
-        "少女漫画史",
+        "创作史",
+        "萩尾望都",
+        "山岸凉子",
+        "大和和纪",
         "国立新美术馆"
       ],
-      "why": "三位传奇漫画家的大型原画与资料展，而且是国立美术馆首次举办的大规模少女漫画展；不是商品型IP快闪，内容本身足够强。",
-      "drawback": "如果对这三位作者和70年代少女漫画史兴趣有限，个人命中率会低于游戏/动画制作幕后展。",
-      "ticket_note": "前售成人¥2,000，7/28已开售，10/27 23:59截止；当日成人¥2,200。",
+      "why": "不是普通角色IP展，而是三位少女漫画代表作家的画业、原画和资料展，重点在视觉表达和创作演进，与你偏好的动漫×制作/创作内容更接近。",
+      "drawback": "如果对三位作家的作品基础较少，情感共鸣会弱于熟悉IP的展；会期很长，不急着现在去。",
+      "ticket_note": "前售一般¥2,000到10/27 23:59；当日¥2,200。无需事前日時预约，但热门时段可能需要等候。",
       "source_url": "https://www.nact.jp/exhibition_special/2026/shojomanga/",
-      "ticket_url": "https://shojomanga.jp/ticket/",
+      "ticket_url": "https://www.e-tix.jp/shojomanga/",
       "learning_features": {
         "subjects": [
-          "少女漫画",
-          "漫画史",
+          "少女漫画史",
+          "漫画创作",
           "原画"
         ],
         "formats": [
           "大型原画展"
         ],
         "experiences": [
-          "创作资料",
-          "原画鉴赏",
-          "漫画史"
+          "制作/创作资料",
+          "原画鉴赏"
         ],
         "signals": [
-          "前售中",
           "需购票",
-          "国立馆大型展"
+          "无需日時指定",
+          "长期展期"
         ]
       },
       "release_history": [
         {
+          "date": "2026-07-14",
+          "type": "official_site_launch",
+          "note": "官方站公开"
+        },
+        {
           "date": "2026-07-28",
-          "type": "advance_ticket_sale",
-          "note": "前售券开始销售"
+          "type": "advance_sale",
+          "note": "前售开始"
         }
       ]
     },
@@ -1035,6 +1026,254 @@
           "note": "开展"
         }
       ]
+    },
+    {
+      "id": "british-museum-edo-2026",
+      "title": "大英博物館日本美術コレクション　百花繚乱～海を越えた江戸絵画",
+      "bucket": "now",
+      "category": "美术馆特展",
+      "start_date": "2026-07-25",
+      "end_date": "2026-10-18",
+      "venue": "東京都美術館 企画展示室",
+      "area": "上野",
+      "price_min": 2300,
+      "price_max": 2300,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-06-25",
+      "ticket_deadline": "2026-10-18",
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 86,
+      "tags": [
+        "大英博物馆",
+        "江户绘画",
+        "浮世绘",
+        "北斋",
+        "广重",
+        "上野"
+      ],
+      "why": "从大英博物馆4万件日本收藏中精选江户绘画与浮世绘，包含歌麿、写乐、北斋、广重等；属于规模和收藏来源都很扎实的特展。",
+      "drawback": "更偏传统日本美术，与你的设计/科技/沉浸式兴趣交集弱一些，因此不应排在建筑设计或制作幕后类活动前面。",
+      "ticket_note": "一般¥2,300；无需日時指定，但9/29起因混杂缓和提前到9:15开室。10/18闭幕。",
+      "source_url": "https://www.tobikan.jp/exhibition/2026_britishmuseum.html",
+      "ticket_url": "https://daiei-ten2026.exhibit.jp/ticket.html",
+      "learning_features": {
+        "subjects": [
+          "江户美术",
+          "浮世绘",
+          "日本美术收藏史"
+        ],
+        "formats": [
+          "大型美术馆特展"
+        ],
+        "experiences": [
+          "名作鉴赏",
+          "海外收藏回流"
+        ],
+        "signals": [
+          "需购票",
+          "无需日時指定",
+          "热门展"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-06-25",
+          "type": "advance_sale",
+          "note": "前售票阶段"
+        }
+      ]
+    },
+    {
+      "id": "orsay-joy-of-living-2026",
+      "title": "オルセー美術館所蔵　いまを生きる歓び",
+      "bucket": "future",
+      "category": "美术馆特展",
+      "start_date": "2026-11-14",
+      "end_date": "2027-03-28",
+      "venue": "東京都美術館",
+      "area": "上野",
+      "price_min": 2200,
+      "price_max": 2400,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-07-27",
+      "ticket_deadline": "2026-09-27",
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 90,
+      "tags": [
+        "奥赛美术馆",
+        "法国美术",
+        "大型特展",
+        "上野",
+        "未来抢票"
+      ],
+      "why": "奥赛藏品级别高，而且现在已经进入票务决策期；对你来说不是必须抢首日，但属于应该提前知道、之后再决定是否去的大型展。",
+      "drawback": "离开展还有一段时间，普通前售其实明天才开始，不需要因为今天而仓促买普通票。",
+      "ticket_note": "今天9/27 23:59是“大徳寺展×オルセー展”¥4,100套票等限定票最后一天；普通前售明天9/28 10:00开始，一般¥2,200。",
+      "source_url": "https://art.nikkei.com/orsay2627/",
+      "ticket_url": "https://www.e-tix.jp/orsay2627/",
+      "learning_features": {
+        "subjects": [
+          "法国近代美术",
+          "奥赛美术馆"
+        ],
+        "formats": [
+          "大型美术馆特展"
+        ],
+        "experiences": [
+          "名作鉴赏"
+        ],
+        "signals": [
+          "未来抢票",
+          "限定套票截止",
+          "普通前售即将开始"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-07-27",
+          "type": "limited_ticket_sale",
+          "note": "限定票销售期开始"
+        },
+        {
+          "date": "2026-09-27",
+          "type": "limited_ticket_deadline",
+          "note": "部分限定票/套票截止"
+        },
+        {
+          "date": "2026-09-28",
+          "type": "advance_sale",
+          "note": "普通前售开始"
+        }
+      ]
+    },
+    {
+      "id": "hiroshige-best-angle-2026",
+      "title": "歌川広重　江戸のベストアングル",
+      "bucket": "future",
+      "category": "美术馆特展",
+      "start_date": "2026-09-29",
+      "end_date": "2026-12-20",
+      "venue": "東京国立博物館 本館A室",
+      "area": "上野",
+      "price_min": 1300,
+      "price_max": 1500,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-06-30",
+      "ticket_deadline": "2026-09-28",
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 89,
+      "tags": [
+        "广重",
+        "浮世绘",
+        "江户",
+        "三大系列",
+        "沉浸影像",
+        "东博"
+      ],
+      "why": "三期完整展示广重三大风景版画系列，而且有超高清沉浸屏幕展示；传统美术之外还有空间/影像体验，比一般浮世绘展更符合你。",
+      "drawback": "三期作品全部更换，想完整看三大系列需要去三次；单次只覆盖其中一组。",
+      "ticket_note": "9/29开幕；前售成人¥1,300到9/28为止，当日¥1,500。1期9/29–10/25、2期10/27–11/23、3期11/25–12/20。",
+      "source_url": "https://www.tnm.jp/modules/r_free_page/index.php?id=2759",
+      "ticket_url": "https://www.asoview.com/channel/ticket/WuX1M0a3sG/ticket0000051104/",
+      "learning_features": {
+        "subjects": [
+          "浮世绘",
+          "歌川广重",
+          "江户风景"
+        ],
+        "formats": [
+          "三期轮换特展"
+        ],
+        "experiences": [
+          "版画鉴赏",
+          "沉浸影像"
+        ],
+        "signals": [
+          "前售即将截止",
+          "需多次观看才完整"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-06-30",
+          "type": "advance_sale",
+          "note": "前售开始"
+        },
+        {
+          "date": "2026-09-28",
+          "type": "advance_sale_deadline",
+          "note": "前售截止"
+        },
+        {
+          "date": "2026-09-29",
+          "type": "exhibition_start",
+          "note": "第一期开幕"
+        }
+      ]
+    },
+    {
+      "id": "daitokuji-700-2026",
+      "title": "開創700年記念　特別展「大徳寺　本朝無双之禅苑」",
+      "bucket": "future",
+      "category": "历史文化特展",
+      "start_date": "2026-10-14",
+      "end_date": "2026-12-06",
+      "venue": "東京国立博物館 平成館",
+      "area": "上野",
+      "price_min": 2100,
+      "price_max": 2300,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-08-07",
+      "ticket_deadline": "2026-10-13",
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 88,
+      "tags": [
+        "禅",
+        "大德寺",
+        "日本史",
+        "茶文化",
+        "文化财",
+        "东博"
+      ],
+      "why": "大徳寺700年为核心，作品与信长、秀吉、禅文化和茶文化相连；本身是扎实的历史文化展，而且和ZEN NIGHT TOKYO形成白天展览＋夜间体验的组合。",
+      "drawback": "单看白天展览更偏传统文化史；如果已经买ZEN NIGHT套票，是否额外安排白天要看你的当天时间。",
+      "ticket_note": "前售成人¥2,100到10/13 23:59，当日¥2,300。与ZEN NIGHT TOKYO票务有联动；今天9/27还有与奥赛展的¥4,100套票销售到23:59。",
+      "source_url": "https://daitokuji2026.exhn.jp/",
+      "ticket_url": "https://www.e-tix.jp/daitokuji2026/",
+      "learning_features": {
+        "subjects": [
+          "禅文化",
+          "日本史",
+          "茶文化"
+        ],
+        "formats": [
+          "大型历史文化特展"
+        ],
+        "experiences": [
+          "文化财鉴赏",
+          "历史脉络"
+        ],
+        "signals": [
+          "需购票",
+          "与ZEN NIGHT联动",
+          "前售中"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-08-07",
+          "type": "advance_sale",
+          "note": "前售开始"
+        }
+      ]
     }
   ],
   "meta": {
@@ -1045,12 +1284,12 @@
     "ticket_watch_months": 12,
     "publish_rule": "official_verification_required",
     "stale_rule": "do_not_present_stale_or_unverified_ticket_status_as_current",
-    "announcement_backfill_months": 12,
+    "announcement_backfill_months": 24,
     "release_history_enabled": true,
     "backfill_last_run": "2026-09-27",
     "backfill_policy": "scan_past_announcements_for_events_still_upcoming_or_ongoing",
-    "notes": "Coverage gap review triggered by missed Louvre Renaissance exhibition; switched to inventory-first major-venue sweep plus preference ranking.",
-    "coverage_model": "inventory_first_then_preference",
+    "notes": "Coverage expanded after audit: scan canonical current/upcoming schedules of anchor institutions independent of announcement age, then add ticketing and archive history. Major omissions including Louvre Renaissance were backfilled.",
+    "coverage_model": "anchor_inventory_plus_search",
     "coverage_floor": {
       "mandatory_venue_calendars": [
         "国立新美術館",
@@ -1073,6 +1312,7 @@
       ],
       "rule": "Build a broad active/upcoming inventory from mandatory calendars before applying preference ranking."
     },
-    "coverage_status": "expanded_after_gap_review"
+    "coverage_status": "partial_improved",
+    "anchor_inventory_required": true
   }
 }
