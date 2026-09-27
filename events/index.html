@@ -133,12 +133,13 @@ if(a==='visited'){if(s.visited)patch(id,{visited:false,visited_at:0,visit_rating
 if(a==='no'){pending=id;$('#reasonDlg').showModal()}});$$('[data-rate]').forEach(b=>b.onclick=()=>{let id=b.dataset.id,now=Date.now();patch(id,{visit_rating:b.dataset.rate,rating_at:now,visited:true,visited_at:state(id).visited_at||now,booked:false,booked_at:0,interest:null,interest_at:0,no_reason:null,no_reason_at:0})})}
 $$('.tab').forEach(b=>b.onclick=()=>{view=b.dataset.view;$$('.tab').forEach(x=>x.classList.toggle('active',x===b));render()});$('#category').onchange=render;$('#sort').onchange=render;$('#freeOnly').onchange=render;$('#reasonForm').onsubmit=e=>{if(e.submitter&&e.submitter.value==='confirm'&&pending){let r=new FormData(e.currentTarget).get('reason');if(r)patch(pending,{interest:'no',interest_at:0,no_reason:r,no_reason_at:Date.now(),booked:false,booked_at:0,visited:false,visited_at:0,visit_rating:null,rating_at:0})}pending=null;e.currentTarget.reset()};$('#exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify({schema:2,exported_at:new Date().toISOString(),feedback:fb},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tokyo-event-feedback.json';a.click()};$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=async e=>{try{let j=JSON.parse(await e.target.files[0].text());fb=normalizeAll(j.feedback||{},true);save();render()}catch(x){alert('反馈文件无法读取')}};
 window.EventRadarState={get:()=>JSON.parse(JSON.stringify(fb)),setAll:(next)=>{fb=normalizeAll((next&&typeof next==='object')?next:{},true);save();render();},version:3};
+save();
 fetch('data.json?'+Date.now()).then(r=>r.json()).then(j=>{events=j.events||[];Array.from(new Set(events.map(e=>e.category))).sort().forEach(c=>$('#category').insertAdjacentHTML('beforeend','<option>'+c+'</option>'));render()}).catch(()=>$('#list').innerHTML='<div class="empty">活动数据读取失败。</div>');
 window.getEventFeedback=()=>JSON.parse(JSON.stringify(fb));
 window.mergeEventFeedback=remote=>{const merged={...fb};let applied=0,kept=0;for(const [id,v] of Object.entries(remote||{})){const rt=Number(v&&v.updated_at||0),lt=Number(fb[id]&&fb[id].updated_at||0);if(!fb[id]||rt>lt){merged[id]=v;applied++}else kept++}fb=normalizeAll(merged,true);save();render();return{applied,kept};};
 })();
 </script>
-<script src="event-auto-sync-v1.js?v=20260927-1"></script>
-<script src="ui-v3.js?v=20260927-2"></script>
+<script src="event-auto-sync-v1.js?v=20260927-2"></script>
+<script src="ui-v3.js?v=20260927-3"></script>
 </body>
 </html>
