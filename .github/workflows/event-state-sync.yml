@@ -1,0 +1,31 @@
+name: Sync Event feedback state
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.event.issue.user.login == 'syukaisan-lang' && startsWith(github.event.issue.title, '[EVENT-STATE]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Validate encrypted event state
+        run: python scripts/save_event_state.py
+      - name: Commit encrypted event state
+        run: |
+          git config user.name 'event-state-bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add events/event-state.enc.json events/event-state.json
+          if git diff --cached --quiet; then
+            echo 'No state changes to commit'
+          else
+            git commit -m 'Backup Event feedback state'
+            git push
+          fi
