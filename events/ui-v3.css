@@ -1,0 +1,95 @@
+/* Event Radar v3 — borrows the useful parts of Weekly: quick hierarchy, sticky state nav, compact mobile cards. */
+:root{
+  --event-max:1120px;
+  --event-radius:16px;
+  --event-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+body{background:
+  radial-gradient(circle at 15% 0%,rgba(124,156,255,.09),transparent 32%),
+  radial-gradient(circle at 90% 8%,rgba(101,214,154,.06),transparent 30%),
+  var(--bg)}
+main{max-width:var(--event-max)}
+.top{padding:10px 0 18px;border-bottom:1px solid var(--line)}
+.top h1{letter-spacing:-.03em}
+.top .sub{max-width:760px;line-height:1.55}
+.actions button{min-height:40px}
+.stats{margin-top:18px}
+.stat{min-height:78px;display:flex;flex-direction:column;justify-content:center}
+.tabs{
+  position:sticky;top:0;z-index:20;
+  padding:10px 0;margin:0 0 12px;
+  background:linear-gradient(var(--bg) 72%,transparent);
+  backdrop-filter:blur(10px)
+}
+.tab{font-weight:700;color:var(--muted)}
+.tab.active{color:var(--text);box-shadow:inset 0 0 0 1px rgba(124,156,255,.24)}
+.filters{
+  background:rgba(21,27,35,.82);border:1px solid var(--line);
+  border-radius:14px;padding:10px;margin:0 0 12px
+}
+.filters label{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:13px}
+.notice{line-height:1.55}
+#learning{border-left:3px solid var(--accent);background:linear-gradient(120deg,rgba(124,156,255,.1),rgba(21,27,35,.78))}
+.grid{gap:14px}
+.card{
+  position:relative;
+  box-shadow:var(--event-shadow);
+  transition:transform .15s ease,border-color .15s ease,background .15s ease
+}
+.card:hover{border-color:#3b4757}
+.card.best{
+  border-color:rgba(124,156,255,.75);
+  background:linear-gradient(145deg,rgba(124,156,255,.08),var(--panel) 32%)
+}
+.card.best:before{
+  content:"本视图首选";position:absolute;right:14px;top:-10px;
+  font-size:11px;font-weight:800;letter-spacing:.04em;
+  padding:4px 8px;border-radius:999px;background:var(--accent);color:#0d1117
+}
+.head{padding-right:6px}
+.title{line-height:1.35;letter-spacing:-.015em}
+.score b{font-variant-numeric:tabular-nums}
+.score small{margin-top:2px}
+.tags{margin-top:10px}
+.tag{border-color:#303a48}
+.meta .pill{background:rgba(255,255,255,.015)}
+.why{font-size:15px}
+.drawback{line-height:1.5}
+.row{padding-top:2px;border-top:1px solid rgba(42,52,65,.55)}
+.row>button{min-height:39px}
+.links a{display:inline-flex;align-items:center;justify-content:center;min-height:39px}
+.empty{background:rgba(21,27,35,.55)}
+#backTop{
+  position:fixed;right:18px;bottom:22px;z-index:30;
+  width:44px;height:44px;border-radius:50%;
+  display:none;align-items:center;justify-content:center;
+  background:rgba(21,27,35,.92);box-shadow:var(--event-shadow)
+}
+#backTop.show{display:flex}
+.event-audit{
+  display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px;
+  color:var(--muted);font-size:12px
+}
+.event-audit span{border:1px solid var(--line);border-radius:999px;padding:5px 8px;background:var(--panel)}
+.event-urgency-high{color:var(--warn)!important;border-color:rgba(241,198,108,.45)!important}
+.event-verified{color:var(--good)!important}
+@media(max-width:700px){
+  main{padding:14px 12px 80px}
+  h1{font-size:26px}
+  .top{align-items:flex-start}
+  .actions{width:100%}.actions button,.actions label{flex:1}.actions button{width:100%}
+  .stats{gap:8px}.stat{min-height:70px;padding:10px}
+  .tabs{margin-left:-12px;margin-right:-12px;padding:9px 12px;flex-wrap:nowrap}
+  .tab{padding:8px 10px}
+  .filters{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .filters label{grid-column:1/-1}
+  .filters select{width:100%;min-width:0}
+  .card{padding:14px;border-radius:14px}
+  .head{gap:8px}.title{font-size:17px}.score{min-width:58px}.score b{font-size:22px}
+  .meta{gap:5px}.tag,.pill{font-size:11px}
+  .why{font-size:14px}
+  .row{display:grid;grid-template-columns:1fr 1fr}
+  .row>button{width:100%}.links{grid-column:1/-1}
+  .card.best:before{right:10px}
+}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
