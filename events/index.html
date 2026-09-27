@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="referrer" content="no-referrer">
+<title>东京活动雷达</title>
+<style>
+:root{--bg:#0d1117;--panel:#151b23;--line:#2a3441;--text:#f3f5f7;--muted:#9aa5b1;--accent:#7c9cff;--good:#65d69a;--warn:#f1c66c;--bad:#ff8b8b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans SC",sans-serif}
+main{max-width:1080px;margin:auto;padding:20px 16px 60px}h1{margin:0 0 6px;font-size:30px}.sub{color:var(--muted);margin:0 0 18px}
+.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-end;flex-wrap:wrap}.actions{display:flex;gap:8px;flex-wrap:wrap}
+button,select{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font:inherit}
+button{cursor:pointer}.tabs,.filters{display:flex;gap:8px;overflow:auto;margin:14px 0;flex-wrap:wrap}.tab.active{border-color:var(--accent);background:#1d2a46}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px}.stat b{display:block;font-size:22px}.stat span{font-size:12px;color:var(--muted)}
+.notice{background:#141d2c;border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:var(--muted);font-size:13px;margin:12px 0}.notice strong{color:var(--text)}
+.grid{display:grid;gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}.card.best{border-color:var(--accent)}
+.head{display:flex;justify-content:space-between;gap:12px}.title{font-size:19px;font-weight:800}.score{text-align:right;min-width:70px}.score b{font-size:25px}.score small{display:block;color:var(--muted)}
+.meta,.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.meta{color:var(--muted);font-size:13px}.tag,.pill{font-size:12px;border-radius:999px;padding:4px 8px;border:1px solid var(--line)}.tag{background:#1b2330}.sale{color:var(--warn)}.free{color:var(--good)}
+.why{line-height:1.55;margin:12px 0 5px}.drawback{color:var(--muted);font-size:13px}.row{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.row button.active{border-color:var(--accent);background:#1d2a46}.row button.good.active{border-color:var(--good)}.row button.bad.active{border-color:var(--bad)}
+.links{margin-left:auto;display:flex;gap:7px}.links a{color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:8px 10px;font-size:13px}
+.empty{padding:34px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:16px;max-width:500px;width:calc(100% - 28px)}dialog::backdrop{background:#0009}
+.reasons{display:grid;gap:8px}.reasons label{padding:9px;background:#1b2330;border-radius:9px}menu{display:flex;justify-content:flex-end;gap:8px}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.links{width:100%;margin-left:0}.links a{flex:1;text-align:center}}
+</style>
+<link rel="stylesheet" href="ui-v3.css?v=20260927-1">
+</head>
+<body>
+<main>
+  <div class="top">
+    <div><h1>东京活动雷达</h1><p class="sub">近期可去 + 未来抢票。反馈会按“主题 × 形式 × 体验”精准学习；未点击不算负反馈。</p></div>
+    <div class="actions"><button id="exportBtn">导出反馈</button><label><button id="importBtn" type="button">导入反馈</button><input id="importFile" type="file" accept="application/json" hidden></label></div>
+  </div>
+  <section id="stats" class="stats"></section>
+  <nav class="tabs">
+    <button class="tab active" data-view="now">本周/近期</button>
+    <button class="tab" data-view="future">未来抢票</button>
+    <button class="tab" data-view="interested">想去</button>
+    <button class="tab" data-view="booked">已买票</button>
+    <button class="tab" data-view="visited">去过</button>
+  </nav>
+  <section class="filters">
+    <select id="category"><option value="">全部类型</option></select>
+    <select id="sort"><option value="smart">智能推荐</option><option value="score">原始推荐度</option><option value="ending">快结束</option><option value="sale">票务紧迫度</option><option value="price">价格低到高</option></select>
+    <label><input id="freeOnly" type="checkbox"> 只看免费</label>
+  </section>
+  <section id="learning" class="notice"></section>
+  <section id="list" class="grid"></section>
+</main>
+<dialog id="reasonDlg">
+  <form method="dialog" id="reasonForm">
+    <h3>为什么没兴趣？</h3>
+    <p class="sub">时间、距离和价格不会降低主题偏好。</p>
+    <div class="reasons">
+      <label><input type="radio" name="reason" value="content" required> 内容本身没兴趣</label>
+      <label><input type="radio" name="reason" value="too_far"> 太远 / 交通麻烦</label>
+      <label><input type="radio" name="reason" value="too_expensive"> 太贵</label>
+      <label><input type="radio" name="reason" value="timing"> 时间不合适</label>
+      <label><input type="radio" name="reason" value="too_commercial"> 太商业 / 像购物活动</label>
+      <label><input type="radio" name="reason" value="similar"> 已体验过类似内容</label>
+    </div>
+    <menu><button value="cancel">取消</button><button value="confirm">保存</button></menu>
+  </form>
+</dialog>
+<script>
+(()=>{const K='tokyo_event_feedback_v1';let events=[],view='now',pending=null,fb=load();const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
+function load(){try{return JSON.parse(localStorage.getItem(K)||'{}')}catch(e){return {}}}function save(){localStorage.setItem(K,JSON.stringify(fb))}
+function state(id){return fb[id]||{}}function patch(id,p){fb[id]=Object.assign({},state(id),p,{updated_at:Date.now()});save();render()}
+function t(d){return new Date(d+'T00:00:00').getTime()}function today(){let d=new Date();return new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()}
+function money(v){if(v===0)return'免费';return v==null?'待确认':'¥'+Number(v).toLocaleString('ja-JP')}function period(e){return e.start_date===e.end_date?e.start_date:e.start_date+' → '+e.end_date}
+function urgency(e){if(e.ticket_status==='sold_out')return 0;if(e.ticket_deadline){let d=Math.ceil((t(e.ticket_deadline)-today())/864e5);if(d<=3)return 3;if(d<=10)return 2}return e.ticket_status==='on_sale'||e.ticket_status==='lottery'?1:0}
+function ageFactor(ts){if(!ts)return .65;let d=Math.max(0,(Date.now()-Number(ts))/86400000);return d<=90?1:d<=180?.82:d<=365?.62:d<=730?.4:.25}
+function uniq(a){return Array.from(new Set((a||[]).filter(Boolean)))}
+function overlap(a,b){if(!a.length||!b.length)return 0;let s=new Set(b),n=0;a.forEach(x=>{if(s.has(x))n++});return n/Math.max(a.length,b.length)}
+function fp(e){let lf=e.learning_features||{},txt=(e.category||'')+' '+e.title+' '+(e.tags||[]).join(' '),generic=new Set(['免费','未来抢票','艺术','设计']);
+return{subjects:uniq([e.category].concat(lf.subjects||[],(e.tags||[]).filter(x=>!generic.has(x)&&!/免费|未来抢票/.test(x)))),
+formats:uniq((lf.formats||[]).concat(/展|美术馆|festival/i.test(txt)?['展览/艺术节']:[],/演出|马戏|live/i.test(txt)?['现场演出']:[],/技术|制作|行业/i.test(txt)?['行业/制作']:[],/城市|步行|漫游/i.test(txt)?['城市漫游']:[])),
+experiences:uniq((lf.experiences||[]).concat((e.tags||[]).filter(x=>/沉浸|互动|现场体验|制作幕后|空间|步行|视觉|声音|技术|建筑/.test(x)))),
+signals:uniq((lf.signals||[]).concat((e.tags||[]).filter(x=>/商业|购物|免费|限定|大型|专业/.test(x))))}}
+function priceBand(e){let p=Number(e.price_min||0);return p===0?'free':p<3000?'low':p<8000?'mid':p<15000?'high':'premium'}
+function learningSamples(){let out=[];events.forEach(e=>{let s=state(e.id),f=fp(e),u=Number(s.updated_at||0);let push=(w,label,at,kind,reason)=>out.push({id:e.id,title:e.title,w:w*ageFactor(at||u),label,kind,reason:reason||'',fp:f,area:e.area||'',price:priceBand(e),at:at||u});
+if(s.interest==='yes')push(.55,'想去',s.interest_at,'pos');if(s.booked)push(1,'已买票',s.booked_at,'pos');if(s.visit_rating==='great')push(1.45,'去过后很值',s.rating_at,'pos');if(s.visit_rating==='ok')push(.15,'去过后一般',s.rating_at,'pos');if(s.visit_rating==='bad')push(-1.45,'去过后不值',s.rating_at,'neg','visit_bad');
+if(s.interest==='no'){let r=s.no_reason||'content',at=s.no_reason_at;if(r==='content')push(-.85,'内容没兴趣',at,'neg',r);else if(r==='too_commercial')push(-.65,'太商业',at,'context',r);else if(r==='similar')push(-.28,'类似体验疲劳',at,'novelty',r);else if(r==='too_far'||r==='too_expensive')push(-.25,r==='too_far'?'距离太远':'价格太高',at,'constraint',r)}});return out}
+function contentSim(a,b,negative){let s=overlap(a.subjects,b.subjects),f=overlap(a.formats,b.formats),x=overlap(a.experiences,b.experiences),g=overlap(a.signals,b.signals);if(negative){if(!s)return 0;if((a.formats.length||b.formats.length||a.experiences.length||b.experiences.length)&&Math.max(f,x)<.2)return 0;return Math.min(1,.58*s+.24*f+.18*x)}if(!s&&x<.34)return 0;return Math.min(1,.46*s+.22*f+.25*x+.07*g)}
+function explainLearning(e){let f=fp(e),pos=[],neg=[],constraints=[];learningSamples().forEach(s=>{if(s.id===e.id)return;
+if(s.kind==='constraint'){let z=0;if(s.reason==='too_far'&&s.area===e.area)z=s.w*.45;if(s.reason==='too_expensive'&&s.price===priceBand(e))z=s.w*.45;if(z<0)constraints.push(Object.assign({},s,{strength:z}));return}
+if(s.kind==='context'){let commercial=f.signals.some(x=>/商业|购物/.test(x))||/POP.?UP|市集|购物|商业/i.test((e.category||'')+' '+(e.tags||[]).join(' '));if(!commercial)return;let z=s.w*Math.max(overlap(f.formats,s.fp.formats),overlap(f.experiences,s.fp.experiences),.45);neg.push(Object.assign({},s,{strength:z}));return}
+if(s.kind==='novelty'){let z=Math.max(overlap(f.formats,s.fp.formats),overlap(f.experiences,s.fp.experiences));if(z>.35)neg.push(Object.assign({},s,{strength:s.w*z}));return}
+let z=contentSim(f,s.fp,s.w<0);if(!z)return;let h=Object.assign({},s,{strength:s.w*z});(h.strength>=0?pos:neg).push(h)});
+pos.sort((a,b)=>b.strength-a.strength);neg.sort((a,b)=>a.strength-b.strength);constraints.sort((a,b)=>a.strength-b.strength);
+let ps=pos.slice(0,3).reduce((n,x)=>n+x.strength,0),ns=neg.slice(0,3).reduce((n,x)=>n+x.strength,0),cs=constraints.slice(0,2).reduce((n,x)=>n+x.strength,0),d=Math.max(-10,Math.min(9,Math.round((4.8*ps+6.2*ns+2.5*cs)*10)/10)),strong=neg.filter(x=>x.strength<=-.62),cap=100;
+if(strong.length>=2&&ns<-.95&&ps<.55)cap=79;if(strong.length>=3&&ns<-1.5&&ps<.35)cap=69;return{delta:d,cap,pos:pos.slice(0,3),neg:neg.slice(0,3),constraints:constraints.slice(0,2)}}
+function delta(e){return explainLearning(e).delta}
+function score(e){let x=explainLearning(e);return Math.max(0,Math.min(x.cap,Math.round((Number(e.recommendation||0)+x.delta)*10)/10))}
+function visible(e){let s=state(e.id);if(view==='future')return e.bucket==='future';if(view==='interested')return s.interest==='yes';if(view==='booked')return s.booked===true;if(view==='visited')return s.visited===true;return e.bucket!=='future'&&t(e.end_date)>=today()}
+function ticket(e){let m={on_sale:'售票中',lottery:'抽选中',upcoming:'即将开售',sold_out:'售罄',no_ticket:'无需购票'},s=m[e.ticket_status]||e.ticket_status;if(e.ticket_sale_start)s+=' · '+e.ticket_sale_start+'开售';if(e.ticket_deadline)s+=' · '+e.ticket_deadline+'截止';return s}
+function learning(){let map={};function add(k,v,at){if(!k)return;let x=map[k]||(map[k]={p:0,n:0,lp:0,ln:0});if(v>=0){x.p+=v;x.lp=Math.max(x.lp,at||0)}else{x.n+=-v;x.ln=Math.max(x.ln,at||0)}}
+learningSamples().forEach(s=>{if(s.kind==='constraint')return;s.fp.subjects.forEach(x=>add('主题：'+x,s.w*.75,s.at));s.fp.formats.forEach(x=>add('形式：'+x,s.w*.62,s.at));s.fp.experiences.forEach(x=>add('体验：'+x,s.w*.72,s.at));let k=(s.fp.subjects[0]||'')+' × '+(s.fp.formats[0]||s.fp.experiences[0]||'');if(k!==' × ')add('组合：'+k,s.w,s.at)});
+let rows=Object.entries(map).map(([k,x])=>({k,net:x.lp>x.ln?x.p-1.1*x.n:x.ln>x.lp?.75*x.p-x.n:x.p-x.n})).filter(x=>Math.abs(x.net)>=.3).sort((a,b)=>Math.abs(b.net)-Math.abs(a.net)),pos=rows.filter(x=>x.net>0).slice(0,5).map(x=>x.k).join(' / '),neg=rows.filter(x=>x.net<0).slice(0,5).map(x=>x.k).join(' / '),n=learningSamples().length;
+return n?'<strong>活动 Preference Memory：'+n+' 个行为样本</strong><br>'+(pos?'偏好：'+pos+'<br>':'')+(neg?'降权：'+neg+'<br>':'')+'学习单位是“主题 × 活动形式 × 体验方式”。实际去过后的评价权重最高；单次负反馈只降权，重复同类明确负反馈才会明显压低。距离/价格单独处理，不会误伤主题。':'<strong>还没有足够反馈</strong><br>未点击不会算负反馈；想去、已买票、实际去过会按不同强度学习。'}
+function render(){let cat=$('#category').value,free=$('#freeOnly').checked,sort=$('#sort').value,a=events.filter(visible).filter(e=>!cat||e.category===cat).filter(e=>!free||e.price_min===0);a.sort((x,y)=>sort==='score'?y.recommendation-x.recommendation:sort==='ending'?t(x.end_date)-t(y.end_date):sort==='sale'?urgency(y)-urgency(x)||score(y)-score(x):sort==='price'?(x.price_min??999999)-(y.price_min??999999):score(y)-score(x));$('#learning').innerHTML=learning();$('#list').innerHTML=a.length?a.map((e,i)=>card(e,i)).join(''):'<div class="empty">当前筛选下没有活动。</div>';let active=events.filter(e=>e.bucket!=='future'&&t(e.end_date)>=today()).length,future=events.filter(e=>e.bucket==='future').length,interested=Object.values(fb).filter(x=>x.interest==='yes').length,booked=Object.values(fb).filter(x=>x.booked).length;$('#stats').innerHTML=[['近期可去',active],['未来抢票',future],['想去',interested],['已买票',booked]].map(x=>'<div class="stat"><b>'+x[1]+'</b><span>'+x[0]+'</span></div>').join('');bind()}
+function card(e,i){let s=state(e.id),p=e.price_min===e.price_max?money(e.price_min):money(e.price_min)+'～'+money(e.price_max),r=s.visited?'<div class="notice">去过后的体验： <button data-rate="great" data-id="'+e.id+'">很值</button> <button data-rate="ok" data-id="'+e.id+'">一般</button> <button data-rate="bad" data-id="'+e.id+'">不值</button></div>':'';return'<article class="card '+(i===0?'best':'')+'"><div class="head"><div><div class="title">'+e.title+'</div><div class="meta"><span>'+period(e)+'</span><span>'+e.venue+'</span><span>'+e.area+'</span></div></div><div class="score"><b>'+score(e)+'</b><small>/100'+(delta(e)?' · 学习后':'')+'</small></div></div><div class="tags">'+e.tags.map(x=>'<span class="tag">'+x+'</span>').join('')+'</div><div class="meta"><span class="pill '+((e.ticket_status==='on_sale'||e.ticket_status==='lottery')?'sale':'')+'">'+ticket(e)+'</span><span class="pill '+(e.price_min===0?'free':'')+'">'+p+'</span>'+(e.bucket==='future'?'<span class="pill sale">未来关注</span>':'')+'</div><p class="why">'+e.why+'</p><p class="drawback">可能的缺点：'+e.drawback+'</p><p class="drawback">'+(e.ticket_note||'')+'</p><div class="row"><button data-act="interest" data-id="'+e.id+'" class="'+(s.interest==='yes'?'active':'')+'">⭐ 想去</button><button data-act="booked" data-id="'+e.id+'" class="'+(s.booked?'active':'')+'">🎟 已买票</button><button data-act="visited" data-id="'+e.id+'" class="good '+(s.visited?'active':'')+'">✓ 去过</button><button data-act="no" data-id="'+e.id+'" class="bad '+(s.interest==='no'?'active':'')+'">× 不感兴趣</button><div class="links"><a href="'+e.source_url+'" target="_blank">官方</a>'+(e.ticket_url?'<a href="'+e.ticket_url+'" target="_blank">购票</a>':'')+'</div></div>'+r+'</article>'}
+function bind(){$('[data-act]').forEach(b=>b.onclick=()=>{let id=b.dataset.id,a=b.dataset.act,s=state(id),now=Date.now();if(a==='interest')patch(id,{interest:s.interest==='yes'?null:'yes',interest_at:s.interest==='yes'?0:now,no_reason:null,no_reason_at:0});if(a==='booked')patch(id,{booked:!s.booked,booked_at:s.booked?0:now,interest:'yes',interest_at:s.interest_at||now});if(a==='visited')patch(id,{visited:!s.visited,visited_at:s.visited?0:now,interest:s.visited?s.interest:'yes',interest_at:s.interest_at||now});if(a==='no'){pending=id;$('#reasonDlg').showModal()}});$('[data-rate]').forEach(b=>b.onclick=()=>patch(b.dataset.id,{visit_rating:b.dataset.rate,rating_at:Date.now(),visited:true,visited_at:state(b.dataset.id).visited_at||Date.now()}))}
+$$('.tab').forEach(b=>b.onclick=()=>{view=b.dataset.view;$$('.tab').forEach(x=>x.classList.toggle('active',x===b));render()});$('#category').onchange=render;$('#sort').onchange=render;$('#freeOnly').onchange=render;$('#reasonForm').onsubmit=e=>{if(e.submitter&&e.submitter.value==='confirm'&&pending){let r=new FormData(e.currentTarget).get('reason');if(r)patch(pending,{interest:'no',interest_at:0,no_reason:r,no_reason_at:Date.now(),booked:false,booked_at:0})}pending=null;e.currentTarget.reset()};$('#exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify({schema:2,exported_at:new Date().toISOString(),feedback:fb},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tokyo-event-feedback.json';a.click()};$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=async e=>{try{let j=JSON.parse(await e.target.files[0].text());fb=j.feedback||{};save();render()}catch(x){alert('反馈文件无法读取')}};
+fetch('data.json?'+Date.now()).then(r=>r.json()).then(j=>{events=j.events||[];Array.from(new Set(events.map(e=>e.category))).sort().forEach(c=>$('#category').insertAdjacentHTML('beforeend','<option>'+c+'</option>'));render()}).catch(()=>$('#list').innerHTML='<div class="empty">活动数据读取失败。</div>');
+})();
+</script>
+<script src="ui-v3.js?v=20260927-2"></script>
+</body>
+</html>
