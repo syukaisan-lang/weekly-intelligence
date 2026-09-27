@@ -1,1 +1,0 @@
-(()=>{const x=localStorage.getItem('tokyo_event_feedback_v1')||'{}';window.eventBackupPreview=()=>x.length;})();
