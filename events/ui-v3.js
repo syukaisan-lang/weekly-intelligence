@@ -21,7 +21,7 @@ function decorate(){
   document.querySelectorAll('.row button').forEach(b=>b.setAttribute('aria-pressed',b.classList.contains('active')?'true':'false'));
   document.querySelectorAll('.card').forEach(card=>{
     const pills=[...card.querySelectorAll('.pill')];const sale=pills.find(x=>/售票中|抽选中|截止/.test(x.textContent||''));
-    if(sale&&/截止/.test(sale.textContent||''))sale.classList.add('event-urgency-high');
+    if(sale){const txt=sale.textContent||'';if(/截止|抽选中/.test(txt))sale.classList.add('event-urgency-high');const meta=card.querySelector('.meta:nth-of-type(2)')||sale.parentElement;if(meta&&!meta.querySelector('.decision-urgency')){const x=document.createElement('span');x.className='pill decision-urgency';x.textContent=/截止|抽选中/.test(txt)?'决策紧迫：高':card.textContent.includes('未来关注')?'决策紧迫：中':'决策紧迫：低';if(/高/.test(x.textContent))x.classList.add('event-urgency-high');meta.appendChild(x)}}
   });
 }
 function boot(){
