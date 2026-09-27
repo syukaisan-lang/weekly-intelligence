@@ -47,7 +47,15 @@
           "免费",
           "专业向",
           "需预约"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       }
     },
     {
@@ -93,7 +101,26 @@
         "signals": [
           "免费",
           "多会场"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "当代视觉文化"
+          ],
+          "countries": [],
+          "periods": [
+            "当代"
+          ],
+          "media": [
+            "摄影"
+          ],
+          "art_traditions": [
+            "当代摄影"
+          ],
+          "content_focus": [
+            "摄影作品",
+            "城市语境"
+          ]
+        }
       }
     },
     {
@@ -137,7 +164,33 @@
         ],
         "signals": [
           "需预约"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "北欧设计",
+            "西方设计"
+          ],
+          "countries": [
+            "芬兰"
+          ],
+          "periods": [
+            "20世纪",
+            "当代"
+          ],
+          "media": [
+            "纺织",
+            "印花",
+            "平面设计"
+          ],
+          "art_traditions": [
+            "北欧设计"
+          ],
+          "content_focus": [
+            "品牌设计史",
+            "图案设计",
+            "实物作品"
+          ]
+        }
       }
     },
     {
@@ -183,7 +236,15 @@
           "高票价",
           "未来抢票",
           "座位影响体验"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       }
     },
     {
@@ -239,7 +300,15 @@
           "夜间限定",
           "特殊场地",
           "可选高价体验"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       },
       "release_history": [
         {
@@ -303,7 +372,15 @@
           "需购票",
           "物贩较多",
           "热门IP"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       },
       "release_history": [
         {
@@ -368,7 +445,15 @@
           "高票价",
           "需购票",
           "座位影响体验"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       },
       "release_history": [
         {
@@ -432,7 +517,15 @@
           "需购票",
           "周边票价格跨度大",
           "预览期特殊票制"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       },
       "release_history": [
         {
@@ -490,7 +583,15 @@
           "未来活动",
           "票务未公布",
           "官方信息仍在更新"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       },
       "release_history": [
         {
@@ -548,7 +649,30 @@
           "多数免费",
           "部分商业/销售属性",
           "点位质量差异"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "当代设计",
+            "国际设计"
+          ],
+          "countries": [],
+          "periods": [
+            "当代"
+          ],
+          "media": [
+            "产品设计",
+            "家具",
+            "空间设计",
+            "综合设计"
+          ],
+          "art_traditions": [
+            "当代设计"
+          ],
+          "content_focus": [
+            "新锐设计",
+            "城市设计节"
+          ]
+        }
       },
       "release_history": []
     },
@@ -601,7 +725,29 @@
           "免费",
           "多会场",
           "步行量较大"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "当代艺术",
+            "国际艺术"
+          ],
+          "countries": [],
+          "periods": [
+            "当代"
+          ],
+          "media": [
+            "装置",
+            "户外作品",
+            "综合媒介"
+          ],
+          "art_traditions": [
+            "当代艺术"
+          ],
+          "content_focus": [
+            "城市空间",
+            "场域特定"
+          ]
+        }
       },
       "release_history": [
         {
@@ -658,7 +804,15 @@
         "signals": [
           "多数免费",
           "商业设施内"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       },
       "release_history": [
         {
@@ -721,7 +875,35 @@
           "需购票",
           "热门大型展",
           "日本初公开作品"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术",
+            "欧洲艺术"
+          ],
+          "countries": [
+            "意大利",
+            "法国"
+          ],
+          "periods": [
+            "文艺复兴"
+          ],
+          "media": [
+            "绘画",
+            "雕塑",
+            "版画",
+            "素描",
+            "工艺"
+          ],
+          "art_traditions": [
+            "西方古典美术"
+          ],
+          "content_focus": [
+            "名作原作",
+            "馆藏精选",
+            "艺术史"
+          ]
+        }
       },
       "release_history": [
         {
@@ -790,7 +972,31 @@
           "需购票",
           "专业/思考向",
           "长期展期"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本设计文化"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "中世",
+            "当代"
+          ],
+          "media": [
+            "建筑",
+            "空间设计"
+          ],
+          "art_traditions": [
+            "建筑/设计"
+          ],
+          "content_focus": [
+            "方丈记",
+            "小建筑",
+            "生活哲学"
+          ]
+        }
       },
       "release_history": []
     },
@@ -841,7 +1047,34 @@
         "signals": [
           "需预约",
           "即将结束"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方设计",
+            "欧洲设计"
+          ],
+          "countries": [
+            "意大利"
+          ],
+          "periods": [
+            "20世纪",
+            "现代"
+          ],
+          "media": [
+            "家具",
+            "产品设计",
+            "建筑",
+            "设计物件"
+          ],
+          "art_traditions": [
+            "现代设计"
+          ],
+          "content_focus": [
+            "设计师专题",
+            "设计史",
+            "实物作品"
+          ]
+        }
       },
       "release_history": []
     },
@@ -894,7 +1127,32 @@
           "需购票",
           "无需日時指定",
           "长期展期"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本视觉文化"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "战后",
+            "现代"
+          ],
+          "media": [
+            "漫画原画",
+            "插画",
+            "漫画"
+          ],
+          "art_traditions": [
+            "日本漫画"
+          ],
+          "content_focus": [
+            "创作者专题",
+            "原画",
+            "创作史"
+          ]
+        }
       },
       "release_history": [
         {
@@ -957,7 +1215,15 @@
           "日時指定",
           "需购票",
           "有商品属性"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       },
       "release_history": [
         {
@@ -1017,7 +1283,15 @@
         "signals": [
           "低票价",
           "长期展期"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
       },
       "release_history": [
         {
@@ -1075,7 +1349,32 @@
           "需购票",
           "无需日時指定",
           "热门展"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本艺术"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "江户"
+          ],
+          "media": [
+            "日本画",
+            "浮世绘",
+            "版画"
+          ],
+          "art_traditions": [
+            "日本传统美术",
+            "浮世绘"
+          ],
+          "content_focus": [
+            "海外馆藏",
+            "名作原作",
+            "艺术史"
+          ]
+        }
       },
       "release_history": [
         {
@@ -1130,7 +1429,31 @@
           "未来抢票",
           "限定套票截止",
           "普通前售即将开始"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术",
+            "欧洲艺术"
+          ],
+          "countries": [
+            "法国"
+          ],
+          "periods": [
+            "19世纪",
+            "近代"
+          ],
+          "media": [
+            "绘画",
+            "雕塑"
+          ],
+          "art_traditions": [
+            "法国近代美术"
+          ],
+          "content_focus": [
+            "馆藏精选",
+            "名作原作"
+          ]
+        }
       },
       "release_history": [
         {
@@ -1197,7 +1520,32 @@
         "signals": [
           "前售即将截止",
           "需多次观看才完整"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本艺术"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "江户"
+          ],
+          "media": [
+            "浮世绘",
+            "版画",
+            "沉浸影像"
+          ],
+          "art_traditions": [
+            "日本传统美术",
+            "浮世绘"
+          ],
+          "content_focus": [
+            "艺术家专题",
+            "风景表现",
+            "三期轮换"
+          ]
+        }
       },
       "release_history": [
         {
@@ -1265,7 +1613,34 @@
           "需购票",
           "与ZEN NIGHT联动",
           "前售中"
-        ]
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本艺术"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "中世",
+            "近世"
+          ],
+          "media": [
+            "绘画",
+            "书迹",
+            "工艺",
+            "文化财"
+          ],
+          "art_traditions": [
+            "禅宗美术",
+            "日本传统美术"
+          ],
+          "content_focus": [
+            "寺院文化",
+            "文化财",
+            "历史脉络"
+          ]
+        }
       },
       "release_history": [
         {
@@ -1279,7 +1654,7 @@
   "meta": {
     "pipeline_version": "event-radar-v3",
     "ranking_model": "eligibility_then_preference",
-    "learning_model": "subject_format_experience",
+    "learning_model": "subject_format_experience_content-profile",
     "discovery_window_days": 7,
     "ticket_watch_months": 12,
     "publish_rule": "official_verification_required",
@@ -1313,6 +1688,8 @@
       "rule": "Build a broad active/upcoming inventory from mandatory calendars before applying preference ranking."
     },
     "coverage_status": "partial_improved",
-    "anchor_inventory_required": true
+    "anchor_inventory_required": true,
+    "learning_taxonomy_version": 3,
+    "learning_note": "Exhibitions are learned at content level: art region/tradition, country, period, medium and curatorial focus; broad museum/art categories are not sufficient."
   }
 }
