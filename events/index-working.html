@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="referrer" content="no-referrer">
 <title>东京活动雷达</title>
 <style>
 :root{--bg:#0d1117;--panel:#151b23;--line:#2a3441;--text:#f3f5f7;--muted:#9aa5b1;--accent:#7c9cff;--good:#65d69a;--warn:#f1c66c;--bad:#ff8b8b}
@@ -23,6 +25,7 @@ dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);bo
 .reasons{display:grid;gap:8px}.reasons label{padding:9px;background:#1b2330;border-radius:9px}menu{display:flex;justify-content:flex-end;gap:8px}
 @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.links{width:100%;margin-left:0}.links a{flex:1;text-align:center}}
 </style>
+<link rel="stylesheet" href="ui-v3.css?v=20260927-1">
 </head>
 <body>
 <main>
@@ -104,5 +107,6 @@ $$('.tab').forEach(b=>b.onclick=()=>{view=b.dataset.view;$$('.tab').forEach(x=>x
 fetch('data.json?'+Date.now()).then(r=>r.json()).then(j=>{events=j.events||[];Array.from(new Set(events.map(e=>e.category))).sort().forEach(c=>$('#category').insertAdjacentHTML('beforeend','<option>'+c+'</option>'));render()}).catch(()=>$('#list').innerHTML='<div class="empty">活动数据读取失败。</div>');
 })();
 </script>
+<script src="ui-v3.js?v=20260927-2"></script>
 </body>
 </html>
