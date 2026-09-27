@@ -1,10 +1,11 @@
 {
   "meta": {
-    "encrypted_full_data": true,
+    "encrypted_full_data": false,
     "schema": 2,
     "snapshot_at": null,
     "latest_at": null,
+    "cursor_updated_at": 0,
     "entry_count": 0,
-    "note": "Tokyo Event Radar feedback cloud backup has not been created yet."
+    "note": "Tokyo Event Radar feedback cloud backup has not been created yet. No plaintext event feedback is stored."
   }
 }
