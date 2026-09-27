@@ -77,7 +77,7 @@ dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);bo
 </dialog>
 <script>
 (()=>{const K='tokyo_event_feedback_v1';let events=[],view='now',pending=null,fb=load();const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
-function load(){try{return JSON.parse(localStorage.getItem(K)||'{}')}catch(e){return {}}}function save(){localStorage.setItem(K,JSON.stringify(fb))}
+function load(){try{return JSON.parse(localStorage.getItem(K)||'{}')}catch(e){return {}}}function save(){localStorage.setItem(K,JSON.stringify(fb));window.dispatchEvent(new CustomEvent('event-radar-state-change'))}
 function state(id){return fb[id]||{}}function patch(id,p){fb[id]=Object.assign({},state(id),p,{updated_at:Date.now()});save();render()}
 function t(d){return new Date(d+'T00:00:00').getTime()}function today(){let d=new Date();return new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()}
 function money(v){if(v===0)return'免费';return v==null?'待确认':'¥'+Number(v).toLocaleString('ja-JP')}function period(e){return e.start_date===e.end_date?e.start_date:e.start_date+' → '+e.end_date}
@@ -124,8 +124,7 @@ window.getEventFeedback=()=>JSON.parse(JSON.stringify(fb));
 window.mergeEventFeedback=remote=>{const merged={...fb};let applied=0,kept=0;for(const [id,v] of Object.entries(remote||{})){const rt=Number(v&&v.updated_at||0),lt=Number(fb[id]&&fb[id].updated_at||0);if(!fb[id]||rt>lt){merged[id]=v;applied++}else kept++}fb=merged;save();render();return{applied,kept};};
 })();
 </script>
-<script src="../private-knowledge.js?v=20260927-2"></script>
-<script src="event-state-sync.js?v=20260927-6"></script>
+<script src="event-auto-sync-v1.js?v=20260927-1"></script>
 <script src="ui-v3.js?v=20260927-2"></script>
 </body>
 </html>
