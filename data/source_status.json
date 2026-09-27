@@ -1,15 +1,10 @@
 {
-  "generated_at": "2026-09-26T16:34:09.419601+00:00",
+  "generated_at": "2026-09-27T05:29:34.680421+00:00",
   "expected_sources": 16,
-  "successful_sources": 15,
-  "failed_sources": [
-    {
-      "name": "Campaign Japan 日本 - 深層",
-      "error": "HTTPConnectionPool(host='www.campaignjapan.com', port=80): Read timed out. (read timeout=15)"
-    }
-  ],
-  "raw_new_count": 2,
-  "deduped_count": 1,
+  "successful_sources": 16,
+  "failed_sources": [],
+  "raw_new_count": 6,
+  "deduped_count": 5,
   "deep_read_count": 0,
   "sources": [
     {
@@ -62,15 +57,15 @@
     },
     {
       "name": "Campaign Japan 日本 - 深層",
-      "status": "failed",
+      "status": "ok",
       "new_count": 0,
-      "error": "HTTPConnectionPool(host='www.campaignjapan.com', port=80): Read timed out. (read timeout=15)",
-      "coverage_status": "partial",
-      "coverage_methods": [],
+      "error": null,
+      "coverage_status": "unverified",
+      "coverage_methods": [
+        "feed_cache"
+      ],
       "coverage_cached_count": 0,
-      "coverage_errors": [
-        "feed_cache: HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=20)"
-      ]
+      "coverage_errors": []
     },
     {
       "name": "博報堂生活総合研究所",
@@ -160,7 +155,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 28,
+      "coverage_cached_count": 27,
       "coverage_errors": []
     },
     {
@@ -190,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 5,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 332,
+      "coverage_cached_count": 336,
       "coverage_errors": []
     },
     {
@@ -221,7 +216,7 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 2056,
+  "semantic_rescored_count": 2061,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -242,17 +237,17 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 2283,
+    "hot_count": 2288,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-09-26T16:32:02.457140+00:00",
+    "generated_at": "2026-09-27T05:27:44.144512+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 3,
     "cached_count": 10,
-    "partial_count": 2,
-    "unverified_count": 1,
+    "partial_count": 1,
+    "unverified_count": 2,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
       "enhanced": "RSS/listing or multiple independent discovery paths plus rolling cache",
