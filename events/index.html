@@ -118,6 +118,7 @@ $$('.tab').forEach(b=>b.onclick=()=>{view=b.dataset.view;$$('.tab').forEach(x=>x
 fetch('data.json?'+Date.now()).then(r=>r.json()).then(j=>{events=j.events||[];Array.from(new Set(events.map(e=>e.category))).sort().forEach(c=>$('#category').insertAdjacentHTML('beforeend','<option>'+c+'</option>'));render()}).catch(()=>$('#list').innerHTML='<div class="empty">活动数据读取失败。</div>');
 })();
 </script>
+<script src="../private-knowledge.js?v=20260927-1"></script>
 <script src="ui-v3.js?v=20260927-2"></script>
 </body>
 </html>
