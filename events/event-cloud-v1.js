@@ -8,7 +8,7 @@ let busy=false;
 function feedback(){return window.getEventFeedback?window.getEventFeedback():{}}
 function latestLocal(){return Math.max(0,...Object.values(feedback()).map(v=>Number(v&&v.updated_at||0)))}
 function toast(msg){let e=document.getElementById('eventCloudToast');if(!e){e=document.createElement('div');e.id='eventCloudToast';e.className='event-cloud-toast';document.body.appendChild(e)}e.textContent=msg;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),6500)}
-function setStatus(msg){const e=document.getElementById('eventCloudStatus');if(e)e.textContent=msg}
+function setStatus(msg){let e=document.getElementById('eventCloudStatus');if(!e){e=document.createElement('div');e.id='eventCloudStatus';e.className='cloud-status';const top=document.querySelector('.top');if(top)top.insertAdjacentElement('afterend',e)}if(e)e.textContent=msg}
 async function getJson(path,optional=false){const r=await fetch(path+'?t='+Date.now(),{cache:'no-store',credentials:'same-origin',referrerPolicy:'no-referrer'});if(optional&&r.status===404)return null;if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}
 async function refresh(){
   try{
