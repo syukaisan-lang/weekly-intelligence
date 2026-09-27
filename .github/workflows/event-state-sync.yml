@@ -26,6 +26,9 @@ jobs:
           git config user.name 'event-state-bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add events/event-state.enc.json events/event-state.json
+          if [ -d events/event-state-deltas ]; then
+            git add events/event-state-deltas
+          fi
           if git diff --cached --quiet; then
             echo 'No state changes to commit'
           else
