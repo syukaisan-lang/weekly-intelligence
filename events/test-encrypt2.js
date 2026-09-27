@@ -1,0 +1,1 @@
+(()=>{window.eventBackupPrepare=async()=>{const x=window.getEventFeedback?window.getEventFeedback():{};const env=await encryptPrivatePayload({schema:2,feedback:x},{kind:'event-state',compress:true});document.body.dataset.eventBackupReady=String(env.ciphertext||'').slice(0,8);};})();
