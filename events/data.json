@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 2,
   "updated_at": "2026-09-27",
   "events": [
     {
@@ -29,7 +29,26 @@
       "drawback": "行业/制作视角较强；如果只想轻松娱乐，可能偏专业。",
       "ticket_note": "11:30–20:30，免费但需事前注册；席位满后即停止报名。",
       "source_url": "https://www.too.com/atsuc/y2026/",
-      "ticket_url": "https://www.too.com/atsuc/y2026/"
+      "ticket_url": "https://www.too.com/atsuc/y2026/",
+      "learning_features": {
+        "subjects": [
+          "动漫制作",
+          "CG制作工具"
+        ],
+        "formats": [
+          "行业/制作",
+          "单日活动"
+        ],
+        "experiences": [
+          "制作幕后",
+          "技术实操"
+        ],
+        "signals": [
+          "免费",
+          "专业向",
+          "需预约"
+        ]
+      }
     },
     {
       "id": "t3-photo-2026",
@@ -57,7 +76,25 @@
       "drawback": "摄影并非你最强兴趣，作品命中率可能不如动漫技术或沉浸式体验。",
       "ticket_note": "主展入场免费；关联项目可能有独立规则。",
       "source_url": "https://t3photo.tokyo/festival-2026",
-      "ticket_url": null
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "摄影",
+          "城市文化"
+        ],
+        "formats": [
+          "城市漫游",
+          "艺术节"
+        ],
+        "experiences": [
+          "城市空间",
+          "步行探索"
+        ],
+        "signals": [
+          "免费",
+          "多会场"
+        ]
+      }
     },
     {
       "id": "marimekko-tokyo-2026",
@@ -85,7 +122,23 @@
       "drawback": "如果对纺织/平面设计兴趣一般，主题会略窄。",
       "ticket_note": "10:00–18:00；成人¥1,400，日時指定予約制。",
       "source_url": "https://www.teien-art-museum.ne.jp/exhibition/20261003-1220_marimekko/",
-      "ticket_url": "https://www.teien-art-museum.ne.jp/visit/ticket/"
+      "ticket_url": "https://www.teien-art-museum.ne.jp/visit/ticket/",
+      "learning_features": {
+        "subjects": [
+          "平面设计",
+          "纺织设计"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "设计史",
+          "建筑空间"
+        ],
+        "signals": [
+          "需预约"
+        ]
+      }
     },
     {
       "id": "kooza-tokyo-2027",
@@ -113,7 +166,34 @@
       "drawback": "价格明显高于普通展览，且台场从东京西侧出发时间较长；座位选择会显著影响体验。",
       "ticket_note": "东京公演2027/2/24–4/25；2026/9/19 10:00起一般销售。平日成人A席¥8,800起，周末¥9,800起。",
       "source_url": "https://l-tike.com/event/kooza/tokyo/",
-      "ticket_url": "https://l-tike.com/event/kooza/tokyo/"
+      "ticket_url": "https://l-tike.com/event/kooza/tokyo/",
+      "learning_features": {
+        "subjects": [
+          "现代马戏",
+          "舞台表演"
+        ],
+        "formats": [
+          "大型现场演出"
+        ],
+        "experiences": [
+          "现场感",
+          "视觉 spectacle"
+        ],
+        "signals": [
+          "高票价",
+          "未来抢票",
+          "座位影响体验"
+        ]
+      }
     }
-  ]
+  ],
+  "meta": {
+    "pipeline_version": "event-radar-v3",
+    "ranking_model": "eligibility_then_preference",
+    "learning_model": "subject_format_experience",
+    "discovery_window_days": 7,
+    "ticket_watch_months": 12,
+    "publish_rule": "official_verification_required",
+    "stale_rule": "do_not_present_stale_or_unverified_ticket_status_as_current"
+  }
 }
