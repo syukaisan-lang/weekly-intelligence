@@ -43,10 +43,10 @@ async function refresh(){
 }
 function openIssue(url){
   if(isMobile()){
-    sessionStorage.setItem('event_radar_backup_return_v2',location.href);
-    const u=new URL(url);
-    const relative=u.pathname+u.search;
-    location.assign('https://github.com/login?return_to='+encodeURIComponent(relative));
+    // Match the proven Weekly flow: keep the full prefilled Issue URL in the same tab.
+    // GitHub itself handles login and returns to the original URL, which avoids losing the body.
+    sessionStorage.setItem('event_radar_backup_return_v3',location.href);
+    location.assign(url);
     return;
   }
   const w=window.open(url,'eventStateBackup');if(!w)location.assign(url);
