@@ -6,6 +6,7 @@ const WEEKLY_ENV='../data/weekly-state.enc.json';
 const PENDING='event_radar_backup_pending_v1';
 const PENDING_PAYLOAD='event_radar_backup_payload_v1';
 const PENDING_TITLE='event_radar_backup_title_v1';
+const MOBILE_AUTH_STAGE='event_radar_mobile_auth_stage_v1';
 let busy=false;
 
 const api=()=>window.EventRadarState;
@@ -42,14 +43,15 @@ async function refresh(){
   }catch(_){status('本机已保存 · 云端状态暂时无法读取')}
 }
 function openIssue(url){
-  if(isMobile()){
-    // Match the proven Weekly flow: keep the full prefilled Issue URL in the same tab.
-    // GitHub itself handles login and returns to the original URL, which avoids losing the body.
-    sessionStorage.setItem('event_radar_backup_return_v3',location.href);
-    location.assign(url);
-    return;
-  }
+  if(isMobile()){location.assign(url);return}
   const w=window.open(url,'eventStateBackup');if(!w)location.assign(url);
+}
+function mobileAuthUrl(title){
+  const base='https://github.com/'+REPO+'/issues/new';
+  return title?base+'?title='+encodeURIComponent(title):base;
+}
+function shouldPrepareMobileAuth(){
+  return isMobile()&&sessionStorage.getItem(MOBILE_AUTH_STAGE)!=='ready';
 }
 function pendingIssueUrl(){
   const payload=localStorage.getItem(PENDING_PAYLOAD),title=localStorage.getItem(PENDING_TITLE);
@@ -64,8 +66,15 @@ async function backup(){
   try{
     const retryUrl=pendingIssueUrl();
     if(retryUrl){
-      status('重新打开 GitHub 提交页');
-      toast('继续上次的加密备份。若刚完成 GitHub 登录，这次会直接带上完整内容。');
+      const title=localStorage.getItem(PENDING_TITLE)||'[EVENT-STATE] backup';
+      if(shouldPrepareMobileAuth()){
+        sessionStorage.setItem(MOBILE_AUTH_STAGE,'ready');
+        status('先确认 GitHub 登录 · 返回后再点一次备份');
+        toast('手机端改成两步：这次只确认 GitHub 登录。登录/打开新Issue页后请返回本站，再点一次“备份云端”，第二次会带上完整加密内容。');
+        openIssue(mobileAuthUrl(title));return;
+      }
+      status('打开已填好的 GitHub 提交页');
+      toast('这次会带上完整加密内容；直接点 Submit new issue。');
       openIssue(retryUrl);return;
     }
     const s=localState(),count=Object.keys(s).length;
@@ -83,8 +92,14 @@ async function backup(){
     localStorage.setItem(PENDING,created);
     localStorage.setItem(PENDING_PAYLOAD,encoded);
     localStorage.setItem(PENDING_TITLE,title);
+    if(shouldPrepareMobileAuth()){
+      sessionStorage.setItem(MOBILE_AUTH_STAGE,'ready');
+      status('先确认 GitHub 登录 · 返回后再点一次备份');
+      toast('手机端现在固定两步，避免登录丢失密文：先登录/打开GitHub新Issue页，不要提交；返回本站后再点一次“备份云端”。');
+      openIssue(mobileAuthUrl(title));return;
+    }
     status('备份请求待确认');
-    toast(isMobile()?'会先经过 GitHub 登录页；登录后直接提交已填好的 Issue。若内容没带上，返回本站再点一次“备份云端”。':'GitHub 页面打开后直接点 Submit new issue。');
+    toast('GitHub 页面会带上完整加密内容；直接点 Submit new issue。');
     openIssue(url);
   }catch(e){status('本机已保存 · 云备份未完成');toast('备份未完成：'+(e?.message||e))}
   finally{busy=false;if(b){b.disabled=false;b.textContent=old}}
@@ -108,11 +123,14 @@ async function restore(){
   finally{busy=false;if(b)b.disabled=false}
 }
 function mount(){
-  const top=document.querySelector('.top .actions');if(!top||document.getElementById('backupEventStateBtn'))return;
-  const backupBtn=document.createElement('button');backupBtn.id='backupEventStateBtn';backupBtn.type='button';backupBtn.textContent='备份云端';backupBtn.onclick=backup;
-  const restoreBtn=document.createElement('button');restoreBtn.id='restoreEventStateBtn';restoreBtn.type='button';restoreBtn.textContent='恢复云端';restoreBtn.onclick=restore;
-  const st=document.createElement('span');st.id='eventCloudStatus';st.className='event-cloud-status';st.textContent='检查云备份…';
-  top.prepend(restoreBtn);top.prepend(backupBtn);top.appendChild(st);
+  const top=document.querySelector('.top .actions');if(!top)return;
+  let backupBtn=document.getElementById('backupEventStateBtn');
+  if(!backupBtn){backupBtn=document.createElement('button');backupBtn.id='backupEventStateBtn';backupBtn.type='button';backupBtn.textContent='备份云端';top.prepend(backupBtn)}
+  let restoreBtn=document.getElementById('restoreEventStateBtn');
+  if(!restoreBtn){restoreBtn=document.createElement('button');restoreBtn.id='restoreEventStateBtn';restoreBtn.type='button';restoreBtn.textContent='恢复云端';backupBtn.insertAdjacentElement('afterend',restoreBtn)}
+  let st=document.getElementById('eventCloudStatus');
+  if(!st){st=document.createElement('span');st.id='eventCloudStatus';st.className='event-cloud-status';st.textContent='检查云备份…';top.appendChild(st)}
+  backupBtn.onclick=backup;restoreBtn.onclick=restore;
   const ex=document.getElementById('exportBtn'),im=document.getElementById('importBtn');if(ex)ex.textContent='本地导出';if(im)im.textContent='本地导入';
   refresh();
 }
