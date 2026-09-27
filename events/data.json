@@ -672,6 +672,369 @@
           "note": "详细节目公开"
         }
       ]
+    },
+    {
+      "id": "louvre-renaissance-2026",
+      "title": "ルーヴル美術館展　ルネサンス",
+      "bucket": "now",
+      "category": "西洋美术/大型特展",
+      "start_date": "2026-09-09",
+      "end_date": "2026-12-13",
+      "venue": "国立新美術館 企画展示室1E",
+      "area": "六本木",
+      "price_min": 2400,
+      "price_max": 2400,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-06-18",
+      "ticket_deadline": "2026-12-06",
+      "announcement_date": "2025-09-04",
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 94,
+      "tags": [
+        "卢浮宫",
+        "文艺复兴",
+        "达·芬奇",
+        "大型特展",
+        "绘画",
+        "雕塑",
+        "工艺"
+      ],
+      "why": "不是普通常设展，而是从卢浮宫精选50余件文艺复兴作品，并包含达·芬奇《美しきフェロニエール》日本初公开；内容密度和稀缺性都足以成为专程目的地。",
+      "drawback": "热门大型特展周末可能拥挤；12/7–12/13最后一周改为日時指定制。",
+      "ticket_note": "目前一般当日券成人¥2,400。9/9–12/6有效的当日券在售；12/7–12/13需购买日時指定券，详细规则将另行公布。",
+      "source_url": "https://www.nact.jp/exhibition_special/2026/louvre2026/",
+      "ticket_url": "https://www.ntv.co.jp/louvre2026/ticket/",
+      "learning_features": {
+        "subjects": [
+          "文艺复兴美术",
+          "达·芬奇",
+          "欧洲古典艺术"
+        ],
+        "formats": [
+          "大型博物馆特展"
+        ],
+        "experiences": [
+          "名作鉴赏",
+          "艺术史",
+          "稀有来日作品"
+        ],
+        "signals": [
+          "需购票",
+          "大型热门展",
+          "最后一周日時指定"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2025-09-04",
+          "type": "first_public_announcement",
+          "note": "展览正式公布"
+        },
+        {
+          "date": "2026-06-18",
+          "type": "ticket_sale_start",
+          "note": "前售券开始销售"
+        },
+        {
+          "date": "2026-09-09",
+          "type": "exhibition_open",
+          "note": "东京展开展"
+        }
+      ]
+    },
+    {
+      "id": "hojoki-2121-2026",
+      "title": "方丈記に学ぶ —生きるを編み直す小さな建築—",
+      "bucket": "now",
+      "category": "建筑×设计",
+      "start_date": "2026-08-28",
+      "end_date": "2027-01-11",
+      "venue": "21_21 DESIGN SIGHT ギャラリー1＆2",
+      "area": "六本木/东京Midtown",
+      "price_min": 1700,
+      "price_max": 1700,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 93,
+      "tags": [
+        "建筑",
+        "设计",
+        "空间",
+        "方丈记",
+        "安藤忠雄建筑",
+        "可进入装置"
+      ],
+      "why": "从《方丈记》的九平方米小庵出发，让建筑家、设计师和艺术家重新构想居住与生活；部分作品可进入体验，与你对建筑、空间和思想性展览的兴趣高度匹配。",
+      "drawback": "主题偏建筑与生活哲学，不是强娱乐型；如果只想轻松看展，阅读和思考比重较高。",
+      "ticket_note": "一般¥1,700，10:00–19:00；10/31六本木Art Night特别延长至22:00。",
+      "source_url": "https://www.2121designsight.jp/program/hojoki/",
+      "ticket_url": "https://www.2121designsight.jp/program/hojoki/",
+      "learning_features": {
+        "subjects": [
+          "建筑",
+          "居住文化",
+          "方丈记"
+        ],
+        "formats": [
+          "设计展览",
+          "空间装置"
+        ],
+        "experiences": [
+          "可进入空间",
+          "建筑观察",
+          "生活方式思考"
+        ],
+        "signals": [
+          "需购票",
+          "长期展期"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-08-28",
+          "type": "exhibition_open",
+          "note": "开展"
+        }
+      ]
+    },
+    {
+      "id": "sottsass-artizon-2026",
+      "title": "エットレ・ソットサス —魔法がはじまるとき、デザインは生まれる",
+      "bucket": "now",
+      "category": "设计/美术馆",
+      "start_date": "2026-06-23",
+      "end_date": "2026-10-04",
+      "venue": "アーティゾン美術館 6階展示室",
+      "area": "京桥",
+      "price_min": 1200,
+      "price_max": 1500,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": null,
+      "ticket_deadline": "2026-10-04",
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 92,
+      "tags": [
+        "设计",
+        "家具",
+        "产品设计",
+        "Memphis",
+        "意大利设计",
+        "结束临近"
+      ],
+      "why": "20世纪意大利设计巨匠Sottsass的系统展，设计史、产品、视觉语言都和你偏好的设计/创意内容高度匹配，而且现在只剩最后一周。",
+      "drawback": "不是沉浸式体验；如果对设计史兴趣不高，展览更偏作品与语境理解。",
+      "ticket_note": "10/4闭幕，属于高优先级结束提醒。Web日時指定¥1,200，现场¥1,500；同票可看同时举办展。",
+      "source_url": "https://www.artizon.museum/exhibition_sp/sottsass2026/",
+      "ticket_url": "https://www.artizon.museum/exhibition_sp/sottsass2026/",
+      "learning_features": {
+        "subjects": [
+          "工业设计",
+          "意大利设计",
+          "Memphis"
+        ],
+        "formats": [
+          "美术馆设计展"
+        ],
+        "experiences": [
+          "设计史",
+          "实物鉴赏"
+        ],
+        "signals": [
+          "需预约建议",
+          "结束临近",
+          "一票多展"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-06-23",
+          "type": "exhibition_open",
+          "note": "开展"
+        }
+      ]
+    },
+    {
+      "id": "shojo-manga-infinity-2026",
+      "title": "少女漫画・インフィニティ　萩尾望都×山岸凉子×大和和紀 三人展",
+      "bucket": "future",
+      "category": "漫画×原画展",
+      "start_date": "2026-10-28",
+      "end_date": "2027-02-08",
+      "venue": "国立新美術館 企画展示室2E",
+      "area": "六本木",
+      "price_min": 2000,
+      "price_max": 2200,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-07-28",
+      "ticket_deadline": "2026-10-27",
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 88,
+      "tags": [
+        "漫画",
+        "原画",
+        "创作资料",
+        "少女漫画史",
+        "国立新美术馆"
+      ],
+      "why": "三位传奇漫画家的大型原画与资料展，而且是国立美术馆首次举办的大规模少女漫画展；不是商品型IP快闪，内容本身足够强。",
+      "drawback": "如果对这三位作者和70年代少女漫画史兴趣有限，个人命中率会低于游戏/动画制作幕后展。",
+      "ticket_note": "前售成人¥2,000，7/28已开售，10/27 23:59截止；当日成人¥2,200。",
+      "source_url": "https://www.nact.jp/exhibition_special/2026/shojomanga/",
+      "ticket_url": "https://shojomanga.jp/ticket/",
+      "learning_features": {
+        "subjects": [
+          "少女漫画",
+          "漫画史",
+          "原画"
+        ],
+        "formats": [
+          "大型原画展"
+        ],
+        "experiences": [
+          "创作资料",
+          "原画鉴赏",
+          "漫画史"
+        ],
+        "signals": [
+          "前售中",
+          "需购票",
+          "国立馆大型展"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-07-28",
+          "type": "advance_ticket_sale",
+          "note": "前售券开始销售"
+        }
+      ]
+    },
+    {
+      "id": "kusuriya-tokyo-city-view-2026",
+      "title": "TVアニメ『薬屋のひとりごと』×東京シティビュー　舞が織りなす幻想の世界",
+      "bucket": "now",
+      "category": "动漫×空间体验",
+      "start_date": "2026-08-01",
+      "end_date": "2026-10-26",
+      "venue": "東京シティビュー（六本木ヒルズ森タワー52階）",
+      "area": "六本木",
+      "price_min": 2200,
+      "price_max": 2400,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-07-08",
+      "ticket_deadline": "2026-10-26",
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 87,
+      "tags": [
+        "动漫",
+        "药屋少女的呢喃",
+        "高层景观",
+        "空间演出",
+        "日時指定"
+      ],
+      "why": "不是单纯物贩快闪，而是利用东京City View高层空间做视觉演出和作品世界体验；如果你对IP本身有兴趣，现场环境会显著加分。",
+      "drawback": "IP依赖较强，且商品/特典属性仍然存在；如果没追作品，优先级应低于独立的沉浸艺术或制作幕后展。",
+      "ticket_note": "全日日時指定；在线成人¥2,200、现场¥2,400。在线票售至10/26 21:30。",
+      "source_url": "https://kusuriya-event-roppongihills.com/",
+      "ticket_url": "https://kusuriya-event-roppongihills.com/ticket/",
+      "learning_features": {
+        "subjects": [
+          "动画IP",
+          "药屋少女的呢喃"
+        ],
+        "formats": [
+          "IP空间展",
+          "高层景观联动"
+        ],
+        "experiences": [
+          "视觉空间",
+          "夜景",
+          "作品世界体验"
+        ],
+        "signals": [
+          "日時指定",
+          "需购票",
+          "有商品属性"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-07-08",
+          "type": "ticket_sale_start",
+          "note": "在线票开始销售"
+        },
+        {
+          "date": "2026-08-01",
+          "type": "event_open",
+          "note": "活动开始"
+        }
+      ]
+    },
+    {
+      "id": "new-artists-vol23-topmuseum-2026",
+      "title": "ふたたびくみたてる　日本の新進作家 vol.23",
+      "bucket": "future",
+      "category": "摄影/当代艺术",
+      "start_date": "2026-09-30",
+      "end_date": "2027-01-17",
+      "venue": "東京都写真美術館 3F展示室",
+      "area": "恵比寿",
+      "price_min": 700,
+      "price_max": 700,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 81,
+      "tags": [
+        "摄影",
+        "当代艺术",
+        "新锐艺术家",
+        "恵比寿"
+      ],
+      "why": "新锐日本艺术家的摄影/影像表达，价格低、恵比寿交通方便；作为半天文化活动有性价比，但不是你最强兴趣方向。",
+      "drawback": "题材和作者知名度不像大型特展那样一眼就有吸引力，因此更适合作为扩展候选而非首选。",
+      "ticket_note": "9/30开展，一般¥700；部分特定日期有免费或夜间优惠。",
+      "source_url": "https://topmuseum.jp/exhibition/5423/",
+      "ticket_url": "https://topmuseum.jp/exhibition/5423/",
+      "learning_features": {
+        "subjects": [
+          "摄影",
+          "当代艺术",
+          "日本新锐作家"
+        ],
+        "formats": [
+          "摄影美术馆群展"
+        ],
+        "experiences": [
+          "作品发现",
+          "摄影鉴赏"
+        ],
+        "signals": [
+          "低票价",
+          "长期展期"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "exhibition_open",
+          "note": "开展"
+        }
+      ]
     }
   ],
   "meta": {
@@ -686,6 +1049,30 @@
     "release_history_enabled": true,
     "backfill_last_run": "2026-09-27",
     "backfill_policy": "scan_past_announcements_for_events_still_upcoming_or_ongoing",
-    "notes": "Initial archive backfill added high-match events whose announcements or ticket sales started before the current weekly window."
+    "notes": "Coverage gap review triggered by missed Louvre Renaissance exhibition; switched to inventory-first major-venue sweep plus preference ranking.",
+    "coverage_model": "inventory_first_then_preference",
+    "coverage_floor": {
+      "mandatory_venue_calendars": [
+        "国立新美術館",
+        "東京国立博物館",
+        "東京都美術館",
+        "東京都現代美術館",
+        "東京都写真美術館",
+        "アーティゾン美術館",
+        "森美術館/森アーツセンターギャラリー/東京シティビュー",
+        "21_21 DESIGN SIGHT",
+        "東京ステーションギャラリー",
+        "CREATIVE MUSEUM TOKYO",
+        "麻布台ヒルズギャラリー"
+      ],
+      "mandatory_ticket_channels": [
+        "ローチケ",
+        "イープラス",
+        "チケットぴあ",
+        "公式オンラインチケット"
+      ],
+      "rule": "Build a broad active/upcoming inventory from mandatory calendars before applying preference ranking."
+    },
+    "coverage_status": "expanded_after_gap_review"
   }
 }
