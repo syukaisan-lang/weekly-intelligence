@@ -185,6 +185,493 @@
           "座位影响体验"
         ]
       }
+    },
+    {
+      "id": "zen-night-tokyo-2026",
+      "title": "ZEN NIGHT TOKYO",
+      "bucket": "future",
+      "category": "沉浸式/声音艺术",
+      "start_date": "2026-10-14",
+      "end_date": "2026-12-06",
+      "venue": "東京国立博物館 庭園",
+      "area": "上野",
+      "price_min": 3600,
+      "price_max": 32300,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-08-07",
+      "ticket_deadline": "2026-10-13",
+      "announcement_date": "2026-09-15",
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 97,
+      "tags": [
+        "声音",
+        "光影",
+        "庭园",
+        "沉浸式",
+        "禅",
+        "神经科技",
+        "夜间限定"
+      ],
+      "why": "东京国立博物馆庭园夜间特别开放，把红叶、雾海、光影、神经音乐和步行禅结合在一起；既有空间体验，也有声音与科技元素，与你对有记忆点、非纯打卡型活动的偏好高度重合。",
+      "drawback": "普通入场已不算便宜；带脑波坐禅或僧侣坐禅/精进料理的高阶票价明显更高，且部分坐禅票有固定时段和少量名额。",
+      "ticket_note": "前售至10/13 23:59；普通套票成人¥3,600。脑波坐禅¥5,600；特别坐禅¥17,300；坐禅＋精进料理¥32,300。",
+      "source_url": "https://zen.vie.style/tokyo2026",
+      "ticket_url": "https://zen-night-tokyo.square.site/",
+      "learning_features": {
+        "subjects": [
+          "禅文化",
+          "神经科技",
+          "声音艺术"
+        ],
+        "formats": [
+          "夜间沉浸式活动",
+          "庭园特别开放"
+        ],
+        "experiences": [
+          "声音空间",
+          "光影",
+          "步行体验",
+          "脑波坐禅"
+        ],
+        "signals": [
+          "需购票",
+          "夜间限定",
+          "特殊场地",
+          "可选高价体验"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-08-07",
+          "type": "ticket_sale_start",
+          "note": "前售开始"
+        },
+        {
+          "date": "2026-09-15",
+          "type": "official_press_release",
+          "note": "日经/VIE正式发布"
+        }
+      ]
+    },
+    {
+      "id": "mappa-expo-15th-2026",
+      "title": "MAPPA EXPO 15th Anniversary",
+      "bucket": "now",
+      "category": "动漫×制作展",
+      "start_date": "2026-09-16",
+      "end_date": "2026-12-07",
+      "venue": "YURAKUCHO MUSEUM",
+      "area": "有乐町",
+      "price_min": 2000,
+      "price_max": 4200,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-06-19",
+      "ticket_deadline": null,
+      "announcement_date": "2026-06-19",
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 92,
+      "tags": [
+        "动漫",
+        "制作幕后",
+        "原画",
+        "沉浸展示",
+        "MAPPA",
+        "有乐町"
+      ],
+      "why": "不是单纯IP快闪，核心是MAPPA 15年制作内容、原画和作品世界的体感展示，包含《咒术回战》《进击的巨人》《电锯人》等，和你偏好的动漫×制作幕后交集很强。",
+      "drawback": "物贩占比不低，而且热门IP可能让周末较拥挤；如果对MAPPA作品本身兴趣一般，吸引力会下降。",
+      "ticket_note": "一般前售¥2,000、当日¥2,200；后期日程一般销售已开放，采用日時指定。",
+      "source_url": "https://www.mappa.co.jp/15th/",
+      "ticket_url": "https://l-tike.com/event/mevent/?mid=786144",
+      "learning_features": {
+        "subjects": [
+          "动漫制作",
+          "MAPPA作品"
+        ],
+        "formats": [
+          "周年制作展",
+          "日時指定展览"
+        ],
+        "experiences": [
+          "制作幕后",
+          "原画",
+          "沉浸展示"
+        ],
+        "signals": [
+          "需购票",
+          "物贩较多",
+          "热门IP"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-06-19",
+          "type": "official_announcement",
+          "note": "展览公布并开始先行抽选"
+        },
+        {
+          "date": "2026-08-29",
+          "type": "general_sale",
+          "note": "后期日程一般销售开始"
+        }
+      ]
+    },
+    {
+      "id": "ryusoba-project-layra-2026",
+      "title": "アニマーシブライブ『竜とそばかすの姫 - PROJECT LAYRA -』",
+      "bucket": "future",
+      "category": "动漫×沉浸式现场",
+      "start_date": "2026-10-10",
+      "end_date": "2026-11-15",
+      "venue": "MoN Takanawa: The Museum of Narratives Box1000",
+      "area": "高轮Gateway",
+      "price_min": 6600,
+      "price_max": 14300,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-09-12",
+      "ticket_deadline": null,
+      "announcement_date": "2026-08-11",
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 93,
+      "tags": [
+        "动漫",
+        "现场演出",
+        "沉浸式",
+        "影像",
+        "音响",
+        "虚实融合"
+      ],
+      "why": "最前沿影像、音响和空间演出与动画世界融合，属于真正的“动画×技术×现场体验”，比普通上映会或IP活动更符合你。",
+      "drawback": "票价较高，演出体验受座位/区域影响明显；如果对《龙与雀斑公主》本身兴趣弱，性价比会下降。",
+      "ticket_note": "一般销售9/12开始；成人可选2F着席¥6,600、1F指定席¥7,700–9,900、站立应援区¥11,000，另有周边套票。",
+      "source_url": "https://animmersive.jp/ryusoba/",
+      "ticket_url": "https://l-tike.com/ntvzero/event/animmersive_ryusoba.html",
+      "learning_features": {
+        "subjects": [
+          "动画电影",
+          "虚拟世界"
+        ],
+        "formats": [
+          "沉浸式现场演出",
+          "音乐Live"
+        ],
+        "experiences": [
+          "影像空间",
+          "高规格音响",
+          "虚实融合",
+          "现场感"
+        ],
+        "signals": [
+          "高票价",
+          "需购票",
+          "座位影响体验"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-08-11",
+          "type": "cast_ticket_announcement",
+          "note": "出演与先行售票信息公开"
+        },
+        {
+          "date": "2026-09-12",
+          "type": "general_sale",
+          "note": "一般销售开始"
+        }
+      ]
+    },
+    {
+      "id": "kojima-beyond-the-strand-2026",
+      "title": "KOJIMA PRODUCTIONS 10th ANNIVERSARY EXHIBITION『BEYOND THE STRAND』",
+      "bucket": "future",
+      "category": "游戏×沉浸式展览",
+      "start_date": "2026-10-31",
+      "end_date": "2026-12-20",
+      "venue": "麻布台ヒルズギャラリー",
+      "area": "虎之门/神谷町",
+      "price_min": 2600,
+      "price_max": 57600,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-09-11",
+      "ticket_deadline": null,
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 94,
+      "tags": [
+        "游戏",
+        "制作幕后",
+        "沉浸式",
+        "360度影像",
+        "设定资料",
+        "小岛制作"
+      ],
+      "why": "包含首次公开制作资料、体感展示和专门制作的360°沉浸影像，不是只卖周边；游戏创作过程＋空间影像的组合与你的兴趣高度匹配。",
+      "drawback": "高价限定周边票会显著拉高票价区间，但普通前售其实是¥2,600；预览期10/31–11/3需要专用预览票。",
+      "ticket_note": "普通前售¥2,600、当日¥2,800；9/11起售。10/31–11/3为Preview期，需要对应Preview票。",
+      "source_url": "https://beyondthestrand.kojimaproductions.jp/ja/",
+      "ticket_url": "https://l-tike.com/order/?gLcode=30201",
+      "learning_features": {
+        "subjects": [
+          "游戏制作",
+          "创意开发"
+        ],
+        "formats": [
+          "周年展览",
+          "沉浸式展览"
+        ],
+        "experiences": [
+          "制作幕后",
+          "360度影像",
+          "世界观体验"
+        ],
+        "signals": [
+          "需购票",
+          "周边票价格跨度大",
+          "预览期特殊票制"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-09-11",
+          "type": "ticket_sale_start",
+          "note": "Lawson Ticket开始销售"
+        }
+      ]
+    },
+    {
+      "id": "tokyo-anime-next-2026",
+      "title": "TOKYO ANIME NEXT",
+      "bucket": "future",
+      "category": "动漫×城市活动",
+      "start_date": "2026-10-30",
+      "end_date": "2026-11-02",
+      "venue": "東京建物 Brillia HALL ほか",
+      "area": "池袋",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-06-22",
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 89,
+      "tags": [
+        "动漫",
+        "池袋",
+        "上映",
+        "舞台",
+        "国际活动",
+        "新企划"
+      ],
+      "why": "这是2027年新国际动漫活动的Launch企划，池袋多会场，包含海外作品上映与最终日舞台，内容方向比普通IP展更值得观察。",
+      "drawback": "截至目前完整节目和票务仍Coming soon，信息成熟度不足，因此先进入关注池，不应现在给过高确定性推荐。",
+      "ticket_note": "官方已公布10/30–11/2在池袋举办，但节目和具体申请/票务方式仍待后续公布。",
+      "source_url": "https://tokyoanimenext.jp/",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "日本动画",
+          "国际动画交流"
+        ],
+        "formats": [
+          "城市多会场活动",
+          "上映+舞台"
+        ],
+        "experiences": [
+          "作品发现",
+          "现场舞台"
+        ],
+        "signals": [
+          "未来活动",
+          "票务未公布",
+          "官方信息仍在更新"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-06-22",
+          "type": "official_announcement",
+          "note": "东京都与日本動画協会公布举办"
+        }
+      ]
+    },
+    {
+      "id": "designart-tokyo-2026",
+      "title": "DESIGNART TOKYO 2026",
+      "bucket": "future",
+      "category": "设计×城市",
+      "start_date": "2026-10-30",
+      "end_date": "2026-11-08",
+      "venue": "銀座・東京・六本木・表参道・原宿・代官山ほか",
+      "area": "东京多区域",
+      "price_min": 0,
+      "price_max": 0,
+      "ticket_status": "no_ticket",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": null,
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 91,
+      "tags": [
+        "设计",
+        "艺术",
+        "建筑",
+        "城市漫游",
+        "国际创作者",
+        "多会场"
+      ],
+      "why": "把东京街区本身变成设计/艺术展示场，适合你喜欢的城市漫游、设计、独立空间和环境体验；可按感兴趣展点自由组合，不必整天困在单一场馆。",
+      "drawback": "活动点很多，质量差异会比单一策展展览更大；部分内容带销售属性，需要提前筛点位而不是无目的全逛。",
+      "ticket_note": "城市内大量展示可免费观看；KK线主会场等个别项目可能有独立票务，具体按各项目页确认。",
+      "source_url": "https://www.designart.jp/designarttokyo2026/",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "当代设计",
+          "城市文化"
+        ],
+        "formats": [
+          "城市多会场设计节"
+        ],
+        "experiences": [
+          "城市漫游",
+          "空间发现",
+          "设计观察"
+        ],
+        "signals": [
+          "多数免费",
+          "部分商业/销售属性",
+          "点位质量差异"
+        ]
+      },
+      "release_history": []
+    },
+    {
+      "id": "tokyo-atlas-2026",
+      "title": "国際美術展 TOKYO ATLAS",
+      "bucket": "future",
+      "category": "艺术×城市空间",
+      "start_date": "2026-10-10",
+      "end_date": "2026-12-20",
+      "venue": "台場・青海・天王洲 多会场",
+      "area": "湾岸/天王洲",
+      "price_min": 0,
+      "price_max": 0,
+      "ticket_status": "no_ticket",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-08-10",
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 87,
+      "tags": [
+        "当代艺术",
+        "城市空间",
+        "户外",
+        "天王洲",
+        "台场",
+        "免费"
+      ],
+      "why": "作品直接进入台场、青海、天王洲的城市和户外空间，重点不是在白盒子里看展，而是让场地本身变成体验的一部分。",
+      "drawback": "整体区域跨度大，若全走一遍交通和步行量不小；纯当代艺术作品的命中率可能有波动。",
+      "ticket_note": "主展免费，一部分关联项目可能收费；10/10起开放。",
+      "source_url": "https://tokyoatlas.jp/",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "当代艺术",
+          "城市空间"
+        ],
+        "formats": [
+          "国际美术展",
+          "多区域户外展"
+        ],
+        "experiences": [
+          "城市探索",
+          "空间感",
+          "户外作品"
+        ],
+        "signals": [
+          "免费",
+          "多会场",
+          "步行量较大"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-08-10",
+          "type": "official_site_open",
+          "note": "官网公开"
+        }
+      ]
+    },
+    {
+      "id": "tokyo-midtown-design-live-2026",
+      "title": "TOKYO MIDTOWN DESIGN LIVE 2026",
+      "bucket": "future",
+      "category": "设计×体验",
+      "start_date": "2026-10-16",
+      "end_date": "2026-11-04",
+      "venue": "東京ミッドタウン",
+      "area": "六本木",
+      "price_min": 0,
+      "price_max": 0,
+      "ticket_status": "no_ticket",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-08-19",
+      "backfilled_from_archive": true,
+      "last_verified_at": "2026-09-27",
+      "recommendation": 86,
+      "tags": [
+        "设计",
+        "展览",
+        "本",
+        "文具",
+        "创作者",
+        "空间体验"
+      ],
+      "why": "除了设计展本身，还把音乐、本、文具、创作者交流和空间体验混合在一起，比单纯看海报或产品展示更适合你。",
+      "drawback": "商业设施内活动的策展深度可能不如专业美术馆或DESIGNART；部分内容更偏轻体验。",
+      "ticket_note": "主活动以开放型展示为主；具体付费工作坊/节目如有则按单项规则确认。",
+      "source_url": "https://www.tokyo-midtown.com/jp/event/8117/",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "生活设计",
+          "平面/产品设计"
+        ],
+        "formats": [
+          "商业文化设施设计节"
+        ],
+        "experiences": [
+          "展览",
+          "书与文具",
+          "创作者交流"
+        ],
+        "signals": [
+          "多数免费",
+          "商业设施内"
+        ]
+      },
+      "release_history": [
+        {
+          "date": "2026-08-19",
+          "type": "official_announcement",
+          "note": "东京Midtown首次公布"
+        },
+        {
+          "date": "2026-09-18",
+          "type": "detail_update",
+          "note": "详细节目公开"
+        }
+      ]
     }
   ],
   "meta": {
@@ -194,6 +681,11 @@
     "discovery_window_days": 7,
     "ticket_watch_months": 12,
     "publish_rule": "official_verification_required",
-    "stale_rule": "do_not_present_stale_or_unverified_ticket_status_as_current"
+    "stale_rule": "do_not_present_stale_or_unverified_ticket_status_as_current",
+    "announcement_backfill_months": 12,
+    "release_history_enabled": true,
+    "backfill_last_run": "2026-09-27",
+    "backfill_policy": "scan_past_announcements_for_events_still_upcoming_or_ongoing",
+    "notes": "Initial archive backfill added high-match events whose announcements or ticket sales started before the current weekly window."
   }
 }
