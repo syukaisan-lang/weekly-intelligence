@@ -32,7 +32,7 @@ dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);bo
   <nav class="event-main-nav" aria-label="Dashboard navigation"><a href="../index.html">Weekly</a><a class="active" href="./">Events</a></nav>
   <div class="top">
     <div><h1>东京活动雷达</h1><p class="sub">近期可去 + 未来抢票。反馈会按“主题 × 形式 × 体验”精准学习；未点击不算负反馈。</p></div>
-    <div class="actions"><button id="backupEventStateBtn" type="button">备份云端</button><button id="restoreEventStateBtn" type="button">恢复云端</button><button id="exportBtn">本地导出</button><label><button id="importBtn" type="button">本地导入</button><input id="importFile" type="file" accept="application/json" hidden></label><span id="eventCloudStatus" class="event-cloud-status">检查云备份…</span><span id="eventCloudHint" class="event-cloud-status">手机端首次备份分两步：先确认 GitHub 登录，返回本站后再点一次“备份云端”提交加密内容。</span></div>
+    <div class="actions"><button id="backupEventStateBtn" type="button">备份云端</button><button id="restoreEventStateBtn" type="button">恢复云端</button><button id="exportBtn">本地导出</button><label><button id="importBtn" type="button">本地导入</button><input id="importFile" type="file" accept="application/json" hidden></label><span id="eventCloudStatus" class="event-cloud-status">检查云备份…</span><span id="eventCloudHint" class="event-cloud-status">备份方式已改成与 Weekly 一致：只提交本次新增/变更的加密增量，手机端直接在当前页打开 GitHub 确认页。</span></div>
   </div>
   <section id="stats" class="stats"></section>
   <nav class="tabs">
@@ -125,8 +125,7 @@ window.mergeEventFeedback=remote=>{const merged={...fb};let applied=0,kept=0;for
 })();
 </script>
 <script src="../private-knowledge.js?v=20260927-2"></script>
-<script src="event-state-sync.js?v=20260927-5"></script>
-<script src="event-cloud-v1.js?v=20260927-1"></script>
+<script src="event-state-sync.js?v=20260927-6"></script>
 <script src="ui-v3.js?v=20260927-2"></script>
 </body>
 </html>
