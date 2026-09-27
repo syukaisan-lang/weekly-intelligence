@@ -25,14 +25,15 @@ async function validatePassword(){
 async function refresh(){
   try{
     const [m,e]=await Promise.all([getJson(META_URL,true),getJson(ENV_URL,true)]);
-    const remote=Number(m?.meta?.cursor_updated_at||Date.parse(m?.meta?.latest_at||m?.meta?.snapshot_at||0)||0);
+    const remote=Number(m?.meta?.cursor_updated_at||0);
+    const cloudAt=Date.parse(m?.meta?.latest_at||m?.meta?.snapshot_at||0)||0;
     const local=latestTs(localState());
     const pending=localStorage.getItem(PENDING);
-    if(pending&&remote>=Date.parse(pending))localStorage.removeItem(PENDING);
+    if(pending&&cloudAt>=Date.parse(pending))localStorage.removeItem(PENDING);
     if(localStorage.getItem(PENDING)){status('加密备份已提交 · 等待 GitHub 写入');return}
     if(local>remote){status('本机已保存 · 有活动反馈待云备份');return}
     if(!e){status('本机已保存 · 尚无活动云备份');return}
-    status('活动云备份 '+new Date(remote||Date.now()).toLocaleString('ja-JP'));
+    status('活动云备份 '+new Date(cloudAt||Date.now()).toLocaleString('ja-JP'));
   }catch(_){status('本机已保存 · 云端状态暂时无法读取')}
 }
 function openIssue(url){
