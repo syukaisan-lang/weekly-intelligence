@@ -47,6 +47,16 @@ dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);bo
     <select id="sort"><option value="smart">智能推荐</option><option value="score">原始推荐度</option><option value="ending">快结束</option><option value="sale">票务紧迫度</option><option value="price">价格低到高</option></select>
     <label><input id="freeOnly" type="checkbox"> 只看免费</label>
   </section>
+  <details class="event-method notice" id="eventMethod">
+    <summary>查看筛选依据与搜索方式</summary>
+    <div class="event-method-grid">
+      <div><b>发现</b><span>场馆/主办方、正式票务、垂直媒体多源发现</span></div>
+      <div><b>预筛</b><span>先排除纯促销、普通市集、低内容密度活动</span></div>
+      <div><b>核验</b><span>最终入选必须回到官方或正式票务渠道确认</span></div>
+      <div><b>学习</b><span>主题 × 形式 × 体验；未点击不算负反馈</span></div>
+      <div><b>发布</b><span>不凑数；信息未核实则标记不确定，不冒充最新</span></div>
+    </div>
+  </details>
   <section id="learning" class="notice"></section>
   <section id="list" class="grid"></section>
 </main>
