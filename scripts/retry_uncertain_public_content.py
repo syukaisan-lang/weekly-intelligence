@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import base64
 import json
+import re
 import subprocess
 import time
 from datetime import datetime, timedelta, timezone
@@ -21,10 +22,10 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTICLES = ROOT / 'data' / 'articles.json'
-MAX_ATTEMPTS = 48  # Fetch budget, never a recommendation quota.
-MAX_PER_HOST = 6
+MAX_ATTEMPTS = 288  # Fetch budget, never a recommendation quota.
+MAX_PER_HOST = 48
 RETRY_DAYS = 7
-MAX_SECONDS = 150
+MAX_SECONDS = 600
 USER_AGENT = 'Mozilla/5.0 (compatible; PersonalReadingDashboard/1.0)'
 
 
@@ -93,8 +94,12 @@ def rank(a, examples):
 
 def due(a, now):
     try:
+        if a.get('free_public_retry_next_at'):
+            return now >= datetime.fromisoformat(a['free_public_retry_next_at'])
         last = datetime.fromisoformat(str(a.get('free_public_retry_at') or '').replace('Z', '+00:00'))
-        return now - last >= timedelta(days=RETRY_DAYS)
+        status = a.get('free_public_retry_status')
+        wait = timedelta(days=RETRY_DAYS) if status in ('robots_or_unavailable', 'access_restricted', 'paywall') else timedelta(hours=6)
+        return now - last >= wait
     except (ValueError, TypeError):
         return True
 
@@ -104,7 +109,7 @@ def select(rows, ids, state, now=None, max_attempts=MAX_ATTEMPTS):
     examples = feedback_examples(rows, state)
     ranked = sorted((a for a in rows if str(a.get('id')) in ids and due(a, now)
                      and str(a.get('url') or '').startswith(('https://', 'http://'))
-                     and urlsplit(a['url']).hostname != 'xtrend.nikkei.com'),
+                     ),
                     key=lambda a: (-rank(a, examples), str(a.get('id'))))
     picked, host_counts = [], {}
     for a in ranked:
@@ -115,7 +120,12 @@ def select(rows, ids, state, now=None, max_attempts=MAX_ATTEMPTS):
         host_counts[host] = host_counts.get(host, 0) + 1
         if len(picked) >= max_attempts:
             break
-    return picked
+    # Interleave hosts so one slow site cannot consume the whole time budget.
+    groups = {}
+    for a in picked:
+        groups.setdefault(urlsplit(a['url']).hostname, []).append(a)
+    return [group[i] for i in range(max((len(g) for g in groups.values()), default=0))
+            for group in groups.values() if i < len(group)]
 
 
 @lru_cache(maxsize=64)
@@ -161,17 +171,26 @@ def fetch_public_text(url, feeds):
         if 'html' not in response.headers.get('content-type', ''):
             return '', False, '非HTML正文'
         soup = feeds.BeautifulSoup(response.text, 'html.parser')
+        paid = bool(re.search(r'"isAccessibleForFree"\s*:\s*(?:false|"false")', response.text, re.I))
         for element in soup(['script', 'style', 'nav', 'header', 'footer', 'aside']):
             element.decompose()
-        text = feeds.clean(' '.join(p.get_text(' ', strip=True)
-                                    for p in soup.select('article p, main p, .article p, .entry-content p')))
-        return text[:12000], bool(text), None if text else '未抽取到正文'
+        selectors = ['.article-body', '.articleBody', '.article-body__content', '.article__body',
+                     '#article-body', '#cmsBody', '.entry-content', '[itemprop="articleBody"]', 'article', 'main']
+        chunks = []
+        for selector in selectors:
+            nodes = soup.select(selector)
+            if nodes:
+                chunks = [n.get_text(' ', strip=True) for n in nodes]
+                if len(' '.join(chunks)) >= 160:
+                    break
+        text = feeds.clean(' '.join(dict.fromkeys(chunks)))
+        limited = paid or bool(re.search(r'会員限定|有料会員|ここから先は|ログインして.*(?:全文|続き)', text))
+        return text[:12000], bool(text), 'paywall' if limited else None if text else '未抽取到正文'
     return '', False, '跳转次数过多'
 
 
 def main():
     import update_feeds as feeds
-    import update_feeds_coverage as coverage
     import weekly_lifecycle
     payload = json.loads(ARTICLES.read_text(encoding='utf-8'))
     rows = payload.get('articles') or []
@@ -187,14 +206,16 @@ def main():
             break
         url = a['url']
         parts = urlsplit(url)
-        if not robots_allow(parts.netloc, parts.scheme, url):
-            counts['robots_blocked'] += 1
-            a['free_public_retry_status'] = 'robots_or_unavailable'
-            continue
         now = datetime.now(timezone.utc).isoformat()
         a['free_public_retry_at'] = now
+        a['free_public_retry_attempts'] = int(a.get('free_public_retry_attempts') or 0) + 1
         counts['attempted'] += 1
         content, checked, error = fetch_public_text(url, feeds)
+        a['free_public_retry_error'] = error or ''
+        wait_hours = 168 if error in ('robots_or_unavailable', 'paywall', 'HTTP 403', 'HTTP 401', 'HTTP 404') else 24 if error == '未抽取到正文' else 6
+        if error and wait_hours == 6:
+            wait_hours = min(72, 6 * 2 ** min(4, a['free_public_retry_attempts'] - 1))
+        a['free_public_retry_next_at'] = (datetime.now(timezone.utc) + timedelta(hours=wait_hours)).isoformat()
         if error == 'robots_or_unavailable':
             counts['robots_blocked'] += 1
             a['free_public_retry_status'] = 'robots_or_unavailable'
@@ -203,16 +224,25 @@ def main():
             a['content_excerpt'] = content[:5000]
             a['content_checked'] = True
             a['content_char_count'] = len(''.join(content.split()))
-            a['content_completeness'], a['content_completeness_reason'] = coverage.classify_content_completeness(content)
-            a['free_public_retry_status'] = 'readable'
+            partial = error == 'paywall' or bool(re.search(r'次のページ|残り\s*\d+\s*文字|続きを読む', content))
+            a['content_completeness'] = 'partial' if partial else 'unknown' if len(content) >= 11800 or len(content) < 240 else 'full'
+            a['content_completeness_reason'] = 'public_paywall_or_continuation' if partial else 'public_extracted_body'
+            a['free_public_retry_status'] = 'paywall' if error == 'paywall' else 'readable'
             counts['readable'] += 1
         else:
-            a['free_public_retry_status'] = 'unavailable'
+            a['free_public_retry_status'] = 'paywall' if error == 'paywall' else 'access_restricted' if error in ('HTTP 403', 'HTTP 401') else 'unavailable'
             counts['unavailable'] += 1
             if error and not a.get('screening_note'):
                 a['screening_note'] = f'公开正文暂不可读：{str(error)[:100]}'
     counts['checked_at'] = datetime.now(timezone.utc).isoformat()
     counts['time_budget_exhausted'] = time.monotonic() >= deadline
+    ARTICLES.write_text(json.dumps(payload, ensure_ascii=False), encoding='utf-8')
+    remaining_ids = candidate_ids()
+    remaining = [a for a in rows if str(a.get('id')) in remaining_ids]
+    counts['remaining'] = len(remaining)
+    counts['remaining_due'] = sum(due(a, datetime.now(timezone.utc)) for a in remaining)
+    counts['remaining_by_status'] = {s: sum(a.get('free_public_retry_status', 'not_attempted') == s for a in remaining)
+                                     for s in sorted({a.get('free_public_retry_status', 'not_attempted') for a in remaining})}
     payload.setdefault('meta', {})['free_public_retry_audit'] = counts
     ARTICLES.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
     print(json.dumps(counts, ensure_ascii=False))

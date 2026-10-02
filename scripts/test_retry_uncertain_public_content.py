@@ -51,7 +51,7 @@ class RecheckTests(unittest.TestCase):
                                 {'negative': {'feedback': 'less'}})
         self.assertEqual(picked[0]['id'], 'far')
         paid = article('paid', '会员正文', url='https://xtrend.nikkei.com/atcl/example')
-        self.assertEqual(recheck.select([paid], {'paid'}, {}), [])
+        self.assertEqual(recheck.select([paid], {'paid'}, {}), [paid], 'public XTrend pages can be checked without login')
         with patch.object(recheck, 'robots_rules', return_value=False):
             self.assertFalse(recheck.robots_allow('example.org', 'https', 'https://example.org/private'))
 
@@ -59,7 +59,7 @@ class RecheckTests(unittest.TestCase):
         today = datetime.now(timezone.utc).isoformat()
         self.assertEqual(recheck.select([article('recent', '最近重试', free_public_retry_at=today)],
                                         {'recent'}, {}), [])
-        rows = [article(str(i), f'内容{i}', url=f'https://same.example.org/{i}') for i in range(12)]
+        rows = [article(str(i), f'内容{i}', url=f'https://same.example.org/{i}') for i in range(recheck.MAX_PER_HOST+5)]
         self.assertEqual(len(recheck.select(rows, {a['id'] for a in rows}, {})), recheck.MAX_PER_HOST)
 
     def test_redirect_checks_destination_robots_before_second_request(self):
@@ -75,6 +75,17 @@ class RecheckTests(unittest.TestCase):
         self.assertEqual((content, checked, error), ('', False, 'robots_or_unavailable'))
         self.assertEqual(calls, ['https://open.example/article'])
 
+    def test_temporary_failures_retry_before_seven_days(self):
+        from datetime import timedelta
+        now = datetime.now(timezone.utc)
+        failed = article('failure', '暂时失败', free_public_retry_status='unavailable',
+                         free_public_retry_at=(now-timedelta(hours=8)).isoformat())
+        self.assertTrue(recheck.due(failed, now))
+        failed['free_public_retry_status'] = 'access_restricted'
+        self.assertFalse(recheck.due(failed, now))
+        failed['free_public_retry_next_at'] = (now+timedelta(hours=1)).isoformat()
+        self.assertFalse(recheck.due(failed, now))
+
     def test_real_candidates_are_read_only_and_include_summary_gaps(self):
         row = article('gap', '生成AIを業務分析に活用', first_seen=datetime.now(timezone.utc).isoformat(),
                       content_checked=False, content_excerpt='')
@@ -83,6 +94,20 @@ class RecheckTests(unittest.TestCase):
             path.write_text(json.dumps({'articles': [row]}, ensure_ascii=False), encoding='utf-8')
             ids = recheck.candidate_ids(path)
         self.assertEqual(ids, {'gap'})
+
+    def test_public_preview_keeps_paywall_marker(self):
+        node = types.SimpleNamespace(get_text=lambda *_args, **_kwargs: '公開された本文。' * 40)
+        class FakeSoup:
+            def __call__(self, _): return []
+            def select(self, _): return [node]
+        response = types.SimpleNamespace(status_code=200, headers={'content-type':'text/html'},
+                                         text='{"isAccessibleForFree":false}')
+        feeds = types.SimpleNamespace(requests=types.SimpleNamespace(get=lambda *_args, **_kwargs:response, RequestException=Exception),
+                                      BeautifulSoup=lambda *_args:FakeSoup(), clean=lambda x:x)
+        with patch.object(recheck, 'robots_allow', return_value=True):
+            text, checked, error = recheck.fetch_public_text('https://example.org/article', feeds)
+        self.assertTrue(checked)
+        self.assertEqual(error, 'paywall')
 
 
 if __name__ == '__main__':
