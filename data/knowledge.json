@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "Notion / 情報収集と整理",
-    "snapshot_at": "2026-09-25T14:44:48.523652+00:00",
+    "snapshot_at": "2026-10-02T15:58:46.599614+00:00",
     "schema_version": 5,
     "encrypted_full_data": true,
     "item_count": 157,
@@ -28,11 +28,11 @@
   },
   "metrics": {
     "total": 666,
-    "read": 659,
+    "read": 660,
     "stock": 157,
     "rejected": 509,
     "undecided": 0,
-    "added_30d": 4,
+    "added_30d": 1,
     "added_90d": 15
   },
   "categories": [
