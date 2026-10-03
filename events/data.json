@@ -2720,6 +2720,1010 @@
           "content_focus": []
         }
       }
+    },
+    {
+      "id": "mariko-mori-2026",
+      "title": "森万里子：燦燦",
+      "start_date": "2026-10-31",
+      "end_date": "2027-03-28",
+      "venue": "森美術館",
+      "area": "六本木",
+      "recommendation": 96,
+      "price_min": 2600,
+      "price_max": 3000,
+      "ticket_status": "票务待确认",
+      "why": "科技、光、知觉与意识组成沉浸式装置，与你的空间/技术体验偏好高度吻合。",
+      "drawback": "Wave UFO内部体验名额有限，不能默认普通入场就能体验。",
+      "source_url": "https://www.mori.art.museum/jp/exhibitions/marikomori/index.html",
+      "tags": [
+        "国际当代艺术",
+        "科技",
+        "光",
+        "沉浸装置"
+      ],
+      "ticket_note": "在线平日¥2,600、周末¥2,800；窗口¥2,800/3,000。售票开放状态尚未单独核验。",
+      "bucket": "future",
+      "category": "国际当代艺术展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "国际当代艺术",
+          "科技"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "光",
+          "沉浸装置"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "国际当代艺术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [
+            "装置",
+            "影像"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "光",
+            "沉浸装置"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pond-2026",
+      "title": "P.O.N.D. 2026",
+      "start_date": "2026-10-02",
+      "end_date": "2026-10-19",
+      "venue": "渋谷PARCO 多会场",
+      "area": "涩谷",
+      "recommendation": 89,
+      "price_min": 0,
+      "price_max": 0,
+      "ticket_status": "no_ticket",
+      "why": "艺术、音乐、影像与空间设计结合，免费且离你的工作地点近，适合发现新表达。",
+      "drawback": "不同区域内容差异较大，商场环境可能嘈杂。",
+      "source_url": "https://art.parco.jp/museumtokyo/detail/?id=2021",
+      "tags": [
+        "国际当代艺术",
+        "影像",
+        "声音",
+        "空间设计"
+      ],
+      "ticket_note": "主展免费；4F 11:00–21:00，最末日18:00结束，闭场前30分钟停止入场。",
+      "bucket": "now",
+      "category": "国际当代艺术展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "国际当代艺术",
+          "影像"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "声音",
+          "空间设计"
+        ],
+        "signals": [
+          "免费"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "国际当代艺术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": [
+            "声音",
+            "空间设计"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tada-minami-2026",
+      "title": "多田美波―光、凛と ゆれる",
+      "start_date": "2026-08-29",
+      "end_date": "2026-12-06",
+      "venue": "東京都現代美術館",
+      "area": "清澄白河",
+      "recommendation": 87,
+      "price_min": 1600,
+      "price_max": 1600,
+      "ticket_status": "on_sale",
+      "why": "光造形、雕塑与建筑资料一起回顾，和光/空间设计兴趣有交集。",
+      "drawback": "以造形作品观看为主，不等于互动装置。",
+      "source_url": "https://www.e-tix.jp/mot/tada.html",
+      "tags": [
+        "日本当代艺术",
+        "雕塑",
+        "光造形",
+        "建筑"
+      ],
+      "ticket_note": "一般¥1,600；日時指定なし。包含当日MOTコレクション。",
+      "bucket": "now",
+      "category": "日本当代艺术展览",
+      "ticket_url": "https://www.e-tix.jp/mot/tada.html",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "日本当代艺术",
+          "雕塑"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "光造形",
+          "建筑"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本当代艺术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [
+            "雕塑",
+            "建筑",
+            "照明"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "光造形",
+            "建筑"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mot-constellation-2026",
+      "title": "共時的星叢―時を共にした星たち　越境する芸術のまなざし",
+      "start_date": "2026-09-05",
+      "end_date": "2026-12-13",
+      "venue": "東京都現代美術館",
+      "area": "清澄白河",
+      "recommendation": 80,
+      "price_min": 2000,
+      "price_max": 2000,
+      "ticket_status": "on_sale",
+      "why": "从台湾与日本跨文化艺术交流切入，兼有电影、文学与近代历史语境。",
+      "drawback": "历史和策展脉络较强，未必适合轻松娱乐。",
+      "source_url": "https://www.mot-collection-search.jp/exhibition/2155/",
+      "tags": [
+        "东亚艺术",
+        "台湾与日本",
+        "电影",
+        "文化交流"
+      ],
+      "ticket_note": "一般¥2,000；日時指定なし。包含当日MOTコレクション。",
+      "bucket": "now",
+      "category": "东亚艺术展览",
+      "ticket_url": "https://www.mot-collection-search.jp/exhibition/2155/",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "东亚艺术",
+          "台湾与日本"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "电影",
+          "文化交流"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "东亚艺术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": [
+            "电影",
+            "文化交流"
+          ]
+        }
+      }
+    },
+    {
+      "id": "top-duet-2026",
+      "title": "デュエット――アジアン・コンテンポラリー",
+      "start_date": "2026-09-30",
+      "end_date": "2027-01-17",
+      "venue": "東京都写真美術館",
+      "area": "惠比寿",
+      "recommendation": 81,
+      "price_min": 900,
+      "price_max": 900,
+      "ticket_status": "on_sale",
+      "why": "亚洲当代摄影/影像表达，低票价，可与同馆新进作家展搭配。",
+      "drawback": "以作品观看为主，摄影题材的兴趣强度仍需反馈。",
+      "source_url": "https://topmuseum.jp/exhibition/5421/",
+      "tags": [
+        "亚洲当代艺术",
+        "摄影",
+        "影像"
+      ],
+      "ticket_note": "一般¥900；周一休馆，祝休日顺延；年末12/28–1/1休馆。",
+      "bucket": "now",
+      "category": "亚洲当代艺术展览",
+      "ticket_url": "https://topmuseum.jp/exhibition/5421/",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "亚洲当代艺术",
+          "摄影"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "影像"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "亚洲当代艺术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [
+            "摄影",
+            "影像"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "影像"
+          ]
+        }
+      }
+    },
+    {
+      "id": "kimura-ihei-50th-2026",
+      "title": "木村伊兵衛写真賞第50回記念写真展",
+      "start_date": "2026-10-31",
+      "end_date": "2026-11-23",
+      "venue": "東京都写真美術館",
+      "area": "惠比寿",
+      "recommendation": 78,
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "票务待确认",
+      "why": "重要摄影奖的纪念展，保留为摄影艺术候选。",
+      "drawback": "官方详细内容和价格未公布，先不高排。",
+      "source_url": "https://topmuseum.jp/exhibition/5478/",
+      "tags": [
+        "日本摄影",
+        "摄影奖",
+        "摄影"
+      ],
+      "ticket_note": "会期已公布，料金未定。",
+      "bucket": "future",
+      "category": "日本摄影展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "日本摄影",
+          "摄影奖"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "摄影"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本摄影"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": [
+            "摄影"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ebisu-film-2027",
+      "title": "恵比寿映像祭2027（仮）",
+      "start_date": "2027-02-05",
+      "end_date": "2027-02-21",
+      "venue": "東京都写真美術館 周边",
+      "area": "惠比寿",
+      "recommendation": 90,
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "票务待确认",
+      "why": "展览、上映、Live与影像艺术结合，是值得提前关注的复合型体验。",
+      "drawback": "2027具体主题与节目尚未完整公布。",
+      "source_url": "https://topmuseum.jp/exhibition/5425/",
+      "tags": [
+        "国际当代艺术",
+        "影像",
+        "Live",
+        "复合艺术节"
+      ],
+      "ticket_note": "料金未定；3F展厅延展至3/22，其他主展2/21结束。",
+      "bucket": "future",
+      "category": "国际当代艺术展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "国际当代艺术",
+          "影像"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "Live",
+          "复合艺术节"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "国际当代艺术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": [
+            "Live",
+            "复合艺术节"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fujii-light-2026",
+      "title": "ジャム・セッション 石橋財団コレクション×藤井光「WHOSE LIGHT? —だれのひかりか」",
+      "start_date": "2026-10-24",
+      "end_date": "2027-01-31",
+      "venue": "アーティゾン美術館",
+      "area": "京桥",
+      "recommendation": 83,
+      "price_min": 1200,
+      "price_max": 1500,
+      "ticket_status": "票务待确认",
+      "why": "影像和装置把研究、历史与社会议题转成展览，可与同馆洋画展一起观看。",
+      "drawback": "偏社会历史论述，不是单纯视听娱乐。",
+      "source_url": "https://www.artizon.museum/exhibition/detail/608",
+      "tags": [
+        "国际当代艺术",
+        "影像",
+        "装置",
+        "历史研究"
+      ],
+      "ticket_note": "预约¥1,200、窗口¥1,500，包含同期开办展；本轮未独立核实预约是否已开放。",
+      "bucket": "future",
+      "category": "国际当代艺术展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "国际当代艺术",
+          "影像"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "装置",
+          "历史研究"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "国际当代艺术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": [
+            "装置",
+            "历史研究"
+          ]
+        }
+      }
+    },
+    {
+      "id": "etranger-artizon-2026",
+      "title": "エトランゼたち —洋画家たちのヨーロッパ体験",
+      "start_date": "2026-10-24",
+      "end_date": "2027-01-31",
+      "venue": "アーティゾン美術館",
+      "area": "京桥",
+      "recommendation": 84,
+      "price_min": 1200,
+      "price_max": 1500,
+      "ticket_status": "票务待确认",
+      "why": "日本画家欧洲留学时期的作品对照，兼有西方艺术与日本近代洋画内容。",
+      "drawback": "静态绘画为主。",
+      "source_url": "https://www.artizon.museum/exhibition/detail/610",
+      "tags": [
+        "日本近代洋画",
+        "欧洲美术",
+        "绘画",
+        "文化交流"
+      ],
+      "ticket_note": "预约¥1,200、窗口¥1,500，与藤井光展共用入馆票，无需重复买票。",
+      "bucket": "future",
+      "category": "日本近代洋画展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "日本近代洋画",
+          "欧洲美术"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "绘画",
+          "文化交流"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本艺术",
+            "西方艺术"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "近代"
+          ],
+          "media": [
+            "油画"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "绘画",
+            "文化交流"
+          ]
+        }
+      }
+    },
+    {
+      "id": "turner-tokyo-2026",
+      "title": "テート美術館 ターナー展――崇高の絵画、現代美術との対話",
+      "start_date": "2026-10-24",
+      "end_date": "2027-02-21",
+      "venue": "国立西洋美術館",
+      "area": "上野",
+      "recommendation": 92,
+      "price_min": 2200,
+      "price_max": 2400,
+      "ticket_status": "on_sale",
+      "why": "泰特馆藏油画、水彩与现代艺术对话，是值得看原作的西方美术大展。",
+      "drawback": "热门展可能排队；不是互动展。",
+      "source_url": "https://turner2026-27.exhibit.jp/",
+      "tags": [
+        "西方艺术",
+        "英国",
+        "绘画",
+        "名作原作"
+      ],
+      "ticket_note": "成人前售¥2,200至10/23 23:59，当日¥2,400；无需日時预约。",
+      "bucket": "future",
+      "category": "西方艺术展览",
+      "ticket_url": "https://turner2026-27.exhibit.jp/",
+      "ticket_sale_start": null,
+      "ticket_deadline": "2026-10-23",
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "西方艺术",
+          "英国"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "绘画",
+          "名作原作"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术"
+          ],
+          "countries": [
+            "英国"
+          ],
+          "periods": [
+            "近代"
+          ],
+          "media": [
+            "绘画"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "绘画",
+            "名作原作"
+          ]
+        }
+      }
+    },
+    {
+      "id": "astrup-tokyo-2026",
+      "title": "ニコライ・アストルップ　創造する庭",
+      "start_date": "2026-11-21",
+      "end_date": "2027-01-31",
+      "venue": "東京ステーションギャラリー",
+      "area": "东京站",
+      "recommendation": 87,
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "票务待确认",
+      "why": "日本首次大型回顾展，以油画和木版画呈现挪威自然与季节，适合喜欢西方艺术与风景的你。",
+      "drawback": "票务与价格本轮待核。",
+      "source_url": "https://www.ejrcf.or.jp/gallery/exhibition.html",
+      "tags": [
+        "西方艺术",
+        "挪威",
+        "绘画",
+        "木版画"
+      ],
+      "ticket_note": "会期已公布，价格与当前开售状态待补核。",
+      "bucket": "future",
+      "category": "西方艺术展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "西方艺术",
+          "挪威"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "绘画",
+          "木版画"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术"
+          ],
+          "countries": [
+            "挪威"
+          ],
+          "periods": [
+            "近代"
+          ],
+          "media": [
+            "绘画"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "绘画",
+            "木版画"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yamazaki-mari-2026",
+      "title": "ヤマザキマリの世界　今この瞬間を生きる―Carpe Diem―",
+      "start_date": "2026-10-03",
+      "end_date": "2027-02-07",
+      "venue": "世田谷文学館",
+      "area": "芦花公园",
+      "recommendation": 88,
+      "price_min": 1500,
+      "price_max": 1500,
+      "ticket_status": "on_sale",
+      "why": "漫画原稿、插画、油画与跨国生活经验结合，兼有创作幕后与文化比较。",
+      "drawback": "静态原稿较多；交通需从车站步行。",
+      "source_url": "https://www.setabun.or.jp/exhibition/20261003-20270207_yamazakimari.html",
+      "tags": [
+        "日本漫画",
+        "跨文化创作",
+        "漫画原画",
+        "油画"
+      ],
+      "ticket_note": "成人¥1,500；官方e-tix当日票，开馆信息以馆方为准。",
+      "bucket": "now",
+      "category": "日本漫画展览",
+      "ticket_url": "https://www.setabun.or.jp/exhibition/20261003-20270207_yamazakimari.html",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "日本漫画",
+          "跨文化创作"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "漫画原画",
+          "油画"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本漫画"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": [
+            "漫画原画",
+            "油画"
+          ]
+        }
+      }
+    },
+    {
+      "id": "marquet-sompo-2026",
+      "title": "開館50周年記念 アルベール・マルケ展",
+      "start_date": "2026-09-22",
+      "end_date": "2026-12-13",
+      "venue": "SOMPO美術館",
+      "area": "新宿",
+      "recommendation": 87,
+      "price_min": 1800,
+      "price_max": 2000,
+      "ticket_status": "on_sale",
+      "why": "法国近代绘画的风景与港湾题材，35年后的日本回顾展，约90件作品。",
+      "drawback": "成人票价和当前购票状态待核。",
+      "source_url": "https://www.sompo-museum.org/exhibitions/2025/albertmarquet/",
+      "tags": [
+        "西方艺术",
+        "法国",
+        "近代绘画",
+        "风景"
+      ],
+      "ticket_note": "事前购买¥1,800，窗口当日¥2,000；优惠购买可到12/13。已结束的是9/21截止的双人套票。",
+      "bucket": "now",
+      "category": "西方艺术展览",
+      "ticket_url": "https://www.sompo-museum.org/exhibitions/2025/albertmarquet/",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "西方艺术",
+          "法国"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "近代绘画",
+          "风景"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术"
+          ],
+          "countries": [
+            "法国"
+          ],
+          "periods": [
+            "近代"
+          ],
+          "media": [
+            "绘画"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "近代绘画",
+            "风景"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fontanesi-2026",
+      "title": "フォンタネージ――イタリアの光・心の風景",
+      "start_date": "2026-10-17",
+      "end_date": "2027-01-24",
+      "venue": "三菱一号館美術館",
+      "area": "丸之内",
+      "recommendation": 89,
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "票务待确认",
+      "why": "意大利风景画与日本早期洋画的关系，适合西方艺术与文化交流方向。",
+      "drawback": "普通票价和开售状态待补核。",
+      "source_url": "https://mimt.jp/ex_sp/fontanesi/teaser/",
+      "tags": [
+        "西方艺术",
+        "意大利",
+        "风景画",
+        "文化交流"
+      ],
+      "ticket_note": "会期已公布，普通票务待本轮补核；不要沿用已结束展览的票务。",
+      "bucket": "future",
+      "category": "西方艺术展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "西方艺术",
+          "意大利"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "风景画",
+          "文化交流"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术"
+          ],
+          "countries": [
+            "意大利"
+          ],
+          "periods": [
+            "近代"
+          ],
+          "media": [
+            "绘画"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "风景画",
+            "文化交流"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yumeji-momat-2026",
+      "title": "竹久夢二　時代を創る表現者",
+      "start_date": "2026-10-23",
+      "end_date": "2027-01-11",
+      "venue": "東京国立近代美術館",
+      "area": "竹桥",
+      "recommendation": 82,
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "票务待确认",
+      "why": "从绘画、插画与大众文化表达看梦二的创作，保留为设计与艺术候选。",
+      "drawback": "与沉浸体验交集较弱。",
+      "source_url": "https://www.momat.go.jp/en/exhibitions/570",
+      "tags": [
+        "日本近代艺术",
+        "插画",
+        "绘画",
+        "设计"
+      ],
+      "ticket_note": "会期已确认，票价与开售状态待补核。",
+      "bucket": "future",
+      "category": "日本近代艺术展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "日本近代艺术",
+          "插画"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "绘画",
+          "设计"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本近代艺术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": [
+            "绘画",
+            "设计"
+          ]
+        }
+      }
+    },
+    {
+      "id": "okyo-2026",
+      "title": "円山応挙　リアルの先へ 空間革命",
+      "start_date": "2026-11-28",
+      "end_date": "2027-01-24",
+      "venue": "東京都江戸東京博物館",
+      "area": "两国",
+      "recommendation": 85,
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "票务待确认",
+      "why": "以大乘寺障壁画等作品观察绘画与空间的关系，较一般传统美术展多一层空间视角。",
+      "drawback": "传统日本美术为主，票价与购票状态待补核。",
+      "source_url": "https://okyo2026-27.jp/",
+      "tags": [
+        "日本传统美术",
+        "障壁画",
+        "空间",
+        "艺术史"
+      ],
+      "ticket_note": "会期已公布，票务待核。",
+      "bucket": "future",
+      "category": "日本传统美术展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "日本传统美术",
+          "障壁画"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "空间",
+          "艺术史"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本传统美术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": [
+            "空间",
+            "艺术史"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tcc2026-admuseum",
+      "title": "対話が生まれる言葉展―TCC賞2026―",
+      "start_date": "2026-09-18",
+      "end_date": "2026-10-31",
+      "venue": "アドミュージアム東京",
+      "area": "汐留",
+      "recommendation": 89,
+      "price_min": 0,
+      "price_max": 0,
+      "ticket_status": "no_ticket",
+      "why": "获奖广告文案附创作者解释，有具体表达案例，兼顾你对营销创意的职业兴趣。",
+      "drawback": "偏专业学习，现场娱乐性较低。",
+      "source_url": "https://www.admt.jp/exhibition/program/",
+      "tags": [
+        "广告创意",
+        "日本营销",
+        "文案",
+        "获奖作品"
+      ],
+      "ticket_note": "免费；周二至周六12:00–18:00。",
+      "bucket": "now",
+      "category": "广告创意展览",
+      "ticket_url": null,
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "广告创意",
+          "日本营销"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "文案",
+          "获奖作品"
+        ],
+        "signals": [
+          "免费"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "广告创意"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": [
+            "文案",
+            "获奖作品"
+          ]
+        }
+      }
     }
   ],
   "meta": {
@@ -2734,7 +3738,7 @@
     "release_history_enabled": true,
     "backfill_last_run": "2026-09-27",
     "backfill_policy": "scan_past_announcements_for_events_still_upcoming_or_ongoing",
-    "notes": "Coverage expanded after audit: scan canonical current/upcoming schedules of anchor institutions independent of announcement age, then add ticketing and archive history. Major omissions including Louvre Renaissance were backfilled. 2026-10-03 audit: annual schedules are required in addition to current calendar listings; no-sale events must be retained as future candidates.",
+    "notes": "Coverage remains partial. Source-level gaps are recorded in coverage_audit; recurring task was updated on 2026-10-03 to check them first, enumerate current/upcoming/annual/news schedules and verify live publication.",
     "coverage_model": "anchor_inventory_plus_search",
     "coverage_floor": {
       "mandatory_venue_calendars": [
@@ -2748,7 +3752,20 @@
         "21_21 DESIGN SIGHT",
         "東京ステーションギャラリー",
         "CREATIVE MUSEUM TOKYO",
-        "麻布台ヒルズギャラリー"
+        "麻布台ヒルズギャラリー",
+        "森美術館",
+        "国立西洋美術館",
+        "PARCO ART",
+        "SOMPO美術館",
+        "三菱一号館美術館",
+        "世田谷文学館",
+        "東京都江戸東京博物館",
+        "アドミュージアム東京",
+        "国立科学博物館",
+        "東京国立近代美術館",
+        "NTT ICC",
+        "WHAT MUSEUM",
+        "六本木アートナイト"
       ],
       "mandatory_ticket_channels": [
         "ローチケ",
@@ -2762,9 +3779,236 @@
     "anchor_inventory_required": true,
     "learning_taxonomy_version": 3,
     "learning_note": "Exhibitions are learned at content level: art region/tradition, country, period, medium and curatorial focus; broad museum/art categories are not sufficient.",
-    "last_update_scope": "13 verified 2027 exhibition additions across TNM, NACT, Tobikan, Mori, Artizon and Tokyo Station Gallery. Other calendars and ticket channels not fully enumerated; coverage remains partial.",
+    "last_update_scope": "17 additional verified exhibition listings (16 opening in 2026 and one 2027 video festival). Recurring automation updated to require source-level current/upcoming/annual/news inventory and retry ledger.",
     "last_discovery_run": "2026-10-03",
     "announced_event_watch_months": 18,
-    "discovery_rule": "Inventory all officially announced ongoing and future exhibitions, including unsold 2027 annual schedules; apply preferences after inventory, not before. Ticket watch is separate from announcement discovery."
+    "discovery_rule": "Inventory all officially announced ongoing and future exhibitions, including unsold 2027 annual schedules; apply preferences after inventory, not before. Ticket watch is separate from announcement discovery.",
+    "coverage_audit": [
+      {
+        "name": "東京都写真美術館",
+        "url": "https://topmuseum.jp/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 4,
+        "missing_or_failure_reason": "已检查当前和未来页；年度/新闻尚未全量盘点"
+      },
+      {
+        "name": "アーティゾン美術館",
+        "url": "https://www.artizon.museum/exhibition/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 2,
+        "missing_or_failure_reason": "已核当前/未来已公布日程；全部新闻记录未枚举"
+      },
+      {
+        "name": "森美術館",
+        "url": "https://www.mori.art.museum/jp/exhibitions/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "主展已补；关联小展、森艺廊及City View仍需完整比对"
+      },
+      {
+        "name": "東京都現代美術館",
+        "url": "https://www.mot-art-museum.jp/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 2,
+        "missing_or_failure_reason": "官网403；通过官方收藏数据库/e-tix补核，两项企画展已补；年度完整日程未完成"
+      },
+      {
+        "name": "国立西洋美術館",
+        "url": "https://www.nmwa.go.jp/jp/exhibitions/upcoming.html",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "已补ターナー；官网访问失败，后续计划仍需补核"
+      },
+      {
+        "name": "東京ステーションギャラリー",
+        "url": "https://www.ejrcf.or.jp/gallery/exhibition.html",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "已核当前/未来日程；アストルップ成人票务待核"
+      },
+      {
+        "name": "国立新美術館",
+        "url": "https://www.nact.jp/exhibition_special/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "已检查当前日程及两项2027官方页；新闻/年度计划未全量枚举"
+      },
+      {
+        "name": "東京都美術館",
+        "url": "https://www.tobikan.jp/exhibition/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "已核已公布大展；当前/未来小展尚需逐项补录"
+      },
+      {
+        "name": "PARCO ART",
+        "url": "https://art.parco.jp/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "已补P.O.N.D.；全场馆展览/新闻尚未完整枚举"
+      },
+      {
+        "name": "SOMPO美術館",
+        "url": "https://www.sompo-museum.org/exhibitions/schedule/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "已补マルケ并核票；未来完整清单未完成"
+      },
+      {
+        "name": "三菱一号館美術館",
+        "url": "https://mimt.jp/exhibition/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "已补フォンタネージ；票务待核"
+      },
+      {
+        "name": "世田谷文学館",
+        "url": "https://www.setabun.or.jp/exhibition/schedule.html",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "已补ヤマザキマリ；常设/小展尚未全部盘点"
+      },
+      {
+        "name": "東京都江戸東京博物館",
+        "url": "https://www.edo-tokyo-museum.or.jp/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "通过官方特展网站补应举；完整馆方日程/票务未完成"
+      },
+      {
+        "name": "アドミュージアム東京",
+        "url": "https://www.admt.jp/exhibition/program/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "当前TCC企画展已核；年度公告未全量盘点"
+      },
+      {
+        "name": "CREATIVE MUSEUM TOKYO",
+        "url": "https://creative-museum.tokyo/",
+        "checked_at": "2026-10-03",
+        "status": "failed",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "旧地址404；检索只找到已结束展，当前官方日程入口需重新定位"
+      },
+      {
+        "name": "東京国立博物館",
+        "url": "https://www.tnm.jp/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "已核大徳寺/广重/源氏/FF等，全部小展和新闻尚未枚举"
+      },
+      {
+        "name": "21_21 DESIGN SIGHT",
+        "url": "https://www.2121designsight.jp/program/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "已有方丈记；年度/新闻完整枚举待完成"
+      },
+      {
+        "name": "麻布台ヒルズギャラリー",
+        "url": "https://www.azabudai-hills.com/azabudaihillsgallery/",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "已核AMBIENT/小岛；年度和公告全量盘点待完成"
+      },
+      {
+        "name": "国立科学博物館",
+        "url": "https://www.kahaku.go.jp/",
+        "checked_at": null,
+        "status": "pending",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "本轮未完成"
+      },
+      {
+        "name": "東京国立近代美術館",
+        "url": "https://www.momat.go.jp/exhibitions",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 1,
+        "missing_or_failure_reason": "已补梦二；常设小展和2027计划未全部补录"
+      },
+      {
+        "name": "NTT ICC",
+        "url": "https://www.ntticc.or.jp/",
+        "checked_at": null,
+        "status": "pending",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "本轮未完成"
+      },
+      {
+        "name": "WHAT MUSEUM",
+        "url": "https://what.warehouseofart.org/",
+        "checked_at": null,
+        "status": "pending",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "本轮未完成"
+      },
+      {
+        "name": "六本木アートナイト",
+        "url": "https://www.roppongiartnight.com/",
+        "checked_at": null,
+        "status": "pending",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "本轮未完成"
+      },
+      {
+        "name": "ローチケ/e+/ぴあ/Asoview/ARTPASS",
+        "url": "https://l-tike.com/",
+        "checked_at": null,
+        "status": "pending",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "票务全频道扫描本轮未完成，仅核已发现项目"
+      },
+      {
+        "name": "聚合站完整分页",
+        "url": "https://www.museum.or.jp/event?area=pref-13",
+        "checked_at": "2026-10-03",
+        "status": "partial",
+        "inventory_count": null,
+        "added_count": 0,
+        "missing_or_failure_reason": "用于发现新漏项，分页未全部枚举"
+      }
+    ]
   }
 }
