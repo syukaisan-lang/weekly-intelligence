@@ -25,7 +25,7 @@ def main()->int:
     require('scripts/weekly_embed_node.mjs','semantic-worker.bundle.js','rule_similarity','knowledge_similarity','experience_similarity')
     require('scripts/update_feeds_personalized.py','SemanticMatcher','semantic_v6','semantic_vector','increment_type')
     require('scripts/update_feeds_temporal.py','temporal_update','semantic_v8_adaptive_temporal','lifecycle.prepare_sources','lifecycle.refresh_hot_only','lifecycle.compact_articles','DENTSU_SOURCE','html_feed_fallback','/articles/')
-    require('scripts/update_feeds_coverage.py','import update_feeds_temporal as t','update_source_discovery','enrich_xtrend_reading_time')
+    require('scripts/update_feeds_coverage.py','import update_feeds_temporal as t','update_source_discovery')
     require('scripts/weekly_lifecycle.py','HOT_DAYS = 90','SOURCE_WINDOW_DAYS = 56','UNLABELED_EXPIRE_DAYS = 7','TRUSTED_STATUS_ORIGIN','human_v10','STATUS_ACTION_STATUS','STATE_META_PATH','_decode_delta_rows','_merge_state','later_interest_at','_normalized_status','_is_positive_adoption','status_action','queue_grades','source_yield','source_mode','implicit_skipped','pass_rate','sa_adopted','storage_tier','cold','_adaptive_skip')
     require('weekly-progress.js','semantic_vector','semanticPreferenceDelta','subjectAffinity','旅游/观光','内容主题 + 研究/呈现方式 + 意图','later')
     require('weekly-attention-v8.js','FEEDBACK_WINDOW_MS=84','MIN_BUDGET=8','BASE_BUDGET=14','MAX_BUDGET=20','rebuildPrefs=function','S级始终保留','status_action',"['S','A']")
@@ -112,11 +112,11 @@ def main()->int:
 
     sources=json.loads(read('config/sources.json'))
     names={str(x.get('name') or '') for x in sources}
-    stopped={'AV Watch','ギズモード・ジャパン','PR EDGE','ECZine:新着一覧','CNET Japan'}
+    stopped={'AV Watch','ギズモード・ジャパン','PR EDGE','ECZine:新着一覧','CNET Japan','日経クロストレンド 新着'}
     if names & stopped:
         raise AssertionError(f'stopped/merged sources returned to active config: {sorted(names & stopped)}')
-    if len(sources)!=16:
-        raise AssertionError(f'active source count must be 16 after pruning CNET and merged/stopped sources, got {len(sources)}')
+    if len(sources)!=15:
+        raise AssertionError(f'active source count must be 15 after pruning CNET and merged/stopped sources, got {len(sources)}')
     dentsu=next((x for x in sources if str(x.get('name') or '').startswith('ウェブ電通報')),None)
     if not dentsu or dentsu.get('type')!='html_feed_fallback' or 'dentsu-ho.com' not in str(dentsu.get('url') or ''):
         raise AssertionError('Dentsu must use official HTML listing fallback rather than retired RSS')
@@ -150,7 +150,7 @@ def main()->int:
         if 'vectors_b64' in raw:raise AssertionError('public semantic metadata must not contain vectors')
         if 'entries' in raw:raise AssertionError('public semantic metadata must not contain private temporal entries')
 
-    print('Global impact validation passed: 16 sources -> evidence + precise B rescue -> durable Later/feedback memory -> base+delta learning -> same-tab mobile cloud backup -> one return-to-top control.')
+    print('Global impact validation passed: 15 sources -> evidence + precise B rescue -> durable Later/feedback memory -> base+delta learning -> same-tab mobile cloud backup -> one return-to-top control.')
     return 0
 
 

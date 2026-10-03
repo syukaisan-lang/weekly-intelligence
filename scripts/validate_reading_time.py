@@ -68,7 +68,6 @@ def main() -> int:
         "article['content_char_count']",
         "article['content_completeness']",
         'reading_time_estimates.apply_estimates()',
-        'xtrend_reading.apply_reading_times()',
         't.p.base.SOURCES = prepared',
     )
     if "[s for s in prepared if not s.get('_adaptive_skip')]" in coverage:
