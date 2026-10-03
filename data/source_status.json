@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-02T16:11:56.635195+00:00",
-  "expected_sources": 16,
-  "successful_sources": 16,
+  "generated_at": "2026-10-03T05:03:56.972561+00:00",
+  "expected_sources": 15,
+  "successful_sources": 15,
   "failed_sources": [],
   "raw_new_count": 2,
   "deduped_count": 0,
@@ -16,7 +16,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 3,
+      "coverage_cached_count": 2,
       "coverage_errors": []
     },
     {
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 182,
+      "coverage_cached_count": 177,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 363,
+      "coverage_cached_count": 362,
       "coverage_errors": []
     },
     {
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 338,
+      "coverage_cached_count": 336,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -155,7 +155,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 28,
+      "coverage_cached_count": 27,
       "coverage_errors": []
     },
     {
@@ -167,7 +167,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 235,
+      "coverage_cached_count": 226,
       "coverage_errors": []
     },
     {
@@ -193,21 +193,6 @@
       ],
       "coverage_cached_count": 400,
       "coverage_errors": []
-    },
-    {
-      "name": "日経クロストレンド 新着",
-      "status": "ok",
-      "new_count": 0,
-      "error": null,
-      "coverage_status": "enhanced",
-      "coverage_methods": [
-        "official_rss",
-        "feeder",
-        "rolling_cache",
-        "direct_listing"
-      ],
-      "coverage_cached_count": 0,
-      "coverage_errors": []
     }
   ],
   "near_duplicate_count": 2,
@@ -216,7 +201,7 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 2443,
+  "semantic_rescored_count": 1848,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -230,7 +215,7 @@
     ],
     "trusted_status_origin": "human_v10",
     "active_count": 9,
-    "cold_count": 6,
+    "cold_count": 5,
     "probe_count": 1,
     "probe_skipped_count": 0,
     "discovery_policy": "all configured sources are always checked; cold/probe only raises deep-read threshold"
@@ -241,10 +226,10 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-02T16:10:29.949193+00:00",
+    "generated_at": "2026-10-03T05:02:31.038122+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
-    "enhanced_count": 3,
+    "enhanced_count": 2,
     "cached_count": 10,
     "partial_count": 1,
     "unverified_count": 2,
