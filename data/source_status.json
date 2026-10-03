@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T11:52:03.262959+00:00",
+  "generated_at": "2026-10-03T16:33:00.873014+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
@@ -88,7 +88,7 @@
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 34,
+      "coverage_cached_count": 33,
       "coverage_errors": []
     },
     {
@@ -143,7 +143,7 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 73,
+      "coverage_cached_count": 71,
       "coverage_errors": []
     },
     {
@@ -226,7 +226,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-03T11:50:46.200071+00:00",
+    "generated_at": "2026-10-03T16:31:51.708718+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
