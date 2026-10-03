@@ -121,7 +121,7 @@ function btn(text,active,fn){const b=document.createElement('button');b.type='bu
 function feedback(a,v){const cur=st(a.id);cur.feedback=cur.feedback===v?null:v;state[a.id]=cur;save();rebuildPrefs();render();}
 function setStatus(a,v){const cur=st(a.id);cur.status=cur.status===v?'new':v;state[a.id]=cur;save();render();}
 function renderMetrics(){const arts=data.articles||[],gs=arts.map(a=>grade(score(a)));const vals=[['新增',status.raw_new_count??arts.length,'8/10 起'],['去重后',status.deduped_count??arts.length,'唯一文章'],['深读',status.deep_read_count??0,'高潜力候选'],['S',gs.filter(x=>x==='S').length,'必看'],['A',gs.filter(x=>x==='A').length,'值得看'],['待处理',arts.filter(a=>st(a.id).status==='new').length,'未反馈']];$('metrics').innerHTML=vals.map(v=>`<div class="metric"><div class="metric-label">${v[0]}</div><div class="metric-value">${v[1]}</div><div class="metric-sub">${v[2]}</div></div>`).join('');}
-function renderCoverage(){const exp=status.expected_sources??21,ok=status.successful_sources??0;$('coveragePill').textContent=`${ok}/${exp}`;const failed=status.failed_sources||[];const w=$('coverageWarning');if(!status.generated_at){w.classList.remove('hidden');w.textContent='首次数据刷新尚未运行。请在 GitHub Actions 手动运行一次 Update feeds。';}else if(failed.length){w.classList.remove('hidden');w.textContent=`⚠ 本次并非全量：${failed.length} 个来源抓取失败。`;}else w.classList.add('hidden');$('sourceCoverage').innerHTML=(status.sources||[]).map(s=>`<div class="coverage-item"><span title="${esc(s.error||'')}">${esc(short(s.name))}</span><span class="${s.status==='ok'?'status-ok':s.status==='failed'?'status-fail':'status-pending'}">${s.status==='ok'?(s.new_count||0)+' 新增':s.status==='failed'?'失败':'待刷新'}</span></div>`).join('');}
+function renderCoverage(){const exp=status.expected_sources??15,ok=status.successful_sources??0;$('coveragePill').textContent=`${ok}/${exp}`;const failed=status.failed_sources||[];const w=$('coverageWarning');if(!status.generated_at){w.classList.remove('hidden');w.textContent='首次数据刷新尚未运行。请在 GitHub Actions 手动运行一次 Update feeds。';}else if(failed.length){w.classList.remove('hidden');w.textContent=`⚠ 本次并非全量：${failed.length} 个来源抓取失败。`;}else w.classList.add('hidden');$('sourceCoverage').innerHTML=(status.sources||[]).map(s=>`<div class="coverage-item"><span title="${esc(s.error||'')}">${esc(short(s.name))}</span><span class="${s.status==='ok'?'status-ok':s.status==='failed'?'status-fail':'status-pending'}">${s.status==='ok'?(s.new_count||0)+' 新增':s.status==='failed'?'失败':'待刷新'}</span></div>`).join('');}
 function renderPrefs(){
   const rows=[];const labels={topics:'主题',formats:'形式',intents:'意图',signals:'特征'};
   for(const dim of ['topics','formats','intents','signals'])Object.entries(prefs[dim]).filter(([,v])=>Math.abs(v)>.025).forEach(([k,v])=>rows.push([`${labels[dim]}：${k}`,v]));
@@ -154,13 +154,20 @@ function renderArticles(){
   }
 }
 function render(){renderMetrics();renderCoverage();renderPrefs();sourceOptions();renderArticles();}
+// Keep archived data and saved feedback intact; retired sources leave the live reader.
+function activeReaderArticle(a){return a.source!=='日経クロストレンド 新着'&&!/^https?:\/\/xtrend\.nikkei\.com(?:\/|$)/i.test(a.url||'');}
+function activeCoverage(s){
+  const sources=(s.sources||[]).filter(activeReaderSource);
+  return {...s,sources,expected_sources:15,successful_sources:sources.filter(x=>x.status==='ok').length,failed_sources:(s.failed_sources||[]).filter(activeReaderSource)};
+}
+function activeReaderSource(s){return s.name!=='日経クロストレンド 新着';}
 let fullArticlesLoaded=false,fullArticlesPromise=null;
 async function loadFullArticles(){
   if(fullArticlesLoaded)return;
   if(fullArticlesPromise)return fullArticlesPromise;
   fullArticlesPromise=fetch('data/articles.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}`);return r.json();}).then(full=>{
     const existing=new Map((data.articles||[]).map(a=>[String(a.id),a]));
-    data.articles=full.articles.map(a=>{const old=existing.get(String(a.id));if(old){Object.assign(old,a);return old;}return a;});
+    data.articles=full.articles.filter(activeReaderArticle).map(a=>{const old=existing.get(String(a.id));if(old){Object.assign(old,a);return old;}return a;});
     data.meta=full.meta;fullArticlesLoaded=true;
     window.weeklyFeedbackRuntimeV38?.invalidate?.();window.weeklyPreferenceMemoryV32?.invalidate?.();
     window.weeklyReadingTimeV21?.invalidate?.();render();
@@ -173,6 +180,7 @@ window.weeklyLoadFullArticles=loadFullArticles;
 async function init(){try{
   const articleRequest=fetch('data/articles-brief.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}`);return r.json();}).catch(()=>{fullArticlesLoaded=true;return fetch('data/articles.json',{cache:'no-cache'}).then(r=>r.json());});
   [data,status]=await Promise.all([articleRequest,fetch('data/source_status.json',{cache:'no-cache'}).then(r=>r.json())]);
+  data.articles=(data.articles||[]).filter(activeReaderArticle);status=activeCoverage(status);
   rebuildPrefs();$('lastUpdated').textContent=data.meta?.generated_at?`最近更新 ${new Date(data.meta.generated_at).toLocaleString('ja-JP')}`:'尚未首次刷新';render();
 }catch(e){$('coverageWarning').classList.remove('hidden');$('coverageWarning').textContent='无法读取数据文件：'+e.message;}}
 ['gradeFilter','statusFilter','sourceFilter','personalizedSort'].forEach(id=>$(id).addEventListener('change',renderArticles));

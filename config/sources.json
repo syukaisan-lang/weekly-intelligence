@@ -89,12 +89,5 @@
     "url": "http://rss.itmedia.co.jp/rss/2.0/business.xml",
     "category": "Business",
     "priority": "low"
-  },
-  {
-    "name": "日経クロストレンド 新着",
-    "url": "https://xtrend.nikkei.com/atcl/contents/new/?i_cid=nbpnxr_top_new_Y",
-    "category": "Marketing",
-    "priority": "high",
-    "type": "html_listing"
   }
 ]

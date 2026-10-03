@@ -35,7 +35,7 @@ def main() -> int:
         "weekly-feedback-learning-v38.js?v=20260919-1",
         "weekly-feedback-runtime-v38.js?v=20260919-1",
         "weekly-interaction-performance-v40.js?v=20260926-1",
-        "0/16",
+        "0/15",
     )
     if "knowledge-relations.js" in index:
         raise AssertionError("Weekly must not load client-side Knowledge relation UI")
@@ -230,13 +230,13 @@ def main() -> int:
         raise AssertionError("Near-duplicate suppression must run before semantic rescoring")
 
     sources = json.loads(read("config/sources.json"))
-    if len(sources) != 16:
-        raise AssertionError(f"active source count must be 16, got {len(sources)}")
+    if len(sources) != 15:
+        raise AssertionError(f"active source count must be 15, got {len(sources)}")
     names = {str(x.get("name") or "") for x in sources}
     if "CNET Japan" in names:
         raise AssertionError("CNET Japan must remain removed")
 
-    print("Weekly focused invariants passed: 16 sources, URL+title dedupe, durable schema-6 Later memory, local-only Later navigation, blocked Weekly private loaders, one canonical v21 Priority source, and anti-overfitting Preference Memory without quota-based score rescue.")
+    print("Weekly focused invariants passed: 15 sources, URL+title dedupe, durable schema-6 Later memory, local-only Later navigation, blocked Weekly private loaders, one canonical v21 Priority source, and anti-overfitting Preference Memory without quota-based score rescue.")
     return 0
 
 

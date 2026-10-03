@@ -8,7 +8,6 @@ from types import SimpleNamespace
 
 import update_feeds_temporal as t
 import update_source_discovery as discovery
-import enrich_xtrend_reading_time as xtrend_reading
 import enrich_reading_time_estimates as reading_time_estimates
 import weekly_dedupe
 
@@ -196,8 +195,6 @@ def main():
     # Exact/canonical URL identity happens in base.main(). This conservative second pass suppresses
     # same-story aliases across publishers before semantic rescoring, without rewriting old IDs.
     weekly_dedupe.apply(t.p.base.ART_PATH, t.p.base.STATUS_PATH)
-    t.enrich_xtrend_from_feeder_cache()
-    xtrend_reading.apply_reading_times()
     t.lifecycle.refresh_hot_only(t.p.refresh_existing_scores)
     apply_content_char_counts()
     reading_time_estimates.apply_estimates()
