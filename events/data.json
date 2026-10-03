@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-10-03",
   "events": [
     {
       "id": "anitsuku-2026",
@@ -1241,7 +1241,7 @@
     {
       "id": "new-artists-vol23-topmuseum-2026",
       "title": "ふたたびくみたてる　日本の新進作家 vol.23",
-      "bucket": "future",
+      "bucket": "now",
       "category": "摄影/当代艺术",
       "start_date": "2026-09-30",
       "end_date": "2027-01-17",
@@ -1396,8 +1396,8 @@
       "price_min": 2200,
       "price_max": 2400,
       "ticket_status": "on_sale",
-      "ticket_sale_start": "2026-07-27",
-      "ticket_deadline": "2026-09-27",
+      "ticket_sale_start": "2026-09-28",
+      "ticket_deadline": null,
       "announcement_date": null,
       "backfilled_from_archive": true,
       "last_verified_at": "2026-09-27",
@@ -1410,8 +1410,8 @@
         "未来抢票"
       ],
       "why": "奥赛藏品级别高，而且现在已经进入票务决策期；对你来说不是必须抢首日，但属于应该提前知道、之后再决定是否去的大型展。",
-      "drawback": "离开展还有一段时间，普通前售其实明天才开始，不需要因为今天而仓促买普通票。",
-      "ticket_note": "今天9/27 23:59是“大徳寺展×オルセー展”¥4,100套票等限定票最后一天；普通前售明天9/28 10:00开始，一般¥2,200。",
+      "drawback": "开展在11月，先进入未来关注池，是否购票可按自己的时间安排决定。",
+      "ticket_note": "普通前售阶段：成人¥2,200，当日¥2,400。9/27截止的限定套票已结束。",
       "source_url": "https://art.nikkei.com/orsay2627/",
       "ticket_url": "https://www.e-tix.jp/orsay2627/",
       "learning_features": {
@@ -1476,17 +1476,17 @@
     {
       "id": "hiroshige-best-angle-2026",
       "title": "歌川広重　江戸のベストアングル",
-      "bucket": "future",
+      "bucket": "now",
       "category": "美术馆特展",
       "start_date": "2026-09-29",
       "end_date": "2026-12-20",
       "venue": "東京国立博物館 本館A室",
       "area": "上野",
-      "price_min": 1300,
+      "price_min": 1500,
       "price_max": 1500,
       "ticket_status": "on_sale",
       "ticket_sale_start": "2026-06-30",
-      "ticket_deadline": "2026-09-28",
+      "ticket_deadline": null,
       "announcement_date": null,
       "backfilled_from_archive": true,
       "last_verified_at": "2026-09-27",
@@ -1501,7 +1501,7 @@
       ],
       "why": "三期完整展示广重三大风景版画系列，而且有超高清沉浸屏幕展示；传统美术之外还有空间/影像体验，比一般浮世绘展更符合你。",
       "drawback": "三期作品全部更换，想完整看三大系列需要去三次；单次只覆盖其中一组。",
-      "ticket_note": "9/29开幕；前售成人¥1,300到9/28为止，当日¥1,500。1期9/29–10/25、2期10/27–11/23、3期11/25–12/20。",
+      "ticket_note": "已开展；成人当日¥1,500，前售期已结束。1期9/29–10/25、2期10/27–11/23、3期11/25–12/20。",
       "source_url": "https://www.tnm.jp/modules/r_free_page/index.php?id=2759",
       "ticket_url": "https://www.asoview.com/channel/ticket/WuX1M0a3sG/ticket0000051104/",
       "learning_features": {
@@ -1593,7 +1593,7 @@
       ],
       "why": "大徳寺700年为核心，作品与信长、秀吉、禅文化和茶文化相连；本身是扎实的历史文化展，而且和ZEN NIGHT TOKYO形成白天展览＋夜间体验的组合。",
       "drawback": "单看白天展览更偏传统文化史；如果已经买ZEN NIGHT套票，是否额外安排白天要看你的当天时间。",
-      "ticket_note": "前售成人¥2,100到10/13 23:59，当日¥2,300。与ZEN NIGHT TOKYO票务有联动；今天9/27还有与奥赛展的¥4,100套票销售到23:59。",
+      "ticket_note": "前售成人¥2,100至10/13 23:59，当日¥2,300。与ZEN NIGHT TOKYO有票务联动；9/27截止的奥赛展套票已结束。",
       "source_url": "https://daitokuji2026.exhn.jp/",
       "ticket_url": "https://www.e-tix.jp/daitokuji2026/",
       "learning_features": {
@@ -1649,6 +1649,322 @@
           "note": "前售开始"
         }
       ]
+    },
+    {
+      "id": "ambient-kyoto-tokyo-2026",
+      "title": "RYUICHI SAKAMOTO + SHIRO TAKATANI「AMBIENT KYOTO - TOKYO」",
+      "bucket": "now",
+      "category": "沉浸式/声音艺术",
+      "start_date": "2026-08-28",
+      "end_date": "2026-10-25",
+      "venue": "麻布台ヒルズギャラリー",
+      "area": "神谷町",
+      "price_min": 2200,
+      "price_max": 2800,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 98,
+      "tags": [
+        "坂本龙一",
+        "声音艺术",
+        "沉浸式",
+        "影像空间",
+        "立体音响"
+      ],
+      "why": "本周首推：26.4米影像与为场地重构的立体音响，把《async》变成可以置身其中的声音空间；与你偏好的现场空间体验高度吻合，10/25闭幕。",
+      "drawback": "以单件长时段声音影像装置为核心；如果期待多个互动关卡，内容形式可能偏静态。",
+      "ticket_note": "平日前售¥2,200／当日¥2,500；周末前售¥2,500／当日¥2,800。平日10:00–19:00，周末10:00–20:00，最后入场为闭馆前30分钟。",
+      "source_url": "https://ambientkyoto.com/",
+      "ticket_url": "https://www.e-tix.jp/ambientkyoto2026/",
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "坂本龙一",
+          "声音艺术"
+        ],
+        "formats": [
+          "沉浸式/声音艺术"
+        ],
+        "experiences": [
+          "沉浸式",
+          "影像空间",
+          "立体音响"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "uketsu-world-2026",
+      "title": "雨穴の変な世界展。",
+      "bucket": "future",
+      "category": "悬疑×空间体验",
+      "start_date": "2026-10-23",
+      "end_date": "2027-01-17",
+      "venue": "寺田倉庫 G1ビル 2F/5F",
+      "area": "天王洲",
+      "price_min": 2500,
+      "price_max": 3100,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-09-08",
+      "ticket_deadline": "2026-10-22",
+      "recommendation": 88,
+      "tags": [
+        "雨穴",
+        "悬疑",
+        "世界观体验",
+        "空间再现"
+      ],
+      "why": "以房间再现和作品世界构成主题公园式展览，约90分钟，有明确空间体验，值得作为未来候选。",
+      "drawback": "依赖对雨穴作品的兴趣；部分区域较暗、含冲击性表达。",
+      "ticket_note": "早割至10/22 23:59，平日¥2,500、特定日¥2,700；之后前售¥2,700/2,900，当日特定日¥3,100。周末/节假日及冬休特定日需日時指定。",
+      "source_url": "https://uketsu.jp/museum/",
+      "ticket_url": "https://t.pia.jp/pia/events/uketsunohennasekaiten",
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "雨穴",
+          "悬疑"
+        ],
+        "formats": [
+          "悬疑×空间体验"
+        ],
+        "experiences": [
+          "世界观体验",
+          "空间再现"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "biohazard-30th-2026",
+      "title": "THE WORLD OF BIOHAZARD 30周年展",
+      "bucket": "future",
+      "category": "游戏×空间展览",
+      "start_date": "2026-10-30",
+      "end_date": "2026-12-24",
+      "venue": "渋谷BEAM 4F BEAMギャラリー",
+      "area": "涩谷",
+      "price_min": 3000,
+      "price_max": 3600,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-08-03",
+      "ticket_deadline": "2026-10-29",
+      "recommendation": 91,
+      "tags": [
+        "生化危机",
+        "游戏",
+        "世界观体验",
+        "空间造形",
+        "影像"
+      ],
+      "why": "用实物尺度造形、影像与空间展现游戏世界，具有现场体验；对游戏题材有兴趣时优先度高。",
+      "drawback": "恐怖题材与IP依赖明显；限定特典票已售罄，普通票不代表每个时段有余票。",
+      "ticket_note": "全日日時指定；10/29前购票平日¥3,000、周末¥3,300；会期中¥3,300/3,600。限定特典票已售罄。",
+      "source_url": "https://bhre30th-exhibition.jp/",
+      "ticket_url": "https://t.pia.jp/pia/events/bhre30th/",
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "生化危机",
+          "游戏"
+        ],
+        "formats": [
+          "游戏×空间展览"
+        ],
+        "experiences": [
+          "世界观体验",
+          "空间造形",
+          "影像"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "tokyo-game-dungeon-14-2026",
+      "title": "東京ゲームダンジョン14",
+      "bucket": "future",
+      "category": "独立游戏×现场试玩",
+      "start_date": "2026-10-31",
+      "end_date": "2026-10-31",
+      "venue": "東京都立産業貿易センター浜松町館 2F/3F",
+      "area": "滨松町/竹芝",
+      "price_min": 1000,
+      "price_max": 2000,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-09-30",
+      "ticket_deadline": null,
+      "recommendation": 93,
+      "tags": [
+        "独立游戏",
+        "游戏创作",
+        "现场试玩",
+        "互动"
+      ],
+      "why": "独立游戏现场试玩，可以亲自比较不同玩法和创作思路；低票价、互动密度高，符合你希望参与式体验的方向。",
+      "drawback": "单日活动，热门作品可能排队；作品完成度差异较大。",
+      "ticket_note": "一般¥1,000、商务¥2,000；一般入场12:00起，商务/先行票11:00起；17:00结束。16:00后免费但体验时间较短。购票入口以官方当前公告为准。",
+      "source_url": "https://tokyogamedungeon.com/",
+      "ticket_url": "https://tokyogamedungeon.com/",
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "独立游戏",
+          "游戏创作"
+        ],
+        "formats": [
+          "独立游戏×现场试玩"
+        ],
+        "experiences": [
+          "现场试玩",
+          "互动"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "hololive-grand-reception-2026",
+      "title": "hololive Grand Reception ～感謝を込めた招待状～",
+      "bucket": "future",
+      "category": "VTuber×IP展览",
+      "start_date": "2026-10-10",
+      "end_date": "2026-11-23",
+      "venue": "TOKYO DREAM PARK 7F EX STUDIO7",
+      "area": "有明",
+      "price_min": 2500,
+      "price_max": 3000,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-09-19",
+      "ticket_deadline": "2026-10-09",
+      "recommendation": 68,
+      "tags": [
+        "hololive",
+        "VTuber",
+        "影像",
+        "IP空间展"
+      ],
+      "why": "作为未来票务候选保留；若喜欢hololive，可关注展示与角色内容。",
+      "drawback": "明显依赖IP兴趣，与你已有偏好证据交集较弱，暂不高排。",
+      "ticket_note": "前售¥2,500，至10/9 23:59；当日¥3,000，售罄场次无当日票。10/29–30换展休馆；部分日期和时间需日時指定。",
+      "source_url": "https://hololive-grandreception.hololivepro.com/information/",
+      "ticket_url": "https://hololive-grandreception.hololivepro.com/ticket/",
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "hololive",
+          "VTuber"
+        ],
+        "formats": [
+          "VTuber×IP展览"
+        ],
+        "experiences": [
+          "影像",
+          "IP空间展"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "suikoden-station-gallery-2026",
+      "title": "水滸伝",
+      "bucket": "now",
+      "category": "文学×美术展览",
+      "start_date": "2026-09-19",
+      "end_date": "2026-11-08",
+      "venue": "東京ステーションギャラリー",
+      "area": "东京站",
+      "price_min": 1600,
+      "price_max": 1600,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 80,
+      "tags": [
+        "水浒传",
+        "中日文化",
+        "浮世绘",
+        "文学改编"
+      ],
+      "why": "从水浒故事到日本浮世绘和现代改编，可以比较同一题材跨文化、跨媒介的表达；东京站内交通方便。",
+      "drawback": "更偏作品和历史资料鉴赏，现场互动较少。",
+      "ticket_note": "成人当日¥1,600；前售期已结束。周一休馆（10/12、11/2开馆），10/13休馆。",
+      "source_url": "https://www.ejrcf.or.jp/gallery/exhibition/202609_suikoden.html",
+      "ticket_url": "https://www.e-tix.jp/ejrcf_gallery/index.html",
+      "last_verified_at": "2026-10-03",
+      "learning_features": {
+        "subjects": [
+          "水浒传",
+          "中日文化"
+        ],
+        "formats": [
+          "文学×美术展览"
+        ],
+        "experiences": [
+          "浮世绘",
+          "文学改编"
+        ],
+        "signals": [
+          "需购票"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
     }
   ],
   "meta": {
@@ -1687,9 +2003,11 @@
       ],
       "rule": "Build a broad active/upcoming inventory from mandatory calendars before applying preference ranking."
     },
-    "coverage_status": "partial_improved",
+    "coverage_status": "partial",
     "anchor_inventory_required": true,
     "learning_taxonomy_version": 3,
-    "learning_note": "Exhibitions are learned at content level: art region/tradition, country, period, medium and curatorial focus; broad museum/art categories are not sufficient."
+    "learning_note": "Exhibitions are learned at content level: art region/tradition, country, period, medium and curatorial focus; broad museum/art categories are not sufficient.",
+    "last_update_scope": "Six officially verified additions; ongoing buckets and expired advance-sale reminders corrected. Mandatory full-source inventory remains incomplete.",
+    "last_discovery_run": "2026-10-03"
   }
 }
