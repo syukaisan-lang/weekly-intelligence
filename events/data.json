@@ -1965,6 +1965,761 @@
           "content_focus": []
         }
       }
+    },
+    {
+      "id": "ff40th-2027",
+      "title": "ファイナルファンタジー40周年記念展「終わりなきファンタジーの世界」",
+      "bucket": "future",
+      "category": "游戏×体感展览",
+      "start_date": "2027-01-08",
+      "end_date": "2027-04-04",
+      "venue": "東京国立博物館 表慶館",
+      "area": "上野",
+      "price_min": 3200,
+      "price_max": 3200,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-09-24",
+      "ticket_deadline": "2027-01-07",
+      "recommendation": 95,
+      "tags": [
+        "游戏",
+        "FINAL FANTASY",
+        "体感内容",
+        "音乐",
+        "文化财联动"
+      ],
+      "why": "游戏历史、音乐与体验内容结合，并与东博文化财联动；属于你应提前知道的游戏×现场体验候选。",
+      "drawback": "IP兴趣会影响体验；部分体感内容的细节尚待公布。",
+      "ticket_note": "第1期（1/8–2/5）早割一般¥3,200；9/24起一般销售至1/7 23:59。第2/3期售票后续公布。周边票¥13,199，另计。",
+      "source_url": "https://jp.finalfantasy.com/news/6134",
+      "ticket_url": "https://www.jp.square-enix.com/ff40th/exhibition/tickets/",
+      "last_verified_at": "2026-10-03",
+      "announcement_date": "2026-09-10",
+      "learning_features": {
+        "subjects": [
+          "游戏",
+          "FINAL FANTASY"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "体感内容",
+          "音乐",
+          "文化财联动"
+        ],
+        "signals": [
+          "已开售"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "genji-tokyo-2027",
+      "title": "特別展「源氏物語　王朝のかがやき」",
+      "bucket": "future",
+      "category": "日本古典展览",
+      "start_date": "2027-01-19",
+      "end_date": "2027-03-14",
+      "venue": "東京国立博物館 平成館",
+      "area": "上野",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": "2026-10-20",
+      "ticket_deadline": null,
+      "recommendation": 80,
+      "tags": [
+        "日本古典",
+        "源氏物语",
+        "文化财",
+        "绘卷"
+      ],
+      "why": "文学与王朝文化的美术展，适合作为历史文化候选。",
+      "drawback": "更偏传统文化资料鉴赏，互动较少。",
+      "ticket_note": "东京普通前售计划10/20开始；票价及特殊票种需在东京会场页面确认，勿混用京都票务。",
+      "source_url": "https://www.genjiten.jp/",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "日本古典",
+          "源氏物语"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "文化财",
+          "绘卷"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本艺术"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [],
+          "media": [
+            "绘卷",
+            "文化财"
+          ],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "diva-nact-2027",
+      "title": "ディーヴァ展",
+      "bucket": "future",
+      "category": "音乐展览",
+      "start_date": "2027-03-24",
+      "end_date": "2027-07-19",
+      "venue": "国立新美術館",
+      "area": "六本木",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 88,
+      "tags": [
+        "音乐",
+        "舞台",
+        "时尚",
+        "文化影响"
+      ],
+      "why": "从歌手与表演者的表达、舞台形象和文化影响看音乐与设计的交集。",
+      "drawback": "不是现场音乐演出；票价与售票时间尚待确认。",
+      "ticket_note": "会期已公布，票务待公布。",
+      "source_url": "https://www.nact.jp/exhibition_special/2027/diva2027/",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "音乐",
+          "舞台"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "时尚",
+          "文化影响"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "gilbert-george-2027",
+      "title": "ギルバート＆ジョージ展",
+      "bucket": "future",
+      "category": "英国当代艺术展览",
+      "start_date": "2027-09-17",
+      "end_date": "2027-12-20",
+      "venue": "国立新美術館",
+      "area": "六本木",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 83,
+      "tags": [
+        "英国当代艺术",
+        "摄影",
+        "影像",
+        "城市社会"
+      ],
+      "why": "巨幅摄影和影像回顾二人组的创作，适合扩展西方当代艺术兴趣。",
+      "drawback": "题材含宗教与性，表达较挑衅；不是互动为主。",
+      "ticket_note": "会期已公布，票务待公布。",
+      "source_url": "https://www.nact.jp/exhibition_special/2027/post/",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "英国当代艺术",
+          "摄影"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "影像",
+          "城市社会"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术"
+          ],
+          "countries": [
+            "英国"
+          ],
+          "periods": [],
+          "media": [
+            "摄影",
+            "影像"
+          ],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "dufy-tokyo-2027",
+      "title": "デュフィ展",
+      "bucket": "future",
+      "category": "法国美术展览",
+      "start_date": "2027-04-24",
+      "end_date": "2027-08-22",
+      "venue": "東京都美術館",
+      "area": "上野",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 89,
+      "tags": [
+        "法国美术",
+        "色彩",
+        "纺织设计",
+        "陶艺"
+      ],
+      "why": "绘画延伸到纺织、服装和陶器的创作，与你对西方美术及设计的兴趣都有交集。",
+      "drawback": "以作品鉴赏为主，互动较少。",
+      "ticket_note": "会期已公布，票价与售票时间待公布。",
+      "source_url": "https://www.tobikan.jp/exhibition/2027_dufy.html",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "法国美术",
+          "色彩"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "纺织设计",
+          "陶艺"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术"
+          ],
+          "countries": [
+            "法国"
+          ],
+          "periods": [],
+          "media": [
+            "绘画"
+          ],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "hammer-tokyo-2027",
+      "title": "レンブラントからモネ、ゴッホ　ハマー美術館展",
+      "bucket": "future",
+      "category": "西方美术展览",
+      "start_date": "2027-09-11",
+      "end_date": "2027-12-12",
+      "venue": "東京都美術館",
+      "area": "上野",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 91,
+      "tags": [
+        "西方美术",
+        "欧洲绘画",
+        "馆藏精选",
+        "名作鉴赏"
+      ],
+      "why": "ハマー美术馆收藏首次在日本成规模展示，是值得提前关注的西方美术候选。",
+      "drawback": "具体出品清单和票务仍待后续信息。",
+      "ticket_note": "会期已公布，票务待公布。",
+      "source_url": "https://www.tobikan.jp/exhibition/2027_hammer.html",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "西方美术",
+          "欧洲绘画"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "馆藏精选",
+          "名作鉴赏"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术"
+          ],
+          "countries": [
+            "法国"
+          ],
+          "periods": [],
+          "media": [
+            "绘画"
+          ],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "mori-play-2027",
+      "title": "世界はあそびでできている：アート・子ども・社会",
+      "bucket": "future",
+      "category": "当代艺术展览",
+      "start_date": "2027-04-29",
+      "end_date": "2027-09-23",
+      "venue": "森美術館",
+      "area": "六本木",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 94,
+      "tags": [
+        "当代艺术",
+        "游戏与想象力",
+        "参加型作品",
+        "沉浸装置"
+      ],
+      "why": "官方明确包含参加型作品及全身体感的沉浸装置，比纯观看型展览更符合你的体验偏好。",
+      "drawback": "最终作品构成未全部公布，不能预先保证每项都适合成人。",
+      "ticket_note": "会期已公布，票务待公布。",
+      "source_url": "https://www.mori.art.museum/jp/exhibitions/play/index.html",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "当代艺术",
+          "游戏与想象力"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "参加型作品",
+          "沉浸装置"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "当代艺术"
+          ],
+          "countries": [],
+          "periods": [
+            "当代"
+          ],
+          "media": [
+            "参加型作品",
+            "装置"
+          ],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "artizon-now-2027",
+      "title": "ARTIZON NOW　ひろがる、つながる、コレクション",
+      "bucket": "future",
+      "category": "多地域美术展览",
+      "start_date": "2027-02-23",
+      "end_date": "2027-05-30",
+      "venue": "アーティゾン美術館",
+      "area": "京桥",
+      "price_min": 1200,
+      "price_max": 1500,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 83,
+      "tags": [
+        "多地域美术",
+        "设计",
+        "新馆藏",
+        "作品比较"
+      ],
+      "why": "西方、日本、澳大利亚原住民艺术和设计同场，有机会发现不同地域和媒介偏好。",
+      "drawback": "综合馆藏展，未必每部分都命中你的兴趣。",
+      "ticket_note": "已公布预约价¥1,200、窗口¥1,500；预约开放时间待确认。",
+      "source_url": "https://www.artizon.museum/exhibition/detail/615",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": "2026-09-25",
+      "learning_features": {
+        "subjects": [
+          "多地域美术",
+          "设计"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "新馆藏",
+          "作品比较"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术",
+            "日本艺术",
+            "澳大利亚原住民艺术"
+          ],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "arakawa-nash-2027",
+      "title": "荒川ナッシュ医｜草の赤ちゃん、月の赤ちゃん／不連続統一体のように（ヴェネチア日本館帰国展）",
+      "bucket": "future",
+      "category": "当代艺术展览",
+      "start_date": "2027-06-19",
+      "end_date": "2027-09-20",
+      "venue": "アーティゾン美術館",
+      "area": "京桥",
+      "price_min": 1200,
+      "price_max": 1500,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 86,
+      "tags": [
+        "当代艺术",
+        "照护",
+        "身体参与",
+        "参加型作品"
+      ],
+      "why": "抱持婴儿人偶在空间中观看，把照护议题转成身体体验，属于有明确参与机制的当代艺术。",
+      "drawback": "照护主题是否吸引你尚无反馈，不能仅凭互动形式就给最高推荐。",
+      "ticket_note": "预约¥1,200、窗口¥1,500，含同期开办的藤岛武二展；预约开放时间待确认。",
+      "source_url": "https://www.artizon.museum/exhibition/detail/616",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": "2026-09-25",
+      "learning_features": {
+        "subjects": [
+          "当代艺术",
+          "照护"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "身体参与",
+          "参加型作品"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "当代艺术"
+          ],
+          "countries": [],
+          "periods": [
+            "当代"
+          ],
+          "media": [
+            "参加型作品",
+            "装置"
+          ],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "fujishima-artizon-2027",
+      "title": "藤島武二 —創造の軌跡",
+      "bucket": "future",
+      "category": "日本近代洋画展览",
+      "start_date": "2027-06-19",
+      "end_date": "2027-09-20",
+      "venue": "アーティゾン美術館",
+      "area": "京桥",
+      "price_min": 1200,
+      "price_max": 1500,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 79,
+      "tags": [
+        "日本近代洋画",
+        "素描",
+        "创作资料",
+        "艺术史"
+      ],
+      "why": "通过作品和首次公开的素描资料看日本洋画创作过程，可与同馆参加型展一起看。",
+      "drawback": "静态绘画与资料为主。",
+      "ticket_note": "与荒川ナッシュ医展共用入馆票，不必重复买票；预约开放时间待确认。",
+      "source_url": "https://www.artizon.museum/exhibition/detail/617",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": "2026-09-25",
+      "learning_features": {
+        "subjects": [
+          "日本近代洋画",
+          "素描"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "创作资料",
+          "艺术史"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本艺术"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [],
+          "media": [
+            "油画",
+            "素描"
+          ],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "new-objectivity-artizon-2027",
+      "title": "New Objectivity —1960–70年代のアートシーン",
+      "bucket": "future",
+      "category": "国际当代艺术展览",
+      "start_date": "2027-10-16",
+      "end_date": "2028-01-30",
+      "venue": "アーティゾン美術館",
+      "area": "京桥",
+      "price_min": 1800,
+      "price_max": 2000,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 82,
+      "tags": [
+        "国际当代艺术",
+        "1960–70年代",
+        "艺术史",
+        "多种媒介"
+      ],
+      "why": "比较不同地域在现代艺术转向观众、环境与社会关系时期的创作。",
+      "drawback": "艺术史和理论占比较强，不应等同于互动展。",
+      "ticket_note": "预约¥1,800、窗口¥2,000，含同期开办的罗丹专题；预约开放时间待确认。",
+      "source_url": "https://www.artizon.museum/exhibition/detail/618",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": "2026-09-25",
+      "learning_features": {
+        "subjects": [
+          "国际当代艺术",
+          "1960–70年代"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "艺术史",
+          "多种媒介"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "rodin-artizon-2027",
+      "title": "石橋財団コレクション選　特集コーナー展示「ロダンに捧ぐ」",
+      "bucket": "future",
+      "category": "法国雕塑展览",
+      "start_date": "2027-10-16",
+      "end_date": "2028-01-30",
+      "venue": "アーティゾン美術館",
+      "area": "京桥",
+      "price_min": 1800,
+      "price_max": 2000,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 78,
+      "tags": [
+        "法国雕塑",
+        "版画",
+        "罗丹",
+        "馆藏精选"
+      ],
+      "why": "版画与罗丹及其弟子雕塑一起展示，可作为同馆主展的延伸。",
+      "drawback": "是专题角落展示，单独远行的吸引力有限。",
+      "ticket_note": "与New Objectivity共用入馆票，不必重复买票；预约开放时间待确认。",
+      "source_url": "https://www.artizon.museum/exhibition/detail/619",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": "2026-09-25",
+      "learning_features": {
+        "subjects": [
+          "法国雕塑",
+          "版画"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "罗丹",
+          "馆藏精选"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术"
+          ],
+          "countries": [
+            "法国"
+          ],
+          "periods": [],
+          "media": [
+            "雕塑",
+            "版画"
+          ],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "yamaga-seika-2027",
+      "title": "生誕140年　染織家　山鹿清華",
+      "bucket": "future",
+      "category": "日本染织展览",
+      "start_date": "2027-02-20",
+      "end_date": "2027-04-11",
+      "venue": "東京ステーションギャラリー",
+      "area": "东京站",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "upcoming",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 77,
+      "tags": [
+        "日本染织",
+        "图案设计",
+        "手织锦",
+        "创作过程"
+      ],
+      "why": "传统手织锦中融入火箭、机车等现代题材，可以观察图案与材料表达。",
+      "drawback": "染织题材偏窄，与体验型活动交集较弱。",
+      "ticket_note": "会期已公布，票务待确认。",
+      "source_url": "https://www.ejrcf.or.jp/gallery/exhibition.html",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "日本染织",
+          "图案设计"
+        ],
+        "formats": [
+          "美术馆展览"
+        ],
+        "experiences": [
+          "手织锦",
+          "创作过程"
+        ],
+        "signals": [
+          "票务待确认"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本艺术"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [],
+          "media": [
+            "染织"
+          ],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
     }
   ],
   "meta": {
@@ -1979,7 +2734,7 @@
     "release_history_enabled": true,
     "backfill_last_run": "2026-09-27",
     "backfill_policy": "scan_past_announcements_for_events_still_upcoming_or_ongoing",
-    "notes": "Coverage expanded after audit: scan canonical current/upcoming schedules of anchor institutions independent of announcement age, then add ticketing and archive history. Major omissions including Louvre Renaissance were backfilled.",
+    "notes": "Coverage expanded after audit: scan canonical current/upcoming schedules of anchor institutions independent of announcement age, then add ticketing and archive history. Major omissions including Louvre Renaissance were backfilled. 2026-10-03 audit: annual schedules are required in addition to current calendar listings; no-sale events must be retained as future candidates.",
     "coverage_model": "anchor_inventory_plus_search",
     "coverage_floor": {
       "mandatory_venue_calendars": [
@@ -2007,7 +2762,9 @@
     "anchor_inventory_required": true,
     "learning_taxonomy_version": 3,
     "learning_note": "Exhibitions are learned at content level: art region/tradition, country, period, medium and curatorial focus; broad museum/art categories are not sufficient.",
-    "last_update_scope": "Six officially verified additions; ongoing buckets and expired advance-sale reminders corrected. Mandatory full-source inventory remains incomplete.",
-    "last_discovery_run": "2026-10-03"
+    "last_update_scope": "13 verified 2027 exhibition additions across TNM, NACT, Tobikan, Mori, Artizon and Tokyo Station Gallery. Other calendars and ticket channels not fully enumerated; coverage remains partial.",
+    "last_discovery_run": "2026-10-03",
+    "announced_event_watch_months": 18,
+    "discovery_rule": "Inventory all officially announced ongoing and future exhibitions, including unsold 2027 annual schedules; apply preferences after inventory, not before. Ticket watch is separate from announcement discovery."
   }
 }
