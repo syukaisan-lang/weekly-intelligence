@@ -3724,6 +3724,653 @@
           ]
         }
       }
+    },
+    {
+      "id": "painting-painting-nmwa-2027",
+      "title": "画中画――絵をめぐる絵の冒険。ルネサンスから現代、そのさきへ",
+      "bucket": "future",
+      "category": "西方美术展览",
+      "start_date": "2027-09-18",
+      "end_date": "2028-01-16",
+      "venue": "国立西洋美術館",
+      "area": "上野",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "票务待确认",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 92,
+      "tags": [
+        "西方艺术",
+        "绘画"
+      ],
+      "why": "以画中画为切入点看西方绘画如何组织观看与画面；维也纳美术史美术馆合作，并计划借展奥赛、波士顿等馆藏，内容角度有辨识度。",
+      "drawback": "具体作品和票价尚未公布；这是绘画鉴赏展，互动体验有限。",
+      "ticket_note": "正式公布会期，票价、开售日期及具体作品待公布；不巡展。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000001.000191129.html",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": "2026-09-30",
+      "learning_features": {
+        "subjects": [
+          "西方艺术",
+          "名作原作",
+          "馆藏精选",
+          "艺术史"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "名作原作",
+          "馆藏精选",
+          "艺术史"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [
+            "奥地利"
+          ],
+          "periods": [
+            "文艺复兴",
+            "近代",
+            "当代"
+          ],
+          "art_traditions": [
+            "西方古典美术"
+          ],
+          "art_regions": [
+            "西方艺术"
+          ],
+          "media": [
+            "绘画"
+          ],
+          "content_focus": [
+            "名作原作",
+            "馆藏精选",
+            "艺术史"
+          ]
+        }
+      },
+      "official_website": "https://www.gachuga.jp/",
+      "discovery_url": "https://www.tokyoartbeat.com/articles/-/painting-painting-nmwa-news-202609"
+    },
+    {
+      "id": "we-are-the-house-what-2027",
+      "title": "WE ARE THE HOUSE―向井山朋子＋高田冬彦（居候）",
+      "bucket": "future",
+      "category": "艺术/文化展览",
+      "start_date": "2027-01-19",
+      "end_date": "2027-03-22",
+      "venue": "WHAT MUSEUM",
+      "area": "天王洲",
+      "price_min": 1300,
+      "price_max": 1500,
+      "ticket_status": "票务待确认",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 88,
+      "tags": [
+        "日本当代艺术",
+        "装置",
+        "影像"
+      ],
+      "why": "会场被转化为大型装置中的“家”，结合向井山朋子的空间创作和高田冬彦的影像；可作为空间与影像体验候选。",
+      "drawback": "性别、身体和欲望主题较突出，表现可能带有不安感；互动方式尚未公布。",
+      "ticket_note": "一般1500日元，线上指定时间票减200日元；开售状态待核。11:00–18:00，周一休馆，3/22开馆。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000491.000014158.html",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": "2026-09-29",
+      "learning_features": {
+        "subjects": [
+          "日本当代艺术",
+          "空间体验",
+          "艺术家专题"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "空间体验",
+          "艺术家专题"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "当代"
+          ],
+          "art_traditions": [
+            "当代艺术"
+          ],
+          "art_regions": [
+            "日本当代艺术"
+          ],
+          "media": [
+            "装置",
+            "影像"
+          ],
+          "content_focus": [
+            "空间体验",
+            "艺术家专题"
+          ]
+        }
+      },
+      "official_website": "https://what.warehouseofart.org/exhibitions/we_are_the_house/"
+    },
+    {
+      "id": "icons-image-makers-chanel-2026",
+      "title": "Icons and Image Makers ナショナル ポートレート ギャラリー展",
+      "bucket": "now",
+      "category": "西方美术展览",
+      "start_date": "2026-10-02",
+      "end_date": "2026-11-29",
+      "venue": "シャネル・ネクサス・ホール",
+      "area": "银座",
+      "price_min": 0,
+      "price_max": 0,
+      "ticket_status": "no_ticket",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 86,
+      "tags": [
+        "西方艺术",
+        "摄影"
+      ],
+      "why": "以英国电影、音乐与时尚人物肖像看摄影家如何塑造公众形象；适合关注视觉传播与摄影内容。",
+      "drawback": "以平面肖像为主，体验规模较小。",
+      "ticket_note": "免费、无需预约、会期无休；11:00–19:00，最晚18:30入场。",
+      "source_url": "https://nexushall.chanel.com/program/2026/npg/",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "西方艺术",
+          "馆藏精选",
+          "人物肖像"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "馆藏精选",
+          "人物肖像"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [
+            "英国"
+          ],
+          "periods": [
+            "20世纪",
+            "当代"
+          ],
+          "art_traditions": [],
+          "art_regions": [
+            "西方艺术"
+          ],
+          "media": [
+            "摄影"
+          ],
+          "content_focus": [
+            "馆藏精选",
+            "人物肖像"
+          ]
+        }
+      }
+    },
+    {
+      "id": "katsushika-oi-night-2026",
+      "title": "葛飾応為「吉原格子先之図」 夜景の系譜",
+      "bucket": "now",
+      "category": "艺术/文化展览",
+      "start_date": "2026-10-06",
+      "end_date": "2026-12-06",
+      "venue": "太田記念美術館",
+      "area": "原宿",
+      "price_min": 1200,
+      "price_max": 1200,
+      "ticket_status": "当日购票",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 77,
+      "tags": [
+        "日本艺术",
+        "浮世绘",
+        "绘画"
+      ],
+      "why": "从明暗构图与夜景表达观看应为代表作及其他浮世绘作品；作为内容明确的日本美术候选保留。",
+      "drawback": "题材属于日本传统美术；前后期其他作品全部更换，11/4–6闭馆。",
+      "ticket_note": "一般1200日元，不实施日期预约；前期10/6–11/3、后期11/7–12/6。应为代表作通期展示。",
+      "source_url": "https://www.ukiyoe-ota-muse.jp/katsushikaoi2026/",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "日本艺术",
+          "夜景",
+          "名作原作"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "夜景",
+          "名作原作"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "江户",
+            "近代"
+          ],
+          "art_traditions": [
+            "日本传统美术",
+            "浮世绘"
+          ],
+          "art_regions": [
+            "日本艺术"
+          ],
+          "media": [
+            "浮世绘",
+            "绘画"
+          ],
+          "content_focus": [
+            "夜景",
+            "名作原作"
+          ]
+        }
+      }
+    },
+    {
+      "id": "arte-tokyo-2026",
+      "title": "ARTE TOKYO 東京国際文化芸術祭",
+      "bucket": "now",
+      "category": "艺术/文化展览",
+      "start_date": "2026-10-10",
+      "end_date": "2026-12-31",
+      "venue": "临海／日比谷・丸之内／代代木・涩谷等",
+      "area": "东京多区域",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "按项目确认",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 85,
+      "tags": [
+        "国际当代艺术",
+        "装置",
+        "表演"
+      ],
+      "why": "城市空间中的艺术、表演、灯光和娱乐项目可分散安排；总览入口方便发现固定美术馆外的体验。",
+      "drawback": "这是艺术节总览，不代表所有项目同期可看；需逐项核对日期、票价及预约。",
+      "ticket_note": "各项目日期、费用及预约不同；部分户外作品11月起设置。TOKYO ATLAS为其中独立已收录项目，勿重复规划。",
+      "source_url": "https://www.koho.metro.tokyo.lg.jp/2026/10/01-1.html",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "国际当代艺术",
+          "城市空间",
+          "现场体验"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "城市空间",
+          "现场体验"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [],
+          "periods": [
+            "当代"
+          ],
+          "art_traditions": [],
+          "art_regions": [
+            "国际当代艺术"
+          ],
+          "media": [
+            "装置",
+            "表演"
+          ],
+          "content_focus": [
+            "城市空间",
+            "现场体验"
+          ]
+        }
+      },
+      "official_website": "https://artetokyo.jp/ja/"
+    },
+    {
+      "id": "cincinnati-ueno-2026",
+      "title": "シンシナティ美術館展 ～アメリカに渡ったヨーロッパの至宝～",
+      "bucket": "now",
+      "category": "西方美术展览",
+      "start_date": "2026-10-10",
+      "end_date": "2027-01-10",
+      "venue": "上野の森美術館",
+      "area": "上野",
+      "price_min": 2200,
+      "price_max": 2400,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-07-27",
+      "ticket_deadline": "2026-10-09",
+      "recommendation": 91,
+      "tags": [
+        "西方艺术",
+        "绘画"
+      ],
+      "why": "以法国及欧洲美术馆藏原作为主，适合与已有西方绘画候选比较；84件作品中多数首次在日本展出。",
+      "drawback": "静态绘画展；周末可能拥挤，需查看具体作品名单判断吸引力。",
+      "ticket_note": "一般前卖2200／当日2400日元；前卖至10/9 23:59。平日限定双人前卖4000日元。10:00–17:00，会期无休。",
+      "source_url": "https://www.ueno-mori.org/exhibitions/article.cgi?id=12651051",
+      "ticket_url": "https://www.cincinnati-art2026.jp/ticket.html",
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "西方艺术",
+          "名作原作",
+          "馆藏精选"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "名作原作",
+          "馆藏精选"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [
+            "法国"
+          ],
+          "periods": [
+            "19世纪",
+            "20世纪"
+          ],
+          "art_traditions": [
+            "法国近代美术"
+          ],
+          "art_regions": [
+            "西方艺术"
+          ],
+          "media": [
+            "绘画"
+          ],
+          "content_focus": [
+            "名作原作",
+            "馆藏精选"
+          ]
+        }
+      }
+    },
+    {
+      "id": "seeds-roots-operacity-2026",
+      "title": "種と根っこ―都市の耕し方",
+      "bucket": "future",
+      "category": "艺术/文化展览",
+      "start_date": "2026-10-17",
+      "end_date": "2026-12-20",
+      "venue": "東京オペラシティ アートギャラリー",
+      "area": "初台",
+      "price_min": 1600,
+      "price_max": 1800,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-09-17",
+      "ticket_deadline": "2026-10-16",
+      "recommendation": 82,
+      "tags": [
+        "日本当代艺术",
+        "装置",
+        "绘画"
+      ],
+      "why": "通过艺术作品观察城市、自然与人工环境的关系；适合对城市空间和生态表达感兴趣时比较。",
+      "drawback": "当代艺术群展，互动程度未明确；原计划Dan Graham展已取消，本展为替换项目。",
+      "ticket_note": "一般前卖1600／当日1800日元；前卖至10/16 23:59。无需预约，含寺田收藏秋景与project N104。",
+      "source_url": "https://www.operacity.jp/ag/press/pdf/260608_SR.pdf",
+      "ticket_url": "https://www.e-tix.jp/tocag/",
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "日本当代艺术",
+          "城市生态",
+          "群展"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "城市生态",
+          "群展"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "当代"
+          ],
+          "art_traditions": [
+            "当代艺术"
+          ],
+          "art_regions": [
+            "日本当代艺术"
+          ],
+          "media": [
+            "装置",
+            "绘画"
+          ],
+          "content_focus": [
+            "城市生态",
+            "群展"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yoshirotten-beyond-earth-2026",
+      "title": "ヨシロットン展 彼方との交信／BEYOND EARTH",
+      "bucket": "future",
+      "category": "艺术/文化展览",
+      "start_date": "2026-10-30",
+      "end_date": "2027-01-11",
+      "venue": "TOKYO NODE",
+      "area": "虎之门",
+      "price_min": 2200,
+      "price_max": 2500,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-09-16",
+      "ticket_deadline": "2027-01-11",
+      "recommendation": 94,
+      "tags": [
+        "日本当代艺术",
+        "装置",
+        "影像"
+      ],
+      "why": "结合宇宙、观测数据、光和大型装置，把科学信息转化为空间感受；适合优先比较的视觉体验候选。",
+      "drawback": "屋上展区受天气影响；退款限制严格，需按访问日选择平日或周末票。",
+      "ticket_note": "一般平日2200／周末节假日2500日元；须预先线上购票，现场不售。含屋上ポケモンカードゲーム＆ヨシロットンパーク，开放受天气限制。",
+      "source_url": "https://www.tokyonode.jp/sp/yoshirotten/",
+      "ticket_url": "https://www.tokyonode.jp/sp/yoshirotten/ticket/",
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "日本当代艺术",
+          "空间体验",
+          "光",
+          "宇宙"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "空间体验",
+          "光",
+          "宇宙"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "当代"
+          ],
+          "art_traditions": [
+            "当代艺术",
+            "视觉设计"
+          ],
+          "art_regions": [
+            "日本当代艺术"
+          ],
+          "media": [
+            "装置",
+            "影像"
+          ],
+          "content_focus": [
+            "空间体验",
+            "光",
+            "宇宙"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yuasa-eboshi-nerima-2026",
+      "title": "ユアサエボシと戦後アヴァンギャルドの変身寓話集",
+      "bucket": "future",
+      "category": "艺术/文化展览",
+      "start_date": "2026-10-31",
+      "end_date": "2026-12-27",
+      "venue": "練馬区立美術館",
+      "area": "中村桥",
+      "price_min": 1000,
+      "price_max": 1000,
+      "ticket_status": "当日购票",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "recommendation": 76,
+      "tags": [
+        "日本艺术",
+        "绘画"
+      ],
+      "why": "把虚构画家与战后前卫绘画放在一起观察变身、历史及社会表达；中村桥交通方便，可作为近距离候选。",
+      "drawback": "日本战后前卫艺术主题较专门，题材可能阴郁。",
+      "ticket_note": "一般1000日元，无需预约、现场购票；10:00–18:00，周一休馆（11/23开、11/24休）。",
+      "source_url": "https://www.neribun.or.jp/event/detail_m.cgi?id=202608151786784919",
+      "ticket_url": null,
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "日本艺术",
+          "历史叙事",
+          "群展"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "历史叙事",
+          "群展"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "战后",
+            "当代"
+          ],
+          "art_traditions": [
+            "日本前卫艺术"
+          ],
+          "art_regions": [
+            "日本艺术"
+          ],
+          "media": [
+            "绘画"
+          ],
+          "content_focus": [
+            "历史叙事",
+            "群展"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ikimono-sei-kahaku-2026",
+      "title": "特別展「生きものたちの性」",
+      "bucket": "future",
+      "category": "科学/自然展览",
+      "start_date": "2026-10-31",
+      "end_date": "2027-02-21",
+      "venue": "国立科学博物館",
+      "area": "上野",
+      "price_min": 2100,
+      "price_max": 2300,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-08-22",
+      "ticket_deadline": "2026-10-30",
+      "recommendation": 85,
+      "tags": [
+        "标本",
+        "科学展示"
+      ],
+      "why": "用形态、行为、性别决定和育儿解释生物的多样性，是艺术展以外有内容深度的科学候选。",
+      "drawback": "以自然科学标本与知识展示为主，互动方式需看具体介绍。",
+      "ticket_note": "一般前卖2100／当日2300日元；前卖至10/30 23:59。周末节假日指定时间预约优先，官网建议免费预约。",
+      "source_url": "https://www.ikimono-sei.jp/outline.html",
+      "ticket_url": "https://www.ikimono-sei.jp/ticket.html",
+      "last_verified_at": "2026-10-03",
+      "announcement_date": null,
+      "learning_features": {
+        "subjects": [
+          "生物学",
+          "性与繁殖",
+          "自然多样性"
+        ],
+        "formats": [
+          "展览"
+        ],
+        "experiences": [
+          "生物学",
+          "性与繁殖",
+          "自然多样性"
+        ],
+        "signals": [],
+        "content_profile": {
+          "countries": [],
+          "periods": [],
+          "art_traditions": [],
+          "art_regions": [],
+          "media": [
+            "标本",
+            "科学展示"
+          ],
+          "content_focus": [
+            "生物学",
+            "性与繁殖",
+            "自然多样性"
+          ]
+        }
+      }
     }
   ],
   "meta": {
@@ -3765,7 +4412,14 @@
         "東京国立近代美術館",
         "NTT ICC",
         "WHAT MUSEUM",
-        "六本木アートナイト"
+        "六本木アートナイト",
+        "TOKYO NODE",
+        "シャネル・ネクサス・ホール",
+        "上野の森美術館",
+        "太田記念美術館",
+        "東京オペラシティ アートギャラリー",
+        "練馬区立美術館",
+        "ARTE TOKYO"
       ],
       "mandatory_ticket_channels": [
         "ローチケ",
@@ -3779,7 +4433,7 @@
     "anchor_inventory_required": true,
     "learning_taxonomy_version": 3,
     "learning_note": "Exhibitions are learned at content level: art region/tradition, country, period, medium and curatorial focus; broad museum/art categories are not sufficient.",
-    "last_update_scope": "17 additional verified exhibition listings (16 opening in 2026 and one 2027 video festival). Recurring automation updated to require source-level current/upcoming/annual/news inventory and retry ledger.",
+    "last_update_scope": "10 additional officially verified omissions: Painting Painting (2027), WHAT WE ARE THE HOUSE (2027), and all 8 missing Tokyo entries from TAB October 2026 roundup. Global coverage remains partial.",
     "last_discovery_run": "2026-10-03",
     "announced_event_watch_months": 18,
     "discovery_rule": "Inventory all officially announced ongoing and future exhibitions, including unsold 2027 annual schedules; apply preferences after inventory, not before. Ticket watch is separate from announcement discovery.",
@@ -3826,8 +4480,8 @@
         "checked_at": "2026-10-03",
         "status": "partial",
         "inventory_count": null,
-        "added_count": 1,
-        "missing_or_failure_reason": "已补ターナー；官网访问失败，后续计划仍需补核"
+        "added_count": 2,
+        "missing_or_failure_reason": "已补ターナー及9/30新闻公布画中画；馆方网站403，官方广报新闻替代核验；常设小展和其他公告仍未全量枚举"
       },
       {
         "name": "東京ステーションギャラリー",
@@ -3976,11 +4630,11 @@
       {
         "name": "WHAT MUSEUM",
         "url": "https://what.warehouseofart.org/",
-        "checked_at": null,
-        "status": "pending",
+        "checked_at": "2026-10-03",
+        "status": "partial",
         "inventory_count": null,
-        "added_count": 0,
-        "missing_or_failure_reason": "本轮未完成"
+        "added_count": 1,
+        "missing_or_failure_reason": "已核9/29主办方公告并补WE ARE THE HOUSE；官网访问失败，全年日程仍待完整盘点"
       },
       {
         "name": "六本木アートナイト",
@@ -4008,6 +4662,33 @@
         "inventory_count": null,
         "added_count": 0,
         "missing_or_failure_reason": "用于发现新漏项，分页未全部枚举"
+      }
+    ],
+    "discovery_checks": [
+      {
+        "source": "Tokyo Art Beat 新着記事",
+        "url": "https://www.tokyoartbeat.com/articles/condId/latest",
+        "checked_at": "2026-10-03",
+        "pages_checked": [
+          1
+        ],
+        "oldest_date_seen": "2026-09-29",
+        "status": "partial",
+        "reason": "第一页逐项比对；更早页面未全量盘点，不能称全量新着覆盖",
+        "recovered_event_ids": [
+          "painting-painting-nmwa-2027"
+        ]
+      },
+      {
+        "source": "TAB October 2026 roundup / Tokyo section",
+        "url": "https://www.tokyoartbeat.com/articles/-/best-exhibitions-starting-in-october-2026-202609",
+        "checked_at": "2026-10-03",
+        "status": "complete",
+        "scope": "此单篇文章东京部分19项，不代表全东京展览",
+        "inventory_count": 19,
+        "already_present_count": 11,
+        "added_count": 8,
+        "missing_count": 0
       }
     ]
   }
