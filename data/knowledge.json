@@ -1,10 +1,10 @@
 {
   "meta": {
     "source": "Notion / 情報収集と整理",
-    "snapshot_at": "2026-10-02T15:58:46.599614+00:00",
+    "snapshot_at": "2026-10-09T16:33:46.332446+00:00",
     "schema_version": 5,
     "encrypted_full_data": true,
-    "item_count": 157,
+    "item_count": 159,
     "comments_included_in_encrypted_data": true,
     "page_body_included_in_encrypted_data": true,
     "comments_scope": "page-level open/unresolved comments via Notion Public API",
@@ -12,13 +12,13 @@
       "enabled": true,
       "priority": "evidence_period > published_at > collected_at",
       "confidence_counts": {
-        "low": 143,
+        "low": 145,
         "high": 9,
         "medium": 5
       },
       "domain_counts": {
+        "technology": 69,
         "consumer": 57,
-        "technology": 67,
         "general": 16,
         "methodology": 3,
         "market_price": 11,
@@ -27,13 +27,13 @@
     }
   },
   "metrics": {
-    "total": 666,
-    "read": 660,
-    "stock": 157,
+    "total": 668,
+    "read": 662,
+    "stock": 159,
     "rejected": 509,
     "undecided": 0,
-    "added_30d": 1,
-    "added_90d": 15
+    "added_30d": 3,
+    "added_90d": 17
   },
   "categories": [
     {
@@ -44,14 +44,14 @@
     },
     {
       "name": "マーケティング",
-      "total": 73,
-      "stock": 38,
+      "total": 74,
+      "stock": 39,
       "rejected": 35
     },
     {
       "name": "消費者",
-      "total": 54,
-      "stock": 33,
+      "total": 55,
+      "stock": 34,
       "rejected": 21
     },
     {
@@ -106,35 +106,35 @@
   "topic_counts": [
     {
       "name": "購買行動",
-      "count": 84
+      "count": 86
     },
     {
       "name": "CRM / LTV",
-      "count": 80
+      "count": 81
     },
     {
       "name": "ブランド成長",
-      "count": 77
+      "count": 78
     },
     {
       "name": "市場 / 競合",
-      "count": 72
+      "count": 74
     },
     {
       "name": "消費者インサイト",
-      "count": 68
+      "count": 70
     },
     {
       "name": "調査設計",
-      "count": 60
+      "count": 61
     },
     {
       "name": "広告効果",
-      "count": 58
+      "count": 59
     },
     {
       "name": "EC成長",
-      "count": 55
+      "count": 57
     },
     {
       "name": "マネジメント",
@@ -146,23 +146,23 @@
     },
     {
       "name": "KPI / 計測",
-      "count": 32
+      "count": 33
     },
     {
       "name": "価格戦略",
-      "count": 31
+      "count": 32
     },
     {
       "name": "CEP / 想起",
-      "count": 23
+      "count": 24
     },
     {
       "name": "生成AI実務",
-      "count": 17
+      "count": 19
     },
     {
       "name": "商品開発",
-      "count": 16
+      "count": 17
     },
     {
       "name": "AI Search / AEO",
