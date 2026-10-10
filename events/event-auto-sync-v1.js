@@ -13,9 +13,10 @@ function setStatus(t){const x=document.getElementById('eventAutoSyncStatus');if(
 function getKey(){return localStorage.getItem(KEY_STORE)||''}
 function latestTs(s){return Object.values(s||{}).reduce((m,v)=>Math.max(m,Number(v?.updated_at||0)),0)}
 function merge(a,b){const out={...(a||{})};for(const [id,v] of Object.entries(b||{})){if(!v||typeof v!=='object')continue;const at=Number(out[id]?.updated_at||0),bt=Number(v.updated_at||0);if(!out[id]||bt>at)out[id]=v}return out}
-async function call(method,state,c,signal){
+function mergeShared(a,b){const out={...(a||{})};for(const [id,v] of Object.entries(b||{})){if(!v||typeof v!=='object')continue;const old=out[id];if(!old||Number(v.updated_at)>Number(old.updated_at)||(Number(v.updated_at)===Number(old.updated_at)&&v.status==='visited'))out[id]=v;}return out}
+async function call(method,state,c,signal,sharedState){
   if(!c.key)throw new Error('missing_key');
-  const r=await fetch(ENDPOINT+'?profile_id='+encodeURIComponent(c.profile),{method,headers:{'content-type':'application/json','x-sync-key':c.key},body:method==='POST'?JSON.stringify({state}):undefined,cache:'no-store',referrerPolicy:'no-referrer',signal});
+  const r=await fetch(ENDPOINT+'?profile_id='+encodeURIComponent(c.profile),{method,headers:{'content-type':'application/json','x-sync-key':c.key},body:method==='POST'?JSON.stringify({state,shared_state:sharedState||{}}):undefined,cache:'no-store',referrerPolicy:'no-referrer',signal});
   if(r.status===401)throw new Error('bad_key');
   if(!r.ok)throw new Error('http_'+r.status);
   const data=await r.json();if(data.profile_id!==c.profile)throw new Error('profile_mismatch');return data;
@@ -29,9 +30,15 @@ async function pull({silent=false}={}){
     const response=await call('GET',undefined,c,signal);
     if(!current(c))return;
     const local=api().get(),remote=response.state||{},merged=merge(remote,local);
+    const localShared=api().getShared?.()||{},remoteShared=response.shared_state||{},mergedShared=mergeShared(remoteShared,localShared);
+    if(JSON.stringify(mergedShared)!==JSON.stringify(localShared))api().mergeShared?.(mergedShared,c.profile,c.version);
     if(JSON.stringify(merged)!==JSON.stringify(local))api().setAll(merged,c.profile,c.version);
     if(!current(c))return;
-    if(JSON.stringify(merged)!==JSON.stringify(remote))await call('POST',merged,c,signal);
+    if(JSON.stringify(merged)!==JSON.stringify(remote)||JSON.stringify(mergedShared)!==JSON.stringify(remoteShared)){
+      const saved=await call('POST',merged,c,signal,mergedShared);
+      if(!current(c))return;
+      api().mergeShared?.(saved.shared_state||{},c.profile,c.version);
+    }
     if(!current(c))return;
     lastPull[c.profile]=Date.now();setStatus('自动同步 · '+(c.profile==='default'?'用户1':'用户2')+'已同步');
   }catch(e){
