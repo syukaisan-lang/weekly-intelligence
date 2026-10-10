@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-10T03:52:19.644337+00:00",
+  "generated_at": "2026-10-10T06:04:52.268437+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 4,
-  "deduped_count": 2,
+  "raw_new_count": 2,
+  "deduped_count": 0,
   "deep_read_count": 0,
   "sources": [
     {
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 180,
+      "coverage_cached_count": 177,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 355,
+      "coverage_cached_count": 352,
       "coverage_errors": []
     },
     {
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 335,
+      "coverage_cached_count": 333,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -185,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 398,
+      "coverage_cached_count": 396,
       "coverage_errors": []
     }
   ],
@@ -226,7 +226,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-10T03:50:33.465890+00:00",
+    "generated_at": "2026-10-10T06:03:36.987319+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
