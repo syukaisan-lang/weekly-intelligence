@@ -82,13 +82,14 @@
     }
     state[id]=cur;
     try{
+      window.weeklyBeforeStateSave?.(id);
       localStorage.setItem(STATE_KEY,JSON.stringify(state));
       if(!localStorage.getItem(DIRTY_KEY))localStorage.setItem(DIRTY_KEY,String(now));
     }catch(_){
       if(existed)state[id]=old;else delete state[id];
       return previousSetStatus(a,'later');
     }
-    actions++;acknowledge(a,next,before);scheduleFlush();return next;
+    actions++;acknowledge(a,next,before);window.weeklyAfterStateSave?.();scheduleFlush();return next;
   }
 
   window.setStatus=setStatus=function(a,v){return v==='later'?fastLater(a):previousSetStatus(a,v);};

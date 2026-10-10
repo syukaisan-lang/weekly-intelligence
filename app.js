@@ -41,7 +41,7 @@ const EVENT_FORMATS=new Set(['オンラインセミナー','セミナー／イ�
 const PROMO_FORMATS=new Set(['新商品／新サービス発表','キャンペーン／販促']);
 const LOW_VALUE_INTENTS=new Set(['参加募集／イベント告知','リード獲得','商品・サービス告知','販促告知']);
 
-function save(){localStorage.setItem(STATE_KEY,JSON.stringify(state));}
+function save(){window.weeklyBeforeStateSave?.();localStorage.setItem(STATE_KEY,JSON.stringify(state));window.weeklyAfterStateSave?.();}
 function st(id){return state[id]||{status:'new',feedback:null};}
 function unique(xs){return [...new Set(xs.filter(Boolean))];}
 function textOf(a){return `${a.title||''} ${a.summary||''} ${(a.content_excerpt||'').slice(0,1600)}`;}

@@ -112,7 +112,7 @@ def _merge_state(target: dict, incoming: dict) -> None:
             target[str(id_)] = value
 
 
-def decrypt_weekly_state() -> dict:
+def _decrypt_weekly_archive() -> dict:
     """Restore the encrypted base plus every incremental backup in cursor order."""
     if not PASS or not STATE_PATH.exists():
         return {}
@@ -144,6 +144,22 @@ def decrypt_weekly_state() -> dict:
     except Exception as exc:
         print('Weekly lifecycle: encrypted feedback unavailable:', exc)
         return {}
+
+
+def decrypt_weekly_state() -> dict:
+    """Old backups remain a fallback; use the private current cloud cache when present."""
+    state = _decrypt_weekly_archive()
+    cache = os.getenv('WEEKLY_CLOUD_STATE_PATH', '')
+    if cache:
+        try:
+            # The server has already merged this archive at field level, including equal-time ties.
+            cloud = json.loads(Path(cache).read_text(encoding='utf-8'))
+            for id_, value in cloud.items():
+                if isinstance(value, dict) and int(value.get('updated_at') or 0) >= int((state.get(id_) or {}).get('updated_at') or 0):
+                    state[id_] = value
+        except (OSError, ValueError):
+            print('Weekly lifecycle: cloud cache unavailable; using encrypted archive')
+    return state
 
 
 def _normalized_status(st: dict) -> str:

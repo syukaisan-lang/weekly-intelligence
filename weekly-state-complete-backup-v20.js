@@ -58,6 +58,7 @@
     return out;
   }
   function migrateExtendedFields(){
+    if(window.WeeklySyncMerge)return 0;
     if(localStorage.getItem(MIGRATION_KEY)==='6')return 0;
     const now=Date.now();let seq=0,changed=0;
     for(const [id,v] of Object.entries(state||{})){
@@ -105,6 +106,7 @@
   }
   function cloudLatestMs(metaDoc,baseEnv){const meta=metaDoc?.meta||{};return Date.parse(meta.latest_at||meta.snapshot_at||baseEnv?.created_at||0)||0;}
   async function refreshCloudStatus(){
+    if(window.WeeklySyncMerge)return;
     try{
       const [metaDoc,baseEnv]=await Promise.all([fetchCloudMeta(),fetchCloudEnvelope()]);
       const pending=localStorage.getItem(BACKUP_PENDING_KEY),cloudLatest=cloudLatestMs(metaDoc,baseEnv),pendingTs=pending?Date.parse(pending):0;
@@ -243,6 +245,7 @@
     }catch(_){toast('恢复失败：密码不正确或备份无法读取。');}
   }
   function install(){
+    if(window.WeeklySyncMerge)return true;
     const tools=document.getElementById('weeklyStateTools'),backupBtn=document.getElementById('backupWeeklyStateBtn');if(!tools||!backupBtn)return false;
     backupBtn.onclick=backup;
     const restoreBtn=[...tools.querySelectorAll('button')].find(b=>b!==backupBtn&&/恢复云端/.test(b.textContent||''));if(restoreBtn)restoreBtn.onclick=restore;

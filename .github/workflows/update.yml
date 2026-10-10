@@ -22,6 +22,7 @@ on:
       - "scripts/enrich_xtrend_reading_time.py"
       - "scripts/enrich_reading_time_estimates.py"
       - "scripts/weekly_lifecycle.py"
+      - "scripts/sync_weekly_cloud.py"
       - "scripts/weekly_semantic.py"
       - "scripts/weekly_semantic_runtime.py"
       - "scripts/personal_relevance.py"
@@ -41,6 +42,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 concurrency:
   group: weekly-intelligence-update
@@ -52,6 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
+      WEEKLY_CLOUD_STATE_PATH: /tmp/weekly-cloud-feedback.json
       SEMANTIC_MODEL_ID: intfloat/multilingual-e5-small
     steps:
       - uses: actions/checkout@v7
@@ -74,6 +77,8 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.4,<3"
           python -m pip install -r requirements.txt
+      - name: Migrate old feedback and load automatic cloud learning
+        run: python scripts/sync_weekly_cloud.py
       - name: Fetch and screen feeds against latest Knowledge and Work System
         run: |
           for attempt in 1 2; do
