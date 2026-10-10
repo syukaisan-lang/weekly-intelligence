@@ -41,6 +41,11 @@ dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);bo
     <div><h1>东京活动雷达</h1><p class="sub">近期可去 + 未来抢票。状态按 想去 → 已买票 → 去过 独立流转；不感兴趣单独归档。反馈会用于精准学习；学习后低于70分的未反馈活动单列「低优先」，选择状态后移入对应分页。</p></div>
     <div class="actions"><button id="backupEventStateBtn" type="button">备份云端</button><button id="restoreEventStateBtn" type="button">恢复云端</button><button id="exportBtn">本地导出</button><label><button id="importBtn" type="button">本地导入</button><input id="importFile" type="file" accept="application/json" hidden></label><span id="eventCloudStatus" class="event-cloud-status">检查云备份…</span><span id="eventCloudHint" class="event-cloud-status">备份方式已改成与 Weekly 一致：只提交本次新增/变更的加密增量，手机端直接在当前页打开 GitHub 确认页。</span></div>
   </div>
+  <section class="profile-picker notice" aria-label="当前用户">
+    <label for="eventProfile"><strong>记录用户</strong></label>
+    <select id="eventProfile"><option value="default">用户1（原有记录）</option><option value="user2">用户2</option></select>
+    <span id="profileHint">两人的状态、评价和学习排序分别保存；共用活动清单。</span>
+  </section>
   <section id="stats" class="stats"></section>
   <nav class="tabs">
     <button class="tab active" data-view="now">本周/近期</button>
@@ -88,7 +93,7 @@ dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);bo
   </form>
 </dialog>
 <script>
-(()=>{const K='tokyo_event_feedback_v1';let events=[],view='now',pending=null,calMonth=null,calSelected=null,fb=load();const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
+(()=>{const LEGACY_K='tokyo_event_feedback_v1',PROFILE_K='tokyo_event_active_profile_v1',PROFILES=['default','user2'];let profile=PROFILES.includes(localStorage.getItem(PROFILE_K))?localStorage.getItem(PROFILE_K):'default',profileVersion=0;const feedbackKey=()=>profile==='default'?LEGACY_K:LEGACY_K+'_'+profile;let events=[],view='now',pending=null,calMonth=null,calSelected=null,fb=load();const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
 function normalizeRecord(v,bump=false){if(!v||typeof v!=='object')return{};let x={...v},before=JSON.stringify(x);
 if(x.visited){x.visited=true;x.booked=false;x.interest=null;x.no_reason=null;x.no_reason_at=0;x.booked_at=0;x.interest_at=0}
 else if(x.booked){x.booked=true;x.visited=false;x.interest=null;x.no_reason=null;x.no_reason_at=0;x.visited_at=0;x.visit_rating=null;x.rating_at=0;x.interest_at=0}
@@ -97,7 +102,10 @@ else if(x.interest==='yes'){x.booked=false;x.visited=false;x.visit_rating=null;x
 else{x.interest=null;x.booked=false;x.visited=false;x.visit_rating=null;x.rating_at=0;x.booked_at=0;x.visited_at=0;x.no_reason=null;x.no_reason_at=0}
 if(bump&&JSON.stringify(x)!==before)x.updated_at=Date.now();return x}
 function normalizeAll(src,bump=false){let out={};for(const [id,v] of Object.entries(src||{}))out[id]=normalizeRecord(v,bump);return out}
-function load(){try{return normalizeAll(JSON.parse(localStorage.getItem(K)||'{}'),true)}catch(e){return {}}}function save(){localStorage.setItem(K,JSON.stringify(fb));window.dispatchEvent(new CustomEvent('event-radar-state-change'))}
+function load(){try{return normalizeAll(JSON.parse(localStorage.getItem(feedbackKey())||'{}'),true)}catch(e){return {}}}function save(reason='local'){localStorage.setItem(feedbackKey(),JSON.stringify(fb));window.dispatchEvent(new CustomEvent('event-radar-state-change',{detail:{profile,reason}}))}
+function switchProfile(next){if(!PROFILES.includes(next)||next===profile)return;
+localStorage.setItem(feedbackKey(),JSON.stringify(fb));profile=next;profileVersion++;localStorage.setItem(PROFILE_K,profile);fb=load();pending=null;if($('#reasonDlg').open)$('#reasonDlg').close();$('#reasonForm').reset();calMonth=null;calSelected=null;view='now';$('#strength').value='';$$('.tab').forEach(x=>{let active=x.dataset.view===view;x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active))});$('#eventProfile').value=profile;render();window.dispatchEvent(new CustomEvent('event-radar-profile-change',{detail:{profile,version:profileVersion}}))}
+$('#eventProfile').value=profile;$('#eventProfile').onchange=e=>switchProfile(e.target.value);
 function state(id){return fb[id]||{}}function patch(id,p){fb[id]=normalizeRecord(Object.assign({},state(id),p,{updated_at:Date.now()}),false);save();render()}
 function t(d){return new Date(d+'T00:00:00').getTime()}function today(){let d=new Date();return new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()}
 function money(v){if(v===0)return'免费';return v==null?'待确认':'¥'+Number(v).toLocaleString('ja-JP')}function period(e){return e.start_date===e.end_date?e.start_date:e.start_date+' → '+e.end_date}
@@ -221,15 +229,15 @@ function installSwipeTabs(root){
   const nav=$('.tabs');window.scrollTo({top:Math.max(0,window.scrollY+nav.getBoundingClientRect().top-12),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
  },{passive:true});
 }
-installSwipeTabs(document.querySelector('main'));$('#strength').onchange=render;$('#category').onchange=render;$('#sort').onchange=render;$('#freeOnly').onchange=render;$('#reasonForm').onsubmit=e=>{if(e.submitter&&e.submitter.value==='confirm'&&pending){let r=new FormData(e.currentTarget).get('reason');if(r)patch(pending,{interest:'no',interest_at:0,no_reason:r,no_reason_at:Date.now(),booked:false,booked_at:0,visited:false,visited_at:0,visit_rating:null,rating_at:0})}pending=null;e.currentTarget.reset()};$('#exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify({schema:2,exported_at:new Date().toISOString(),feedback:fb},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tokyo-event-feedback.json';a.click()};$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=async e=>{try{let j=JSON.parse(await e.target.files[0].text());fb=normalizeAll(j.feedback||{},true);save();render()}catch(x){alert('反馈文件无法读取')}};
-window.EventRadarState={get:()=>JSON.parse(JSON.stringify(fb)),setAll:(next)=>{fb=normalizeAll((next&&typeof next==='object')?next:{},true);save();render();},version:3};
+installSwipeTabs(document.querySelector('main'));$('#strength').onchange=render;$('#category').onchange=render;$('#sort').onchange=render;$('#freeOnly').onchange=render;$('#reasonForm').onsubmit=e=>{if(e.submitter&&e.submitter.value==='confirm'&&pending){let r=new FormData(e.currentTarget).get('reason');if(r)patch(pending,{interest:'no',interest_at:0,no_reason:r,no_reason_at:Date.now(),booked:false,booked_at:0,visited:false,visited_at:0,visit_rating:null,rating_at:0})}pending=null;e.currentTarget.reset()};$('#exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify({schema:3,profile_id:profile,exported_at:new Date().toISOString(),feedback:fb},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tokyo-event-feedback-'+profile+'.json';a.click()};$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=async e=>{try{const importedProfile=profile,importedVersion=profileVersion;let j=JSON.parse(await e.target.files[0].text());if(profile!==importedProfile||profileVersion!==importedVersion)throw new Error('读取期间已切换用户，请重新导入');const fileProfile=j.profile_id||'default';if(fileProfile!==profile)throw new Error('此文件属于'+(fileProfile==='default'?'用户1':'用户2')+'，请先切换到对应用户');fb=normalizeAll(j.feedback||{},true);save();render();e.target.value=''}catch(x){alert(x.message||'反馈文件无法读取')}};
+window.EventRadarState={get:()=>JSON.parse(JSON.stringify(fb)),getProfile:()=>profile,getProfileVersion:()=>profileVersion,switchProfile,setAll:(next,expectedProfile=profile,expectedVersion=profileVersion)=>{if(expectedProfile!==profile||expectedVersion!==profileVersion)return false;fb=normalizeAll((next&&typeof next==='object')?next:{},true);save('sync');render();return true;},version:4};
 save();
 fetch('data.json?'+Date.now()).then(r=>r.json()).then(j=>{events=j.events||[];Array.from(new Set(events.map(e=>e.category))).sort().forEach(c=>$('#category').insertAdjacentHTML('beforeend','<option>'+c+'</option>'));render()}).catch(()=>$('#list').innerHTML='<div class="empty">活动数据读取失败。</div>');
 window.getEventFeedback=()=>JSON.parse(JSON.stringify(fb));
 window.mergeEventFeedback=remote=>{const merged={...fb};let applied=0,kept=0;for(const [id,v] of Object.entries(remote||{})){const rt=Number(v&&v.updated_at||0),lt=Number(fb[id]&&fb[id].updated_at||0);if(!fb[id]||rt>lt){merged[id]=v;applied++}else kept++}fb=normalizeAll(merged,true);save();render();return{applied,kept};};
 })();
 </script>
-<script src="event-auto-sync-v1.js?v=20260927-2"></script>
+<script src="event-auto-sync-v1.js?v=20261010-profiles-1"></script>
 <script src="ui-v3.js?v=20260927-3"></script>
 </body>
 </html>
