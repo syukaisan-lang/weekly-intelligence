@@ -30,6 +30,7 @@ dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);bo
 
 
 .decision-overview h2{margin:0;font-size:20px}.decision-overview p{margin:8px 0;font-size:16px;font-weight:700}.decision-overview>span{color:var(--muted);font-size:13px;line-height:1.5;display:block}.calendar-secondary{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}.calendar-secondary>summary{cursor:pointer;color:var(--accent);font-size:14px;padding:3px 0}.calendar-secondary[open]>.cal-head{margin-top:14px}.decision-strip{display:grid;gap:5px;margin:14px 0 10px;padding:12px 14px;background:#101a28;border-radius:10px;border-left:3px solid var(--accent)}.decision-strip strong{font-size:19px;color:var(--text)}.decision-strip span{font-size:15px}.decision-strip small{font-size:14px;color:var(--muted)}.decision-strip.urgent{border-color:var(--bad);background:#291b21}.decision-strip.urgent strong{color:var(--bad)}.decision-strip.soon{border-color:var(--warn)}.decision-strip.soon strong{color:var(--warn)}.decision-strip.ended{opacity:.7;border-color:var(--muted)}#learning[hidden]{display:none}.card:has(.decision-strip) .decision-urgency{display:none}
+.swipe-help{display:none;margin:0 0 10px;color:var(--muted);font-size:12px}@media(max-width:700px),(pointer:coarse){.swipe-help{display:block}}
 </style>
 <link rel="stylesheet" href="ui-v3.css?v=20260927-2">
 </head>
@@ -50,6 +51,7 @@ dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);bo
     <button class="tab" data-view="visited">去过</button>
     <button class="tab" data-view="rejected">不感兴趣</button>
   </nav>
+  <p class="swipe-help">左右滑动切换页签 · 左滑下一页，右滑上一页</p>
   <section class="filters">
     <select id="category"><option value="">全部类型</option></select>
     <select id="sort"><option value="smart">智能推荐</option><option value="score">原始推荐度</option><option value="ending">快结束</option><option value="sale">票务紧迫度</option><option value="price">价格低到高</option></select>
@@ -192,7 +194,34 @@ if(a==='interest'){if(s.interest==='yes')patch(id,{interest:null,interest_at:0})
 if(a==='booked'){if(s.booked)patch(id,{booked:false,booked_at:0});else patch(id,{booked:true,booked_at:now,interest:null,interest_at:0,visited:false,visited_at:0,visit_rating:null,rating_at:0,no_reason:null,no_reason_at:0})}
 if(a==='visited'){if(s.visited)patch(id,{visited:false,visited_at:0,visit_rating:null,rating_at:0});else patch(id,{visited:true,visited_at:now,booked:false,booked_at:0,interest:null,interest_at:0,no_reason:null,no_reason_at:0})}
 if(a==='no'){pending=id;$('#reasonDlg').showModal()}});$$('[data-rate]').forEach(b=>b.onclick=()=>{let id=b.dataset.id,now=Date.now();patch(id,{visit_rating:b.dataset.rate,rating_at:now,visited:true,visited_at:state(id).visited_at||now,booked:false,booked_at:0,interest:null,interest_at:0,no_reason:null,no_reason_at:0})})}
-$$('.tab').forEach(b=>b.onclick=()=>{view=b.dataset.view;$('#strength').value='';$$('.tab').forEach(x=>x.classList.toggle('active',x===b));render()});$('#strength').onchange=render;$('#category').onchange=render;$('#sort').onchange=render;$('#freeOnly').onchange=render;$('#reasonForm').onsubmit=e=>{if(e.submitter&&e.submitter.value==='confirm'&&pending){let r=new FormData(e.currentTarget).get('reason');if(r)patch(pending,{interest:'no',interest_at:0,no_reason:r,no_reason_at:Date.now(),booked:false,booked_at:0,visited:false,visited_at:0,visit_rating:null,rating_at:0})}pending=null;e.currentTarget.reset()};$('#exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify({schema:2,exported_at:new Date().toISOString(),feedback:fb},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tokyo-event-feedback.json';a.click()};$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=async e=>{try{let j=JSON.parse(await e.target.files[0].text());fb=normalizeAll(j.feedback||{},true);save();render()}catch(x){alert('反馈文件无法读取')}};
+function selectView(next){const b=$$('.tab').find(x=>x.dataset.view===next);if(!b||view===next)return;view=next;$('#strength').value='';$$('.tab').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});render()}
+$$('.tab').forEach(b=>{b.setAttribute('aria-pressed',String(b.dataset.view===view));b.onclick=()=>selectView(b.dataset.view)});
+function swipeDirection(dx,dy,elapsed){if(elapsed>1000||Math.abs(dx)<70||Math.abs(dx)<Math.abs(dy)*1.7)return 0;return dx<0?1:-1}
+function installSwipeTabs(root){
+ let gesture=null;
+ const excluded='.tabs,.filters,.actions,#decisionCalendar,a,button,input,select,textarea,summary,dialog,[contenteditable]';
+ root.addEventListener('touchstart',e=>{
+  gesture=null;
+  if(!window.matchMedia('(max-width:700px),(pointer:coarse)').matches||e.touches.length!==1||e.target.closest(excluded)||window.getSelection()?.toString())return;
+  const p=e.touches[0];if(p.clientX<28||p.clientX>window.innerWidth-28)return;
+  gesture={x:p.clientX,y:p.clientY,id:p.identifier,at:Date.now()};
+ },{passive:true});
+ root.addEventListener('touchmove',e=>{
+  if(!gesture)return;if(e.touches.length!==1){gesture=null;return}
+  const p=e.touches[0],dx=p.clientX-gesture.x,dy=p.clientY-gesture.y;
+  if(p.identifier!==gesture.id||(Math.abs(dy)>16&&Math.abs(dy)>Math.abs(dx)))gesture=null;
+ },{passive:true});
+ root.addEventListener('touchcancel',()=>{gesture=null},{passive:true});
+ root.addEventListener('touchend',e=>{
+  const g=gesture;gesture=null;if(!g||e.touches.length||window.getSelection()?.toString())return;
+  const p=Array.from(e.changedTouches).find(x=>x.identifier===g.id);if(!p)return;
+  const step=swipeDirection(p.clientX-g.x,p.clientY-g.y,Date.now()-g.at);if(!step)return;
+  const tabs=$$('.tab'),i=tabs.findIndex(x=>x.dataset.view===view),next=tabs[i+step];if(!next)return;
+  selectView(next.dataset.view);
+  const nav=$('.tabs');window.scrollTo({top:Math.max(0,window.scrollY+nav.getBoundingClientRect().top-12),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
+ },{passive:true});
+}
+installSwipeTabs(document.querySelector('main'));$('#strength').onchange=render;$('#category').onchange=render;$('#sort').onchange=render;$('#freeOnly').onchange=render;$('#reasonForm').onsubmit=e=>{if(e.submitter&&e.submitter.value==='confirm'&&pending){let r=new FormData(e.currentTarget).get('reason');if(r)patch(pending,{interest:'no',interest_at:0,no_reason:r,no_reason_at:Date.now(),booked:false,booked_at:0,visited:false,visited_at:0,visit_rating:null,rating_at:0})}pending=null;e.currentTarget.reset()};$('#exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify({schema:2,exported_at:new Date().toISOString(),feedback:fb},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tokyo-event-feedback.json';a.click()};$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=async e=>{try{let j=JSON.parse(await e.target.files[0].text());fb=normalizeAll(j.feedback||{},true);save();render()}catch(x){alert('反馈文件无法读取')}};
 window.EventRadarState={get:()=>JSON.parse(JSON.stringify(fb)),setAll:(next)=>{fb=normalizeAll((next&&typeof next==='object')?next:{},true);save();render();},version:3};
 save();
 fetch('data.json?'+Date.now()).then(r=>r.json()).then(j=>{events=j.events||[];Array.from(new Set(events.map(e=>e.category))).sort().forEach(c=>$('#category').insertAdjacentHTML('beforeend','<option>'+c+'</option>'));render()}).catch(()=>$('#list').innerHTML='<div class="empty">活动数据读取失败。</div>');
