@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T06:04:52.268437+00:00",
+  "generated_at": "2026-10-10T12:46:16.314644+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 177,
+      "coverage_cached_count": 176,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 352,
+      "coverage_cached_count": 345,
       "coverage_errors": []
     },
     {
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 333,
+      "coverage_cached_count": 330,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -167,7 +167,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 214,
+      "coverage_cached_count": 213,
       "coverage_errors": []
     },
     {
@@ -191,7 +191,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 396,
+      "coverage_cached_count": 395,
       "coverage_errors": []
     }
   ],
@@ -226,7 +226,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-10T06:03:36.987319+00:00",
+    "generated_at": "2026-10-10T12:44:50.431172+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
