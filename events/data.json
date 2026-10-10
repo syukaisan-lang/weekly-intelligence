@@ -3308,7 +3308,14 @@
           ]
         }
       },
-      "ticket_deadline_type": "advance_ticket"
+      "ticket_deadline_type": "advance_ticket",
+      "release_history": [
+        {
+          "date": "2026-10-08",
+          "type": "official_merchandise_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000005.000189320.html"
+        }
+      ]
     },
     {
       "id": "astrup-tokyo-2026",
@@ -6812,6 +6819,1329 @@
           ]
         }
       }
+    },
+    {
+      "id": "italy-myth-prints-nmwa-2026",
+      "title": "神話、寓意、祝祭――ルネサンスからバロックにおけるイタリア宮廷と版画",
+      "bucket": "now",
+      "category": "西方美术×版画",
+      "start_date": "2026-06-30",
+      "end_date": "2026-10-12",
+      "venue": "国立西洋美術館 新館・版画素描展示室",
+      "area": "上野",
+      "price_min": 500,
+      "price_max": 500,
+      "ticket_status": "当日购票",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-03-24",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": true,
+      "release_history": [
+        {
+          "date": "2026-03-24",
+          "type": "annual_plan",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000007.000118543.html"
+        }
+      ],
+      "recommendation": 82,
+      "tags": [
+        "意大利宫廷文化",
+        "西方古典美术",
+        "原作鉴赏",
+        "艺术史"
+      ],
+      "why": "约50件馆藏版画，内容聚焦文艺复兴至巴洛克的意大利宫廷。",
+      "drawback": "小型馆藏展；临近结束。",
+      "ticket_note": "普通成人当日500日元；10月11日本展及常设展免费。10月12日开馆；9:30–17:30，周五六至20:00。",
+      "source_url": "https://www.nmwa.go.jp/zh/exhibitions/2026italy.html",
+      "ticket_url": "https://www.nmwa.go.jp/zh/exhibitions/2026italy.html",
+      "learning_features": {
+        "subjects": [
+          "意大利宫廷文化",
+          "西方古典美术"
+        ],
+        "formats": [
+          "馆藏小展"
+        ],
+        "experiences": [
+          "原作鉴赏",
+          "艺术史"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术",
+            "欧洲艺术"
+          ],
+          "countries": [
+            "意大利"
+          ],
+          "periods": [
+            "文艺复兴",
+            "巴洛克"
+          ],
+          "media": [
+            "版画"
+          ],
+          "art_traditions": [
+            "西方古典美术"
+          ],
+          "content_focus": [
+            "馆藏精选",
+            "艺术史"
+          ]
+        }
+      }
+    },
+    {
+      "id": "theatre-graphic-nmwa-2026",
+      "title": "19世紀の劇場にまつわるグラフィックアート（仮題）",
+      "bucket": "future",
+      "category": "西方美术×剧场视觉",
+      "start_date": "2026-10-20",
+      "end_date": "2027-01-11",
+      "venue": "国立西洋美術館 新館・版画素描展示室",
+      "area": "上野",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-03-24",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": true,
+      "release_history": [
+        {
+          "date": "2026-03-24",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000007.000118543.html"
+        }
+      ],
+      "recommendation": 78,
+      "tags": [
+        "19世纪剧场",
+        "图像艺术",
+        "原作鉴赏"
+      ],
+      "why": "正式年度计划中的剧场图像艺术小展；未售票仍纳入关注。",
+      "drawback": "标题和会期在年度计划中为暂定；最新专页及价格待核。",
+      "ticket_note": "年度公告标注予定；价格与开售状态未确认。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000007.000118543.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "19世纪剧场",
+          "图像艺术"
+        ],
+        "formats": [
+          "馆藏小展"
+        ],
+        "experiences": [
+          "原作鉴赏"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术",
+            "欧洲艺术"
+          ],
+          "countries": [],
+          "periods": [
+            "19世纪"
+          ],
+          "media": [
+            "版画"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "馆藏精选"
+          ]
+        }
+      },
+      "date_status": "announced_plan"
+    },
+    {
+      "id": "after-light-bonded-2026",
+      "title": "After Light",
+      "bucket": "now",
+      "category": "当代艺术×光与物质",
+      "start_date": "2026-10-02",
+      "end_date": "2026-10-24",
+      "venue": "BONDED GALLERY / TERRADA ART COMPLEX II 4F",
+      "area": "天王洲",
+      "price_min": 0,
+      "price_max": 0,
+      "ticket_status": "no_ticket",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-08-26",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": true,
+      "release_history": [
+        {
+          "date": "2026-08-26",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000487.000014158.html"
+        }
+      ],
+      "recommendation": 73,
+      "tags": [
+        "当代艺术",
+        "光与物质",
+        "原作鉴赏"
+      ],
+      "why": "今西真也、志村諭佳、金氏徹平通过绘画与立体作品处理光和物质。",
+      "drawback": "并非光影沉浸项目；多日休馆，需核到访日。",
+      "ticket_note": "12:00–18:00；10月24日至17:00；10月13、18、19日休馆，免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000487.000014158.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "当代艺术",
+          "光与物质"
+        ],
+        "formats": [
+          "群展"
+        ],
+        "experiences": [
+          "原作鉴赏"
+        ],
+        "signals": [
+          "免费"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本艺术"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "当代"
+          ],
+          "media": [
+            "绘画",
+            "雕塑",
+            "装置"
+          ],
+          "art_traditions": [
+            "当代艺术"
+          ],
+          "content_focus": [
+            "艺术家专题"
+          ]
+        }
+      }
+    },
+    {
+      "id": "matsuri-art-what-cafe-2026",
+      "title": "Matsuri × Art Exhibition -祭の多面体-",
+      "bucket": "future",
+      "category": "当代艺术×祭文化",
+      "start_date": "2026-10-30",
+      "end_date": "2026-11-15",
+      "venue": "WHAT CAFE",
+      "area": "天王洲",
+      "price_min": 0,
+      "price_max": 0,
+      "ticket_status": "no_ticket",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-10-08",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-10-08",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000493.000014158.html"
+        }
+      ],
+      "recommendation": 72,
+      "tags": [
+        "祭文化",
+        "工艺",
+        "当代艺术",
+        "原作鉴赏",
+        "空间装置"
+      ],
+      "why": "13名艺术家以当代方式诠释祭文化，传统工艺与装置交叉。",
+      "drawback": "展示兼销售；工作坊另收费，不能把所有装置推定为互动。",
+      "ticket_note": "通常11:00–18:00；10月30、31日至21:00；11月15日至17:00。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000493.000014158.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "祭文化",
+          "工艺",
+          "当代艺术"
+        ],
+        "formats": [
+          "群展",
+          "作品销售"
+        ],
+        "experiences": [
+          "原作鉴赏",
+          "空间装置"
+        ],
+        "signals": [
+          "免费",
+          "商业"
+        ],
+        "content_profile": {
+          "art_regions": [
+            "日本艺术"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "当代"
+          ],
+          "media": [
+            "工艺",
+            "装置"
+          ],
+          "art_traditions": [
+            "当代艺术"
+          ],
+          "content_focus": [
+            "创作史"
+          ]
+        }
+      }
+    },
+    {
+      "id": "nezumikun-azabudai-2027",
+      "title": "ねずみくんのチョッキ あそべる！ミュージアム",
+      "bucket": "future",
+      "category": "绘本×亲子体验",
+      "start_date": "2027-01-10",
+      "end_date": "2027-04-04",
+      "venue": "麻布台ヒルズギャラリー",
+      "area": "麻布台",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-10-02",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-10-02",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000430.000048109.html"
+        }
+      ],
+      "recommendation": 59,
+      "tags": [
+        "绘本",
+        "动画",
+        "亲子",
+        "空间漫游"
+      ],
+      "why": "大型场馆正式公布的绘本动画体验项目，先保留候选。",
+      "drawback": "偏亲子与拍照；互动程度、时长、语言和价格未公布。",
+      "ticket_note": "会期为予定；主办方计划年内发布续报，开售未确认。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000430.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "绘本",
+          "动画",
+          "亲子"
+        ],
+        "formats": [
+          "体验展"
+        ],
+        "experiences": [
+          "空间漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [
+            "日本视觉文化"
+          ],
+          "countries": [
+            "日本"
+          ],
+          "periods": [
+            "当代"
+          ],
+          "media": [
+            "影像"
+          ],
+          "art_traditions": [],
+          "content_focus": [
+            "作品世界"
+          ]
+        }
+      },
+      "date_status": "announced_plan"
+    },
+    {
+      "id": "saishu-densha-tokyo-2026",
+      "title": "再集電車（さいしゅうでんしゃ）",
+      "bucket": "now",
+      "category": "参与式叙事×城市推理",
+      "start_date": "2026-10-09",
+      "end_date": "2027-03-31",
+      "venue": "JR山手线沿线车站与街区",
+      "area": "东京多区",
+      "price_min": 2500,
+      "price_max": 4580,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-10-05",
+      "ticket_deadline": "2027-03-31",
+      "announcement_date": "2026-10-05",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-10-05",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000081.000067263.html"
+        }
+      ],
+      "recommendation": 84,
+      "tags": [
+        "都市传说",
+        "推理",
+        "铁路沿线",
+        "街区行走",
+        "主动推理",
+        "参与式叙事"
+      ],
+      "why": "体験キット与手机串联真实街区、网站和物件；主篇可独立完成。",
+      "drawback": "主篇约4–5小时，全篇约6–8小时；交通另计，日语阅读要求未见明确说明，需自行确认。",
+      "ticket_note": "主篇2500、追加篇2200、套装4580日元；邮寄销售至2027-03-17，店铺兑换至03-31；2027-01-01不可体验。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000081.000067263.html",
+      "ticket_url": "https://i-ku-kan.com/saishu-densha",
+      "learning_features": {
+        "subjects": [
+          "都市传说",
+          "推理",
+          "铁路沿线"
+        ],
+        "formats": [
+          "ARG",
+          "参与式叙事",
+          "城市漫游"
+        ],
+        "experiences": [
+          "街区行走",
+          "主动推理",
+          "参与式叙事"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "sonorra-showcase-live-2027",
+      "title": "SONORRA TENNOZ PLAYERS SHOWCASE 有観客ライブ審査",
+      "bucket": "future",
+      "category": "音乐×现场演出",
+      "start_date": "2027-01-17",
+      "end_date": "2027-01-17",
+      "venue": "SONORRA",
+      "area": "天王洲",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-10-09",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-10-09",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000494.000014158.html"
+        }
+      ],
+      "recommendation": 66,
+      "tags": [
+        "原创音乐",
+        "新锐音乐人",
+        "声音体验"
+      ],
+      "why": "正式公布的有观众现场演出安排，保留未来候选。",
+      "drawback": "演员阵容、观众购票及完整演出长度尚未公布。",
+      "ticket_note": "募集截止不是观众票务截止；参赛报名与观众购票须分开，后续关注SONORRA。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000494.000014158.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "原创音乐",
+          "新锐音乐人"
+        ],
+        "formats": [
+          "现场演出"
+        ],
+        "experiences": [
+          "声音体验"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "sonorra-winner-live-2027",
+      "title": "SONORRA TENNOZ PLAYERS SHOWCASE 最優秀賞・単独ライブ",
+      "bucket": "future",
+      "category": "音乐×现场演出",
+      "start_date": "2027-03-22",
+      "end_date": "2027-03-22",
+      "venue": "SONORRA",
+      "area": "天王洲",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-10-09",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-10-09",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000494.000014158.html"
+        }
+      ],
+      "recommendation": 66,
+      "tags": [
+        "原创音乐",
+        "新锐音乐人",
+        "声音体验"
+      ],
+      "why": "正式公布的有观众现场演出安排，保留未来候选。",
+      "drawback": "演员阵容、观众购票及完整演出长度尚未公布。",
+      "ticket_note": "募集截止不是观众票务截止；参赛报名与观众购票须分开，后续关注SONORRA。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000494.000014158.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "原创音乐",
+          "新锐音乐人"
+        ],
+        "formats": [
+          "现场演出"
+        ],
+        "experiences": [
+          "声音体验"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "id": "nmwa-showa-conservation-2026",
+      "title": "「昭和100年」国立西洋美術館の保存修復の歩み：ゴッホ《ばら》とルノワール《帽子の女》",
+      "bucket": "now",
+      "category": "西方绘画×保存修复",
+      "start_date": "2026-06-30",
+      "end_date": "2027-01-11",
+      "venue": "国立西洋美術館 本館19世紀ホール",
+      "area": "上野",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": null,
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": true,
+      "release_history": [
+        {
+          "date": "2026-10-10",
+          "type": "current_calendar_verification",
+          "source_url": "https://www.nmwa.go.jp/en/exhibitions/"
+        }
+      ],
+      "recommendation": 80,
+      "tags": [
+        "西方绘画",
+        "保存修复",
+        "原作鉴赏",
+        "制作幕后"
+      ],
+      "why": "官方当前清单确认梵高与雷诺阿作品的保存修复主题展示。",
+      "drawback": "小型馆藏展示；专项费用和首次公告日期未核。",
+      "ticket_note": "官方当前展页确认2026-06-30至2027-01-11；价格待核。",
+      "source_url": "https://www.nmwa.go.jp/en/exhibitions/",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "西方绘画",
+          "保存修复"
+        ],
+        "formats": [
+          "馆藏小展"
+        ],
+        "experiences": [
+          "原作鉴赏",
+          "制作幕后"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [
+            "西方艺术",
+            "欧洲艺术"
+          ],
+          "countries": [
+            "法国",
+            "荷兰"
+          ],
+          "periods": [
+            "19世纪"
+          ],
+          "media": [
+            "绘画"
+          ],
+          "art_traditions": [
+            "法国近代美术"
+          ],
+          "content_focus": [
+            "馆藏精选",
+            "制作幕后"
+          ]
+        }
+      }
+    },
+    {
+      "id": "christmas-hills-2026",
+      "title": "CHRISTMAS HILLS 2026（总览）",
+      "bucket": "future",
+      "category": "季节活动×总览",
+      "start_date": "2026-11-05",
+      "end_date": "2026-12-27",
+      "venue": "六本木・麻布台・虎ノ门・表参道・ARK HILLS",
+      "area": "东京多区",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        }
+      ],
+      "recommendation": 50,
+      "tags": [
+        "圣诞节",
+        "城市漫游"
+      ],
+      "why": "五处HILLS的季节企划总览，具体日期以各子项目为准。",
+      "drawback": "商业季节企划；总览不替代子项目，消费活动另计。",
+      "ticket_note": "起始11月5日；总览结束日取已公布子项目最晚12月27日，个别项目至25日。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节"
+        ],
+        "formats": [
+          "季节活动总览"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "is_parent_event": true,
+      "date_note": "end_date为已公布子项目日期最大值"
+    },
+    {
+      "id": "keyakizaka-lights-2026",
+      "title": "けやき坂イルミネーション SNOW＆BLUE",
+      "bucket": "future",
+      "category": "季节灯光×商业街区",
+      "start_date": "2026-11-05",
+      "end_date": "2026-12-25",
+      "venue": "六本木けやき坂通り",
+      "area": "六本木",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000428.000048109.html"
+        }
+      ],
+      "recommendation": 55,
+      "tags": [
+        "圣诞节",
+        "街区装饰",
+        "城市漫游"
+      ],
+      "why": "正式公布的街区季节活动，作为顺路候选保留。",
+      "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
+      "ticket_note": "400米灯光街道，17:00–22:00。 未核收费项目不得视作免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000428.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节",
+          "街区装饰"
+        ],
+        "formats": [
+          "季节灯光",
+          "街区企划"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "parent_event_id": "christmas-hills-2026"
+    },
+    {
+      "id": "roppongi-66-plaza-lights-2026",
+      "title": "66プラザイルミネーション",
+      "bucket": "future",
+      "category": "季节灯光×商业街区",
+      "start_date": "2026-11-13",
+      "end_date": "2026-12-27",
+      "venue": "六本木ヒルズ 66プラザ",
+      "area": "六本木",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        }
+      ],
+      "recommendation": 55,
+      "tags": [
+        "圣诞节",
+        "街区装饰",
+        "城市漫游"
+      ],
+      "why": "正式公布的街区季节活动，作为顺路候选保留。",
+      "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
+      "ticket_note": "17:00–24:00，最终日至23:00。 未核收费项目不得视作免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节",
+          "街区装饰"
+        ],
+        "formats": [
+          "季节灯光",
+          "街区企划"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "parent_event_id": "christmas-hills-2026"
+    },
+    {
+      "id": "mori-garden-lights-2026",
+      "title": "毛利庭園イルミネーション",
+      "bucket": "future",
+      "category": "季节灯光×商业街区",
+      "start_date": "2026-11-13",
+      "end_date": "2026-12-25",
+      "venue": "毛利庭園",
+      "area": "六本木",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        }
+      ],
+      "recommendation": 55,
+      "tags": [
+        "圣诞节",
+        "街区装饰",
+        "城市漫游"
+      ],
+      "why": "正式公布的街区季节活动，作为顺路候选保留。",
+      "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
+      "ticket_note": "17:00–23:00，初日可能调整。 未核收费项目不得视作免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节",
+          "街区装饰"
+        ],
+        "formats": [
+          "季节灯光",
+          "街区企划"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "parent_event_id": "christmas-hills-2026"
+    },
+    {
+      "id": "westwalk-christmas-tree-2026",
+      "title": "HAUTE COUTURE IN BLOOM",
+      "bucket": "future",
+      "category": "季节灯光×商业街区",
+      "start_date": "2026-11-13",
+      "end_date": "2026-12-25",
+      "venue": "六本木ヒルズ ウェストウォーク2F",
+      "area": "六本木",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        }
+      ],
+      "recommendation": 55,
+      "tags": [
+        "圣诞节",
+        "街区装饰",
+        "城市漫游"
+      ],
+      "why": "正式公布的街区季节活动，作为顺路候选保留。",
+      "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
+      "ticket_note": "MEGU / PETAL Design纺织花卉圣诞树装饰。 未核收费项目不得视作免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节",
+          "街区装饰"
+        ],
+        "formats": [
+          "季节灯光",
+          "街区企划"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "parent_event_id": "christmas-hills-2026"
+    },
+    {
+      "id": "roppongi-christmas-market-2026",
+      "title": "六本木ヒルズ クリスマスマーケット 2026",
+      "bucket": "future",
+      "category": "季节灯光×商业街区",
+      "start_date": "2026-11-21",
+      "end_date": "2026-12-25",
+      "venue": "六本木ヒルズ 大屋根プラザ",
+      "area": "六本木",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        }
+      ],
+      "recommendation": 55,
+      "tags": [
+        "圣诞节",
+        "街区装饰",
+        "城市漫游"
+      ],
+      "why": "正式公布的街区季节活动，作为顺路候选保留。",
+      "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
+      "ticket_note": "11:00–21:00；饮食和商品另付。 未核收费项目不得视作免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节",
+          "街区装饰"
+        ],
+        "formats": [
+          "季节灯光",
+          "街区企划"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "parent_event_id": "christmas-hills-2026"
+    },
+    {
+      "id": "azabudai-christmas-market-2026",
+      "title": "麻布台ヒルズ クリスマスマーケット 2026",
+      "bucket": "future",
+      "category": "季节灯光×商业街区",
+      "start_date": "2026-11-21",
+      "end_date": "2026-12-25",
+      "venue": "麻布台ヒルズ 中央広場",
+      "area": "麻布台",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        }
+      ],
+      "recommendation": 55,
+      "tags": [
+        "圣诞节",
+        "街区装饰",
+        "城市漫游"
+      ],
+      "why": "正式公布的街区季节活动，作为顺路候选保留。",
+      "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
+      "ticket_note": "11:00–21:00；饮食和商品另付。 未核收费项目不得视作免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节",
+          "街区装饰"
+        ],
+        "formats": [
+          "季节灯光",
+          "街区企划"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "parent_event_id": "christmas-hills-2026"
+    },
+    {
+      "id": "toranomon-christmas-2026",
+      "title": "TORANOMON HILLS CHRISTMAS 2026",
+      "bucket": "future",
+      "category": "季节灯光×商业街区",
+      "start_date": "2026-11-12",
+      "end_date": "2026-12-25",
+      "venue": "虎ノ門ヒルズ",
+      "area": "虎之门",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        }
+      ],
+      "recommendation": 55,
+      "tags": [
+        "圣诞节",
+        "街区装饰",
+        "城市漫游"
+      ],
+      "why": "正式公布的街区季节活动，作为顺路候选保留。",
+      "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
+      "ticket_note": "THE WONDER OF CHRISTMAS装饰预计11月24日起；其他灯光11月12日起。 未核收费项目不得视作免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节",
+          "街区装饰"
+        ],
+        "formats": [
+          "季节灯光",
+          "街区企划"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "parent_event_id": "christmas-hills-2026"
+    },
+    {
+      "id": "omotesando-lights-2026",
+      "title": "表参道イルミネーション 2026",
+      "bucket": "future",
+      "category": "季节灯光×商业街区",
+      "start_date": "2026-12-01",
+      "end_date": "2026-12-25",
+      "venue": "神宮前交差点～表参道交差点",
+      "area": "表参道",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        }
+      ],
+      "recommendation": 55,
+      "tags": [
+        "圣诞节",
+        "街区装饰",
+        "城市漫游"
+      ],
+      "why": "正式公布的街区季节活动，作为顺路候选保留。",
+      "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
+      "ticket_note": "公告日期与日落至22:00均标注予定。 未核收费项目不得视作免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节",
+          "街区装饰"
+        ],
+        "formats": [
+          "季节灯光",
+          "街区企划"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "parent_event_id": "christmas-hills-2026"
+    },
+    {
+      "id": "ark-hills-christmas-2026",
+      "title": "ARK HILLS CHRISTMAS 2026",
+      "bucket": "future",
+      "category": "季节灯光×商业街区",
+      "start_date": "2026-11-07",
+      "end_date": "2026-12-25",
+      "venue": "アーク・カラヤン広場等",
+      "area": "赤坂",
+      "price_min": null,
+      "price_max": null,
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "announcement_date": "2026-09-30",
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-30",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        }
+      ],
+      "recommendation": 55,
+      "tags": [
+        "圣诞节",
+        "街区装饰",
+        "城市漫游"
+      ],
+      "why": "正式公布的街区季节活动，作为顺路候选保留。",
+      "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
+      "ticket_note": "公告会期标注予定；树饰与市集为不同内容。 未核收费项目不得视作免费。",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+      "ticket_url": null,
+      "learning_features": {
+        "subjects": [
+          "圣诞节",
+          "街区装饰"
+        ],
+        "formats": [
+          "季节灯光",
+          "街区企划"
+        ],
+        "experiences": [
+          "城市漫游"
+        ],
+        "signals": [],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      },
+      "parent_event_id": "christmas-hills-2026"
+    },
+    {
+      "bucket": "future",
+      "ticket_status": "未核实",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-10-08",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000432.000048109.html"
+        }
+      ],
+      "tags": [
+        "异变寻找",
+        "推理"
+      ],
+      "id": "toranomon-ihen-game-2026",
+      "title": "異変だらけの虎ノ門ヒルズ",
+      "start_date": "2026-11-02",
+      "end_date": "2026-11-12",
+      "venue": "虎ノ門ヒルズ ステーションタワー・ビジネスタワー",
+      "area": "虎之门",
+      "category": "街区互动×异变寻找",
+      "recommendation": 74,
+      "price_min": 2400,
+      "price_max": null,
+      "announcement_date": "2026-10-08",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000432.000048109.html",
+      "ticket_url": "https://escape.id/ayskkk-org/e-toraihen/",
+      "why": "实景异变寻找游戏，周末及节假日有角色式特别异变，作为形式候选保留。",
+      "drawback": "与餐饮商业企划绑定；叙事深度、时长、语言及互动程度尚未核实。",
+      "ticket_note": "平日2400日元起、土日祝3400日元起，非价格上限；正式发布列购票入口，当前余票/开售未确认。平日17–23时，土日祝11时至店铺营业结束。",
+      "learning_features": {
+        "subjects": [
+          "异变寻找",
+          "推理"
+        ],
+        "formats": [
+          "街区游戏"
+        ],
+        "experiences": [
+          "城市漫游",
+          "主动寻找",
+          "现场角色互动"
+        ],
+        "signals": [
+          "商业"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
+    },
+    {
+      "bucket": "future",
+      "ticket_status": "no_ticket",
+      "ticket_sale_start": null,
+      "ticket_deadline": null,
+      "last_verified_at": "2026-10-10",
+      "backfilled_from_archive": false,
+      "release_history": [
+        {
+          "date": "2026-09-29",
+          "type": "official_announcement",
+          "source_url": "https://prtimes.jp/main/html/rd/p/000000427.000048109.html"
+        }
+      ],
+      "tags": [
+        "现场音乐",
+        "秋季市集"
+      ],
+      "id": "azabudai-yakiimo-live-2026",
+      "title": "やきいも広場（たき火と音楽ライブ）",
+      "start_date": "2026-10-23",
+      "end_date": "2026-10-25",
+      "venue": "麻布台ヒルズ 中央広場",
+      "area": "麻布台",
+      "category": "户外演奏×秋季广场",
+      "recommendation": 56,
+      "price_min": 0,
+      "price_max": 0,
+      "announcement_date": "2026-09-29",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000427.000048109.html",
+      "ticket_url": null,
+      "why": "正式公告除饮食外还包含篝火旁现场音乐，保留低优先候选。",
+      "drawback": "主要为饮食市集；演出阵容、场次、时长未知。雨天及恶劣天气无篝火。",
+      "ticket_note": "入场免费；饮食另付。12–20时，篝火15–20时；演出具体时间未核。",
+      "learning_features": {
+        "subjects": [
+          "现场音乐",
+          "秋季市集"
+        ],
+        "formats": [
+          "现场演出",
+          "市集"
+        ],
+        "experiences": [
+          "声音体验"
+        ],
+        "signals": [
+          "免费",
+          "商业"
+        ],
+        "content_profile": {
+          "art_regions": [],
+          "countries": [],
+          "periods": [],
+          "media": [],
+          "art_traditions": [],
+          "content_focus": []
+        }
+      }
     }
   ],
   "meta": {
@@ -7285,6 +8615,60 @@
         "inventory_count": null,
         "added_count": 0,
         "missing_or_failure_reason": "入口已读；完整分页与逐项官方核验未完成。"
+      },
+      {
+        "name": "PR TIMES 官方RSS 国立西洋美術館",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=118543",
+        "checked_at": "2026-10-10",
+        "status": "partial",
+        "inventory_count": 7,
+        "added_count": 0,
+        "missing_or_failure_reason": "返回列表及近期重叠条目已处理；RSS不是发布者完整归档，24个月正文回溯未完成。"
+      },
+      {
+        "name": "PR TIMES 官方RSS 寺田倉庫",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=14158",
+        "checked_at": "2026-10-10",
+        "status": "partial",
+        "inventory_count": 200,
+        "added_count": 3,
+        "missing_or_failure_reason": "返回列表及近期重叠条目已处理；RSS不是发布者完整归档，24个月正文回溯未完成。"
+      },
+      {
+        "name": "PR TIMES 官方RSS 画中画展広報事務局",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=191129",
+        "checked_at": "2026-10-10",
+        "status": "partial",
+        "inventory_count": 1,
+        "added_count": 0,
+        "missing_or_failure_reason": "返回列表及近期重叠条目已处理；RSS不是发布者完整归档，24个月正文回溯未完成。"
+      },
+      {
+        "name": "PR TIMES 官方RSS ターナー展東京会場広報事務局",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=189320",
+        "checked_at": "2026-10-10",
+        "status": "partial",
+        "inventory_count": 2,
+        "added_count": 0,
+        "missing_or_failure_reason": "返回列表及近期重叠条目已处理；RSS不是发布者完整归档，24个月正文回溯未完成。"
+      },
+      {
+        "name": "PR TIMES 官方RSS 森ビル",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=48109",
+        "checked_at": "2026-10-10",
+        "status": "partial",
+        "inventory_count": 200,
+        "added_count": 13,
+        "missing_or_failure_reason": "返回列表及近期重叠条目已处理；RSS不是发布者完整归档，24个月正文回溯未完成。"
+      },
+      {
+        "name": "PR TIMES 官方RSS 休日ハック",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=67263",
+        "checked_at": "2026-10-10",
+        "status": "partial",
+        "inventory_count": 69,
+        "added_count": 1,
+        "missing_or_failure_reason": "返回列表及近期重叠条目已处理；RSS不是发布者完整归档，24个月正文回溯未完成。"
       }
     ],
     "discovery_checks": [
@@ -7301,7 +8685,9 @@
         "already_present_count": null,
         "added_count": 0,
         "missing_count": null,
-        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。"
+        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。 本次已改用发布者官方RSS取得条目，详见RSS审计；未保证完整分页/24个月归档。",
+        "rss_followup_url": "https://prtimes.jp/companyrdf.php?company_id=118543",
+        "rss_followup_checked_at": "2026-10-10"
       },
       {
         "source": "PR TIMES 发布者 14158",
@@ -7316,7 +8702,9 @@
         "already_present_count": null,
         "added_count": 0,
         "missing_count": null,
-        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。"
+        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。 本次已改用发布者官方RSS取得条目，详见RSS审计；未保证完整分页/24个月归档。",
+        "rss_followup_url": "https://prtimes.jp/companyrdf.php?company_id=14158",
+        "rss_followup_checked_at": "2026-10-10"
       },
       {
         "source": "PR TIMES 发布者 191129",
@@ -7331,7 +8719,9 @@
         "already_present_count": null,
         "added_count": 0,
         "missing_count": null,
-        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。"
+        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。 本次已改用发布者官方RSS取得条目，详见RSS审计；未保证完整分页/24个月归档。",
+        "rss_followup_url": "https://prtimes.jp/companyrdf.php?company_id=191129",
+        "rss_followup_checked_at": "2026-10-10"
       },
       {
         "source": "PR TIMES 发布者 189320",
@@ -7346,7 +8736,9 @@
         "already_present_count": null,
         "added_count": 0,
         "missing_count": null,
-        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。"
+        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。 本次已改用发布者官方RSS取得条目，详见RSS审计；未保证完整分页/24个月归档。",
+        "rss_followup_url": "https://prtimes.jp/companyrdf.php?company_id=189320",
+        "rss_followup_checked_at": "2026-10-10"
       },
       {
         "source": "PR TIMES 发布者 48109",
@@ -7361,7 +8753,9 @@
         "already_present_count": null,
         "added_count": 0,
         "missing_count": null,
-        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。"
+        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。 本次已改用发布者官方RSS取得条目，详见RSS审计；未保证完整分页/24个月归档。",
+        "rss_followup_url": "https://prtimes.jp/companyrdf.php?company_id=48109",
+        "rss_followup_checked_at": "2026-10-10"
       },
       {
         "source": "PR TIMES 发布者 67263",
@@ -7376,7 +8770,9 @@
         "already_present_count": null,
         "added_count": 0,
         "missing_count": null,
-        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。"
+        "reason": "真实已验证发布者入口已尝试读取，动态页无可枚举正文；使用具体正式发布页及定向检索补查，未完成日期分页。 本次已改用发布者官方RSS取得条目，详见RSS审计；未保证完整分页/24个月归档。",
+        "rss_followup_url": "https://prtimes.jp/companyrdf.php?company_id=67263",
+        "rss_followup_checked_at": "2026-10-10"
       },
       {
         "source": "PR TIMES 跨发布者新闻与体验补漏",
@@ -7661,6 +9057,295 @@
             "url": "https://www.edo-tokyo-museum.or.jp/news/press-edohaku-idemitsu.html"
           }
         ]
+      },
+      {
+        "source": "PR TIMES 官方RSS 国立西洋美術館",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=118543",
+        "checked_at": "2026-10-10",
+        "pages_checked": [
+          "https://prtimes.jp/companyrdf.php?company_id=118543"
+        ],
+        "oldest_date_seen": "2023-03-23",
+        "newest_date_seen": "2026-07-07",
+        "status": "partial",
+        "inventory_count": 7,
+        "metadata_parsed_count": 7,
+        "overlap_from": "2026-09-26",
+        "overlap_item_count": 0,
+        "processed_count": 0,
+        "already_present_count": 0,
+        "added_count": 0,
+        "missing_count": null,
+        "item_results": [],
+        "reason": "已解析RSS全部返回标题/日期/链接，并逐项核实9/26起的返回发布。RSS最多200条且可能有序号缺口，非日期分页全集；全部历史条目正文和24个月年度计划尚未逐一核实，不宣称无遗漏。"
+      },
+      {
+        "source": "PR TIMES 官方RSS 寺田倉庫",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=14158",
+        "checked_at": "2026-10-10",
+        "pages_checked": [
+          "https://prtimes.jp/companyrdf.php?company_id=14158"
+        ],
+        "oldest_date_seen": "2021-05-28",
+        "newest_date_seen": "2026-10-09",
+        "status": "partial",
+        "inventory_count": 200,
+        "metadata_parsed_count": 200,
+        "overlap_from": "2026-09-26",
+        "overlap_item_count": 4,
+        "processed_count": 4,
+        "already_present_count": 1,
+        "added_count": 3,
+        "missing_count": null,
+        "item_results": [
+          {
+            "title": "東京・天王洲のライブハウス「SONORRA」、新人ミュージシャンの自立を支援する公募プログラム「SONORRA TENNOZ PLAYERS SHOWCASE」を始動",
+            "url": "https://prtimes.jp/main/html/rd/p/000000494.000014158.html",
+            "announcement_date": "2026-10-09",
+            "status": "added",
+            "event_ids": [
+              "sonorra-showcase-live-2027",
+              "sonorra-winner-live-2027"
+            ],
+            "reason": "未来有观众公演已公布；报名截止不作观众票务截止，2027-05船上出演待精确日程"
+          },
+          {
+            "title": "WHAT CAFE、2026年10月30日（金）から11月15日（日）まで、宮本卯之助商店とのコラボ展示「Matsuri × Art Exhibition -祭の多面体-」を開催",
+            "url": "https://prtimes.jp/main/html/rd/p/000000493.000014158.html",
+            "announcement_date": "2026-10-08",
+            "status": "added",
+            "event_ids": [
+              "matsuri-art-what-cafe-2026"
+            ]
+          },
+          {
+            "title": "TERRADA ART STUDIO 京都、キュレーター中野仁詞らを迎えたアーティスト向けトークイベント「実践的セルフブランディングと美術の地平」を開催",
+            "url": "https://prtimes.jp/main/html/rd/p/000000492.000014158.html",
+            "announcement_date": "2026-10-02",
+            "status": "excluded",
+            "reason": "京都，地区外"
+          },
+          {
+            "title": "WHAT MUSEUM、2027年1月19日（火）より「WE ARE THE HOUSE―向井山朋子＋高田冬彦（居候）」を開催",
+            "url": "https://prtimes.jp/main/html/rd/p/000000491.000014158.html",
+            "announcement_date": "2026-09-29",
+            "status": "already_present",
+            "event_ids": [
+              "we-are-the-house-what-2027"
+            ]
+          }
+        ],
+        "reason": "已解析RSS全部返回标题/日期/链接，并逐项核实9/26起的返回发布。RSS最多200条且可能有序号缺口，非日期分页全集；全部历史条目正文和24个月年度计划尚未逐一核实，不宣称无遗漏。"
+      },
+      {
+        "source": "PR TIMES 官方RSS 画中画展広報事務局",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=191129",
+        "checked_at": "2026-10-10",
+        "pages_checked": [
+          "https://prtimes.jp/companyrdf.php?company_id=191129"
+        ],
+        "oldest_date_seen": "2026-09-30",
+        "newest_date_seen": "2026-09-30",
+        "status": "partial",
+        "inventory_count": 1,
+        "metadata_parsed_count": 1,
+        "overlap_from": "2026-09-26",
+        "overlap_item_count": 1,
+        "processed_count": 1,
+        "already_present_count": 1,
+        "added_count": 0,
+        "missing_count": null,
+        "item_results": [
+          {
+            "title": "2027年9月、国立西洋美術館とウィーン美術史美術館のコラボレーション！「画中画――絵をめぐる絵の冒険。ルネサンスから現代、そのさきへ」開催決定！",
+            "url": "https://prtimes.jp/main/html/rd/p/000000001.000191129.html",
+            "announcement_date": "2026-09-30",
+            "status": "already_present",
+            "event_ids": [
+              "painting-painting-nmwa-2027"
+            ]
+          }
+        ],
+        "reason": "已解析RSS全部返回标题/日期/链接，并逐项核实9/26起的返回发布。RSS最多200条且可能有序号缺口，非日期分页全集；全部历史条目正文和24个月年度计划尚未逐一核实，不宣称无遗漏。"
+      },
+      {
+        "source": "PR TIMES 官方RSS ターナー展東京会場広報事務局",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=189320",
+        "checked_at": "2026-10-10",
+        "pages_checked": [
+          "https://prtimes.jp/companyrdf.php?company_id=189320"
+        ],
+        "oldest_date_seen": "2026-09-09",
+        "newest_date_seen": "2026-10-08",
+        "status": "partial",
+        "inventory_count": 2,
+        "metadata_parsed_count": 2,
+        "overlap_from": "2026-09-26",
+        "overlap_item_count": 1,
+        "processed_count": 1,
+        "already_present_count": 0,
+        "added_count": 0,
+        "missing_count": null,
+        "item_results": [
+          {
+            "title": "あの北陸名物「ビーバー」が画家に！？ きかんしゃトーマスからカリマー、BRIGITTE TANAKAまで、英国絵画の巨匠×国内外の人気ブランドが競演「テート美術館　ターナー展」豪華コラボグッズ一挙公開",
+            "url": "https://prtimes.jp/main/html/rd/p/000000005.000189320.html",
+            "announcement_date": "2026-10-08",
+            "status": "release_history_updated",
+            "event_ids": [
+              "turner-tokyo-2026"
+            ],
+            "reason": "官方周边公布，不另建活动"
+          }
+        ],
+        "reason": "已解析RSS全部返回标题/日期/链接，并逐项核实9/26起的返回发布。RSS最多200条且可能有序号缺口，非日期分页全集；全部历史条目正文和24个月年度计划尚未逐一核实，不宣称无遗漏。"
+      },
+      {
+        "source": "PR TIMES 官方RSS 森ビル",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=48109",
+        "checked_at": "2026-10-10",
+        "pages_checked": [
+          "https://prtimes.jp/companyrdf.php?company_id=48109"
+        ],
+        "oldest_date_seen": "2024-06-25",
+        "newest_date_seen": "2026-10-08",
+        "status": "partial",
+        "inventory_count": 200,
+        "metadata_parsed_count": 200,
+        "overlap_from": "2026-09-26",
+        "overlap_item_count": 5,
+        "processed_count": 5,
+        "already_present_count": 0,
+        "added_count": 13,
+        "missing_count": null,
+        "item_results": [
+          {
+            "title": "No.1の称号をかけオリジナルメニューが集結する「フライドポテトグランプリ」を初開催！「Toranomon Hills Bar Hopping ～飲んで食べて美食巡り～」開催",
+            "url": "https://prtimes.jp/main/html/rd/p/000000432.000048109.html",
+            "announcement_date": "2026-10-08",
+            "status": "added",
+            "event_ids": [
+              "toranomon-ihen-game-2026"
+            ],
+            "reason": "从餐饮发布中拆出实际有票互动游戏；纯菜单促销不另建"
+          },
+          {
+            "title": "「ねずみくんのチョッキ あそべる！ミュージアム」が麻布台ヒルズギャラリーで開催決定！",
+            "url": "https://prtimes.jp/main/html/rd/p/000000430.000048109.html",
+            "announcement_date": "2026-10-02",
+            "status": "added",
+            "event_ids": [
+              "nezumikun-azabudai-2027"
+            ]
+          },
+          {
+            "title": "５つのヒルズのクリスマスで心温まるホリデーシーズンを『CHRISTMAS HILLS 2026』11月5日よりスタート",
+            "url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+            "announcement_date": "2026-09-30",
+            "status": "added",
+            "event_ids": [
+              "christmas-hills-2026",
+              "keyakizaka-lights-2026",
+              "roppongi-66-plaza-lights-2026",
+              "mori-garden-lights-2026",
+              "westwalk-christmas-tree-2026",
+              "roppongi-christmas-market-2026",
+              "azabudai-christmas-market-2026",
+              "toranomon-christmas-2026",
+              "omotesando-lights-2026",
+              "ark-hills-christmas-2026"
+            ],
+            "reason": "总览与9个子项目分别建档，关联parent_event_id"
+          },
+          {
+            "title": "東京冬の風物詩・400mに渡り輝く「けやき坂イルミネーション」が点灯！『ROPPONGI HILLS CHRISTMAS 2026』開催",
+            "url": "https://prtimes.jp/main/html/rd/p/000000428.000048109.html",
+            "announcement_date": "2026-09-30",
+            "status": "added",
+            "event_ids": [
+              "keyakizaka-lights-2026"
+            ],
+            "reason": "与总览去重"
+          },
+          {
+            "title": "たき火を囲みながらサツマイモや栗など、秋の味覚を味わえる！麻布台ヒルズで「やきいも広場」を開催",
+            "url": "https://prtimes.jp/main/html/rd/p/000000427.000048109.html",
+            "announcement_date": "2026-09-29",
+            "status": "added",
+            "event_ids": [
+              "azabudai-yakiimo-live-2026"
+            ],
+            "reason": "现场音乐内容保留，普通饮食促销不推定高匹配"
+          }
+        ],
+        "reason": "已解析RSS全部返回标题/日期/链接，并逐项核实9/26起的返回发布。RSS最多200条且可能有序号缺口，非日期分页全集；全部历史条目正文和24个月年度计划尚未逐一核实，不宣称无遗漏。"
+      },
+      {
+        "source": "PR TIMES 官方RSS 休日ハック",
+        "url": "https://prtimes.jp/companyrdf.php?company_id=67263",
+        "checked_at": "2026-10-10",
+        "pages_checked": [
+          "https://prtimes.jp/companyrdf.php?company_id=67263"
+        ],
+        "oldest_date_seen": "2020-10-06",
+        "newest_date_seen": "2026-10-05",
+        "status": "partial",
+        "inventory_count": 69,
+        "metadata_parsed_count": 69,
+        "overlap_from": "2026-09-26",
+        "overlap_item_count": 1,
+        "processed_count": 1,
+        "already_present_count": 0,
+        "added_count": 1,
+        "missing_count": null,
+        "item_results": [
+          {
+            "title": "“JR東日本” × “休日ハック”が初コラボ　没入型体験ゲーム「再集電車（さいしゅうでんしゃ）」開催！",
+            "url": "https://prtimes.jp/main/html/rd/p/000000081.000067263.html",
+            "announcement_date": "2026-10-05",
+            "status": "added",
+            "event_ids": [
+              "saishu-densha-tokyo-2026"
+            ]
+          }
+        ],
+        "reason": "已解析RSS全部返回标题/日期/链接，并逐项核实9/26起的返回发布。RSS最多200条且可能有序号缺口，非日期分页全集；全部历史条目正文和24个月年度计划尚未逐一核实，不宣称无遗漏。"
+      },
+      {
+        "source": "国立西洋美術館 年度公告补核",
+        "url": "https://prtimes.jp/main/html/rd/p/000000007.000118543.html",
+        "checked_at": "2026-10-10",
+        "pages_checked": [
+          1
+        ],
+        "oldest_date_seen": "2026-03-24",
+        "status": "partial",
+        "inventory_count": null,
+        "already_present_count": 1,
+        "added_count": 3,
+        "missing_count": null,
+        "added_ids": [
+          "italy-myth-prints-nmwa-2026",
+          "theatre-graphic-nmwa-2026",
+          "nmwa-showa-conservation-2026"
+        ],
+        "excluded_items": [
+          {
+            "title": "チュルリョーニス/北斎、レンブラント、アーティスト・バイ・アーティスト、モネ没后100年",
+            "reason": "会期已结束，不新增当前候选；原有历史ID保留"
+          },
+          {
+            "title": "兵库县立美术馆合作展",
+            "reason": "地区外"
+          }
+        ],
+        "pending_items": [
+          {
+            "title": "Collection in Focus ヴェロニカ／クリムトとガッレン゠カッレラ",
+            "reason": "年度公告只写2027年1月中旬结束；精确日期待核，不虚构日期"
+          }
+        ],
+        "reason": "年度公告与官方当前展清单交叉核验，近期小展已补；尚有日期不精确项目。"
       }
     ],
     "coverage_audit_history": [
@@ -7931,11 +9616,88 @@
     "feedback_learning_audit": {
       "status": "success",
       "checked_at": "2026-10-10",
-      "source_updated_at": "2026-10-03 06:36:59.812+00",
-      "record_count": 67,
-      "matched_count": 67,
+      "source_updated_at": "2026-10-10 03:23:35.751+00",
+      "record_count": 90,
+      "matched_count": 90,
       "unmatched_count": 0,
       "ranking_model": "frontend-formula-v3"
+    },
+    "prtimes_publisher_sources": [
+      {
+        "name": "国立西洋美術館",
+        "publisher_id": "118543",
+        "publisher_url": "https://prtimes.jp/main/html/searchrlp/company_id/118543",
+        "rss_url": "https://prtimes.jp/companyrdf.php?company_id=118543",
+        "verified_at": "2026-10-10"
+      },
+      {
+        "name": "寺田倉庫",
+        "publisher_id": "14158",
+        "publisher_url": "https://prtimes.jp/main/html/searchrlp/company_id/14158",
+        "rss_url": "https://prtimes.jp/companyrdf.php?company_id=14158",
+        "verified_at": "2026-10-10"
+      },
+      {
+        "name": "画中画展広報事務局",
+        "publisher_id": "191129",
+        "publisher_url": "https://prtimes.jp/main/html/searchrlp/company_id/191129",
+        "rss_url": "https://prtimes.jp/companyrdf.php?company_id=191129",
+        "verified_at": "2026-10-10"
+      },
+      {
+        "name": "ターナー展東京会場広報事務局",
+        "publisher_id": "189320",
+        "publisher_url": "https://prtimes.jp/main/html/searchrlp/company_id/189320",
+        "rss_url": "https://prtimes.jp/companyrdf.php?company_id=189320",
+        "verified_at": "2026-10-10"
+      },
+      {
+        "name": "森ビル",
+        "publisher_id": "48109",
+        "publisher_url": "https://prtimes.jp/main/html/searchrlp/company_id/48109",
+        "rss_url": "https://prtimes.jp/companyrdf.php?company_id=48109",
+        "verified_at": "2026-10-10"
+      },
+      {
+        "name": "休日ハック",
+        "publisher_id": "67263",
+        "publisher_url": "https://prtimes.jp/main/html/searchrlp/company_id/67263",
+        "rss_url": "https://prtimes.jp/companyrdf.php?company_id=67263",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "discovery_method_notes": "发布者动态页空白时，优先读取其官方发布页页脚链接的RSS并解析XML。条目可能不按日期排序，必须全量解析并按发布日期排序；记录返回条数、日期跨度、重叠区间逐项结果。RSS上限200或序号缺口不表示历史完整，继续馆方年度计划/新闻PDF与跨发布者发现，未完成保留partial。",
+    "coverage_repair_audit": {
+      "checked_at": "2026-10-10",
+      "scope": "6个PR TIMES官方RSS返回清单与近期重叠发布处理，部分年度旧公告补核",
+      "rss_metadata_count": 479,
+      "overlap_release_count": 12,
+      "added_count": 21,
+      "added_ids": [
+        "italy-myth-prints-nmwa-2026",
+        "theatre-graphic-nmwa-2026",
+        "after-light-bonded-2026",
+        "matsuri-art-what-cafe-2026",
+        "nezumikun-azabudai-2027",
+        "saishu-densha-tokyo-2026",
+        "sonorra-showcase-live-2027",
+        "sonorra-winner-live-2027",
+        "nmwa-showa-conservation-2026",
+        "christmas-hills-2026",
+        "keyakizaka-lights-2026",
+        "roppongi-66-plaza-lights-2026",
+        "mori-garden-lights-2026",
+        "westwalk-christmas-tree-2026",
+        "roppongi-christmas-market-2026",
+        "azabudai-christmas-market-2026",
+        "toranomon-christmas-2026",
+        "omotesando-lights-2026",
+        "ark-hills-christmas-2026",
+        "toranomon-ihen-game-2026",
+        "azabudai-yakiimo-live-2026"
+      ],
+      "status": "partial",
+      "remaining": "RSS归档完整性、其他发布者、固定源四入口、TAB新闻完整分页和六票务平台仍须继续核验。"
     }
   }
 }
