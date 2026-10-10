@@ -29,6 +29,7 @@ async function pull({silent=false}={}){
   try{
     const response=await call('GET',undefined,c,signal);
     if(!current(c))return;
+    if(Array.isArray(response.mutual_interest))api().setMutualInterest?.(response.mutual_interest,c.profile,c.version);
     const local=api().get(),remote=response.state||{},merged=merge(remote,local);
     const localShared=api().getShared?.()||{},remoteShared=response.shared_state||{},mergedShared=mergeShared(remoteShared,localShared);
     if(JSON.stringify(mergedShared)!==JSON.stringify(localShared))api().mergeShared?.(mergedShared,c.profile,c.version);
@@ -38,6 +39,7 @@ async function pull({silent=false}={}){
       const saved=await call('POST',merged,c,signal,mergedShared);
       if(!current(c))return;
       api().mergeShared?.(saved.shared_state||{},c.profile,c.version);
+      if(Array.isArray(saved.mutual_interest))api().setMutualInterest?.(saved.mutual_interest,c.profile,c.version);
     }
     if(!current(c))return;
     lastPull[c.profile]=Date.now();setStatus('自动同步 · '+(c.profile==='default'?'用户1':'用户2')+'已同步');
