@@ -25,7 +25,7 @@ def need(path: str, *needles: str) -> str:
 def main() -> int:
     index = need(
         "index.html",
-        "weekly-state-complete-backup-v20.js?v=20260919-2",
+        "weekly-state-complete-backup-v20.js?v=20261010-sync",
         "weekly-preference-memory-v32.js",
         "weekly-ui-stability-v33.js?v=20260919-1",
         "weekly-mobile-performance-v18.js?v=20260905-1115",
@@ -34,7 +34,7 @@ def main() -> int:
         "weekly-runtime-consistency-v35.js?v=20260919-1",
         "weekly-feedback-learning-v38.js?v=20260919-1",
         "weekly-feedback-runtime-v38.js?v=20260919-1",
-        "weekly-interaction-performance-v40.js?v=20260926-1",
+        "weekly-interaction-performance-v40.js?v=20261010-sync",
         "0/15",
     )
     if "knowledge-relations.js" in index:

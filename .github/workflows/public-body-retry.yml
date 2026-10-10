@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 concurrency:
   group: weekly-intelligence-update
@@ -22,6 +23,7 @@ jobs:
     timeout-minutes: 20
     env:
       DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
+      WEEKLY_CLOUD_STATE_PATH: /tmp/weekly-cloud-feedback.json
     steps:
       - uses: actions/checkout@v7
         with:
@@ -35,6 +37,8 @@ jobs:
           node-version: "22"
       - name: Install public queue dependencies
         run: python -m pip install requests feedparser beautifulsoup4 python-dateutil cryptography numpy
+      - name: Migrate old feedback and load automatic cloud learning
+        run: python scripts/sync_weekly_cloud.py
       - name: Continue due public reads and refresh recommendations
         run: |
           python scripts/retry_uncertain_public_content.py

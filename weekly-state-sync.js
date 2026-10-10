@@ -101,6 +101,7 @@
   }
 
   async function refreshCloudStatus(){
+    if(window.WeeklySyncMerge)return;
     try{
       const [metaDoc,baseEnv]=await Promise.all([fetchCloudMeta(),fetchCloudEnvelope()]);
       const pending=localStorage.getItem(BACKUP_PENDING_KEY);
@@ -288,6 +289,7 @@
   }
 
   function mount(){
+    if(window.WeeklySyncMerge)return;
     const root=document.querySelector('.reading-progress');if(!root||document.getElementById('weeklyStateTools'))return;
     const tools=document.createElement('div');tools.id='weeklyStateTools';tools.className='controls';tools.style.marginTop='10px';
     const backupBtn=document.createElement('button');backupBtn.id='backupWeeklyStateBtn';backupBtn.className='btn';backupBtn.type='button';backupBtn.textContent='备份本周标记';backupBtn.onclick=backup;

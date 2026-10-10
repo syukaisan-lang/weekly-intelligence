@@ -40,6 +40,10 @@ jobs:
             echo "Checking $f"
             node --check "$f"
           done
+      - name: Check automatic cross-device sync
+        run: |
+          node scripts/test_weekly_auto_sync.cjs
+          python scripts/test_sync_weekly_cloud.py
       - name: Check priority selection regressions
         run: |
           node scripts/test_priority_policy.cjs
