@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-12T06:12:09.849828+00:00",
+  "generated_at": "2026-10-12T15:45:31.854788+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 6,
-  "deduped_count": 4,
-  "deep_read_count": 2,
+  "raw_new_count": 3,
+  "deduped_count": 1,
+  "deep_read_count": 1,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 166,
+      "coverage_cached_count": 165,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 331,
+      "coverage_cached_count": 319,
       "coverage_errors": []
     },
     {
@@ -94,13 +94,13 @@
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 19,
+      "coverage_cached_count": 20,
       "coverage_errors": []
     },
     {
@@ -185,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 378,
+      "coverage_cached_count": 377,
       "coverage_errors": []
     }
   ],
@@ -201,7 +201,7 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 2087,
+  "semantic_rescored_count": 2088,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 2909,
+    "hot_count": 2910,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-12T06:10:59.173408+00:00",
+    "generated_at": "2026-10-12T15:44:21.894188+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
