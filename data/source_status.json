@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T14:38:09.204389+00:00",
+  "generated_at": "2026-10-16T16:50:13.548454+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
@@ -88,7 +88,7 @@
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 32,
+      "coverage_cached_count": 31,
       "coverage_errors": []
     },
     {
@@ -142,7 +142,7 @@
         "new_article_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 72,
+      "coverage_cached_count": 70,
       "coverage_errors": [
         "serialization_listing: HTTPSConnectionPool(host='agenda-note.com', port=443): Read timed out. (read timeout=25)"
       ]
@@ -227,7 +227,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-16T14:36:33.178519+00:00",
+    "generated_at": "2026-10-16T16:48:45.868380+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
