@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T04:48:17.835100+00:00",
+  "generated_at": "2026-10-18T11:24:31.741509+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 170,
+      "coverage_cached_count": 166,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 313,
+      "coverage_cached_count": 309,
       "coverage_errors": []
     },
     {
@@ -100,7 +100,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 20,
+      "coverage_cached_count": 19,
       "coverage_errors": []
     },
     {
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 305,
+      "coverage_cached_count": 301,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -140,11 +140,12 @@
       "coverage_methods": [
         "feed_cache",
         "new_article_listing",
-        "serialization_listing",
         "conference_listing"
       ],
       "coverage_cached_count": 69,
-      "coverage_errors": []
+      "coverage_errors": [
+        "serialization_listing: HTTPSConnectionPool(host='agenda-note.com', port=443): Read timed out. (read timeout=25)"
+      ]
     },
     {
       "name": "wisdom-evolution.com",
@@ -191,7 +192,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 358,
+      "coverage_cached_count": 356,
       "coverage_errors": []
     }
   ],
@@ -226,7 +227,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-18T04:46:52.358241+00:00",
+    "generated_at": "2026-10-18T11:23:04.116081+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
