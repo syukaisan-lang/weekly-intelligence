@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T11:24:31.741509+00:00",
+  "generated_at": "2026-10-18T16:02:56.749380+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
@@ -88,7 +88,7 @@
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 29,
+      "coverage_cached_count": 27,
       "coverage_errors": []
     },
     {
@@ -140,12 +140,11 @@
       "coverage_methods": [
         "feed_cache",
         "new_article_listing",
+        "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 69,
-      "coverage_errors": [
-        "serialization_listing: HTTPSConnectionPool(host='agenda-note.com', port=443): Read timed out. (read timeout=25)"
-      ]
+      "coverage_cached_count": 68,
+      "coverage_errors": []
     },
     {
       "name": "wisdom-evolution.com",
@@ -227,7 +226,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-18T11:23:04.116081+00:00",
+    "generated_at": "2026-10-18T16:01:16.924079+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
