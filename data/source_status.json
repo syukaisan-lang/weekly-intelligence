@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-21T17:23:58.450285+00:00",
+  "generated_at": "2026-10-22T05:04:51.294438+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 5,
-  "deduped_count": 2,
-  "deep_read_count": 0,
+  "raw_new_count": 42,
+  "deduped_count": 39,
+  "deep_read_count": 9,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -26,7 +26,7 @@
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [],
-      "coverage_cached_count": 179,
+      "coverage_cached_count": 176,
       "coverage_errors": [
         "feed_cache: 404 Client Error: Not Found for url: https://ecnomikata.com/rss/"
       ]
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 7,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 312,
+      "coverage_cached_count": 317,
       "coverage_errors": []
     },
     {
@@ -84,24 +84,24 @@
       "status": "ok",
       "new_count": 0,
       "error": null,
-      "coverage_status": "enhanced",
-      "coverage_methods": [
-        "official_listing"
-      ],
+      "coverage_status": "partial",
+      "coverage_methods": [],
       "coverage_cached_count": 31,
-      "coverage_errors": []
+      "coverage_errors": [
+        "official_listing: 503 Server Error: Service Temporarily Unavailable for url: https://dentsu-ho.com/"
+      ]
     },
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
       "new_count": 0,
       "error": null,
-      "coverage_status": "partial",
-      "coverage_methods": [],
+      "coverage_status": "cached",
+      "coverage_methods": [
+        "feed_cache"
+      ],
       "coverage_cached_count": 20,
-      "coverage_errors": [
-        "feed_cache: 503 Server Error: Service Unavailable for url: https://ecclab.empowershop.co.jp/feed"
-      ]
+      "coverage_errors": []
     },
     {
       "name": "ITmedia マーケティング 最新記事一覧",
@@ -118,14 +118,14 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 12,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 310,
+      "coverage_cached_count": 320,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -134,41 +134,42 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 2,
       "error": null,
-      "coverage_status": "partial",
-      "coverage_methods": [],
-      "coverage_cached_count": 71,
+      "coverage_status": "enhanced",
+      "coverage_methods": [
+        "feed_cache",
+        "new_article_listing",
+        "conference_listing"
+      ],
+      "coverage_cached_count": 73,
       "coverage_errors": [
-        "feed_cache: 503 Server Error: Service Temporarily Unavailable for url: https://agenda-note.com/RSS.rdf",
-        "new_article_listing: 503 Server Error: Service Temporarily Unavailable for url: https://agenda-note.com/new_article/",
-        "serialization_listing: 503 Server Error: Service Temporarily Unavailable for url: https://agenda-note.com/serialization/",
-        "conference_listing: 503 Server Error: Service Temporarily Unavailable for url: https://agenda-note.com/conference/"
+        "serialization_listing: 500 Server Error: Internal Server Error for url: https://agenda-note.com/serialization/"
       ]
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
-      "coverage_status": "partial",
-      "coverage_methods": [],
+      "coverage_status": "cached",
+      "coverage_methods": [
+        "feed_cache"
+      ],
       "coverage_cached_count": 26,
-      "coverage_errors": [
-        "feed_cache: 503 Server Error: Service Unavailable for url: https://wisdom-evolution.com/rss20/index.rdf"
-      ]
+      "coverage_errors": []
     },
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 8,
       "error": null,
-      "coverage_status": "partial",
-      "coverage_methods": [],
-      "coverage_cached_count": 212,
-      "coverage_errors": [
-        "feed_cache: 503 Server Error: Service Temporarily Unavailable for url: https://netshop.impress.co.jp/rss.xml"
-      ]
+      "coverage_status": "cached",
+      "coverage_methods": [
+        "feed_cache"
+      ],
+      "coverage_cached_count": 213,
+      "coverage_errors": []
     },
     {
       "name": "MARKETIMES（マーケタイムズ）",
@@ -185,13 +186,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 5,
+      "new_count": 12,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 364,
+      "coverage_cached_count": 367,
       "coverage_errors": []
     }
   ],
@@ -201,7 +202,7 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 2408,
+  "semantic_rescored_count": 2447,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -222,16 +223,16 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3230,
+    "hot_count": 3269,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-21T17:23:02.839291+00:00",
+    "generated_at": "2026-10-22T05:03:25.670416+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 1,
-    "cached_count": 5,
-    "partial_count": 7,
+    "cached_count": 8,
+    "partial_count": 4,
     "unverified_count": 2,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
