@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T14:54:43.045101+00:00",
+  "generated_at": "2026-10-23T17:20:15.504856+00:00",
   "expected_sources": 15,
   "successful_sources": 14,
   "failed_sources": [
@@ -65,12 +65,12 @@
       "status": "failed",
       "new_count": 0,
       "error": "HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=15)",
-      "coverage_status": "partial",
-      "coverage_methods": [],
+      "coverage_status": "unverified",
+      "coverage_methods": [
+        "feed_cache"
+      ],
       "coverage_cached_count": 0,
-      "coverage_errors": [
-        "feed_cache: HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=20)"
-      ]
+      "coverage_errors": []
     },
     {
       "name": "博報堂生活総合研究所",
@@ -91,7 +91,7 @@
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [],
-      "coverage_cached_count": 30,
+      "coverage_cached_count": 29,
       "coverage_errors": [
         "official_listing: 503 Server Error: Service Temporarily Unavailable for url: https://dentsu-ho.com/"
       ]
@@ -148,7 +148,7 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 71,
+      "coverage_cached_count": 69,
       "coverage_errors": []
     },
     {
@@ -231,13 +231,13 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-23T14:53:02.052770+00:00",
+    "generated_at": "2026-10-23T17:18:47.863084+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 1,
     "cached_count": 10,
-    "partial_count": 3,
-    "unverified_count": 1,
+    "partial_count": 2,
+    "unverified_count": 2,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
       "enhanced": "RSS/listing or multiple independent discovery paths plus rolling cache",
