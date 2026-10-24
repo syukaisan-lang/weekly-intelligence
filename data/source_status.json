@@ -1,13 +1,8 @@
 {
-  "generated_at": "2026-10-23T17:20:15.504856+00:00",
+  "generated_at": "2026-10-24T04:49:48.695614+00:00",
   "expected_sources": 15,
-  "successful_sources": 14,
-  "failed_sources": [
-    {
-      "name": "Campaign Japan 日本 - 深層",
-      "error": "HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=15)"
-    }
-  ],
+  "successful_sources": 15,
+  "failed_sources": [],
   "raw_new_count": 3,
   "deduped_count": 0,
   "deep_read_count": 0,
@@ -33,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 170,
+      "coverage_cached_count": 168,
       "coverage_errors": []
     },
     {
@@ -57,14 +52,14 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 317,
+      "coverage_cached_count": 315,
       "coverage_errors": []
     },
     {
       "name": "Campaign Japan 日本 - 深層",
-      "status": "failed",
+      "status": "ok",
       "new_count": 0,
-      "error": "HTTPSConnectionPool(host='www.campaignjapan.com', port=443): Read timed out. (read timeout=15)",
+      "error": null,
       "coverage_status": "unverified",
       "coverage_methods": [
         "feed_cache"
@@ -105,7 +100,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 20,
+      "coverage_cached_count": 19,
       "coverage_errors": []
     },
     {
@@ -130,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 315,
+      "coverage_cached_count": 307,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -160,7 +155,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 26,
+      "coverage_cached_count": 25,
       "coverage_errors": []
     },
     {
@@ -172,7 +167,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 212,
+      "coverage_cached_count": 205,
       "coverage_errors": []
     },
     {
@@ -196,7 +191,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 366,
+      "coverage_cached_count": 358,
       "coverage_errors": []
     }
   ],
@@ -231,7 +226,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-23T17:18:47.863084+00:00",
+    "generated_at": "2026-10-24T04:48:46.814507+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 1,
