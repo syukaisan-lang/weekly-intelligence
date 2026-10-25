@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-24T16:07:08.608627+00:00",
+  "generated_at": "2026-10-25T04:57:36.295945+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 4,
-  "deduped_count": 1,
+  "raw_new_count": 3,
+  "deduped_count": 0,
   "deep_read_count": 0,
   "sources": [
     {
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 165,
+      "coverage_cached_count": 162,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 311,
+      "coverage_cached_count": 308,
       "coverage_errors": []
     },
     {
@@ -100,7 +100,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 19,
+      "coverage_cached_count": 18,
       "coverage_errors": []
     },
     {
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 305,
+      "coverage_cached_count": 297,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -134,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -155,7 +155,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 25,
+      "coverage_cached_count": 24,
       "coverage_errors": []
     },
     {
@@ -167,7 +167,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 205,
+      "coverage_cached_count": 197,
       "coverage_errors": []
     },
     {
@@ -191,7 +191,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 356,
+      "coverage_cached_count": 343,
       "coverage_errors": []
     }
   ],
@@ -226,7 +226,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-24T16:06:01.726743+00:00",
+    "generated_at": "2026-10-25T04:56:23.342060+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 1,
