@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-25T11:48:08.267660+00:00",
+  "generated_at": "2026-10-25T16:36:16.145627+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 3,
-  "deduped_count": 0,
-  "deep_read_count": 0,
+  "raw_new_count": 5,
+  "deduped_count": 2,
+  "deep_read_count": 2,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -16,7 +16,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 2,
+      "coverage_cached_count": 1,
       "coverage_errors": []
     },
     {
@@ -86,7 +86,7 @@
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [],
-      "coverage_cached_count": 28,
+      "coverage_cached_count": 27,
       "coverage_errors": [
         "official_listing: 503 Server Error: Service Temporarily Unavailable for url: https://dentsu-ho.com/"
       ]
@@ -94,13 +94,13 @@
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 18,
+      "coverage_cached_count": 20,
       "coverage_errors": []
     },
     {
@@ -143,7 +143,7 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 68,
+      "coverage_cached_count": 67,
       "coverage_errors": []
     },
     {
@@ -201,7 +201,7 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 2494,
+  "semantic_rescored_count": 2496,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3316,
+    "hot_count": 3318,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-25T11:46:50.530954+00:00",
+    "generated_at": "2026-10-25T16:34:53.973773+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 1,
