@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-27T12:28:09.749891+00:00",
+  "generated_at": "2026-10-28T05:58:30.839171+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 24,
-  "deduped_count": 21,
-  "deep_read_count": 4,
+  "raw_new_count": 47,
+  "deduped_count": 44,
+  "deep_read_count": 17,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,13 +22,13 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 4,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 163,
+      "coverage_cached_count": 167,
       "coverage_errors": []
     },
     {
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 8,
+      "new_count": 11,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 311,
+      "coverage_cached_count": 322,
       "coverage_errors": []
     },
     {
@@ -82,13 +82,13 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 2,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 31,
+      "coverage_cached_count": 33,
       "coverage_errors": []
     },
     {
@@ -118,14 +118,14 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 5,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 316,
+      "coverage_cached_count": 321,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -134,32 +134,21 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 2,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
         "feed_cache",
         "new_article_listing",
-        "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 70,
-      "coverage_errors": []
+      "coverage_cached_count": 72,
+      "coverage_errors": [
+        "serialization_listing: 500 Server Error: Internal Server Error for url: https://agenda-note.com/serialization/"
+      ]
     },
     {
       "name": "wisdom-evolution.com",
-      "status": "ok",
-      "new_count": 0,
-      "error": null,
-      "coverage_status": "cached",
-      "coverage_methods": [
-        "feed_cache"
-      ],
-      "coverage_cached_count": 25,
-      "coverage_errors": []
-    },
-    {
-      "name": "ネットショップ担当者フォーラム",
       "status": "ok",
       "new_count": 1,
       "error": null,
@@ -167,7 +156,19 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 210,
+      "coverage_cached_count": 26,
+      "coverage_errors": []
+    },
+    {
+      "name": "ネットショップ担当者フォーラム",
+      "status": "ok",
+      "new_count": 9,
+      "error": null,
+      "coverage_status": "cached",
+      "coverage_methods": [
+        "feed_cache"
+      ],
+      "coverage_cached_count": 219,
       "coverage_errors": []
     },
     {
@@ -185,13 +186,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 13,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 349,
+      "coverage_cached_count": 357,
       "coverage_errors": []
     }
   ],
@@ -201,7 +202,7 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 2606,
+  "semantic_rescored_count": 2650,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -222,11 +223,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3428,
+    "hot_count": 3472,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-27T12:26:48.626675+00:00",
+    "generated_at": "2026-10-28T05:56:41.662032+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
