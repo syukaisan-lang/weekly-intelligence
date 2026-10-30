@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-30T16:06:01.920066+00:00",
+  "generated_at": "2026-10-30T16:26:06.527222+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 5,
-  "deduped_count": 1,
+  "raw_new_count": 4,
+  "deduped_count": 0,
   "deep_read_count": 0,
   "sources": [
     {
@@ -185,7 +185,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 5,
+      "new_count": 4,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -226,7 +226,7 @@
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-30T16:04:34.156863+00:00",
+    "generated_at": "2026-10-30T16:24:36.040301+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
