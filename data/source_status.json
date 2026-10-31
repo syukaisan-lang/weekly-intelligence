@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-31T05:59:24.629915+00:00",
+  "generated_at": "2026-10-31T12:49:54.325097+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 7,
-  "deduped_count": 3,
+  "raw_new_count": 5,
+  "deduped_count": 1,
   "deep_read_count": 1,
   "sources": [
     {
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 165,
+      "coverage_cached_count": 163,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 348,
+      "coverage_cached_count": 346,
       "coverage_errors": []
     },
     {
@@ -94,13 +94,13 @@
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 19,
+      "coverage_cached_count": 20,
       "coverage_errors": []
     },
     {
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 312,
+      "coverage_cached_count": 310,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -161,7 +161,7 @@
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -185,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 6,
+      "new_count": 4,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 350,
+      "coverage_cached_count": 348,
       "coverage_errors": []
     }
   ],
@@ -201,8 +201,8 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 2795,
-  "semantic_deep_read_count": 0,
+  "semantic_rescored_count": 2796,
+  "semantic_deep_read_count": 1,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3617,
+    "hot_count": 3618,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-31T05:58:03.166211+00:00",
+    "generated_at": "2026-10-31T12:48:29.049632+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
