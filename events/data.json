@@ -220,7 +220,7 @@
       ],
       "why": "虽然演出在明年，但已经开售；这种高制作规模、强现场感的项目应该提前进入关注池，而不是等到活动周才发现。",
       "drawback": "价格明显高于普通展览，且台场从东京西侧出发时间较长；座位选择会显著影响体验。",
-      "ticket_note": "东京公演2027/2/24–4/25；2026/9/19 10:00起一般销售。平日成人A席¥8,800起，周末¥9,800起。",
+      "ticket_note": "一般销售9/19 10时起。平日成人A/S/SS席8800/12800/15800，周末9800/13800/16800；Premium38800/39800。3/26 11:30文化放送特别场另设销售，10/22–2/16 22时及2/19起分阶段；餐饮套票另计，具体余票按场次。",
       "source_url": "https://l-tike.com/event/kooza/tokyo/",
       "ticket_url": "https://l-tike.com/event/kooza/tokyo/",
       "learning_features": {
@@ -249,7 +249,16 @@
           "content_focus": []
         }
       },
-      "last_verified_at": "2026-10-17"
+      "last_verified_at": "2026-10-31",
+      "release_history": [
+        {
+          "date": "2026-10-31",
+          "type": "ticket_information",
+          "url": "https://l-tike.com/event/kooza/tokyo/",
+          "note": "补充普通席/周末/Premium价差及特别场销售阶段，未将套票当普通最低价。"
+        }
+      ],
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "zen-night-tokyo-2026",
@@ -2012,7 +2021,7 @@
       "ticket_note": "第1期（1/8–2/5）早割一般¥3,200；9/24起一般销售至1/7 23:59。第2/3期售票后续公布。周边票¥13,199，另计。",
       "source_url": "https://jp.finalfantasy.com/news/6134",
       "ticket_url": "https://www.jp.square-enix.com/ff40th/exhibition/tickets/",
-      "last_verified_at": "2026-10-03",
+      "last_verified_at": "2026-10-31",
       "announcement_date": "2026-09-10",
       "learning_features": {
         "subjects": [
@@ -2038,7 +2047,8 @@
           "art_traditions": [],
           "content_focus": []
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "genji-tokyo-2027",
@@ -2283,7 +2293,7 @@
       "area": "上野",
       "price_min": null,
       "price_max": null,
-      "ticket_status": "upcoming",
+      "ticket_status": "票务待公布",
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "recommendation": 91,
@@ -2295,10 +2305,10 @@
       ],
       "why": "ハマー美术馆收藏首次在日本成规模展示，是值得提前关注的西方美术候选。",
       "drawback": "具体出品清单和票务仍待后续信息。",
-      "ticket_note": "会期已公布，票务待公布。",
+      "ticket_note": "官方专题已公开约70件藏品及代表作，包括伦勃朗《Juno》、梵高《圣雷米疗养院》。9/11–12/12会期不变；价格与开售尚未公布。",
       "source_url": "https://www.tobikan.jp/exhibition/2027_hammer.html",
       "ticket_url": null,
-      "last_verified_at": "2026-10-03",
+      "last_verified_at": "2026-10-31",
       "announcement_date": null,
       "learning_features": {
         "subjects": [
@@ -2329,7 +2339,17 @@
           "art_traditions": [],
           "content_focus": []
         }
-      }
+      },
+      "official_website": "https://hammer2027-28.exhibit.jp",
+      "release_history": [
+        {
+          "date": "2026-10-31",
+          "type": "artworks_information",
+          "url": "https://hammer2027-28.exhibit.jp",
+          "note": "补充官方专题作品信息；尚无已核实售票阶段。"
+        }
+      ],
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "mori-play-2027",
@@ -3272,7 +3292,7 @@
       "venue": "国立西洋美術館",
       "area": "上野",
       "recommendation": 92,
-      "price_min": 2200,
+      "price_min": 2400,
       "price_max": 2400,
       "ticket_status": "on_sale",
       "why": "泰特馆藏油画、水彩与现代艺术对话，是值得看原作的西方美术大展。",
@@ -3284,13 +3304,13 @@
         "绘画",
         "名作原作"
       ],
-      "ticket_note": "一般前售2200、当日2400。双人券4200，销售至12/20，可用10/24–1/11；联票与适用期间须按官网确认。",
+      "ticket_note": "成人普通当日票2400日元；2200为已结束的前售阶段。双人票4200，售至12/20、可用10/24–1/11。与Fontanesi联票4300，销售至1/24。1/12–2/21常设展闭室，不能按全年都可兼看常设展理解。",
       "bucket": "now",
       "category": "西方艺术展览",
       "ticket_url": "https://turner2026-27.exhibit.jp/ticket/",
       "ticket_sale_start": null,
       "ticket_deadline": "2026-10-23",
-      "last_verified_at": "2026-10-24",
+      "last_verified_at": "2026-10-31",
       "learning_features": {
         "subjects": [
           "西方艺术",
@@ -3344,8 +3364,15 @@
           "type": "opening_verification",
           "url": "https://turner2026-27.exhibit.jp/",
           "note": "本日开幕；当日票一般2400日元，票务状态仍为售票中。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "ticket_information",
+          "url": "https://turner2026-27.exhibit.jp/ticket/",
+          "note": "刷新当前普通票价，补充联票与常设展闭室限制。"
         }
-      ]
+      ],
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "astrup-tokyo-2026",
@@ -3775,7 +3802,7 @@
       "area": "上野",
       "price_min": null,
       "price_max": null,
-      "ticket_status": "票务待确认",
+      "ticket_status": "票务待公布",
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "recommendation": 92,
@@ -3788,7 +3815,7 @@
       "ticket_note": "正式公布会期，票价、开售日期及具体作品待公布；不巡展。",
       "source_url": "https://prtimes.jp/main/html/rd/p/000000001.000191129.html",
       "ticket_url": null,
-      "last_verified_at": "2026-10-03",
+      "last_verified_at": "2026-10-31",
       "announcement_date": "2026-09-30",
       "learning_features": {
         "subjects": [
@@ -3831,8 +3858,17 @@
           ]
         }
       },
-      "official_website": "https://www.gachuga.jp/",
-      "discovery_url": "https://www.tokyoartbeat.com/articles/-/painting-painting-nmwa-news-202609"
+      "official_website": "https://www.gachuga.jp",
+      "discovery_url": "https://www.tokyoartbeat.com/articles/-/painting-painting-nmwa-news-202609",
+      "release_history": [
+        {
+          "date": "2026-10-31",
+          "type": "official_source_refresh",
+          "url": "https://www.gachuga.jp",
+          "note": "补全官方专题入口；会期与不巡展安排保留，未核得新开售信息。"
+        }
+      ],
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "we-are-the-house-what-2027",
@@ -4112,10 +4148,10 @@
       ],
       "why": "以法国及欧洲美术馆藏原作为主，适合与已有西方绘画候选比较；84件作品中多数首次在日本展出。",
       "drawback": "静态绘画展；周末可能拥挤，需查看具体作品名单判断吸引力。",
-      "ticket_note": "一般当日2400；10–17，最終入場16:30。一般券销售10/10–1/10 16:30。10/24免费讲座受付结束、Premium Evening销售结束；与生物展联票4100将于10/31–12/31销售，非当前已售票。",
+      "ticket_note": "成人普通票2400日元，10–17时，末次16:30；普通票销售至1/10 16:30（部分纸票至15时）。与国立科学博物馆「生きものたちの性」联票4100日元，10/31 0:00–12/31 23:59在ぴあ销售，售完提前截止。免费讲座报名及Premium Evening销售已结束。",
       "source_url": "https://www.ueno-mori.org/exhibitions/article.cgi?id=12651051",
       "ticket_url": "https://www.cincinnati-art2026.jp/ticket.html",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "announcement_date": null,
       "learning_features": {
         "subjects": [
@@ -4166,8 +4202,15 @@
           "type": "ticket_update",
           "url": "https://www.cincinnati-art2026.jp/ticket.html",
           "note": "核对一般票、10/31起联票及已结束特别活动。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "ticket_change",
+          "url": "https://www.cincinnati-art2026.jp/ticket.html",
+          "note": "联票已进入10/31起销售期；移除旧记录“非当前已售票”的过时提示。"
         }
-      ]
+      ],
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "seeds-roots-operacity-2026",
@@ -4530,7 +4573,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -4586,7 +4629,8 @@
             "摄影作品"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "kajita-hanko-station-2027",
@@ -5408,7 +5452,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -5465,7 +5509,8 @@
             "文化交流"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "momat-collection-2026-autumn",
@@ -6664,7 +6709,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -6718,7 +6763,8 @@
             "创作史"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "uno-chiyo-setabun-2026",
@@ -7107,7 +7153,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-08",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7168,7 +7214,8 @@
             "创作史"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "nezumikun-azabudai-2027",
@@ -7185,7 +7232,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-02",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7238,7 +7285,8 @@
           ]
         }
       },
-      "date_status": "announced_plan"
+      "date_status": "announced_plan",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "saishu-densha-tokyo-2026",
@@ -7255,7 +7303,7 @@
       "ticket_sale_start": "2026-10-05",
       "ticket_deadline": "2027-03-31",
       "announcement_date": "2026-10-05",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7303,7 +7351,8 @@
           "art_traditions": [],
           "content_focus": []
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "sonorra-showcase-live-2027",
@@ -7320,7 +7369,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7360,7 +7409,8 @@
           "art_traditions": [],
           "content_focus": []
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "sonorra-winner-live-2027",
@@ -7377,7 +7427,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7417,7 +7467,8 @@
           "art_traditions": [],
           "content_focus": []
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "nmwa-showa-conservation-2026",
@@ -7508,7 +7559,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7548,7 +7599,8 @@
         }
       },
       "is_parent_event": true,
-      "date_note": "end_date为已公布子项目日期最大值"
+      "date_note": "end_date为已公布子项目日期最大值",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "keyakizaka-lights-2026",
@@ -7565,7 +7617,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7607,7 +7659,8 @@
           "content_focus": []
         }
       },
-      "parent_event_id": "christmas-hills-2026"
+      "parent_event_id": "christmas-hills-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "roppongi-66-plaza-lights-2026",
@@ -7624,7 +7677,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7666,7 +7719,8 @@
           "content_focus": []
         }
       },
-      "parent_event_id": "christmas-hills-2026"
+      "parent_event_id": "christmas-hills-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "mori-garden-lights-2026",
@@ -7683,7 +7737,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7725,7 +7779,8 @@
           "content_focus": []
         }
       },
-      "parent_event_id": "christmas-hills-2026"
+      "parent_event_id": "christmas-hills-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "westwalk-christmas-tree-2026",
@@ -7742,7 +7797,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -7784,7 +7839,8 @@
           "content_focus": []
         }
       },
-      "parent_event_id": "christmas-hills-2026"
+      "parent_event_id": "christmas-hills-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "roppongi-christmas-market-2026",
@@ -7801,13 +7857,19 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
           "date": "2026-09-30",
           "type": "official_announcement",
           "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "release_backfill",
+          "url": "https://prtimes.jp/main/html/rd/p/000000439.000048109.html",
+          "note": "补入10/19–10/23主办方续报，保留原稳定ID。"
         }
       ],
       "recommendation": 55,
@@ -7818,7 +7880,7 @@
       ],
       "why": "正式公布的街区季节活动，作为顺路候选保留。",
       "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
-      "ticket_note": "11:00–21:00；饮食和商品另付。 未核收费项目不得视作免费。",
+      "ticket_note": "11/21起在大屋根プラザ举办，20周年、共10店；平日午餐方案另计。 未从官方独立核实统一入场费，保持null；不把商品价格当门票。",
       "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
       "ticket_url": null,
       "learning_features": {
@@ -7843,7 +7905,8 @@
           "content_focus": []
         }
       },
-      "parent_event_id": "christmas-hills-2026"
+      "parent_event_id": "christmas-hills-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "azabudai-christmas-market-2026",
@@ -7860,13 +7923,19 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
           "date": "2026-09-30",
           "type": "official_announcement",
           "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "release_backfill",
+          "url": "https://prtimes.jp/main/html/rd/p/000000440.000048109.html",
+          "note": "补入10/19–10/23主办方续报，保留原稳定ID。"
         }
       ],
       "recommendation": 55,
@@ -7877,7 +7946,7 @@
       ],
       "why": "正式公布的街区季节活动，作为顺路候选保留。",
       "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
-      "ticket_note": "11:00–21:00；饮食和商品另付。 未核收费项目不得视作免费。",
+      "ticket_note": "11/21–12/25；今年共19店（饮食15、物贩4），独立发布补齐阵容。 未从官方独立核实统一入场费，保持null；不把商品价格当门票。",
       "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
       "ticket_url": null,
       "learning_features": {
@@ -7902,7 +7971,8 @@
           "content_focus": []
         }
       },
-      "parent_event_id": "christmas-hills-2026"
+      "parent_event_id": "christmas-hills-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "toranomon-christmas-2026",
@@ -7919,13 +7989,19 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
           "date": "2026-09-30",
           "type": "official_announcement",
           "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "release_backfill",
+          "url": "https://prtimes.jp/main/html/rd/p/000000442.000048109.html",
+          "note": "补入10/19–10/23主办方续报，保留原稳定ID。"
         }
       ],
       "recommendation": 55,
@@ -7936,7 +8012,7 @@
       ],
       "why": "正式公布的街区季节活动，作为顺路候选保留。",
       "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
-      "ticket_note": "THE WONDER OF CHRISTMAS装饰预计11月24日起；其他灯光11月12日起。 未核收费项目不得视作免费。",
+      "ticket_note": "11/12–12/25；THE WONDER OF CHRISTMAS设13棵真树与彩色装置，具体装饰起始日按项目确认。 未从官方独立核实统一入场费，保持null；不把商品价格当门票。",
       "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
       "ticket_url": null,
       "learning_features": {
@@ -7961,7 +8037,8 @@
           "content_focus": []
         }
       },
-      "parent_event_id": "christmas-hills-2026"
+      "parent_event_id": "christmas-hills-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "omotesando-lights-2026",
@@ -7978,7 +8055,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -8020,7 +8097,8 @@
           "content_focus": []
         }
       },
-      "parent_event_id": "christmas-hills-2026"
+      "parent_event_id": "christmas-hills-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "ark-hills-christmas-2026",
@@ -8037,13 +8115,19 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-10",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
           "date": "2026-09-30",
           "type": "official_announcement",
           "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "release_backfill",
+          "url": "https://prtimes.jp/main/html/rd/p/000000437.000048109.html",
+          "note": "补入10/19–10/23主办方续报，保留原稳定ID。"
         }
       ],
       "recommendation": 55,
@@ -8054,7 +8138,7 @@
       ],
       "why": "正式公布的街区季节活动，作为顺路候选保留。",
       "drawback": "偏季节装饰、购物或拍照；不等同有叙事的沉浸式体验。",
-      "ticket_note": "公告会期标注予定；树饰与市集为不同内容。 未核收费项目不得视作免费。",
+      "ticket_note": "11/7–12/25；周六市场，11/22跳蚤市场特别回，购买与工作坊另付。 未从官方独立核实统一入场费，保持null；不把商品价格当门票。",
       "source_url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
       "ticket_url": null,
       "learning_features": {
@@ -8079,7 +8163,8 @@
           "content_focus": []
         }
       },
-      "parent_event_id": "christmas-hills-2026"
+      "parent_event_id": "christmas-hills-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "bucket": "now",
@@ -8216,7 +8301,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -8267,7 +8352,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "kuniyoshi-edohaku-2027",
@@ -8284,7 +8370,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -8335,7 +8421,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "edo-meshi-2027",
@@ -8352,7 +8439,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -8403,7 +8490,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "gyakuzoku-bakushin-edohaku-2027",
@@ -8420,7 +8508,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -8470,7 +8558,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "tobikan-group-2027",
@@ -8487,7 +8576,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -8540,7 +8629,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "nakatani-michiko-tobikan-2027",
@@ -8557,7 +8647,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -8607,7 +8697,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "new-universe-tobikan-2027",
@@ -8624,7 +8715,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -8670,7 +8761,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "paul-klee-tobikan-2028",
@@ -8903,7 +8995,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -8955,7 +9047,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "kitano-ken-top-2027",
@@ -8972,7 +9065,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9024,7 +9117,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "ishikawa-naoki-top-2027",
@@ -9041,7 +9135,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9093,7 +9187,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "new-artists-vol24-top-2027",
@@ -9110,7 +9205,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9165,7 +9260,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "fujihata-masaki-top-2027",
@@ -9253,7 +9349,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9309,7 +9405,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "sunpride-mot-2027",
@@ -9326,7 +9423,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9379,7 +9476,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "mot-annual-2027",
@@ -9396,7 +9494,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9455,7 +9553,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "do-ho-suh-mot-2027",
@@ -9629,7 +9728,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9637,6 +9736,12 @@
           "type": "announcement",
           "url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
           "note": "官方公告/馆方清单核验并补录；首次公告日未明确时不倒推。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "information_correction",
+          "url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
+          "note": "年度正式PDF明确三个MOT Plus项目免费，修正旧说明与已存价格0的矛盾。"
         }
       ],
       "recommendation": 64,
@@ -9645,7 +9750,7 @@
       ],
       "why": "年度正式计划已公布；从艺术研究切入，作为内容明确的未来候选保留。",
       "drawback": "具体作品、休馆日及票务细则请在决定前查看官方。",
-      "ticket_note": "2026-10-09正式年度公告；票价及开售日尚未核实。",
+      "ticket_note": "官方年度计划明确免费公开；会期不变。具体开放日、入场或预约安排待后续公告。",
       "source_url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
       "ticket_url": null,
       "learning_features": {
@@ -9677,7 +9782,8 @@
             "专题展示"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "mot-plus-asian-video-2027",
@@ -9694,7 +9800,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9702,6 +9808,12 @@
           "type": "announcement",
           "url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
           "note": "官方公告/馆方清单核验并补录；首次公告日未明确时不倒推。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "information_correction",
+          "url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
+          "note": "年度正式PDF明确三个MOT Plus项目免费，修正旧说明与已存价格0的矛盾。"
         }
       ],
       "recommendation": 73,
@@ -9711,7 +9823,7 @@
       ],
       "why": "年度正式计划已公布；从亚洲影像、新作切入，作为内容明确的未来候选保留。",
       "drawback": "具体作品、休馆日及票务细则请在决定前查看官方。",
-      "ticket_note": "2026-10-09正式年度公告；票价及开售日尚未核实。",
+      "ticket_note": "官方年度计划明确免费公开；会期不变。具体开放日、入场或预约安排待后续公告。",
       "source_url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
       "ticket_url": null,
       "learning_features": {
@@ -9743,7 +9855,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "mot-plus-collection-installation-2027",
@@ -9760,7 +9873,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9768,6 +9881,12 @@
           "type": "announcement",
           "url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
           "note": "官方公告/馆方清单核验并补录；首次公告日未明确时不倒推。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "information_correction",
+          "url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
+          "note": "年度正式PDF明确三个MOT Plus项目免费，修正旧说明与已存价格0的矛盾。"
         }
       ],
       "recommendation": 76,
@@ -9778,7 +9897,7 @@
       ],
       "why": "年度正式计划已公布；从馆藏装置、空间切入，作为内容明确的未来候选保留。",
       "drawback": "具体作品、休馆日及票务细则请在决定前查看官方。",
-      "ticket_note": "2026-10-09正式年度公告；票价及开售日尚未核实。",
+      "ticket_note": "官方年度计划明确免费公开；会期不变。具体开放日、入场或预约安排待后续公告。",
       "source_url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
       "ticket_url": null,
       "learning_features": {
@@ -9811,7 +9930,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "nact-20th-2027",
@@ -9828,7 +9948,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-01",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9882,7 +10002,8 @@
             "名作原作"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "liechtenstein-antiquity-nact-2027",
@@ -9899,7 +10020,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-01",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -9951,7 +10072,8 @@
             "名作原作"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "mode-france-sompo-2027",
@@ -10259,7 +10381,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -10312,7 +10434,8 @@
             "专题展示"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "lithuania-teien-2027",
@@ -10562,7 +10685,7 @@
       "ticket_sale_start": "2026-10-16",
       "ticket_deadline": null,
       "announcement_date": "2026-10-16",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -10570,6 +10693,12 @@
           "type": "announcement",
           "url": "https://prtimes.jp/main/html/rd/p/000000003.000140166.html",
           "note": "官方公告/馆方清单核验并补录；首次公告日未明确时不倒推。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "official_source_refresh",
+          "url": "https://roofpark-artfes.metro.tokyo.lg.jp/",
+          "note": "补充现行官方专题与进出入口、天气说明；实时余票未核实。"
         }
       ],
       "recommendation": 85,
@@ -10582,7 +10711,7 @@
       ],
       "why": "在原高速道路上看场域特定光声装置，场地本身有稀缺性。",
       "drawback": "户外受天气影响；主要是观看与步行，不能当作强互动游戏。",
-      "ticket_note": "17:00–20:30，最晚20:00入场；工作日800、周末节假日1000；10/16 14:00开售。",
+      "ticket_note": "17–20:30，末次20时；工作日800、周末节假日1000，10/16 14时开售。官方现页明确销售中；Peatix本轮403，未核实时段余票。不同作品/节目入口不同，户外天气变化看官方NEWS。",
       "source_url": "https://prtimes.jp/main/html/rd/p/000000003.000140166.html",
       "ticket_url": "https://roofpark-artfes-2026.peatix.com/events",
       "learning_features": {
@@ -10623,7 +10752,9 @@
           ]
         }
       },
-      "parent_event_id": "arte-tokyo-2026"
+      "parent_event_id": "arte-tokyo-2026",
+      "official_website": "https://roofpark-artfes.metro.tokyo.lg.jp/",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "roof-park-circus-2026",
@@ -11169,7 +11300,8 @@
         }
       },
       "date_precision": "month",
-      "announced_month": "2027-02"
+      "announced_month": "2027-02",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "longing-kudan-2026",
@@ -11400,11 +11532,11 @@
       "area": "六本木",
       "price_min": 2200,
       "price_max": 4400,
-      "ticket_status": "未核实",
-      "ticket_sale_start": null,
+      "ticket_status": "on_sale",
+      "ticket_sale_start": "2026-08-22",
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -11412,6 +11544,12 @@
           "type": "verification",
           "url": "https://macg.roppongihills.com/jp/exhibitions/haikyu-challengers/index.html",
           "note": "官方公告/馆方清单核验并补录；首次公告日未明确时不倒推。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "ticket_information",
+          "url": "https://haikyu-challengers-ex.com/ticket/",
+          "note": "正式页面明确前后期一般销售时间，刷新原未核实销售状态。"
         }
       ],
       "recommendation": 76,
@@ -11423,7 +11561,7 @@
       ],
       "why": "大型漫画原画展进入候选；是否喜欢该IP不由漫画形式本身推定。",
       "drawback": "具体作品、休馆日及票务细则请在决定前查看官方。",
-      "ticket_note": "一般2200，限量周边券4400；e+日時指定、无现场售票。官方可读页面未完整显示一般销售阶段，售票状态待实时确认。",
+      "ticket_note": "一般2200、周边券4400日元。前期10/30–11/30票自8/22 10时先着销售，10/30–11/8仅余票；后期12/1–1/11于11/14 10时开售。全期指定时段，e+销售，无会场售票；具体场次可能售罄。",
       "source_url": "https://macg.roppongihills.com/jp/exhibitions/haikyu-challengers/index.html",
       "ticket_url": "https://haikyu-challengers-ex.com/ticket/",
       "learning_features": {
@@ -11460,7 +11598,8 @@
             "创作史"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "persona30-ueno-2027",
@@ -11530,7 +11669,8 @@
             "创作史"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "dino-kahaku-2027",
@@ -11763,7 +11903,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -11818,7 +11958,8 @@
           ]
         }
       },
-      "parent_event_id": "tokyo-atlas-2026"
+      "parent_event_id": "tokyo-atlas-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "open-site11-tokas-2026",
@@ -11909,7 +12050,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": "2026-10-09",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -11917,6 +12058,12 @@
           "type": "announcement",
           "url": "https://newgallery-tokyo.com/",
           "note": "官方公告/馆方清单核验并补录；首次公告日未明确时不倒推。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "program_update",
+          "url": "https://newgallery-tokyo.com/news/neo-pin-up-tokyo-2/",
+          "note": "10/30官方新闻新增10/31单日企划，分开记录展览入场与个性化服务费用。"
         }
       ],
       "recommendation": 65,
@@ -11927,7 +12074,7 @@
       ],
       "why": "正式公布的神保町画廊新展；纳入覆盖，匹配度另行排序。",
       "drawback": "具体作品、休馆日及票务细则请在决定前查看官方。",
-      "ticket_note": "日期已核，价格未明确，不记为免费。",
+      "ticket_note": "展览至11/1，13–19时；常规入场费未单列，仍为null。10/31 13–19时另有Ferdi本人绘制肖像特别企划，约15分钟、5000日元；此费用不是展览门票。官网详情正文年份与标题不一致，按首页当前展及10/30新闻确认2026，保留冲突备注。",
       "source_url": "https://newgallery-tokyo.com/",
       "ticket_url": null,
       "learning_features": {
@@ -11960,7 +12107,9 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "official_website": "https://newgallery-tokyo.com/ferdi-neo-pin-up-tokyo/",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "gokita-records-2026",
@@ -12309,7 +12458,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -12363,7 +12512,8 @@
           ]
         }
       },
-      "parent_event_id": "mariko-mori-2026"
+      "parent_event_id": "mariko-mori-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "mam-project035-2026",
@@ -12449,7 +12599,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -12504,7 +12654,8 @@
           ]
         }
       },
-      "parent_event_id": "mariko-mori-2026"
+      "parent_event_id": "mariko-mori-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "operacity-collection088-2026",
@@ -12521,7 +12672,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -12576,7 +12727,8 @@
           ]
         }
       },
-      "parent_event_id": "seeds-roots-operacity-2026"
+      "parent_event_id": "seeds-roots-operacity-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "operacity-projectn104-2026",
@@ -12593,7 +12745,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -12646,7 +12798,8 @@
           ]
         }
       },
-      "parent_event_id": "seeds-roots-operacity-2026"
+      "parent_event_id": "seeds-roots-operacity-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "shiki-hajimari-kita-2026",
@@ -12655,15 +12808,15 @@
       "category": "家庭音乐剧",
       "start_date": "2026-12-23",
       "end_date": "2026-12-23",
-      "venue": "東京都北区（会場詳細待核）",
-      "area": "北区",
-      "price_min": null,
-      "price_max": null,
+      "venue": "北とぴあ さくらホール",
+      "area": "王子",
+      "price_min": 5000,
+      "price_max": 7000,
       "ticket_status": "on_sale",
       "ticket_sale_start": "2026-10-06",
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -12671,6 +12824,12 @@
           "type": "verification",
           "url": "https://www.shiki.jp/release_list/",
           "note": "官方公告/馆方清单核验并补录；首次公告日未明确时不倒推。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "source_repair",
+          "url": "https://kitabunka.or.jp/event/26548/",
+          "note": "原四季release_list入口404，已以共同主办方正式公演页替代，补齐剧场、票价与开演时间。"
         }
       ],
       "recommendation": 71,
@@ -12682,9 +12841,9 @@
       ],
       "why": "正式发售清单中的东京巡演纳入未来池；具体剧目兴趣另行判断。",
       "drawback": "具体作品、休馆日及票务细则请在决定前查看官方。",
-      "ticket_note": "一般销售10/6已开始；座位价格、剧场与时长仍待具体公演页确认。",
-      "source_url": "https://www.shiki.jp/release_list/",
-      "ticket_url": null,
+      "ticket_note": "12/23 18时开演、17:15开场，约2小时含15分钟休息。普通成人1楼7000、2楼5000；10/6一般销售，会员/区民优惠另计，3岁以下不可入场。",
+      "source_url": "https://kitabunka.or.jp/event/26548/",
+      "ticket_url": "https://kitabunka.or.jp/event/26548/",
       "learning_features": {
         "subjects": [
           "森林",
@@ -12707,7 +12866,8 @@
           "art_traditions": [],
           "content_focus": []
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "shiki-osama-tachikawa-2027",
@@ -12716,15 +12876,15 @@
       "category": "家庭音乐剧",
       "start_date": "2027-01-09",
       "end_date": "2027-01-09",
-      "venue": "東京都立川市（会場詳細待核）",
+      "venue": "たましんRISURUホール 大ホール",
       "area": "立川",
-      "price_min": null,
-      "price_max": null,
-      "ticket_status": "upcoming",
-      "ticket_sale_start": "2026-10-31",
+      "price_min": 5000,
+      "price_max": 7000,
+      "ticket_status": "渠道开售日不同，详见说明",
+      "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -12732,6 +12892,12 @@
           "type": "verification",
           "url": "https://www.shiki.jp/release_list/",
           "note": "官方公告/馆方清单核验并补录；首次公告日未明确时不倒推。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "ticket_channel_verification",
+          "url": "https://risuru.hall-info.jp/event/zaidan.html",
+          "note": "场馆正式销售日与旧四季渠道记录不同；明确区分渠道，保留待核项。"
         }
       ],
       "recommendation": 69,
@@ -12742,9 +12908,9 @@
       ],
       "why": "已公布东京巡演进入未来池，不因尚未一般销售排除。",
       "drawback": "具体作品、休馆日及票务细则请在决定前查看官方。",
-      "ticket_note": "四季会会员先行10/24，一般销售10/31；座位价格与剧场待核。",
+      "ticket_note": "1/9 13时开演、12:15开场，成人A席5000/S席7000。RISURU官方列11/2 10时一般销售、首日仅电话；四季渠道旧记录10/31尚未重新核得，不把渠道日期合并成统一开售日。",
       "source_url": "https://www.shiki.jp/release_list/",
-      "ticket_url": null,
+      "ticket_url": "https://risuru.hall-info.jp/event/zaidan.html",
       "learning_features": {
         "subjects": [
           "诚实",
@@ -12767,7 +12933,8 @@
           "content_focus": []
         }
       },
-      "member_presale_start": "2026-10-24"
+      "member_presale_start": "2026-10-24",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "shiki-elcos-tokyo-2027",
@@ -12784,7 +12951,7 @@
       "ticket_sale_start": "2026-12-05",
       "ticket_deadline": null,
       "announcement_date": "2026-09-30",
-      "last_verified_at": "2026-10-17",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": true,
       "release_history": [
         {
@@ -12792,6 +12959,12 @@
           "type": "announcement",
           "url": "https://www.shiki.jp/release_info/pdf/elcos_tokyo_260930.pdf",
           "note": "官方公演PDF核验日期、剧场、一般/会员票价及上演时长。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "source_repair",
+          "url": "https://www.shiki.jp/applause/elcos/ticket_schedule/",
+          "note": "使用可用官方作品票务页替代404 PDF；未将价格/时长视作重新核实。"
         }
       ],
       "recommendation": 71,
@@ -12803,8 +12976,8 @@
       ],
       "why": "官方未来发售清单已列东京公演，日期不完整也保留公告线索。",
       "drawback": "具体作品、休馆日及票务细则请在决定前查看官方。",
-      "ticket_note": "一般大人8000，四季会会员7000；11/28 10点会员先行、12/5一般发售。约2小时含中场；场次与休演见官方PDF。",
-      "source_url": "https://www.shiki.jp/release_info/pdf/elcos_tokyo_260930.pdf",
+      "ticket_note": "官方作品票务页确认3/13–4/4东京公演，11/28四季会先行、12/5一般销售；既有成人8000、会员7000及约2小时信息的原PDF本轮404，价格/时长未能重新核实，保留旧值并待下轮确认。",
+      "source_url": "https://www.shiki.jp/applause/elcos/ticket_schedule/",
       "ticket_url": null,
       "learning_features": {
         "subjects": [
@@ -12830,7 +13003,8 @@
         }
       },
       "member_presale_start": "2026-11-28",
-      "date_precision": "day"
+      "date_precision": "day",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "panja-kingdom-2026",
@@ -13056,11 +13230,11 @@
       "area": "驹场",
       "price_min": 0,
       "price_max": 0,
-      "ticket_status": "upcoming",
-      "ticket_sale_start": null,
-      "ticket_deadline": null,
+      "ticket_status": "邮件申请已公布；在线预约待公布",
+      "ticket_sale_start": "2026-10-20",
+      "ticket_deadline": "2026-12-06",
       "announcement_date": "2026-10-20",
-      "last_verified_at": "2026-10-24",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -13068,6 +13242,12 @@
           "type": "verification",
           "url": "https://prtimes.jp/main/html/rd/p/000000010.000161962.html",
           "note": "2026-10-24核验主办方/场馆正式页面。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "booking_information_backfill",
+          "url": "https://www.u-tokyo.ac.jp/focus/ja/events/z0205_00241.html",
+          "note": "补录大学10/21官方页的邮件申请渠道；在线链接与日程细节仍有未公布/不一致处，不标售票中。"
         }
       ],
       "recommendation": 84,
@@ -13079,9 +13259,9 @@
       ],
       "why": "聚焦真正的沉浸式媒介与空间型叙事，含戛纳沉浸单元大奖作品和威尼斯入选作，内容门槛高于一般投影打卡展。",
       "drawback": "仅三天；具体作品名额和佩戴方式尚未全部公布。",
-      "ticket_note": "免费、需事前预约；预约链接尚未公布。",
+      "ticket_note": "免费、需事前申请。东京大学官方页列邮件申请contact@tokyoimmersive.com，受付10/20–12/6；活动站在线预约链接仍待公布。活动站列12/4 15–19时、12/5–6 11–19时；大学页整体时间为11–19:30，场次安排需进一步确认，不能据此保证任意时段可入场。",
       "source_url": "https://prtimes.jp/main/html/rd/p/000000010.000161962.html",
-      "ticket_url": "https://tokyoimmersive.com/",
+      "ticket_url": "https://www.u-tokyo.ac.jp/focus/ja/events/z0205_00241.html",
       "learning_features": {
         "subjects": [
           "沉浸媒介",
@@ -13110,7 +13290,8 @@
           "art_traditions": [],
           "content_focus": []
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "gaudi-vr-wahhhp-2026",
@@ -13287,7 +13468,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-24",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -13347,7 +13528,8 @@
             "制作幕后"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "livly-open-lab-2026",
@@ -13364,7 +13546,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-24",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -13411,7 +13593,8 @@
           "art_traditions": [],
           "content_focus": []
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "insitu2-ibasho-2026",
@@ -13501,13 +13684,13 @@
       "end_date": "2026-11-23",
       "venue": "根津美術館",
       "area": "表参道",
-      "price_min": null,
-      "price_max": null,
+      "price_min": 1600,
+      "price_max": 1800,
       "ticket_status": "on_sale",
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-24",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -13515,6 +13698,12 @@
           "type": "verification",
           "url": "https://www.nezu-muse.or.jp/jp/exhibitions/view-121.html",
           "note": "2026-10-24核验主办方/场馆正式页面。"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "price_verification",
+          "url": "https://www.nezu-muse.or.jp/jp/exhibitions/view-121.html",
+          "note": "补齐此前为空的成人普通票价；线上与现场分开。"
         }
       ],
       "recommendation": 66,
@@ -13526,7 +13715,7 @@
       ],
       "why": "约40年未公开的轮王寺藏品、14–17世纪舞乐装束与相关绘画集中出现，稀缺度明确。",
       "drawback": "主题属于日本传统美术与礼仪服饰，与你偏好的西方名作和体验形式距离较远。",
-      "ticket_note": "官网已开放日時指定预约；可读正文未完整显示成人价，故价格留空。",
+      "ticket_note": "成人线上时段预约1600、现场1800日元；10–17时，末次16:30，周一休馆但11/23开放。",
       "source_url": "https://www.nezu-muse.or.jp/jp/exhibitions/view-121.html",
       "ticket_url": "https://www.nezu-muse.or.jp/jp/exhibitions/view-121.html",
       "learning_features": {
@@ -13571,7 +13760,8 @@
             "艺术史"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "ota-unknown-ukiyoe-artists-2026",
@@ -13588,7 +13778,7 @@
       "ticket_sale_start": null,
       "ticket_deadline": null,
       "announcement_date": null,
-      "last_verified_at": "2026-10-24",
+      "last_verified_at": "2026-10-31",
       "backfilled_from_archive": false,
       "release_history": [
         {
@@ -13643,7 +13833,8 @@
             "艺术家专题"
           ]
         }
-      }
+      },
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "yoshida-shoya-design-2026",
@@ -14744,7 +14935,8 @@
           ]
         }
       },
-      "parent_event_id": "arte-tokyo-2026"
+      "parent_event_id": "arte-tokyo-2026",
+      "last_checked_at": "2026-10-31"
     },
     {
       "id": "masayume-okutama-2026",
@@ -20068,6 +20260,267 @@
         "missing_count": 1,
         "missing_information": "RSS仅发现线索；东京实际日期/会场/内容/公众资格尚未全部独立核实。",
         "monitor_rule": "轻量监测正式更新；有实质补充后再取详情。"
+      },
+      {
+        "source": "留存活动官方复核 2026-10-31",
+        "url": "https://syukaisan-lang.github.io/weekly-intelligence/events/",
+        "checked_at": "2026-10-31",
+        "pages_checked": 44,
+        "oldest_date_seen": null,
+        "status": "partial",
+        "inventory_count": 63,
+        "already_present_count": 63,
+        "added_count": 0,
+        "missing_count": 2,
+        "notes": "8个当前想去但未购票项目及其他留存已超过一周的候选合计63项；此处只记录汇总，不公开个人清单。20项补充/更正信息；2项核心信息未能重新核实，未推进其last_verified_at。价格、渠道或动态库存仍有局部待核，不代表整体完整。",
+        "checked_sources": [
+          {
+            "url": "https://l-tike.com/event/kooza/tokyo/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://jp.finalfantasy.com/news/6134",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.jp.square-enix.com/ff40th/exhibition/tickets/",
+            "status": "partial",
+            "failure": "动态空壳/无可核实正文"
+          },
+          {
+            "url": "https://www.tobikan.jp/exhibition/2027_hammer.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://turner2026-27.exhibit.jp/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://turner2026-27.exhibit.jp/ticket/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000001.000191129.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.ueno-mori.org/exhibitions/article.cgi?id=12651051",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.cincinnati-art2026.jp/ticket.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.ejrcf.or.jp/gallery/exhibition.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.momat.go.jp/exhibitions",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000003.000140166.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://roofpark-artfes-2026.peatix.com/events",
+            "status": "partial",
+            "failure": "HTTP Error 403: Forbidden"
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000035.000143646.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://macg.roppongihills.com/jp/exhibitions/haikyu-challengers/index.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://haikyu-challengers-ex.com/ticket/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.ueno-mori.org/exhibitions/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://tokyoartsandspace.jp/exhibition/index/index.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://newgallery-tokyo.com/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.mori.art.museum/jp/exhibitions/mamscreen024/index.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.mori.art.museum/jp/exhibitions/moricaf2026/index.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.e-tix.jp/tocag/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.shiki.jp/release_list/",
+            "status": "partial",
+            "failure": "HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://www.shiki.jp/release_info/pdf/elcos_tokyo_260930.pdf",
+            "status": "partial",
+            "failure": "HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000010.000161962.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://tokyoimmersive.com/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://sololeveling-exhibition.com/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.livly.com/event/openlab2026/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.asoview.com/",
+            "status": "partial",
+            "failure": "动态空壳/无可核实正文"
+          },
+          {
+            "url": "https://www.nezu-muse.or.jp/jp/exhibitions/view-121.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.ukiyoe-ota-muse.jp/schedule/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000003.000185873.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://hamarikyu.tickets.teamlab.art/",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.setabun.or.jp/exhibition/schedule.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000493.000014158.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000430.000048109.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000081.000067263.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://i-ku-kan.com/saishu-densha",
+            "status": "partial",
+            "failure": "动态空壳/无可核实正文"
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000494.000014158.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000429.000048109.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000428.000048109.html",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://prtimes.jp/a/?f=d38211-1140-07e359f994ed091b8d67abee223784d2.pdf",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.nact.jp/pr/media/Exhibition2027_Ja.pdf",
+            "status": "read",
+            "failure": null
+          },
+          {
+            "url": "https://www.sompo-museum.org/exhibitions/schedule/",
+            "status": "read",
+            "failure": null
+          }
+        ],
+        "followups": [
+          {
+            "url": "https://www.ueno-mori.org/exhibitions/",
+            "reason": "当前列表未列PERSONA未来活动；未擅自删除旧ID，也未将未列出当作取消。"
+          },
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000035.000143646.html",
+            "reason": "恶魔执事仍只有月份预告；只确认旧页未补齐，不猜具体日期。"
+          },
+          {
+            "url": "https://risuru.hall-info.jp/event/zaidan.html",
+            "reason": "场馆列11/2，四季渠道旧10/31待核；按渠道分开。"
+          },
+          {
+            "url": "https://www.shiki.jp/release_info/pdf/elcos_tokyo_260930.pdf",
+            "reason": "404；改用官方作品票务页，旧价格/时长仍待复核。"
+          },
+          {
+            "url": "https://tokyoimmersive.com/",
+            "reason": "在线预约链接仍未公开；东京大学提供邮件申请，时间口径与活动站不同，未猜具体场次。"
+          },
+          {
+            "url": "https://hamarikyu.tickets.teamlab.art/",
+            "reason": "动态预约库存无法在静态正文读取；不得声称全部时段有票。"
+          }
+        ]
       }
     ],
     "coverage_audit_history": [
@@ -22029,9 +22482,9 @@
     "feedback_learning_audit": {
       "status": "success",
       "checked_at": "2026-10-31",
-      "source_updated_at": "2026-10-25 04:34:32.063+00",
-      "record_count": 151,
-      "matched_count": 151,
+      "source_updated_at": "2026-10-31 00:43:46.931+00",
+      "record_count": 168,
+      "matched_count": 168,
       "unmatched_count": 0,
       "ranking_model": "frontend-formula-v3"
     },
@@ -22269,6 +22722,19 @@
         "dialogue-d-mon-2026",
         "dialogue-opus-mon-2027"
       ]
-    }
+    },
+    "retained_refresh_audit": {
+      "status": "partial",
+      "checked_at": "2026-10-31",
+      "scope": "本轮为用户要求的既有活动官方信息刷新；未重做全东京发现。",
+      "candidate_count": 63,
+      "verified_core_record_count": 61,
+      "information_updated_count": 20,
+      "new_event_count": 0,
+      "total_event_count": 262,
+      "unresolved_core_count": 2,
+      "notes": "核验公开页面所列核心事实不代表已穷尽所有新闻，或已确认逐场余票。票务JS/403、404与渠道日期冲突已记录；未知价格不改为免费。仅更新原ID，所有基础recommendation保持不变。"
+    },
+    "last_manual_refresh_at": "2026-10-31"
   }
 }
