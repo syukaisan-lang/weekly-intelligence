@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-31T12:49:54.325097+00:00",
+  "generated_at": "2026-11-01T06:26:45.573784+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
   "raw_new_count": 5,
   "deduped_count": 1,
-  "deep_read_count": 1,
+  "deep_read_count": 0,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 163,
+      "coverage_cached_count": 158,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 346,
+      "coverage_cached_count": 342,
       "coverage_errors": []
     },
     {
@@ -88,13 +88,13 @@
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 38,
+      "coverage_cached_count": 36,
       "coverage_errors": []
     },
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 310,
+      "coverage_cached_count": 295,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -143,7 +143,7 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 68,
+      "coverage_cached_count": 66,
       "coverage_errors": []
     },
     {
@@ -155,7 +155,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 25,
+      "coverage_cached_count": 24,
       "coverage_errors": []
     },
     {
@@ -167,7 +167,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 209,
+      "coverage_cached_count": 202,
       "coverage_errors": []
     },
     {
@@ -185,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 5,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 348,
+      "coverage_cached_count": 342,
       "coverage_errors": []
     }
   ],
@@ -201,8 +201,8 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 2796,
-  "semantic_deep_read_count": 1,
+  "semantic_rescored_count": 2797,
+  "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3618,
+    "hot_count": 3619,
     "cold_count": 0
   },
   "coverage_audit": {
-    "generated_at": "2026-10-31T12:48:29.049632+00:00",
+    "generated_at": "2026-11-01T06:25:23.840864+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
