@@ -63,7 +63,7 @@
       captured_at:clean(a.content_checked_at||a.first_seen),summary:clean(a.summary).slice(0,1600),
       text:clean(a.content_excerpt).slice(0,6000),completeness:a.content_completeness==='full'?'full':a.content_completeness==='partial'?'partial':'summary'};
   }
-  function rankArticles(rows,question,limit=6){return rows.map(a=>({a,score:rank(a,question)})).filter(x=>x.score>=4).sort((a,b)=>b.score-a.score||String(b.a.published).localeCompare(String(a.a.published))).slice(0,limit).map(x=>x.a);}
+  function rankArticles(rows,question,limit=6){return rows.filter(a=>a.evidence_chars===undefined||a.evidence_chars>=60).map(a=>({a,score:rank(a,question)})).filter(x=>x.score>=4).sort((a,b)=>b.score-a.score||String(b.a.published).localeCompare(String(a.a.published))).slice(0,limit).map(x=>x.a);}
   function prepareRequest(input){
     const allowed=new Set(['action','question','history','source_ids','source_urls','scope','provider','api_key','model']);
     if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).some(k=>!allowed.has(k)))throw Error('invalid_request');

@@ -14,9 +14,9 @@ for(let i=0;i<rows.length;i++){
  const row=rows[i],bucket=crypto.createHash('sha256').update(row.id).digest('hex')[0];
  shards[parseInt(bucket,16)][row.id]=row;
  const terms=[...docs[i]].map(([word,n])=>({word,weight:Math.log(1+n)*Math.log(1+rows.length/(df.get(word)||1))})).sort((a,b)=>b.weight-a.weight).slice(0,45).map(x=>x.word);
- index.push({id:row.id,url:row.url,title:row.title,source:row.source,published:row.published,summary:row.summary.slice(0,260),search_terms:terms,shard:bucket});
+ index.push({id:row.id,url:row.url,title:row.title,source:row.source,published:row.published,summary:row.summary.slice(0,260),evidence_chars:(row.text||row.summary).length,search_terms:terms,shard:bucket});
 }
-const generation=crypto.createHash('sha256').update(JSON.stringify(rows)).digest('hex').slice(0,20);
+const generation=crypto.createHash('sha256').update(JSON.stringify({schema:2,rows,index})).digest('hex').slice(0,20);
 const meta={schema_version:1,public_only:true,generated_at:raw.meta?.generated_at||'',generation,article_count:rows.length};
 const target=path.join(out,'work-system-qa-public');fs.mkdirSync(target,{recursive:true});
 for(let i=0;i<16;i++)fs.writeFileSync(path.join(target,i.toString(16)+'.json'),JSON.stringify({meta,articles:shards[i]}));
