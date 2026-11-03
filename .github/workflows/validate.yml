@@ -40,6 +40,10 @@ jobs:
             echo "Checking $f"
             node --check "$f"
           done
+      - name: Check public knowledge QA privacy and grounding
+        run: |
+          node scripts/test_work_system_qa.cjs
+          node --experimental-transform-types scripts/test_work_system_qa_edge.mjs
       - name: Check automatic cross-device sync
         run: |
           node scripts/test_weekly_auto_sync.cjs

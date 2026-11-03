@@ -1,0 +1,43 @@
+name: Build public Work System QA evidence
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build_work_system_qa_public.cjs"
+      - "work-system-qa-core.js"
+      - ".github/workflows/work-system-qa-public.yml"
+  workflow_run:
+    workflows: ["Update feeds", "Continue public article queue"]
+    types: [completed]
+permissions:
+  contents: write
+concurrency:
+  group: work-system-public-qa-build
+  cancel-in-progress: false
+jobs:
+  build:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - name: Build public-only search index and evidence shards
+        run: |
+          git config user.name "reading-dashboard-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            node scripts/build_work_system_qa_public.cjs
+            git add data/work-system-qa-public.json data/work-system-qa-public
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Refresh public Work System QA evidence"
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
