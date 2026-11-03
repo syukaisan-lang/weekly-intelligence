@@ -107,9 +107,9 @@ async function sourcesFor(input:any,forAnswer=false){
   return{sources,issues,corpus_size:rows.length,snapshot_at:corpusSnapshot,generation:corpusGeneration};
 }
 function credentials(input:any){
-  const configured=Deno.env.get(input.provider==='claude'?'WORK_SYSTEM_QA_ANTHROPIC_KEY':'WORK_SYSTEM_QA_GEMINI_KEY')||'';
+  const configured=Deno.env.get(input.provider==='openai'?'WORK_SYSTEM_QA_OPENAI_KEY':'WORK_SYSTEM_QA_GEMINI_KEY')||'';
   const api_key=input.api_key||configured;
-  const model=input.model||Deno.env.get(input.provider==='claude'?'WORK_SYSTEM_QA_CLAUDE_MODEL':'WORK_SYSTEM_QA_GEMINI_MODEL')||'';
+  const model=input.model||Deno.env.get(input.provider==='openai'?'WORK_SYSTEM_QA_OPENAI_MODEL':'WORK_SYSTEM_QA_GEMINI_MODEL')||'';
   if(!api_key)throw new QAError('model_not_configured',412);return{api_key,model};
 }
 async function providerFetch(url:string,init:RequestInit){
@@ -119,9 +119,9 @@ async function providerFetch(url:string,init:RequestInit){
 }
 async function models(input:any){
   const {api_key}=credentials(input);
-  if(input.provider==='claude'){
-    const r=await providerFetch('https://api.anthropic.com/v1/models?limit=100',{headers:{'x-api-key':api_key,'anthropic-version':'2023-06-01'}});
-    return(r.data||[]).filter((x:any)=>x.id?.startsWith('claude-')).map((x:any)=>({id:x.id,name:x.display_name||x.id}));
+  if(input.provider==='openai'){
+    const r=await providerFetch('https://api.openai.com/v1/models',{headers:{Authorization:'Bearer '+api_key}});
+    return(r.data||[]).filter((x:any)=>/^(?:gpt-[4-9]|o[1-9])/.test(x.id||'')&&!/audio|realtime|image|transcribe|tts|search|deep-research|codex|chat-latest|instruct/.test(x.id)).sort((a:any,b:any)=>(b.created||0)-(a.created||0)).map((x:any)=>({id:x.id,name:x.id}));
   }
   const r=await providerFetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=100',{headers:{'x-goog-api-key':api_key}});
   return(r.models||[]).filter((x:any)=>(x.supportedGenerationMethods||[]).includes('generateContent')).map((x:any)=>({id:x.name.replace(/^models\//,''),name:x.displayName||x.name}));
@@ -129,9 +129,13 @@ async function models(input:any){
 async function answer(input:any,sources:any[]){
   const {api_key,model}=credentials(input);if(!model)throw new QAError('model_required',412);
   const prompt=Q.prompt(input.question,sources,input.history);let raw='';
-  if(input.provider==='claude'){
-    const result=await providerFetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':api_key,'anthropic-version':'2023-06-01'},body:JSON.stringify({model,max_tokens:2000,messages:[{role:'user',content:prompt}]})});
-    if(result.stop_reason==='max_tokens')throw new QAError('answer_incomplete',502);raw=(result.content||[]).filter((p:any)=>p.type==='text').map((p:any)=>p.text).join('\n');
+  if(input.provider==='openai'){
+    const body:any={model,input:prompt,store:false,max_output_tokens:4000,text:{format:{type:'json_object'}}};
+    if(/^(?:gpt-[5-9]|o[1-9])/.test(model)&&!/pro/.test(model))body.reasoning={effort:'low'};
+    const result=await providerFetch('https://api.openai.com/v1/responses',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+api_key},body:JSON.stringify(body)});
+    if(result.status==='incomplete')throw new QAError('answer_incomplete',502);
+    if(result.status!=='completed')throw new QAError('model_request_failed',502);
+    raw=(result.output||[]).filter((item:any)=>item.type==='message').flatMap((item:any)=>item.content||[]).filter((part:any)=>part.type==='output_text').map((part:any)=>part.text).join('\n');
   }else{
     const result=await providerFetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':api_key},body:JSON.stringify({contents:[{role:'user',parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:2200,responseMimeType:'application/json'}})});
     if(result.candidates?.[0]?.finishReason==='MAX_TOKENS')throw new QAError('answer_incomplete',502);raw=(result.candidates?.[0]?.content?.parts||[]).map((p:any)=>p.text||'').join('\n');
@@ -142,7 +146,7 @@ Deno.serve(async(req:Request)=>{
   if(req.method==='OPTIONS')return new Response('ok',{headers:HEADERS});
   if(req.headers.get('origin')&&req.headers.get('origin')!==ORIGIN)return reply({error:'origin_not_allowed'},403);
   const syncKey=req.headers.get('x-sync-key')||'';const owner=!!syncKey&&await sha(syncKey)===EXPECTED_HASH;const ci=!owner&&await ciReadAllowed(req);if(!owner&&!ci)return reply({error:'unauthorized'},401);
-  if(req.method==='GET')return reply({providers:{claude:{configured:!!Deno.env.get('WORK_SYSTEM_QA_ANTHROPIC_KEY'),model:Deno.env.get('WORK_SYSTEM_QA_CLAUDE_MODEL')||''},gemini:{configured:!!Deno.env.get('WORK_SYSTEM_QA_GEMINI_KEY'),model:Deno.env.get('WORK_SYSTEM_QA_GEMINI_MODEL')||''}},public_only:true,stores_conversation:false});
+  if(req.method==='GET')return reply({providers:{openai:{configured:!!Deno.env.get('WORK_SYSTEM_QA_OPENAI_KEY'),model:Deno.env.get('WORK_SYSTEM_QA_OPENAI_MODEL')||''},gemini:{configured:!!Deno.env.get('WORK_SYSTEM_QA_GEMINI_KEY'),model:Deno.env.get('WORK_SYSTEM_QA_GEMINI_MODEL')||''}},public_only:true,stores_conversation:false});
   if(req.method!=='POST')return reply({error:'method_not_allowed'},405);
   try{
     const raw=await bounded(req,60000);let input:any;try{input=Q.prepareRequest(JSON.parse(raw));}catch{throw new QAError('invalid_request');}
