@@ -43,6 +43,7 @@ jobs:
       - name: Check public knowledge QA privacy and grounding
         run: |
           node scripts/test_work_system_qa.cjs
+          node scripts/test_work_system_qa_ui.cjs
           node --experimental-transform-types scripts/test_work_system_qa_edge.mjs
       - name: Check automatic cross-device sync
         run: |

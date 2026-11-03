@@ -2,15 +2,34 @@
 (()=>{
   const Q=window.PublicWorkQA,API='https://cjcnjcblipqsyzxvlbus.supabase.co/functions/v1/work-system-qa';
   const el=id=>document.getElementById(id);
-  let sources=[],issues=[],history=[],question='',busy=false,controller=null,apiKey='',providers={},selectedModel='',generation=0;
+  let sources=[],issues=[],history=[],question='',busy=false,controller=null,apiKey='',providers={},selectedModel='',generation=0,verifiedProvider='';
   const messages={unauthorized:'同步码不正确。请在答疑设置中填写与文章、活动相同的同步码。',model_not_configured:'尚未接入模型 API。可在设置中填写密钥，或复制提问材料到现有 ChatGPT 试答。',model_required:'请先在设置中选择一个可用模型。',model_key_invalid:'模型 API 密钥未通过验证，请检查密钥及其权限。',model_quota_exceeded:'模型额度或调用频率已达上限，请在服务商后台检查。',model_request_failed:'模型请求未完成，请检查模型权限后重试。',answer_incomplete:'回答因长度限制中断，没有展示不完整结论。请缩小问题后重试。',invalid_answer:'模型没有按要求返回可验证的回答，请重试或缩小问题。',invalid_citation:'模型引用了本次证据以外的来源，本次回答未展示。',uncited_answer:'模型未给出可核对的来源，本次回答未展示。请重试或查看原文。',no_public_evidence:'没有找到足够的可读取公开依据，可换个问法或补充收藏原文。',sources_required:'请先勾选至少一篇公开资料。',corpus_unavailable:'公开文章库暂时无法加载，请稍后重试。',service_unavailable:'答疑服务暂时不可用，请稍后重试。',too_many_requests:'请稍等几秒再生成回答。'};
   function status(text){el('qaStatus').textContent=text;}
   function getKey(){return localStorage.getItem('weekly_intelligence_sync_key_v1')||localStorage.getItem('event_radar_sync_key_v1')||'';}
   function provider(){return el('qaProvider').value;}
-  function hasModel(){return !!(apiKey||providers[provider()]?.configured)&&!!el('qaModel').value.trim();}
+  function providerLabel(){return provider()==='openai'?'OpenAI':'Gemini';}
+  function pendingKey(){return !!el('qaApiKey')?.value?.trim();}
+  function hasModel(){return verifiedProvider===provider()&&!pendingKey()&&!!(apiKey||providers[provider()]?.configured)&&!!el('qaModel').value.trim();}
+  function configurationReason(){
+    if(pendingKey())return '密钥已填写，请点“验证并读取模型”；填写本身不会完成连接。';
+    if(!apiKey&&!providers[provider()]?.configured)return '本页尚未验证 '+providerLabel()+' API 密钥。刷新会清空密钥，请在答疑设置中重新填写并验证。';
+    if(verifiedProvider!==provider())return '请重新验证 '+providerLabel()+' 密钥并读取模型，验证成功后才能生成回答。';
+    return '请选择一个可用的 '+providerLabel()+' 模型。';
+  }
+  function openAnswerSettings(){
+    el('qaSettings').open=true;status(configurationReason());
+    el('qaSettings').scrollIntoView({behavior:'smooth',block:'nearest'});
+    if(!getKey())el('qaSyncKey').focus();else if(pendingKey())el('qaConnect').focus();else if(!apiKey&&!providers[provider()]?.configured)el('qaApiKey').focus();else if(verifiedProvider!==provider())el('qaConnect').focus();else el('qaModel').focus();
+  }
   function selected(){return sources.filter(s=>el('qaSources').querySelector(`input[data-ref="${s.ref}"]`)?.checked);}
   function questionNow(){return el('qaQuestion').value.trim();}
-  function controls(){el('qaFind').disabled=busy;el('qaAsk').disabled=busy||!selected().length||!hasModel()||questionNow()!==question;el('qaCopy').disabled=busy||!selected().length||questionNow()!==question;el('qaCancel').hidden=!busy;el('qaConnect').disabled=busy;el('qaProvider').disabled=busy;el('qaModel').disabled=busy;el('qaNew').disabled=busy;el('qaQuestion').readOnly=busy;el('qaScope').disabled=busy;}
+  function controls(){
+    const count=selected().length,same=questionNow()===question,ready=hasModel();
+    el('qaFind').disabled=busy;el('qaAsk').disabled=busy||!count;
+    el('qaAsk').textContent=busy?'正在处理…':!count?'请先勾选资料':!same?'重新查找依据':ready?'用所选资料回答':(pendingKey()||apiKey?'验证 ':'设置 ')+providerLabel()+' 后回答';
+    el('qaAnswerHint').textContent=busy?'正在处理，请稍候。':!count?'请至少勾选一篇公开资料。':!same?'问题已修改。点击上方按钮重新查找依据，之后再回答。':ready?'已选 '+count+' 篇资料，'+providerLabel()+' 已连接。点击回答才会调用模型。':configurationReason()+' 点击上方按钮可直接打开设置。';
+    el('qaCopy').disabled=busy||!count||!same;el('qaCancel').hidden=!busy;el('qaConnect').disabled=busy;el('qaProvider').disabled=busy;el('qaModel').disabled=busy;el('qaNew').disabled=busy;el('qaQuestion').readOnly=busy;el('qaScope').disabled=busy;
+  }
   function configNote(){el('qaModelNote').textContent=hasModel()?'已选择模型；点“用所选资料回答”才会调用。问题和所选公开资料会发送给 '+(provider()==='openai'?'OpenAI':'Google Gemini')+'，费用按你的 API 账户规则计算。':'网页直答尚未接入模型。可先检索并复制材料到 ChatGPT；API 设置完成后可在此直接回答。';}
   async function call(action,payload={},signal,keyOverride){
     const key=keyOverride||getKey();if(!key){el('qaSettings').open=true;throw Error('missing_sync_key');}
@@ -63,7 +82,7 @@
     const chips=document.createElement('div');chips.className='qa-chips';for(const text of result.follow_ups||[]){const b=document.createElement('button');b.type='button';b.textContent=text;b.onclick=()=>{el('qaQuestion').value=text;el('qaQuestion').focus();controls();status('已填入追问，点击“查找依据”更新资料。');};chips.append(b);}turn.append(chips);el('qaConversation').append(turn);turn.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
   async function generate(){
-    if(busy)return;const chosen=selected(),q=questionNow();if(q!==question){status('问题已修改，请重新查找依据。');return;}if(!chosen.length){status('请勾选至少一篇公开资料。');return;}if(!hasModel()){el('qaSettings').open=true;status('请先设置模型，或复制材料到 ChatGPT 试答。');return;}
+    if(busy)return;const chosen=selected(),q=questionNow();if(q!==question){await retrieve();return;}if(!chosen.length){status('请勾选至少一篇公开资料。');return;}if(!hasModel()){openAnswerSettings();return;}
     busy=true;const seq=++generation;controller=new AbortController();controls();status('正在基于所选公开资料生成回答…');
     try{
       const result=await call('answer',{question:q,history,source_ids:chosen.map(s=>s.id),source_urls:chosen.map(s=>s.url),provider:provider(),model:el('qaModel').value.trim(),api_key:apiKey},controller.signal);
@@ -77,33 +96,34 @@
   }
   async function connect(){
     if(busy)return;const code=el('qaSyncKey').value.trim();
-    apiKey=el('qaApiKey').value.trim()||apiKey;el('qaApiKey').value='';el('qaSyncKey').value='';busy=true;controls();status('正在检查模型 API 和可用模型…');
+    verifiedProvider='';apiKey=el('qaApiKey').value.trim()||apiKey;el('qaApiKey').value='';el('qaSyncKey').value='';busy=true;controls();status('正在检查模型 API 和可用模型…');
     try{
       const config=await call('status',{},undefined,code||getKey());providers=config.providers||{};if(code)localStorage.setItem('weekly_intelligence_sync_key_v1',code);
       if(!apiKey&&!providers[provider()]?.configured){configNote();status(messages.model_not_configured);return;}
       const result=await call('models',{provider:provider(),api_key:apiKey});const select=el('qaModel'),current=select.value;select.replaceChildren();
       const list=result.models||[];if(!list.length)throw Error('model_required');
       for(const m of list){const o=document.createElement('option');o.value=m.id;o.textContent=m.name+' · '+m.id;select.append(o);}
-      const preferred=list.find(m=>m.id===current)||list.find(m=>provider()==='openai'?/mini/.test(m.id):/flash/.test(m.id)&&!/-image|-live|-tts/.test(m.id))||list[0];select.value=preferred.id;selectedModel=preferred.id;
+      const preferred=list.find(m=>m.id===current)||list.find(m=>provider()==='openai'?/mini/.test(m.id):/flash/.test(m.id)&&!/-image|-live|-tts/.test(m.id))||list[0];select.value=preferred.id;selectedModel=preferred.id;verifiedProvider=provider();
       status('已验证密钥并读取可用模型。点击“用所选资料回答”才开始调用生成。');el('qaSettings').open=false;
-    }catch(e){fail(e);}finally{busy=false;controls();configNote();}
+    }catch(e){el('qaSettings').open=true;fail(e);}finally{busy=false;controls();configNote();if(hasModel()&&selected().length&&questionNow()===question){el('qaAsk').scrollIntoView({behavior:'smooth',block:'nearest'});el('qaAsk').focus();}}
   }
   function mount(){
     const target=document.getElementById('workSystemGate');if(!target)return;
     const section=document.createElement('section');section.className='work-qa';section.id='workSystemQA';
-    section.innerHTML='<div class="work-qa-head"><div><div class="qa-eyebrow">ASK YOUR KNOWLEDGE · 试用</div><h2>用知识回答工作问题</h2><p class="muted small">先找公开依据，再整理成带引用的回答。支持追问，资料不足时明确说明。</p></div><button id="qaNew" class="text-btn" type="button">新问题</button></div><div class="qa-chips" id="qaExamples"></div><label for="qaQuestion" class="qa-note">你现在需要解决什么？</label><textarea id="qaQuestion" maxlength="1800" placeholder="例如：ROAS下降，但自然销售增长，应该先排查什么？"></textarea><div class="qa-actions"><select id="qaScope" class="qa-scope" aria-label="资料范围"><option value="combined">收藏原文 + 公开文章</option><option value="collection">只用 Knowledge 收藏原文（需解锁）</option></select><button id="qaFind" type="button" class="btn qa-primary">查找依据</button><button id="qaCancel" class="text-btn" type="button" hidden>停止</button></div><p class="qa-note">发送范围：你的问题、最近两轮对话和所选公开资料。私人工作经验、Notion 备注和体系规则不发送。解锁后可在本机识别收藏原文链接。</p><div id="qaStatus" class="qa-status" role="status" aria-live="polite">可先查找资料并复制到 ChatGPT；网页直答需在下方设置模型 API。</div><details id="qaSettings" class="qa-settings"><summary>答疑设置 · 同步码与模型 API</summary><p class="qa-note">沿用文章或活动的同步码。模型 API 密钥仅保留在本页内存，刷新即清空，不写入备份。调用可能按你的 API 账户规则计费。</p><div class="qa-setting-grid"><label><span>同步码（已绑定设备自动沿用）</span><input id="qaSyncKey" type="password" autocomplete="off" placeholder="已有同步码，无需重复填写"></label><label><span>模型服务商</span><select id="qaProvider"><option value="openai">OpenAI / ChatGPT</option><option value="gemini">Google Gemini</option></select></label><label><span>API 密钥（默认使用 OpenAI）</span><input id="qaApiKey" type="password" autocomplete="off" placeholder="在网页填写，不要发到聊天中"></label><label><span>可用模型（验证密钥后读取）</span><select id="qaModel"><option value="">尚未选择模型</option></select></label></div><div class="qa-actions"><button id="qaConnect" class="btn" type="button">验证并读取模型</button><button id="qaForget" class="text-btn" type="button">清除本页 API 密钥</button><a class="qa-hint-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" id="qaKeyLink">获取 OpenAI API 密钥 ↗</a></div><p id="qaModelNote" class="qa-note"></p></details><section id="qaEvidence" class="qa-evidence" hidden><h3 id="qaEvidenceTitle"></h3><p id="qaEvidenceNote" class="qa-note"></p><div id="qaSources" class="qa-sources"></div><div class="qa-actions"><button id="qaAsk" class="btn qa-primary" type="button" disabled>用所选资料回答</button><button id="qaCopy" class="btn secondary" type="button" disabled>复制提问材料到 ChatGPT</button></div><textarea id="qaHandoff" class="qa-handoff" readonly aria-label="可复制的公开资料与提问" hidden></textarea></section><div id="qaConversation" aria-live="polite"></div>';
+    section.innerHTML='<div class="work-qa-head"><div><div class="qa-eyebrow">ASK YOUR KNOWLEDGE · 试用</div><h2>用知识回答工作问题</h2><p class="muted small">先找公开依据，再整理成带引用的回答。支持追问，资料不足时明确说明。</p></div><button id="qaNew" class="text-btn" type="button">新问题</button></div><div class="qa-chips" id="qaExamples"></div><label for="qaQuestion" class="qa-note">你现在需要解决什么？</label><textarea id="qaQuestion" maxlength="1800" placeholder="例如：ROAS下降，但自然销售增长，应该先排查什么？"></textarea><div class="qa-actions"><select id="qaScope" class="qa-scope" aria-label="资料范围"><option value="combined">收藏原文 + 公开文章</option><option value="collection">只用 Knowledge 收藏原文（需解锁）</option></select><button id="qaFind" type="button" class="btn qa-primary">查找依据</button><button id="qaCancel" class="text-btn" type="button" hidden>停止</button></div><p class="qa-note">发送范围：你的问题、最近两轮对话和所选公开资料。私人工作经验、Notion 备注和体系规则不发送。解锁后可在本机识别收藏原文链接。</p><div id="qaStatus" class="qa-status" role="status" aria-live="polite">可先查找资料并复制到 ChatGPT；网页直答需在下方设置模型 API。</div><details id="qaSettings" class="qa-settings"><summary>答疑设置 · 同步码与模型 API</summary><p class="qa-note">沿用文章或活动的同步码。模型 API 密钥仅保留在本页内存，刷新即清空，不写入备份。调用可能按你的 API 账户规则计费。</p><div class="qa-setting-grid"><label><span>同步码（已绑定设备自动沿用）</span><input id="qaSyncKey" type="password" autocomplete="off" placeholder="已有同步码，无需重复填写"></label><label><span>模型服务商</span><select id="qaProvider"><option value="openai">OpenAI / ChatGPT</option><option value="gemini">Google Gemini</option></select></label><label><span>API 密钥（默认使用 OpenAI）</span><input id="qaApiKey" type="password" autocomplete="off" placeholder="在网页填写，不要发到聊天中"></label><label><span>可用模型（验证密钥后读取）</span><select id="qaModel"><option value="">尚未选择模型</option></select></label></div><div class="qa-actions"><button id="qaConnect" class="btn" type="button">验证并读取模型</button><button id="qaForget" class="text-btn" type="button">清除本页 API 密钥</button><a class="qa-hint-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" id="qaKeyLink">获取 OpenAI API 密钥 ↗</a></div><p id="qaModelNote" class="qa-note"></p></details><section id="qaEvidence" class="qa-evidence" hidden><h3 id="qaEvidenceTitle"></h3><p id="qaEvidenceNote" class="qa-note"></p><div id="qaSources" class="qa-sources"></div><div class="qa-actions"><button id="qaAsk" class="btn qa-primary" type="button" disabled>用所选资料回答</button><button id="qaCopy" class="btn secondary" type="button" disabled>复制提问材料到 ChatGPT</button></div><p id="qaAnswerHint" class="qa-note" role="status" aria-live="polite"></p><textarea id="qaHandoff" class="qa-handoff" readonly aria-label="可复制的公开资料与提问" hidden></textarea></section><div id="qaConversation" aria-live="polite"></div>';
     target.before(section);
     for(const text of ['新品预算有限，先做认知还是转化？','ROAS下降但自然销售增长，先查什么？','日本消费者的消费观发生了什么变化？']){const b=document.createElement('button');b.type='button';b.textContent=text;b.onclick=()=>{if(busy)return;el('qaQuestion').value=text;el('qaQuestion').focus();controls();};el('qaExamples').append(b);}
     el('qaFind').onclick=retrieve;el('qaAsk').onclick=generate;el('qaCopy').onclick=copyMaterials;el('qaConnect').onclick=connect;
     el('qaQuestion').addEventListener('input',controls);el('qaQuestion').addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();retrieve();}});
+    el('qaApiKey').addEventListener('input',()=>{controls();configNote();});
     el('qaModel').onchange=()=>{selectedModel=el('qaModel').value;controls();configNote();};
-    el('qaProvider').onchange=()=>{apiKey='';el('qaApiKey').value='';el('qaModel').replaceChildren(new Option('尚未选择模型',''));selectedModel='';el('qaKeyLink').href=provider()==='openai'?'https://platform.openai.com/api-keys':'https://aistudio.google.com/apikey';el('qaKeyLink').textContent=provider()==='openai'?'获取 OpenAI API 密钥 ↗':'获取 Gemini API 密钥 ↗';controls();configNote();};
-    el('qaForget').onclick=()=>{apiKey='';el('qaApiKey').value='';controls();configNote();status('本页 API 密钥已清除。');};
+    el('qaProvider').onchange=()=>{verifiedProvider='';apiKey='';el('qaApiKey').value='';el('qaModel').replaceChildren(new Option('尚未选择模型',''));selectedModel='';el('qaKeyLink').href=provider()==='openai'?'https://platform.openai.com/api-keys':'https://aistudio.google.com/apikey';el('qaKeyLink').textContent=provider()==='openai'?'获取 OpenAI API 密钥 ↗':'获取 Gemini API 密钥 ↗';controls();configNote();};
+    el('qaForget').onclick=()=>{verifiedProvider='';apiKey='';el('qaApiKey').value='';controls();configNote();status('本页 API 密钥已清除。');};
     el('qaCancel').onclick=()=>{controller?.abort();generation++;busy=false;controller=null;controls();status('已停止等待；若模型请求已经发出，服务商仍可能计入本次用量。');};
     el('qaNew').onclick=()=>{history=[];sources=[];issues=[];question='';el('qaConversation').replaceChildren();el('qaSources').replaceChildren();el('qaEvidence').hidden=true;el('qaQuestion').value='';el('qaQuestion').focus();el('qaHandoff').value='';el('qaHandoff').hidden=true;controls();status('已开始新问题。旧对话仅在本页内存中，未上传保存。');};
     controls();configNote();
     // No question, private data or model request is sent on page load.
-    window.WorkSystemQA={clear:()=>{apiKey='';history=[];sources=[];question='';el('qaConversation').replaceChildren();el('qaSources').replaceChildren();el('qaEvidence').hidden=true;el('qaApiKey').value='';el('qaHandoff').value='';controls();}};
+    window.WorkSystemQA={clear:()=>{verifiedProvider='';apiKey='';history=[];sources=[];question='';el('qaConversation').replaceChildren();el('qaSources').replaceChildren();el('qaEvidence').hidden=true;el('qaApiKey').value='';el('qaHandoff').value='';controls();}};
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
 })();
