@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "scripts/build_work_system_qa_public.cjs"
+      - "scripts/check_work_system_qa_live.mjs"
       - "work-system-qa-core.js"
       - ".github/workflows/work-system-qa-public.yml"
   workflow_run:
@@ -12,6 +13,7 @@ on:
     types: [completed]
 permissions:
   contents: write
+  id-token: write
 concurrency:
   group: work-system-public-qa-build
   cancel-in-progress: false
@@ -41,3 +43,5 @@ jobs:
             if git push origin HEAD:main; then exit 0; fi
           done
           exit 1
+      - name: Verify deployed public retrieval without model charges
+        run: node scripts/check_work_system_qa_live.mjs
