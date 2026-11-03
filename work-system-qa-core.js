@@ -72,7 +72,7 @@
     const history=Array.isArray(input.history)?input.history.slice(-4).map(m=>({role:m.role==='assistant'?'assistant':'user',content:String(m.content||'').slice(0,6000)})):[];
     const source_ids=Array.isArray(input.source_ids)?[...new Set(input.source_ids.filter(x=>typeof x==='string'&&/^[\w-]{1,128}$/.test(x)))].slice(0,8):[];
     const source_urls=Array.isArray(input.source_urls)?[...new Set(input.source_urls.map(publicURL).filter(Boolean))].slice(0,6):[];
-    const provider=input.provider||'claude';if(!['claude','gemini'].includes(provider))throw Error('invalid_provider');
+    const provider=input.provider||'openai';if(!['openai','gemini'].includes(provider))throw Error('invalid_provider');
     const model=String(input.model||'').trim();if(model&&!/^[a-zA-Z0-9._-]{1,100}$/.test(model))throw Error('invalid_model');
     const api_key=String(input.api_key||'').trim();if(api_key.length>1024)throw Error('invalid_key');
     return {action,question,history,source_ids,source_urls,scope:input.scope==='collection'?'collection':'combined',provider,model,api_key};

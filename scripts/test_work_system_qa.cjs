@@ -16,6 +16,7 @@ for(const extra of ['context','notes','private','system','page_body','sources'])
 assert.throws(()=>Q.prepareRequest({question:'ROAS',model:'../secret'}));
 assert.throws(()=>Q.prepareRequest({question:'ROAS',provider:'http://localhost'}));
 const input=Q.prepareRequest({question:'ROAS低下',history:Array.from({length:9},()=>({role:'system',content:'user question'})),source_urls:['https://notion.so/private','https://markezine.jp/article/detail/1']});
+assert.equal(input.provider,'openai');assert.throws(()=>Q.prepareRequest({question:'ROAS',provider:'claude'}),/invalid_provider/);
 assert.equal(input.history.length,4);assert(input.history.every(m=>m.role==='user'));assert.equal(input.source_urls.length,1);
 const source={...publicRow,ref:'S123456789abc',text:'public evidence'};
 assert(Q.prompt('广告如何优化',[source]).includes('public_sources'));
@@ -25,7 +26,7 @@ assert.throws(()=>Q.parseAnswer(JSON.stringify({answer:'编造来源[S0000000000
 assert.throws(()=>Q.parseAnswer(JSON.stringify({answer:'无依据断言。'}),[source]),/uncited_answer/);
 assert.throws(()=>Q.parseAnswer('not JSON',[source]),/invalid_answer/);
 assert.equal(fs.readFileSync(path.join(root,'work-system-qa-core.js'),'utf8'),fs.readFileSync(path.join(root,'supabase/functions/work-system-qa/qa-core.js'),'utf8'));
-const ui=fs.readFileSync(path.join(root,'work-system-qa.js'),'utf8');assert(!/localStorage\.setItem\([^\n]*(?:apiKey|qaApiKey)/.test(ui),'API keys must never enter durable browser storage');
+const ui=fs.readFileSync(path.join(root,'work-system-qa.js'),'utf8');assert(ui.includes('<option value="openai">OpenAI / ChatGPT</option>'));assert(!ui.includes('value="claude"'));assert(ui.includes('https://platform.openai.com/api-keys'));assert(!/localStorage\.setItem\([^\n]*(?:apiKey|qaApiKey)/.test(ui),'API keys must never enter durable browser storage');
 const os=require('node:os'),{execFileSync}=require('node:child_process'),temp=fs.mkdtempSync(path.join(os.tmpdir(),'public-qa-test-'));
 try{
  const input=path.join(temp,'articles.json'),out=path.join(temp,'out');
