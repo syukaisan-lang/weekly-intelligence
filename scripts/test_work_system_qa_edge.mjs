@@ -6,14 +6,15 @@ const expectedHash='15b50658d8ff8f7dbb1883b6b8cb496aec7f2e7a95150c7a0b2dce863046
 Object.defineProperty(globalThis,'crypto',{configurable:true,value:{subtle:{digest:async(algorithm,bytes)=>{
  if(new TextDecoder().decode(bytes)==='test-only-valid-key')return Uint8Array.from(expectedHash.match(/../g),s=>parseInt(s,16)).buffer;
  return webcrypto.subtle.digest(algorithm,bytes);
-}}}});
-let handler,mode='valid',calls=[];
+},importKey:webcrypto.subtle.importKey.bind(webcrypto.subtle),verify:webcrypto.subtle.verify.bind(webcrypto.subtle)}}});
+let handler,mode='valid',calls=[],ciJwk;
 const realNow=Date.now;let offset=0;Date.now=()=>realNow()+offset;
 globalThis.Deno={env:{get:()=>undefined},serve:fn=>{handler=fn;}};
 const now=new Date().toISOString();
 const corpus={meta:{generated_at:now},articles:[{id:'a',url:'https://markezine.jp/article/detail/1',title:'ROASと自然検索売上を分けて考える',summary:'広告費用対効果と購買行動を比較する。'.repeat(8),content_excerpt:'広告費用対効果と自然検索売上を比較し、広告停止時の変化も検証する。'.repeat(20),content_completeness:'full',published:'2026-11-01',first_seen:now,reason:'PRIVATE-EXPERIENCE',comments:['PRIVATE-COMMENT'],knowledge_context:{memo:'PRIVATE-RULE'}}]};
 globalThis.fetch=async(url,opts={})=>{
   url=String(url);calls.push({url,opts});
+  if(url==='https://token.actions.githubusercontent.com/.well-known/jwks')return new Response(JSON.stringify({keys:[ciJwk]}));
   if(url.includes('/data/work-system-qa-public.json'))return new Response(JSON.stringify({meta:{public_only:true,generation:'fixture',generated_at:now},articles:corpus.articles.map(a=>({id:a.id,url:a.url,title:a.title,source:'MarkeZine',published:a.published,summary:a.summary,search_terms:['ROAS','自然検索','広告費用対効果'],shard:'a'}))}),{headers:{'content-type':'application/json'}});
   if(url.includes('/data/work-system-qa-public/a.json'))return new Response(JSON.stringify({meta:{public_only:true,generation:'fixture'},articles:Object.fromEntries(corpus.articles.map(a=>[a.id,{...a,text:a.content_excerpt,completeness:a.content_completeness}]))}),{headers:{'content-type':'application/json'}});
   if(url==='https://api.anthropic.com/v1/messages'){
@@ -59,4 +60,14 @@ offset+=5000;mode='bad-citation';
 const badCitation=await request({action:'answer',question:'ROAS下降',source_ids:['a'],provider:'claude',api_key:'fake-test-key',model:'claude-haiku-4-5'});assert.equal(badCitation.status,502);assert.equal(badCitation.body.error,'invalid_citation');
 offset+=5000;mode='valid';
 const geminiAnswer=await request({action:'answer',question:'ROAS下降',source_ids:['a'],provider:'gemini',api_key:'fake-test-key',model:'test-flash'});assert.equal(geminiAnswer.status,200);assert(geminiAnswer.body.citations.length);
+const pair=await webcrypto.subtle.generateKey({name:'RSASSA-PKCS1-v1_5',modulusLength:2048,publicExponent:new Uint8Array([1,0,1]),hash:'SHA-256'},true,['sign','verify']);
+ciJwk={...await webcrypto.subtle.exportKey('jwk',pair.publicKey),kid:'ci-test-key'};
+const claims={iss:'https://token.actions.githubusercontent.com',aud:'work-system-qa-read',exp:Math.floor(Date.now()/1000)+120,iat:Math.floor(Date.now()/1000),nbf:Math.floor(Date.now()/1000)-1,repository:'syukaisan-lang/weekly-intelligence',ref:'refs/heads/main',workflow_ref:'syukaisan-lang/weekly-intelligence/.github/workflows/work-system-qa-public.yml@refs/heads/main',event_name:'push'};
+async function ciToken(payload){const h=Buffer.from(JSON.stringify({alg:'RS256',kid:ciJwk.kid})).toString('base64url'),p=Buffer.from(JSON.stringify(payload)).toString('base64url'),signature=await webcrypto.subtle.sign('RSASSA-PKCS1-v1_5',pair.privateKey,new TextEncoder().encode(h+'.'+p));return h+'.'+p+'.'+Buffer.from(signature).toString('base64url');}
+const token=await ciToken(claims),ciHeaders={'x-sync-key':'',authorization:'Bearer '+token};
+assert.equal((await request({action:'retrieve',question:'ROAS下降'},{headers:ciHeaders})).status,200);
+const beforePaid=calls.filter(c=>c.url.includes('/v1/messages')||c.url.includes(':generateContent')).length;
+assert.equal((await request({action:'answer',question:'ROAS下降',source_ids:['a'],api_key:'fake-test-key',model:'claude-haiku-4-5'},{headers:ciHeaders})).status,403);
+assert.equal(calls.filter(c=>c.url.includes('/v1/messages')||c.url.includes(':generateContent')).length,beforePaid);
+const wrongRepo=await ciToken({...claims,repository:'someone/other'});assert.equal((await request({action:'retrieve',question:'ROAS下降'},{headers:{'x-sync-key':'',authorization:'Bearer '+wrongRepo}})).status,401);
 console.log('Public QA Edge passed: auth, missing-model handling, public-only egress, corpus retrieval, robots/paywall/SSRF blocking, model listing and grounded answer adapter (mock model).');

@@ -11,6 +11,19 @@ let corpus:any[]=[],corpusAt=0,corpusSnapshot='',corpusGeneration='';
 const evidenceCache=new Map<string,any>();
 const pages=new Map<string,any>(),robotsCache=new Map<string,any>(),recent=new Map<string,number>();
 class QAError extends Error{constructor(public code:string,public status=400){super(code);}}
+const decodeJWT=(s:string)=>Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
+let ciJWKS:any=null;
+async function ciReadAllowed(req:Request){
+  try{
+    const token=(req.headers.get('authorization')||'').replace(/^Bearer /,'');const [head,payload,signature]=token.split('.');
+    const h=JSON.parse(new TextDecoder().decode(decodeJWT(head))),p=JSON.parse(new TextDecoder().decode(decodeJWT(payload))),now=Date.now()/1000;
+    if(h.alg!=='RS256'||p.iss!=='https://token.actions.githubusercontent.com'||p.aud!=='work-system-qa-read'||!Number.isFinite(p.exp)||p.exp<=now||p.iat<now-600||p.nbf>now+30||p.repository!=='syukaisan-lang/weekly-intelligence'||p.ref!=='refs/heads/main'||p.workflow_ref!=='syukaisan-lang/weekly-intelligence/.github/workflows/work-system-qa-public.yml@refs/heads/main'||!['push','workflow_dispatch','workflow_run'].includes(p.event_name))return false;
+    if(!ciJWKS){const r=await fetch('https://token.actions.githubusercontent.com/.well-known/jwks',{signal:AbortSignal.timeout(5000)});if(!r.ok)return false;ciJWKS=await r.json();}
+    const jwk=ciJWKS.keys.find((k:any)=>k.kid===h.kid);if(!jwk)return false;
+    const key=await crypto.subtle.importKey('jwk',jwk,{name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);
+    return await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,decodeJWT(signature),new TextEncoder().encode(head+'.'+payload));
+  }catch{return false;}
+}
 async function bounded(response:Response|Request,limit:number){
   const reader=response.body?.getReader();if(!reader)throw new QAError('empty_response',503);let size=0;const parts:Uint8Array[]=[];
   try{for(;;){const {value,done}=await reader.read();if(done)break;size+=value.length;if(size>limit)throw new QAError('response_too_large',413);parts.push(value);}}finally{reader.cancel().catch(()=>{});}
@@ -128,11 +141,13 @@ async function answer(input:any,sources:any[]){
 Deno.serve(async(req:Request)=>{
   if(req.method==='OPTIONS')return new Response('ok',{headers:HEADERS});
   if(req.headers.get('origin')&&req.headers.get('origin')!==ORIGIN)return reply({error:'origin_not_allowed'},403);
-  const syncKey=req.headers.get('x-sync-key')||'';if(!syncKey||await sha(syncKey)!==EXPECTED_HASH)return reply({error:'unauthorized'},401);
+  const syncKey=req.headers.get('x-sync-key')||'';const owner=!!syncKey&&await sha(syncKey)===EXPECTED_HASH;const ci=!owner&&await ciReadAllowed(req);if(!owner&&!ci)return reply({error:'unauthorized'},401);
   if(req.method==='GET')return reply({providers:{claude:{configured:!!Deno.env.get('WORK_SYSTEM_QA_ANTHROPIC_KEY'),model:Deno.env.get('WORK_SYSTEM_QA_CLAUDE_MODEL')||''},gemini:{configured:!!Deno.env.get('WORK_SYSTEM_QA_GEMINI_KEY'),model:Deno.env.get('WORK_SYSTEM_QA_GEMINI_MODEL')||''}},public_only:true,stores_conversation:false});
   if(req.method!=='POST')return reply({error:'method_not_allowed'},405);
   try{
     const raw=await bounded(req,60000);let input:any;try{input=Q.prepareRequest(JSON.parse(raw));}catch{throw new QAError('invalid_request');}
+    // The exact production evidence-builder may smoke-test public retrieval, never paid inference.
+    if(ci&&(input.action!=='retrieve'||input.source_urls.length||input.api_key))return reply({error:'ci_read_only'},403);
     if(input.action==='models')return reply({models:await models(input)});
     if(input.action==='answer'){
       credentials(input);const last=recent.get(EXPECTED_HASH)||0;if(Date.now()-last<4000)throw new QAError('too_many_requests',429);recent.set(EXPECTED_HASH,Date.now());
