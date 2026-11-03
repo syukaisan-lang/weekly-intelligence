@@ -29,10 +29,10 @@ async function bounded(response:Response|Request,limit:number){
   try{for(;;){const {value,done}=await reader.read();if(done)break;size+=value.length;if(size>limit)throw new QAError('response_too_large',413);parts.push(value);}}finally{reader.cancel().catch(()=>{});}
   const bytes=new Uint8Array(size);let offset=0;for(const part of parts){bytes.set(part,offset);offset+=part.length;}return new TextDecoder().decode(bytes);
 }
-async function loadCorpus(){
-  if(corpusAt&&Date.now()-corpusAt<300000)return corpus;
-  const r=await fetch(CORPUS,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw new QAError('corpus_unavailable',503);
-  const raw=JSON.parse(await bounded(r,6000000));if(raw.meta?.public_only!==true)throw new QAError('corpus_unavailable',503);
+async function loadCorpus(expected=''){
+  if(corpusAt&&Date.now()-corpusAt<300000&&(!expected||expected===corpusGeneration))return corpus;
+  const r=await fetch(CORPUS+(expected?'?v='+expected:''),{signal:AbortSignal.timeout(20000)});if(!r.ok)throw new QAError('corpus_unavailable',503);
+  const raw=JSON.parse(await bounded(r,6000000));if(raw.meta?.public_only!==true||expected&&raw.meta?.generation!==expected)throw new QAError('corpus_unavailable',503);
   corpusGeneration=raw.meta.generation||'';corpus=(raw.articles||[]).filter((a:any)=>Q.publicURL(a.url)&&/^[0-9a-f]$/.test(a.shard)).map((a:any)=>({...a,_searchTitle:Q.clean(a.title).toLowerCase(),_searchBody:Q.clean([a.summary,...(a.search_terms||[])].join(' ')).toLowerCase()}));
   corpusAt=Date.now();corpusSnapshot=raw.meta?.generated_at||'';return corpus;
 }
@@ -92,7 +92,7 @@ async function fromPublicPage(url:string){
   if(pages.size>80)pages.clear();pages.set(url,record);return record;
 }
 async function sourcesFor(input:any,forAnswer=false){
-  const rows=await loadCorpus(),selected:any[]=[],issues:any[]=[];
+  const rows=await loadCorpus(input.expectedGeneration||''),selected:any[]=[],issues:any[]=[];
   const byURL=new Map(rows.map(a=>[a.url,a]));
   const fetched=await Promise.allSettled(input.source_urls.map(async(url:string)=>byURL.get(url)||await fromPublicPage(url)));
   fetched.forEach((result:any,i:number)=>{if(result.status==='fulfilled')selected.push(result.value);else issues.push({url:input.source_urls[i],status:result.reason instanceof QAError?result.reason.code:'source_unavailable'});});
@@ -104,7 +104,7 @@ async function sourcesFor(input:any,forAnswer=false){
   const unique=selected.filter((a,i)=>selected.findIndex(s=>s.url===a.url)===i).slice(0,8);
   const sources=[];
   for(const row of unique){try{const a=await evidenceFor(row);const text=Q.excerpt(a.text||a.summary,input.question,1700);if(text.length<60)continue;sources.push({id:a.id,ref:'S'+(await sha(a.url)).slice(0,12),url:a.url,title:a.title,source:a.source,published:a.published,captured_at:a.captured_at,completeness:a.text?a.completeness:'summary',text});}catch(e){issues.push({url:row.url,status:e instanceof QAError?e.code:'source_snapshot_unavailable'});}}
-  return{sources,issues,corpus_size:rows.length,snapshot_at:corpusSnapshot};
+  return{sources,issues,corpus_size:rows.length,snapshot_at:corpusSnapshot,generation:corpusGeneration};
 }
 function credentials(input:any){
   const configured=Deno.env.get(input.provider==='claude'?'WORK_SYSTEM_QA_ANTHROPIC_KEY':'WORK_SYSTEM_QA_GEMINI_KEY')||'';
@@ -148,6 +148,7 @@ Deno.serve(async(req:Request)=>{
     const raw=await bounded(req,60000);let input:any;try{input=Q.prepareRequest(JSON.parse(raw));}catch{throw new QAError('invalid_request');}
     // The exact production evidence-builder may smoke-test public retrieval, never paid inference.
     if(ci&&(input.action!=='retrieve'||input.source_urls.length||input.api_key))return reply({error:'ci_read_only'},403);
+    if(ci){const expected=req.headers.get('x-qa-generation')||'';if(/^[0-9a-f]{20}$/.test(expected))input.expectedGeneration=expected;}
     if(input.action==='models')return reply({models:await models(input)});
     if(input.action==='answer'){
       credentials(input);const last=recent.get(EXPECTED_HASH)||0;if(Date.now()-last<4000)throw new QAError('too_many_requests',429);recent.set(EXPECTED_HASH,Date.now());

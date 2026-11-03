@@ -9,6 +9,7 @@ assert.deepEqual(Q.collectionURLs(items,'ROAS下降'),['https://markezine.jp/art
 assert(!JSON.stringify(Q.collectionURLs(items,'ROAS下降')).includes('PRIVATE-'));
 assert.deepEqual(Q.collectionURLs([{page_body:'Original URL: https://notion.so/private\nROAS'}],'ROAS'),[]);
 const other=Q.publicArticle({id:'b',url:'https://markezine.jp/article/detail/2',title:'新しいカフェのイベント',summary:'限定キャンペーン'});
+assert.equal(Q.rankArticles([{...publicRow,id:'empty',evidence_chars:0},publicRow],'ROAS下降')[0].id,'public-a','title-only records must not displace readable evidence');
 assert.equal(Q.rankArticles([other,publicRow],'ROAS下降但自然销售增长，先查什么？')[0].id,'public-a');
 assert.equal(Q.rankArticles([publicRow],'足球袜五指长筒选什么')[0],undefined);
 for(const extra of ['context','notes','private','system','page_body','sources'])assert.throws(()=>Q.prepareRequest({question:'ROAS低下',action:'answer',[extra]:'PRIVATE'}));
