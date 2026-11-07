@@ -100,7 +100,9 @@ jobs:
       - name: Apply evidence-based reading policy
         run: node scripts/apply_priority_policy.cjs
       - name: Build fast home article payload
-        run: node scripts/build_articles_brief.cjs
+        run: |
+          node scripts/build_articles_brief.cjs
+          node scripts/weekly_review_pack.cjs
       - name: Commit refreshed dashboard data safely
         run: |
           git config user.name "reading-dashboard-bot"
@@ -108,13 +110,16 @@ jobs:
           cp data/articles.json /tmp/weekly-articles.json
           cp data/articles-brief.json /tmp/weekly-articles-brief.json
           cp data/source_status.json /tmp/weekly-source-status.json
+          cp -R data/weekly-review /tmp/weekly-review-packet
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/weekly-articles.json data/articles.json
             cp /tmp/weekly-articles-brief.json data/articles-brief.json
             cp /tmp/weekly-source-status.json data/source_status.json
-            git add data/articles.json data/articles-brief.json data/source_status.json
+            rm -rf data/weekly-review
+            cp -R /tmp/weekly-review-packet data/weekly-review
+            git add data/articles.json data/articles-brief.json data/source_status.json data/weekly-review
             if git diff --cached --quiet; then
               echo "No Weekly data changes to commit"
               exit 0
