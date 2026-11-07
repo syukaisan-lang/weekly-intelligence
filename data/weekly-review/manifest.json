@@ -1,0 +1,72 @@
+{
+  "policy_version": 44,
+  "review_version": 41,
+  "window_days": 7,
+  "total": 219,
+  "latest_seen": "2026-11-07T05:25:33.696Z",
+  "decisions": {
+    "待核验": 167,
+    "摘要足够": 19,
+    "跳过": 14,
+    "值得精读": 13,
+    "值得阅读": 6
+  },
+  "batches": [
+    {
+      "file": "batch-001.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-002.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-003.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-004.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-005.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-006.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-007.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-008.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-009.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-010.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-011.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-012.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-013.json",
+      "articles": 16
+    },
+    {
+      "file": "batch-014.json",
+      "articles": 11
+    }
+  ]
+}
