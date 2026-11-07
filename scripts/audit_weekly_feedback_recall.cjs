@@ -20,8 +20,9 @@ const before=(a,at)=>{
 };
 // Training and evaluation never share choices from the same calendar day.
 // Unknown (unmarked) articles are excluded from the denominator.
-const models=new Map(),report={positive_labeled:0,editorial_hits:0,personalized_hits:0,
-  negative_labeled:0,negative_editorial_hits:0,negative_personalized_hits:0};
+const models=new Map(),report={positive_labeled:0,negative_labeled:0,
+  previous:{positive_hits:0,negative_hits:0},current:{positive_hits:0,negative_hits:0}};
+const qualifies=r=>r.eligible&&r.score>=7.2;
 for(const a of rows){
   const s=state[a.id]||{};
   const negative=['bad','less'].includes(s.feedback);
@@ -29,17 +30,16 @@ for(const a of rows){
     Number(s.later_interest_at||0)>0||s.feedback_reason==='manual_b_pick'||s.feedback==='more');
   if(!(negative||positive)||seen(a)<cutoff||seen(a)>now||actionAt(s)<seen(a))continue;
   const day=Math.floor(seen(a)/DAY)*DAY;
-  if(!models.has(day))models.set(day,learning.makeModel(rows,x=>before(x,day),day));
-  const editorial=policy.assess(a),learned=models.get(day).explain(a);
-  const final=learning.personalizedAssessment(a,editorial,learned);
-  const qualifies=final.eligible&&(final.personalized||
-    Math.min(editorial.score+learned.delta,editorial.cap,learned.cap)>=7.2);
-  if(positive){
-    report.positive_labeled++;report.editorial_hits+=Number(editorial.eligible);
-    report.personalized_hits+=Number(qualifies);
-  }else{
-    report.negative_labeled++;report.negative_editorial_hits+=Number(editorial.eligible);
-    report.negative_personalized_hits+=Number(qualifies);
+  if(!models.has(day)){
+    const prior=x=>before(x,day);
+    models.set(day,[learning.makeModel(rows,prior,day,{precision:false}),learning.makeModel(rows,prior,day)]);
   }
+  const [previous,current]=models.get(day);
+  const oldResult=learning.finalAssessment(a,policy.assessBase(a),previous.explain(a),{precision:false});
+  const newResult=learning.finalAssessment(a,policy.assess(a),current.explain(a));
+  const label=positive?'positive':'negative';
+  report[label+'_labeled']++;
+  report.previous[label+'_hits']+=Number(qualifies(oldResult));
+  report.current[label+'_hits']+=Number(qualifies(newResult));
 }
-console.log('Weekly feedback recall (28 days; chronological, explicitly labeled only): '+JSON.stringify(report));
+console.log('Weekly precision holdout (28 days; chronological, labeled only; previous vs current): '+JSON.stringify(report));

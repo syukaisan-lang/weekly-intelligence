@@ -5,7 +5,7 @@
   if(typeof module==='object'&&module.exports)module.exports=api;
   else root.weeklyPriorityPolicy=api;
 })(typeof window==='object'?window:this,function(){
-  const VERSION=42;
+  const VERSION=43;
   const REVIEW_VERSION=41;
   const DOMAINS=[
     ['竞争分析',/競合分析|競合調査|競争分析|競合.{0,10}(比較|データ)/i,'对照竞品的价格、渠道和销售表现'],
@@ -63,11 +63,58 @@
       confidence:r.confidence||'low',reviewed:true};
   }
   const cache=new WeakMap();
-  function assess(a){
+  function assessBase(a){
     const inputs=[a.title,a.summary,a.content_excerpt,a.content_checked,a.content_completeness,a.priority_review];
     const hit=cache.get(a);
     if(hit&&inputs.every((v,i)=>v===hit.inputs[i]))return hit.result;
     const result=reviewedAssessment(a)||assessSource(a);cache.set(a,{inputs,result});return result;
+  }
+  // Second pass: check whether the "evidence" actually supports reading
+  // the article, rather than a registration, planned action or coupon.
+  const registration=/(?:参加希望|参加申込|参加お申込み|事前登録|申込受付|参加無料|お申し込みはこちら|このセミナーに参加)/;
+  const scheduled=/[0-9]{1,2}\s*[月/][0-9]{1,2}\s*(?:日)?(?:[+・、][0-9]{1,2}\s*日?)?\s*開催/;
+  const discount=/(?:[0-9]+\s*%\s*OFF|クーポン|特価|ポイント還元|割引対象|抽選|セール価格)/i;
+  const observed=/(?:前年|前月|比較|対照|実績|結果|調査|集計|観測|報告|改善|短縮|伸び|低下|削減|減少|増加)/;
+  const forward=/予定|順次導入|今後|見込|目指|を図る|する方針|をめざす|への期待|提供します|求めている/;
+  const boiler=/調査(?:手法|期間|対象|主体|人数)[:：]|関連記事|ニュース提供元|ログイン|[0-9]+人が参加予定/;
+  function practicalEvidence(text){
+    const rows=sentences(text).filter(x=>!boiler.test(x)&&!registration.test(x)&&!EVENT.test(x));
+    const findings=rows.filter(x=>METRIC.test(x)&&NUMBER.test(x)&&observed.test(x)&&!discount.test(x)&&!forward.test(x));
+    const steps=rows.filter(x=>METHOD.test(x)&&OBJECT.test(x)&&/から.{0,24}(?:選|抽出|分け|比較)|に分け|を基に|をもとに|場合|ではなく|と組み合わせ|ごとに|切り分け|対照|差分|紐付|落とし込|定義し|置き換|変更し|を使って/.test(x)&&
+      !forward.test(x)&&!/と語った|を紹介した|を解説した/.test(x.slice(-12)));
+    return {findings,steps};
+  }
+  const precisionCache=new WeakMap();
+  function assess(a){
+    const first=assessBase(a),hit=precisionCache.get(a);
+    if(hit?.first===first)return hit.result;
+    const result=verify(a,first);
+    precisionCache.set(a,{first,result});return result;
+  }
+  function verify(a,first){
+    if(!first.eligible&&first.decision!=='待核验')return first;
+    const {head,body}=sourceText(a),title=clean(a.title),summary=clean(a.summary);
+    const recapped=RECAP.test(title)||/登壇した|開催された|発表された/.test(summary);
+    function defer(decision,reason,quality){
+      return {...first,eligible:false,score:decision==='跳过'?5.3:5.8,cap:6.9,decision,reason,quality};
+    }
+    if(!recapped&&(scheduled.test(title)||EVENT.test(title))&&registration.test(head+' '+body.slice(0,1800)))
+      return defer('跳过','正文是报名与议程，未交付方法和结果','announcement');
+    const sale=/ブラックフライデー|セール|キャンペーン/.test(title)&&
+      /開催|実施|特設|前倒し|期間|限定セール/.test(title)&&discount.test(head+' '+body.slice(0,1200))&&!STUDY.test(title);
+    if(sale)return defer('摘要足够','主要交付促销日期、优惠或券；不能把折扣数字当作业务效果','announcement');
+    if(!first.eligible)return first;
+    const e=practicalEvidence(a.content_checked&&body.length>=160?body:summary);
+    const launch=/(?:新機能|提供開始|販売開始|発売|ローンチ|新発売|を発表)/.test(title+' '+body.slice(0,240))&&
+      !/から(?:20[0-9]{2}年に)?[0-9]+(?:年|周年|週年)|開始から|立ち上げから/.test(head+' '+body.slice(0,380));
+    if(launch&&!e.findings.some(x=>OUTCOME.test(x))&&forward.test((first.evidence||[]).join(' '))&&
+       !/調査|実験|比較検証/.test(title))return defer('摘要足够','主要是产品计划，引用数字不是这项措施的实测结果','announcement');
+    if(first.kind==='summary_framework'&&!e.findings.length&&!e.steps.length&&
+       !/(?:MRR|CPA|ROAS|CVR|売上|継続率).{0,14}(?:倍|割|%|ポイント)/i.test(summary))
+      return defer('待核验','摘要只交代主题或预告方法，尚无可用于决策的具体发现或做法','thin');
+    const quality=first.reviewed||e.findings.length>=2||
+      (e.findings.length&&e.steps.length)||e.steps.length>=2||first.kind==='summary_case'?'grounded':'limited';
+    return {...first,quality};
   }
   function assessSource(a){
     const {head,body}=sourceText(a),title=clean(a.title),lead=body.slice(0,900);
@@ -148,8 +195,23 @@
     return out;
   }
   function titleTokens(a){const t=clean(a.title).toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');return new Set(Array.from({length:Math.max(0,t.length-2)},(_,i)=>t.slice(i,i+3)));}
+  const studyCache=new WeakMap();
+  function studyFingerprint(a){
+    if(studyCache.has(a))return studyCache.get(a);
+    const text=(clean(a.summary)+' '+clean(a.content_excerpt)).slice(0,4200);
+    const names=[...text.matchAll(/[「『]([^」』]{6,45}(?:実態調査|意識調査|行動調査|調査結果)(?:20[0-9]{2})?)[」』]/g)]
+      .map(x=>x[1].replace(/[・\s]/g,''));
+    const numbers=[...new Set(text.match(/[0-9]+\.[0-9]+%/g)||[])];
+    const value=names.length&&numbers.length>=2?{names,numbers}:null;
+    studyCache.set(a,value);return value;
+  }
   function sameStory(a,b){
     if(a.url===b.url&&a.url)return true;
+    // Different outlets reporting the same named study and the same numbers
+    // are one story, even when their headlines and wording differ.
+    const left=studyFingerprint(a),right=studyFingerprint(b);
+    if(left&&right&&left.names.some(name=>right.names.includes(name))&&
+      left.numbers.filter(x=>right.numbers.includes(x)).length>=2)return true;
     const x=clean(a.content_excerpt),y=clean(b.content_excerpt);
     return x.length>=160&&x===y;
   }
@@ -163,5 +225,5 @@
     }
     return selected;
   }
-  return {VERSION,REVIEW_VERSION,assess,select,sameStory,sourceText,sourceSignature};
+  return {VERSION,REVIEW_VERSION,assess,assessBase,select,sameStory,sourceText,sourceSignature};
 });

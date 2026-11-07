@@ -104,7 +104,7 @@
     return out.sort((x,y)=>Math.abs(y.weight)-Math.abs(x.weight)).slice(0,1)
       .map(x=>({...x,article:a,at:x.at||Date.parse(a.first_seen||a.published||'')||0}));
   }
-  function makeModel(rows,getState,now=Date.now()){
+  function makeModel(rows,getState,now=Date.now(),{precision=true}={}){
     const cache=new WeakMap(),samples=[];
     for(const a of rows){
       const s=getState(a)||{};
@@ -142,11 +142,17 @@
           topic&&shared(candidateCues,s.cues)&&(exactVector?sim>=.89:samePresentation&&lexical>=.22);
         const baseline=exactVector?sim>=.925&&(topic||sim>=.965)&&
           (s.weight>0||s.reason==='topic'||samePresentation||sim>=.955):lexical>=.35;
-        if(!baseline&&!practicalMatch)continue;
+        // Negative feedback is about a defect in a particular treatment.
+        // Learn only specific, comparable cases; no penalty for broad topic overlap.
+        const defectMatch=precision&&s.weight<=-.55&&
+          ['too_generic','no_evidence','known','not_work','topic'].includes(s.reason)&&
+          topic&&samePresentation&&shared(candidateCues,s.cues)&&
+          (exactVector?sim>=.89:lexical>=.42);
+        if(!baseline&&!practicalMatch&&!defectMatch)continue;
         const closeness=!baseline?Math.max(.55,clamp((sim-.89)/.075,0,1)):exactVector?clamp((sim-.91)/.075,0,1):clamp(lexical-.2,0,.35);
         const strength=s.weight*closeness*(topic?1:.6)*(samePresentation?1:.72)*
           (s.weight>0?reasonFit(s.reason,a):1);
-        const match={id:s.article.id,title:s.article.title,reason:s.label,similarity:exactVector?sim:lexical,strength,method:!baseline?'shared_work_context':exactVector?'semantic':'archived_title'};
+        const match={id:s.article.id,title:s.article.title,reason:s.label,defect:defectMatch?s.reason:'',similarity:exactVector?sim:lexical,strength,method:!baseline?'shared_work_context':exactVector?'semantic':'archived_title'};
         (strength<0?negatives:positives).push(match);
       }
       positives.sort((a,b)=>b.strength-a.strength);
@@ -158,7 +164,13 @@
       // otherwise relevant article out; a single sample only lowers its rank.
       const strong=negatives.filter(x=>x.strength<=-.65);
       const cap=strong.length>=2&&neg<-.9&&pos<.65?6.9:10;
-      const result={delta,cap,positives:positives.slice(0,3),negatives:negatives.slice(0,3),sampleCount:samples.length};
+      const defects={};
+      for(const match of negatives){
+        if(!match.defect||match.strength>-.20)continue;
+        const bucket=defects[match.defect]||=[];
+        if(bucket.length<3)bucket.push(match);
+      }
+      const result={delta,cap,defects,positives:positives.slice(0,3),negatives:negatives.slice(0,3),sampleCount:samples.length};
       scores.set(a,result);return result;
     }
     return {explain,sampleCount:samples.length,positiveSamples:samples.filter(s=>s.weight>0).length,
@@ -180,12 +192,27 @@
       (a.content_checked&&String(a.content_excerpt||'').trim().length>=160);
     const contextRescue=sourced&&contextual.length>=2&&
       contextual.slice(0,2).reduce((n,x)=>n+x.strength,0)>=.50;
-    if(editorial.decision!=='待核验'||!editorial.domain||family(a)!=='substance'||negativeSum>=.28||
+    if(editorial.decision!=='待核验'||editorial.quality==='thin'||!editorial.domain||family(a)!=='substance'||negativeSum>=.28||
        !(strongLater||strongest>=.62||(baseline.length>=2&&baseline[0].strength+baseline[1].strength>=.78)||contextRescue))
       return {...editorial,personalized:false,learned};
     return {...editorial,eligible:true,score:Math.min(8.3,7.25+Math.max(0,positiveSum-.45)*.8),cap:8.3,
       decision:'偏好补漏',reason:'与你主动留下的具体内容相似；仍需快速核对原文',
       kind:'preference_rescue',confidence:'personalized',personalized:true,learned};
   }
-  return {makeModel,family,personalizedAssessment};
+  function finalAssessment(a,editorial,learned,{precision=true}={}){
+    const assessment=personalizedAssessment(a,editorial,learned);
+    if(!assessment.eligible)return assessment;
+    if(precision&&!assessment.personalized&&!editorial.reviewed){
+      const positive=learned.positives.slice(0,2).reduce((n,x)=>n+x.strength,0);
+      const repeated=Object.entries(learned.defects||{}).find(([reason,examples])=>
+        examples.length>=2&&examples[0].strength+examples[1].strength<=-.53&&
+        positive<.60&&
+        (editorial.quality==='limited'||(['topic','not_work'].includes(reason)&&examples.every(x=>x.similarity>=.945))));
+      if(repeated)return {...assessment,eligible:false,score:6.8,cap:6.9,decision:'待核验',
+        reason:'与你多次明确不想看的同类内容相近；暂不放入优先阅读',quality:'feedback_review',learned};
+    }
+    if(assessment.personalized)return assessment;
+    return {...assessment,score:Math.max(0,Math.min(assessment.score+learned.delta,assessment.cap,learned.cap)),learned};
+  }
+  return {makeModel,family,personalizedAssessment,finalAssessment};
 });

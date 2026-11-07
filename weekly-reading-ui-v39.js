@@ -41,7 +41,7 @@
       return;
     }
     if(free?.status==='complete_with_uncertainty'){
-      box.textContent=`免费证据筛查已检查本周 ${free.examined} 篇，推荐 ${free.recommended} 篇（其中 ${free.summary_only} 篇仅有公开摘要），${free.uncertain} 篇依据不足。${retry?`另尝试公开正文 ${retry.attempted} 篇、读到 ${retry.readable} 篇；robots 或不可用规则阻止 ${retry.robots_blocked} 篇。`:''}未进行付费模型深度复核，不能保证零漏选。`;
+      box.textContent=`内容与证据复核已检查本周 ${free.examined} 篇，通过内容复核 ${free.recommended} 篇（优先列表还会去重并应用你的反馈）（其中 ${free.summary_only} 篇仅有公开摘要），${free.uncertain} 篇依据不足。${retry?`另尝试公开正文 ${retry.attempted} 篇、读到 ${retry.readable} 篇；robots 或不可用规则阻止 ${retry.robots_blocked} 篇。`:''}未进行付费模型深度复核，不能保证零漏选。`;
       return;
     }
     if(audit?.status==='complete'){box.hidden=true;return;}
@@ -58,7 +58,7 @@
     if(active==='focus'){
       const filteredOut=!rows.length&&Number(window.weeklyReadingTimeV21?.allFocusRows?.().length||0)>0;
       title.textContent=`优先阅读 ${rows.length} 篇 · 约 ${mins} 分钟`;
-      subtitle.textContent=rows.length?'从第一篇开始读；包含正文价值达标与高置信偏好补漏。':
+      subtitle.textContent=rows.length?'已核对来源是否交付具体内容，并结合你过去的反馈筛选。':
         filteredOut?'当前高级筛选没有匹配文章，展开筛选可以调整。':
         data?.meta?.free_priority_audit?.status==='complete_with_uncertainty'?'免费证据筛查未选出达标文章；依据不足的文章仍可能有漏选。':
         data?.meta?.priority_review_audit?.status==='complete'?'当前没有达到优先阅读标准的文章，不为了凑数推荐。':

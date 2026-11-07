@@ -20,7 +20,7 @@ concurrency:
 jobs:
   retry:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     env:
       DASHBOARD_PASSPHRASE: ${{ secrets.DASHBOARD_PASSPHRASE }}
       WEEKLY_CLOUD_STATE_PATH: /tmp/weekly-cloud-feedback.json

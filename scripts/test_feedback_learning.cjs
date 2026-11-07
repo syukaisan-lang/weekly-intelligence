@@ -62,6 +62,16 @@ assert(!engine.personalizedAssessment({...near,summary:''},unclear,matches).elig
 assert(!engine.personalizedAssessment(near,unclear,engine.makeModel([anchor1],same,now).explain(near)).eligible,
   'one moderate match alone cannot rescue a candidate');
 assert(!engine.personalizedAssessment({...near,title:'オンラインセミナー参加募集'},unclear,matches).eligible);
+// Repeated negatives are scoped to the same specific work problem and form.
+const negativePick=()=>({feedback:'less',feedback_reason:'too_generic',feedback_reason_updated_at:now});
+const defect=engine.makeModel([anchor1,anchor2],negativePick,now).explain(near);
+const limited={eligible:true,decision:'值得阅读',score:8.6,cap:9,quality:'limited'};
+assert.equal(engine.finalAssessment(near,limited,defect).eligible,false);
+assert(engine.finalAssessment(near,{...limited,quality:'grounded'},defect).eligible,'strong evidence survives generic-content feedback');
+assert(engine.finalAssessment(near,limited,engine.makeModel([anchor1],negativePick,now).explain(near)).eligible);
+assert(engine.finalAssessment(near,limited,engine.makeModel([anchor1,anchor2],negativePick,now,{precision:false}).explain(near),{precision:false}).eligible);
+assert(!engine.personalizedAssessment(near,{...unclear,quality:'thin'},matches).eligible,
+  'similarity cannot turn an abstract with no delivered finding into a recommendation');
 // Execute the final browser adapter; the user's state stays local and changes
 // invalidate the learned model without making a network request.
 const data={articles:[event,method,related]},state={...states},storage=new Map();
