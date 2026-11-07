@@ -32,11 +32,12 @@ def main():
         oidc_url = url + ('&' if '?' in url else '?') + urlencode({'audience': AUDIENCE})
         token = request(oidc_url, {'Authorization': 'Bearer ' + credential})['value']
         headers = {'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json'}
-        archive = weekly_lifecycle._decrypt_weekly_archive()
-        # One-time migration is idempotent: field timestamps cannot replace newer cloud edits.
-        items = list(archive.items())
-        for start in range(0, len(items), 150):
-            request(ENDPOINT, headers, {'state': dict(items[start:start + 150])})
+        if os.getenv('WEEKLY_CLOUD_AUDIT_ONLY') != '1':
+            archive = weekly_lifecycle._decrypt_weekly_archive()
+            # One-time migration is idempotent: field timestamps cannot replace newer cloud edits.
+            items = list(archive.items())
+            for start in range(0, len(items), 150):
+                request(ENDPOINT, headers, {'state': dict(items[start:start + 150])})
         remote = request(ENDPOINT, headers).get('state') or {}
         path = Path(cache)
         if path.resolve().is_relative_to(weekly_lifecycle.ROOT.resolve()):
@@ -44,7 +45,7 @@ def main():
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(remote, ensure_ascii=False), encoding='utf-8')
         path.chmod(0o600)
-        print(f'Weekly cloud: migrated archive and loaded {len(remote)} feedback records for learning')
+        print(f'Weekly cloud: loaded {len(remote)} feedback records')
     except Exception as error:
         # Do not log tokens, records or request contents, including exception text from servers.
         print(f'Weekly cloud temporarily unavailable ({type(error).__name__}); retain encrypted archive learning')
