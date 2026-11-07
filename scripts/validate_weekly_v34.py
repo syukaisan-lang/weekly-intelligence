@@ -32,8 +32,8 @@ def main() -> int:
         "weekly-state-integrity-v22.js?v=20260905-1115",
         "weekly-later-click-v22-1.js?v=20260905-1108",
         "weekly-runtime-consistency-v35.js?v=20260919-1",
-        "weekly-feedback-learning-v38.js?v=20261107-precision",
-        "weekly-feedback-runtime-v38.js?v=20261107-precision",
+        "weekly-feedback-learning-v38.js?v=20261107-calibrated",
+        "weekly-feedback-runtime-v38.js?v=20261107-calibrated",
         "weekly-interaction-performance-v40.js?v=20261010-sync",
         "0/15",
     )
