@@ -5,11 +5,16 @@ const policy=require('../weekly-priority-policy.js');
 const root=path.join(__dirname,'..');
 const file=path.join(root,'data/articles.json');
 const payload=JSON.parse(fs.readFileSync(file,'utf8'));
+const overrideFile=path.join(root,'data/weekly-review-overrides.json');
+const overrides=fs.existsSync(overrideFile)?JSON.parse(fs.readFileSync(overrideFile,'utf8')).reviews||{}:{};
+const review=require('./weekly_review_override.cjs'),now=Date.now();
 const counts={};
+let reviewCount=0;
 const weekStart=Date.now()-7*86400000;
 const freeAudit={version:policy.VERSION,method:'source_rules',examined:0,recommended:0,summary_only:0,
   uncertain:0,brief:0,skipped:0,status:'complete_with_uncertainty'};
 for(const a of payload.articles){
+  if(review.apply(a,overrides,now))reviewCount++;
   const result=policy.assess(a);
   // The browser recomputes this assessment; serializing it per row inflates
   // the article download without adding evidence.
@@ -31,6 +36,7 @@ for(const a of payload.articles){
   }
 }
 freeAudit.checked_at=new Date().toISOString();
+payload.meta.weekly_public_review_applied=reviewCount;
 payload.meta.priority_policy_version=policy.VERSION;
 payload.meta.priority_policy_counts=counts;
 payload.meta.free_priority_audit=freeAudit;

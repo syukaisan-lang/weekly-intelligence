@@ -52,6 +52,7 @@ jobs:
       - name: Check priority selection regressions
         run: |
           node scripts/test_priority_policy.cjs
+          node scripts/test_weekly_review_override.cjs
           node scripts/test_feedback_learning.cjs
           node scripts/test_interaction_performance.cjs
           node scripts/test_articles_brief.cjs
