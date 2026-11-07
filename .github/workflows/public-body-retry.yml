@@ -8,17 +8,37 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/public-body-retry.yml"
+      - "scripts/audit_weekly_feedback_recall.cjs"
+      - "weekly-feedback-learning-v38.js"
 
 permissions:
   contents: write
   id-token: write
 
-concurrency:
-  group: weekly-intelligence-update
-  cancel-in-progress: false
-
 jobs:
+  precision-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      WEEKLY_CLOUD_STATE_PATH: /tmp/weekly-cloud-audit.json
+      WEEKLY_CLOUD_AUDIT_ONLY: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Install feedback reader dependencies
+        run: python -m pip install python-dateutil cryptography
+      - name: Load cloud feedback for read-only comparison
+        run: python scripts/sync_weekly_cloud.py
+      - name: Compare held-out choices without publishing feedback
+        run: node scripts/audit_weekly_feedback_recall.cjs
   retry:
+    concurrency:
+      group: weekly-intelligence-update
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 25
     env:
@@ -39,8 +59,6 @@ jobs:
         run: python -m pip install requests feedparser beautifulsoup4 python-dateutil cryptography numpy
       - name: Migrate old feedback and load automatic cloud learning
         run: python scripts/sync_weekly_cloud.py
-      - name: Audit held-out article choices without publishing feedback
-        run: node scripts/audit_weekly_feedback_recall.cjs
       - name: Continue due public reads and refresh recommendations
         run: |
           python scripts/retry_uncertain_public_content.py

@@ -28,6 +28,20 @@ class CloudLearningTests(unittest.TestCase):
             self.assertEqual(calls[1][2]['state']['a']['status'], 'later')
             self.assertEqual(cache.stat().st_mode & 0o777, 0o600)
 
+    def test_audit_reads_without_migrating_or_posting(self):
+        with tempfile.TemporaryDirectory() as folder:
+            cache = Path(folder) / 'audit.json'
+            env = {'WEEKLY_CLOUD_STATE_PATH': str(cache), 'WEEKLY_CLOUD_AUDIT_ONLY': '1',
+                   'ACTIONS_ID_TOKEN_REQUEST_URL': 'https://token.example', 'ACTIONS_ID_TOKEN_REQUEST_TOKEN': 'test'}
+            with patch.dict(os.environ, env), patch.object(sync, 'request', side_effect=[
+                {'value': 'token'}, {'state': {'a': {'status': 'later'}}}
+            ]) as request, patch.object(weekly_lifecycle, '_decrypt_weekly_archive') as archive:
+                sync.main()
+            archive.assert_not_called()
+            self.assertEqual(len(request.call_args_list), 2)
+            self.assertEqual(len(request.call_args.args), 2)
+            self.assertEqual(json.loads(cache.read_text())['a']['status'], 'later')
+
     def test_cloud_cache_preserves_equal_time_merged_fields_and_archive_fallback(self):
         with tempfile.TemporaryDirectory() as folder:
             cache = Path(folder) / 'feedback.json'
