@@ -44,6 +44,24 @@ assert.equal(older.sampleCount,1,'old feedback remains in history after a year')
 assert.equal(older.archivedSamples,1,'missing vectors are reported');
 assert(older.explain(method).delta>0,'archived matching title still gives a weak positive signal');
 
+// Two independent picks with the same specific business problem can recover
+// a related article that falls just below the old vector threshold.
+const v=(x,y)=>{const raw=Buffer.alloc(384);raw[0]=x;raw[1]=y;return {dim:384,q:raw.toString('base64')};};
+const anchor1=mk('ad1','CPA改善：記事LPで潜在層に配信',v(100,0));
+const anchor2=mk('ad2','CPAを改善する顕在層と潜在層の比較',v(100,0));
+const near=mk('ad3','CPAが上がる時に潜在層の広告配信を見直す',v(100,47));
+near.summary='潜在層への記事LP配信と広告効果を取り上げ、異なる配信先での改善の条件を比較します。'.repeat(4);
+const same=()=>({status:'later',later_interest_at:now,feedback:'more',feedback_reason:'manual_b_pick'});
+const calibrated=engine.makeModel([anchor1,anchor2],same,now);
+assert.equal(calibrated.sampleCount,2,'an article is one learning sample even with multiple actions');
+const matches=calibrated.explain(near);
+assert.equal(matches.positives[0].method,'shared_work_context');
+const unclear={eligible:false,domain:'广告与CRM',decision:'待核验'};
+assert(engine.personalizedAssessment(near,unclear,matches).eligible);
+assert(!engine.personalizedAssessment({...near,summary:''},unclear,matches).eligible,'contextual rescue requires public text');
+assert(!engine.personalizedAssessment(near,unclear,engine.makeModel([anchor1],same,now).explain(near)).eligible,
+  'one moderate match alone cannot rescue a candidate');
+assert(!engine.personalizedAssessment({...near,title:'オンラインセミナー参加募集'},unclear,matches).eligible);
 // Execute the final browser adapter; the user's state stays local and changes
 // invalidate the learned model without making a network request.
 const data={articles:[event,method,related]},state={...states},storage=new Map();

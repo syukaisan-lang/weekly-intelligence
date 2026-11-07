@@ -43,6 +43,17 @@
       formats:new Set(f.formats||[]),intents:new Set(f.intents||[]),family:family(a)
     };
   }
+  const CUES=[
+    ['广告增量',/潜在層|顕在層|インクリメンタリティ|増分効果|記事LP/i],
+    ['购买前比较',/比較検討|商品比較|商品探索|選び方|閲覧データ|購買行動|消費行動/],
+    ['AI可见度',/AI検索|AI推奨|AI推薦|AI回答|引用元|AEO|GEO/],
+    ['复购留存',/リピート|継続率|離脱率|休眠|解約率|リテンション/],
+    ['价格敏感度',/価格感度|値上げ|節約|メリハリ消費|支払意思|値ごろ感/]
+  ];
+  function cues(a){
+    const text=String(a.title||'')+' '+String(a.summary||'').slice(0,500);
+    return new Set(CUES.filter(([,re])=>re.test(text)).map(([name])=>name));
+  }
   function shared(a,b){for(const x of a)if(b.has(x))return true;return false;}
   function reasonFit(reason,a){
     const text=String(a.title||'')+' '+String(a.summary||'').slice(0,500);
@@ -89,7 +100,9 @@
     if(NEG.has(s.feedback))out.push({weight:s.feedback==='less'?-1:-.75,
       label:s.feedback_reason||'明确负反馈',reason:s.feedback_reason||'',at:Number(s.feedback_reason_updated_at||0)});
     else if(s.status==='skip')out.push({weight:-.2,label:'跳过',reason:'skip',at:Number(s.status_updated_at||0)});
-    return out.map(x=>({...x,article:a,at:x.at||Date.parse(a.first_seen||a.published||'')||0}));
+    // A Later + save + feedback sequence is one labeled article, not three votes.
+    return out.sort((x,y)=>Math.abs(y.weight)-Math.abs(x.weight)).slice(0,1)
+      .map(x=>({...x,article:a,at:x.at||Date.parse(a.first_seen||a.published||'')||0}));
   }
   function makeModel(rows,getState,now=Date.now()){
     const cache=new WeakMap(),samples=[];
@@ -99,13 +112,13 @@
         const age=Math.max(0,(now-e.at)/DAY);
         // Old feedback remains part of history, but recent choices dominate.
         const ageFactor=age<90?1:age<180?.8:age<365?.6:age<730?.4:.25;
-        samples.push({...e,weight:e.weight*ageFactor,context:dimensions(a),vec:vector(a,cache)});
+        samples.push({...e,weight:e.weight*ageFactor,context:dimensions(a),cues:cues(a),vec:vector(a,cache)});
       }
     }
     const scores=new WeakMap();
     function explain(a){
       if(scores.has(a))return scores.get(a);
-      const context=dimensions(a),v=vector(a,cache),positives=[],negatives=[];
+      const context=dimensions(a),candidateCues=cues(a),v=vector(a,cache),positives=[],negatives=[];
       for(const s of samples){
         if(s.article.id===a.id)continue;
         // Reject only the same format family. A disliked webinar never rejects
@@ -125,13 +138,15 @@
           s.context.family===context.family?lexicalSimilarity(a,s.article):0;
         // E5 embeddings have a high baseline similarity even on unrelated
         // articles. Require unusually close meaning AND contextual agreement.
-        if(exactVector&&(sim<.925||(!topic&&sim<.965)||
-            (s.weight<0&&s.reason!=='topic'&&!samePresentation&&sim<.955)))continue;
-        if(!exactVector&&lexical<.35)continue;
-        const closeness=exactVector?clamp((sim-.91)/.075,0,1):clamp(lexical-.2,0,.35);
+        const practicalMatch=s.weight>0&&context.family==='substance'&&s.context.family==='substance'&&
+          topic&&shared(candidateCues,s.cues)&&(exactVector?sim>=.89:samePresentation&&lexical>=.22);
+        const baseline=exactVector?sim>=.925&&(topic||sim>=.965)&&
+          (s.weight>0||s.reason==='topic'||samePresentation||sim>=.955):lexical>=.35;
+        if(!baseline&&!practicalMatch)continue;
+        const closeness=!baseline?Math.max(.55,clamp((sim-.89)/.075,0,1)):exactVector?clamp((sim-.91)/.075,0,1):clamp(lexical-.2,0,.35);
         const strength=s.weight*closeness*(topic?1:.6)*(samePresentation?1:.72)*
           (s.weight>0?reasonFit(s.reason,a):1);
-        const match={id:s.article.id,title:s.article.title,reason:s.label,similarity:exactVector?sim:lexical,strength,method:exactVector?'semantic':'archived_title'};
+        const match={id:s.article.id,title:s.article.title,reason:s.label,similarity:exactVector?sim:lexical,strength,method:!baseline?'shared_work_context':exactVector?'semantic':'archived_title'};
         (strength<0?negatives:positives).push(match);
       }
       positives.sort((a,b)=>b.strength-a.strength);
@@ -150,5 +165,27 @@
       negativeSamples:samples.filter(s=>s.weight<0).length,
       archivedSamples:samples.filter(s=>!s.vec).length};
   }
-  return {makeModel,family};
+  function personalizedAssessment(a,editorial,learned){
+    if(editorial.eligible)return {...editorial,personalized:false};
+    const positives=learned.positives||[],negatives=learned.negatives||[];
+    const baseline=positives.filter(x=>x.method!=='shared_work_context');
+    const strongest=Number(baseline[0]?.strength||0);
+    const positiveSum=positives.slice(0,2).reduce((n,x)=>n+Math.max(0,Number(x.strength||0)),0);
+    const negativeSum=Math.abs(negatives.slice(0,2).reduce((n,x)=>n+Math.min(0,Number(x.strength||0)),0));
+    const strongLater=baseline.some(x=>x.reason==='稍后看'&&Number(x.strength||0)>=.48);
+    // The new matching route requires two distinct prior choices and enough
+    // public text to inspect. A headline or an event/promo cannot qualify.
+    const contextual=positives.filter(x=>x.method==='shared_work_context'&&x.strength>=.21);
+    const sourced=String(a.summary||'').trim().length>=120||
+      (a.content_checked&&String(a.content_excerpt||'').trim().length>=160);
+    const contextRescue=sourced&&contextual.length>=2&&
+      contextual.slice(0,2).reduce((n,x)=>n+x.strength,0)>=.50;
+    if(editorial.decision!=='待核验'||!editorial.domain||family(a)!=='substance'||negativeSum>=.28||
+       !(strongLater||strongest>=.62||(baseline.length>=2&&baseline[0].strength+baseline[1].strength>=.78)||contextRescue))
+      return {...editorial,personalized:false,learned};
+    return {...editorial,eligible:true,score:Math.min(8.3,7.25+Math.max(0,positiveSum-.45)*.8),cap:8.3,
+      decision:'偏好补漏',reason:'与你主动留下的具体内容相似；仍需快速核对原文',
+      kind:'preference_rescue',confidence:'personalized',personalized:true,learned};
+  }
+  return {makeModel,family,personalizedAssessment};
 });

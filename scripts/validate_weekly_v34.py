@@ -32,8 +32,8 @@ def main() -> int:
         "weekly-state-integrity-v22.js?v=20260905-1115",
         "weekly-later-click-v22-1.js?v=20260905-1108",
         "weekly-runtime-consistency-v35.js?v=20260919-1",
-        "weekly-feedback-learning-v38.js?v=20260919-1",
-        "weekly-feedback-runtime-v38.js?v=20260919-1",
+        "weekly-feedback-learning-v38.js?v=20261107-recall",
+        "weekly-feedback-runtime-v38.js?v=20261107-recall",
         "weekly-interaction-performance-v40.js?v=20261010-sync",
         "0/15",
     )
@@ -113,16 +113,18 @@ def main() -> int:
     if runtime.find("weekly-runtime-consistency-v35.js") >= 0:
         raise AssertionError("runtime file must contain executable JS, not self-referential loader text")
 
-    feedback_runtime = need(
+    need(
         "weekly-feedback-runtime-v38.js",
         "function personalizedAssessment(a)",
-        "editorial.decision==='待核验'",
-        "x.reason==='稍后看'",
-        "kind:'preference_rescue'",
+        "engine.personalizedAssessment",
         "personalizedAssessment,stats,invalidate",
     )
-    if "editorial.decision==='跳过'" in feedback_runtime:
-        raise AssertionError("personalized B rescue must never promote an editorial skip")
+    need(
+        "weekly-feedback-learning-v38.js",
+        "editorial.decision!=='待核验'",
+        "x.reason==='稍后看'",
+        "kind:'preference_rescue'",
+    )
 
     interaction = need(
         "weekly-interaction-performance-v40.js",
