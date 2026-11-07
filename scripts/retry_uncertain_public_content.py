@@ -25,7 +25,7 @@ ARTICLES = ROOT / 'data' / 'articles.json'
 MAX_ATTEMPTS = 288  # Fetch budget, never a recommendation quota.
 MAX_PER_HOST = 48
 RETRY_DAYS = 7
-MAX_SECONDS = 600
+MAX_SECONDS = 840
 USER_AGENT = 'Mozilla/5.0 (compatible; PersonalReadingDashboard/1.0)'
 
 

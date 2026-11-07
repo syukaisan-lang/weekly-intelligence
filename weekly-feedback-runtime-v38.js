@@ -4,29 +4,29 @@
   const engine=window.weeklyFeedbackLearningV38,policy=window.weeklyPriorityPolicy;
   if(!engine||!policy||typeof score!=='function')return;
   let model=null,revision=0,rowsCount=-1;
-  let articleById=new Map();
+  let articleById=new Map(),decisionCache=new WeakMap();
   function rows(){return window.weeklyUiFixesV25?.allRows?.()||(data?.articles||[]);}
   function getState(a){try{return st(a.id)||{};}catch(_){return state?.[a.id]||{};}}
   function invalidate(){revision++;model=null;window.weeklyReadingTimeV21?.invalidate?.();}
   function activeModel(){
     const articles=rows();
     if(!model||rowsCount!==articles.length){
-      rowsCount=articles.length;model=engine.makeModel(articles,getState);
+      rowsCount=articles.length;model=engine.makeModel(articles,getState);decisionCache=new WeakMap();
       articleById=new Map(articles.map(a=>[String(a.id),a]));
     }
     return model;
   }
   function personalizedAssessment(a){
     const editorial=policy.assess(a);
-    if(editorial.eligible)return {...editorial,personalized:false};
-    return engine.personalizedAssessment(a,editorial,activeModel().explain(a));
+    if(!editorial.eligible&&editorial.decision!=='待核验')return editorial;
+    const current=activeModel(),hit=decisionCache.get(a);
+    if(hit?.editorial===editorial)return hit.result;
+    const result=engine.finalAssessment(a,editorial,current.explain(a));
+    decisionCache.set(a,{editorial,result});return result;
   }
   score=function(a){
     const assessment=personalizedAssessment(a);
-    if(!assessment.eligible)return Math.min(assessment.score,assessment.cap);
-    if(assessment.personalized)return assessment.score;
-    const learned=activeModel().explain(a);
-    return Math.max(0,Math.min(assessment.score+learned.delta,assessment.cap,learned.cap));
+    return Math.min(assessment.score,assessment.cap);
   };
   if(typeof save==='function'){
     const previous=save;
