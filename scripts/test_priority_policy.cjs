@@ -32,7 +32,7 @@ assert(policy.assess(article('90235c8067f82e7bfb')).eligible);
 // Distinct conclusions/angles with a similar title are not duplicates.
 assert.equal(policy.sameStory(method,{...method,url:'https://another.example/story',content_excerpt:'別の結論を持つ記事。'.repeat(30)}),false);
 const missed={...method,title:'タイトルに職種のキーワードがない記事',summary:'',content_excerpt:'具体的な比較手順と判断に使える新しい方法を説明する本文。'};
-missed.priority_review={version:policy.VERSION,two_pass:true,source_signature:policy.sourceSignature(missed),verdict:'recommend',
+missed.priority_review={version:policy.REVIEW_VERSION,two_pass:true,source_signature:policy.sourceSignature(missed),verdict:'recommend',
  confidence:'medium',use:'用于评估竞品的定价差异',gain:'给出价格区间与转化分组的比较方法',evidence:[missed.content_excerpt]};
 assert(policy.assess(missed).eligible,'content review can recover a keyword-missed article');
 assert(!policy.assess({...missed,content_excerpt:'changed source'}).eligible,'stale review cannot certify changed source');
@@ -61,6 +61,15 @@ for(const id of ['7d1c4119b00b585043','1fa0deabe243c1329c','5390ae17c5549f58fc']
 }
 assert(!policy.assess(article('6874daf97c2b2656d1')).eligible,'fee-change notice is not a deep read');
 assert(!policy.assess(article('f9526e7e0f661b507f')).eligible,'celebrity campaign announcement remains blocked');
+// Current-week misses: topic wording varies and body evidence can do the work.
+for(const id of ['eb726a7edd4d8b5d5a','1b2f851934cbe50a82','b7802545789af038d6','8b6156703615e72795']){
+  const a=article(id),r=policy.assess(a);assert(r.eligible,id);
+  assert(r.evidence.every(q=>Object.values(policy.sourceText(a)).some(x=>x.includes(q))),id);
+}
+const weakCase=article('8b6156703615e72795');
+assert(!policy.assess({...weakCase,summary:''}).eligible,'headline metrics alone cannot qualify');
+for(const id of ['d3df2ea002a9353c29','ca6a216c8bcbd9938f','73d5eae6966bb03b34'])
+  assert(!policy.assess(article(id)).eligible,'sale announcements do not become evidence-backed articles');
 // Execute real preference memory with a contextual event rejection and no browser storage.
 const states={},storage=new Map();
 const ctx={console,Date,Set,Map,Math,JSON,Number,String,Array,RegExp,

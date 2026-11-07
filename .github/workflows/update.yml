@@ -79,6 +79,8 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Migrate old feedback and load automatic cloud learning
         run: python scripts/sync_weekly_cloud.py
+      - name: Audit held-out article choices without publishing feedback
+        run: node scripts/audit_weekly_feedback_recall.cjs
       - name: Fetch and screen feeds against latest Knowledge and Work System
         run: |
           for attempt in 1 2; do
