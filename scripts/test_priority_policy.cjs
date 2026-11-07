@@ -72,14 +72,15 @@ for(const id of ['d3df2ea002a9353c29','ca6a216c8bcbd9938f','73d5eae6966bb03b34']
   assert(!policy.assess(article(id)).eligible,'sale announcements do not become evidence-backed articles');
 // A date or a discount is not a measured outcome. The richer independent
 // article should survive deduplication of reports from the same survey.
-for(const id of ['f1d3956d3c3fb61199','d05fd1cd3e9cf93c70','ba1429f41c73a3790c']){
+for(const id of ['f1d3956d3c3fb61199','d05fd1cd3e9cf93c70']){
   const a=article(id);
   assert(policy.assessBase(a).eligible,id);
   assert(!policy.assess(a).eligible,id);
 }
 assert(policy.assess(article('543acb9817f48f897d')).eligible,'ten-year retrospective is not a product launch');
 const summaryTeaser=article('809a8369b461cc3010');
-assert.equal(policy.assess(summaryTeaser).decision,'待核验','a teaser can enter the recheck queue');
+assert.equal(policy.assess(summaryTeaser).quality,'limited','a strategic teaser is lower confidence');
+assert.equal(policy.assess(article('ba1429f41c73a3790c')).kind,'implementation_note','future feature is not a measured case');
 const survey=[article('a5ddf53c527ae5c478'),article('131d7c1515f2cb97a7')];
 assert(policy.sameStory(...survey),'same named survey with matching actual results');
 assert.equal(policy.select(survey).length,1);

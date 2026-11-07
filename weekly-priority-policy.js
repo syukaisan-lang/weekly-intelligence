@@ -5,7 +5,7 @@
   if(typeof module==='object'&&module.exports)module.exports=api;
   else root.weeklyPriorityPolicy=api;
 })(typeof window==='object'?window:this,function(){
-  const VERSION=43;
+  const VERSION=44;
   const REVIEW_VERSION=41;
   const DOMAINS=[
     ['竞争分析',/競合分析|競合調査|競争分析|競合.{0,10}(比較|データ)/i,'对照竞品的价格、渠道和销售表现'],
@@ -108,10 +108,13 @@
     const launch=/(?:新機能|提供開始|販売開始|発売|ローンチ|新発売|を発表)/.test(title+' '+body.slice(0,240))&&
       !/から(?:20[0-9]{2}年に)?[0-9]+(?:年|周年|週年)|開始から|立ち上げから/.test(head+' '+body.slice(0,380));
     if(launch&&!e.findings.some(x=>OUTCOME.test(x))&&forward.test((first.evidence||[]).join(' '))&&
-       !/調査|実験|比較検証/.test(title))return defer('摘要足够','主要是产品计划，引用数字不是这项措施的实测结果','announcement');
+       !/調査|実験|比較検証/.test(title))return {...first,score:Math.min(first.score,7.6),cap:Math.min(first.cap,8),
+         kind:'implementation_note',confidence:'medium',quality:'limited',
+         reason:'可参考具体方案，原文尚未验证实际业务效果'};
     if(first.kind==='summary_framework'&&!e.findings.length&&!e.steps.length&&
        !/(?:MRR|CPA|ROAS|CVR|売上|継続率).{0,14}(?:倍|割|%|ポイント)/i.test(summary))
-      return defer('待核验','摘要只交代主题或预告方法，尚无可用于决策的具体发现或做法','thin');
+      return {...first,score:Math.min(first.score,7.4),cap:Math.min(first.cap,7.9),
+        reason:'公开摘要有方向性线索，具体结论仍需核对',quality:'limited'};
     const quality=first.reviewed||e.findings.length>=2||
       (e.findings.length&&e.steps.length)||e.steps.length>=2||first.kind==='summary_case'?'grounded':'limited';
     return {...first,quality};

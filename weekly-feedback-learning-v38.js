@@ -158,11 +158,12 @@
       positives.sort((a,b)=>b.strength-a.strength);
       negatives.sort((a,b)=>a.strength-b.strength);
       const pos=positives.slice(0,3).reduce((n,x)=>n+x.strength,0);
-      const neg=negatives.slice(0,3).reduce((n,x)=>n+x.strength,0);
-      const delta=clamp(.48*pos+.85*neg,negatives.length===1?-.35:-1.65,.8);
+      const baselineNegatives=negatives.filter(x=>x.method!=='shared_work_context');
+      const neg=baselineNegatives.slice(0,3).reduce((n,x)=>n+x.strength,0);
+      const delta=clamp(.48*pos+.85*neg,baselineNegatives.length===1?-.35:-1.65,.8);
       // Repeated strong, specifically matching negative evidence can keep an
       // otherwise relevant article out; a single sample only lowers its rank.
-      const strong=negatives.filter(x=>x.strength<=-.65);
+      const strong=baselineNegatives.filter(x=>x.strength<=-.65);
       const cap=strong.length>=2&&neg<-.9&&pos<.65?6.9:10;
       const defects={};
       for(const match of negatives){
@@ -170,7 +171,7 @@
         const bucket=defects[match.defect]||=[];
         if(bucket.length<3)bucket.push(match);
       }
-      const result={delta,cap,defects,positives:positives.slice(0,3),negatives:negatives.slice(0,3),sampleCount:samples.length};
+      const result={delta,cap,defects,positives:positives.slice(0,3),negatives:baselineNegatives.slice(0,3),sampleCount:samples.length};
       scores.set(a,result);return result;
     }
     return {explain,sampleCount:samples.length,positiveSamples:samples.filter(s=>s.weight>0).length,
@@ -192,7 +193,7 @@
       (a.content_checked&&String(a.content_excerpt||'').trim().length>=160);
     const contextRescue=sourced&&contextual.length>=2&&
       contextual.slice(0,2).reduce((n,x)=>n+x.strength,0)>=.50;
-    if(editorial.decision!=='待核验'||editorial.quality==='thin'||!editorial.domain||family(a)!=='substance'||negativeSum>=.28||
+    if(editorial.decision!=='待核验'||!editorial.domain||family(a)!=='substance'||negativeSum>=.28||
        !(strongLater||strongest>=.62||(baseline.length>=2&&baseline[0].strength+baseline[1].strength>=.78)||contextRescue))
       return {...editorial,personalized:false,learned};
     return {...editorial,eligible:true,score:Math.min(8.3,7.25+Math.max(0,positiveSum-.45)*.8),cap:8.3,
