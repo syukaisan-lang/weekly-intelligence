@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-09T22:33:06.117467+00:00",
+  "generated_at": "2026-11-10T07:33:24.926671+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 22,
-  "deduped_count": 19,
-  "deep_read_count": 7,
+  "raw_new_count": 31,
+  "deduped_count": 28,
+  "deep_read_count": 12,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,19 +22,19 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 5,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 165,
+      "coverage_cached_count": 170,
       "coverage_errors": []
     },
     {
       "name": "ECマーケター by 株式会社いつも",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 337,
+      "coverage_cached_count": 338,
       "coverage_errors": []
     },
     {
@@ -82,7 +82,7 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -94,7 +94,7 @@
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -118,15 +118,15 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 9,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
-        "feed_cache"
+        "feed_cache",
+        "markezine_feeder"
       ],
-      "coverage_cached_count": 329,
+      "coverage_cached_count": 338,
       "coverage_errors": [
-        "markezine_feeder: 503 Server Error: Service Temporarily Unavailable for url: https://feeder.co/discover/f5a21ad90c/markezine-jp",
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
       ]
@@ -134,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 3,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -143,31 +143,31 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 57,
+      "coverage_cached_count": 60,
       "coverage_errors": []
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 29,
+      "coverage_cached_count": 30,
       "coverage_errors": []
     },
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 6,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 221,
+      "coverage_cached_count": 227,
       "coverage_errors": []
     },
     {
@@ -185,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 7,
+      "new_count": 6,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 320,
+      "coverage_cached_count": 319,
       "coverage_errors": []
     }
   ],
@@ -201,8 +201,8 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 3042,
-  "semantic_deep_read_count": 1,
+  "semantic_rescored_count": 3060,
+  "semantic_deep_read_count": 3,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3819,
-    "cold_count": 86
+    "hot_count": 3791,
+    "cold_count": 142
   },
   "coverage_audit": {
-    "generated_at": "2026-11-09T22:31:48.757771+00:00",
+    "generated_at": "2026-11-10T07:31:57.808825+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
