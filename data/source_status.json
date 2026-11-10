@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-10T07:33:24.926671+00:00",
+  "generated_at": "2026-11-10T19:54:54.371667+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 31,
-  "deduped_count": 28,
-  "deep_read_count": 12,
+  "raw_new_count": 8,
+  "deduped_count": 5,
+  "deep_read_count": 0,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,7 +22,7 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 5,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 4,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 338,
+      "coverage_cached_count": 342,
       "coverage_errors": []
     },
     {
@@ -118,7 +118,7 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 9,
+      "new_count": 0,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
@@ -134,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 0,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -149,7 +149,7 @@
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -161,7 +161,7 @@
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 6,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -185,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 6,
+      "new_count": 4,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 319,
+      "coverage_cached_count": 320,
       "coverage_errors": []
     }
   ],
@@ -201,8 +201,8 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 3060,
-  "semantic_deep_read_count": 3,
+  "semantic_rescored_count": 3041,
+  "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3791,
-    "cold_count": 142
+    "hot_count": 3721,
+    "cold_count": 217
   },
   "coverage_audit": {
-    "generated_at": "2026-11-10T07:31:57.808825+00:00",
+    "generated_at": "2026-11-10T19:53:37.052191+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
