@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T17:48:02.285578+00:00",
+  "generated_at": "2026-11-13T19:55:08.613302+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
@@ -226,7 +226,7 @@
     "cold_count": 352
   },
   "coverage_audit": {
-    "generated_at": "2026-11-13T17:46:43.204673+00:00",
+    "generated_at": "2026-11-13T19:53:59.868555+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
