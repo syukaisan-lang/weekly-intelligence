@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-14T06:45:16.323681+00:00",
+  "generated_at": "2026-11-14T18:19:56.694087+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 5,
-  "deduped_count": 3,
-  "deep_read_count": 0,
+  "raw_new_count": 3,
+  "deduped_count": 1,
+  "deep_read_count": 1,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 174,
+      "coverage_cached_count": 173,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 333,
+      "coverage_cached_count": 319,
       "coverage_errors": []
     },
     {
@@ -88,19 +88,19 @@
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 50,
+      "coverage_cached_count": 48,
       "coverage_errors": []
     },
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 22,
+      "coverage_cached_count": 23,
       "coverage_errors": []
     },
     {
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 334,
+      "coverage_cached_count": 330,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -143,7 +143,7 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 58,
+      "coverage_cached_count": 55,
       "coverage_errors": []
     },
     {
@@ -185,7 +185,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 5,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -201,7 +201,7 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 3140,
+  "semantic_rescored_count": 3141,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3739,
-    "cold_count": 352
+    "hot_count": 3737,
+    "cold_count": 355
   },
   "coverage_audit": {
-    "generated_at": "2026-11-14T06:43:57.870298+00:00",
+    "generated_at": "2026-11-14T18:18:43.459302+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
