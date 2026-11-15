@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-11-14T18:19:56.694087+00:00",
+  "generated_at": "2026-11-15T06:51:01.280210+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
   "raw_new_count": 3,
   "deduped_count": 1,
-  "deep_read_count": 1,
+  "deep_read_count": 0,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
       "status": "ok",
       "new_count": 0,
       "error": null,
-      "coverage_status": "cached",
+      "coverage_status": "unverified",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 1,
+      "coverage_cached_count": 0,
       "coverage_errors": []
     },
     {
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 173,
+      "coverage_cached_count": 169,
       "coverage_errors": []
     },
     {
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 319,
+      "coverage_cached_count": 313,
       "coverage_errors": []
     },
     {
@@ -76,7 +76,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 14,
+      "coverage_cached_count": 11,
       "coverage_errors": []
     },
     {
@@ -94,13 +94,13 @@
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 23,
+      "coverage_cached_count": 22,
       "coverage_errors": []
     },
     {
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 330,
+      "coverage_cached_count": 321,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -155,7 +155,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 31,
+      "coverage_cached_count": 30,
       "coverage_errors": []
     },
     {
@@ -167,7 +167,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 224,
+      "coverage_cached_count": 217,
       "coverage_errors": []
     },
     {
@@ -191,7 +191,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 295,
+      "coverage_cached_count": 292,
       "coverage_errors": []
     }
   ],
@@ -201,7 +201,7 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 3141,
+  "semantic_rescored_count": 3139,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -222,17 +222,17 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3737,
-    "cold_count": 355
+    "hot_count": 3730,
+    "cold_count": 363
   },
   "coverage_audit": {
-    "generated_at": "2026-11-14T18:18:43.459302+00:00",
+    "generated_at": "2026-11-15T06:49:44.187573+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
-    "cached_count": 10,
+    "cached_count": 9,
     "partial_count": 1,
-    "unverified_count": 2,
+    "unverified_count": 3,
     "meaning": {
       "transport": "status=ok means this weekly ingestion completed",
       "enhanced": "RSS/listing or multiple independent discovery paths plus rolling cache",
