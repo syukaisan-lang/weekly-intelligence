@@ -2,14 +2,14 @@
   "policy_version": 44,
   "review_version": 41,
   "window_days": 7,
-  "total": 246,
-  "latest_seen": "2026-11-16T06:49:34.472Z",
+  "total": 240,
+  "latest_seen": "2026-11-16T22:21:51.648Z",
   "decisions": {
-    "待核验": 184,
-    "值得阅读": 7,
+    "待核验": 178,
     "值得精读": 26,
-    "摘要足够": 16,
-    "跳过": 13
+    "摘要足够": 17,
+    "值得阅读": 7,
+    "跳过": 12
   },
   "batches": [
     {
@@ -71,10 +71,6 @@
     {
       "file": "batch-015.json",
       "articles": 16
-    },
-    {
-      "file": "batch-016.json",
-      "articles": 6
     }
   ]
 }
