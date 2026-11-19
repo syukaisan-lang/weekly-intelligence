@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-18T20:45:28.484658+00:00",
+  "generated_at": "2026-11-19T07:42:36.214153+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 9,
-  "deduped_count": 6,
-  "deep_read_count": 2,
+  "raw_new_count": 49,
+  "deduped_count": 46,
+  "deep_read_count": 18,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,13 +22,13 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 5,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 179,
+      "coverage_cached_count": 176,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 322,
+      "coverage_cached_count": 317,
       "coverage_errors": []
     },
     {
@@ -70,31 +70,31 @@
     {
       "name": "博報堂生活総合研究所",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 11,
+      "coverage_cached_count": 12,
       "coverage_errors": []
     },
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 2,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 48,
+      "coverage_cached_count": 50,
       "coverage_errors": []
     },
     {
       "name": "EC業界ニュース・まとめ・コラム「eコマースコンバージョンラボ」",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -118,14 +118,14 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 15,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 342,
+      "coverage_cached_count": 350,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -134,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 3,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -143,13 +143,13 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 52,
+      "coverage_cached_count": 54,
       "coverage_errors": []
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -161,13 +161,13 @@
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 8,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 233,
+      "coverage_cached_count": 235,
       "coverage_errors": []
     },
     {
@@ -185,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 11,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 309,
+      "coverage_cached_count": 315,
       "coverage_errors": []
     }
   ],
@@ -201,8 +201,8 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 3166,
-  "semantic_deep_read_count": 0,
+  "semantic_rescored_count": 3204,
+  "semantic_deep_read_count": 2,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3706,
-    "cold_count": 522
+    "hot_count": 3702,
+    "cold_count": 572
   },
   "coverage_audit": {
-    "generated_at": "2026-11-18T20:43:59.875184+00:00",
+    "generated_at": "2026-11-19T07:40:18.263209+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
