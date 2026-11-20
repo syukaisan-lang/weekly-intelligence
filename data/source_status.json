@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-19T20:50:40.622601+00:00",
+  "generated_at": "2026-11-20T07:33:05.008546+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 5,
-  "deduped_count": 2,
-  "deep_read_count": 1,
+  "raw_new_count": 44,
+  "deduped_count": 41,
+  "deep_read_count": 9,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -28,31 +28,31 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 175,
+      "coverage_cached_count": 168,
       "coverage_errors": []
     },
     {
       "name": "ECマーケター by 株式会社いつも",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 4,
+      "coverage_cached_count": 5,
       "coverage_errors": []
     },
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 10,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 316,
+      "coverage_cached_count": 320,
       "coverage_errors": []
     },
     {
@@ -82,13 +82,13 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 3,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 50,
+      "coverage_cached_count": 53,
       "coverage_errors": []
     },
     {
@@ -118,7 +118,7 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 11,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
@@ -134,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 1,
+      "new_count": 2,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -143,31 +143,31 @@
         "serialization_listing",
         "conference_listing"
       ],
-      "coverage_cached_count": 52,
+      "coverage_cached_count": 53,
       "coverage_errors": []
     },
     {
       "name": "wisdom-evolution.com",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 3,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 32,
+      "coverage_cached_count": 34,
       "coverage_errors": []
     },
     {
       "name": "ネットショップ担当者フォーラム",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 7,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 235,
+      "coverage_cached_count": 236,
       "coverage_errors": []
     },
     {
@@ -185,7 +185,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 7,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -201,7 +201,7 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 3164,
+  "semantic_rescored_count": 3199,
   "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3697,
-    "cold_count": 579
+    "hot_count": 3708,
+    "cold_count": 609
   },
   "coverage_audit": {
-    "generated_at": "2026-11-19T20:49:34.217386+00:00",
+    "generated_at": "2026-11-20T07:31:32.012485+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
