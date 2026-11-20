@@ -1,10 +1,10 @@
 {
   "meta": {
     "source": "Notion / 情報収集と整理",
-    "snapshot_at": "2026-11-13T17:22:52.754808+00:00",
+    "snapshot_at": "2026-11-20T18:00:58.510942+00:00",
     "schema_version": 5,
     "encrypted_full_data": true,
-    "item_count": 159,
+    "item_count": 160,
     "comments_included_in_encrypted_data": true,
     "page_body_included_in_encrypted_data": true,
     "comments_scope": "page-level open/unresolved comments via Notion Public API",
@@ -12,14 +12,14 @@
       "enabled": true,
       "priority": "evidence_period > published_at > collected_at",
       "confidence_counts": {
-        "low": 145,
+        "low": 146,
         "high": 9,
         "medium": 5
       },
       "domain_counts": {
+        "general": 17,
         "technology": 69,
         "consumer": 57,
-        "general": 16,
         "methodology": 3,
         "market_price": 11,
         "channel_ec": 3
@@ -27,25 +27,25 @@
     }
   },
   "metrics": {
-    "total": 668,
-    "read": 662,
-    "stock": 159,
-    "rejected": 509,
+    "total": 671,
+    "read": 663,
+    "stock": 160,
+    "rejected": 511,
     "undecided": 0,
-    "added_30d": 0,
-    "added_90d": 8
+    "added_30d": 3,
+    "added_90d": 10
   },
   "categories": [
     {
       "name": "未分类",
-      "total": 390,
+      "total": 392,
       "stock": 10,
-      "rejected": 380
+      "rejected": 382
     },
     {
       "name": "マーケティング",
-      "total": 74,
-      "stock": 39,
+      "total": 75,
+      "stock": 40,
       "rejected": 35
     },
     {
@@ -126,7 +126,7 @@
     },
     {
       "name": "調査設計",
-      "count": 61
+      "count": 62
     },
     {
       "name": "広告効果",

@@ -1,17 +1,17 @@
 {
   "meta": {
     "schema_version": 2,
-    "built_at": "2026-11-13T17:28:18.172098+00:00",
+    "built_at": "2026-11-20T18:06:24.033253+00:00",
     "encrypted_full_data": true,
     "model": "Xenova/multilingual-e5-small",
     "embedding_family": "multilingual-e5",
     "dimension": 384,
-    "vector_count": 1166,
-    "item_count": 663,
+    "vector_count": 1167,
+    "item_count": 664,
     "item_counts": {
-      "notion": 159,
-      "private": 358,
-      "rule": 146
+      "notion": 160,
+      "rule": 146,
+      "private": 358
     },
     "query_runs_locally": true,
     "private_text_sent_to_external_api": false,
