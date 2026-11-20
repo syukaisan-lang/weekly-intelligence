@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-20T18:09:50.933998+00:00",
+  "generated_at": "2026-11-20T18:33:08.269693+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 14,
-  "deduped_count": 11,
-  "deep_read_count": 3,
+  "raw_new_count": 3,
+  "deduped_count": 0,
+  "deep_read_count": 1,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -46,7 +46,7 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 7,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -118,7 +118,7 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 0,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
@@ -134,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -185,7 +185,7 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 2,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -226,7 +226,7 @@
     "cold_count": 609
   },
   "coverage_audit": {
-    "generated_at": "2026-11-20T18:08:28.717639+00:00",
+    "generated_at": "2026-11-20T18:31:41.062163+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
