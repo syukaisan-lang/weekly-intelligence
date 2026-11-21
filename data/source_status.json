@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T20:35:03.330451+00:00",
+  "generated_at": "2026-11-21T07:27:53.247707+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
@@ -28,7 +28,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 168,
+      "coverage_cached_count": 163,
       "coverage_errors": []
     },
     {
@@ -52,7 +52,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 326,
+      "coverage_cached_count": 319,
       "coverage_errors": []
     },
     {
@@ -100,7 +100,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 24,
+      "coverage_cached_count": 23,
       "coverage_errors": []
     },
     {
@@ -125,7 +125,7 @@
         "feed_cache",
         "markezine_feeder"
       ],
-      "coverage_cached_count": 351,
+      "coverage_cached_count": 344,
       "coverage_errors": [
         "article_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article",
         "column_listing: 403 Client Error: Forbidden for url: https://markezine.jp/article/t/%E3%82%B3%E3%83%A9%E3%83%A0"
@@ -155,7 +155,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 34,
+      "coverage_cached_count": 33,
       "coverage_errors": []
     },
     {
@@ -167,7 +167,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 236,
+      "coverage_cached_count": 229,
       "coverage_errors": []
     },
     {
@@ -191,7 +191,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 316,
+      "coverage_cached_count": 308,
       "coverage_errors": []
     }
   ],
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3719,
-    "cold_count": 609
+    "hot_count": 3716,
+    "cold_count": 612
   },
   "coverage_audit": {
-    "generated_at": "2026-11-20T20:33:42.596503+00:00",
+    "generated_at": "2026-11-21T07:26:29.125250+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
