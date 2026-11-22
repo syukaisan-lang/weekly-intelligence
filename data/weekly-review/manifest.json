@@ -2,10 +2,10 @@
   "policy_version": 44,
   "review_version": 41,
   "window_days": 7,
-  "total": 236,
+  "total": 235,
   "latest_seen": "2026-11-20T18:09:50.705Z",
   "decisions": {
-    "待核验": 183,
+    "待核验": 182,
     "跳过": 4,
     "摘要足够": 23,
     "值得精读": 19,
@@ -70,7 +70,7 @@
     },
     {
       "file": "batch-015.json",
-      "articles": 12
+      "articles": 11
     }
   ]
 }
