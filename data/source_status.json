@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-24T10:08:10.559069+00:00",
+  "generated_at": "2026-11-24T22:39:40.240199+00:00",
   "expected_sources": 15,
   "successful_sources": 15,
   "failed_sources": [],
-  "raw_new_count": 31,
-  "deduped_count": 28,
-  "deep_read_count": 7,
+  "raw_new_count": 12,
+  "deduped_count": 9,
+  "deep_read_count": 4,
   "sources": [
     {
       "name": "ECデータラボ | 株式会社Nint (ニント)",
@@ -22,7 +22,7 @@
     {
       "name": "ECのミカタ",
       "status": "ok",
-      "new_count": 4,
+      "new_count": 0,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
@@ -46,13 +46,13 @@
     {
       "name": "AdverTimes.（アドタイ） by 宣伝会議",
       "status": "ok",
-      "new_count": 11,
+      "new_count": 1,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 308,
+      "coverage_cached_count": 309,
       "coverage_errors": []
     },
     {
@@ -82,13 +82,13 @@
     {
       "name": "ウェブ電通報／ビジネスにもっとアイデアを。",
       "status": "ok",
-      "new_count": 0,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
         "official_listing"
       ],
-      "coverage_cached_count": 50,
+      "coverage_cached_count": 51,
       "coverage_errors": []
     },
     {
@@ -118,7 +118,7 @@
     {
       "name": "MarkeZine:新着一覧",
       "status": "ok",
-      "new_count": 9,
+      "new_count": 0,
       "error": null,
       "coverage_status": "partial",
       "coverage_methods": [
@@ -134,7 +134,7 @@
     {
       "name": "Agenda note (アジェンダノート)",
       "status": "ok",
-      "new_count": 2,
+      "new_count": 1,
       "error": null,
       "coverage_status": "enhanced",
       "coverage_methods": [
@@ -167,7 +167,7 @@
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 225,
+      "coverage_cached_count": 227,
       "coverage_errors": []
     },
     {
@@ -185,13 +185,13 @@
     {
       "name": "ITmedia ビジネスオンライン 最新記事一覧",
       "status": "ok",
-      "new_count": 3,
+      "new_count": 7,
       "error": null,
       "coverage_status": "cached",
       "coverage_methods": [
         "feed_cache"
       ],
-      "coverage_cached_count": 287,
+      "coverage_cached_count": 291,
       "coverage_errors": []
     }
   ],
@@ -201,8 +201,8 @@
   },
   "dedupe_version": "url+title-v1",
   "semantic_model_family": "multilingual-e5",
-  "semantic_rescored_count": 3141,
-  "semantic_deep_read_count": 2,
+  "semantic_rescored_count": 3114,
+  "semantic_deep_read_count": 0,
   "adaptive_source_control": {
     "enabled": true,
     "window_days": 56,
@@ -222,11 +222,11 @@
   },
   "storage_lifecycle": {
     "hot_retention_days": 90,
-    "hot_count": 3540,
-    "cold_count": 840
+    "hot_count": 3524,
+    "cold_count": 865
   },
   "coverage_audit": {
-    "generated_at": "2026-11-24T10:06:47.533804+00:00",
+    "generated_at": "2026-11-24T22:38:13.610950+00:00",
     "retention_days": 45,
     "tracking_start": "2026-08-10",
     "enhanced_count": 2,
