@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": 2,
-    "built_at": "2026-11-20T18:06:24.033253+00:00",
+    "built_at": "2026-11-27T19:16:22.509406+00:00",
     "encrypted_full_data": true,
     "model": "Xenova/multilingual-e5-small",
     "embedding_family": "multilingual-e5",
